@@ -36,6 +36,13 @@ Parse the output into three buckets:
 
 ### Step 2: Determine the User's Setup Tier
 
+When the active agent is **Codex**, count the `imagegen` skill + built-in
+`image_gen` tool as available image generation even though they are not listed
+by the Python registry. For production, default generated stills to that path;
+do not classify a Codex user as zero-key merely because the registry reports
+zero configured image providers. Mention it in the ready-to-go summary as a
+host-provided capability, separate from configured API providers.
+
 Based on discovery, classify the setup:
 
 | Tier | What's Available | Best Pipelines |
@@ -53,7 +60,7 @@ entries in the provider menu. Report each one's availability separately:
   Best for React-based scene components (text cards, stat cards, charts),
   word-level captions, and the `TalkingHead` avatar composition.
 - **HyperFrames** requires Node.js ≥ 22 + `npx` + FFmpeg. Consumed via
-  `npx @hyperframes/cli` (no monorepo checkout required). Best for
+  `npx hyperframes` (no monorepo checkout required). Best for
   HTML/CSS/GSAP motion graphics — kinetic typography, product promos,
   launch reels, website-to-video workflows, registry blocks.
 
@@ -66,6 +73,12 @@ If only one is available, note it in the summary and mention what the
 other would unlock. If neither is available, tell the user their options
 are FFmpeg-only (simple concat/trim) and what's needed to unlock HTML/React
 composition.
+
+If HyperFrames is unavailable only because the active Node.js version is below
+22, inspect `runtime_warnings` for nvm-compatible versions. When the warning
+shows one, recommend `nvm use <version>` and rerun preflight from that same
+shell before suggesting a new Node.js installation. A version installed in nvm
+is not active until the fresh preflight passes.
 
 **Do NOT pick a runtime during onboarding.** Runtime selection happens at
 the proposal stage, after the agent understands the brief. During

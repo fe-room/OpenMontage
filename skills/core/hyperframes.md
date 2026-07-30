@@ -233,6 +233,13 @@ fix by effort:
 - Missing FFmpeg → 1-minute install on macOS/Linux, longer on Windows
 - `doctor` reports issues → show the doctor output verbatim
 
+Before treating a missing/old Node version as an install requirement, check
+the nvm inventory with `nvm ls`. If Node 22+ is already installed there, run
+`nvm use <version>` and repeat the full preflight in that same shell. The
+runtime remains unavailable until the active `node`, `npm`, and `npx` pass the
+check; merely finding a compatible nvm version is a remediation hint, not a
+green status.
+
 ---
 
 ## Validation protocol

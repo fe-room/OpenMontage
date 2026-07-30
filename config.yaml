@@ -25,6 +25,19 @@ output:
   default_fps: 30
   default_crf: 23
 
+# User production defaults. Pipeline proposals inherit these unless the user
+# explicitly overrides them for a project.
+media_defaults:
+  background_music_enabled: false
+
+narration_defaults:
+  provider: doubao
+  voice_name: "大壹 2.0"
+  voice_id: zh_male_dayi_saturn_bigtts
+  resource_id: seed-tts-2.0
+  speech_rate: 0
+  sample_approval_required: true
+
 paths:
   pipeline_dir: pipeline
   library_dir: library

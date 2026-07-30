@@ -54,6 +54,19 @@ class OutputConfig(BaseModel):
     default_crf: int = 23
 
 
+class MediaDefaultsConfig(BaseModel):
+    background_music_enabled: bool = True
+
+
+class NarrationDefaultsConfig(BaseModel):
+    provider: str = "doubao"
+    voice_name: Optional[str] = None
+    voice_id: Optional[str] = None
+    resource_id: str = "seed-tts-2.0"
+    speech_rate: int = 0
+    sample_approval_required: bool = True
+
+
 class PathsConfig(BaseModel):
     pipeline_dir: str = "pipeline"
     library_dir: str = "library"
@@ -69,6 +82,8 @@ class OpenMontageConfig(BaseModel):
     budget: BudgetConfig = Field(default_factory=BudgetConfig)
     checkpoint: CheckpointConfig = Field(default_factory=CheckpointConfig)
     output: OutputConfig = Field(default_factory=OutputConfig)
+    media_defaults: MediaDefaultsConfig = Field(default_factory=MediaDefaultsConfig)
+    narration_defaults: NarrationDefaultsConfig = Field(default_factory=NarrationDefaultsConfig)
     paths: PathsConfig = Field(default_factory=PathsConfig)
 
     @classmethod

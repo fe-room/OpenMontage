@@ -424,6 +424,14 @@ These stock scene-types are the **templated** path — fast and reliable, but th
 
 When `render_runtime="hyperframes"` is locked and HyperFrames is unavailable (Node < 22, missing `ffmpeg`/`npx`, or `hyperframes doctor` reports issues), that's also a blocker. Do not substitute Remotion or FFmpeg without user approval + a logged `render_runtime_selection` decision.
 
+If HyperFrames fails preflight because the active Node.js version is missing or
+below 22, check nvm before proposing a new installation: run `nvm ls`, look for
+an already-installed Node.js 22+ version, and if one exists recommend
+`nvm use <version>` followed by a fresh preflight in that same shell. Do not
+mark HyperFrames available merely because nvm contains a compatible version;
+the compatible version must be active so `node`, `npm`, and `npx` resolve from
+the same runtime.
+
 Routing is automatic — `video_compose` reads `edit_decisions.render_runtime` and dispatches to the matching engine (`_render_via_hyperframes`, `_remotion_render`, or `_render_via_ffmpeg`). But the **agent must know both Remotion and HyperFrames exist at proposal time** so it can design the visual approach intentionally. Don't default to Remotion for motion-graphics-heavy concepts that HTML/GSAP would express more naturally, and don't default to HyperFrames for briefs that reuse the existing React scene stack.
 
 ## Capability Discovery
@@ -450,6 +458,30 @@ For finalist tools inspect:
 - `related_skills`
 
 Do not rely on memory or old docs when the registry can answer it.
+
+### Codex Built-in Image Generation (HARD RULE)
+
+When the active coding agent is **Codex**, use Codex's built-in image generation
+path (`imagegen` skill + built-in `image_gen` tool) as the default for generated
+still images.
+This host capability sits outside OpenMontage's Python tool registry, so an
+`image_generation: 0/N configured` registry result does **not** mean image
+generation is unavailable in a Codex session.
+
+- Prefer Codex image generation over `image_selector` unless the user chose a
+  specific provider, needs a provider-only feature, or requests a local/offline
+  path.
+- Before using it, read the Codex `imagegen` skill as required by the host.
+- The built-in tool initially saves under Codex's own generated-images area;
+  copy or move each selected project asset into
+  `projects/<project-id>/assets/images/`, then record it in `asset_manifest`
+  with host/provider provenance so checkpoints, Backlot, and cost review remain
+  complete. Never leave a referenced production asset only in Codex's storage.
+- The normal proposal approval, sample-before-batch, visual review, and
+  decision-communication rules still apply. A host tool is not permission to
+  bypass the pipeline.
+- On non-Codex agents, continue to route through `image_selector` and the live
+  registry unless that host exposes an equivalent capability explicitly.
 
 ## Tool Families
 

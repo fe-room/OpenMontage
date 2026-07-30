@@ -40,10 +40,68 @@ def test_hyperframes_get_info_reports_runtime():
     assert set(rc.keys()) >= {
         "runtime_available",
         "node_major",
+        "nvm_available",
+        "nvm_compatible_versions",
         "ffmpeg_available",
         "npx_available",
         "reasons",
     }
+
+
+def test_runtime_check_surfaces_compatible_nvm_version(monkeypatch):
+    monkeypatch.setattr(
+        HyperFramesCompose, "_node_major_version", classmethod(lambda cls: 20)
+    )
+    monkeypatch.setattr(
+        HyperFramesCompose,
+        "_nvm_supported_versions",
+        classmethod(
+            lambda cls: {
+                "available": True,
+                "compatible_versions": ["v24.4.1", "v22.17.0"],
+            }
+        ),
+    )
+
+    rc = HyperFramesCompose()._runtime_check()
+
+    assert rc["runtime_available"] is False
+    assert rc["nvm_available"] is True
+    assert rc["nvm_compatible_versions"] == ["v24.4.1", "v22.17.0"]
+    assert any("nvm use v24.4.1" in reason for reason in rc["reasons"])
+
+
+def test_nvm_compatible_version_is_a_hint_not_runtime_success(monkeypatch):
+    monkeypatch.setattr(
+        HyperFramesCompose, "_node_major_version", classmethod(lambda cls: None)
+    )
+    monkeypatch.setattr(
+        HyperFramesCompose,
+        "_nvm_supported_versions",
+        classmethod(
+            lambda cls: {"available": True, "compatible_versions": ["v22.17.0"]}
+        ),
+    )
+
+    info = HyperFramesCompose().get_info()
+
+    assert info["status"] == ToolStatus.UNAVAILABLE.value
+    assert (
+        "activate the compatible Node version with nvm"
+        in info["setup_offer"]["effort"]
+    )
+
+
+def test_codex_production_guide_defaults_to_builtin_image_generation():
+    root = Path(__file__).resolve().parent.parent.parent
+    guide = (root / "AGENT_GUIDE.md").read_text(encoding="utf-8")
+    codex = (root / "CODEX.md").read_text(encoding="utf-8")
+
+    for body in (guide, codex):
+        assert "imagegen" in body
+        assert "image_gen" in body
+    assert "projects/<project-id>/assets/images/" in guide
+    assert "image_selector" in guide
 
 
 def test_hyperframes_layer2_skill_names_correct_package():
@@ -76,6 +134,13 @@ def test_hyperframes_layer2_skill_names_correct_package():
         "published package). A Layer 2 skill missing this would leave agents "
         "stuck if they bypass the tool's install_instructions."
     )
+
+    onboarding = (
+        Path(__file__).resolve().parent.parent.parent
+        / "skills" / "meta" / "onboarding.md"
+    ).read_text(encoding="utf-8")
+    assert "npx @hyperframes/cli" not in onboarding
+    assert "npx hyperframes" in onboarding
 
 
 def test_animation_proposal_director_has_no_hardcoded_costs_or_keys():
@@ -228,6 +293,9 @@ def test_runtime_check_fails_when_npm_package_unresolvable(monkeypatch):
         "_resolve_npm_package",
         classmethod(lambda cls: {"error": "npm package `hyperframes` not found (404)"}),
     )
+    monkeypatch.setattr(
+        HyperFramesCompose, "_node_major_version", classmethod(lambda cls: 22)
+    )
     rc = HyperFramesCompose()._runtime_check()
     assert rc["runtime_available"] is False, (
         "Runtime must report NOT available when the npm package can't be "
@@ -250,9 +318,12 @@ def test_runtime_check_succeeds_when_npm_resolves(monkeypatch):
         "_resolve_npm_package",
         classmethod(lambda cls: {"version": "0.4.5"}),
     )
+    monkeypatch.setattr(
+        HyperFramesCompose, "_node_major_version", classmethod(lambda cls: 22)
+    )
     rc = HyperFramesCompose()._runtime_check()
     # Local binaries must still pass for this to go green.
-    if rc["node_major"] is None or not rc["ffmpeg_available"] or not rc["npx_available"]:
+    if not rc["ffmpeg_available"] or not rc["npx_available"]:
         pytest.skip("Local runtime floor not met on this machine")
     assert rc["runtime_available"] is True
     assert rc["npm_package_version"] == "0.4.5"

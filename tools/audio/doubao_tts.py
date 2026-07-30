@@ -76,7 +76,10 @@ class DoubaoTTS(BaseTool):
             "text": {"type": "string", "description": "Text to convert to speech"},
             "voice_id": {
                 "type": "string",
-                "description": "Doubao speaker/voice_type. Defaults to DOUBAO_SPEECH_VOICE_TYPE.",
+                "description": (
+                    "Doubao speaker/voice_type. Defaults to DOUBAO_SPEECH_VOICE_TYPE, "
+                    "then config.yaml narration_defaults.voice_id."
+                ),
             },
             "resource_id": {
                 "type": "string",
@@ -175,6 +178,18 @@ class DoubaoTTS(BaseTool):
     DEFAULT_RESOURCE_ID = "seed-tts-2.0"
     DEFAULT_VOICE_ENV = "DOUBAO_SPEECH_VOICE_TYPE"
 
+    @staticmethod
+    def _configured_default_voice() -> str | None:
+        try:
+            from lib.config_model import OpenMontageConfig
+
+            defaults = OpenMontageConfig.load().narration_defaults
+            if defaults.provider == "doubao":
+                return defaults.voice_id
+        except Exception:
+            return None
+        return None
+
     def get_status(self) -> ToolStatus:
         if os.environ.get("DOUBAO_SPEECH_API_KEY"):
             return ToolStatus.AVAILABLE
@@ -190,7 +205,11 @@ class DoubaoTTS(BaseTool):
         if not api_key:
             return ToolResult(success=False, error="No Doubao Speech API key. " + self.install_instructions)
 
-        voice_id = inputs.get("voice_id") or os.environ.get(self.DEFAULT_VOICE_ENV)
+        voice_id = (
+            inputs.get("voice_id")
+            or os.environ.get(self.DEFAULT_VOICE_ENV)
+            or self._configured_default_voice()
+        )
         if not voice_id:
             return ToolResult(
                 success=False,

@@ -63,6 +63,9 @@ class HyperFramesCompose(BaseTool):
         "Requires Node.js >= 22 (https://nodejs.org/) and FFmpeg "
         "(https://ffmpeg.org/download.html). The HyperFrames CLI is fetched "
         "on first use via `npx hyperframes` (npm package: `hyperframes`). "
+        "If the active Node.js version is too old, run `nvm ls`; when nvm "
+        "already has Node.js 22 or newer installed, run `nvm use <version>` "
+        "and repeat preflight before installing another Node.js version. "
         "Note: the upstream monorepo develops the package as `@hyperframes/cli`, "
         "but it publishes to npm as `hyperframes`. `npx @hyperframes/cli` "
         "returns 404 -- do NOT use that form. Verify setup with "
@@ -226,6 +229,7 @@ class HyperFramesCompose(BaseTool):
     # We cache per-process so the first call pays ~2-5s and subsequent calls
     # (get_info spam from the registry) are free.
     _npm_resolve_cache: Optional[dict[str, str]] = None
+    _nvm_versions_cache: Optional[dict[str, Any]] = None
 
     @classmethod
     def _node_major_version(cls) -> Optional[int]:
@@ -245,6 +249,85 @@ class HyperFramesCompose(BaseTool):
             return int(match.group(1))
         except (OSError, subprocess.SubprocessError):
             return None
+
+    @classmethod
+    def _nvm_supported_versions(cls) -> dict[str, Any]:
+        """Return nvm-installed Node versions that meet the runtime floor.
+
+        nvm is normally a sourced shell function rather than an executable,
+        so ``shutil.which("nvm")`` cannot discover it. When the active Node is
+        missing or too old, source the user's nvm.sh and ask ``nvm ls`` before
+        recommending a new install. This check is advisory: the caller must
+        still activate the selected version and repeat preflight so npx/npm
+        resolve from the same Node installation used for rendering.
+        """
+        if cls._nvm_versions_cache is not None:
+            return cls._nvm_versions_cache
+
+        if os.name == "nt":
+            cls._nvm_versions_cache = {"available": False, "compatible_versions": []}
+            return cls._nvm_versions_cache
+
+        nvm_dir = Path(os.environ.get("NVM_DIR") or (Path.home() / ".nvm")).expanduser()
+        nvm_script = nvm_dir / "nvm.sh"
+        if not nvm_script.is_file():
+            cls._nvm_versions_cache = {"available": False, "compatible_versions": []}
+            return cls._nvm_versions_cache
+
+        shell = shutil.which("bash") or shutil.which("zsh") or shutil.which("sh")
+        if not shell:
+            cls._nvm_versions_cache = {
+                "available": True,
+                "compatible_versions": [],
+                "error": "nvm found but no compatible shell is available",
+            }
+            return cls._nvm_versions_cache
+
+        env = os.environ.copy()
+        env["NVM_DIR"] = str(nvm_dir)
+        try:
+            proc = subprocess.run(
+                [shell, "-c", '. "$NVM_DIR/nvm.sh"; nvm ls --no-colors'],
+                capture_output=True,
+                text=True,
+                timeout=10,
+                env=env,
+            )
+        except subprocess.TimeoutExpired:
+            cls._nvm_versions_cache = {
+                "available": True,
+                "compatible_versions": [],
+                "error": "nvm ls timed out after 10s",
+            }
+            return cls._nvm_versions_cache
+        except (OSError, subprocess.SubprocessError) as e:
+            cls._nvm_versions_cache = {
+                "available": True,
+                "compatible_versions": [],
+                "error": f"nvm ls failed: {type(e).__name__}",
+            }
+            return cls._nvm_versions_cache
+
+        if proc.returncode != 0:
+            tail = (proc.stderr or "").strip().splitlines()
+            cls._nvm_versions_cache = {
+                "available": True,
+                "compatible_versions": [],
+                "error": tail[-1][:200] if tail else f"nvm ls exit {proc.returncode}",
+            }
+            return cls._nvm_versions_cache
+
+        versions = sorted(
+            {
+                match.group(0)
+                for match in re.finditer(r"v\d+\.\d+\.\d+", proc.stdout or "")
+                if int(match.group(0)[1:].split(".", 1)[0]) >= cls._NODE_FLOOR_MAJOR
+            },
+            key=lambda value: tuple(int(part) for part in value[1:].split(".")),
+            reverse=True,
+        )
+        cls._nvm_versions_cache = {"available": True, "compatible_versions": versions}
+        return cls._nvm_versions_cache
 
     @classmethod
     def _resolve_npm_package(cls) -> dict[str, str]:
@@ -312,6 +395,7 @@ class HyperFramesCompose(BaseTool):
         node_major = self._node_major_version()
         ffmpeg_ok = shutil.which("ffmpeg") is not None
         npx_ok = shutil.which("npx") is not None
+        nvm_check: dict[str, Any] = {"available": False, "compatible_versions": []}
 
         reasons: list[str] = []
         if node_major is None:
@@ -320,6 +404,15 @@ class HyperFramesCompose(BaseTool):
             reasons.append(
                 f"node major version {node_major} < required {self._NODE_FLOOR_MAJOR}"
             )
+        if node_major is None or node_major < self._NODE_FLOOR_MAJOR:
+            nvm_check = self._nvm_supported_versions()
+            compatible = nvm_check.get("compatible_versions") or []
+            if compatible:
+                reasons.append(
+                    "nvm has compatible installed Node version(s): "
+                    + ", ".join(compatible)
+                    + f"; run `nvm use {compatible[0]}` and repeat preflight"
+                )
         if not npx_ok:
             reasons.append("npx not found on PATH")
         if not ffmpeg_ok:
@@ -339,6 +432,9 @@ class HyperFramesCompose(BaseTool):
         return {
             "runtime_available": not reasons,
             "node_major": node_major,
+            "nvm_available": bool(nvm_check.get("available")),
+            "nvm_compatible_versions": nvm_check.get("compatible_versions") or [],
+            "nvm_check_error": nvm_check.get("error"),
             "ffmpeg_available": ffmpeg_ok,
             "npx_available": npx_ok,
             "npm_package": self._NPM_PACKAGE,
@@ -356,12 +452,15 @@ class HyperFramesCompose(BaseTool):
         check = self._runtime_check()
         info["hyperframes_runtime"] = check
         if not check["runtime_available"]:
+            nvm_ready = bool(check.get("nvm_compatible_versions"))
+            if nvm_ready and check["ffmpeg_available"]:
+                effort = "1-minute fix (activate the compatible Node version with nvm)"
+            elif check["npx_available"] and check["ffmpeg_available"]:
+                effort = "1-minute fix"
+            else:
+                effort = "5-minute fix (install Node 22+ and/or FFmpeg)"
             info["setup_offer"] = {
-                "effort": (
-                    "1-minute fix"
-                    if check["npx_available"] and check["ffmpeg_available"]
-                    else "5-minute fix (install Node 22+ and/or FFmpeg)"
-                ),
+                "effort": effort,
                 "install_instructions": self.install_instructions,
                 "unlocks": (
                     "HTML/CSS/GSAP composition runtime — kinetic typography, "
