@@ -330,6 +330,55 @@ def test_runtime_check_succeeds_when_npm_resolves(monkeypatch):
     assert rc["reasons"] == []
 
 
+def test_npm_resolution_prefers_runnable_local_cli(monkeypatch):
+    """A sandboxed registry timeout must not hide an already runnable CLI."""
+    monkeypatch.setattr(HyperFramesCompose, "_npm_resolve_cache", None)
+    monkeypatch.setattr(
+        HyperFramesCompose,
+        "_resolve_local_cli",
+        classmethod(
+            lambda cls: {
+                "version": "0.7.87",
+                "source": "npm-npx-cache",
+                "command": ["node", "/cache/hyperframes/bin/hyperframes.mjs"],
+            }
+        ),
+    )
+
+    resolved = HyperFramesCompose._resolve_npm_package()
+
+    assert resolved["version"] == "0.7.87"
+    assert resolved["source"] == "npm-npx-cache"
+    assert resolved["command"][0] == "node"
+
+
+def test_run_hf_uses_same_local_cli_selected_by_preflight(monkeypatch):
+    """Execution must not fall back to networked npx after local preflight."""
+    command = ["node", "/cache/hyperframes/bin/hyperframes.mjs"]
+    monkeypatch.setattr(
+        HyperFramesCompose,
+        "_resolve_local_cli",
+        classmethod(
+            lambda cls: {
+                "version": "0.7.87",
+                "source": "npm-npx-cache",
+                "command": command,
+            }
+        ),
+    )
+    captured: dict[str, Any] = {}
+
+    def fake_run(cmd, **kwargs):
+        captured["cmd"] = cmd
+        return type("Proc", (), {"returncode": 0, "stdout": "", "stderr": ""})()
+
+    monkeypatch.setattr("tools.video.hyperframes_compose.subprocess.run", fake_run)
+
+    HyperFramesCompose()._run_hf(["doctor", "--json"], cwd=None, timeout=5, check=False)
+
+    assert captured["cmd"] == [*command, "doctor", "--json"]
+
+
 def test_video_compose_render_engines_follow_hyperframes_runtime_check(monkeypatch):
     """Regression: `video_compose.get_info()['render_engines']['hyperframes']`
     must track the true availability, not just the local-binary floor.

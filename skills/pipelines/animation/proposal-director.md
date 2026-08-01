@@ -12,15 +12,17 @@ Animation proposals have a unique dimension: **animation mode selection**. Unlik
 
 Animation proposals must lock **both** a `renderer_family` (creative grammar) and a `render_runtime` (technical engine). These are separate concepts now that HyperFrames is a first-class runtime. Read `skills/meta/animation-runtime-selector.md` and `skills/core/hyperframes.md` for the decision matrix, and `AGENT_GUIDE.md` → "Present Both Composition Runtimes (HARD RULE)" for the governance contract.
 
-**MANDATORY workflow — present both runtimes, don't silently default:**
+**MANDATORY workflow — content fit first, availability second:**
 
-1. Query `video_compose.get_info()["render_engines"]`. If both `remotion` and `hyperframes` are `True`, proceed to step 2. If only one is available, go to step 4 with just that one.
+1. Evaluate both runtimes against the brief without consulting availability.
 2. Present both runtimes to the user with brief-specific analysis:
    - **Remotion** — one line on fit (e.g. "your brief uses data-chart and stat_card heavily, both already exist as React components"), one line on tradeoff (e.g. "React component authoring is more rigid than HTML/CSS for custom typographic motion").
    - **HyperFrames** — one line on fit (e.g. "the kinetic-typography opener fits HTML + GSAP better than Remotion interpolation"), one line on tradeoff (e.g. "no word-level caption burn parity yet; no access to existing Remotion chart library").
-3. Recommend one with rationale tied to the brief's `delivery_promise`, the selected animation mode, and the reuse strategy from research.
-4. Wait for explicit user approval. Do NOT write `render_runtime` into `proposal_packet.production_plan` before approval.
-5. Log a `render_runtime_selection` decision in `decision_log` with BOTH runtimes in `options_considered`, the user's pick as `selected`, and the rationale as `reason`. If a runtime was unavailable, record it as rejected with `rejected_because: "runtime not available on this machine"`.
+3. Recommend one by presentation quality, tied to the brief's `delivery_promise`, selected animation mode, and research.
+4. Query `video_compose.get_info()["render_engines"]` and report availability without changing the recommendation.
+5. If the recommended runtime is unavailable, report the blocker and let the user choose whether to enable/retry it or explicitly accept an alternative.
+6. Wait for explicit user approval. Do NOT write `render_runtime` into `proposal_packet.production_plan` before approval.
+7. Log a `render_runtime_selection` decision with both runtimes, the content-fit recommendation, availability results, and the user's approved selection.
 
 Fit cheat-sheet for the recommendation (NOT an auto-decision):
 
@@ -91,9 +93,11 @@ to validate the animation style before full production.
 - **`audience_insights.misconceptions`** — animation excels at showing "wrong way → right way" transitions.
 - **Mathematical/technical accuracy notes** — critical constraints on what we can and cannot simplify.
 
-### Step 2: Run Preflight
+### Step 2: Recommend the Animation Toolchain, Then Run Preflight
 
-Before designing concepts, know what tools are available:
+Derive the best animation mode and toolchain from the content before checking
+installed state. Tell the user what would present the subject best and why,
+then verify that path with preflight:
 
 ```bash
 python -c "from tools.tool_registry import registry; import json; registry.discover(); print(json.dumps(registry.support_envelope(), indent=2))"
@@ -116,7 +120,9 @@ python -c "from tools.tool_registry import registry; import json; registry.disco
 | `tts_selector` | Which TTS providers are available? | Affects narration quality |
 | `video_compose` | Is FFmpeg/Remotion available? | Critical — cannot render without this |
 
-Record all findings. **Do not propose an animation mode that requires tools you don't have.**
+Record all findings. If the preferred animation mode is unavailable, preserve
+it as the recommendation, explain the blocker and enablement path, and let the
+user decide whether to enable it or explicitly choose a lower-fit mode.
 
 ### Step 3: Animation Approach Selection
 

@@ -12,15 +12,17 @@ Think of yourself as a creative agency pitching to a client: you present concept
 
 Explainer proposals must lock **both** a `renderer_family` (creative grammar) and a `render_runtime` (technical engine). Read `skills/meta/animation-runtime-selector.md` for the decision matrix and `AGENT_GUIDE.md` → "Present Both Composition Runtimes (HARD RULE)" for the governance contract.
 
-**MANDATORY workflow — present both runtimes, don't silently default:**
+**MANDATORY workflow — content fit first, availability second:**
 
-1. Query `video_compose.get_info()["render_engines"]`. If both `remotion` and `hyperframes` are `True`, proceed to step 2. If only one is available, go to step 4 with just that one.
+1. Evaluate both runtimes against the brief without consulting availability.
 2. Present both runtimes to the user with brief-specific analysis. For THIS concept:
    - **Remotion** — one line on fit (mention the React scene stack components that apply), one line on tradeoff.
    - **HyperFrames** — one line on fit (mention HTML/GSAP motion, registry blocks, kinetic typography if applicable), one line on tradeoff.
-3. Recommend one with rationale tied to the brief's `delivery_promise`, `visual_approach`, and whether word-level caption burn is required (that one forces Remotion).
-4. Wait for explicit user approval. Do NOT write `render_runtime` into `proposal_packet.production_plan` before approval.
-5. Log a `render_runtime_selection` decision in `decision_log` with BOTH runtimes (plus `ffmpeg` if it was a realistic option) in `options_considered`, the user's pick as `selected`, and the rationale as `reason`. If a runtime was unavailable, record it as rejected with `rejected_because: "runtime not available on this machine"`.
+3. Recommend one based on presentation quality and the brief's `delivery_promise`, `visual_approach`, and caption needs.
+4. Query `video_compose.get_info()["render_engines"]` and report availability without changing the recommendation.
+5. If the recommended runtime is unavailable, present the exact blocker and let the user choose whether to enable/retry it or explicitly accept an alternative.
+6. Wait for explicit user approval. Do NOT write `render_runtime` into `proposal_packet.production_plan` before approval.
+7. Log a `render_runtime_selection` decision in `decision_log` with BOTH runtimes (plus `ffmpeg` if it was a realistic option) in `options_considered`, the content-fit recommendation, verified availability, and the user's approved selection.
 
 Fit cheat-sheet for recommendation (input for the conversation, not an auto-decision):
 
@@ -37,7 +39,7 @@ A `render_runtime_selection` decision with only one option considered when both 
 | Schema | `schemas/artifacts/proposal_packet.schema.json` | Artifact validation |
 | Prior artifact | `research_brief` from Research Director | Raw research findings |
 | Pipeline manifest | `pipeline_defs/animated-explainer.yaml` | Stage and tool definitions |
-| Tool registry | `support_envelope()` output | What's actually available right now |
+| Tool registry | `support_envelope()` output | Verify the content-fit recommendation after it is formed |
 | Cost tracker | `tools/cost_tracker.py` | Cost estimation data |
 | Style playbooks | `styles/*.yaml` | Available visual styles |
 | Meta skill | `skills/meta/taste-direction.md` | Design read, taste dials, reference strategy |
@@ -86,9 +88,12 @@ Read the `research_brief` thoroughly. Extract:
 - **`landscape.underserved_gaps`** — this is where the opportunity lives. Our video should fill a gap, not repeat what exists.
 - **`trending`** — if there's a timeliness window, factor it into concept urgency.
 
-### Step 2: Run Preflight
+### Step 2: Recommend Tools by Content Fit, Then Run Preflight
 
-Before designing concepts, know what tools are available:
+First write a provisional tool plan from the research, delivery promise, and
+desired presentation quality. Name the best provider/runtime for each material
+need without consulting availability, and communicate that recommendation to
+the user. Then verify it with preflight:
 
 ```bash
 python -c "from tools.tool_registry import registry; import json; registry.discover(); print(json.dumps(registry.support_envelope(), indent=2))"
@@ -107,7 +112,11 @@ Record:
 - Image generation status — run `registry.get_by_capability("image_generation")` and check status
 - **Remotion render engine status** — check `video_compose.get_info()["render_engines"]["remotion"]`. If `true`, Remotion is available for animated text cards, stat cards, charts, spring-physics transitions, and image-to-video rendering. This is a major quality upgrade over Ken Burns pan-and-zoom.
 
-This directly affects what you can promise in the production plan. **Do not propose a concept that requires tools you don't have.**
+This determines whether the preferred concept is immediately executable; it
+does not retroactively change which tool best fits the content. If the best-fit
+tool is unavailable, keep the concept and recommendation visible, report the
+blocker and enablement path, and let the user decide whether to enable it,
+retry later, or explicitly choose a lower-fit alternative.
 
 **Setup offers:** If critical tools are UNAVAILABLE but fixable with a simple configuration, read each tool's `install_instructions` from the registry and offer the user setup help before designing around the limitation. See AGENT_GUIDE.md "Provider Menu" protocol for the approach. Group related tools that share the same env var dependency.
 
@@ -322,7 +331,7 @@ For each stage in the pipeline manifest (`animated-explainer.yaml`), specify:
 2. **Whether each tool is available** — from the preflight check
 3. **Estimated cost per tool** — from the tool's cost metadata
 4. **Why this provider** — explain the choice ("ElevenLabs for narration because voice quality is critical for this topic" or "Piper TTS because running local-only and free")
-5. **Fallback if unavailable** — what happens if the primary tool is down
+5. **Alternatives if unavailable** — options for the user to choose, never an automatic fallback
 
 **Tool selection rationale must be honest:**
 - If using a free/local tool because the cloud tool is unavailable, say so

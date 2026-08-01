@@ -10,15 +10,17 @@ You are the **Proposal Director** for a cinematic video (trailers, brand films, 
 
 Cinematic proposals must lock **both** a `renderer_family` (creative grammar: `cinematic-trailer`, `documentary-montage`, etc.) and a `render_runtime` (technical engine). Read `skills/meta/animation-runtime-selector.md` and `skills/core/hyperframes.md` for the decision matrix, and `AGENT_GUIDE.md` → "Present Both Composition Runtimes (HARD RULE)" for the governance contract.
 
-**MANDATORY workflow — present both runtimes, don't silently default:**
+**MANDATORY workflow — content fit first, availability second:**
 
-1. Query `video_compose.get_info()["render_engines"]`. If both `remotion` and `hyperframes` are `True`, proceed to step 2.
+1. Evaluate both runtimes against the brief without consulting availability.
 2. Present both runtimes to the user with brief-specific analysis:
    - **Remotion** — one line on fit (mention `CinematicRenderer`, `<OffthreadVideo>`, existing transition stack if applicable), one line on tradeoff.
    - **HyperFrames** — one line on fit (mention kinetic title sequences, registry shader transitions, or HTML-native typographic motion if applicable), one line on tradeoff.
-3. Recommend one with rationale tied to the brief's `delivery_promise` (especially `motion_required`), `renderer_family`, and approved tone.
-4. Wait for explicit user approval. Do NOT write `render_runtime` into `proposal_packet.production_plan` before approval.
-5. Log a `render_runtime_selection` decision in `decision_log` with BOTH runtimes in `options_considered` plus `ffmpeg` if it was a realistic option.
+3. Recommend one by presentation quality, tied to the brief's `delivery_promise` (especially `motion_required`), `renderer_family`, and approved tone.
+4. Query `video_compose.get_info()["render_engines"]` and report availability without changing the recommendation.
+5. If the recommended runtime is unavailable, report the blocker and let the user choose whether to enable/retry it or explicitly accept an alternative.
+6. Wait for explicit user approval. Do NOT write `render_runtime` into `proposal_packet.production_plan` before approval.
+7. Log a `render_runtime_selection` decision with both runtimes, the content-fit recommendation, availability results, and the user's approved selection.
 
 Fit cheat-sheet for the recommendation (NOT an auto-decision):
 
@@ -82,9 +84,11 @@ Read the `research_brief` thoroughly. Extract:
 - **Source reality** — what footage/stills the user actually has.
 - **Motion commitment** — whether motion is required.
 
-### Step 2: Run Preflight
+### Step 2: Recommend the Cinematic Toolchain, Then Run Preflight
 
-Before designing concepts, know what tools are available:
+First derive the toolchain that best delivers the intended shot language,
+motion, and emotional arc without consulting availability. Tell the user that
+recommendation, then verify it with preflight:
 
 ```bash
 python -c "from tools.tool_registry import registry; import json; registry.discover(); print(json.dumps(registry.support_envelope(), indent=2))"

@@ -10,12 +10,14 @@ Hybrid is not a catch-all. Your first job is to define what stays primary.
 
 Before locking the production plan, decide `render_runtime` with the user. Hybrid supports BOTH Remotion and HyperFrames; neither is an auto-default. Follow the contract in AGENT_GUIDE.md → "Present Both Composition Runtimes (HARD RULE)":
 
-1. Query `video_compose.get_info()["render_engines"]`. If both `remotion` and `hyperframes` are `True`, present both to the user with brief-specific analysis:
+1. Evaluate both runtimes against the anchor medium and support layers without consulting availability, then present both to the user with brief-specific analysis:
    - **Remotion** — fits when source footage dominates and support layers are React scene components (chart, callout, text card). Remotion composes video clips + React overlays in one pass via `<OffthreadVideo>`.
    - **HyperFrames** — fits when support layers are HTML/GSAP-native (kinetic callouts, registry blocks, typographic overlays) and source footage is embedded as `<video class="clip">`.
-2. Recommend one with rationale tied to the anchor medium and the shape of the support layer.
-3. Wait for explicit user approval.
-4. Log the choice in `decision_log` as a `render_runtime_selection` decision with BOTH runtimes in `options_considered`.
+2. Recommend one by presentation quality, tied to the anchor medium and support-layer shape.
+3. Query `video_compose.get_info()["render_engines"]` and report availability without changing the recommendation.
+4. If the recommended runtime is unavailable, report the blocker and ask whether to enable/retry it or explicitly accept an alternative.
+5. Wait for explicit user approval.
+6. Log the choice in `decision_log` with both runtimes, content-fit recommendation, availability results, and user-approved selection.
 
 A `render_runtime_selection` decision with only one runtime in `options_considered` when both were available is a CRITICAL reviewer finding.
 

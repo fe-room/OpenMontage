@@ -223,12 +223,12 @@ class HyperFramesCompose(BaseTool):
 
     _NODE_FLOOR_MAJOR = 22
     _NPM_PACKAGE = "hyperframes"  # published npm name (NOT @hyperframes/cli — that's 404)
-    # Process-level cache for the npm resolve check. Shape:
-    #   {"version": "0.4.5"}   → package resolves
-    #   {"error": "<short>"}   → resolution failed (offline, unpublished, etc.)
-    # We cache per-process so the first call pays ~2-5s and subsequent calls
-    # (get_info spam from the registry) are free.
-    _npm_resolve_cache: Optional[dict[str, str]] = None
+    # Process-level caches for CLI/package resolution. A runnable local CLI
+    # (including npm's npx cache) wins over a registry lookup: managed agent
+    # sandboxes may block registry access while still allowing deterministic
+    # execution from a previously fetched CLI.
+    _npm_resolve_cache: Optional[dict[str, Any]] = None
+    _local_cli_cache: Optional[dict[str, Any]] = None
     _nvm_versions_cache: Optional[dict[str, Any]] = None
 
     @classmethod
@@ -330,20 +330,118 @@ class HyperFramesCompose(BaseTool):
         return cls._nvm_versions_cache
 
     @classmethod
-    def _resolve_npm_package(cls) -> dict[str, str]:
+    def _version_key(cls, version: str) -> tuple[int, ...]:
+        """Return a sortable numeric key for ordinary semver-like versions."""
+        parts = re.findall(r"\d+", version or "")[:3]
+        return tuple(int(part) for part in parts) if parts else (0,)
+
+    @classmethod
+    def _resolve_local_cli(cls) -> dict[str, Any]:
+        """Find a directly runnable HyperFrames CLI without network access.
+
+        Resolution covers an explicit override, a binary on PATH,
+        workspace-local installs, and npm's npx cache. The cached case is
+        important in Codex sandboxes: a CLI fetched in an approved network
+        context remains usable even when a later registry probe is blocked.
+        """
+        if cls._local_cli_cache is not None:
+            return cls._local_cli_cache
+
+        candidates: list[dict[str, Any]] = []
+        node = shutil.which("node")
+
+        explicit = os.environ.get("HYPERFRAMES_CLI_PATH")
+        if explicit:
+            path = Path(explicit).expanduser().resolve()
+            if path.is_file():
+                command = (
+                    [node, str(path)]
+                    if node and path.suffix == ".mjs"
+                    else [str(path)]
+                )
+                candidates.append(
+                    {"version": "0", "source": "env", "command": command}
+                )
+
+        on_path = shutil.which("hyperframes")
+        if on_path:
+            candidates.append(
+                {"version": "0", "source": "PATH", "command": [on_path]}
+            )
+
+        repo_root = Path(__file__).resolve().parents[2]
+        package_jsons: list[Path] = [
+            Path.cwd() / "node_modules" / cls._NPM_PACKAGE / "package.json",
+            repo_root / "node_modules" / cls._NPM_PACKAGE / "package.json",
+        ]
+        npx_root = Path.home() / ".npm" / "_npx"
+        try:
+            package_jsons.extend(
+                npx_root.glob("*/node_modules/hyperframes/package.json")
+            )
+        except OSError:
+            pass
+
+        for package_json in package_jsons:
+            if not package_json.is_file():
+                continue
+            try:
+                package = json.loads(package_json.read_text(encoding="utf-8"))
+                version = str(package.get("version") or "0")
+                bin_decl = package.get("bin")
+                bin_rel = (
+                    bin_decl.get("hyperframes")
+                    if isinstance(bin_decl, dict)
+                    else bin_decl
+                )
+                if not isinstance(bin_rel, str):
+                    continue
+                entry = (package_json.parent / bin_rel).resolve()
+                if not entry.is_file():
+                    continue
+                command = (
+                    [node, str(entry)]
+                    if node and entry.suffix == ".mjs"
+                    else [str(entry)]
+                )
+                source = (
+                    "npm-npx-cache"
+                    if npx_root in package_json.parents
+                    else "workspace-node_modules"
+                )
+                candidates.append(
+                    {"version": version, "source": source, "command": command}
+                )
+            except (OSError, json.JSONDecodeError):
+                continue
+
+        if not candidates:
+            cls._local_cli_cache = {}
+            return cls._local_cli_cache
+
+        cls._local_cli_cache = max(
+            candidates,
+            key=lambda item: cls._version_key(str(item.get("version") or "0")),
+        )
+        return cls._local_cli_cache
+
+    @classmethod
+    def _resolve_npm_package(cls) -> dict[str, Any]:
         """Verify the `hyperframes` npm package actually resolves.
 
-        `_runtime_check` previously only verified that node/ffmpeg/npx existed
-        on PATH, which meant `runtime_available: True` on any machine with
-        Node + FFmpeg — even offline, even if npm was down, even if the
-        package was unpublished. This method performs a cheap
-        `npm view hyperframes version` (5s timeout) and caches the answer
-        for the rest of the process.
+        A directly runnable local or npx-cached CLI is authoritative. When no
+        local CLI exists, this performs a cheap `npm view hyperframes version`
+        (5s timeout) to verify that npx can fetch the package.
 
         Returns {"version": "X.Y.Z"} on success, {"error": "<short>"} on any
         failure (404, timeout, network error, npm missing). Never raises.
         """
         if cls._npm_resolve_cache is not None:
+            return cls._npm_resolve_cache
+
+        local_cli = cls._resolve_local_cli()
+        if local_cli:
+            cls._npm_resolve_cache = dict(local_cli)
             return cls._npm_resolve_cache
 
         npm = shutil.which("npm")
@@ -440,6 +538,8 @@ class HyperFramesCompose(BaseTool):
             "npm_package": self._NPM_PACKAGE,
             "npm_package_version": npm_resolve.get("version"),
             "npm_resolve_error": npm_resolve.get("error"),
+            "cli_source": npm_resolve.get("source") or "npm-registry",
+            "local_cli_available": bool(npm_resolve.get("command")),
             "reasons": reasons,
         }
 
@@ -1229,7 +1329,12 @@ class HyperFramesCompose(BaseTool):
         want to raise CalledProcessError on non-zero exits — the caller
         parses lint/validate/render exit codes itself.
         """
-        cmd = ["npx", "--yes", "hyperframes", *args]
+        local_cli = self._resolve_local_cli()
+        cmd = (
+            [*local_cli["command"], *args]
+            if local_cli
+            else ["npx", "--yes", "hyperframes", *args]
+        )
         # On Windows, resolve the .cmd wrapper so subprocess can find it
         # without shell=True.
         if os.name == "nt":

@@ -54,9 +54,13 @@ When the user asks to make, create, produce, or generate any video content — a
 
 1. **Identify the pipeline.** Match the request to one of the pipelines in `pipeline_defs/`. If unclear, ask the user.
 2. **Read the pipeline manifest.** `pipeline_defs/<pipeline>.yaml` — know the stages, tools, and quality gates.
-3. **Run preflight.** Discover available tools via the registry. Present the capability menu.
-4. **Execute stage by stage.** For EACH stage, read the director skill named by the manifest BEFORE doing any work in that stage. Pipeline-specific directors live under `skills/pipelines/<pipeline>/`; shared stages such as post-render `cover` live under `skills/pipelines/shared/`.
-5. **Read Layer 3 skills before calling tools.** Before using any tool with an `agent_skills` field, read the referenced skill in `.agents/skills/`. These contain provider-specific prompting guidance, parameter optimization, and quality techniques that dramatically improve output.
+3. **Recommend by content fit.** Derive and communicate the tool path that best
+   serves the brief without using availability to bias the choice.
+4. **Run preflight.** Discover whether the preferred path and alternatives are
+   executable. If the preferred path is blocked, surface it and wait for the
+   user's enable/alternative/downgrade decision; do not substitute silently.
+5. **Execute stage by stage.** For EACH stage, read the director skill named by the manifest BEFORE doing any work in that stage. Pipeline-specific directors live under `skills/pipelines/<pipeline>/`; shared stages such as post-render `cover` live under `skills/pipelines/shared/`.
+6. **Read Layer 3 skills before calling tools.** Before using any tool with an `agent_skills` field, read the referenced skill in `.agents/skills/`. These contain provider-specific prompting guidance, parameter optimization, and quality techniques that dramatically improve output.
 
 **Do NOT:**
 - Write ad-hoc Python scripts to call tools directly
@@ -82,14 +86,42 @@ Agent reads pipeline manifest (YAML) -> reads stage director skill (MD)
 Core loop:
 
 1. Select a pipeline.
-2. Run preflight.
-3. Discover real tools from the registry.
-4. Present the user with concepts, tool plan, production plan, and cost.
-5. Execute stage by stage with checkpoints.
+2. Derive the best creative treatment and tool path from the content, without
+   using current availability to bias the recommendation.
+3. Tell the user which path best serves the content and why.
+4. Run preflight and discover whether that preferred path is executable now.
+5. If it is blocked, present the blocker and alternatives for the user to
+   decide; never silently replace the preferred path.
+6. Present concepts, the approved tool plan, production plan, and cost.
+7. Execute stage by stage with checkpoints.
 
 ## Decision Communication Contract
 
 For any meaningful production decision, the agent must communicate the decision before acting. The user should never have to infer which provider, model, or render path was chosen after the fact.
+
+### Content-Fit First, Capability Second (HARD RULE)
+
+Tool selection is a creative-quality decision before it is an availability
+decision. Follow this order for runtimes, generation providers, animation
+libraries, voice, music, capture, and post-production tools:
+
+1. Read the brief and determine the tool or tool chain that would produce the
+   best content result. Do this without consulting availability flags.
+2. Tell the user the content-fit recommendation and the reasons tied to the
+   desired visual, motion, audio, accuracy, and delivery promise.
+3. Only then run capability/preflight checks for the preferred path and the
+   meaningful alternatives.
+4. If the preferred path is available, present its verified status, cost, and
+   tradeoffs and ask for approval where the pipeline gates.
+5. If the preferred path is unavailable, keep it as the recommendation. Report
+   the exact blocker, what would enable it, and the quality consequences of each
+   alternative. The user decides whether to enable/wait/retry, choose an
+   alternative, or accept a downgrade.
+
+An unavailable tool must never disappear from the shortlist merely because it
+failed preflight. Availability may block execution; it may not rewrite the
+creative recommendation. Do not silently optimize for whatever happens to be
+installed, cheapest, fastest, or easiest to call.
 
 ### Announce Before Execution
 
@@ -122,7 +154,12 @@ Editing only a downstream artifact (the `asset_manifest`, a prop) while leaving 
 
 ### Present Both Composition Runtimes (HARD RULE)
 
-When both Remotion and HyperFrames are available on the machine (check `video_compose.get_info()["render_engines"]`), the agent **MUST present both options to the user** before locking `render_runtime` at the proposal stage. The agent MAY recommend one with rationale — but silently picking a "default" is forbidden even when the pipeline manifest or a director skill suggests one.
+Evaluate Remotion and HyperFrames against the brief before checking whether
+either is installed. Present both options to the user before locking
+`render_runtime`, name the content-fit recommendation first, and then report
+the verified availability from `video_compose.get_info()["render_engines"]`.
+Silently picking a "default" is forbidden even when the pipeline manifest or a
+director skill suggests one.
 
 The presentation MUST include, for each runtime:
 
@@ -132,7 +169,12 @@ The presentation MUST include, for each runtime:
 
 Then wait for explicit user approval before advancing. Record the full shortlist — BOTH runtimes plus any "ffmpeg" option that applies — as `options_considered` in the `render_runtime_selection` decision logged in `decision_log`. A decision log entry with only one runtime considered when both were available is a CRITICAL reviewer finding.
 
-Exception: if only one runtime is available on the machine, the agent proceeds with it but MUST say so explicitly ("HyperFrames isn't installed on this machine; I'm proceeding with Remotion. Install HyperFrames if you want the alternative."). The `render_runtime_selection` decision still records the unavailable option as `rejected_because: "runtime not available on this machine"`.
+If the content-fit recommendation is unavailable, do not proceed with the
+available runtime automatically. State the blocker and ask whether the user
+wants to enable the recommended runtime or explicitly choose the available
+alternative. The `render_runtime_selection` decision records both the creative
+recommendation and the availability result; only a user-approved alternative
+may replace the preferred runtime.
 
 This rule applies to every pipeline that invokes `video_compose` — not just Wave 1. A pipeline's director skill may recommend a runtime, but that recommendation is input to the conversation with the user, not a decision.
 
@@ -263,7 +305,13 @@ If the folder has tracks, the proposal and asset stages should present them as o
 
 ## Mandatory Preflight
 
-Do this before any creative work. **Use `provider_menu_summary()` first — it's the human-ready rollup.** The raw `support_envelope()` dump is a firehose (megabytes of JSON on a well-configured machine); pasting it into chat will bury the user.
+Run this after writing and communicating the provisional content-fit tool
+recommendation, but before promising execution or spending money. Preflight
+verifies whether the preferred creative path can run; it must not determine
+which creative path is preferred. **Use `provider_menu_summary()` first — it's
+the human-ready rollup.** The raw `support_envelope()` dump is a firehose
+(megabytes of JSON on a well-configured machine); pasting it into chat will
+bury the user.
 
 ```bash
 python -c "
@@ -293,11 +341,14 @@ python -c "from tools.tool_registry import registry; import json; registry.disco
 
 Then:
 
-1. Read the selected manifest in `pipeline_defs/`.
-2. Check every `required_tools` entry against the registry.
-3. Check `fallback_tools` for unavailable tools.
-4. Report one of: `passed`, `degraded`, or `blocked`.
-5. Do not start production until the user understands the real capability envelope.
+1. Preserve the already stated content-fit recommendation.
+2. Read the selected manifest in `pipeline_defs/`.
+3. Check every preferred and required tool against the registry.
+4. Check alternatives for comparison, not for automatic substitution.
+5. Report one of: `passed`, `degraded`, or `blocked`.
+6. If blocked or degraded, explain enablement and quality tradeoffs and wait for
+   the user's decision before changing the tool path.
+7. Do not start production until the user understands the real capability envelope.
 
 ### Provider Menu (Mandatory at Preflight)
 
@@ -546,12 +597,15 @@ Before committing to execution, present:
 
 1. `4-5` concept directions when the brief is still open.
 2. Recommended pipeline.
-3. Recommended tool path.
-4. Alternative tool paths that are actually available.
-5. Cost estimate and quality tradeoffs.
-6. **Music plan** — mandatory for every pipeline that has audio. See below.
-7. Production plan by stage.
-8. Approval gate before asset generation.
+3. Content-fit tool path and why it best serves the concept, before availability
+   is allowed to influence the choice.
+4. Verified capability status for that path.
+5. Alternative tool paths, including unavailable high-fit options and the
+   enablement or quality tradeoff for each.
+6. Cost estimate and quality tradeoffs.
+7. **Music plan** — mandatory for every pipeline that has audio. See below.
+8. Production plan by stage.
+9. Approval gate before asset generation.
 
 If a user prefers a specific vendor and that tool is available, surface it directly. Do not hide provider choice.
 

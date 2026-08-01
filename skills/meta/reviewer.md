@@ -256,6 +256,12 @@ Run at **scene_plan** and **edit** stages. Prevents the "every video looks the s
    - A `render_runtime_selection` with only one runtime in `options_considered` when both were available on the machine → **CRITICAL**. The agent silently defaulted; the user was not presented the alternative. Re-open the proposal stage and present both.
    - If only one runtime was available, `options_considered` must still list the unavailable one with `rejected_because: "runtime not available on this machine"` — otherwise the audit trail loses the fact that the choice was constrained, not discretionary.
    - Per AGENT_GUIDE.md > "Present Both Composition Runtimes (HARD RULE)": the pipeline's suggested "default" runtime is NOT a license to skip the conversation with the user.
+   - The recommendation must be justified by content fit before availability is
+     cited. If the selected runtime is merely the only available one and the
+     higher-fit runtime was discarded without a user decision: **CRITICAL** —
+     "Availability silently replaced the content-fit recommendation. Restore
+     the preferred runtime, surface its blocker, and obtain the user's explicit
+     enable/alternative/downgrade decision."
 
 ## Delivery Promise Review
 
