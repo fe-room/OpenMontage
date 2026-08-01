@@ -41,6 +41,7 @@ EP_STATE:
     assets: null
     edit: null
     compose: null
+    cover: null
     publish: null
 
   revision_counts: {}
@@ -49,7 +50,7 @@ EP_STATE:
 
 ## Execution Protocol
 
-Same as standard EP: Initialize → Execute stages serially (research → proposal → script → scene_plan → assets → edit → compose → publish) → Final QA.
+Same as standard EP: Initialize → Execute stages serially (research → proposal → script → scene_plan → assets → edit → compose → cover → publish) → Final QA.
 
 Each stage: PREPARE → SPAWN DIRECTOR → REVIEW → GATE DECISION (pass / revise / send-back).
 
@@ -168,7 +169,8 @@ CHECK: Output validation
 | G4 | assets | Music alignment, source quality, budget | Revise |
 | G5 | edit | Emotional pacing, timeline | Revise |
 | G6 | compose | Output probe, color grade, audio dynamics | Revise or send-back |
-| G7 | publish | Metadata, poster frame | Revise |
+| G7 | cover | Poster truth, grade match, exact text | Revise |
+| G8 | publish | Metadata, approved poster packaging | Revise |
 | FINAL | all | Mood coherence, audio, visual polish | Send-back |
 
 ## Execution Limits

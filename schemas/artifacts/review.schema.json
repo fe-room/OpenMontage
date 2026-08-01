@@ -7,7 +7,7 @@
   "required": ["version", "stage", "findings"],
   "properties": {
     "version": { "type": "string", "const": "1.0" },
-    "stage": { "type": "string", "enum": ["idea", "script", "scene_plan", "assets", "edit", "compose", "publish"] },
+    "stage": { "type": "string", "enum": ["idea", "script", "scene_plan", "assets", "edit", "compose", "cover", "publish"] },
     "round": { "type": "integer", "minimum": 1, "maximum": 2 },
     "findings": {
       "type": "array",

@@ -38,6 +38,7 @@ def test_character_animation_manifest_contract():
         "assets",
         "edit",
         "compose",
+        "cover",
         "publish",
     ]
     assert {
@@ -57,6 +58,7 @@ def test_character_artifacts_are_registered():
         "pose_library",
         "action_timeline",
         "character_qa_report",
+        "cover_package",
     }.issubset(set(ARTIFACT_NAMES))
 
 

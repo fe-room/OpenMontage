@@ -138,6 +138,7 @@ Structure your review as:
 | scene_plan | Full coverage, visual variety, asset feasibility, slideshow risk score |
 | assets | File existence, style consistency, budget adherence |
 | edit | Timeline coverage, audio sync, subtitle presence, delivery promise compliance |
+| cover | Final-video truth, platform ratio, exact text, mobile readability, file/provenance completeness |
 | compose | Playability, duration accuracy, audio quality, pre-compose validation pass |
 | publish | SEO quality, metadata completeness, export packaging |
 
@@ -294,7 +295,7 @@ Run at **research** and **proposal** stages when user-supplied media files exist
 
 ## Final Self-Review Review
 
-Run at **compose** and **publish** stages. Ensures the agent reviewed the actual rendered output.
+Run at **compose**, **cover**, and **publish** stages. Ensures the agent reviewed the actual rendered output and the approved cover is derived from it honestly.
 
 ### At compose stage:
 1. **Existence**: Does a `final_review` artifact exist alongside the `render_report`?
@@ -316,6 +317,12 @@ Run at **compose** and **publish** stages. Ensures the agent reviewed the actual
 1. Verify that `final_review` was passed through as a required artifact
 2. If `final_review.status` is not `pass`: **CRITICAL** — "Cannot publish with a non-passing self-review"
 3. If `final_review.issues_found` is non-empty and `recommended_action` is not `present_to_user`: **SUGGESTION** — "Self-review found issues; verify they were resolved before publishing"
+
+### At cover stage:
+1. Verify `cover_package.primary_cover.path` exists and has the declared dimensions
+2. Verify the cover matches the actual rendered video's topic and approved visual direction
+3. If text is present, require legibility at mobile thumbnail size and no malformed glyphs
+4. If `cover_package.verification` contains failures or unresolved issues: **CRITICAL** — do not approve or publish the cover
 
 ## Composition Authoring Mode Review
 

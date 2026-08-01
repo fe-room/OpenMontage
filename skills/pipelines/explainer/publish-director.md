@@ -171,3 +171,10 @@ This stage gates on human approval (`human_approval_default: true`). After revie
 checkpoint with `status="awaiting_human"`, present the summary (the Backlot board renders
 the artifact), and **END YOUR TURN**. Do not start the next stage in the same response.
 Approval is per-gate — an earlier "go ahead" does not cover this gate.
+
+## Cover Handoff (Binding)
+
+`cover_package` is a required input from the post-render `cover` stage. Package
+`cover_package.primary_cover.path` as `thumbnail_path` in `export_bundle`.
+Do not generate a new thumbnail concept when an approved cover exists; a
+concept-only export is a contract failure for new runs.

@@ -25,7 +25,7 @@ SCAN_EXCLUDE = {"node_modules", ".git", "__pycache__", "history", ".cache"}
 # Stages every pipeline shares (fallback rail when the manifest is unknown).
 FALLBACK_STAGES = [
     "research", "proposal", "idea", "script", "scene_plan",
-    "assets", "edit", "compose", "publish",
+    "assets", "edit", "compose", "cover", "publish",
 ]
 
 # How long (seconds) without filesystem activity before a board reads "idle".
@@ -236,6 +236,7 @@ ARTIFACT_FILES = {
     "edit_decisions": "edit_decisions.json",
     "render_report": "render_report.json",
     "final_review": "final_review.json",
+    "cover_package": "cover_package.json",
     "publish_log": "publish_log.json",
     "decision_log": "decision_log.json",
 }

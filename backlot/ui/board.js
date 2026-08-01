@@ -166,6 +166,7 @@ const STAGE_ARTIFACTS = {
   assets: ["asset_manifest"],
   edit: ["edit_decisions"],
   compose: ["render_report", "final_review"],
+  cover: ["cover_package"],
   publish: ["publish_log"],
 };
 
@@ -351,7 +352,7 @@ function genericArtifactSummary(artifact) {
   return [reviewFacts(facts), ...items].filter(Boolean);
 }
 
-function artifactReviewContent(name, artifact) {
+function artifactReviewContent(name, artifact, s) {
   if (name === "brief") {
     return [
       artifact.hook ? el("p", { class: "approval-lead" }, artifact.hook) : null,
@@ -447,6 +448,30 @@ function artifactReviewContent(name, artifact) {
       titledItems(artifact.outputs),
     ].filter(Boolean);
   }
+  if (name === "cover_package") {
+    const primary = artifact.primary_cover || {};
+    const verification = artifact.verification || {};
+    return [
+      primary.path ? el("img", {
+        src: thumbURL(s.project_id, primary.path, 640),
+        alt: "Generated video cover",
+        loading: "lazy",
+        style: "display:block;max-width:360px;width:100%;max-height:480px;object-fit:contain;border-radius:8px;margin:10px 0 14px;background:#0b0d10",
+      }) : null,
+      reviewFacts([
+        reviewFact("status", artifact.status),
+        reviewFact("ratio", primary.aspect_ratio),
+        reviewFact("dimensions", primary.width && primary.height ? `${primary.width}×${primary.height}` : null),
+        reviewFact("tool", primary.source_tool),
+        reviewFact("text checked", verification.text_checked),
+        reviewFact("mobile readable", verification.mobile_readability_checked),
+      ]),
+      artifact.creative_rationale
+        ? el("p", { class: "approval-rationale" },
+          el("b", {}, "COVER RATIONALE  "), shortText(artifact.creative_rationale, 240))
+        : null,
+    ].filter(Boolean);
+  }
   if (name === "publish_log") {
     return [
       reviewFacts([reviewFact("destinations", Array.isArray(artifact.entries) ? artifact.entries.length : null)]),
@@ -470,6 +495,7 @@ function artifactReviewTitle(name, artifact, s) {
   if (name === "asset_manifest") return "Generated assets";
   if (name === "edit_decisions") return "Edit decisions";
   if (name === "render_report") return "Render report";
+  if (name === "cover_package") return "Video cover";
   if (name === "publish_log") return "Publish plan";
   return artifact.title || artifact.name || s.title;
 }
@@ -494,7 +520,7 @@ function renderApprovalReview(s) {
   },
     el("div", { class: "approval-artifact-kicker" }, humanize(name)),
     el("h2", {}, artifactReviewTitle(name, artifact, s)),
-    ...artifactReviewContent(name, artifact),
+    ...artifactReviewContent(name, artifact, s),
   ));
 
   if (!artifacts.length) {

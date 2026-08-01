@@ -53,6 +53,15 @@
         "resolution_matches_source": true
       }
     },
+    "cover_package": {
+      "version": "1.0",
+      "required_fields": ["source_video_path", "primary_cover", "verification"],
+      "assertions": {
+        "primary_cover_exists": true,
+        "dimensions_verified": true,
+        "text_checked": true
+      }
+    },
     "publish_log": {
       "version": "1.0",
       "required_fields": ["entries"],

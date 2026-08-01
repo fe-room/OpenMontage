@@ -371,7 +371,7 @@ After sample approval, the agent MUST enter the pipeline. This is not optional.
 1. Read the pipeline manifest: `pipeline_defs/animation.yaml` (or whichever
    pipeline matches the production type)
 2. Execute **stage by stage** in order — research → proposal → script →
-   scene_plan → assets → edit → compose → publish
+   scene_plan → assets → edit → compose → cover → publish
 3. Before EACH stage, read its director skill from
    `skills/pipelines/<pipeline>/<stage>-director.md`
 4. Produce the required artifacts at each stage

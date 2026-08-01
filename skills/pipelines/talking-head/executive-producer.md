@@ -58,7 +58,7 @@ EP_STATE:
   budget_spent_usd: 0.0
   budget_remaining_usd: <budget_total>
 
-  # Accumulated from each stage (7 stages)
+  # Accumulated from each stage (8 stages)
   artifacts:
     idea: null          # → brief
     script: null        # → script (transcript-based)
@@ -66,6 +66,7 @@ EP_STATE:
     assets: null        # → asset_manifest
     edit: null          # → edit_decisions
     compose: null       # → render_report
+    cover: null         # → cover_package
     publish: null       # → publish_log
 
   # Transcript tracking (the core of talking-head quality)
@@ -102,7 +103,7 @@ EP_STATE:
 
 ### Phase 1: Execute Stages Serially
 
-For each stage in order: `idea → script → scene_plan → assets → edit → compose → publish`
+For each stage in order: `idea → script → scene_plan → assets → edit → compose → cover → publish`
 
 ```
 EXECUTE_STAGE(stage_name):
@@ -151,7 +152,7 @@ EXECUTE_STAGE(stage_name):
 
 ### Phase 2: Final Quality Assurance
 
-After all 7 stages complete, the EP performs a holistic review:
+After all 8 stages complete, the EP performs a holistic review:
 
 ```
 FINAL_QA:
@@ -182,7 +183,7 @@ FINAL_QA:
      - Log per-stage cost breakdown
 
   6. DECISION:
-     If all checks pass → APPROVE for publish stage
+     If all checks pass → proceed to cover, then publish after cover approval
      If issues found → Send back to the specific stage(s) that can fix them
        - Subtitle timing → asset director (regenerate subtitles)
        - Audio issues → compose director (remix)
@@ -345,7 +346,8 @@ Enhancement adjustments: {skip/add face_enhance, color_grade, etc.}
 | G4 | assets | Subtitle sync, audio extraction, budget | Revise assets OR send-back to script |
 | G5 | edit | Timeline completeness, trim validation, subtitle config | Revise edit |
 | G6 | compose | Output probe, duration, audio, subtitle burn-in | Revise compose OR send-back to edit/assets |
-| G7 | publish | Metadata, packaging | Revise publish |
+| G7 | cover | Speaker fidelity, exact text, mobile readability | Revise cover |
+| G8 | publish | Metadata, packaging, approved cover included | Revise publish |
 | FINAL | all | Subtitle sync, audio quality, visual quality | Send-back to specific stage |
 
 ## Execution Limits (Anti-Loop Protection)
@@ -424,9 +426,13 @@ The EP doesn't replace any director skill — it wraps them. Each director skill
 [EP] Budget: $0.18 spent (face_enhance + color_grade + overlays).
 [EP] G6 PASS
 
-[EP] === STAGE 7: publish ===
-[EP] Spawning publish-director with render_report...
-[EP] G7 PASS — Title, description, chapters, thumbnail configured.
+[EP] === STAGE 7: cover ===
+[EP] Spawning shared cover-director with render_report...
+[EP] G7 PASS — Cover generated, verified, and approved.
+
+[EP] === STAGE 8: publish ===
+[EP] Spawning publish-director with render_report + cover_package...
+[EP] G8 PASS — Title, description, chapters, and approved cover packaged.
 
 [EP] === FINAL QA ===
 [EP] Duration: 3m01s ✓ | Subtitle sync: max drift 0.18s ✓ | Audio: -16.2 LUFS ✓

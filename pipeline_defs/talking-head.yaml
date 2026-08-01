@@ -210,11 +210,31 @@ stages:
       - Schema-valid render_report artifact
       - Output video file exists and is playable
 
+  - name: cover
+    skill: pipelines/shared/cover-director
+    required_artifacts_in: [render_report]
+    optional_artifacts_in: [final_review, script, brief, scene_plan, asset_manifest]
+    produces: [cover_package]
+    optional_tools: [image_selector, visual_qa]
+    tools_available: [image_selector, visual_qa]
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - Cover matches the promise and actual content of the final render
+      - Headline text is exact and readable at mobile thumbnail size
+      - Dimensions and aspect ratio match the resolved platform cover spec
+      - Primary cover file exists inside the project workspace
+      - Speaker identity, expression, and framing remain faithful
+    success_criteria:
+      - Schema-valid cover_package artifact
+      - Primary cover exists and passes dimension, text, and content-match verification
+
   - name: publish
     skill: pipelines/talking-head/publish-director
     required_artifacts_in:
       - render_report
       - final_review
+      - cover_package
     produces:
       - publish_log
     tools_available: []

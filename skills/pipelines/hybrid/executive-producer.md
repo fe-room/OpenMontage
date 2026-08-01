@@ -37,6 +37,7 @@ EP_STATE:
     assets: null
     edit: null
     compose: null
+    cover: null
     publish: null
 
   revision_counts: {}
@@ -108,7 +109,8 @@ CHECK: Output validation
 | G4 | assets | Quality match, reuse, budget | Revise |
 | G5 | edit | Anchor-cut coherence, support clarity | Revise |
 | G6 | compose | Balance, variants, audio coherence | Revise or send-back |
-| G7 | publish | Metadata, source-mix labeling | Revise |
+| G7 | cover | Source truth, exact text, mobile readability | Revise |
+| G8 | publish | Metadata, source-mix labeling, approved cover | Revise |
 | FINAL | all | Source/support balance, readability | Send-back |
 
 ## Execution Limits

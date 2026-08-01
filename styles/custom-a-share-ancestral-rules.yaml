@@ -1,0 +1,117 @@
+identity:
+  name: "A股祖训：行情终端与宣纸红印"
+  category: custom
+  mood: "行情日的兴奋、老股民式冷幽默、最后回到可信的风险教育"
+  pace: fast
+  best_for: "A股热点复盘、财经热梗与投资者教育的竖屏短视频"
+
+visual_language:
+  color_palette:
+    primary: ["#0D1117", "#EFE3CE"]
+    accent: ["#E33B36", "#D9A441"]
+    background: "#0D1117"
+    text: "#F6F0E4"
+    muted: "#8F98A3"
+  composition: "9:16 edge-to-edge editorial motion; alternate terminal grids, paper close-ups, split evidence frames, and vertical price paths; never repeat one dashboard shell"
+  texture: "razor-sharp market terminal surfaces contrasted with subtle paper fibers and imperfect cinnabar stamp edges"
+
+typography:
+  headings:
+    font: "PingFang SC"
+    weight: 800
+    tracking: "-0.03em"
+  body:
+    font: "PingFang SC"
+    weight: 500
+    line_height: 1.45
+  stat_card:
+    font: "Arial Narrow"
+    weight: 800
+    size_multiplier: 4.4
+  code:
+    font: "Menlo"
+    weight: 500
+  scale_system: perfect_fourth
+  weight_matrix:
+    title: 800
+    heading: 700
+    body: 500
+    caption: 400
+
+motion:
+  transitions: [hard-cut, price-trace, paper-fold, ink-wipe]
+  animation_style: "deterministic Remotion springs; fast anticipation and abrupt braking for expectation beats, measured linear tracing for calculations, restrained paper easing for ancestral-rule beats"
+  pacing_rules:
+    min_scene_hold_seconds: 2.5
+    max_scene_hold_seconds: 10
+    text_card_hold_seconds: 3
+    stat_card_hold_seconds: 4
+    transition_duration_seconds: 0.35
+  entrance: "directional reveal tied to the subject: price traces draw, paper unfolds, evidence locks into a grid"
+  exit: "hard brake, ink absorption, or element-specific continuation into the next scene"
+
+audio:
+  voice_style: "restrained young Mandarin financial editor; crisp numbers, slight dry humor, no sales-host energy"
+  music_mood: "none — user explicitly requested no background music"
+  music_volume: 0
+  sfx_style: "sparse non-musical cues only: market tick, paper turn, stamp impact, number click, bottle-stopper friction"
+  ducking_threshold_db: -6
+  voice_variation_allowed: false
+  hero_moment_voice_shift: "slow down and lower energy before the line about running from impulse"
+  transition_voice_shift: "brief pause before each evidence reversal"
+
+asset_generation:
+  image_prompt_prefix: "vertical 9:16 editorial illustration for a Chinese financial explainer, ink-black and warm rice-paper palette with restrained cinnabar red, precise negative space, no embedded text, "
+  image_negative_prompt: "purple gradient, generic corporate blue, trading recommendation, real broker logo, illegible Chinese text, casino imagery, piles of cash, photorealistic celebrity, watermark"
+  diagram_style: "hand-authored vector evidence graphics: dark terminal grid, off-white paper fields, cinnabar highlights; time labels always explicit"
+  consistency_anchors:
+    - "Ink black #0D1117 and rice-paper #EFE3CE form the two visual worlds"
+    - "Cinnabar #E33B36 is reserved for market movement, warnings, and the single ancestral-rule stamp"
+    - "All market data is redrawn and labeled by time basis: US Thursday close, A-share midday, or A-share close"
+    - "The full K-line-to-stamp transformation appears once; a static stamp may echo once at the ending"
+    - "Exact Chinese text is rendered by Remotion, never inside generated images"
+
+overlays:
+  stat_card:
+    bg: "#141A21"
+    border: "#2A313A"
+    text: "#F6F0E4"
+    radius: 14
+    shadow: "0 16px 48px rgba(0,0,0,0.28)"
+  key_term:
+    bg: "#EFE3CE"
+    border: "#E33B36"
+    text: "#2F211A"
+    radius: 6
+
+quality_rules:
+  - "Minimum contrast ratio 4.5:1 for all critical text"
+  - "All figures state their time basis; never mix midday and closing data"
+  - "No more than four colors on screen and no decorative gradients"
+  - "Every scene has a unique primary subject; no hero-component spine"
+  - "The signature K-line-to-stamp device appears in no more than two beats"
+  - "Accessibility captions may echo narration, but large on-screen editorial text must not duplicate the active caption line"
+  - "No background music track may exist in the final mix"
+  - "Final frame includes the full non-investment-advice disclaimer"
+
+taste_profile:
+  design_read: "A youth-facing market explainer that begins inside overnight tech euphoria, then brakes into evidence. It must feel shareable without looking like a stock-tip account."
+  visual_variance: 7
+  motion_intensity: 7
+  information_density: 6
+  palette_discipline: "Ink black and rice paper dominate; cinnabar red is scarce and semantic."
+  layout_variation: "Alternate global signal map, index punch, paper close-up, three-force diagram, evidence table, and vertical cost path."
+  reference_strategy: "Render one representative still for every scene family before the assets gate; use news pages only as data evidence, never as visual templates."
+  anti_patterns: ["generic AI-purple gradient", "one dashboard shell reused throughout", "trading-as-casino imagery", "verbatim headline plus duplicate captions"]
+  quality_gates: ["time basis visible", "scene primary subjects distinct", "no BGM", "non-investment-advice disclaimer present"]
+
+chart_palette: ["#E33B36", "#D9A441", "#F6F0E4", "#8F98A3"]
+
+color_rules:
+  harmony_type: analogous
+  contrast_validation: true
+  colorblind_safe: true
+
+overrides:
+  max_deviation_ratio: 0.15
+  scene_overrides: []

@@ -23,6 +23,7 @@ ARTIFACT_NAMES = [
     "asset_manifest",
     "edit_decisions",
     "render_report",
+    "cover_package",
     "publish_log",
     "review",
     "cost_log",

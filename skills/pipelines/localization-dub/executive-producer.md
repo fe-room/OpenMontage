@@ -38,6 +38,7 @@ EP_STATE:
     assets: null
     edit: null
     compose: null
+    cover: null
     publish: null
 
   revision_counts: {}
@@ -111,7 +112,8 @@ CHECK: Per-locale validation
 | G4 | assets | Locale completeness, TTS quality, budget | Revise |
 | G5 | edit | Timing preservation, structure | Revise |
 | G6 | compose | Per-locale probe, subtitle timing | Revise or send-back |
-| G7 | publish | Locale packaging, metadata | Revise |
+| G7 | cover | Localized text accuracy and cross-locale consistency | Revise |
+| G8 | publish | Locale packaging, metadata, approved covers | Revise |
 | FINAL | all | Translation quality, timing, lip-sync | Send-back |
 
 ## Execution Limits

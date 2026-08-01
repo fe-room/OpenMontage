@@ -47,7 +47,7 @@ EP_STATE:
   has_keyboard_noise: false     # flagged during script/asset stage
   zoom_regions: []              # crop regions from scene plan, for cross-checking
 
-  # Accumulated from each stage (7 stages)
+  # Accumulated from each stage (8 stages)
   artifacts:
     idea: null          # → brief
     script: null        # → script
@@ -55,6 +55,7 @@ EP_STATE:
     assets: null        # → asset_manifest
     edit: null          # → edit_decisions
     compose: null       # → render_report
+    cover: null         # → cover_package
     publish: null       # → publish_log
 
   # Cross-stage tracking
@@ -75,7 +76,7 @@ EP_STATE:
 
 ### Phase 1: Execute Stages Serially
 
-For each stage in order: `idea → script → scene_plan → assets → edit → compose → publish`
+For each stage in order: `idea → script → scene_plan → assets → edit → compose → cover → publish`
 
 ```
 EXECUTE_STAGE(stage_name):
@@ -130,7 +131,7 @@ FINAL_QA:
      - Log per-stage cost breakdown
 
   6. DECISION:
-     If all pass → APPROVE for publish
+     If all pass → proceed to cover, then publish after cover approval
      If legibility issues → send back to compose (re-render) or scene (replan crops)
      If audio issues → send back to compose (re-mix)
      If pacing issues → send back to edit (re-time)
@@ -255,7 +256,8 @@ Actual: {what was produced}
 | G4 | assets | Subtitle positioning, audio quality, budget | Revise assets |
 | G5 | edit | Timeline completeness, dead time handling | Revise edit |
 | G6 | compose | Output probe, screen sharpness, audio clarity | Revise compose OR send-back |
-| G7 | publish | Metadata, chapters, export packaging | Revise publish |
+| G7 | cover | Result-state truth, exact text, sensitive-data safety | Revise cover |
+| G8 | publish | Metadata, chapters, approved cover packaging | Revise publish |
 | FINAL | all | Legibility, pacing, subtitles, audio | Send-back to specific stage |
 
 ## Execution Limits

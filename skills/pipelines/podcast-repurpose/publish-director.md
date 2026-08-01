@@ -68,3 +68,8 @@ This stage gates on human approval (`human_approval_default: true`). After revie
 checkpoint with `status="awaiting_human"`, present the summary (the Backlot board renders
 the artifact), and **END YOUR TURN**. Do not start the next stage in the same response.
 Approval is per-gate — an earlier "go ahead" does not cover this gate.
+
+## Cover Handoff (Binding)
+
+Package the approved `cover_package.primary_cover.path` and any clip-specific
+variants. Do not replace real covers with speaker-card concepts during publish.

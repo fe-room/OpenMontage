@@ -176,3 +176,22 @@ stages:
       - render_report.end_tag_rendered = true (or explicit opt-out)
       - render_report.end_tag_mode = "overlay" or "concat"
       - render_report.music_mixed = true (or explicit opt-out)
+
+  - name: cover
+    skill: pipelines/shared/cover-director
+    required_artifacts_in: [render_report]
+    optional_artifacts_in: [final_review, brief, scene_plan, asset_manifest]
+    produces: [cover_package]
+    optional_tools: [image_selector, visual_qa]
+    tools_available: [image_selector, visual_qa]
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - Cover represents the documentary's actual hero subject and editorial promise
+      - Headline text is exact and readable at mobile thumbnail size
+      - Dimensions and aspect ratio match the resolved platform cover spec
+      - Primary cover file exists inside the project workspace
+      - Source imagery provenance and usage restrictions remain respected
+    success_criteria:
+      - Schema-valid cover_package artifact
+      - Primary cover exists and passes dimension, text, and content-match verification

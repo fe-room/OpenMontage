@@ -710,6 +710,7 @@ class TestAnimatedExplainerManifest:
             "assets",
             "edit",
             "compose",
+            "cover",
             "publish",
         ]
         assert stage_names == expected
@@ -720,7 +721,7 @@ class TestAnimatedExplainerManifest:
             assert "skill" in stage, f"Stage {stage['name']} missing skill"
             skill = get_stage_skill(manifest, stage["name"])
             assert skill is not None
-            assert skill.startswith("pipelines/explainer/")
+            assert skill.startswith("pipelines/explainer/") or skill == "pipelines/shared/cover-director"
 
     def test_every_stage_has_review_focus(self):
         manifest = load_pipeline("animated-explainer")

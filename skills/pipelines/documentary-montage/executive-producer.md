@@ -47,6 +47,7 @@ across all stages is to:
 | `assets` | `asset-director.md` | asset_manifest (corpus built + per-slot picks) |
 | `edit` | `edit-director.md` | edit_decisions (timeline + transitions + music) |
 | `compose` | `compose-director.md` | render_report (final mp4) |
+| `cover` | `../shared/cover-director.md` | cover_package (approved cover) |
 
 Each director skill has its own quality gate. Read the director skill
 before starting the stage.

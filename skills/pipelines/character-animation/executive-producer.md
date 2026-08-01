@@ -27,7 +27,8 @@ be built with the available rigs, assets, or runtime, surface a blocker.
 7. `assets` - produce or source character parts, backgrounds, props, audio.
 8. `edit` - compile timed action timeline.
 9. `compose` - render through the approved runtime and run QA.
-10. `publish` - package the final output.
+10. `cover` - generate and verify a character-faithful cover.
+11. `publish` - package the final output and approved cover.
 
 ## Governance Rules
 

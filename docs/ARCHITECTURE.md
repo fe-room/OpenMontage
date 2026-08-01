@@ -219,10 +219,10 @@ stages:
 
 ### Standard Stage Progression
 
-Most production pipelines follow a canonical 8-stage flow:
+Most production pipelines follow a canonical 9-stage flow:
 
 ```
-research → proposal → script → scene_plan → assets → edit → compose → publish
+research → proposal → script → scene_plan → assets → edit → compose → cover → publish
 ```
 
 Each stage:
@@ -231,6 +231,9 @@ Each stage:
 3. **Produces** one or more canonical artifacts
 4. Has **review_focus** criteria and **success_criteria**
 5. Can require **human approval** before proceeding
+
+The shared `cover` stage runs against the finished render, writes a real cover
+file plus `cover_package`, and is human-gated before `publish` packages it.
 
 Specialized pipelines may insert domain-specific stages. For example,
 `character-animation` adds `character_design` and `rig_plan` before

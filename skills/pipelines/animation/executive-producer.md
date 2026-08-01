@@ -60,7 +60,7 @@ EP_STATE:
     reused_template_count: 0
   math_accuracy_notes: []      # constraints from research on what NOT to oversimplify
 
-  # Accumulated from each stage (8 stages)
+  # Accumulated from each stage (9 stages)
   artifacts:
     research: null      # → research_brief
     proposal: null      # → proposal_packet (includes approval gate)
@@ -69,6 +69,7 @@ EP_STATE:
     assets: null        # → asset_manifest
     edit: null          # → edit_decisions
     compose: null       # → render_report
+    cover: null         # → cover_package
     publish: null       # → publish_log
 
   # Pre-production context (carried forward from research + proposal)
@@ -97,7 +98,7 @@ EP_STATE:
 
 ### Phase 1: Execute Stages Serially
 
-For each stage in order: `research → proposal → script → scene_plan → assets → edit → compose → publish`
+For each stage in order: `research → proposal → script → scene_plan → assets → edit → compose → cover → publish`
 
 **Pre-production stages (research, proposal)** run before any money is spent:
 - **research** gathers topic data AND animation technique references via web search — zero cost
@@ -193,7 +194,7 @@ FINAL_QA:
      - Log per-stage cost breakdown
 
   7. DECISION:
-     If all checks pass → APPROVE for publish stage
+     If all checks pass → proceed to cover, then publish after cover approval
      If issues found → Send back to the specific stage(s) that can fix them
        - Text/diagram issues → compose director (re-render) or asset director (regenerate)
        - Motion issues → edit director (re-time) or scene director (replan)
@@ -394,7 +395,8 @@ Actual: {what was produced}
 | G5 | assets | Narration duration, budget, style, asset integrity | Revise assets OR send-back to script |
 | G6 | edit | Timeline completeness, hold times, A/V pre-sync | Revise edit |
 | G7 | compose | Output probe, text sharpness, motion timing | Revise compose OR send-back |
-| G8 | publish | Metadata, packaging, animation-mode tags | Revise publish |
+| G8 | cover | Visual-system match, exact text, mobile readability | Revise cover |
+| G9 | publish | Metadata, packaging, animation-mode tags, approved cover | Revise publish |
 | FINAL | all | Holistic review: sharpness, motion, accuracy, style | Send-back to specific stage |
 
 ## Execution Limits (Anti-Loop Protection)

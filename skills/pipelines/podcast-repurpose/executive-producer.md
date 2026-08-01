@@ -37,6 +37,7 @@ EP_STATE:
     assets: null
     edit: null
     compose: null
+    cover: null
     publish: null
 
   revision_counts: {}
@@ -114,7 +115,8 @@ CHECK: Multi-deliverable validation
 | G4 | assets | Audio preservation, subtitles, budget | Revise |
 | G5 | edit | Clip hooks, deliverable consistency | Revise |
 | G6 | compose | Multi-deliverable probe, audio quality | Revise or send-back |
-| G7 | publish | Per-clip metadata, posting schedule | Revise |
+| G7 | cover | Speaker truth, hook clarity, batch consistency | Revise |
+| G8 | publish | Per-clip metadata, posting schedule, approved covers | Revise |
 | FINAL | all | Audio quality, clip selection, consistency | Send-back |
 
 ## Execution Limits

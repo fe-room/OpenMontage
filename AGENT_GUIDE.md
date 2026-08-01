@@ -55,7 +55,7 @@ When the user asks to make, create, produce, or generate any video content — a
 1. **Identify the pipeline.** Match the request to one of the pipelines in `pipeline_defs/`. If unclear, ask the user.
 2. **Read the pipeline manifest.** `pipeline_defs/<pipeline>.yaml` — know the stages, tools, and quality gates.
 3. **Run preflight.** Discover available tools via the registry. Present the capability menu.
-4. **Execute stage by stage.** For EACH stage, read the stage director skill (`skills/pipelines/<pipeline>/<stage>-director.md`) BEFORE doing any work in that stage.
+4. **Execute stage by stage.** For EACH stage, read the director skill named by the manifest BEFORE doing any work in that stage. Pipeline-specific directors live under `skills/pipelines/<pipeline>/`; shared stages such as post-render `cover` live under `skills/pipelines/shared/`.
 5. **Read Layer 3 skills before calling tools.** Before using any tool with an `agent_skills` field, read the referenced skill in `.agents/skills/`. These contain provider-specific prompting guidance, parameter optimization, and quality techniques that dramatically improve output.
 
 **Do NOT:**
@@ -182,7 +182,7 @@ This applies especially to:
 
 The agent itself orchestrates the production state machine:
 
-`research -> proposal -> script -> scene_plan -> assets -> edit -> compose`
+`research -> proposal -> script -> scene_plan -> assets -> edit -> compose -> cover -> publish`
 
 The agent:
 
@@ -209,6 +209,7 @@ projects/<project-name>/
 ├── artifacts/          # JSON artifacts from each stage (research_brief, script, scene_plan, etc.)
 ├── assets/
 │   ├── images/         # Generated images (PNG)
+│   │   └── cover.png   # Approved post-render video cover
 │   ├── video/          # Generated video clips (MP4)
 │   ├── audio/          # Narration segments + final mix (MP3/WAV)
 │   ├── music/          # Background music track (MP3)
@@ -590,6 +591,8 @@ Each stage produces one canonical artifact that becomes the contract for the nex
 | `assets` | `*-director.md` | `asset_manifest` | Provenance, paths, model/tool metadata, scene linkage |
 | `edit` | `*-director.md` | `edit_decisions` | Concrete cuts, overlays, subtitle/music decisions |
 | `compose` | `*-director.md` | `render_report` | Output paths, encoding profile, verification notes |
+| `cover` | `shared/cover-director.md` | `cover_package` | Real cover files, platform dimensions, generation provenance, visual/text verification |
+| `publish` | `*-director.md` | `publish_log` | Metadata, export packaging, and approved cover handoff |
 
 Stage contract rules:
 
@@ -614,7 +617,7 @@ The reviewer is a meta skill (`skills/meta/reviewer.md`) — advisory, never dir
 The checkpoint protocol meta skill (`skills/meta/checkpoint-protocol.md`) teaches the agent when to pause:
 
 - Read `human_approval_default` from the pipeline manifest per stage. **The manifest value is binding** — never re-judge it. `lib/checkpoint.py` enforces this: a gated stage cannot be written `completed` without `human_approved=True`.
-- Typical gated stages: `idea`/`proposal`, `script`, `scene_plan`, **`assets`** (review the generated assets scene-by-scene — the Backlot board's filmstrip — before compose locks them in), and `publish` where the pipeline has one. Most pipelines auto-proceed on `edit` and `compose`, but not all (documentary-montage gates `edit`) — the manifest you loaded is the only authority.
+- Typical gated stages: `idea`/`proposal`, `script`, `scene_plan`, **`assets`** (review the generated assets scene-by-scene — the Backlot board's filmstrip — before compose locks them in), **`cover`** (review the real generated cover after the final render), and `publish` where the pipeline has one. Most pipelines auto-proceed on `edit` and `compose`, but not all (documentary-montage gates `edit`) — the manifest you loaded is the only authority.
 - When approval is required: write the checkpoint as `awaiting_human`, present artifact summary, review findings, and cost snapshot — then **END YOUR TURN**. Doing further pipeline work in the same response is a gate violation.
 - **Approval is per-gate.** An early "go ahead" never covers later gates; explicit full-run pre-authorization must be recorded as a `decision_log` entry (`category: "approval_policy"`) to count.
 - Wait for human to approve, request revision, or abort.

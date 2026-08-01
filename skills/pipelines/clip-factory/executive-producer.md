@@ -37,6 +37,7 @@ EP_STATE:
     assets: null
     edit: null
     compose: null
+    cover: null
     publish: null
 
   revision_counts: {}
@@ -114,7 +115,8 @@ CHECK: Batch render validation
 | G4 | assets | Batch consistency, audio normalization | Revise |
 | G5 | edit | Hook placement, completeness | Revise |
 | G6 | compose | Batch render probe, platform specs | Revise or send-back |
-| G7 | publish | Per-clip metadata, posting order | Revise |
+| G7 | cover | Batch cover consistency and per-clip distinction | Revise |
+| G8 | publish | Per-clip metadata, posting order, approved covers | Revise |
 | FINAL | all | Clip quality, consistency, hooks | Send-back |
 
 ## Execution Limits

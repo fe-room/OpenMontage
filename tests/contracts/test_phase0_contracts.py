@@ -193,6 +193,32 @@ def sample_artifact(name: str) -> dict:
                 }
             ],
         }
+    if name == "cover_package":
+        return {
+            "version": "1.0",
+            "status": "ready",
+            "source_video_path": "renders/output.mp4",
+            "primary_cover": {
+                "id": "cover-primary",
+                "path": "assets/images/cover.png",
+                "format": "png",
+                "width": 1080,
+                "height": 1440,
+                "aspect_ratio": "3:4",
+                "role": "primary",
+                "text_overlay": ["Test cover"],
+                "source_tool": "local_compositor",
+            },
+            "variants": [],
+            "verification": {
+                "file_exists": True,
+                "dimensions_match": True,
+                "text_checked": True,
+                "mobile_readability_checked": True,
+                "content_match": True,
+                "issues": [],
+            },
+        }
     if name == "publish_log":
         return {
             "version": "1.0",
@@ -283,6 +309,9 @@ class TestSchemas:
 
     def test_video_analysis_brief_validates(self):
         validate_artifact("video_analysis_brief", sample_artifact("video_analysis_brief"))
+
+    def test_cover_package_validates(self):
+        validate_artifact("cover_package", sample_artifact("cover_package"))
 
 
 # ---- Checkpoint ----

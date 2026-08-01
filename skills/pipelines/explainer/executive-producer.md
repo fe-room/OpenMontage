@@ -40,7 +40,7 @@ EP_STATE:
   budget_spent_usd: 0.0
   budget_remaining_usd: <budget_total>
 
-  # Accumulated from each stage (8 stages)
+  # Accumulated from each stage (9 stages)
   artifacts:
     research: null      # → research_brief
     proposal: null      # → proposal_packet (includes approval gate)
@@ -49,6 +49,7 @@ EP_STATE:
     assets: null        # → asset_manifest
     edit: null          # → edit_decisions
     compose: null       # → render_report
+    cover: null         # → cover_package
     publish: null       # → publish_log
 
   # Pre-production context (carried forward from research + proposal)
@@ -77,7 +78,7 @@ EP_STATE:
 
 ### Phase 1: Execute Stages Serially
 
-For each stage in order: `research → proposal → script → scene_plan → assets → edit → compose → publish`
+For each stage in order: `research → proposal → script → scene_plan → assets → edit → compose → cover → publish`
 
 **Pre-production stages (research, proposal)** run before any money is spent:
 - **research** gathers raw data via web search — zero cost, no tools
@@ -137,7 +138,7 @@ EXECUTE_STAGE(stage_name):
 
 ### Phase 2: Final Quality Assurance
 
-After all 7 stages complete, the EP performs a holistic review:
+After all 9 stages complete, the EP performs a holistic review:
 
 ```
 FINAL_QA:
@@ -162,7 +163,7 @@ FINAL_QA:
      - Log per-stage cost breakdown
 
   5. DECISION:
-     If all checks pass → APPROVE for publish stage
+     If all checks pass → proceed to cover, then publish after cover approval
      If issues found → Send back to the specific stage(s) that can fix them
        - Audio issues → compose director
        - Visual issues → asset director (regenerate) or scene director (replan)
@@ -324,7 +325,8 @@ Actual: {what was produced}
 | G5 | assets | File existence, narration duration, budget, style | Revise assets OR send-back to script |
 | G6 | edit | Timeline completeness, A/V pre-sync | Revise edit |
 | G7 | compose | Output probe, duration, audio quality | Revise compose OR send-back to edit/assets |
-| G8 | publish | Metadata, packaging | Revise publish |
+| G8 | cover | Content match, exact text, mobile readability | Revise cover |
+| G9 | publish | Metadata, packaging, approved cover included | Revise publish |
 | FINAL | all | Holistic video review | Send-back to specific stage |
 
 ## Execution Limits (Anti-Loop Protection)
@@ -403,9 +405,13 @@ The EP doesn't replace any director skill — it wraps them. Each director skill
 [EP] Output probe: 88.7s (target 90s, within 5%). Resolution: 1920x1080. Audio: stereo. ✓
 [EP] G7 PASS
 
-[EP] === STAGE 8: publish ===
-[EP] Spawning publish-director with render_report + proposal_packet...
-[EP] G8 PASS — SEO metadata complete, chapters present, research citations included.
+[EP] === STAGE 8: cover ===
+[EP] Spawning shared cover-director with render_report + proposal_packet...
+[EP] G8 PASS — Cover generated, verified, and approved.
+
+[EP] === STAGE 9: publish ===
+[EP] Spawning publish-director with render_report + cover_package + proposal_packet...
+[EP] G9 PASS — SEO metadata complete, chapters present, approved cover packaged.
 
 [EP] === FINAL QA ===
 [EP] Duration: 88.7s ✓ | A/V sync: within tolerance ✓ | Style: consistent ✓

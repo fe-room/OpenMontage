@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """QA Test 08: End-to-end animated-explainer pipeline simulation.
 
-Walks through all 7 stages (idea -> publish) with synthetic artifacts,
+Walks through all 9 stages (research -> publish) with synthetic artifacts,
 validating checkpoints, artifact schemas, and cost tracking at each step.
 The compose stage runs real tools (audio_mixer + video_compose) to produce
 an actual output video. All other stages use synthetic data.
@@ -580,9 +580,63 @@ write_checkpoint(
 )
 
 # ===================================================================
-# Stage 7: publish
+# Stage 7: cover
 # ===================================================================
-print("\n--- Stage 7: publish ---")
+print("\n--- Stage 7: cover ---")
+
+cover_path = Path(OUT) / "cover.png"
+subprocess.run(
+    [
+        "ffmpeg", "-y", "-f", "lavfi", "-i",
+        "color=c=0x17324d:s=1280x720:d=0.04",
+        "-frames:v", "1", str(cover_path),
+    ],
+    capture_output=True,
+    check=True,
+)
+
+cover_package = {
+    "version": "1.0",
+    "status": "ready",
+    "source_video_path": final_video,
+    "primary_cover": {
+        "id": "cover-primary",
+        "path": str(cover_path),
+        "format": "png",
+        "width": 1280,
+        "height": 720,
+        "aspect_ratio": "16:9",
+        "role": "primary",
+        "text_overlay": ["AI Video Production"],
+        "source_tool": "qa_fixture",
+    },
+    "variants": [],
+    "verification": {
+        "file_exists": True,
+        "dimensions_match": True,
+        "text_checked": True,
+        "mobile_readability_checked": True,
+        "content_match": True,
+        "issues": [],
+    },
+}
+
+try:
+    validate_artifact("cover_package", cover_package)
+    check("Cover package validates against schema", True)
+except Exception as e:
+    check("Cover package validates against schema", False, str(e))
+
+write_checkpoint(
+    PIPELINE_DIR, PROJECT_ID, "cover", "completed", human_approved=True,
+    artifacts={"cover_package": cover_package},
+    pipeline_type="animated-explainer",
+)
+
+# ===================================================================
+# Stage 8: publish
+# ===================================================================
+print("\n--- Stage 8: publish ---")
 
 publish_log = {
     "version": "1.0",
@@ -625,9 +679,9 @@ write_checkpoint(
 # ===================================================================
 print("\n--- Final validation ---")
 
-E2E_STAGES = ["research", "proposal", "script", "scene_plan", "assets", "edit", "compose", "publish"]
+E2E_STAGES = ["research", "proposal", "script", "scene_plan", "assets", "edit", "compose", "cover", "publish"]
 completed = get_completed_stages(PIPELINE_DIR, PROJECT_ID)
-check("All 8 stages completed", len(completed) == 8, f"completed={completed}")
+check("All 9 stages completed", len(completed) == 9, f"completed={completed}")
 check("Next stage is None (done)", get_next_stage(PIPELINE_DIR, PROJECT_ID, "animated-explainer") is None)
 check("Stages in correct order", completed == E2E_STAGES, f"{completed}")
 
