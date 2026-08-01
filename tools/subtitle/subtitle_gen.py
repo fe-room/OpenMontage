@@ -8,6 +8,7 @@ the standard library.
 from __future__ import annotations
 
 import json
+import re
 import time
 from pathlib import Path
 from typing import Any
@@ -174,13 +175,16 @@ class SubtitleGen(BaseTool):
         for seg in segments:
             words = seg.get("words", [])
             if words:
-                all_words.extend(words)
+                copied = [dict(word) for word in words]
+                copied[-1]["_segment_end"] = True
+                all_words.extend(copied)
             elif "text" in seg:
                 # Fallback: segment-level only (no word timestamps)
                 all_words.append({
                     "word": seg["text"],
                     "start": seg["start"],
                     "end": seg["end"],
+                    "_segment_end": True,
                 })
 
         if not all_words:
@@ -190,9 +194,25 @@ class SubtitleGen(BaseTool):
         buf: list[dict] = []
         buf_text = ""
 
+        def append_token(existing: str, token: str) -> str:
+            """Join CJK transcript tokens without artificial spaces.
+
+            Chinese TTS providers commonly return one character per timestamp.
+            Adding an English-style separator between every token produces
+            subtitles such as ``股 息 率``. Keep spaces only when both adjacent
+            token edges are Latin letters or digits.
+            """
+            if not existing:
+                return token
+            prev = existing[-1]
+            first = token[0] if token else ""
+            latin_or_digit = re.compile(r"[A-Za-z0-9]")
+            separator = " " if latin_or_digit.fullmatch(prev) and latin_or_digit.fullmatch(first) else ""
+            return f"{existing}{separator}{token}"
+
         for w in all_words:
             word_text = w["word"].strip()
-            candidate = f"{buf_text} {word_text}".strip() if buf_text else word_text
+            candidate = append_token(buf_text, word_text)
 
             if buf and (len(buf) >= max_words or len(candidate) > max_chars):
                 cues.append({
@@ -209,7 +229,21 @@ class SubtitleGen(BaseTool):
                 buf_text = ""
 
             buf.append(w)
-            buf_text = f"{buf_text} {word_text}".strip() if buf_text else word_text
+            buf_text = append_token(buf_text, word_text)
+
+            if w.get("_segment_end"):
+                cues.append({
+                    "index": len(cues) + 1,
+                    "start": buf[0]["start"],
+                    "end": buf[-1]["end"],
+                    "text": buf_text,
+                    "words": [
+                        {"word": b["word"].strip(), "start": b["start"], "end": b["end"]}
+                        for b in buf
+                    ],
+                })
+                buf = []
+                buf_text = ""
 
         # Flush remaining
         if buf:

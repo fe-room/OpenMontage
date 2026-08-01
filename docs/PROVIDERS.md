@@ -58,6 +58,8 @@ KLING_API_BASE_URL=          # Optional; default https://api-singapore.klingai.c
 # VIDEO
 HEYGEN_API_KEY=              # HeyGen avatar video gateway
 RUNWAY_API_KEY=              # Runway Gen-4 video (direct)
+WAVESPEED_API_KEY=           # WaveSpeedAI image-to-video API
+WAVESPEED_VIDEO_MODEL=wavespeed-ai/wan-2.2/i2v-480p-ultra-fast
 SUNO_API_KEY=                # Suno music generation
 
 # LOCAL (no keys needed — just GPU + install)
@@ -933,6 +935,7 @@ These tools require only FFmpeg or Python packages — no GPU, no API key.
 | **OpenAI** | `OPENAI_API_KEY` | `openai_tts`, `openai_image` | Paid only |
 | **xAI** | `XAI_API_KEY` | `grok_image`, `grok_video` | Paid only |
 | **Runway** | `RUNWAY_API_KEY` | `runway_video` | Free trial + paid |
+| **WaveSpeedAI** | `WAVESPEED_API_KEY` | `wavespeed_video` | Pay-as-you-go ($0.05/5s, $0.08/8s for the configured model) |
 | **Higgsfield** | `HIGGSFIELD_API_KEY` + `HIGGSFIELD_API_SECRET` | `higgsfield_video` | Subscription ($15-84/mo) |
 | **HeyGen** | `HEYGEN_API_KEY` | `heygen_video` | Pay-as-you-go |
 | **Suno** | `SUNO_API_KEY` | `suno_music` | Pay-as-you-go |

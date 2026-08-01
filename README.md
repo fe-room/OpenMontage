@@ -255,6 +255,8 @@ GOOGLE_API_KEY=your-key        # Google Imagen images, Google TTS (700+ voices)
 # More video providers:
 HEYGEN_API_KEY=your-key        # HeyGen — VEO, Sora, Runway, Kling via single gateway
 RUNWAY_API_KEY=your-key        # Runway Gen-4 direct
+WAVESPEED_API_KEY=your-key      # WaveSpeedAI image-to-video gateway
+WAVESPEED_VIDEO_MODEL=wavespeed-ai/wan-2.2/i2v-480p-ultra-fast
 ```
 
 <details>

@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import subprocess
 import time
 from pathlib import Path
@@ -827,6 +828,19 @@ class VideoCompose(BaseTool):
         if bespoke.get("concurrency"):
             cmd.append(f"--concurrency={bespoke['concurrency']}")
 
+        # Remotion's downloaded Chromium can be incompatible with the host OS.
+        # Allow callers to select a known-good local Chrome without changing the
+        # persisted edit-decision contract.
+        browser_executable = os.environ.get("REMOTION_BROWSER_EXECUTABLE")
+        if browser_executable:
+            browser_path = Path(browser_executable).expanduser().resolve()
+            if not browser_path.exists():
+                return ToolResult(
+                    success=False,
+                    error=f"REMOTION_BROWSER_EXECUTABLE not found: {browser_path}",
+                )
+            cmd.append(f"--browser-executable={browser_path}")
+
         try:
             # Run from inside the composer dir so npx resolves the local
             # remotion binary (mirrors _remotion_render).
@@ -956,7 +970,13 @@ class VideoCompose(BaseTool):
             rel = src.relative_to(real_project_dir)
             dst = staging_dir / rel
             try:
-                if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
+                src_stat = src.stat()
+                dst_stat = dst.stat()
+                if (
+                    dst.exists()
+                    and dst_stat.st_mtime >= src_stat.st_mtime
+                    and dst_stat.st_size == src_stat.st_size
+                ):
                     continue
             except OSError:
                 pass

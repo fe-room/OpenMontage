@@ -304,6 +304,21 @@ class VideoSelector(BaseTool):
             if "query" in required and "query" not in adapted:
                 adapted["query"] = adapted.get("prompt", "")
 
+            # Some provider contracts use explicit pixel dimensions instead of
+            # the selector's normalized aspect_ratio. Translate the two common
+            # social-video orientations so an approved portrait request cannot
+            # silently fall back to the provider's landscape default.
+            if "size" in required and "size" not in adapted:
+                aspect_ratio = adapted.get("aspect_ratio")
+                size_for_aspect = {
+                    "16:9": "1280*720",
+                    "9:16": "720*1280",
+                }
+                candidate_size = size_for_aspect.get(aspect_ratio)
+                allowed_sizes = set(required.get("size", {}).get("enum", []))
+                if candidate_size and (not allowed_sizes or candidate_size in allowed_sizes):
+                    adapted["size"] = candidate_size
+
         # Auto-resolve reference_image_path to a URL for providers that need it
         if adapted.get("operation") == "image_to_video" and adapted.get("reference_image_path"):
             tool_props = getattr(tool, "input_schema", {}).get("properties", {})
