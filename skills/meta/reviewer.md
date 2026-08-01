@@ -211,6 +211,7 @@ Run at **every stage** after proposal. The decision log (`schemas/artifacts/deci
    - Music track selection
    - Voice selection
    - Renderer family selection
+   - Visual coverage strategy (`motion_commitment`: composition-only vs light hybrid vs footage-led)
    - Any fallback or downgrade (e.g., motion → still)
 3. **Quality**: Each decision should have:
    - At least 2 `options_considered` (not just the one picked)
@@ -329,6 +330,60 @@ Run at **compose**, **cover**, and **publish** stages. Ensures the agent reviewe
 2. Verify the cover matches the actual rendered video's topic and approved visual direction
 3. If text is present, require legibility at mobile thumbnail size and no malformed glyphs
 4. If `cover_package.verification` contains failures or unresolved issues: **CRITICAL** — do not approve or publish the cover
+
+## Semantic Motion Coverage Review
+
+Run at **proposal**, **scene_plan**, and **edit** for generated explainers,
+data-led shorts, educational videos, marketing pieces, and mixed-media work.
+This review prevents an agent from checking video-generation availability but
+then silently treating "not a core dependency" as "not worth using anywhere."
+
+### At proposal stage
+
+1. Require a beat-level classification with all three information
+   responsibilities represented where applicable:
+   - `precision_critical`
+   - `semantic_motion_candidate`
+   - `decorative_only`
+2. If any beat could materially benefit from real/generated motion, require the
+   proposal to compare **composition-only**, **light hybrid**, and
+   **footage-led** strategies before recommending one.
+3. Require a `motion_commitment` decision with subject
+   `Visual coverage strategy`. Its `options_considered` must contain all
+   meaningful coverage strategies, not merely the selected one.
+4. For every proposed stock/generated clip, require a concrete semantic role:
+   what context, physical behavior, scale, emotion, or narrative turn it adds.
+
+Findings:
+
+- Video-generation providers were inspected but no semantic motion audit was
+  performed: **CRITICAL** — "Capability discovery is not coverage planning.
+  Classify the beats before excluding or selecting footage."
+- A semantic-motion candidate exists but light hybrid was omitted because video
+  was called "non-essential" or "not a core dependency": **CRITICAL** —
+  "Optional to delivery does not mean useless to presentation. Compare the
+  light-hybrid path explicitly."
+- Generated footage is assigned exact numbers, formulas, labels, UI text, legal
+  wording, or other precision-critical facts: **CRITICAL** — "Move factual
+  rendering to deterministic composition; use footage only for its semantic
+  motion contribution."
+- A proposed clip cannot finish "This footage contributes..." with anything
+  beyond atmosphere or genre signaling: **SUGGESTION** — classify it as
+  decorative and remove it unless the user requested that texture.
+- No `motion_commitment` / `Visual coverage strategy` decision is logged:
+  **CRITICAL** at proposal approval.
+
+### At scene_plan and edit stage
+
+1. Verify each selected footage beat still has the semantic role approved at
+   proposal; a stock/generated clip added only to create variety is a
+   **SUGGESTION** and should be removed or justified.
+2. Verify precision-critical information remains in deterministic layers and is
+   not baked into unverified generated footage. Any violation is **CRITICAL**.
+3. If the approved coverage strategy changed (for example light hybrid became
+   composition-only after provider failure), require a revised
+   `motion_commitment` decision with the same subject and explicit user approval.
+   An unlogged change is **CRITICAL**.
 
 ## Composition Authoring Mode Review
 

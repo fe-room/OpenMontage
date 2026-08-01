@@ -609,6 +609,44 @@ Before committing to execution, present:
 
 If a user prefers a specific vendor and that tool is available, surface it directly. Do not hide provider choice.
 
+### Semantic Motion Coverage Audit (HARD RULE)
+
+Before deciding that a generated explainer, data-led short, educational video,
+marketing piece, or mixed-media composition does or does not need generated or
+stock video, classify every major beat by its **information responsibility**:
+
+1. **Precision-critical** — exact numbers, formulas, labels, timelines, UI, or
+   causal diagrams. Use deterministic composition/animation; generated footage
+   must not carry facts the viewer needs to read accurately.
+2. **Semantic-motion candidate** — physical processes, environments, industry
+   context, human behavior, scale, mood, or a narrative turn that real/generated
+   motion would explain or make felt better than typography alone.
+3. **Decorative-only** — footage that merely signals a genre (generic trading
+   screens, handshakes, server racks, money shots) without advancing the beat.
+   Reject it unless the user explicitly wants that texture.
+
+Then present and compare these coverage strategies before locking the production
+plan:
+
+- **Composition-only** — deterministic graphics/animation carry the full piece.
+- **Light hybrid** — deterministic graphics carry precision-critical beats;
+  selected stock/generated clips carry semantic-motion beats.
+- **Footage-led** — video clips carry most beats, with composition used for
+  evidence and explanation.
+
+Recommend one by content fit. **"Video is not a core dependency" is not a valid
+reason to omit the light-hybrid option.** The audit is about whether footage adds
+meaning anywhere, not whether it can replace the renderer. Likewise, tool
+availability must not determine the creative recommendation; run preflight only
+after ranking the three strategies.
+
+Record the decision in `decision_log` using `category: "motion_commitment"` and
+`subject: "Visual coverage strategy"`, with all meaningful strategies in
+`options_considered`. If light hybrid is selected, name the exact beats assigned
+to footage and state what information each clip contributes. If no semantic-motion
+candidate exists, record that conclusion explicitly instead of silently omitting
+video generation.
+
 ### Music Plan (Mandatory)
 
 Music is a critical part of any video. **Surface the music situation to the user at proposal/idea time** — do not silently defer it to the asset stage where a failure becomes expensive.

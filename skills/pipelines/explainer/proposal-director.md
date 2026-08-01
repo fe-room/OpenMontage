@@ -120,6 +120,51 @@ retry later, or explicitly choose a lower-fit alternative.
 
 **Setup offers:** If critical tools are UNAVAILABLE but fixable with a simple configuration, read each tool's `install_instructions` from the registry and offer the user setup help before designing around the limitation. See AGENT_GUIDE.md "Provider Menu" protocol for the approach. Group related tools that share the same env var dependency.
 
+### Step 2b: Audit Semantic Motion Coverage (Mandatory)
+
+Do this **before** concluding that the explainer should be graphics-only and
+before availability is allowed to influence the treatment.
+
+Classify each major narrative beat:
+
+| Class | Test | Preferred treatment |
+|---|---|---|
+| `precision_critical` | Must the viewer read exact numbers, formulas, labels, UI, or causal relationships? | Deterministic Remotion/HyperFrames/diagram animation |
+| `semantic_motion_candidate` | Would real or generated movement explain context, physical behavior, scale, emotion, or a narrative turn better than text alone? | Stock or generated video, with the information contribution stated |
+| `decorative_only` | Does the clip merely look on-topic without advancing understanding? | Reject unless the user explicitly requests the texture |
+
+Rules:
+
+- Do not ask generated video to render exact numbers, formulas, financial data,
+  legal wording, UI text, or other facts that must be correct.
+- Do not reject all footage merely because precision-critical beats need a
+  deterministic renderer. Different beats may use different media.
+- Do not treat "not required" as "not useful." A capability can be optional to
+  delivery and still be the best treatment for selected beats.
+- Prefer a small number of semantically justified clips over generic B-roll.
+  For every proposed clip, finish the sentence: **"This footage contributes..."**
+- If the sentence only names atmosphere or genre, classify the clip as
+  `decorative_only` and remove it.
+
+Present three complete strategies whenever at least one semantic-motion candidate
+exists:
+
+1. **Composition-only** — all beats use deterministic animation.
+2. **Light hybrid** — precision beats use deterministic animation; named
+   semantic-motion beats use stock/generated video.
+3. **Footage-led** — video carries most of the timeline; deterministic overlays
+   carry facts and evidence.
+
+Recommend one by the brief's information density, delivery promise, visual
+variety, and accuracy needs. The light-hybrid option may not be omitted merely
+because video is not a core dependency. If no beat qualifies, say so explicitly.
+
+In `decision_log`, write a `motion_commitment` decision with subject
+`Visual coverage strategy`. Include all meaningful strategies in
+`options_considered`; for light hybrid, list the exact beats and the semantic role
+of each proposed clip in the decision reason. Carry the chosen coverage strategy
+into `production_plan.stages` and the cost estimate.
+
 ### Step 2c: Mood Board (Before Concepts)
 
 Before developing full concepts, present a quick mood board to catch direction mismatches early:

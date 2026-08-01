@@ -96,6 +96,8 @@ stages:
       - Cost estimate is itemized and honest
       - Quality/cost tradeoffs are clearly presented
       - Alternative production paths shown at different price points
+      - Semantic motion coverage audit classifies beats and compares composition-only, light-hybrid, and footage-led strategies when footage could add meaning
+      - Visual coverage strategy is logged as a motion_commitment decision; optional footage is not silently omitted merely because it is not a core dependency
       - "Concept differentiation from reference (if reference-driven)"
     success_criteria:
       - Schema-valid proposal_packet with at least 3 concept_options

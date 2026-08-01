@@ -828,6 +828,14 @@ class VideoCompose(BaseTool):
         if bespoke.get("concurrency"):
             cmd.append(f"--concurrency={bespoke['concurrency']}")
 
+        # Older or resource-constrained hosts may need longer than Remotion's
+        # default browser/root-component wait. The public input contract
+        # already exposes remotion_timeout_ms; atelier renders must honor it
+        # just like the stock Remotion path does.
+        remotion_timeout_ms = inputs.get("remotion_timeout_ms")
+        if remotion_timeout_ms:
+            cmd.append(f"--timeout={int(remotion_timeout_ms)}")
+
         # Remotion's downloaded Chromium can be incompatible with the host OS.
         # Allow callers to select a known-good local Chrome without changing the
         # persisted edit-decision contract.
