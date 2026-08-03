@@ -833,8 +833,15 @@ class VideoCompose(BaseTool):
         # already exposes remotion_timeout_ms; atelier renders must honor it
         # just like the stock Remotion path does.
         remotion_timeout_ms = inputs.get("remotion_timeout_ms")
+        subprocess_timeout = 1800
         if remotion_timeout_ms:
-            cmd.append(f"--timeout={int(remotion_timeout_ms)}")
+            ms = int(remotion_timeout_ms)
+            cmd.append(f"--timeout={ms}")
+            # Keep the Python subprocess alive longer than Remotion's own
+            # browser/delayRender timeout. Without this, atelier renders are
+            # always killed after 30 minutes even when the caller explicitly
+            # requests a longer render budget.
+            subprocess_timeout = max(subprocess_timeout, ms // 1000 + 60)
 
         # Remotion's downloaded Chromium can be incompatible with the host OS.
         # Allow callers to select a known-good local Chrome without changing the
@@ -852,7 +859,7 @@ class VideoCompose(BaseTool):
         try:
             # Run from inside the composer dir so npx resolves the local
             # remotion binary (mirrors _remotion_render).
-            self.run_command(cmd, timeout=1800, cwd=composer_dir)
+            self.run_command(cmd, timeout=subprocess_timeout, cwd=composer_dir)
         except Exception as e:
             return ToolResult(success=False, error=f"Atelier (bespoke) Remotion render failed: {e}")
 
