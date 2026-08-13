@@ -17,6 +17,16 @@ This is where words become visuals. A great script with a bad scene plan produce
 
 ## Process
 
+### Financial content policy (binding)
+
+When `content_category` is `finance`, the last scene must be a native
+`text_card` containing this exact text in `description`:
+
+`本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。`
+
+Do not bake this text into a generated image and do not place a CTA, logo card,
+or any other scene after it.
+
 ### Step 1: Analyze the Script
 
 Read every section. For each, note:

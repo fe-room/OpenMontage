@@ -118,6 +118,18 @@
             }
           }
         },
+        "compliance": {
+          "type": "object",
+          "description": "Content-category-specific compliance checks. Required by policy for financial productions.",
+          "properties": {
+            "financial_disclaimer_present": { "type": "boolean" },
+            "financial_disclaimer_exact": { "type": "boolean" },
+            "financial_disclaimer_readable": { "type": "boolean" },
+            "financial_disclaimer_at_end": { "type": "boolean" },
+            "issues": { "type": "array", "items": { "type": "string" } }
+          },
+          "additionalProperties": false
+        },
         "transcript_comparison": {
           "type": "object",
           "description": "Optional: transcribe the output and compare to source script",

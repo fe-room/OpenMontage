@@ -7,6 +7,11 @@
   "required": ["version", "concept_options", "selected_concept", "production_plan", "cost_estimate", "approval"],
   "properties": {
     "version": { "type": "string", "const": "1.0" },
+    "content_category": {
+      "type": "string",
+      "enum": ["finance", "education", "technology", "health", "legal", "news", "entertainment", "lifestyle", "other"],
+      "description": "Editorial classification carried from intake. Finance activates the mandatory end-card disclaimer policy."
+    },
     "concept_options": {
       "type": "array",
       "items": {

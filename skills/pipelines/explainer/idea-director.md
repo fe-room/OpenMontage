@@ -26,6 +26,12 @@ Before doing anything, clarify the user's intent:
 - **Duration**: Target length. Defaults by platform: TikTok 30-60s, Instagram Reels 60-90s, YouTube 60-180s, LinkedIn 60-120s
 - **Tone**: Casual, professional, educational, provocative, playful
 
+Classify `brief.content_category` using the categories in the brief schema. If
+the topic includes investments, securities, funds, stocks, bonds, derivatives,
+crypto assets, trading, market forecasts, or portfolio allocation, classify it
+as `finance`. This activates the mandatory exact-text final disclaimer defined
+in `AGENT_GUIDE.md`.
+
 If the user's request is vague (e.g., "make a video about AI"), ask targeted questions. Never guess when you can ask.
 
 ### Step 2: Research the Topic

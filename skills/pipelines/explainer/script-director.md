@@ -19,6 +19,17 @@ The script is the backbone of the video. Every visual, every scene, every audio 
 
 ## Process
 
+### Financial content policy (binding)
+
+Read `proposal_packet.content_category` (or upstream brief metadata). When it is
+`finance`, append a dedicated final script section containing this exact text,
+with no paraphrase or translation:
+
+`本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。`
+
+This section must remain last so scene planning can turn it into the final
+native text card.
+
 ### Step 1: Absorb the Proposal and Research
 
 Read the `proposal_packet.selected_concept` carefully. Extract:

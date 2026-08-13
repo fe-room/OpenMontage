@@ -15,6 +15,7 @@ from typing import Any, Optional
 import jsonschema
 
 from schemas.artifacts import ARTIFACT_NAMES, validate_artifact
+from lib.content_policy import ContentPolicyError, enforce_financial_disclaimer
 
 # All known stages across all pipelines (used only for artifact name lookup).
 ALL_KNOWN_STAGES = frozenset([
@@ -427,6 +428,30 @@ def write_checkpoint(
         checkpoint["error"] = error
     if metadata is not None:
         checkpoint["metadata"] = metadata
+
+    # Mandatory cross-stage policies need upstream context, while stage
+    # checkpoints commonly carry only the artifact produced by that stage.
+    # Merge prior canonical artifacts for validation without changing what is
+    # persisted in this checkpoint.
+    policy_artifacts: dict[str, Any] = {}
+    project_dir = pipeline_dir / project_id
+    for prior_stage, artifact_name in CANONICAL_STAGE_ARTIFACTS.items():
+        prior_path = project_dir / f"checkpoint_{prior_stage}.json"
+        if not prior_path.exists():
+            continue
+        try:
+            with open(prior_path) as f:
+                prior = json.load(f)
+            prior_artifact = prior.get("artifacts", {}).get(artifact_name)
+            if isinstance(prior_artifact, dict):
+                policy_artifacts[artifact_name] = prior_artifact
+        except (json.JSONDecodeError, OSError):
+            continue
+    policy_artifacts.update(artifacts)
+    try:
+        enforce_financial_disclaimer(stage, policy_artifacts)
+    except ContentPolicyError as exc:
+        raise CheckpointValidationError(str(exc)) from exc
 
     # Merge decision_log: if this checkpoint carries new decisions,
     # append them to the project-level decision log file, then write the

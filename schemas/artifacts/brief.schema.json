@@ -8,6 +8,11 @@
   "properties": {
     "version": { "type": "string", "const": "1.0" },
     "title": { "type": "string", "minLength": 1 },
+    "content_category": {
+      "type": "string",
+      "enum": ["finance", "education", "technology", "health", "legal", "news", "entertainment", "lifestyle", "other"],
+      "description": "Mandatory editorial classification chosen during intake. Finance activates the financial disclaimer policy."
+    },
     "hook": { "type": "string", "description": "Opening hook / attention grabber" },
     "key_points": {
       "type": "array",

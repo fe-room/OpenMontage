@@ -71,6 +71,26 @@ When the user asks to make, create, produce, or generate any video content — a
 
 The intelligence is in the skills, not in improvised code. An agent that reads the director skills and Layer 3 knowledge will produce significantly better output than one that calls tools directly with generic prompts.
 
+## Mandatory Financial Video Disclaimer
+
+At intake/idea or proposal, classify every production with `content_category`.
+Use `finance` whenever the video discusses investments, securities, funds,
+stocks, bonds, derivatives, crypto assets, trading strategies, market forecasts,
+portfolio allocation, or other material that a viewer could reasonably treat as
+investment guidance.
+
+For `content_category: finance`, the following sentence is mandatory and may not
+be shortened, paraphrased, translated, or replaced:
+
+> 本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。
+
+It must be the video's final scene: a native exact-text card (never text baked
+into an AI-generated image), held long enough to read. Carry it through the
+final script section, the final `scene_plan` scene, and the final
+`edit_decisions.cuts` item. During post-render review, inspect the ending frame
+and record that the sentence is present, exact, readable, and at the end.
+Checkpoint validation fails closed when any of these requirements is missing.
+
 ## What OpenMontage Is
 
 OpenMontage is an instruction-driven video production system. The AI agent IS the intelligence — it reads instructions (pipeline manifests + stage director skills + meta skills) and drives the pipeline using tools.

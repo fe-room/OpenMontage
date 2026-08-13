@@ -69,6 +69,7 @@ stages:
     checkpoint_required: false
     human_approval_default: false
     review_focus:
+      - Content category is explicitly classified; finance activates the mandatory exact-text end-card disclaimer
       - Content landscape mapped with at least 3 existing pieces
       - Data points are specific and sourced, not vague
       - Audience questions sourced from real forums, not invented
@@ -129,6 +130,7 @@ stages:
     checkpoint_required: true
     human_approval_default: true
     review_focus:
+      - "For content_category=finance, final section contains the exact mandatory financial disclaimer"
       - "Word count within +/-10% of duration target from selected concept"
       - "Enhancement cue density: 1 per 8-10 seconds"
       - "Narrative arc: hook -> setup -> build -> climax -> landing"
@@ -151,6 +153,7 @@ stages:
     checkpoint_required: true
     human_approval_default: true
     review_focus:
+      - "For content_category=finance, final scene is a native text_card containing the exact mandatory financial disclaimer"
       - Full script duration covered with no gaps
       - "Visual variety: no 3+ consecutive scenes of same type"
       - Asset feasibility - every required_asset uses a tool from the production plan
@@ -210,6 +213,7 @@ stages:
     checkpoint_required: true
     human_approval_default: false
     review_focus:
+      - "For content_category=finance, final cut is a text_card containing the exact mandatory financial disclaimer"
       - All cuts reference valid assets from manifest
       - Subtitles enabled with playbook-compatible styling
       - Music configured with ducking parameters
@@ -241,6 +245,7 @@ stages:
     checkpoint_required: true
     human_approval_default: false
     review_focus:
+      - "For content_category=finance, ending frame visibly shows the exact mandatory disclaimer and final_review compliance flags all pass"
       - Output video exists and is playable
       - "Duration within +/-5% of target"
       - Audio is clear with proper narration/music balance

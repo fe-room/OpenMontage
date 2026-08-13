@@ -13,6 +13,14 @@ Do NOT start production on a vague brief.
 6. **Outcome**: What should the viewer DO or FEEL after watching?
 7. **Constraints**: Budget ceiling? Timeline? Must-include content?
 
+Also classify the production as `content_category`: `finance`, `education`,
+`technology`, `health`, `legal`, `news`, `entertainment`, `lifestyle`, or
+`other`. This is an editorial routing decision, not a question the user must
+answer. Use `finance` whenever the content covers investments, securities,
+funds, stocks, bonds, derivatives, crypto assets, trading, market forecasts,
+or portfolio allocation. Financial classification activates the mandatory
+final disclaimer in `AGENT_GUIDE.md`.
+
 ## How to Ask
 
 Don't dump all 7 questions at once. Start with purpose and audience,
@@ -50,6 +58,7 @@ research stage uses as its starting context. Include:
 - Explicit answers to each of the 7 questions (mark any that were inferred vs stated)
 - Any reference videos/images the user mentioned
 - Constraints that must be honored (budget, timeline, must-include)
+- `content_category` and a one-line classification rationale
 
 The intake_brief is passed as context to the research-director, not as a
 formal artifact. It exists to prevent the research stage from inventing

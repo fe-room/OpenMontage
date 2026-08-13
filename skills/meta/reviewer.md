@@ -34,6 +34,16 @@ First, the non-negotiable check:
 - Validate the artifact against its JSON schema (`schemas/artifacts/<name>.schema.json`)
 - If schema validation fails, this is a **critical** finding — fix immediately, do not proceed
 
+### Step 2b: Content Classification and Compliance
+
+- Confirm intake/idea or proposal explicitly sets `content_category`.
+- If it is `finance`, treat omission or alteration of the exact final disclaimer
+  as **critical** at script, scene-plan, edit, and compose stages:
+  `本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。`
+- The scene-plan and edit versions must be the final item and use a native
+  exact-text card. At compose, inspect the ending frame and confirm the text is
+  present, exact, readable, and at the end in `final_review.checks.compliance`.
+
 ### Step 3: Review Against Focus Items
 
 For each `review_focus` item from the manifest:

@@ -16,6 +16,15 @@ This is where raw assets become a coherent video. Good editing makes average ass
 
 ## Process
 
+### Financial content policy (binding)
+
+When `content_category` is `finance`, the final cut must use
+`type: "text_card"` and its `text` must contain exactly:
+
+`本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。`
+
+It must remain the last timeline item; do not append a CTA or logo cut after it.
+
 ### Step 1: Map Assets to Timeline
 
 For each scene in the scene plan:

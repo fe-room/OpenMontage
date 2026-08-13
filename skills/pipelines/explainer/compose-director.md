@@ -347,6 +347,11 @@ result = Transcriber().execute({
 - Are overlays (section titles, stat reveals) positioned correctly?
 - Is the opening scene visually strong? (important for social media thumbnails)
 - Does the CTA/closing screen show correct text? (AI-generated text in images frequently hallucinates — use Remotion text_card for any text that must be exact)
+- For `content_category: finance`, inspect the final frame and populate
+  `final_review.checks.compliance` with all four financial-disclaimer flags.
+  All must be true: present, exact, readable, and at end. Any false flag
+  requires revision; the exact required sentence is
+  `本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。`
 
 **6e. Audio inspection — check transcript against script:**
 - Is the full narration captured? (compare last transcribed word to last scripted word)
