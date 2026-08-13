@@ -78,6 +78,36 @@ def test_remotion_timeout_ms_is_passed_through(tool, tmp_path, monkeypatch):
     assert seen["timeout"] >= 180
 
 
+def test_atelier_timeout_ms_widens_subprocess_budget(tool, tmp_path, monkeypatch):
+    seen = {}
+    entry = tmp_path / "index.tsx"
+    entry.write_text("// test entry", encoding="utf-8")
+
+    monkeypatch.setattr(tool, "_stage_atelier_project", lambda *a, **k: entry)
+
+    def fake_run_command(cmd, *a, **k):
+        seen["cmd"] = cmd
+        seen["timeout"] = k.get("timeout")
+        return None
+
+    monkeypatch.setattr(tool, "run_command", fake_run_command)
+    tool._render_via_atelier(
+        {
+            "output_path": str(tmp_path / "out.mp4"),
+            "remotion_timeout_ms": 3_600_000,
+        },
+        {
+            "bespoke": {
+                "entry": str(entry),
+                "composition_id": "TestComposition",
+            }
+        },
+    )
+
+    assert "--timeout=3600000" in seen["cmd"]
+    assert seen["timeout"] >= 3660
+
+
 def test_high_level_render_forwards_timeout_to_remotion(tool, tmp_path, monkeypatch):
     # The gap in the first cut: execute(operation="render") -> _render() builds a
     # fresh remotion_inputs dict, so the option must be forwarded there, not only
