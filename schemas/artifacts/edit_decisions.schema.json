@@ -17,6 +17,17 @@
           "source": { "type": "string", "description": "Source file path or asset-manifest ID" },
           "in_seconds": { "type": "number", "minimum": 0 },
           "out_seconds": { "type": "number", "minimum": 0 },
+          "type": {
+            "type": "string",
+            "description": "Remotion templated scene type such as text_card or callout"
+          },
+          "text": { "type": "string" },
+          "title": { "type": "string" },
+          "subtitle": { "type": "string" },
+          "callout_type": {
+            "type": "string",
+            "enum": ["info", "warning", "tip", "quote"]
+          },
           "speed": { "type": "number", "minimum": 0.1, "default": 1.0 },
           "layer": {
             "type": "string",

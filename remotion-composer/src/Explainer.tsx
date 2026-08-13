@@ -10,7 +10,6 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { loadFont } from "@remotion/google-fonts/SpaceGrotesk";
 
 // Resolve asset path — handle URLs, absolute paths (Windows/Unix), and public/ relative paths
 function resolveAsset(src: string): string {
@@ -18,7 +17,9 @@ function resolveAsset(src: string): string {
     return src;
   }
   // Strip any file:// prefix
-  const clean = src.replace(/^file:\/\/\/?/, "");
+  // Remove only the URI scheme. Keep the leading slash in file:///Users/...
+  // so absolute local assets do not get mistaken for public/Users/... paths.
+  const clean = src.replace(/^file:\/\//, "");
   // Absolute paths (Unix: /foo, Windows: C:\foo or C:/foo) — convert to file:// URI
   // staticFile() only accepts relative paths within public/, so absolute paths must bypass it
   if (clean.startsWith("/") || /^[A-Za-z]:[\\/]/.test(clean)) {
@@ -57,11 +58,9 @@ import { ProviderChip } from "./components/ProviderChip";
 import type { ParticleType } from "./components/ParticleOverlay";
 import { resolveTheme, type ThemeConfig, DEFAULT_THEME } from "./Root";
 
-// Load Space Grotesk font for cinematic typography
-const { fontFamily } = loadFont("normal", {
-  weights: ["400", "700"],
-  subsets: ["latin"],
-});
+// Keep the explainer render offline-safe. Chinese text falls back to the
+// platform CJK sans stack, while Latin labels use a local system sans font.
+const fontFamily = "Arial, PingFang SC, Hiragino Sans GB, sans-serif";
 
 // ---------------------------------------------------------------------------
 // Animated Background — Gradient Mesh + Floating Orbs

@@ -1403,7 +1403,11 @@ class VideoCompose(BaseTool):
             source_id = cut.get("source", "")
             resolved_cut = dict(cut)
             if source_id in asset_lookup:
-                resolved_cut["source"] = asset_lookup[source_id]["path"]
+                asset_path = Path(asset_lookup[source_id]["path"])
+                project_root = (asset_manifest.get("metadata") or {}).get("project_root")
+                if project_root and not asset_path.is_absolute() and not asset_path.exists():
+                    asset_path = Path(project_root) / asset_path
+                resolved_cut["source"] = str(asset_path)
             resolved_cuts.append(resolved_cut)
 
         # --- Pre-compose validation gate ---
@@ -1728,15 +1732,51 @@ class VideoCompose(BaseTool):
         # Deep-copy props so we don't mutate the original
         props = json.loads(json.dumps(composition_data))
 
+        # Explainer captions are generated as a project artifact from the
+        # approved provider timestamps. Keep the edit artifact compact and
+        # hydrate the Remotion WordCaption payload at render time.
+        captions_path = (composition_data.get("metadata") or {}).get("captions_path")
+        if captions_path:
+            caption_file = Path(str(captions_path))
+            if not caption_file.is_absolute():
+                caption_file = Path.cwd() / caption_file
+            if caption_file.exists():
+                caption_payload = json.loads(caption_file.read_text(encoding="utf-8"))
+                cues = caption_payload.get("cues", caption_payload) if isinstance(caption_payload, dict) else caption_payload
+                props["captions"] = [
+                    {
+                        "word": cue.get("text", cue.get("word", "")),
+                        "startMs": int(float(cue.get("start", cue.get("startMs", 0))) * (1000 if "startMs" not in cue else 1)),
+                        "endMs": int(float(cue.get("end", cue.get("endMs", 0))) * (1000 if "endMs" not in cue else 1)),
+                        "timestampMs": None,
+                        "confidence": cue.get("confidence"),
+                    }
+                    for cue in cues
+                    if cue.get("text", cue.get("word", ""))
+                ]
+
         # Convert absolute file paths to file:// URIs for Remotion's
         # Img and OffthreadVideo components
         for cut in props.get("cuts", []):
             source = cut.get("source", "")
-            if source and not source.startswith(("http://", "https://", "file://")):
+            if source and Path(source).is_absolute() and not source.startswith(("http://", "https://", "file://")):
                 resolved = Path(source).resolve()
                 if resolved.exists():
                     posix = resolved.as_posix()
                     cut["source"] = f"file:///{posix}" if not posix.startswith("/") else f"file://{posix}"
+
+        # Audio sources follow the same local-file rule as visual sources.
+        # Explainer's <Audio> resolver treats non-URL values as public assets,
+        # while pipeline artifacts live under projects/<id>/assets.
+        audio_props = props.get("audio") or {}
+        for audio_layer in ("narration", "music"):
+            layer = audio_props.get(audio_layer) or {}
+            src = layer.get("src") if isinstance(layer, dict) else None
+            if src and Path(str(src)).is_absolute() and not str(src).startswith(("http://", "https://", "file://")):
+                resolved = Path(str(src)).resolve()
+                if resolved.exists():
+                    posix = resolved.as_posix()
+                    layer["src"] = f"file://{posix}" if posix.startswith("/") else f"file:///{posix}"
 
         # Build a custom themeConfig from the playbook's actual colors.
         # This ensures every video gets a unique visual identity derived
@@ -1806,6 +1846,22 @@ class VideoCompose(BaseTool):
                 subprocess_timeout = max(subprocess_timeout, ms // 1000 + 60)
             except (TypeError, ValueError):
                 pass
+
+        # Older macOS hosts can crash Remotion's bundled Chromium. Allow the
+        # same known-good local Chrome override used by the atelier path.
+        browser_executable = os.environ.get("REMOTION_BROWSER_EXECUTABLE")
+        if browser_executable:
+            browser_path = Path(browser_executable).expanduser().resolve()
+            if not browser_path.exists():
+                return ToolResult(success=False, error=f"REMOTION_BROWSER_EXECUTABLE not found: {browser_path}")
+            cmd.append(f"--browser-executable={browser_path}")
+
+        remotion_concurrency = os.environ.get("REMOTION_CONCURRENCY")
+        if remotion_concurrency:
+            try:
+                cmd.append(f"--concurrency={max(1, int(remotion_concurrency))}")
+            except ValueError:
+                return ToolResult(success=False, error="REMOTION_CONCURRENCY must be an integer")
 
         try:
             # Invoke from inside the composer dir so npx can resolve the
