@@ -122,6 +122,8 @@
         },
         "music": {
           "type": "object",
+          "required": ["asset_id"],
+          "description": "Approved background-music layer. Omit this property entirely when the resolved music source is none.",
           "properties": {
             "asset_id": { "type": "string" },
             "volume": { "type": "number", "minimum": 0, "maximum": 1 },

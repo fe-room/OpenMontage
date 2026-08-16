@@ -71,7 +71,8 @@ Before starting proposal work, check if a VideoAnalysisBrief exists for this pro
 **Mandatory Sample Protocol:** After the user approves a concept, BEFORE entering the
 script stage, produce a 10-15 second sample:
 1. The opening hook (first 5-7 seconds) + one representative middle scene
-2. Actual TTS voice, actual visual style, music bed snippet
+2. Actual TTS voice and actual visual style; include a music-bed snippet only
+   when music was explicitly enabled for this project
 3. Present with: "Here's a preview. Does this feel right?"
 4. Iterate until approved, then proceed to full production
 
@@ -172,7 +173,8 @@ Before developing full concepts, present a quick mood board to catch direction m
 - **3-5 reference images** (from web search, stock, or quick generations)
 - **Color palette direction** (2-3 options derived from playbook candidates)
 - **Tone references** ("Think: Kurzgesagt meets Vice" or "Think: Apple product video meets TED-Ed")
-- **1-2 music mood references** (genre + energy level, not specific tracks)
+- **1-2 music mood references** only when music was explicitly enabled (genre
+  + energy level, not specific tracks)
 
 Ask: **"Does this FEEL like what you're imagining? Any of these off-track?"**
 
@@ -370,6 +372,19 @@ Record the selection in `selected_concept` with rationale and any modifications.
 
 For the selected concept, design the stage-by-stage production plan.
 
+Before selecting audio tools, load `OpenMontageConfig` from `config.yaml`:
+
+- Inherit `narration_defaults` into `production_plan.voice_selection`. The
+  configured default is Doubao **大壹 2.0**
+  (`zh_male_dayi_saturn_bigtts`, `seed-tts-2.0`, `speech_rate=0`). Treat it as
+  selected unless the user explicitly requests another voice/provider. Pass
+  the configured provider to `tts_selector.preferred_provider` at asset time.
+- If `media_defaults.background_music_enabled` is false, set
+  `production_plan.music_source.source_type = "none"`, estimated music cost to
+  zero, and explain that the persistent no-BGM default was inherited. Do not
+  browse or present music choices unless the user asks to enable music for this
+  project.
+
 For each stage in the pipeline manifest (`animated-explainer.yaml`), specify:
 
 1. **Which tools will be used** — specific provider names, not just selectors
@@ -412,14 +427,22 @@ Also present **alternative production paths** — complete packages at different
 
 | Path | Quality | Cost | What Changes |
 |------|---------|------|-------------|
-| Premium | Best TTS + video clips + music | ~$1.50-2.50 | Full production value |
-| Standard | Good TTS + images + music | ~$0.50-1.00 | Static visuals, still professional |
+| Premium | Best TTS + video clips | ~$1.40-2.40 | Full visual production value; no BGM by persistent default |
+| Standard | Good TTS + images | ~$0.40-0.90 | Static visuals, still professional; no BGM by persistent default |
 | Budget | Local TTS + images | ~$0.05-0.15 | Robotic voice, image-only |
 | Free | Local TTS + diagrams | $0.00 | Functional but minimal |
 
 ### Step 5b: Music Plan (Mandatory)
 
-Music is a critical part of the video's feel. **Surface the music situation to the user at proposal time** — do not silently defer it to the asset stage where a failure becomes expensive.
+First apply `config.yaml media_defaults.background_music_enabled`.
+
+**When false and the user did not override it:** record
+`music_source.source_type = "none"`, show “No BGM — inherited global default”
+in the proposal, and stop this step. Do not inspect the library/API menu and do
+not ask the user to choose again.
+
+**When true, or when the user explicitly requests music:** surface the music
+situation at proposal time so it does not become an asset-stage surprise.
 
 **Check music availability in this order:**
 
@@ -449,6 +472,7 @@ Would you like to:
 **If no music source is available:** Tell the user explicitly. Do NOT let this surface as a surprise at the asset stage. Offer the `music_library/` path so they can add a track before production starts.
 
 **Rules:**
+- Apply the persistent no-BGM default before all availability checks
 - Always check `music_library/` first — user-provided music is free and intentional
 - Always report music API status (available, unavailable, quota remaining if checkable)
 - Record the music decision in `proposal_packet.production_plan.music_source`
@@ -462,7 +486,7 @@ Itemize every paid operation:
 COST ESTIMATE
 ├── TTS Narration: tts_selector × 1 run (~150 words)       $0.18
 ├── Image Generation: image_selector × 6 scenes                  $0.24
-├── Music: music_gen × 1 track (30s)                        $0.10
+├── Music: disabled by persistent default                   $0.00
 ├── Video Generation: video_selector × 2 clips (optional)   $0.00 (local)
 ├── Audio Enhancement: audio_enhance × 1 pass               $0.00 (local)
 └── TOTAL ESTIMATED                                         $0.52
@@ -555,7 +579,7 @@ The `selected_concept` in the proposal_packet effectively replaces what the old 
 ```
 script   → no tools, no cost
 scene    → no tools, no cost — design 4 Remotion component scenes + 4 AI image scenes
-assets   → tts_selector ($0.22), image_selector × 4 ($0.16), music_gen ($0.10)
+assets   → tts_selector ($0.22), image_selector × 4 ($0.16), no BGM ($0.00)
 edit     → no tools, no cost
 compose  → video_compose/Remotion render (free) — animated text cards, stat cards,
            spring transitions, image scenes with animation. NOT Ken Burns.
@@ -568,7 +592,7 @@ TOTAL: $0.48 of $2.00 budget (saved $0.16 by using Remotion components instead o
 ```
 script   → no tools, no cost
 scene    → no tools, no cost
-assets   → tts_selector ($0.22), image_selector × 8 ($0.32), music_gen ($0.10)
+assets   → tts_selector ($0.22), image_selector × 8 ($0.32), no BGM ($0.00)
 edit     → no tools, no cost
 compose  → video_compose/FFmpeg (free) — Ken Burns pan-and-zoom on images
 publish  → no tools, no cost

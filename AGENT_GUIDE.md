@@ -667,23 +667,51 @@ to footage and state what information each clip contributes. If no semantic-moti
 candidate exists, record that conclusion explicitly instead of silently omitting
 video generation.
 
+### Persistent Audio Defaults (Binding)
+
+Before proposing narration or music, load `OpenMontageConfig` from
+`config.yaml`. These are persistent user choices, not weak suggestions:
+
+- `narration_defaults` supplies the default TTS provider, voice ID/name,
+  resource ID, speech rate, and sample policy. Inherit every field into
+  `proposal_packet.production_plan.voice_selection` and pass the provider as
+  `tts_selector.preferred_provider`. A project may replace these values only
+  when the user explicitly asks for a different voice/provider.
+- When `media_defaults.background_music_enabled` is `false`, resolve the music
+  plan as `source_type: "none"` (or the pipeline-equivalent `source: "none"`)
+  immediately. State once that the persistent no-BGM default was applied, log
+  it as the selected music decision, and do not scan music libraries, rank
+  music providers, generate a music asset, add a music layer, or ask the user
+  to choose music. Offer music alternatives only when the user asks to override
+  the default for this project.
+
+Persistent defaults count as prior explicit user preferences. They still need
+to be visible in the proposal and decision log, but they do not require the
+user to reconfirm the same choice for every project.
+
 ### Music Plan (Mandatory)
 
-Music is a critical part of any video. **Surface the music situation to the user at proposal/idea time** — do not silently defer it to the asset stage where a failure becomes expensive.
-
-Check music availability in this order and present the options:
+Every audio-capable pipeline must record a resolved music plan at proposal/idea
+time. First apply the persistent audio defaults above. If background music is
+enabled globally or the user explicitly requests music for this project, check
+music availability in this order and present the options:
 
 1. **User music library (`music_library/`):** Check if this folder exists and contains tracks. If so, list available tracks with durations and let the user pick one.
 2. **Music generation APIs:** Check which music tools are available via the registry (`registry.get_by_capability("music_generation")`). Report their status honestly — include quota status if known.
 3. **Royalty-free sources:** Note if the user can provide their own track (e.g., from YouTube Audio Library, Jamendo, or other free sources). Offer the `music_library/` drop path.
 
-**Always present the user with explicit choices:**
+**When music is enabled/requested, present the user with explicit choices:**
 - Use a track from their library (which one?)
 - Provide a different track (drop it in `music_library/`)
 - Generate one via API (if available — name the provider and cost)
 - Proceed without music
 
 **If no music source is available:** Tell the user explicitly. Do NOT let this surface as a surprise at the asset stage.
+
+**No-BGM invariant:** When the resolved source is `none`, downstream asset,
+edit, and compose stages must omit the music asset and music layer entirely.
+An empty music object, placeholder track, generated silence, or automatically
+selected stock track is a contract violation.
 
 Record the music decision in the proposal/brief artifact so the asset director knows what to do.
 

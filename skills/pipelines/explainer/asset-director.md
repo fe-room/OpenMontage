@@ -89,13 +89,19 @@ For each script section:
 3. Use `delivery_cues.provider_text` when present; otherwise transform the section text with purposeful punctuation and break tags only when the selected provider supports them
 4. Apply speaker directions from the script (pace, emphasis, emotion)
 5. Apply the playbook's `audio.voice_style`
-6. Map cues to provider parameters:
+6. Read `proposal_packet.production_plan.voice_selection` and pass its
+   `provider` as `preferred_provider`, plus its `voice_id`, `resource_id`, and
+   `speech_rate`. When the proposal does not override them, `tts_selector`
+   inherits the configured Doubao 大壹 2.0 defaults automatically.
+7. Map cues to provider parameters:
    - OpenAI: `instructions` only with `model: "gpt-4o-mini-tts"`; use `response_format` for output format
    - Google TTS: `input_type: "ssml"` when using `<break>` tags, plus `speaking_rate` in `0.25..2.0` and `pitch` in `-20..20`
    - ElevenLabs: `stability`, `similarity_boost`, `style`, `speed`, and `use_speaker_boost`
-7. Generate using `tts_selector` — it auto-routes to the best available TTS provider based on user preference and availability. Check the registry's `best_for` fields to understand each provider's strengths.
-8. Record the applied `voice_performance` metadata on each narration asset
-9. Verify the audio file exists and duration matches expected timing (±15%)
+8. Generate using `tts_selector`. The configured/project provider preference
+   wins when available; a different provider is a major change and requires
+   user approval. Check the registry's `best_for` fields for tradeoffs.
+9. Record the applied `voice_performance` metadata on each narration asset
+10. Verify the audio file exists and duration matches expected timing (±15%)
 
 **Pronunciation guide**: If the script contains technical terms, jargon, or names with non-obvious pronunciation, include a pronunciation map in the TTS request.
 
@@ -133,13 +139,17 @@ Process asset tasks grouped by tool for efficiency:
 
 1. Read playbook's `audio.music_mood` and `audio.music_volume`
 2. Check the music decision from `proposal_packet.production_plan.music_source` (set by the Proposal Director)
-3. Source the background track in this priority order:
+3. **If `source_type == "none"`: stop here.** Do not inspect
+   `music_library/`, call a music provider, create generated silence, or add a
+   placeholder music asset. Record `music_status: "disabled_by_user_default"`
+   in manifest metadata and set music cost to zero.
+4. Otherwise source the background track in this priority order:
    - **User-selected library track**: If the proposal specified a track from `music_library/`, copy it to `projects/<project>/assets/music/background_music.mp3`
    - **User music library (`music_library/`)**: If the folder exists and has tracks, pick the best match for the playbook's `audio.music_mood`. List candidates by filename and let the EP decide.
    - **Music generation API**: Use `music_gen` (ElevenLabs) or `suno_music` if available. Check status via registry first — if the tool is unavailable or quota-exhausted, skip immediately (do NOT attempt and fail silently).
    - **No music available**: Log this clearly in the asset manifest as `"music_status": "unavailable"` with the reason. Do NOT silently produce a video without music — the EP and user should know.
-4. Duration should be at least as long as total video duration. If shorter, it can be looped by the compose stage.
-5. Verify the audio file exists at `projects/<project>/assets/music/background_music.mp3`
+5. Duration should be at least as long as total video duration. If shorter, it can be looped by the compose stage.
+6. Verify the audio file exists at `projects/<project>/assets/music/background_music.mp3`
 
 **Critical:** If music generation fails or is unavailable, report it immediately in the asset manifest — do not defer the problem to the compose stage.
 

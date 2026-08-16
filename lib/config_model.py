@@ -55,7 +55,9 @@ class OutputConfig(BaseModel):
 
 
 class MediaDefaultsConfig(BaseModel):
-    background_music_enabled: bool = True
+    # Keep the code-level fallback aligned with config.yaml.  A missing or
+    # partial config file must not silently turn background music back on.
+    background_music_enabled: bool = False
 
 
 class NarrationDefaultsConfig(BaseModel):

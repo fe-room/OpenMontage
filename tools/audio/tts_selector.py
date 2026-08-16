@@ -45,6 +45,16 @@ class TTSSelector(BaseTool):
                 "type": "string",
                 "description": "Provider-specific voice ID. Passed through to the selected TTS provider.",
             },
+            "resource_id": {
+                "type": "string",
+                "description": "Provider-specific TTS resource/model family. Inherits the configured narration default for the default provider.",
+            },
+            "speech_rate": {
+                "type": "integer",
+                "minimum": -50,
+                "maximum": 100,
+                "description": "Doubao speech-rate control. Inherits config.yaml narration_defaults.speech_rate when Doubao is selected.",
+            },
             "voice_language": {
                 "type": "string",
                 "enum": ["zh", "en"],
@@ -159,15 +169,19 @@ class TTSSelector(BaseTool):
         return ToolStatus.UNAVAILABLE
 
     def estimate_cost(self, inputs: dict[str, Any]) -> float:
+        inputs = self._apply_provider_preference(inputs)
         candidates = self._providers()
         if not candidates:
             return 0.0
         tool, _ = self._select_best_tool(inputs, candidates, self._prepare_task_context(inputs))
-        return tool.estimate_cost(inputs) if tool else 0.0
+        if tool is None:
+            return 0.0
+        return tool.estimate_cost(self._apply_selected_provider_defaults(inputs, tool.provider))
 
     def execute(self, inputs: dict[str, Any]) -> ToolResult:
         from lib.scoring import rank_providers
 
+        inputs = self._apply_provider_preference(inputs)
         task_context = self._prepare_task_context(inputs)
         candidates = self._providers()
 
@@ -188,7 +202,8 @@ class TTSSelector(BaseTool):
         if tool is None:
             return ToolResult(success=False, error="No TTS provider available.")
 
-        result = tool.execute(inputs)
+        provider_inputs = self._apply_selected_provider_defaults(inputs, tool.provider)
+        result = tool.execute(provider_inputs)
         if result.success:
             result.data.setdefault("selected_tool", tool.name)
             result.data["selected_provider"] = tool.provider
@@ -201,6 +216,44 @@ class TTSSelector(BaseTool):
                 if t.name != tool.name and t.get_status().value == "available"
             ]
         return result
+
+    @staticmethod
+    def _configured_narration_defaults():
+        """Load persistent user narration defaults without making config fatal."""
+        from lib.config_model import NarrationDefaultsConfig, OpenMontageConfig
+
+        try:
+            return OpenMontageConfig.load().narration_defaults
+        except Exception:
+            return NarrationDefaultsConfig()
+
+    def _apply_provider_preference(self, inputs: dict[str, Any]) -> dict[str, Any]:
+        """Use the configured provider unless this project explicitly overrides it."""
+        resolved = dict(inputs)
+        if resolved.get("preferred_provider", "auto") == "auto":
+            resolved["preferred_provider"] = self._configured_narration_defaults().provider
+        return resolved
+
+    def _apply_selected_provider_defaults(
+        self,
+        inputs: dict[str, Any],
+        selected_provider: str,
+    ) -> dict[str, Any]:
+        """Apply voice/model controls only when the configured provider won.
+
+        Keeping this after selection prevents a Doubao voice ID from leaking into
+        an explicitly selected or availability-driven fallback provider.
+        """
+        resolved = dict(inputs)
+        defaults = self._configured_narration_defaults()
+        if selected_provider != defaults.provider:
+            return resolved
+        if defaults.voice_id:
+            resolved.setdefault("voice_id", defaults.voice_id)
+        if defaults.resource_id:
+            resolved.setdefault("resource_id", defaults.resource_id)
+        resolved.setdefault("speech_rate", defaults.speech_rate)
+        return resolved
 
     def _select_best_tool(
         self,

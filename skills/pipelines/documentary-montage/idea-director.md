@@ -79,14 +79,16 @@ Shape options:
 
 ### 4. Note Music Intent (MANDATORY)
 
-Documentary montage is inseparable from its music bed. **Music is MANDATORY
-for this pipeline.** The ONLY way out is an explicit user opt-out (e.g.
-"no music, I want it silent") — which MUST be recorded as
+Documentary montage normally depends on its music bed. First load
+`config.yaml media_defaults.background_music_enabled`. The persistent `false`
+setting is an explicit user opt-out and MUST be inherited without asking again.
+Record it as
 `music_plan.source = "none"` with a `music_plan.opt_out_reason` field.
 
 Silent-by-design briefs that feel "pure" at the idea stage regularly look
 like abandoned footage at compose time. Do not assume silence will earn
-itself. If the user has not mentioned music, ASSUME THEY WANT IT and pick:
+itself. If background music is enabled and the user has not specified a source,
+pick:
 
 - user-provided track (put path in `music_plan.source_path`),
 - music library pick (list what's in `music_library/`),

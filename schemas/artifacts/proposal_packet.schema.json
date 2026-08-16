@@ -172,13 +172,14 @@
         "taste_profile": { "$ref": "#/$defs/taste_profile" },
         "music_source": {
           "type": "object",
-          "description": "Resolved music plan from the proposal stage",
+          "description": "Resolved music plan from the proposal stage. source_type=none is the persistent default unless the user explicitly enables music for the project.",
           "properties": {
             "source_type": { "type": "string", "enum": ["user_library", "ai_generated", "bring_your_own", "none"] },
             "track_path": { "type": "string", "description": "Path to selected track, if known" },
             "provider": { "type": "string", "description": "Music generation provider, if AI-generated" },
             "mood_direction": { "type": "string", "description": "Music mood description from research" },
-            "estimated_cost_usd": { "type": "number", "minimum": 0 }
+            "estimated_cost_usd": { "type": "number", "minimum": 0 },
+            "inherited_from_defaults": { "type": "boolean", "description": "True when the persistent no-BGM user default selected this plan." }
           },
           "additionalProperties": false
         },
@@ -188,6 +189,10 @@
           "properties": {
             "provider": { "type": "string" },
             "voice_id": { "type": "string" },
+            "voice_name": { "type": "string" },
+            "resource_id": { "type": "string" },
+            "speech_rate": { "type": "integer", "minimum": -50, "maximum": 100 },
+            "inherited_from_defaults": { "type": "boolean", "description": "True when this voice selection came from persistent user defaults." },
             "rationale": { "type": "string" },
             "estimated_cost_usd": { "type": "number", "minimum": 0 },
             "delivery_style": {

@@ -187,6 +187,11 @@ for the proven formula — especially the all-dark-background rule for visual co
 
 ### Step 5: Audio Post-Processing
 
+Before building either runtime's audio props, inspect the resolved
+`music_source`. When it is `none`, pass narration (and optional SFX) only. Do
+not add a music path, music `<Audio>` component, ducking, generated silence, or
+an `audio_mixer` music input.
+
 **Remotion path (DEFAULT):** Skip external audio mixing entirely. Remotion handles all audio
 natively via `<Audio>` components. Pass audio sources in the composition props:
 ```json

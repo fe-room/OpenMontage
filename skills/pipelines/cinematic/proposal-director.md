@@ -223,7 +223,11 @@ Let the user select, combine, modify, or redirect entirely.
 
 ### Step 5: Music Plan (Mandatory for Cinematic)
 
-Cinematic videos live and die by their audio. Surface the music situation before the user approves.
+Apply `config.yaml media_defaults.background_music_enabled` first. When false
+and not explicitly overridden, carry `source: "none"` forward from the brief,
+show it as an inherited persistent default, and do not scan or present music
+alternatives. Only use the availability flow below when music is enabled or the
+user asks to override the default.
 
 Check availability in this order:
 1. **User music library (`music_library/`)** — list available tracks

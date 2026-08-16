@@ -284,10 +284,17 @@ class TestConfig:
         assert config.llm.provider == "anthropic"
         assert config.budget.mode.value == "warn"
         assert config.checkpoint.policy.value == "guided"
+        assert config.media_defaults.background_music_enabled is False
+        assert config.narration_defaults.provider == "doubao"
 
     def test_load_from_yaml(self):
         config = OpenMontageConfig.load()
         assert config.budget.total_usd == 10.0
+        assert config.media_defaults.background_music_enabled is False
+        assert config.narration_defaults.voice_name == "大壹 2.0"
+        assert config.narration_defaults.voice_id == "zh_male_dayi_saturn_bigtts"
+        assert config.narration_defaults.resource_id == "seed-tts-2.0"
+        assert config.narration_defaults.speech_rate == 0
 
 
 # ---- Schemas ----
@@ -312,6 +319,19 @@ class TestSchemas:
 
     def test_cover_package_validates(self):
         validate_artifact("cover_package", sample_artifact("cover_package"))
+
+    def test_edit_decisions_omits_music_when_disabled(self):
+        artifact = sample_artifact("edit_decisions")
+        artifact["render_runtime"] = "remotion"
+        artifact["audio"] = {"narration": {"segments": []}, "sfx": []}
+        validate_artifact("edit_decisions", artifact)
+
+    def test_edit_decisions_rejects_empty_music_placeholder(self):
+        artifact = sample_artifact("edit_decisions")
+        artifact["render_runtime"] = "remotion"
+        artifact["audio"] = {"music": {}}
+        with pytest.raises(Exception):
+            validate_artifact("edit_decisions", artifact)
 
 
 # ---- Checkpoint ----

@@ -97,6 +97,7 @@ stages:
       - Cost estimate is itemized and honest
       - Quality/cost tradeoffs are clearly presented
       - Alternative production paths shown at different price points
+      - "Persistent audio defaults are inherited: Doubao 大壹 2.0 narration and no BGM unless the user explicitly overrides them"
       - Semantic motion coverage audit classifies beats and compares composition-only, light-hybrid, and footage-led strategies when footage could add meaning
       - Visual coverage strategy is logged as a motion_commitment decision; optional footage is not silently omitted merely because it is not a core dependency
       - "Concept differentiation from reference (if reference-driven)"
@@ -104,6 +105,8 @@ stages:
       - Schema-valid proposal_packet with at least 3 concept_options
       - selected_concept references a valid concept_id
       - cost_estimate has itemized line_items with per-tool costs
+      - production_plan.voice_selection resolves a concrete provider and voice_id
+      - production_plan.music_source resolves to source_type none by default, or records the user's explicit project override
       - approval.status is "approved" or "approved_with_changes" before proceeding
     sub_stages:
       - name: sample
@@ -167,7 +170,6 @@ stages:
     required_artifacts_in:
       - scene_plan
       - script
-    optional_artifacts_in:
       - proposal_packet
     produces:
       - asset_manifest
@@ -194,6 +196,7 @@ stages:
       - All asset files exist on disk
       - Narration covers all script sections
       - Narration assets apply the approved voice performance plan and sample settings
+      - No music asset exists when proposal music_source.source_type is none
       - Total cost within approved budget from proposal_packet
       - Image style consistency across all generated visuals
     success_criteria:
@@ -205,6 +208,7 @@ stages:
     required_artifacts_in:
       - scene_plan
       - asset_manifest
+      - proposal_packet
     optional_artifacts_in:
       - script
     produces:
@@ -216,7 +220,7 @@ stages:
       - "For content_category=finance, final cut is a text_card containing the exact mandatory financial disclaimer"
       - All cuts reference valid assets from manifest
       - Subtitles enabled with playbook-compatible styling
-      - Music configured with ducking parameters
+      - Music is omitted entirely when music_source is none; otherwise it references a real asset and has ducking parameters
       - No timeline gaps or overlaps
     success_criteria:
       - Schema-valid edit_decisions
@@ -227,6 +231,7 @@ stages:
     required_artifacts_in:
       - edit_decisions
       - asset_manifest
+      - proposal_packet
     optional_artifacts_in:
       - scene_plan
     produces:
@@ -248,7 +253,7 @@ stages:
       - "For content_category=finance, ending frame visibly shows the exact mandatory disclaimer and final_review compliance flags all pass"
       - Output video exists and is playable
       - "Duration within +/-5% of target"
-      - Audio is clear with proper narration/music balance
+      - Audio is clear; no music layer exists when music_source is none, otherwise narration/music balance is proper
       - "render_runtime in edit_decisions matches proposal_packet — silent swap to another runtime is a CRITICAL governance violation"
       - "If render_runtime='hyperframes': `hyperframes lint` and `hyperframes validate` must pass before render"
     success_criteria:

@@ -84,7 +84,16 @@ If `motion_required = true`, be explicit about the motion path:
 
 ### 5. Music Plan (Mandatory)
 
-Cinematic videos live and die by their audio. **Surface the music situation before the user approves the brief.**
+First apply `config.yaml media_defaults.background_music_enabled`. When it is
+false and the user has not explicitly requested music, record
+`brief.metadata.music_strategy.source = "none"` with the reason “persistent
+user default: no BGM”, state that inherited choice in the brief, and stop this
+step. Do not scan sources or ask the user to choose music again. A cinematic
+piece may benefit from music, but overriding a persistent user default requires
+the user's explicit approval.
+
+When music is enabled or explicitly requested, surface the music situation
+before the user approves the brief.
 
 Check availability in this order:
 

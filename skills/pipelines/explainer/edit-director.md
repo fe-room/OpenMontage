@@ -92,6 +92,13 @@ Use the playbook's typography for font choices.
 
 ### Step 4: Configure Audio Layers
 
+Read `proposal_packet.production_plan.music_source` first. When
+`source_type == "none"`, omit `audio.music` entirely; do not emit `{}`, a
+`music-bg` placeholder, ducking configuration, or a silent track. The audio
+object contains narration and optional SFX only.
+
+When a real music asset was approved, use the following shape:
+
 ```json
 {
   "audio": {
