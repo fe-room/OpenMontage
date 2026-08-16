@@ -21,6 +21,11 @@ reference_input:
     - scene_detect
     - frame_sampler
 
+conditional_skills:
+  - skill: meta/finance-video-editorial
+    when: {content_category: finance}
+    stages: [research, proposal, script, scene_plan, assets, edit, compose, cover, publish]
+
 extensions:
   custom_scripts: true
   custom_playbooks: true

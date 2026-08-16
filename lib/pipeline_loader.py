@@ -170,6 +170,64 @@ def get_stage_skill(manifest: dict, stage_name: str) -> Optional[str]:
     return None
 
 
+def _editorial_context_value(context: dict[str, Any], key: str) -> Any:
+    """Resolve a routing value from direct or canonical-artifact context."""
+    if key in context:
+        return context[key]
+
+    metadata = context.get("metadata")
+    if isinstance(metadata, dict) and key in metadata:
+        return metadata[key]
+
+    artifacts = context.get("artifacts", context)
+    if isinstance(artifacts, dict):
+        for artifact_name in ("brief", "research_brief", "proposal_packet"):
+            artifact = artifacts.get(artifact_name)
+            if not isinstance(artifact, dict):
+                continue
+            if key in artifact:
+                return artifact[key]
+            artifact_metadata = artifact.get("metadata")
+            if isinstance(artifact_metadata, dict) and key in artifact_metadata:
+                return artifact_metadata[key]
+    return None
+
+
+def get_conditional_skills(
+    manifest: dict,
+    *,
+    context: Optional[dict[str, Any]],
+    stage_name: Optional[str] = None,
+) -> list[str]:
+    """Return only the skills whose editorial conditions match the run.
+
+    Conditional skills deliberately stay outside ``required_skills`` so they do
+    not leak topic-specific rules into the default production path.
+    """
+    if not context:
+        return []
+
+    active: list[str] = []
+    for rule in manifest.get("conditional_skills", []):
+        stages = rule.get("stages")
+        if stage_name and stages and stage_name not in stages:
+            continue
+
+        matches = True
+        for key, expected in rule.get("when", {}).items():
+            actual = _editorial_context_value(context, key)
+            if isinstance(actual, str) and isinstance(expected, str):
+                matches = actual.strip().lower() == expected.strip().lower()
+            else:
+                matches = actual == expected
+            if not matches:
+                break
+
+        if matches:
+            active.append(rule["skill"])
+    return active
+
+
 def get_stage_human_approval_default(manifest: dict, stage_name: str) -> Optional[bool]:
     """Whether a stage gates on human approval. None if the stage isn't declared.
 

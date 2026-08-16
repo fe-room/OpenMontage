@@ -20,6 +20,10 @@ answer. Use `finance` whenever the content covers investments, securities,
 funds, stocks, bonds, derivatives, crypto assets, trading, market forecasts,
 or portfolio allocation. Financial classification activates the mandatory
 final disclaimer in `AGENT_GUIDE.md`.
+When the classification is `finance`, load
+`skills/meta/finance-video-editorial.md` and carry its single core question and
+evidence requirements into the intake brief. For every other category, do not
+load or apply that skill.
 
 ## How to Ask
 

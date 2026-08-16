@@ -23,6 +23,11 @@ orchestration:
   max_send_backs: 2
   max_wall_time_minutes: 60
 
+conditional_skills:
+  - skill: meta/finance-video-editorial
+    when: {content_category: finance}
+    stages: [idea, scene_plan, assets, edit, compose, cover]
+
 extensions:
   custom_scripts: true
   custom_playbooks: true

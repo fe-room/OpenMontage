@@ -59,7 +59,7 @@ When the user asks to make, create, produce, or generate any video content — a
 4. **Run preflight.** Discover whether the preferred path and alternatives are
    executable. If the preferred path is blocked, surface it and wait for the
    user's enable/alternative/downgrade decision; do not substitute silently.
-5. **Execute stage by stage.** For EACH stage, read the director skill named by the manifest BEFORE doing any work in that stage. Pipeline-specific directors live under `skills/pipelines/<pipeline>/`; shared stages such as post-render `cover` live under `skills/pipelines/shared/`.
+5. **Execute stage by stage.** For EACH stage, read the director skill named by the manifest BEFORE doing any work in that stage. Resolve and read any matching `conditional_skills` for the stage after content classification. Pipeline-specific directors live under `skills/pipelines/<pipeline>/`; shared stages such as post-render `cover` live under `skills/pipelines/shared/`.
 6. **Read Layer 3 skills before calling tools.** Before using any tool with an `agent_skills` field, read the referenced skill in `.agents/skills/`. These contain provider-specific prompting guidance, parameter optimization, and quality techniques that dramatically improve output.
 
 **Do NOT:**
@@ -90,6 +90,20 @@ final script section, the final `scene_plan` scene, and the final
 `edit_decisions.cuts` item. During post-render review, inspect the ending frame
 and record that the sentence is present, exact, readable, and at the end.
 Checkpoint validation fails closed when any of these requirements is missing.
+
+## Conditional Financial Editorial Workflow
+
+After classifying a production, resolve the selected manifest's
+`conditional_skills` against the canonical `content_category`. When the value is
+`finance`, read and apply `skills/meta/finance-video-editorial.md` at each stage
+listed by the manifest. This adds the research-first, one-question,
+plain-language, probabilistic-claims, data-purpose, boundary-condition, and
+reusable-judgment-method rules for financial shorts.
+
+This hook is conditional by design. When `content_category` is anything other
+than `finance`, it resolves to no skill and MUST NOT alter the selected pipeline,
+its prompts, artifacts, review criteria, stage order, or approval gates. Do not
+put the finance skill in a pipeline's unconditional `required_skills` list.
 
 ## What OpenMontage Is
 
@@ -792,6 +806,8 @@ Pipeline manifest rules:
 
 - Pipelines are declarative YAML manifests in `pipeline_defs/`.
 - Stages declare: `skill` (director skill path), `produces`, `tools_available`, `review_focus`, `success_criteria`, `human_approval_default`.
+- Topic-specific overlays belong in top-level `conditional_skills`; resolve them
+  from canonical run context and never copy them into the unconditional main flow.
 - Adding a new pipeline requires a manifest + stage director skills.
 
 Tool rules:

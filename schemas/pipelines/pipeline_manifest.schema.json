@@ -38,6 +38,31 @@
       "type": "array",
       "items": { "type": "string" }
     },
+    "conditional_skills": {
+      "type": "array",
+      "description": "Skills activated only when runtime editorial context matches. These are not part of the default pipeline path.",
+      "items": {
+        "type": "object",
+        "required": ["skill", "when"],
+        "properties": {
+          "skill": { "type": "string" },
+          "when": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": ["string", "number", "boolean"]
+            }
+          },
+          "stages": {
+            "type": "array",
+            "description": "Optional stage allowlist. Omit to activate at every stage while the condition matches.",
+            "items": { "type": "string" },
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "production_modes": {
       "type": "array",
       "description": "Optional production strategies supported by the pipeline.",

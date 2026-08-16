@@ -40,6 +40,10 @@ First, the non-negotiable check:
 - If it is `finance`, treat omission or alteration of the exact final disclaimer
   as **critical** at script, scene-plan, edit, and compose stages:
   `本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。`
+- If it is `finance`, read `skills/meta/finance-video-editorial.md` and run its
+  Finance Review Gate for every stage named by the pipeline's conditional rule.
+  Treat violations of its four iron rules as **critical** with a concrete fix.
+  For non-finance categories, skip that skill and its checks completely.
 - The scene-plan and edit versions must be the final item and use a native
   exact-text card. At compose, inspect the ending frame and confirm the text is
   present, exact, readable, and at the end in `final_review.checks.compliance`.

@@ -22,8 +22,9 @@ The script is the backbone of the video. Every visual, every scene, every audio 
 ### Financial content policy (binding)
 
 Read `proposal_packet.content_category` (or upstream brief metadata). When it is
-`finance`, append a dedicated final script section containing this exact text,
-with no paraphrase or translation:
+`finance`, first read and apply `skills/meta/finance-video-editorial.md`. Then
+append a dedicated final script section containing this exact text, with no
+paraphrase or translation:
 
 `本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。`
 

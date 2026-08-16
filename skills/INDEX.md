@@ -86,6 +86,12 @@ Key capability families to look for in the output:
 | Subtitle Sync | `core/subtitle-sync.md` | Subtitle timing and alignment | `remotion-best-practices` |
 | Color Grading | `core/color-grading.md` | FFmpeg color profiles, LUT workflow, accessibility | `ffmpeg` |
 
+## Conditional Editorial Skills
+
+| Skill | File | Trigger |
+|---|---|---|
+| Finance Video Editorial Policy | `meta/finance-video-editorial.md` | Only when canonical `content_category` is `finance`; resolved from a pipeline manifest's `conditional_skills` |
+
 ## Creative Skills
 
 | Skill | File | Trigger | Agent Skills (Layer 3) |
