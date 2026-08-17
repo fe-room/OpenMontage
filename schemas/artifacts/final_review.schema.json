@@ -21,6 +21,7 @@
       "required": [
         "technical_probe",
         "visual_spotcheck",
+        "opening_frame_check",
         "audio_spotcheck",
         "promise_preservation",
         "subtitle_check"
@@ -61,6 +62,29 @@
               "items": { "type": "string" }
             }
           }
+        },
+        "opening_frame_check": {
+          "type": "object",
+          "description": "Quality gate for the exact first decoded frame. Pixel statistics reject large near-uniform blank areas; the reviewer confirms that the visible foreground is a topic-defining theme element.",
+          "required": [
+            "frame_path",
+            "extracted",
+            "large_blank_area_detected",
+            "theme_elements_visible",
+            "inspection_method",
+            "issues"
+          ],
+          "properties": {
+            "frame_path": { "type": "string" },
+            "extracted": { "type": "boolean" },
+            "large_blank_area_detected": { "type": "boolean" },
+            "theme_elements_visible": { "type": "boolean" },
+            "blank_area_ratio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+            "edge_density": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+            "inspection_method": { "type": "string" },
+            "issues": { "type": "array", "items": { "type": "string" } }
+          },
+          "additionalProperties": false
         },
         "audio_spotcheck": {
           "type": "object",

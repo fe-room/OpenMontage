@@ -1349,6 +1349,53 @@ def test_final_review_tracks_runtime_and_swap():
     assert "runtime_swap_detected" in pp
 
 
+def test_final_review_schema_requires_opening_frame_quality_gate():
+    schema_path = (
+        Path(__file__).resolve().parent.parent.parent
+        / "schemas"
+        / "artifacts"
+        / "final_review.schema.json"
+    )
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    checks = schema["properties"]["checks"]
+    assert "opening_frame_check" in checks["required"]
+    opening = checks["properties"]["opening_frame_check"]
+    assert "large_blank_area_detected" in opening["required"]
+    assert "theme_elements_visible" in opening["required"]
+
+
+def test_opening_frame_analysis_rejects_large_uniform_canvas(tmp_path):
+    from PIL import Image
+
+    frame = tmp_path / "blank-opening.png"
+    Image.new("RGB", (640, 360), "white").save(frame)
+
+    result = VideoCompose._analyze_opening_frame(frame)
+
+    assert result["extracted"] is True
+    assert result["large_blank_area_detected"] is True
+    assert result["theme_elements_visible"] is False
+    assert result["issues"]
+
+
+def test_opening_frame_analysis_accepts_visible_theme_element(tmp_path):
+    from PIL import Image, ImageDraw
+
+    frame = tmp_path / "subject-opening.png"
+    image = Image.new("RGB", (640, 360), "white")
+    draw = ImageDraw.Draw(image)
+    draw.rectangle((100, 45, 540, 315), fill="#1457d9")
+    draw.ellipse((250, 105, 390, 245), fill="#ffcc00")
+    image.save(frame)
+
+    result = VideoCompose._analyze_opening_frame(frame)
+
+    assert result["extracted"] is True
+    assert result["large_blank_area_detected"] is False
+    assert result["theme_elements_visible"] is True
+    assert result["issues"] == []
+
+
 def test_decision_log_has_render_runtime_category():
     schema_path = (
         Path(__file__).resolve().parent.parent.parent

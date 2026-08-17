@@ -2063,6 +2063,64 @@ class VideoCompose(BaseTool):
 
         return result
 
+    @staticmethod
+    def _analyze_opening_frame(frame_path: Path) -> dict[str, Any]:
+        """Measure whether frame zero contains a meaningful visual subject.
+
+        This deliberately treats *any* dominant near-uniform background as
+        blank, not only black.  That catches white canvases, brand-color
+        canvases, and fade-ins that the old PNG-file-size heuristic missed.
+        The result is a deterministic screening signal; the compose reviewer
+        still confirms that the visible foreground is actually on-topic.
+        """
+        result: dict[str, Any] = {
+            "frame_path": str(frame_path),
+            "extracted": False,
+            "large_blank_area_detected": True,
+            "theme_elements_visible": False,
+            "blank_area_ratio": None,
+            "edge_density": None,
+            "inspection_method": "pixel_statistics_plus_human_semantic_review",
+            "issues": [],
+        }
+        try:
+            from PIL import Image, ImageFilter, ImageStat
+
+            with Image.open(frame_path) as source:
+                image = source.convert("RGB")
+                image.thumbnail((320, 320))
+
+                # Quantize colors so gradients/compression noise do not turn a
+                # visually empty canvas into thousands of unique colors.
+                quantized = image.quantize(colors=32)
+                histogram = quantized.histogram()
+                pixel_count = max(1, image.width * image.height)
+                dominant_ratio = max(histogram) / pixel_count
+
+                # Sparse text/logo on a solid canvas can have a high dominant
+                # color ratio, so also measure how much structure is present.
+                edges = image.convert("L").filter(ImageFilter.FIND_EDGES)
+                edge_mean = ImageStat.Stat(edges).mean[0] / 255.0
+
+                large_blank = dominant_ratio >= 0.82 and edge_mean < 0.035
+                result.update({
+                    "extracted": True,
+                    "large_blank_area_detected": large_blank,
+                    "theme_elements_visible": not large_blank,
+                    "blank_area_ratio": round(dominant_ratio, 4),
+                    "edge_density": round(edge_mean, 4),
+                })
+                if large_blank:
+                    result["issues"].append(
+                        "Opening frame has a large near-uniform blank area and no "
+                        "strong foreground/theme-element signal. Show the video's "
+                        "subject, title, product, person, or other topic-defining "
+                        "element on frame zero; do not begin with a blank fade-in."
+                    )
+        except Exception as e:
+            result["issues"].append(f"Opening-frame analysis error: {e}")
+        return result
+
     def _run_final_review(
         self,
         output_path: Path,
@@ -2167,7 +2225,7 @@ class VideoCompose(BaseTool):
 
         issues.extend(technical_probe.get("issues", []))
 
-        # --- 2. Visual spotcheck: sample 4 frames ---
+        # --- 2. Visual spotcheck: exact first frame + 4 timeline frames ---
         visual_spotcheck: dict[str, Any] = {
             "frames_sampled": 0,
             "frame_paths": [],
@@ -2177,11 +2235,39 @@ class VideoCompose(BaseTool):
             "unreadable_text": False,
             "issues": [],
         }
+        opening_frame_check: dict[str, Any] = {
+            "frame_path": "",
+            "extracted": False,
+            "large_blank_area_detected": True,
+            "theme_elements_visible": False,
+            "blank_area_ratio": None,
+            "edge_density": None,
+            "inspection_method": "pixel_statistics_plus_human_semantic_review",
+            "issues": ["Opening frame was not inspected"],
+        }
         duration = technical_probe.get("duration_seconds", 0)
         if duration > 0 and technical_probe.get("valid_container"):
             try:
                 frame_dir = output_path.parent / ".final_review_frames"
                 frame_dir.mkdir(parents=True, exist_ok=True)
+
+                # Extract frame index 0, rather than sampling at 10%. Platforms
+                # judge the actual opening frame and a fade-in can otherwise go
+                # unnoticed even when the rest of the opening shot is healthy.
+                opening_path = frame_dir / "opening_frame_0.png"
+                opening_cmd = [
+                    "ffmpeg", "-y", "-i", str(output_path),
+                    "-vf", "select=eq(n\\,0)", "-frames:v", "1",
+                    str(opening_path),
+                ]
+                subprocess.run(opening_cmd, capture_output=True, timeout=15)
+                if opening_path.exists():
+                    opening_frame_check = self._analyze_opening_frame(opening_path)
+                else:
+                    opening_frame_check["issues"] = [
+                        "Could not extract frame zero for opening-frame quality review"
+                    ]
+
                 # Sample at 10%, 35%, 65%, 90% of duration
                 sample_points = [0.10, 0.35, 0.65, 0.90]
                 frame_paths = []
@@ -2218,6 +2304,7 @@ class VideoCompose(BaseTool):
                 visual_spotcheck["issues"].append(f"Frame sampling error: {e}")
 
         issues.extend(visual_spotcheck.get("issues", []))
+        issues.extend(opening_frame_check.get("issues", []))
 
         # --- 3. Audio spotcheck ---
         audio_spotcheck: dict[str, Any] = {
@@ -2436,8 +2523,22 @@ class VideoCompose(BaseTool):
                 "silent downgrade", "delivery promise violation",
                 "effectively silent", "ffprobe failed", "suspiciously short",
                 "tts punctuation leak",  # reading literal punctuation aloud
+                "opening frame", "frame zero",
             ])
         ]
+        opening_frame_failed = (
+            not opening_frame_check.get("extracted")
+            or opening_frame_check.get("large_blank_area_detected", True)
+            or not opening_frame_check.get("theme_elements_visible")
+        )
+        if opening_frame_failed and not any(
+            issue in critical_issues
+            for issue in opening_frame_check.get("issues", [])
+        ):
+            critical_issues.append(
+                "Opening-frame gate failed: frame zero was not extracted, "
+                "contains a large blank area, or lacks a visible theme element"
+            )
 
         if critical_issues:
             status = "revise"
@@ -2460,6 +2561,7 @@ class VideoCompose(BaseTool):
             "checks": {
                 "technical_probe": technical_probe,
                 "visual_spotcheck": visual_spotcheck,
+                "opening_frame_check": opening_frame_check,
                 "audio_spotcheck": audio_spotcheck,
                 "promise_preservation": promise_preservation,
                 "subtitle_check": subtitle_check,

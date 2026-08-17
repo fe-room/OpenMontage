@@ -256,7 +256,7 @@ declaring a render complete:
    `class="clip"` on timed elements. MUST pass before render (contrast can
    be deferred with `--no-contrast` during iteration, but not for final).
 3. **`npx hyperframes render --quality standard`** — produces the MP4.
-4. **Post-render final review** — probe with ffprobe, sample frames,
+4. **Post-render final review** — probe with ffprobe, inspect the exact first frame for large blank areas and visible topic-defining elements, sample timeline frames,
    transcribe audio, compare to script. Same contract as the Remotion path.
    See `final_review.schema.json`.
 

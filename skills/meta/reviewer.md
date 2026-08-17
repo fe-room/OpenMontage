@@ -325,9 +325,10 @@ Run at **compose**, **cover**, and **publish** stages. Ensures the agent reviewe
    - `pass` → OK, proceed
    - `revise` → The agent should have fixed issues before presenting. If the pipeline continued anyway: **CRITICAL** — "Self-review found revise-worthy issues but the agent presented anyway."
    - `fail` → The pipeline MUST NOT proceed. If it did: **CRITICAL**
-3. **Check completeness**: All 5 required checks must have data:
+3. **Check completeness**: All 6 required checks must have data:
    - `technical_probe` must show a valid container with plausible duration/resolution
    - `visual_spotcheck` must have `frames_sampled >= 4`
+   - `opening_frame_check` must inspect the exact first decoded frame. Require `extracted: true`, `large_blank_area_detected: false`, and `theme_elements_visible: true`. Inspect `frame_path` and confirm the foreground is actually topic-defining (subject, title, product, person, or another theme element), not merely compression noise or a decorative speck. Any failure is **CRITICAL** — re-author/re-render the opening; do not publish a blank fade-in.
    - `audio_spotcheck` must report narration/music presence
    - `promise_preservation` must confirm `delivery_promise_honored`
    - `subtitle_check` must report presence/absence
