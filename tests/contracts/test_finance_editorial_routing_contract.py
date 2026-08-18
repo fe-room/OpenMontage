@@ -12,7 +12,14 @@ FINANCE_SKILL = "meta/finance-video-editorial"
 
 
 def _production_pipelines() -> list[str]:
-    return [name for name in list_pipelines() if name != "framework-smoke"]
+    result = []
+    for name in list_pipelines():
+        if name == "framework-smoke":
+            continue
+        manifest = load_pipeline(name)
+        if manifest.get("deliverable_type", "video") == "video":
+            result.append(name)
+    return result
 
 
 def test_every_production_pipeline_declares_finance_as_conditional_only():

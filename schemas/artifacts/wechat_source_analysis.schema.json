@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openmontage/artifacts/wechat_source_analysis",
+  "title": "WeChat Source Analysis",
+  "description": "Grounded analysis of the finance video or sibling OpenMontage project that may become a WeChat article.",
+  "type": "object",
+  "required": ["version", "content_category", "source", "core_question", "video_summary", "video_coverage", "expansion_opportunities"],
+  "properties": {
+    "version": {"type": "string", "const": "1.0"},
+    "content_category": {"type": "string", "const": "finance"},
+    "source": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"type": "string", "enum": ["openmontage_project", "local_video"]},
+        "project_id": {"type": "string"},
+        "video_path": {"type": "string"},
+        "transcript_path": {"type": "string"},
+        "artifacts_used": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "core_question": {"type": "string", "minLength": 5},
+    "video_summary": {"type": "string", "minLength": 20},
+    "video_coverage": {
+      "type": "object",
+      "required": ["conclusions", "evidence_shown", "omitted_depth", "time_sensitivity"],
+      "properties": {
+        "conclusions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "evidence_shown": {"type": "array", "items": {"type": "string"}},
+        "omitted_depth": {"type": "array", "items": {"type": "string"}},
+        "time_sensitivity": {"type": "string", "enum": ["evergreen", "months", "weeks", "days", "intraday"]},
+        "mandatory_disclaimer_present": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "expansion_opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "description", "article_value"],
+        "properties": {
+          "kind": {"type": "string", "enum": ["data", "method", "chart", "case", "counterexample", "boundary", "series", "tool"]},
+          "description": {"type": "string"},
+          "article_value": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": false
+}

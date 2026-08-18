@@ -108,6 +108,7 @@ function renderSlate(s) {
 // ---------------------------------------------------------------------------
 
 function stageSub(st) {
+  if (st.status === "not_applicable") return "not needed after screening";
   if (st.status === "awaiting_human") return "awaiting your approval\nreply in chat to continue";
   if (st.status === "in_progress" && st.stalled) {
     return `stalled? no activity for ${st.stalled_minutes}m\nask the agent for status`;

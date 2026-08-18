@@ -1,0 +1,155 @@
+name: finance-wechat-article
+version: "1.0"
+description: >
+  Finance-video derivative branch for WeChat Official Accounts. It analyzes a
+  completed OpenMontage finance project or a local finance video, applies a
+  four-question long-term-value screen, expands accepted topics with auditable
+  evidence, writes an article as a distinct editorial product, creates
+  mobile-readable visuals, and packages everything for manual publication.
+category: custom
+deliverable_type: article
+stability: beta
+default_checkpoint_policy: guided
+
+orchestration:
+  mode: executive-producer
+  skill: pipelines/finance-wechat-article/executive-producer
+  budget_default_usd: 0.50
+  max_revisions_per_stage: 2
+  max_send_backs: 2
+  max_wall_time_minutes: 45
+
+extensions:
+  custom_scripts: true
+  custom_playbooks: false
+  custom_skills: true
+  custom_tools: false
+
+required_skills:
+  - pipelines/finance-wechat-article/executive-producer
+  - pipelines/finance-wechat-article/source-analysis-director
+  - pipelines/finance-wechat-article/screening-director
+  - pipelines/finance-wechat-article/evidence-director
+  - pipelines/finance-wechat-article/drafting-director
+  - pipelines/finance-wechat-article/visual-director
+  - pipelines/finance-wechat-article/packaging-director
+  - meta/finance-wechat-editorial
+  - meta/reviewer
+  - meta/checkpoint-protocol
+
+stages:
+  - name: source_analysis
+    skill: pipelines/finance-wechat-article/source-analysis-director
+    produces: [wechat_source_analysis]
+    primary_artifact: wechat_source_analysis
+    optional_tools: [transcriber, frame_sampler]
+    tools_available: [transcriber, frame_sampler]
+    checkpoint_required: true
+    human_approval_default: false
+    review_focus:
+      - Source video or sibling project is resolved without inventing missing context
+      - The source is genuinely finance content and has one explicit core question
+      - What the video proves, omits, and leaves expandable is separated clearly
+      - Time sensitivity is classified before screening
+    success_criteria:
+      - Schema-valid wechat_source_analysis artifact
+      - Source artifacts or transcript paths are traceable
+
+  - name: screening
+    skill: pipelines/finance-wechat-article/screening-director
+    required_artifacts_in: [wechat_source_analysis]
+    produces: [wechat_content_screen]
+    primary_artifact: wechat_content_screen
+    halt_when:
+      artifact: wechat_content_screen
+      path: approved_action
+      equals_any: [skip]
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - The four factors are scored only 1 for yes and 0 for no with source-grounded evidence
+      - 3-4 is strongly recommended, 2 is recommended, and 0-1 is not recommended
+      - Low-value timely or emotional topics do not proceed without a concrete evergreen upgrade
+      - Article tier and series placement are editorially justified
+      - The user explicitly approves write, upgrade_then_write, or skip
+    success_criteria:
+      - Schema-valid wechat_content_screen artifact
+      - approved_action records the human decision
+      - skip is a terminal, resumable outcome
+
+  - name: evidence
+    skill: pipelines/finance-wechat-article/evidence-director
+    required_artifacts_in: [wechat_source_analysis, wechat_content_screen]
+    produces: [finance_article_research]
+    primary_artifact: finance_article_research
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - Research answers the approved question instead of defending a predetermined conclusion
+      - Every material claim has a source, date, scope, definition, and confidence
+      - Observed facts, calculations, and interpretations remain distinct
+      - Counterevidence, limitations, and reusable judgment method are present
+      - Every proposed chart answers one named question
+    success_criteria:
+      - Schema-valid finance_article_research artifact
+      - No unsupported material claim remains
+
+  - name: drafting
+    skill: pipelines/finance-wechat-article/drafting-director
+    required_artifacts_in: [wechat_source_analysis, wechat_content_screen, finance_article_research]
+    produces: [wechat_article_draft]
+    primary_artifact: wechat_article_draft
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - The article is not a transcript and adds evidence, method, boundaries, or archival value
+      - The first 200 Chinese characters establish the problem and the conclusion appears early
+      - Headings are scannable, terms are explained in plain language, and paragraphs avoid text walls
+      - Every material claim is traceable and probabilistic claims stay qualified
+      - Exact finance article disclaimer is present at the tail
+      - Visual specs contain only evidence-bearing visuals
+    success_criteria:
+      - Schema-valid wechat_article_draft artifact
+      - body_markdown_path exists inside the project workspace
+
+  - name: visuals
+    skill: pipelines/finance-wechat-article/visual-director
+    required_artifacts_in: [wechat_article_draft, finance_article_research]
+    produces: [wechat_visual_package]
+    primary_artifact: wechat_visual_package
+    required_tools: [finance_chart]
+    optional_tools: [diagram_gen, image_selector, frame_sampler]
+    tools_available: [finance_chart, diagram_gen, image_selector, frame_sampler]
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - Cover text is native exact text and remains readable at mobile thumbnail size
+      - Each figure answers exactly one question and uses a conclusion-led title
+      - Data source, as-of date, units, axes, and calculation scope are visible
+      - Rendered numbers match finance_article_research
+      - Decorative or redundant figures are removed
+    success_criteria:
+      - Schema-valid wechat_visual_package artifact
+      - All cover and figure files exist under the project workspace
+      - Mobile, numeric, and source verification all pass
+
+  - name: packaging
+    skill: pipelines/finance-wechat-article/packaging-director
+    required_artifacts_in: [wechat_article_draft, finance_article_research, wechat_visual_package]
+    produces: [wechat_article_package]
+    primary_artifact: wechat_article_package
+    required_tools: [wechat_article_bundle]
+    tools_available: [wechat_article_bundle]
+    checkpoint_required: true
+    human_approval_default: false
+    review_focus:
+      - Article, cover, ordered figures, source notes, checklist, and manifest are all present
+      - Package remains local and records manual_publish_required true
+      - No platform login or upload was attempted
+      - Exact disclaimer and data notes survive packaging
+    success_criteria:
+      - Schema-valid wechat_article_package artifact
+      - Local hand-off bundle exists under deliverables/wechat

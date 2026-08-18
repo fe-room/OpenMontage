@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openmontage/artifacts/wechat_visual_package",
+  "title": "WeChat Visual Package",
+  "description": "Verified cover and evidence visuals for a finance WeChat article.",
+  "type": "object",
+  "required": ["version", "cover", "figures", "style", "verification"],
+  "properties": {
+    "version": {"type": "string", "const": "1.0"},
+    "cover": {"$ref": "#/$defs/visual"},
+    "figures": {"type": "array", "items": {"$ref": "#/$defs/visual"}, "minItems": 1, "maxItems": 5},
+    "style": {
+      "type": "object",
+      "required": ["palette", "typography", "mobile_width_px"],
+      "properties": {
+        "palette": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+        "typography": {"type": "string"},
+        "mobile_width_px": {"type": "integer", "minimum": 640}
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": ["all_files_exist", "mobile_readable", "numbers_match_sources", "one_question_per_figure", "no_decorative_figures", "issues"],
+      "properties": {
+        "all_files_exist": {"type": "boolean"},
+        "mobile_readable": {"type": "boolean"},
+        "numbers_match_sources": {"type": "boolean"},
+        "one_question_per_figure": {"type": "boolean"},
+        "no_decorative_figures": {"type": "boolean"},
+        "issues": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "metadata": {"type": "object"}
+  },
+  "$defs": {
+    "visual": {
+      "type": "object",
+      "required": ["id", "path", "role", "conclusion_title", "question_answered", "source_refs", "width", "height", "source_tool"],
+      "properties": {
+        "id": {"type": "string"},
+        "path": {"type": "string"},
+        "role": {"type": "string", "enum": ["cover", "chart", "diagram", "source_screenshot"]},
+        "conclusion_title": {"type": "string"},
+        "question_answered": {"type": "string"},
+        "source_refs": {"type": "array", "items": {"type": "string"}},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+        "source_tool": {"type": "string"},
+        "alt_text": {"type": "string"},
+        "data_note": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

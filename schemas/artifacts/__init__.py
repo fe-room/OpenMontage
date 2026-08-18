@@ -32,6 +32,12 @@ ARTIFACT_NAMES = [
     "final_review",
     "character_qa_report",
     "video_analysis_brief",
+    "wechat_source_analysis",
+    "wechat_content_screen",
+    "finance_article_research",
+    "wechat_article_draft",
+    "wechat_visual_package",
+    "wechat_article_package",
 ]
 
 
@@ -48,6 +54,10 @@ def validate_artifact(name: str, data: dict[str, Any]) -> None:
     """Validate artifact data against its schema. Raises on failure."""
     schema = load_schema(name)
     jsonschema.validate(instance=data, schema=schema)
+    if name.startswith("wechat_") or name == "finance_article_research":
+        from lib.wechat_editorial import validate_wechat_artifact
+
+        validate_wechat_artifact(name, data)
 
 
 def list_schemas() -> list[str]:

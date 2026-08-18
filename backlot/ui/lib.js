@@ -100,4 +100,5 @@ export const STAGE_ICONS = {
   in_progress: "◉",
   awaiting_human: "◈",
   failed: "✕",
+  not_applicable: "—",
 };

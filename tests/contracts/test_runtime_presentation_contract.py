@@ -79,9 +79,15 @@ _EXCLUDED_PIPELINES = {
 }
 
 
+def _requires_video_runtime(path: Path) -> bool:
+    if path.stem in _EXCLUDED_PIPELINES:
+        return False
+    return _load_manifest(path).get("deliverable_type", "video") == "video"
+
+
 @pytest.mark.parametrize(
     "manifest_path",
-    [p for p in ALL_MANIFESTS if p.stem not in _EXCLUDED_PIPELINES],
+    [p for p in ALL_MANIFESTS if _requires_video_runtime(p)],
     ids=lambda p: p.stem,
 )
 def test_planning_skill_mentions_runtime_contract(manifest_path: Path):
@@ -126,7 +132,7 @@ def test_planning_skill_mentions_runtime_contract(manifest_path: Path):
 
 @pytest.mark.parametrize(
     "manifest_path",
-    [p for p in ALL_MANIFESTS if p.stem not in _EXCLUDED_PIPELINES],
+    [p for p in ALL_MANIFESTS if _requires_video_runtime(p)],
     ids=lambda p: p.stem,
 )
 def test_compose_stage_references_runtime_routing(manifest_path: Path):

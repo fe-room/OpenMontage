@@ -107,13 +107,23 @@ def _validate_artifacts_for_stage(
     stage: str,
     status: str,
     artifacts: dict[str, Any],
+    pipeline_type: Optional[str] = None,
 ) -> None:
     # Valid stages come from the pipeline manifest (get_pipeline_stages), which
     # can declare stages beyond the 9 canonical ones (e.g. character-animation's
     # `character_design`/`rig_plan`, screen-demo's `real_capture`). Those have no
     # canonical artifact, so look it up defensively — a missing entry means the
     # stage simply has no required artifact, not a crash.
-    required_artifact = CANONICAL_STAGE_ARTIFACTS.get(stage)
+    required_artifact = None
+    if pipeline_type and pipeline_type != "unknown":
+        try:
+            from lib.pipeline_loader import get_stage_primary_artifact, load_pipeline_readonly
+
+            manifest = load_pipeline_readonly(pipeline_type)
+            required_artifact = get_stage_primary_artifact(manifest, stage)
+        except Exception:
+            required_artifact = None
+    required_artifact = required_artifact or CANONICAL_STAGE_ARTIFACTS.get(stage)
     if (
         required_artifact is not None
         and status in {"completed", "awaiting_human"}
@@ -165,7 +175,7 @@ def validate_checkpoint(checkpoint: dict[str, Any]) -> None:
     if not isinstance(artifacts, dict):
         raise CheckpointValidationError("Checkpoint artifacts must be a dictionary")
 
-    _validate_artifacts_for_stage(stage, status, artifacts)
+    _validate_artifacts_for_stage(stage, status, artifacts, pipeline_type)
 
     try:
         jsonschema.validate(instance=checkpoint, schema=_load_checkpoint_schema())
@@ -196,14 +206,17 @@ def init_project(
     """
     base = pipeline_dir or PROJECTS_DIR
     project_dir = base / project_id
-    for sub in (
+    subdirs = [
         "artifacts",
         "assets/images",
         "assets/video",
         "assets/audio",
         "assets/music",
         "renders",
-    ):
+    ]
+    if pipeline_type == "finance-wechat-article":
+        subdirs.append("deliverables/wechat/images")
+    for sub in subdirs:
         (project_dir / sub).mkdir(parents=True, exist_ok=True)
 
     marker_path = project_dir / PROJECT_MARKER_FILENAME
@@ -556,6 +569,36 @@ def get_next_stage(
     """
     stages = get_pipeline_stages(pipeline_type) if pipeline_type else STAGES
     completed = set(get_completed_stages(pipeline_dir, project_id, pipeline_type))
+
+    # A manifest may declare a completed stage outcome as terminal (for
+    # example, a content-screening stage whose approved action is ``skip``).
+    # This keeps resumability honest: a deliberately rejected derivative must
+    # not appear to need research or asset generation on the next run.
+    if pipeline_type:
+        try:
+            from lib.pipeline_loader import get_stage_halt_when, load_pipeline_readonly
+
+            manifest = load_pipeline_readonly(pipeline_type)
+            for stage in stages:
+                if stage not in completed:
+                    continue
+                rule = get_stage_halt_when(manifest, stage)
+                if not rule:
+                    continue
+                cp = read_checkpoint(pipeline_dir, project_id, stage)
+                artifact = (cp or {}).get("artifacts", {}).get(rule["artifact"])
+                value: Any = artifact
+                for part in rule["path"].split("."):
+                    if not isinstance(value, dict) or part not in value:
+                        value = None
+                        break
+                    value = value[part]
+                if value in rule["equals_any"]:
+                    return None
+        except Exception:
+            # A malformed terminal rule must not make every project look done;
+            # normal stage-order progression remains the safe fallback.
+            pass
     for stage in stages:
         if stage not in completed:
             return stage

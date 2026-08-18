@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openmontage/artifacts/wechat_article_package",
+  "title": "WeChat Article Package",
+  "description": "Local, human-publishable hand-off package for WeChat Official Accounts.",
+  "type": "object",
+  "required": ["version", "status", "platform", "manual_publish_required", "title", "article_markdown_path", "assets_dir", "cover_path", "ordered_images", "source_notes_path", "manifest_path", "checklist", "disclaimer"],
+  "properties": {
+    "version": {"type": "string", "const": "1.0"},
+    "status": {"type": "string", "enum": ["ready", "needs_revision"]},
+    "platform": {"type": "string", "const": "wechat_official_account"},
+    "manual_publish_required": {"type": "boolean", "const": true},
+    "title": {"type": "string"},
+    "digest": {"type": "string", "maxLength": 240},
+    "article_markdown_path": {"type": "string"},
+    "article_html_path": {"type": ["string", "null"]},
+    "assets_dir": {"type": "string"},
+    "cover_path": {"type": "string"},
+    "ordered_images": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "source_notes_path": {"type": "string"},
+    "manifest_path": {"type": "string"},
+    "checklist": {
+      "type": "object",
+      "required": ["clear_question", "evergreen_value", "adds_beyond_video", "conclusion_early", "sources_noted", "as_of_date_noted", "method_explained", "limitations_explained", "charts_mobile_readable", "terms_explained", "no_text_wall", "series_linked", "exact_disclaimer"],
+      "properties": {
+        "clear_question": {"type": "boolean"},
+        "evergreen_value": {"type": "boolean"},
+        "adds_beyond_video": {"type": "boolean"},
+        "conclusion_early": {"type": "boolean"},
+        "sources_noted": {"type": "boolean"},
+        "as_of_date_noted": {"type": "boolean"},
+        "method_explained": {"type": "boolean"},
+        "limitations_explained": {"type": "boolean"},
+        "charts_mobile_readable": {"type": "boolean"},
+        "terms_explained": {"type": "boolean"},
+        "no_text_wall": {"type": "boolean"},
+        "series_linked": {"type": "boolean"},
+        "exact_disclaimer": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "disclaimer": {"type": "string"},
+    "delivery_notes": {"type": "array", "items": {"type": "string"}},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": false
+}

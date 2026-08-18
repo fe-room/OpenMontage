@@ -73,6 +73,7 @@ def _load_pipeline_meta(pipeline_type: Optional[str]) -> dict[str, Any]:
                         str(name) for name in (s.get("produces") or [])
                         if isinstance(name, str) and name
                     ],
+                    "halt_when": s.get("halt_when") if isinstance(s.get("halt_when"), dict) else None,
                 }
                 for s in manifest.get("stages", [])
                 if isinstance(s, dict) and s.get("name")
@@ -147,12 +148,31 @@ def _build_stage_rail(
 ) -> list[dict]:
     """One entry per manifest stage with derived status + gate audit."""
     rail = []
+    terminal_index: Optional[int] = None
+    for index, stage_def in enumerate(pipeline_meta["stages"]):
+        rule = stage_def.get("halt_when")
+        cp = checkpoints.get(stage_def["name"])
+        if not rule or not cp or cp.get("status") != "completed":
+            continue
+        value: Any = (cp.get("artifacts") or {}).get(rule.get("artifact"))
+        for part in str(rule.get("path", "")).split("."):
+            if not part:
+                continue
+            if not isinstance(value, dict) or part not in value:
+                value = None
+                break
+            value = value[part]
+        if value in (rule.get("equals_any") or []):
+            terminal_index = index
+            break
     manifest_stage_names = {s["name"] for s in pipeline_meta["stages"]}
-    for stage_def in pipeline_meta["stages"]:
+    for stage_index, stage_def in enumerate(pipeline_meta["stages"]):
         name = stage_def["name"]
         cp = checkpoints.get(name)
         versions = history.get(name, [])
         status = cp.get("status") if cp else "pending"
+        if cp is None and terminal_index is not None and stage_index > terminal_index:
+            status = "not_applicable"
         entry: dict[str, Any] = {
             "name": name,
             "gated": stage_def["gated"],
@@ -239,6 +259,12 @@ ARTIFACT_FILES = {
     "cover_package": "cover_package.json",
     "publish_log": "publish_log.json",
     "decision_log": "decision_log.json",
+    "wechat_source_analysis": "wechat_source_analysis.json",
+    "wechat_content_screen": "wechat_content_screen.json",
+    "finance_article_research": "finance_article_research.json",
+    "wechat_article_draft": "wechat_article_draft.json",
+    "wechat_visual_package": "wechat_visual_package.json",
+    "wechat_article_package": "wechat_article_package.json",
 }
 
 
@@ -246,10 +272,21 @@ def _collect_artifacts(project_dir: Path, checkpoints: dict[str, dict]) -> dict[
     """Artifacts from artifacts/*.json, backfilled from checkpoint payloads."""
     artifacts: dict[str, dict] = {}
     art_dir = project_dir / "artifacts"
-    for name, filename in ARTIFACT_FILES.items():
-        data = _read_json(art_dir / filename)
-        if data is not None:
-            artifacts[name] = data
+    # Scan the directory once instead of attempting one open for every known
+    # artifact name. The latter made library cold-start scale with the global
+    # schema catalog rather than with files a project actually contains.
+    names_by_filename = {filename: name for name, filename in ARTIFACT_FILES.items()}
+    if art_dir.is_dir():
+        try:
+            for path in art_dir.glob("*.json"):
+                name = names_by_filename.get(path.name)
+                if name is None:
+                    continue
+                data = _read_json(path)
+                if data is not None:
+                    artifacts[name] = data
+        except OSError:
+            pass
     # decision_log historically also lives at project root
     if "decision_log" not in artifacts:
         data = _read_json(project_dir / "decision_log.json")

@@ -240,6 +240,24 @@ def get_stage_human_approval_default(manifest: dict, stage_name: str) -> Optiona
     return None
 
 
+def get_stage_primary_artifact(manifest: dict, stage_name: str) -> Optional[str]:
+    """Return the stage's explicitly declared checkpoint-defining artifact."""
+    for stage in manifest["stages"]:
+        if stage["name"] == stage_name:
+            value = stage.get("primary_artifact")
+            return str(value) if value else None
+    return None
+
+
+def get_stage_halt_when(manifest: dict, stage_name: str) -> Optional[dict[str, Any]]:
+    """Return a stage's declarative terminal-outcome rule, if present."""
+    for stage in manifest["stages"]:
+        if stage["name"] == stage_name:
+            rule = stage.get("halt_when")
+            return dict(rule) if isinstance(rule, dict) else None
+    return None
+
+
 def get_stage_review_focus(manifest: dict, stage_name: str) -> list[str]:
     """Get the review focus items for a stage."""
     for stage in manifest["stages"]:

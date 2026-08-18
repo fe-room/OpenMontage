@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openmontage/artifacts/wechat_content_screen",
+  "title": "WeChat Content Screen",
+  "description": "Four-question value screen and approved routing decision for a finance video derivative.",
+  "type": "object",
+  "required": ["version", "source_ref", "factors", "total_score", "selection_band", "content_priority", "approved_action", "rationale", "upgrade_path", "extended_checklist"],
+  "properties": {
+    "version": {"type": "string", "const": "1.0"},
+    "source_ref": {"type": "string"},
+    "factors": {
+      "type": "object",
+      "required": ["evergreen_value", "unfinished_depth", "evidence_value", "series_fit"],
+      "properties": {
+        "evergreen_value": {"$ref": "#/$defs/factor"},
+        "unfinished_depth": {"$ref": "#/$defs/factor"},
+        "evidence_value": {"$ref": "#/$defs/factor"},
+        "series_fit": {"$ref": "#/$defs/factor"}
+      },
+      "additionalProperties": false
+    },
+    "total_score": {"type": "integer", "minimum": 0, "maximum": 4},
+    "selection_band": {"type": "string", "enum": ["strongly_recommended", "recommended", "not_recommended"]},
+    "content_priority": {"type": "string", "enum": ["data_validation", "complete_logic", "long_term_experiment", "knowledge_extension", "timely_only", "emotion_only"]},
+    "article_tier": {"type": ["string", "null"], "enum": ["A_core_research", "B_knowledge_extension", "C_experiment_log", null]},
+    "series_name": {"type": ["string", "null"]},
+    "approved_action": {"type": "string", "enum": ["write", "upgrade_then_write", "skip"]},
+    "rationale": {"type": "string", "minLength": 20},
+    "upgrade_path": {
+      "type": "object",
+      "required": ["can_upgrade", "upgraded_question", "upgrade_notes"],
+      "properties": {
+        "can_upgrade": {"type": "boolean"},
+        "upgraded_question": {"type": ["string", "null"]},
+        "upgrade_notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "extended_checklist": {
+      "type": "object",
+      "required": ["searchable", "adds_information", "supports_positioning", "upgrades_hotspot_to_evergreen"],
+      "properties": {
+        "searchable": {"type": "boolean"},
+        "adds_information": {"type": "boolean"},
+        "supports_positioning": {"type": "boolean"},
+        "upgrades_hotspot_to_evergreen": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "metadata": {"type": "object"}
+  },
+  "$defs": {
+    "factor": {
+      "type": "object",
+      "required": ["answer", "score", "evidence"],
+      "properties": {
+        "answer": {"type": "boolean"},
+        "score": {"type": "integer", "minimum": 0, "maximum": 1},
+        "evidence": {"type": "string", "minLength": 3}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

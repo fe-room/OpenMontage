@@ -105,6 +105,33 @@ than `finance`, it resolves to no skill and MUST NOT alter the selected pipeline
 its prompts, artifacts, review criteria, stage order, or approval gates. Do not
 put the finance skill in a pipeline's unconditional `required_skills` list.
 
+## Finance Video → WeChat Article Derivative
+
+When the user asks to evaluate finance videos and turn only suitable items into
+WeChat Official Account (公众号) articles, route to
+`pipeline_defs/finance-wechat-article.yaml`. This is a separate derivative run,
+not extra stages silently appended to the source video's pipeline.
+
+Required behavior:
+
+1. Read `skills/meta/finance-wechat-editorial.md` and the selected stage director.
+2. Create a new child project workspace; preserve the source video/project unchanged.
+3. Run `source_analysis -> screening` before research or writing.
+4. At `screening`, apply the four binary questions exactly: six-month value,
+   unfinished depth, preservable evidence/process, and durable series fit.
+5. Present the scorecard at the human gate. A user-approved `skip` is a successful
+   terminal outcome; do not continue into evidence, visuals, or packaging.
+6. For accepted items, produce an evidence-first article, native exact-text cover,
+   useful mobile-readable figures, source notes, and a local hand-off bundle.
+7. Never log in to, upload to, save a remote draft in, or publish on the user's
+   WeChat account. The artifact must keep `manual_publish_required: true`.
+
+The exact article-tail sentence is:
+
+> 本文用于财经知识和数据研究记录，不构成对具体证券的买卖建议。
+
+This article sentence does not replace or alter the mandatory video disclaimer.
+
 ## What OpenMontage Is
 
 OpenMontage is an instruction-driven video production system. The AI agent IS the intelligence — it reads instructions (pipeline manifests + stage director skills + meta skills) and drives the pipeline using tools.
@@ -294,6 +321,18 @@ projects/<project-name>/
     └── final.mp4       # Final rendered video (the deliverable)
 ```
 
+Article derivative runs additionally use:
+
+```text
+projects/<project-name>/deliverables/wechat/
+├── article.md
+├── sources.md
+├── manifest.json
+└── images/
+    ├── cover.png
+    └── 01-*.png
+```
+
 **Naming convention**: Use kebab-case derived from the video title (e.g., `hidden-math-of-nature`, `how-music-rewires-brain`).
 
 At pipeline initialization, before any stage runs:
@@ -334,6 +373,7 @@ If the folder has tracks, the proposal and asset stages should present them as o
 | `avatar-spokesperson` | Presenter-led avatar or lip-sync videos | production |
 | `localization-dub` | Subtitle, dub, and translated variants | beta |
 | `framework-smoke` | Test: minimal 2-stage smoke test | test |
+| `finance-wechat-article` | Screen finance videos and create evidence-first 公众号 article packages | beta |
 
 > **Beta pipelines** have not been fully audited. They work, but expect rough edges. Mention this when the user selects one.
 

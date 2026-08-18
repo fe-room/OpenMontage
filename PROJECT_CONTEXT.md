@@ -50,6 +50,7 @@ Each tool's `agent_skills[]` field bridges Layer 1 → Layer 3. See `skills/INDE
   - Example: `video_selector` + `heygen_video` / `wan_video` / `hunyuan_video` / `ltx_video_local` / `ltx_video_modal` / `cogvideo_video`
 - **Style playbooks:** YAML defining visual language, typography, motion, audio, asset generation constraints
 - **Artifacts are canonical:** `brief`, `script`, `scene_plan`, `asset_manifest`, `edit_decisions`, `render_report`, `cover_package`, `publish_log`
+- **Finance article derivative artifacts:** `wechat_source_analysis`, `wechat_content_screen`, `finance_article_research`, `wechat_article_draft`, `wechat_visual_package`, `wechat_article_package`
 - **Every tool inherits from `tools/base_tool.py`** (ToolContract)
 - **Checkpoint policy** lives in pipeline manifest (`human_approval_default` per stage) + `skills/meta/checkpoint-protocol.md`
 - **Reviewer** is a meta skill (`skills/meta/reviewer.md`), advisory, max 2 rounds
@@ -96,6 +97,7 @@ Each tool's `agent_skills[]` field bridges Layer 1 → Layer 3. See `skills/INDE
 | `avatar-spokesperson` | `pipeline_defs/avatar-spokesperson.yaml` | Avatar presenter |
 | `localization-dub` | `pipeline_defs/localization-dub.yaml` | Localization and dubbing |
 | `framework-smoke` | `pipeline_defs/framework-smoke.yaml` | Test harness |
+| `finance-wechat-article` | `pipeline_defs/finance-wechat-article.yaml` | Finance video → screened WeChat article package |
 
 ## When Building New Pipelines
 

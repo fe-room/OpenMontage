@@ -14,6 +14,8 @@ def test_every_production_pipeline_generates_a_cover_after_compose():
             continue
 
         manifest = load_pipeline(pipeline_name)
+        if manifest.get("deliverable_type", "video") != "video":
+            continue
         order = get_stage_order(manifest)
         assert "compose" in order, pipeline_name
         compose_index = order.index("compose")
@@ -33,6 +35,8 @@ def test_publish_requires_the_approved_cover_when_present():
             continue
 
         manifest = load_pipeline(pipeline_name)
+        if manifest.get("deliverable_type", "video") != "video":
+            continue
         stages = {stage["name"]: stage for stage in manifest["stages"]}
         if "publish" not in stages:
             continue

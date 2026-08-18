@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "openmontage/artifacts/finance_article_research",
+  "title": "Finance Article Research",
+  "description": "Audit-ready evidence, method, boundaries, and chart candidates for a finance WeChat article.",
+  "type": "object",
+  "required": ["version", "question", "research_date", "as_of_date", "scope", "methodology", "claims", "sources", "counterevidence", "limitations", "chart_candidates", "reusable_judgment_method"],
+  "properties": {
+    "version": {"type": "string", "const": "1.0"},
+    "question": {"type": "string", "minLength": 5},
+    "research_date": {"type": "string", "format": "date"},
+    "as_of_date": {"type": "string", "format": "date"},
+    "scope": {
+      "type": "object",
+      "required": ["market", "time_range", "sample", "metric_definitions"],
+      "properties": {
+        "market": {"type": "string"},
+        "time_range": {"type": "string"},
+        "sample": {"type": "string"},
+        "metric_definitions": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "methodology": {
+      "type": "object",
+      "required": ["calculation_rules", "inclusion_rules", "exclusion_rules"],
+      "properties": {
+        "calculation_rules": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "inclusion_rules": {"type": "array", "items": {"type": "string"}},
+        "exclusion_rules": {"type": "array", "items": {"type": "string"}},
+        "data_files": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "claim", "kind", "source_refs", "confidence", "article_role"],
+        "properties": {
+          "id": {"type": "string"},
+          "claim": {"type": "string"},
+          "kind": {"type": "string", "enum": ["observed_fact", "calculation", "interpretation"]},
+          "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+          "article_role": {"type": "string"},
+          "qualifier": {"type": "string"}
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "locator", "source_type", "accessed_at", "used_for"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "locator": {"type": "string"},
+          "publisher": {"type": "string"},
+          "source_type": {"type": "string", "enum": ["primary", "secondary", "user_data", "calculation", "anecdotal"]},
+          "accessed_at": {"type": "string", "format": "date"},
+          "used_for": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "counterevidence": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "chart_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "question", "conclusion_title", "chart_type", "source_refs"],
+        "properties": {
+          "id": {"type": "string"},
+          "question": {"type": "string"},
+          "conclusion_title": {"type": "string"},
+          "chart_type": {"type": "string", "enum": ["bar", "line", "comparison", "table", "diagram"]},
+          "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "data_path": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "reusable_judgment_method": {"type": "string", "minLength": 10},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": false
+}

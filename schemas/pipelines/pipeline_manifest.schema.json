@@ -18,6 +18,12 @@
       "enum": ["production", "beta"],
       "description": "Whether this pipeline has been audited and is considered stable"
     },
+    "deliverable_type": {
+      "type": "string",
+      "enum": ["video", "article", "test"],
+      "default": "video",
+      "description": "Primary output family. Existing manifests default to video."
+    },
     "compatible_playbooks": {
       "oneOf": [
         {
@@ -103,6 +109,29 @@
             "type": "array",
             "items": { "type": "string" },
             "description": "Artifact names this stage produces"
+          },
+          "primary_artifact": {
+            "type": "string",
+            "description": "Artifact that must be embedded in completed or awaiting-human checkpoints for this stage."
+          },
+          "halt_when": {
+            "type": "object",
+            "description": "Declarative terminal outcome. When the completed stage artifact matches, the pipeline has no next stage.",
+            "required": ["artifact", "path", "equals_any"],
+            "properties": {
+              "artifact": { "type": "string" },
+              "path": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]+$",
+                "description": "Dot-separated field path inside the artifact."
+              },
+              "equals_any": {
+                "type": "array",
+                "items": { "type": ["string", "number", "boolean", "null"] },
+                "minItems": 1
+              }
+            },
+            "additionalProperties": false
           },
           "preferred_tools": {
             "type": "array",
