@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "policy": "approved natural pace; no time compression",
+  "narration_duration_seconds": 187.728,
+  "editorial_end_seconds": 188.48,
+  "silent_disclaimer_seconds": 8.0,
+  "video_duration_seconds": 196.48,
+  "sections": [
+    {"id": "s1", "section_start": 0.0, "audio_start": 0.0, "audio_end": 20.184, "section_end": 20.784},
+    {"id": "s2", "section_start": 20.784, "audio_start": 20.784, "audio_end": 37.344, "section_end": 37.844},
+    {"id": "s3", "section_start": 37.844, "audio_start": 37.844, "audio_end": 62.924, "section_end": 63.624},
+    {"id": "s4", "section_start": 63.624, "audio_start": 63.624, "audio_end": 86.568, "section_end": 87.168},
+    {"id": "s5", "section_start": 87.168, "audio_start": 87.168, "audio_end": 109.704, "section_end": 110.204},
+    {"id": "s6", "section_start": 110.204, "audio_start": 110.504, "audio_end": 137.816, "section_end": 138.616},
+    {"id": "s7", "section_start": 138.616, "audio_start": 138.616, "audio_end": 167.728, "section_end": 168.528},
+    {"id": "s8", "section_start": 168.528, "audio_start": 168.528, "audio_end": 187.68, "section_end": 188.48},
+    {"id": "s9", "section_start": 188.48, "audio_start": null, "audio_end": null, "section_end": 196.48}
+  ]
+}

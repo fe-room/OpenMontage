@@ -26,7 +26,10 @@ pipeline/
 tests/qa/output/
 
 # Project workspaces (generated assets, renders — all regenerable)
-projects/
+projects/*
+# Retain this project for human review and reproducibility.
+!projects/gold-ath-chasing-experiment/
+!projects/gold-ath-chasing-experiment/**
 
 # Corpus directories (downloaded stock clips, thumbnails, embeddings —
 # regenerable from source APIs via corpus_builder). Explicit rule even

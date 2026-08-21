@@ -1,0 +1,782 @@
+{
+  "code": 20000000,
+  "data": {
+    "audio_url": "https://lf9-lab-speech-tt-sign.bytespeech.com/tos-cn-o-14155/owAAbcEAEAgqXLifFGFDI1CsJlpnU0N9DCBtAf?x-expires=1787308136&x-signature=THm4YPjJp6OOzVtIepNPn1PpNw8%3D",
+    "req_text_length": 123,
+    "sentences": [
+      {
+        "endTime": 2.045,
+        "startTime": 0.115,
+        "text": "如果在新高之后买入，拿半年，\n\n",
+        "words": [
+          {
+            "confidence": 0.6400074,
+            "endTime": 0.175,
+            "startTime": 0.115,
+            "word": "如"
+          },
+          {
+            "confidence": 0.87005514,
+            "endTime": 0.265,
+            "startTime": 0.175,
+            "word": "果"
+          },
+          {
+            "confidence": 0.96691966,
+            "endTime": 0.355,
+            "startTime": 0.265,
+            "word": "在"
+          },
+          {
+            "confidence": 0.9443834,
+            "endTime": 0.535,
+            "startTime": 0.355,
+            "word": "新"
+          },
+          {
+            "confidence": 0.7390289,
+            "endTime": 0.655,
+            "startTime": 0.535,
+            "word": "高"
+          },
+          {
+            "confidence": 0.80547726,
+            "endTime": 0.755,
+            "startTime": 0.655,
+            "word": "之"
+          },
+          {
+            "confidence": 0.9156235,
+            "endTime": 0.865,
+            "startTime": 0.755,
+            "word": "后"
+          },
+          {
+            "confidence": 0.94026345,
+            "endTime": 0.975,
+            "startTime": 0.865,
+            "word": "买"
+          },
+          {
+            "confidence": 0.9472503,
+            "endTime": 1.245,
+            "startTime": 0.975,
+            "word": "入，"
+          },
+          {
+            "confidence": 0.9335456,
+            "endTime": 1.625,
+            "startTime": 1.445,
+            "word": "拿"
+          },
+          {
+            "confidence": 0.8623986,
+            "endTime": 1.755,
+            "startTime": 1.625,
+            "word": "半"
+          },
+          {
+            "confidence": 0.9279114,
+            "endTime": 2.045,
+            "startTime": 1.755,
+            "word": "年，"
+          }
+        ]
+      },
+      {
+        "endTime": 6.6530000000000005,
+        "startTime": 2.4930000000000003,
+        "text": "在已经有完整后续数据的样本里，77.4%最后是赚钱的。\n\n",
+        "words": [
+          {
+            "confidence": 0.869444,
+            "endTime": 2.623,
+            "startTime": 2.4930000000000003,
+            "word": "在"
+          },
+          {
+            "confidence": 0.93057895,
+            "endTime": 2.673,
+            "startTime": 2.623,
+            "word": "已"
+          },
+          {
+            "confidence": 0.97006756,
+            "endTime": 2.803,
+            "startTime": 2.673,
+            "word": "经"
+          },
+          {
+            "confidence": 0.77806383,
+            "endTime": 2.9530000000000003,
+            "startTime": 2.803,
+            "word": "有"
+          },
+          {
+            "confidence": 0.8193553,
+            "endTime": 3.1130000000000004,
+            "startTime": 2.9530000000000003,
+            "word": "完"
+          },
+          {
+            "confidence": 0.93619055,
+            "endTime": 3.263,
+            "startTime": 3.1130000000000004,
+            "word": "整"
+          },
+          {
+            "confidence": 0.9543971,
+            "endTime": 3.4530000000000003,
+            "startTime": 3.263,
+            "word": "后"
+          },
+          {
+            "confidence": 0.93432426,
+            "endTime": 3.553,
+            "startTime": 3.4530000000000003,
+            "word": "续"
+          },
+          {
+            "confidence": 0.96081823,
+            "endTime": 3.743,
+            "startTime": 3.553,
+            "word": "数"
+          },
+          {
+            "confidence": 0.95899254,
+            "endTime": 3.843,
+            "startTime": 3.743,
+            "word": "据"
+          },
+          {
+            "confidence": 0.89854586,
+            "endTime": 3.963,
+            "startTime": 3.843,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9088638,
+            "endTime": 4.103,
+            "startTime": 3.963,
+            "word": "样"
+          },
+          {
+            "confidence": 0.90275246,
+            "endTime": 4.253,
+            "startTime": 4.103,
+            "word": "本"
+          },
+          {
+            "confidence": 0.8632864,
+            "endTime": 4.423,
+            "startTime": 4.253,
+            "word": "里，"
+          },
+          {
+            "confidence": 0.9447125,
+            "endTime": 4.8629999999999995,
+            "startTime": 4.713,
+            "word": "百"
+          },
+          {
+            "confidence": 0.9352567,
+            "endTime": 4.943,
+            "startTime": 4.8629999999999995,
+            "word": "分"
+          },
+          {
+            "confidence": 0.7654962,
+            "endTime": 5.033,
+            "startTime": 4.943,
+            "word": "之"
+          },
+          {
+            "confidence": 0.8246614,
+            "endTime": 5.223000000000001,
+            "startTime": 5.033,
+            "word": "七"
+          },
+          {
+            "confidence": 0.68804234,
+            "endTime": 5.283,
+            "startTime": 5.223000000000001,
+            "word": "十"
+          },
+          {
+            "confidence": 0.88356805,
+            "endTime": 5.423,
+            "startTime": 5.283,
+            "word": "七"
+          },
+          {
+            "confidence": 0.9406588,
+            "endTime": 5.543,
+            "startTime": 5.423,
+            "word": "点"
+          },
+          {
+            "confidence": 0.92844486,
+            "endTime": 5.803000000000001,
+            "startTime": 5.543,
+            "word": "四"
+          },
+          {
+            "confidence": 0.92236364,
+            "endTime": 5.9030000000000005,
+            "startTime": 5.803000000000001,
+            "word": "最"
+          },
+          {
+            "confidence": 0.92903894,
+            "endTime": 5.993,
+            "startTime": 5.9030000000000005,
+            "word": "后"
+          },
+          {
+            "confidence": 0.9155774,
+            "endTime": 6.093,
+            "startTime": 5.993,
+            "word": "是"
+          },
+          {
+            "confidence": 0.97650576,
+            "endTime": 6.253,
+            "startTime": 6.093,
+            "word": "赚"
+          },
+          {
+            "confidence": 0.9374191,
+            "endTime": 6.493,
+            "startTime": 6.253,
+            "word": "钱"
+          },
+          {
+            "confidence": 0.87584054,
+            "endTime": 6.6530000000000005,
+            "startTime": 6.493,
+            "word": "的。"
+          }
+        ]
+      },
+      {
+        "endTime": 10.307,
+        "startTime": 7.067,
+        "text": "如果拿一年，正收益比例是76.1%。\n\n",
+        "words": [
+          {
+            "confidence": 0.96098995,
+            "endTime": 7.217,
+            "startTime": 7.067,
+            "word": "如"
+          },
+          {
+            "confidence": 0.98065186,
+            "endTime": 7.347,
+            "startTime": 7.217,
+            "word": "果"
+          },
+          {
+            "confidence": 0.89184767,
+            "endTime": 7.487,
+            "startTime": 7.347,
+            "word": "拿"
+          },
+          {
+            "confidence": 0.9255222,
+            "endTime": 7.687,
+            "startTime": 7.487,
+            "word": "一"
+          },
+          {
+            "confidence": 0.9475626,
+            "endTime": 8.027000000000001,
+            "startTime": 7.687,
+            "word": "年，"
+          },
+          {
+            "confidence": 0.9319104,
+            "endTime": 8.517,
+            "startTime": 8.347,
+            "word": "正"
+          },
+          {
+            "confidence": 0.8770619,
+            "endTime": 8.677,
+            "startTime": 8.517,
+            "word": "收"
+          },
+          {
+            "confidence": 0.89574814,
+            "endTime": 8.817,
+            "startTime": 8.677,
+            "word": "益"
+          },
+          {
+            "confidence": 0.9285158,
+            "endTime": 8.957,
+            "startTime": 8.817,
+            "word": "比"
+          },
+          {
+            "confidence": 0.97239786,
+            "endTime": 9.087,
+            "startTime": 8.957,
+            "word": "例"
+          },
+          {
+            "confidence": 0.95228463,
+            "endTime": 9.227,
+            "startTime": 9.087,
+            "word": "是"
+          },
+          {
+            "confidence": 0.9524547,
+            "endTime": 9.377,
+            "startTime": 9.227,
+            "word": "百"
+          },
+          {
+            "confidence": 0.96048707,
+            "endTime": 9.477,
+            "startTime": 9.377,
+            "word": "分"
+          },
+          {
+            "confidence": 0.8875308,
+            "endTime": 9.547,
+            "startTime": 9.477,
+            "word": "之"
+          },
+          {
+            "confidence": 0.8821153,
+            "endTime": 9.747,
+            "startTime": 9.547,
+            "word": "七"
+          },
+          {
+            "confidence": 0.92286265,
+            "endTime": 9.827,
+            "startTime": 9.747,
+            "word": "十"
+          },
+          {
+            "confidence": 0.88586366,
+            "endTime": 9.917,
+            "startTime": 9.827,
+            "word": "六"
+          },
+          {
+            "confidence": 0.95699346,
+            "endTime": 10.077,
+            "startTime": 9.917,
+            "word": "点"
+          },
+          {
+            "confidence": 0.8457815,
+            "endTime": 10.307,
+            "startTime": 10.077,
+            "word": "一。"
+          }
+        ]
+      },
+      {
+        "endTime": 16.723,
+        "startTime": 12.283,
+        "text": "163个完整的一年样本，平均收益大概是23.8%。\n\n",
+        "words": [
+          {
+            "confidence": 0.8247821,
+            "endTime": 12.453,
+            "startTime": 12.283,
+            "word": "一"
+          },
+          {
+            "confidence": 0.97758734,
+            "endTime": 12.693,
+            "startTime": 12.453,
+            "word": "百"
+          },
+          {
+            "confidence": 0.97273237,
+            "endTime": 12.843,
+            "startTime": 12.693,
+            "word": "六"
+          },
+          {
+            "confidence": 0.9608265,
+            "endTime": 12.953,
+            "startTime": 12.843,
+            "word": "十"
+          },
+          {
+            "confidence": 0.97950023,
+            "endTime": 13.163,
+            "startTime": 12.953,
+            "word": "三"
+          },
+          {
+            "confidence": 0.9177923,
+            "endTime": 13.343,
+            "startTime": 13.163,
+            "word": "个"
+          },
+          {
+            "confidence": 0.97796464,
+            "endTime": 13.523,
+            "startTime": 13.343,
+            "word": "完"
+          },
+          {
+            "confidence": 0.9661158,
+            "endTime": 13.663,
+            "startTime": 13.523,
+            "word": "整"
+          },
+          {
+            "confidence": 0.9103745,
+            "endTime": 13.793,
+            "startTime": 13.663,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9459793,
+            "endTime": 13.883,
+            "startTime": 13.793,
+            "word": "一"
+          },
+          {
+            "confidence": 0.9242298,
+            "endTime": 14.053,
+            "startTime": 13.883,
+            "word": "年"
+          },
+          {
+            "confidence": 0.7311495,
+            "endTime": 14.233,
+            "startTime": 14.053,
+            "word": "样"
+          },
+          {
+            "confidence": 0.95843065,
+            "endTime": 14.423,
+            "startTime": 14.233,
+            "word": "本，"
+          },
+          {
+            "confidence": 0.9526975,
+            "endTime": 14.873,
+            "startTime": 14.653,
+            "word": "平"
+          },
+          {
+            "confidence": 0.890327,
+            "endTime": 15.003,
+            "startTime": 14.873,
+            "word": "均"
+          },
+          {
+            "confidence": 0.8719305,
+            "endTime": 15.203,
+            "startTime": 15.003,
+            "word": "收"
+          },
+          {
+            "confidence": 0.91150427,
+            "endTime": 15.273,
+            "startTime": 15.203,
+            "word": "益"
+          },
+          {
+            "confidence": 0.94869494,
+            "endTime": 15.403,
+            "startTime": 15.273,
+            "word": "大"
+          },
+          {
+            "confidence": 0.944509,
+            "endTime": 15.503,
+            "startTime": 15.403,
+            "word": "概"
+          },
+          {
+            "confidence": 0.93986636,
+            "endTime": 15.643,
+            "startTime": 15.503,
+            "word": "是"
+          },
+          {
+            "confidence": 0.96838766,
+            "endTime": 15.803,
+            "startTime": 15.643,
+            "word": "百"
+          },
+          {
+            "confidence": 0.9843304,
+            "endTime": 15.923,
+            "startTime": 15.803,
+            "word": "分"
+          },
+          {
+            "confidence": 0.95453894,
+            "endTime": 16.033,
+            "startTime": 15.923,
+            "word": "之"
+          },
+          {
+            "confidence": 0.9303062,
+            "endTime": 16.133,
+            "startTime": 16.033,
+            "word": "二"
+          },
+          {
+            "confidence": 0.52665734,
+            "endTime": 16.192999999999998,
+            "startTime": 16.133,
+            "word": "十"
+          },
+          {
+            "confidence": 0.8967656,
+            "endTime": 16.333,
+            "startTime": 16.192999999999998,
+            "word": "三"
+          },
+          {
+            "confidence": 0.91187406,
+            "endTime": 16.442999999999998,
+            "startTime": 16.333,
+            "word": "点"
+          },
+          {
+            "confidence": 0.96962816,
+            "endTime": 16.723,
+            "startTime": 16.442999999999998,
+            "word": "八。"
+          }
+        ]
+      },
+      {
+        "endTime": 18.869,
+        "startTime": 17.069,
+        "text": "也就是说，至少历史上看，\n\n",
+        "words": [
+          {
+            "confidence": 0.5277067,
+            "endTime": 17.108999999999998,
+            "startTime": 17.069,
+            "word": "也"
+          },
+          {
+            "confidence": 0.7995187,
+            "endTime": 17.229,
+            "startTime": 17.108999999999998,
+            "word": "就"
+          },
+          {
+            "confidence": 0.87789273,
+            "endTime": 17.288999999999998,
+            "startTime": 17.229,
+            "word": "是"
+          },
+          {
+            "confidence": 0.9749565,
+            "endTime": 17.729,
+            "startTime": 17.288999999999998,
+            "word": "说，"
+          },
+          {
+            "confidence": 0.89280415,
+            "endTime": 18.009,
+            "startTime": 17.878999999999998,
+            "word": "至"
+          },
+          {
+            "confidence": 0.9679532,
+            "endTime": 18.189,
+            "startTime": 18.009,
+            "word": "少"
+          },
+          {
+            "confidence": 0.9681565,
+            "endTime": 18.309,
+            "startTime": 18.189,
+            "word": "历"
+          },
+          {
+            "confidence": 0.9376787,
+            "endTime": 18.439,
+            "startTime": 18.309,
+            "word": "史"
+          },
+          {
+            "confidence": 0.9549942,
+            "endTime": 18.579,
+            "startTime": 18.439,
+            "word": "上"
+          },
+          {
+            "confidence": 0.96769327,
+            "endTime": 18.869,
+            "startTime": 18.579,
+            "word": "看，"
+          }
+        ]
+      },
+      {
+        "endTime": 22.66,
+        "startTime": 18.905,
+        "text": "“买在历史新高”这件事，好像并没有我们想象中那么可怕。\n",
+        "words": [
+          {
+            "confidence": 0.46967438,
+            "endTime": 18.950000000000003,
+            "startTime": 18.905,
+            "word": "“"
+          },
+          {
+            "confidence": 0.9250608,
+            "endTime": 19.4,
+            "startTime": 19.21,
+            "word": "买"
+          },
+          {
+            "confidence": 0.93856233,
+            "endTime": 19.57,
+            "startTime": 19.4,
+            "word": "在"
+          },
+          {
+            "confidence": 0.96760154,
+            "endTime": 19.69,
+            "startTime": 19.57,
+            "word": "历"
+          },
+          {
+            "confidence": 0.9244874,
+            "endTime": 19.83,
+            "startTime": 19.69,
+            "word": "史"
+          },
+          {
+            "confidence": 0.8437531,
+            "endTime": 20.05,
+            "startTime": 19.83,
+            "word": "新"
+          },
+          {
+            "confidence": 0.39299938,
+            "endTime": 20.200000000000003,
+            "startTime": 20.05,
+            "word": "高”"
+          },
+          {
+            "confidence": 0.6831689,
+            "endTime": 20.3,
+            "startTime": 20.200000000000003,
+            "word": "这"
+          },
+          {
+            "confidence": 0.60354525,
+            "endTime": 20.4,
+            "startTime": 20.3,
+            "word": "件"
+          },
+          {
+            "confidence": 0.9329529,
+            "endTime": 20.73,
+            "startTime": 20.4,
+            "word": "事，"
+          },
+          {
+            "confidence": 0.927811,
+            "endTime": 21.19,
+            "startTime": 21.03,
+            "word": "好"
+          },
+          {
+            "confidence": 0.9497132,
+            "endTime": 21.35,
+            "startTime": 21.19,
+            "word": "像"
+          },
+          {
+            "confidence": 0.896135,
+            "endTime": 21.51,
+            "startTime": 21.35,
+            "word": "并"
+          },
+          {
+            "confidence": 0.9647939,
+            "endTime": 21.65,
+            "startTime": 21.51,
+            "word": "没"
+          },
+          {
+            "confidence": 0.6679024,
+            "endTime": 21.68,
+            "startTime": 21.65,
+            "word": "有"
+          },
+          {
+            "confidence": 0.89666986,
+            "endTime": 21.74,
+            "startTime": 21.68,
+            "word": "我"
+          },
+          {
+            "confidence": 0.98748547,
+            "endTime": 21.82,
+            "startTime": 21.74,
+            "word": "们"
+          },
+          {
+            "confidence": 0.9572686,
+            "endTime": 21.96,
+            "startTime": 21.82,
+            "word": "想"
+          },
+          {
+            "confidence": 0.5584066,
+            "endTime": 22.03,
+            "startTime": 21.96,
+            "word": "象"
+          },
+          {
+            "confidence": 0.8570725,
+            "endTime": 22.15,
+            "startTime": 22.03,
+            "word": "中"
+          },
+          {
+            "confidence": 0.858709,
+            "endTime": 22.23,
+            "startTime": 22.15,
+            "word": "那"
+          },
+          {
+            "confidence": 0.9567764,
+            "endTime": 22.31,
+            "startTime": 22.23,
+            "word": "么"
+          },
+          {
+            "confidence": 0.9303842,
+            "endTime": 22.44,
+            "startTime": 22.31,
+            "word": "可"
+          },
+          {
+            "confidence": 0.9384702,
+            "endTime": 22.66,
+            "startTime": 22.44,
+            "word": "怕。"
+          }
+        ]
+      }
+    ],
+    "synthesize_text_length": 123,
+    "task_id": "7c5162da-1306-477e-90cc-19b45b5332d7",
+    "task_status": 2,
+    "url_expire_time": 1787308136
+  },
+  "message": "ok"
+}

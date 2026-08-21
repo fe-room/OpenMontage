@@ -1,0 +1,192 @@
+{
+  "version": "1.0",
+  "title": "黄金创新高后还能不能买？",
+  "total_duration_seconds": 198,
+  "voice_performance": {
+    "performance_intent": "完全遵循用户优化稿的自然口语感：像本人边看今年行情、边翻历史数据后分享发现。保留‘还挺有意思’‘我也挺好奇’等个人语气，不改成播报体。",
+    "pacing_profile": "conversational",
+    "energy_curve": "开场随猛冲、下砸、爬回形成三次自然起伏；历史检验段平静展开；两个反转逐步加深；2008案例最沉；结尾回到简单、克制的个人感受。",
+    "pause_policy": "保留原稿分段与短句停顿；粗体句视为语义重音，但不做喊麦式强调；最终8秒收尾卡静默。",
+    "sample_section_id": "s1",
+    "provider_notes": {
+      "doubao": "大壹2.0原速，先以s1生成样本。优先自然聊天感，禁止新闻播音腔和财经喊单腔。"
+    }
+  },
+  "sections": [
+    {
+      "id": "s1",
+      "label": "从今年行情切入",
+      "text": "最近黄金这走势，还挺有意思的。\n\n年初一路猛冲，1月底刚创完历史新高，后面又突然往下砸，6月底一度回到4000美元附近。\n\n结果到了8月，它又慢慢爬回了两个月高位。\n\n所以我最近又听到一个特别熟悉的问题：\n\n都涨到这儿了，现在再买，会不会刚好买在山顶？",
+      "start_seconds": 0,
+      "end_seconds": 22,
+      "speaker_directions": "第一句像随口聊天；猛冲稍快、下砸转沉、慢慢爬回放缓；最后的问题用观众自己的口吻。",
+      "delivery_cues": {
+        "pace": "conversational",
+        "energy": "自然观察中带一点好奇",
+        "emphasis_words": ["一路猛冲", "突然往下砸", "慢慢爬回", "买在山顶"],
+        "pause_after_seconds": 0.6,
+        "delivery_note": "保留原稿的松弛感，不像财经新闻开场。"
+      },
+      "enhancement_cues": [{"type": "animation", "description": "2026价格路径依次完成猛冲、急跌、缓慢爬回；最后端点停在高位疑问处。", "timestamp_seconds": 1}],
+      "source_ref": "https://www.gold.org/goldhub/gold-focus/2026/08/weekly-markets-monitor-unwedged; https://www.gold.org/goldhub/research/gold-mid-year-outlook-2026"
+    },
+    {
+      "id": "s2",
+      "label": "我也好奇，所以去翻了翻历史",
+      "text": "这个问题，其实我也挺好奇。\n\n未来会继续涨，还是反弹完再掉下来，这个谁也猜不准。\n\n但我突然想到一件事：\n\n我们总觉得“创新高以后买”很危险，可历史上，真的是这样吗？\n\n所以我干脆把过去二十多年的黄金价格翻出来看了一遍。",
+      "start_seconds": 22,
+      "end_seconds": 41,
+      "speaker_directions": "像顺着自己的疑问往下想；‘谁也猜不准’坦然，最后自然转进历史数据。",
+      "delivery_cues": {
+        "pace": "conversational",
+        "energy": "从市场困惑转向求证",
+        "emphasis_words": ["谁也猜不准", "历史上", "真的是这样吗"],
+        "pause_after_seconds": 0.5,
+        "delivery_note": "不要把‘但我突然想到’念成刻意转折。"
+      },
+      "enhancement_cues": [{"type": "diagram", "description": "当前行情的两条未知路径淡出，镜头拉远到2001—2026历史时间尺。", "timestamp_seconds": 24}],
+      "source_ref": "research_brief.metadata.core_question"
+    },
+    {
+      "id": "s3",
+      "label": "把创新高认真算一次",
+      "text": "规则也很简单。\n\n从2001年开始，只要当天黄金价格超过此前所有日子的价格，我就把它记成一次“新高”。\n\n然后假设下一个交易日买进去，再分别看看一个月、三个月、半年和一年之后怎么样。\n\n最后，一共找到了199个新高日。\n\n我原本以为，这组数据可能会挺难看的。\n\n结果还真不是。",
+      "start_seconds": 41,
+      "end_seconds": 65,
+      "speaker_directions": "规则部分清楚但不学术；‘挺难看的’带一点自嘲；‘结果还真不是’留出反转。",
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "轻松地交代规则，结尾带意外",
+        "emphasis_words": ["一次新高", "下一个交易日", "199个", "还真不是"],
+        "pause_after_seconds": 0.7,
+        "delivery_note": "不增加数据源说明，画面只保留最必要口径。"
+      },
+      "enhancement_cues": [{"type": "animation", "description": "T日刷新历史高水位、T+1买入、四个观察期限展开；199个事件点沿长时间轴亮起。", "timestamp_seconds": 43}],
+      "source_ref": "research_brief.data_points[0]"
+    },
+    {
+      "id": "s4",
+      "label": "第一件让我意外的事",
+      "text": "如果在新高之后买入，拿半年，\n\n在已经有完整后续数据的样本里，77.4%最后是赚钱的。\n\n如果拿一年，正收益比例是76.1%。\n\n163个完整的一年样本，平均收益大概是23.8%。\n\n也就是说，至少历史上看，\n\n“买在历史新高”这件事，好像并没有我们想象中那么可怕。",
+      "start_seconds": 65,
+      "end_seconds": 87,
+      "speaker_directions": "数字逐个说清；最后一句是个人观察，不转成买入建议。",
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "真实的意外但不兴奋",
+        "emphasis_words": ["77.4%", "76.1%", "163个", "23.8%", "至少历史上看"],
+        "pause_after_seconds": 0.6,
+        "delivery_note": "‘好像’和‘至少历史上看’必须保留语气。"
+      },
+      "enhancement_cues": [{"type": "stat_card", "description": "半年77.4%、一年76.1%、n=163、平均23.8%依次进入；期限和样本数不隐藏。", "timestamp_seconds": 67}],
+      "source_ref": "research_brief.data_points[0]"
+    },
+    {
+      "id": "s5",
+      "label": "但这里又有一个挺有意思的反转",
+      "text": "不过，我继续往下看，又发现另一件事。\n\n如果你根本不管是不是新高，随便找一个普通交易日买进去，持有一年，\n\n正收益概率是75.0%。\n\n而新高日是76.1%。\n\n你会发现，两边其实只差了大概一个百分点。\n\n所以新高也没什么神奇的。\n\n它既不是一个特别危险的信号，\n\n也不是什么“涨了还会继续涨”的魔法指标。",
+      "start_seconds": 87,
+      "end_seconds": 112,
+      "speaker_directions": "‘继续往下看’自然承接；两个概率平读；最后两句一正一反，保持克制。",
+      "delivery_cues": {
+        "pace": "conversational",
+        "energy": "第二次纠偏",
+        "emphasis_words": ["75.0%", "76.1%", "一个百分点", "没什么神奇", "魔法指标"],
+        "pause_after_seconds": 0.5,
+        "delivery_note": "避免把最后一句念成课程总结。"
+      },
+      "enhancement_cues": [{"type": "animation", "description": "普通日75.0%与新高日76.1%两根几乎等高的概率柱出现，差值约1个百分点。", "timestamp_seconds": 91}],
+      "source_ref": "research_brief.data_points[1]"
+    },
+    {
+      "id": "s6",
+      "label": "199次其实没有看起来那么多",
+      "text": "而且这里还有一个很容易误会的地方。\n\n刚才说有199个新高日，听起来样本很多，对吧？\n\n但牛市里，黄金可能今天创新高，明天又创新高，后天还在创新高。\n\n这些其实是同一段行情。\n\n如果按60个交易日把相邻的新高去重，\n\n最后真正相对独立的样本，只剩8次。\n\n所以199这个数字，看着很大，\n\n但真正能拿来反复验证的历史机会，其实没有那么多。",
+      "start_seconds": 112,
+      "end_seconds": 141,
+      "speaker_directions": "前半像提醒朋友别被199吓到；连续三天新高稍快；‘只剩8次’显著放慢。",
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "揭开样本表象",
+        "emphasis_words": ["199个", "同一段行情", "60个交易日", "只剩8次", "没有那么多"],
+        "pause_before_seconds": 0.3,
+        "pause_after_seconds": 0.8,
+        "delivery_note": "199压缩为8是全片视觉高潮，但旁白仍像自然解释。"
+      },
+      "enhancement_cues": [{"type": "animation", "description": "签名镜头：连续新高点先密集出现，再按60交易日规则吸附、压缩成8组。", "timestamp_seconds": 124}],
+      "source_ref": "research_brief.data_points[2]"
+    },
+    {
+      "id": "s7",
+      "label": "最容易被忽略的其实是过程",
+      "text": "还有一件事，我觉得比最后赚没赚钱更重要。\n\n最后赚钱，不代表这一路你拿得住。\n\n比如2008年初有一次新高后买入，\n\n一年以后回头看，收益大概还有0.7%，勉强没亏。\n\n但中间最难受的时候，按收盘价算，浮亏一度到了19.4%。\n\n如果你投了10万，\n\n账户最低的时候，大概只剩8万零600块。\n\n一年后看到“没亏”，当然很轻松。\n\n但人在那条曲线上，可未必这么想。",
+      "start_seconds": 141,
+      "end_seconds": 171,
+      "speaker_directions": "整段降速；金额和亏损清楚但不煽动；最后一句留出体感。",
+      "delivery_cues": {
+        "pace": "slow",
+        "energy": "沉着、带真实持有压力",
+        "emphasis_words": ["拿得住", "0.7%", "19.4%", "8万零600块", "可未必这么想"],
+        "pause_after_seconds": 0.8,
+        "delivery_note": "这是情绪峰值，不要用夸张低音或恐吓口吻。"
+      },
+      "enhancement_cues": [{"type": "animation", "description": "2008买入后的资金曲线跌入风险红水下区，最低约80,600元，最终回到约100,700元。", "timestamp_seconds": 147}],
+      "source_ref": "research_brief.data_points[3]"
+    },
+    {
+      "id": "s8",
+      "label": "收束",
+      "text": "所以我看完这组数据以后，最大的感受反而很简单：\n\n历史新高，本身没那么可怕。\n\n它不天然等于“马上要站岗”，\n\n但也绝对不意味着接下来会一路舒服地涨。\n\n有时候，方向最后是对的，\n\n中间那段路，还是会比你想象得难熬很多。",
+      "start_seconds": 171,
+      "end_seconds": 190,
+      "speaker_directions": "回到个人感受；每句留白；最后一句平稳落下，不再添加方法或CTA。",
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "简单、克制的收束",
+        "emphasis_words": ["没那么可怕", "不天然等于", "绝对不意味着", "难熬很多"],
+        "pause_after_seconds": 0.8,
+        "delivery_note": "保持原稿的自然结论，不改写成投资教育。"
+      },
+      "enhancement_cues": [{"type": "animation", "description": "金色终点与红色水下路径同时保留；主句‘历史新高，本身没那么可怕’出现后慢慢沉静。", "timestamp_seconds": 173}],
+      "source_ref": "research_brief.research_summary"
+    },
+    {
+      "id": "s9",
+      "label": "静默收尾卡",
+      "text": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "start_seconds": 190,
+      "end_seconds": 198,
+      "speaker_directions": "不生成旁白。数据来源及统计口径见画面说明，免责声明为最后场景主层。",
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "静默",
+        "delivery_note": "不叠加自动字幕，不在免责声明之后放任何画面。"
+      },
+      "enhancement_cues": [{"type": "overlay", "description": "原生收尾卡：数据来源和简短口径为次层，免责声明精确原文为主层。", "timestamp_seconds": 190}],
+      "source_ref": "AGENT_GUIDE.md Mandatory Financial Video Disclaimer; research_brief.sources"
+    }
+  ],
+  "metadata": {
+    "content_category": "finance",
+    "language": "zh-CN",
+    "target_aspect_ratio": "9:16",
+    "source_copy_path": "/Users/jishubu/Downloads/黄金创新高后还能不能买？｜110秒旁白优化版.md",
+    "source_copy_preserved": true,
+    "narrated_effective_characters": 901,
+    "duration_policy": "quality_first_natural_pacing",
+    "estimated_narration_seconds": 190,
+    "silent_end_card_seconds": 8,
+    "end_card_secondary_copy": [
+      "数据来源及统计口径见画面说明",
+      "主回测：组合现货日度价格，2001-01-01—2026-08-20",
+      "稳健性复核：Dukascopy XAU/USD与COMEX连续期货",
+      "美元名义价格；未扣费用、价差、税费及人民币汇率影响"
+    ],
+    "finance_editorial": {
+      "core_question": "在今年猛涨、急跌、近期重新回升的背景下，黄金创新高以后买入，历史上真的很危险吗？",
+      "evidence_refs": ["research_brief.data_points[0]", "research_brief.data_points[1]", "research_brief.data_points[2]", "research_brief.data_points[3]"],
+      "boundary_conditions": ["数据来源及口径只在静默收尾卡呈现", "60日去重后主样本只有8次", "未扣费用、价差、税费和人民币汇率"],
+      "reusable_judgment_method": "用户文案明确以个人感受自然收束，不设置方法段。"
+    }
+  }
+}

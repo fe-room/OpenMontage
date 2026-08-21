@@ -1,0 +1,783 @@
+{
+  "version": "1.0",
+  "project_id": "gold-ath-chasing-experiment",
+  "pipeline_type": "animated-explainer",
+  "stage": "scene_plan",
+  "status": "awaiting_human",
+  "timestamp": "2026-08-21T09:20:41.430844+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": false,
+  "artifacts": {
+    "scene_plan": {
+      "version": "1.0",
+      "style_playbook": "custom: gold-high-water-marks",
+      "scenes": [
+        {
+          "id": "sc01",
+          "type": "text_card",
+          "description": "\u4e3b\u4f53\uff1a\u4e00\u53e5\u50cf\u968f\u53e3\u804a\u5929\u7684\u2018\u6700\u8fd1\u9ec4\u91d1\u8fd9\u8d70\u52bf\uff0c\u8fd8\u633a\u6709\u610f\u601d\u7684\u3002\u2019\u9aa8\u767d\u5c0f\u5b57\u5148\u51fa\u73b0\uff0c\u65c1\u8fb9\u662f\u4e00\u679a\u5c1a\u672a\u542f\u52a8\u7684\u65e7\u91d1\u4ef7\u683c\u523b\u5ea6\u3002\u573a\u666f\uff1a\u9ed1\u66dc\u77f3\u5e95\u3001\u8f7b\u5fae\u7eb8\u5f20\u9897\u7c92\uff1b\u539f\u751fRemotion\u6587\u5b57\uff0c\u4e0d\u4f7f\u7528\u6a21\u677f\u7ec4\u4ef6\u3002\u76f8\u673a\uff1aN/A\uff0c\u539f\u751f\u4e8c\u7ef4\u6784\u56fe\u3002",
+          "start_seconds": 0,
+          "end_seconds": 5,
+          "script_section_id": "s1",
+          "framing": "6\u5217\u7ad6\u5c4f\u7f51\u683c\uff0c\u6587\u5b57\u504f\u5de6\u4e0b\uff0c\u4ef7\u683c\u523b\u5ea6\u504f\u53f3\u4e0a\uff1b\u5927\u9762\u79ef\u7559\u9ed1\u3002",
+          "movement": "\u6587\u5b57\u50cf\u804a\u5929\u6c14\u6ce1\u4e00\u6837\u8f7b\u843d\uff1b\u4ef7\u683c\u523b\u5ea6\u5ef6\u8fdf\u534a\u79d2\u4eae\u8d77\uff0c\u65e0\u5f39\u8df3\u3002",
+          "transition_in": "hard editorial cut from black",
+          "transition_out": "ruler-line extension",
+          "overlay_notes": "\u4ec5\u663e\u793a\u539f\u53e5\uff0c\u4e0d\u53e0\u52a0\u91cd\u590d\u5b57\u5e55\uff1b\u5e95\u90e8\u5c0f\u53f7\u65e5\u671f\u20182026\u2019\u3002",
+          "shot_intent": "\u5148\u5efa\u7acb\u771f\u4eba\u53e3\u8bed\u611f\u548c\u89c2\u5bdf\u89c6\u89d2\uff0c\u907f\u514d\u4e00\u5f00\u573a\u5c31\u50cf\u6570\u636e\u62a5\u544a\u3002",
+          "narrative_role": "establish_context",
+          "information_role": "\u8ba9\u89c2\u4f17\u611f\u89c9\u8fd9\u662f\u4e00\u6b21\u5f53\u4e0b\u884c\u60c5\u89c2\u5bdf\u3002",
+          "required_assets": [
+            {
+              "type": "native_text_and_svg",
+              "description": "\u624b\u5199Remotion\u6587\u5b57\u4e0e\u5355\u4e00\u9ad8\u6c34\u4f4d\u523b\u5ea6\uff0c\u4e0d\u8c03\u7528\u5171\u4eabTextCard\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc02",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1a2026\u5e74\u9ec4\u91d1\u4ef7\u683c\u8def\u5f84\u3002\u5148\u9661\u5ced\u51b2\u54111\u6708\u5e95\u5386\u53f2\u65b0\u9ad8\uff0c\u518d\u5728\u540c\u4e00\u5750\u6807\u4e2d\u5feb\u901f\u4e0b\u7838\u52306\u6708\u5e95\u7ea64000\u7f8e\u5143\uff0c\u6700\u540e\u7f13\u6162\u722c\u56de8\u6708\u4e24\u4e2a\u6708\u9ad8\u4f4d\u3002\u573a\u666f\uff1a\u9ed1\u66dc\u77f3\u5750\u6807\u573a\uff0c\u65e7\u91d1\u4e0a\u6da8\u6bb5\u3001\u98ce\u9669\u7ea2\u4e0b\u8dcc\u6bb5\u3001\u9aa8\u767d\u8f74\u6807\uff1b\u76f8\u673a\uff1aN/A\uff0c\u539f\u751fSVG\u5168\u5c4f\u6570\u636e\u52a8\u753b\u3002",
+          "start_seconds": 5,
+          "end_seconds": 16,
+          "script_section_id": "s1",
+          "framing": "\u5168\u5c4f\u5bbd\u5e45\u6298\u7ebf\u538b\u8fdb9:16\u4e2d\u90e8\uff0c\u5173\u952e\u65e5\u671f\u5206\u7f6e\u4e0a\u4e0b\uff0c\u7aef\u70b9\u5360\u89c6\u89c9\u4e2d\u5fc3\u3002",
+          "movement": "\u8def\u5f84\u6309\u65c1\u767d\u4e09\u6bb5\u5f0f\u7ed8\u5236\uff1b\u51b2\u9ad8\u5feb\u3001\u4e0b\u7838\u6709\u91cd\u91cf\u30018\u6708\u56de\u5347\u7f13\u6162\uff1b\u7aef\u70b9\u4e0d\u52a0\u786e\u8ba4\u7bad\u5934\u3002",
+          "transition_in": "ruler-line grows into chart axis",
+          "transition_out": "endpoint hold then spatial zoom",
+          "overlay_notes": "\u6807\u7b7e\uff1a\u20181\u6708\u5e95 \u65b0\u9ad8\u2019\u3001\u20186\u6708\u5e95 \u2248 $4,000\u2019\u3001\u20188\u6708 \u4e24\u4e2a\u6708\u9ad8\u4f4d\u9644\u8fd1\u2019\uff1b\u6ce8\u660e\u2018\u793a\u610f\u6309\u516c\u5f00\u5e02\u573a\u8d44\u6599\u91cd\u7ed8\u2019\u3002",
+          "shot_intent": "\u628a\u9009\u9898\u4e3a\u4ec0\u4e48\u73b0\u5728\u53d1\u751f\u8bb2\u6e05\u695a\uff0c\u540c\u65f6\u4e0d\u9884\u6d4b\u4e0b\u4e00\u6b65\u3002",
+          "narrative_role": "establish_context",
+          "information_role": "\u89c2\u4f17\u770b\u89c1\u731b\u6da8\u3001\u6025\u8dcc\u3001\u56de\u5347\u7684\u771f\u5b9e\u4e09\u6bb5\u884c\u60c5\u3002",
+          "hero_moment": true,
+          "required_assets": [
+            {
+              "type": "native_svg_chart",
+              "description": "\u57fa\u4e8e2026\u516c\u5f00\u4ef7\u683c\u8282\u70b9\u624b\u5199\u4e09\u6bb5\u5f0fSVG\u4ef7\u683c\u8def\u5f84\uff0c\u8f74\u4e0e\u6807\u7b7e\u539f\u751f\u6e32\u67d3\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc03",
+          "type": "diagram",
+          "description": "\u4e3b\u4f53\uff1a\u60ac\u505c\u5728\u9ad8\u4f4d\u7684\u4e70\u5165\u6307\u9488\u4e0e\u4e00\u5ea7\u7531\u4ef7\u683c\u66f2\u7ebf\u5f62\u6210\u7684\u5c71\u5cf0\uff0c\u5cf0\u9876\u95ee\u53f7\u4e0d\u662f\u5b9e\u4f53\u5c71\u666f\u800c\u662f\u62bd\u8c61\u6570\u636e\u8f6e\u5ed3\u3002\u573a\u666f\uff1a\u9ed1\u66dc\u77f3\u80cc\u666f\uff0c\u65e7\u91d1\u5cf0\u7ebf\u4e0e\u9aa8\u767d\u95ee\u53e5\uff1b\u76f8\u673a\uff1aN/A\uff0c\u4e8c\u7ef4\u5206\u5c42\u6784\u56fe\u3002",
+          "start_seconds": 16,
+          "end_seconds": 22,
+          "script_section_id": "s1",
+          "framing": "\u5c71\u5cf0\u8f6e\u5ed3\u5360\u4e0b\u534a\u5c4f\uff0c\u4e70\u5165\u6307\u9488\u4f4d\u4e8e\u53f3\u4fa7\u5cf0\u80a9\uff0c\u95ee\u53e5\u5c45\u4e0a\u3002",
+          "movement": "\u6307\u9488\u4e24\u6b21\u8f7b\u5fae\u9760\u8fd1\u540e\u505c\u4f4f\uff1b\u5cf0\u9876\u95ee\u53f7\u7531\u66f2\u7ebf\u672b\u7aef\u81ea\u7136\u5377\u51fa\u3002",
+          "transition_in": "chart endpoint expands into mountain contour",
+          "transition_out": "question mark splits into two paths",
+          "overlay_notes": "\u4e3b\u6587\u6848\uff1a\u2018\u90fd\u6da8\u5230\u8fd9\u513f\u4e86\uff0c\u73b0\u5728\u518d\u4e70\uff0c\u4f1a\u4e0d\u4f1a\u521a\u597d\u4e70\u5728\u5c71\u9876\uff1f\u2019",
+          "shot_intent": "\u628a\u4ef7\u683c\u7126\u8651\u8f6c\u6210\u4e00\u4e2a\u53ef\u611f\u77e5\u4f46\u4e0d\u4fd7\u5957\u7684\u7a7a\u95f4\u95ee\u9898\u3002",
+          "narrative_role": "build_tension",
+          "information_role": "\u63d0\u51fa\u5168\u7247\u89c2\u4f17\u95ee\u9898\u3002",
+          "required_assets": [
+            {
+              "type": "native_svg_diagram",
+              "description": "\u4ef7\u683c\u5cf0\u7ebf\u3001\u60ac\u505c\u6307\u9488\u548c\u95ee\u53f7\u8def\u5f84\u7684\u624b\u5199SVG\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc04",
+          "type": "diagram",
+          "description": "\u4e3b\u4f53\uff1a\u540c\u4e00\u4e2a\u5f53\u524d\u4ef7\u683c\u7aef\u70b9\u5206\u51fa\u4e24\u6761\u672a\u5b8c\u6210\u8def\u5f84\u2014\u2014\u7ee7\u7eed\u4e0a\u6da8\u4e0e\u53cd\u5f39\u540e\u56de\u843d\uff0c\u4e24\u6761\u7ebf\u90fd\u4ee5\u7701\u7565\u53f7\u7ed3\u675f\u3002\u573a\u666f\uff1a\u5de6\u53f3\u5206\u5c4f\u3001\u4e0d\u505a\u6982\u7387\u6697\u793a\uff1b\u76f8\u673a\uff1aN/A\uff0c\u539f\u751fSVG\u3002",
+          "start_seconds": 22,
+          "end_seconds": 29,
+          "script_section_id": "s2",
+          "framing": "\u7aef\u70b9\u5c45\u4e2d\uff0c\u4e24\u6761\u8def\u5f84\u5206\u522b\u5411\u53f3\u4e0a\u548c\u53f3\u4e0b\u5ef6\u4f38\uff1b\u4e0a\u4e0b\u7559\u51fa\u5b57\u5e55\u7a7a\u95f4\u3002",
+          "movement": "\u4e24\u6761\u8def\u5f84\u540c\u65f6\u751f\u957f\u3001\u540c\u65f6\u505c\u5728\u672a\u5b8c\u6210\u72b6\u6001\uff0c\u968f\u540e\u6574\u4f53\u964d\u5230\u4f4e\u5bf9\u6bd4\u5ea6\u3002",
+          "transition_in": "question mark unthreads into two paths",
+          "transition_out": "both paths desaturate",
+          "overlay_notes": "\u2018\u7ee7\u7eed\u6da8\uff1f\u2019\u4e0e\u2018\u53cd\u5f39\u540e\u518d\u8dcc\uff1f\u2019\u7b49\u6743\u663e\u793a\uff1b\u4e2d\u95f4\u51fa\u73b0\u2018\u8c01\u4e5f\u731c\u4e0d\u51c6\u2019\u3002",
+          "shot_intent": "\u660e\u786e\u672c\u7247\u4e0d\u505a\u77ed\u671f\u9884\u6d4b\u3002",
+          "narrative_role": "build_tension",
+          "information_role": "\u672a\u6765\u8def\u5f84\u672a\u77e5\uff0c\u8f6c\u800c\u68c0\u9a8c\u5386\u53f2\u3002",
+          "required_assets": [
+            {
+              "type": "native_svg_diagram",
+              "description": "\u4e24\u6761\u7b49\u6743\u672a\u5b8c\u6210\u4ef7\u683c\u8def\u5f84\u4e0e\u539f\u751f\u6587\u5b57\u6807\u7b7e\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc05",
+          "type": "text_card",
+          "description": "\u4e3b\u4f53\uff1a\u2018\u6211\u4eec\u603b\u89c9\u5f97\uff1a\u521b\u65b0\u9ad8\u4ee5\u540e\u4e70\uff0c\u5f88\u5371\u9669\u3002\u2019\u50cf\u4e00\u6761\u624b\u5199\u7814\u7a76\u7b14\u8bb0\u538b\u5728\u684c\u9762\u7f51\u683c\u4e0a\uff0c\u2018\u5371\u9669\u2019\u4e8c\u5b57\u4ec5\u4ee5\u98ce\u9669\u7ea2\u4e0b\u5212\u7ebf\u6807\u8bb0\u3002\u573a\u666f\uff1a\u62bd\u8c61\u7814\u7a76\u7b14\u8bb0\uff0c\u4e0d\u51fa\u73b0\u771f\u5b9e\u7eb8\u5f20\u7167\u7247\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 29,
+          "end_seconds": 34,
+          "script_section_id": "s2",
+          "framing": "\u5de6\u5bf9\u9f50\u4e2d\u8fd1\u666f\u6392\u7248\uff0c\u53f3\u4fa7\u7559\u4e00\u4e2a\u7a7a\u767d\u8bc1\u636e\u680f\u3002",
+          "movement": "\u6587\u5b57\u9010\u884c\u51fa\u73b0\uff1b\u7ea2\u8272\u4e0b\u5212\u7ebf\u6700\u540e\u753b\u51fa\uff0c\u7136\u540e\u88ab\u4e00\u4e2a\u95ee\u53f7\u6253\u65ad\u3002",
+          "transition_in": "soft opacity lift",
+          "transition_out": "note grid stretches into timeline",
+          "overlay_notes": "\u53ea\u7a81\u51fa\u2018\u521b\u65b0\u9ad8\u4ee5\u540e\u4e70\u2019\u548c\u2018\u5f88\u5371\u9669\uff1f\u2019\uff0c\u4e0d\u91cd\u590d\u6574\u6bb5\u65c1\u767d\u3002",
+          "shot_intent": "\u4fdd\u7559\u7528\u6237\u6587\u6848\u4e2d\u7684\u4e2a\u4eba\u601d\u8003\uff0c\u800c\u4e0d\u662f\u76f4\u63a5\u5ba3\u5e03\u7814\u7a76\u3002",
+          "narrative_role": "introduce_subject",
+          "information_role": "\u628a\u666e\u904d\u76f4\u89c9\u53d8\u6210\u5f85\u9a8c\u8bc1\u5047\u8bbe\u3002",
+          "required_assets": [
+            {
+              "type": "native_typography",
+              "description": "\u7814\u7a76\u7b14\u8bb0\u5f0f\u539f\u751f\u6392\u7248\u4e0e\u98ce\u9669\u7ea2\u4e0b\u5212\u7ebf\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc06",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1a2001\u20142026\u957f\u65f6\u95f4\u5c3a\u4ece\u8fdc\u5904\u6a2a\u5411\u94fa\u5f00\uff0c\u96f6\u6563\u91d1\u8272\u5386\u53f2\u8282\u70b9\u7b49\u5f85\u88ab\u70b9\u4eae\u3002\u573a\u666f\uff1a\u50cf\u7cbe\u5bc6\u6d4b\u91cf\u5c3a\u800c\u975e\u80a1\u7968\u8f6f\u4ef6\uff1b\u76f8\u673a\uff1aN/A\uff0c\u4e8c\u7ef4\u65f6\u95f4\u7a7a\u95f4\uff0c\u6a21\u62df\u7f13\u6162\u6a2a\u79fb\u3002",
+          "start_seconds": 34,
+          "end_seconds": 41,
+          "script_section_id": "s2",
+          "framing": "\u65f6\u95f4\u5c3a\u4ece\u753b\u9762\u5de6\u4e0b\u5ef6\u4f38\u81f3\u53f3\u4e0a\uff0c\u5e74\u4efd\u5206\u5c42\u5f62\u6210\u6df1\u5ea6\u9519\u89c9\u3002",
+          "movement": "\u4ece2026\u7aef\u70b9\u5e73\u7a33\u56de\u6eaf\u52302001\uff0c\u5e74\u4efd\u63a0\u8fc7\u4f46\u4fdd\u6301\u53ef\u8bfb\u3002",
+          "transition_in": "note grid stretches into calibrated ruler",
+          "transition_out": "ruler locks at 2001",
+          "overlay_notes": "\u2018\u8fc7\u53bb\u4e8c\u5341\u591a\u5e74\u2019\u4f5c\u4e3a\u5c0f\u6807\u9898\uff1b\u4e0d\u663e\u793a\u5b8f\u89c2\u65b0\u95fb\u3002",
+          "shot_intent": "\u628a\u2018\u7ffb\u5386\u53f2\u2019\u53d8\u6210\u89c6\u89c9\u4e0a\u7684\u771f\u5b9e\u56de\u6eaf\u52a8\u4f5c\u3002",
+          "narrative_role": "transition",
+          "information_role": "\u8fdb\u5165\u5386\u53f2\u56de\u6d4b\u4e16\u754c\u3002",
+          "required_assets": [
+            {
+              "type": "native_timeline",
+              "description": "2001\u20142026\u6821\u51c6\u65f6\u95f4\u5c3a\u4e0e\u5e74\u4efd\u523b\u5ea6\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc07",
+          "type": "diagram",
+          "description": "\u4e3b\u4f53\uff1a\u67d0\u65e5\u4ef7\u683c\u8d8a\u8fc7\u6b64\u524d\u6700\u9ad8\u6c34\u5e73\uff0c\u5f62\u6210\u4e00\u6b21\u6e05\u6670\u7684\u65b0\u9ad8\u4e8b\u4ef6\u3002\u573a\u666f\uff1a\u53ea\u5c55\u793a\u4e09\u6839\u62bd\u8c61\u65e5\u5ea6\u4ef7\u683c\u9488\u4e0e\u4e00\u6761\u5386\u53f2\u9ad8\u6c34\u4f4d\u7ebf\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 41,
+          "end_seconds": 49,
+          "script_section_id": "s3",
+          "framing": "\u9ad8\u6c34\u4f4d\u7ebf\u6a2a\u7a7f\u753b\u9762\u4e2d\u4e0a\u90e8\uff0c\u7a81\u7834\u65e5\u4ef7\u683c\u9488\u5c45\u4e2d\u653e\u5927\u3002",
+          "movement": "\u6b64\u524d\u4ef7\u683c\u505c\u5728\u6c34\u4f4d\u4e0b\u65b9\uff1b\u5f53\u5929\u9488\u8d8a\u7ebf\u540e\u65e7\u91d1\u9501\u5b9a\uff0c\u6807\u7b7e\u2018\u65b0\u9ad8\u2019\u51fa\u73b0\u3002",
+          "transition_in": "2001 ruler becomes horizontal baseline",
+          "transition_out": "breakout marker advances one trading day",
+          "overlay_notes": "\u539f\u751f\u6807\u7b7e\uff1a\u2018\u5f53\u5929\u4ef7\u683c > \u6b64\u524d\u6240\u6709\u65e5\u5ea6\u4ef7\u683c\u2019\u3002",
+          "shot_intent": "\u7528\u4e00\u4e2a\u5177\u4f53\u753b\u9762\u8bb2\u6e05\u65b0\u9ad8\u5b9a\u4e49\u3002",
+          "narrative_role": "deliver_payload",
+          "information_role": "\u89c2\u4f17\u7406\u89e3\u4ec0\u4e48\u88ab\u7b97\u4f5c\u4e00\u6b21\u65b0\u9ad8\u3002",
+          "required_assets": [
+            {
+              "type": "native_svg_diagram",
+              "description": "\u5386\u53f2\u9ad8\u6c34\u4f4d\u3001\u65e5\u5ea6\u4ef7\u683c\u9488\u548c\u7a81\u7834\u4e8b\u4ef6\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc08",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1aT\u65e5\u65b0\u9ad8\u523b\u5ea6\u5411\u53f3\u79fb\u52a8\u5230T+1\u4e70\u5165\uff0c\u518d\u5411\u5916\u5c55\u5f001\u4e2a\u6708\u30013\u4e2a\u6708\u30016\u4e2a\u6708\u30011\u5e74\u56db\u4e2a\u89c2\u5bdf\u7a97\u3002\u573a\u666f\uff1a\u7cbe\u5bc6\u65f6\u95f4\u6807\u5c3a\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 49,
+          "end_seconds": 57,
+          "script_section_id": "s3",
+          "framing": "T\u4e0eT+1\u5728\u4e0a\u534a\u5c4f\uff0c\u56db\u4e2a\u6301\u6709\u671f\u5728\u4e0b\u534a\u5c4f\u6247\u5f62\u5c55\u5f00\u3002",
+          "movement": "\u4e70\u5165\u6307\u9488\u4eceT\u8df3\u5230T+1\uff1b\u56db\u4e2a\u7a97\u53e3\u4f9d\u6b21\u5ef6\u5c55\u5e76\u9501\u5b9a\u3002",
+          "transition_in": "breakout marker slides right",
+          "transition_out": "four windows collapse into event dots",
+          "overlay_notes": "\u6807\u7b7e\uff1a\u2018\u4e0b\u4e00\u4e2a\u4ea4\u6613\u65e5\u4e70\u5165\u2019\u3001\u20181\u6708 / 3\u6708 / 6\u6708 / 1\u5e74\u2019\u3002",
+          "shot_intent": "\u4ea4\u4ee3\u6301\u6709\u671f\uff0c\u4e0d\u8ba9\u89c4\u5219\u53ea\u505c\u7559\u5728\u53e3\u5934\u3002",
+          "narrative_role": "deliver_payload",
+          "information_role": "\u89c2\u4f17\u7406\u89e3\u6bcf\u4e2a\u7ed3\u679c\u4ece\u54ea\u91cc\u6765\u3002",
+          "required_assets": [
+            {
+              "type": "native_timeline_animation",
+              "description": "T\u3001T+1\u548c\u56db\u4e2a\u6301\u6709\u7a97\u53e3\u7684\u539f\u751f\u65f6\u95f4\u52a8\u753b\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc09",
+          "type": "text_card",
+          "description": "\u4e3b\u4f53\uff1a199\u4e2a\u5fae\u5c0f\u91d1\u70b9\u7ec4\u6210\u4e00\u4e2a\u5de8\u5927\u7684\u2018199\u2019\uff0c\u65c1\u8fb9\u5148\u51fa\u73b0\u2018\u53ef\u80fd\u4f1a\u633a\u96be\u770b\u2019\uff0c\u968f\u540e\u98ce\u9669\u7ea2\u9634\u5f71\u9000\u53bb\uff0c\u9732\u51fa\u2018\u7ed3\u679c\u8fd8\u771f\u4e0d\u662f\u2019\u3002\u573a\u666f\uff1a\u6570\u5b57\u96d5\u5851\u5f0f\u6784\u56fe\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 57,
+          "end_seconds": 65,
+          "script_section_id": "s3",
+          "framing": "199\u5360\u753b\u9762\u4e2d\u592e\uff0c\u6587\u5b57\u5206\u7f6e\u4e0a\u4e0b\uff0c\u70b9\u9635\u7ec6\u8282\u6e05\u6670\u3002",
+          "movement": "199\u70b9\u9635\u805a\u5408\uff1b\u7ea2\u8272\u9634\u5f71\u77ed\u6682\u8986\u76d6\u518d\u9000\u53bb\uff1b\u6700\u540e\u4e00\u53e5\u8f7b\u843d\u3002",
+          "transition_in": "holding windows collapse into 199 dots",
+          "transition_out": "dots redistribute into probability field",
+          "overlay_notes": "\u663e\u793a\u2018199\u4e2a\u65b0\u9ad8\u65e5\u2019\uff1b\u4e0d\u52a0\u80dc\u8d1f\u8868\u60c5\u6216\u5938\u5f20\u97f3\u6548\u3002",
+          "shot_intent": "\u627f\u63a5\u7528\u6237\u6587\u6848\u7684\u771f\u5b9e\u9884\u671f\u5e76\u5236\u9020\u7b2c\u4e00\u5904\u7ed3\u679c\u60ac\u5ff5\u3002",
+          "narrative_role": "build_tension",
+          "information_role": "\u6837\u672c\u89c4\u6a21\u4e0e\u9884\u671f\u53cd\u8f6c\u3002",
+          "required_assets": [
+            {
+              "type": "native_particle_typography",
+              "description": "\u7531199\u4e2a\u53ef\u8ba1\u6570\u91d1\u70b9\u7ec4\u6210\u7684\u6570\u5b57199\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc10",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1a\u534a\u5e74\u89c2\u5bdf\u7a97\u5185\uff0c199\u4e2a\u6837\u672c\u70b9\u6309\u6b63\u8d1f\u7ed3\u679c\u5206\u5217\uff0c77.4%\u91d1\u8272\u533a\u57df\u9010\u6b65\u586b\u6ee1\u3002\u573a\u666f\uff1a\u6982\u7387\u573a\u800c\u975e\u901a\u7528\u8fdb\u5ea6\u6761\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 65,
+          "end_seconds": 72,
+          "script_section_id": "s4",
+          "framing": "\u6837\u672c\u70b9\u77e9\u9635\u5360\u4e2d\u90e8\uff0c77.4%\u4f5c\u4e3a\u53f3\u4e0a\u5927\u53f7\u6570\uff0c\u2018\u534a\u5e74\u2019\u56fa\u5b9a\u5de6\u4e0a\u3002",
+          "movement": "\u70b9\u9635\u6309\u7ed3\u679c\u5f52\u4f4d\uff0c\u91d1\u8272\u6b63\u6536\u76ca\u533a\u4ece\u5de6\u81f3\u53f3\u5f62\u6210\uff1b\u672a\u6210\u719f\u6837\u672c\u4e0d\u51fa\u73b0\u3002",
+          "transition_in": "199 numeral dissolves into sample matrix",
+          "transition_out": "matrix rotates to one-year horizon",
+          "overlay_notes": "\u2018\u534a\u5e74\uff5c\u6210\u719f\u6837\u672c\uff5c\u6b63\u6536\u76ca 77.4%\u2019\u5b8c\u6574\u540c\u5c4f\u3002",
+          "shot_intent": "\u8ba977.4%\u6765\u81ea\u53ef\u89c1\u6837\u672c\uff0c\u800c\u4e0d\u662f\u5b64\u7acb\u5927\u5b57\u3002",
+          "narrative_role": "evidence",
+          "information_role": "\u534a\u5e74\u65b0\u9ad8\u4e70\u5165\u7684\u5386\u53f2\u6b63\u6536\u76ca\u6bd4\u4f8b\u3002",
+          "required_assets": [
+            {
+              "type": "native_data_animation",
+              "description": "\u534a\u5e74\u6210\u719f\u6837\u672c\u7684\u6b63\u8d1f\u70b9\u9635\u4e0e77.4%\u8ba1\u6570\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc11",
+          "type": "diagram",
+          "description": "\u4e3b\u4f53\uff1a\u4e00\u5e74\u89c6\u7a97\u50cf\u4e00\u628a\u900f\u660e\u6d4b\u91cf\u6846\u8986\u76d6\u4e8b\u4ef6\u70b9\uff0c\u6846\u5185163\u4e2a\u6210\u719f\u6837\u672c\u88ab\u786e\u8ba4\uff0c76.1%\u91d1\u8272\u70b9\u4eae\u3002\u573a\u666f\uff1a\u6d4b\u91cf\u4eea\u5668\u611f\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 72,
+          "end_seconds": 79,
+          "script_section_id": "s4",
+          "framing": "\u900f\u660e\u4e00\u5e74\u6846\u5c45\u4e2d\uff0cn=163\u8d34\u8fd1\u6846\u89d2\uff0c76.1%\u7f6e\u4e8e\u6846\u5185\u4e3b\u89c6\u89c9\u4f4d\u7f6e\u3002",
+          "movement": "\u4e00\u5e74\u6d4b\u91cf\u6846\u843d\u4e0b\uff0c\u6210\u719f\u6837\u672c\u88ab\u626b\u63cf\u786e\u8ba4\uff0c\u6bd4\u4f8b\u968f\u626b\u63cf\u8ba1\u6570\u3002",
+          "transition_in": "half-year matrix folds into one-year frame",
+          "transition_out": "frame opens into return distribution",
+          "overlay_notes": "\u2018\u4e00\u5e74\uff5cn=163\uff5c\u6b63\u6536\u76ca 76.1%\u2019\u3002",
+          "shot_intent": "\u628a\u6210\u719f\u6837\u672c\u6570\u4e0e\u6982\u7387\u7ed1\u5b9a\uff0c\u9632\u6b62\u53ea\u8bb0\u4f4f\u767e\u5206\u6bd4\u3002",
+          "narrative_role": "evidence",
+          "information_role": "\u4e00\u5e74\u6837\u672c\u91cf\u4e0e\u80dc\u7387\u3002",
+          "required_assets": [
+            {
+              "type": "native_svg_measurement",
+              "description": "\u4e00\u5e74\u6d4b\u91cf\u6846\u3001\u6210\u719f\u6837\u672c\u626b\u63cf\u548c76.1%\u8ba1\u6570\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc12",
+          "type": "text_card",
+          "description": "\u4e3b\u4f53\uff1a23.8%\u4f5c\u4e3a\u4e00\u679a\u6c89\u7a33\u7684\u65e7\u91d1\u6570\u503c\u60ac\u5728\u6536\u76ca\u5206\u5e03\u4e0a\u65b9\uff0c\u65c1\u8fb9\u4fdd\u7559\u2018\u4e00\u5e74\u5e73\u5747\u6536\u76ca\u2019\u548c\u2018\u81f3\u5c11\u5386\u53f2\u4e0a\u770b\u2019\u3002\u573a\u666f\uff1a\u4e0d\u505a\u5e86\u795d\u6027\u4e0a\u6da8\u7bad\u5934\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 79,
+          "end_seconds": 87,
+          "script_section_id": "s4",
+          "framing": "23.8%\u5c45\u4e2d\u504f\u4e0a\uff0c\u5206\u5e03\u8f6e\u5ed3\u5728\u4e0b\uff0c\u9650\u5b9a\u8bed\u5c45\u5de6\u4e0b\u3002",
+          "movement": "\u6536\u76ca\u5206\u5e03\u4ece\u5de6\u53f3\u5c55\u5f00\uff0c\u5e73\u5747\u503c\u843d\u5728\u5bf9\u5e94\u4f4d\u7f6e\uff1b\u7ed3\u8bba\u53e5\u7f13\u6162\u6d6e\u73b0\u3002",
+          "transition_in": "one-year frame opens into distribution",
+          "transition_out": "average marker becomes comparison divider",
+          "overlay_notes": "\u2018\u5e73\u5747 \u2260 \u6bcf\u4e00\u6b21\u7ed3\u679c\u2019\u4ee5\u6781\u5c0f\u7814\u7a76\u6279\u6ce8\u51fa\u73b0\uff1b\u4e3b\u53e5\u4e3a\u2018\u597d\u50cf\u5e76\u6ca1\u6709\u60f3\u8c61\u4e2d\u90a3\u4e48\u53ef\u6015\u2019\u3002",
+          "shot_intent": "\u4ea4\u4ed8\u7b2c\u4e00\u5c42\u53cd\u76f4\u89c9\u7ed3\u679c\uff0c\u540c\u65f6\u4fdd\u7559\u8bed\u6c14\u8fb9\u754c\u3002",
+          "narrative_role": "emotional_beat",
+          "information_role": "\u4e00\u5e74\u5e73\u5747\u6536\u76ca\u4e0e\u6709\u9650\u7ed3\u8bba\u3002",
+          "required_assets": [
+            {
+              "type": "native_typography_distribution",
+              "description": "23.8%\u539f\u751f\u6570\u503c\u3001\u6536\u76ca\u5206\u5e03\u8f6e\u5ed3\u548c\u9650\u5b9a\u8bed\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc13",
+          "type": "diagram",
+          "description": "\u4e3b\u4f53\uff1a\u4e00\u679a\u666e\u901a\u65e5\u62bd\u6837\u6307\u9488\u95ed\u773c\u843d\u5728\u957f\u65f6\u95f4\u8f74\u4efb\u610f\u4f4d\u7f6e\uff0c\u4e0e\u65b0\u9ad8\u65e5\u6307\u9488\u5f62\u6210\u4e24\u79cd\u4e70\u5165\u6761\u4ef6\u3002\u573a\u666f\uff1a\u5de6\u666e\u901a\u65e5\u3001\u53f3\u65b0\u9ad8\u65e5\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 87,
+          "end_seconds": 95,
+          "script_section_id": "s5",
+          "framing": "\u4e0a\u4e0b\u53cc\u8f68\u65f6\u95f4\u8f74\uff0c\u666e\u901a\u65e5\u8f68\u9053\u66f4\u5bc6\uff0c\u65b0\u9ad8\u65e5\u8f68\u9053\u4ec5\u6807\u8bb0\u5cf0\u503c\u3002",
+          "movement": "\u666e\u901a\u65e5\u6307\u9488\u968f\u673a\u4f46\u786e\u5b9a\u6027\u5730\u843d\u4f4d\uff1b\u65b0\u9ad8\u65e5\u6307\u9488\u9501\u5230\u5cf0\u503c\uff1b\u4e24\u8f68\u5bf9\u9f50\u4e00\u5e74\u7a97\u53e3\u3002",
+          "transition_in": "average marker stretches into divider",
+          "transition_out": "two tracks rotate upright",
+          "overlay_notes": "\u2018\u666e\u901a\u4ea4\u6613\u65e5\u2019\u4e0e\u2018\u65b0\u9ad8\u65e5\u2019\u7b49\u6743\u6807\u7b7e\u3002",
+          "shot_intent": "\u8ba9\u666e\u901a\u65e5\u5bf9\u7167\u7684\u89c4\u5219\u76f4\u89c2\u53ef\u89c1\u3002",
+          "narrative_role": "comparison",
+          "information_role": "\u6bd4\u8f83\u5bf9\u8c61\u4e0d\u662f\u53e6\u4e00\u79cd\u8d44\u4ea7\uff0c\u800c\u662f\u540c\u4e00\u8d44\u4ea7\u7684\u666e\u901a\u65e5\u671f\u3002",
+          "required_assets": [
+            {
+              "type": "native_comparison_diagram",
+              "description": "\u666e\u901a\u65e5\u4e0e\u65b0\u9ad8\u65e5\u4e24\u6761\u62bd\u6837\u65f6\u95f4\u8f68\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc14",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1a75.0%\u4e0e76.1%\u4e24\u6839\u6781\u63a5\u8fd1\u7684\u7ad6\u76f4\u6982\u7387\u67f1\uff0c\u5dee\u503c\u7ec6\u7ebf\u4ec5\u7ea6\u4e00\u4e2a\u767e\u5206\u70b9\u3002\u573a\u666f\uff1a\u9aa8\u767d\u666e\u901a\u65e5\u3001\u65e7\u91d1\u65b0\u9ad8\u65e5\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 95,
+          "end_seconds": 104,
+          "script_section_id": "s5",
+          "framing": "\u4e24\u67f1\u5c45\u4e2d\u5360\u636e\u4e2d\u90e8\uff0c\u767e\u5206\u6bd4\u5728\u67f1\u9876\uff0c\u5dee\u503c\u6807\u6ce8\u4f4d\u4e8e\u4e8c\u8005\u4e4b\u95f4\u3002",
+          "movement": "\u4e24\u67f1\u4ece\u540c\u4e00\u57fa\u7ebf\u751f\u957f\uff0c76.1%\u4ec5\u7565\u9ad8\uff1b\u955c\u5934\u4e0d\u622a\u65ad\u5750\u6807\u8f74\u3002",
+          "transition_in": "two tracks rotate into bars",
+          "transition_out": "difference line contracts to neutral dash",
+          "overlay_notes": "\u2018\u666e\u901a\u65e5 75.0%\u2019\u3001\u2018\u65b0\u9ad8\u65e5 76.1%\u2019\u3001\u2018\u2248 1\u4e2a\u767e\u5206\u70b9\u2019\u3002",
+          "shot_intent": "\u7528\u89c6\u89c9\u5c3a\u5ea6\u8bc1\u660e\u4e24\u8fb9\u5dee\u522b\u5f88\u5c0f\u3002",
+          "narrative_role": "comparison",
+          "information_role": "\u65b0\u9ad8\u65e5\u5e76\u6ca1\u6709\u663e\u8457\u7684\u63cf\u8ff0\u6027\u9b54\u6cd5\u4f18\u52bf\u3002",
+          "required_assets": [
+            {
+              "type": "native_bar_comparison",
+              "description": "\u4ece\u96f6\u57fa\u7ebf\u751f\u957f\u768475.0%\u4e0e76.1%\u539f\u751f\u6982\u7387\u67f1\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc15",
+          "type": "text_card",
+          "description": "\u4e3b\u4f53\uff1a\u4e24\u53e5\u7ed3\u8bba\u5206\u5c45\u5de6\u53f3\u2014\u2014\u2018\u4e0d\u662f\u7279\u522b\u5371\u9669\u2019\u4e0e\u2018\u4e5f\u4e0d\u662f\u9b54\u6cd5\u6307\u6807\u2019\uff0c\u4e2d\u95f4\u662f\u4e00\u679a\u4e2d\u6027\u7684\u2018\u65b0\u9ad8\u2019\u6807\u7b7e\u3002\u573a\u666f\uff1a\u65e7\u91d1\u4e0e\u98ce\u9669\u7ea2\u90fd\u9000\u4e3a\u4f4e\u9971\u548c\uff0c\u53ea\u7559\u4e0b\u9aa8\u767d\u5224\u65ad\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 104,
+          "end_seconds": 112,
+          "script_section_id": "s5",
+          "framing": "\u5de6\u53f3\u5e73\u8861\u6784\u56fe\uff0c\u4e2d\u95f4\u6807\u7b7e\u4e0d\u504f\u5411\u4efb\u4f55\u4e00\u8fb9\u3002",
+          "movement": "\u2018\u5371\u9669\u2019\u548c\u2018\u9b54\u6cd5\u2019\u4e24\u4e2a\u6781\u7aef\u8bcd\u5148\u51fa\u73b0\u540e\u88ab\u5212\u53bb\uff0c\u4fdd\u7559\u4e2d\u95f4\u7684\u65b0\u9ad8\u6807\u7b7e\u3002",
+          "transition_in": "difference line becomes center dash",
+          "transition_out": "center label multiplies into event dots",
+          "overlay_notes": "\u4e0d\u663e\u793a\u4e70\u5165/\u5356\u51fa\u6309\u94ae\u3002",
+          "shot_intent": "\u628a\u7b2c\u4e8c\u6b21\u53cd\u8f6c\u6536\u6210\u4e00\u53e5\u6e05\u695a\u3001\u975e\u9884\u6d4b\u6027\u7684\u5224\u65ad\u3002",
+          "narrative_role": "resolution",
+          "information_role": "\u65b0\u9ad8\u65e2\u975e\u5371\u9669\u6309\u94ae\uff0c\u4e5f\u975e\u4e0a\u6da8\u6307\u6807\u3002",
+          "required_assets": [
+            {
+              "type": "native_kinetic_typography",
+              "description": "\u5371\u9669\u4e0e\u9b54\u6cd5\u4e24\u6781\u8bcd\u7684\u539f\u751f\u5212\u9664\u52a8\u753b\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc16",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1a199\u4e2a\u65b0\u9ad8\u70b9\u94fa\u6ee1\u65f6\u95f4\u5899\uff0c\u6570\u91cf\u611f\u5f88\u5f3a\uff0c\u4f46\u660e\u663e\u96c6\u4e2d\u5728\u5c11\u6570\u65f6\u671f\u3002\u573a\u666f\uff1a\u65f6\u95f4\u5bc6\u5ea6\u70ed\u56fe\u5f0f\u6392\u5217\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 112,
+          "end_seconds": 120,
+          "script_section_id": "s6",
+          "framing": "\u65f6\u95f4\u5899\u5360\u5168\u5c4f\uff0c\u5bc6\u96c6\u65f6\u671f\u5f62\u6210\u51e0\u56e2\u4eae\u91d1\uff0c\u7a7a\u767d\u65f6\u671f\u4fdd\u6301\u9ed1\u3002",
+          "movement": "199\u4e2a\u70b9\u5feb\u901f\u6309\u65e5\u671f\u843d\u4f4d\uff0c\u5b8c\u6210\u540e\u505c\u4f4f\u8ba9\u805a\u96c6\u7ed3\u6784\u53ef\u89c1\u3002",
+          "transition_in": "neutral label multiplies into dots",
+          "transition_out": "camera-equivalent crop isolates one cluster",
+          "overlay_notes": "\u2018199\u4e2a\u65b0\u9ad8\u65e5\u2019\u3001\u2018\u542c\u8d77\u6765\u5f88\u591a\uff0c\u5bf9\u5427\uff1f\u2019\u3002",
+          "shot_intent": "\u5148\u8ba9\u89c2\u4f17\u771f\u5b9e\u611f\u5230199\u5f88\u591a\uff0c\u518d\u63ed\u793a\u805a\u96c6\u3002",
+          "narrative_role": "build_tension",
+          "information_role": "\u6837\u672c\u603b\u6570\u4e0e\u65f6\u95f4\u805a\u96c6\u540c\u65f6\u53ef\u89c1\u3002",
+          "required_assets": [
+            {
+              "type": "native_event_wall",
+              "description": "\u6309\u771f\u5b9e\u65e5\u671f\u6392\u5e03\u7684199\u4e2a\u4e8b\u4ef6\u70b9\uff0c\u6570\u636e\u6765\u81ea\u4e3b\u56de\u6d4b\u4fe1\u53f7\u3002",
+              "source": "provided"
+            }
+          ]
+        },
+        {
+          "id": "sc17",
+          "type": "diagram",
+          "description": "\u4e3b\u4f53\uff1a\u4e00\u4e2a\u725b\u5e02\u7c07\u88ab\u653e\u5927\uff0c\u4eca\u5929\u3001\u660e\u5929\u3001\u540e\u5929\u4e09\u4e2a\u76f8\u90bb\u65b0\u9ad8\u70b9\u50cf\u540c\u4e00\u6839\u85e4\u4e0a\u7684\u8fde\u7eed\u523b\u5ea6\u3002\u573a\u666f\uff1a\u5c40\u90e8\u65f6\u95f4\u8f74\u3001\u4e09\u65e5\u6807\u8bb0\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 120,
+          "end_seconds": 130,
+          "script_section_id": "s6",
+          "framing": "\u5c40\u90e8\u7c07\u5c45\u4e2d\u653e\u5927\uff0c\u4e09\u65e5\u4ece\u5de6\u5230\u53f3\u5360\u636e\u753b\u9762\u4e3b\u8f74\uff0c\u5176\u4f59\u4e8b\u4ef6\u6de1\u51fa\u3002",
+          "movement": "\u4e09\u65e5\u4f9d\u6b21\u8d8a\u8fc7\u9ad8\u6c34\u4f4d\uff0c\u4f46\u5e95\u90e8\u7528\u540c\u4e00\u6bb5\u884c\u60c5\u62ec\u53f7\u628a\u5b83\u4eec\u5708\u5728\u4e00\u8d77\u3002",
+          "transition_in": "one cluster expands",
+          "transition_out": "bracket becomes magnetic grouping field",
+          "overlay_notes": "\u2018\u4eca\u5929\u65b0\u9ad8 / \u660e\u5929\u53c8\u65b0\u9ad8 / \u540e\u5929\u8fd8\u5728\u65b0\u9ad8\u2019\uff1b\u4e0b\u65b9\u2018\u540c\u4e00\u6bb5\u884c\u60c5\u2019\u3002",
+          "shot_intent": "\u4e0d\u7528\u7edf\u8ba1\u672f\u8bed\u4e5f\u8ba9\u89c2\u4f17\u7406\u89e3\u6837\u672c\u5e76\u4e0d\u72ec\u7acb\u3002",
+          "narrative_role": "deliver_payload",
+          "information_role": "\u8fde\u7eed\u65b0\u9ad8\u6765\u81ea\u540c\u4e00\u8f6e\u884c\u60c5\u3002",
+          "required_assets": [
+            {
+              "type": "native_cluster_diagram",
+              "description": "\u4e09\u4e2a\u76f8\u90bb\u65b0\u9ad8\u4e0e\u540c\u4e00\u884c\u60c5\u62ec\u53f7\u7684\u539f\u751fSVG\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc18",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1a\u5168\u7247\u7b7e\u540d\u88c5\u7f6e\u2014\u2014199\u4e2a\u9ad8\u6c34\u4f4d\u70b9\u572860\u4ea4\u6613\u65e5\u78c1\u573a\u4e2d\u5438\u9644\u3001\u805a\u7c7b\uff0c\u6700\u7ec8\u4ec5\u7559\u4e0b8\u679a\u76f8\u5bf9\u72ec\u7acb\u7684\u91cd\u578b\u91d1\u8272\u523b\u5ea6\u3002\u573a\u666f\uff1a\u9ed1\u66dc\u77f3\u7a7a\u95f4\uff0c\u5176\u4ed6\u6587\u5b57\u5168\u90e8\u9000\u573a\uff1b\u76f8\u673a\uff1aN/A\uff0c\u4e8c\u7ef4\u7c92\u5b50\u4e0eSVG\u7ec4\u5408\u3002",
+          "start_seconds": 130,
+          "end_seconds": 141,
+          "script_section_id": "s6",
+          "framing": "199\u70b9\u5148\u6ee1\u5c4f\uff0c8\u679a\u6700\u7ec8\u523b\u5ea6\u5747\u5300\u5360\u636e\u4e2d\u592e\u7eb5\u5411\u533a\u57df\uff1b\u6570\u5b578\u6700\u540e\u5c45\u4e2d\u3002",
+          "movement": "\u70b9\u6309\u771f\u5b9e\u65e5\u671f\u95f4\u8ddd\u805a\u7c7b\uff1b\u6bcf\u7ec4\u5438\u9644\u65f6\u8f7b\u5fae\u56de\u5f39\uff0c\u6700\u7ec8199\u6570\u5b57\u6536\u7f29\u4e3a8\u3002",
+          "transition_in": "magnetic grouping field activates",
+          "transition_out": "eight markers sink into a single 2008 marker",
+          "overlay_notes": "\u201860\u4e2a\u4ea4\u6613\u65e5\u53bb\u91cd\u2019\u3001\u2018199 \u2192 8\u2019\u3001\u2018\u76f8\u5bf9\u72ec\u7acb\u6837\u672c\u2019\u3002",
+          "shot_intent": "\u628a\u6700\u91cd\u8981\u7684\u6837\u672c\u7ed3\u6784\u95ee\u9898\u53d8\u6210\u5168\u7247\u552f\u4e00\u7b7e\u540d\u955c\u5934\u3002",
+          "narrative_role": "evidence",
+          "information_role": "\u53bb\u91cd\u540e\u8bc1\u636e\u8fdc\u5c11\u4e8e\u8868\u9762\u6837\u672c\u6570\u3002",
+          "hero_moment": true,
+          "required_assets": [
+            {
+              "type": "native_particle_compression",
+              "description": "\u630960\u4ea4\u6613\u65e5\u903b\u8f91\u5c06199\u4e8b\u4ef6\u70b9\u538b\u7f29\u4e3a8\u7ec4\u7684\u786e\u5b9a\u6027Remotion\u52a8\u753b\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc19",
+          "type": "text_card",
+          "description": "\u4e3b\u4f53\uff1a\u4e00\u6761\u7b80\u5355\u5224\u65ad\u2018\u6700\u540e\u8d5a\u94b1 \u2260 \u8fd9\u4e00\u8def\u62ff\u5f97\u4f4f\u2019\uff0c\u7b49\u53f7\u88ab\u7f13\u6162\u62c9\u65ad\uff0c\u4e0b\u9762\u9732\u51fa2008\u65e5\u671f\u6807\u7b7e\u3002\u573a\u666f\uff1a\u6781\u7b80\u7a7a\u573a\uff0c\u4e3a\u98ce\u9669\u6848\u4f8b\u964d\u901f\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 141,
+          "end_seconds": 147,
+          "script_section_id": "s7",
+          "framing": "\u7b49\u5f0f\u5c45\u4e2d\uff0c2008\u6807\u7b7e\u4f4d\u4e8e\u5e95\u90e8\uff0c\u56db\u5468\u7559\u9ed1\u3002",
+          "movement": "\u7b49\u53f7\u88ab\u62c9\u5f00\u53d8\u6210\u4e0d\u7b49\u53f7\uff1b2008\u6807\u7b7e\u4ece\u4e0b\u65b9\u6d6e\u51fa\u3002",
+          "transition_in": "eight markers collapse to 2008",
+          "transition_out": "2008 label becomes chart origin",
+          "overlay_notes": "\u53ea\u663e\u793a\u2018\u6700\u540e\u8d5a\u94b1 \u2260 \u8fd9\u4e00\u8def\u62ff\u5f97\u4f4f\u2019\u3002",
+          "shot_intent": "\u4ece\u7edf\u8ba1\u8bc1\u636e\u5207\u6362\u5230\u771f\u5b9e\u6301\u6709\u4f53\u9a8c\u3002",
+          "narrative_role": "emotional_beat",
+          "information_role": "\u7ec8\u70b9\u7ed3\u679c\u4e0e\u8fc7\u7a0b\u4f53\u9a8c\u4e0d\u540c\u3002",
+          "required_assets": [
+            {
+              "type": "native_typography",
+              "description": "\u7b49\u53f7\u53d8\u4e0d\u7b49\u53f7\u4e0e2008\u65e5\u671f\u6807\u7b7e\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc20",
+          "type": "diagram",
+          "description": "\u4e3b\u4f53\uff1a2008\u5e74\u521d\u4e70\u5165\u70b9\u3001\u5e74\u672b\u7ea6+0.7%\u7ec8\u70b9\u4e0e\u4e2d\u95f4\u5b8c\u6574\u6c34\u4e0b\u8def\u5f84\u3002\u573a\u666f\uff1a\u96f6\u7ebf\u4e3a\u9aa8\u767d\uff0c\u6c34\u4e0b\u533a\u57df\u98ce\u9669\u7ea2\uff0c\u7ec8\u70b9\u65e7\u91d1\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 147,
+          "end_seconds": 159,
+          "script_section_id": "s7",
+          "framing": "\u66f2\u7ebf\u6a2a\u8de8\u5168\u5c4f\uff0c\u4e70\u5165\u70b9\u5de6\u3001\u6700\u6df1\u70b9\u4e2d\u3001\u5e74\u672b\u7ec8\u70b9\u53f3\uff1b\u96f6\u7ebf\u4fdd\u6301\u5b8c\u6574\u3002",
+          "movement": "\u8def\u5f84\u6309\u65f6\u95f4\u7ed8\u5236\uff0c\u5148\u77ed\u6682\u4e0a\u6da8\u518d\u8fdb\u5165\u6c34\u4e0b\uff0c\u6700\u7ec8\u56de\u5230\u7ea6+0.7%\uff1b\u4e0d\u63d0\u524d\u663e\u793a\u6700\u4f4e\u70b9\u6570\u5b57\u3002",
+          "transition_in": "2008 label becomes chart origin",
+          "transition_out": "path freezes at deepest point",
+          "overlay_notes": "\u20182008-01\u4e70\u5165\u2019\u3001\u2018\u4e00\u5e74\u540e \u2248 +0.7%\u2019\uff1b\u5355\u4f4d\u548c\u53e3\u5f84\u4fdd\u7559\u3002",
+          "shot_intent": "\u5148\u8ba9\u89c2\u4f17\u770b\u5230\u2018\u52c9\u5f3a\u6ca1\u4e8f\u2019\u80cc\u540e\u7684\u6574\u6761\u8def\u5f84\u3002",
+          "narrative_role": "evidence",
+          "information_role": "2008\u6848\u4f8b\u7ec8\u70b9\u6536\u76ca\u4e0e\u8fc7\u7a0b\u8def\u5f84\u3002",
+          "required_assets": [
+            {
+              "type": "native_path_chart",
+              "description": "\u4f9d\u636eworst_60d_events.csv\u91cd\u7ed82008\u4e00\u5e74\u8def\u5f84\u4e0e\u5173\u952e\u8282\u70b9\u3002",
+              "source": "provided"
+            }
+          ]
+        },
+        {
+          "id": "sc21",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1a\u4e00\u679a\u4ee3\u886810\u4e07\u5143\u7684\u9aa8\u767d\u8d44\u91d1\u5757\u968f2008\u66f2\u7ebf\u4e0b\u6c89\uff0c\u5728\u6700\u4f4e\u70b9\u53d8\u4e3a80,600\uff0c\u518d\u7f13\u6162\u56de\u5230100,700\u9644\u8fd1\uff1b\u98ce\u9669\u7ea2\u6c34\u4f4d\u538b\u8feb\u5176\u4e0a\u65b9\u3002\u573a\u666f\uff1a\u8d44\u91d1\u5757\u4e0e\u6c34\u4e0b\u6df1\u5ea6\u800c\u975e\u8d26\u6237App\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 159,
+          "end_seconds": 171,
+          "script_section_id": "s7",
+          "framing": "\u8d44\u91d1\u5757\u59cb\u7ec8\u4f4d\u4e8e\u66f2\u7ebf\u5c40\u90e8\uff0c\u6700\u4f4e\u70b9\u6570\u5b57\u5360\u89c6\u89c9\u4e2d\u5fc3\uff1b\u4e0a\u65b9\u7559\u7ed9\u65c1\u767d\u5b57\u5e55\u3002",
+          "movement": "100,000\u6570\u5b57\u968f\u4e0b\u6c89\u8fde\u7eed\u8ba1\u6570\u81f3\u7ea680,600\uff1b\u505c\u987f\u540e\u6cbf\u8def\u5f84\u6062\u590d\uff0c\u6700\u540e\u4e0d\u505a\u5e86\u795d\u3002",
+          "transition_in": "deepest path point pulls value block downward",
+          "transition_out": "value block dissolves, leaving full path",
+          "overlay_notes": "\u2018\u6700\u5927\u6d6e\u4e8f -19.4%\u2019\u3001\u2018100,000 \u2192 \u224880,600\u2019\uff1b\u2018\u4e00\u5e74\u540e\u6ca1\u4e8f\u2019\u4ec5\u4f5c\u6b21\u8981\u6807\u7b7e\u3002",
+          "shot_intent": "\u628a\u767e\u5206\u6bd4\u7ffb\u8bd1\u6210\u89c2\u4f17\u80fd\u611f\u53d7\u5230\u7684\u8d26\u6237\u538b\u529b\u3002",
+          "narrative_role": "emotional_beat",
+          "information_role": "\u65b9\u5411\u6700\u7ec8\u6ca1\u9519\uff0c\u4e5f\u53ef\u80fd\u7ecf\u5386\u63a5\u8fd1\u4e24\u6210\u6d6e\u4e8f\u3002",
+          "hero_moment": true,
+          "required_assets": [
+            {
+              "type": "native_value_path",
+              "description": "100,000\u523080,600\u7684\u786e\u5b9a\u6027\u6570\u5b57\u8ba1\u6570\u4e0e\u6c34\u4e0b\u8def\u5f84\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc22",
+          "type": "text_card",
+          "description": "\u4e3b\u4f53\uff1a\u7528\u6237\u539f\u53e5\u2018\u5386\u53f2\u65b0\u9ad8\uff0c\u672c\u8eab\u6ca1\u90a3\u4e48\u53ef\u6015\u3002\u2019\u4ee5\u9aa8\u767d\u5927\u5b57\u51fa\u73b0\uff0c\u80cc\u540e\u540c\u65f6\u4fdd\u7559\u65e7\u91d1\u5cf0\u7ebf\u548c\u6de1\u7ea2\u6c34\u4e0b\u9634\u5f71\u3002\u573a\u666f\uff1a\u7ed3\u8bba\u4e0d\u662f\u80dc\u5229\u753b\u9762\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 171,
+          "end_seconds": 178,
+          "script_section_id": "s8",
+          "framing": "\u4e3b\u53e5\u5de6\u5bf9\u9f50\u5360\u4e2d\u90e8\uff0c\u5cf0\u7ebf\u548c\u6c34\u4e0b\u9634\u5f71\u5206\u522b\u4f4d\u4e8e\u4e0a\u4e0b\u80cc\u666f\u3002",
+          "movement": "\u53e5\u5b50\u5206\u4e24\u62cd\u51fa\u73b0\uff1b\u5cf0\u7ebf\u4e0d\u7ee7\u7eed\u4e0a\u6da8\uff0c\u6c34\u4e0b\u9634\u5f71\u4e5f\u4e0d\u6d88\u5931\u3002",
+          "transition_in": "full 2008 path softens into background",
+          "transition_out": "sentence separates into two clauses",
+          "overlay_notes": "\u53ea\u663e\u793a\u539f\u53e5\uff0c\u4e0d\u6dfb\u52a0\u2018\u53ef\u4ee5\u4e70\u2019\u7b49\u63a8\u5bfc\u3002",
+          "shot_intent": "\u628a\u6700\u5927\u7684\u4e2a\u4eba\u611f\u53d7\u8bf4\u6e05\u695a\uff0c\u540c\u65f6\u4e0d\u5236\u9020\u5355\u5411\u7ed3\u8bba\u3002",
+          "narrative_role": "resolution",
+          "information_role": "\u5386\u53f2\u65b0\u9ad8\u4e0d\u5929\u7136\u7b49\u4e8e\u5371\u9669\u3002",
+          "required_assets": [
+            {
+              "type": "native_typography",
+              "description": "\u7ed3\u8bba\u4e3b\u53e5\u3001\u5cf0\u7ebf\u4e0e\u6c34\u4e0b\u9634\u5f71\u7684\u539f\u751f\u5408\u6210\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc23",
+          "type": "diagram",
+          "description": "\u4e3b\u4f53\uff1a\u5de6\u4fa7\u6807\u7b7e\u2018\u4e0d\u5929\u7136\u7b49\u4e8e\u9a6c\u4e0a\u7ad9\u5c97\u2019\uff0c\u53f3\u4fa7\u6807\u7b7e\u2018\u4e5f\u4e0d\u610f\u5473\u7740\u4e00\u8def\u8212\u670d\u5730\u6da8\u2019\uff0c\u4e2d\u95f4\u662f\u4e00\u6761\u8d77\u4f0f\u660e\u663e\u4f46\u7ec8\u70b9\u5411\u4e0a\u7684\u8def\u5f84\u3002\u573a\u666f\uff1a\u4e24\u79cd\u8bef\u89e3\u88ab\u540c\u4e00\u6761\u771f\u5b9e\u8def\u5f84\u8fde\u63a5\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 178,
+          "end_seconds": 185,
+          "script_section_id": "s8",
+          "framing": "\u5de6\u53f3\u6807\u7b7e\u7b49\u6743\uff0c\u8def\u5f84\u7a7f\u8fc7\u4e2d\u592e\uff0c\u907f\u514d\u53f3\u4fa7\u88ab\u7406\u89e3\u4e3a\u9884\u6d4b\u3002",
+          "movement": "\u4e24\u53e5\u4f9d\u6b21\u51fa\u73b0\uff1b\u8def\u5f84\u5148\u4e0b\u6c89\u518d\u56de\u5347\uff0c\u7ec8\u70b9\u505c\u4f4f\u3002",
+          "transition_in": "main sentence separates into clauses",
+          "transition_out": "labels fade, path remains",
+          "overlay_notes": "\u4e0d\u51fa\u73b0\u4e70\u5165\u3001\u5356\u51fa\u6216\u4ed3\u4f4d\u5efa\u8bae\u3002",
+          "shot_intent": "\u540c\u65f6\u5426\u5b9a\u4e24\u4e2a\u6781\u7aef\u7406\u89e3\u3002",
+          "narrative_role": "resolution",
+          "information_role": "\u65b0\u9ad8\u4e0d\u7b49\u4e8e\u7acb\u523b\u4e8f\uff0c\u4e5f\u4e0d\u4fdd\u8bc1\u5e73\u6ed1\u4e0a\u6da8\u3002",
+          "required_assets": [
+            {
+              "type": "native_balanced_diagram",
+              "description": "\u4e24\u53e5\u5bf9\u79f0\u5224\u65ad\u4e0e\u4e2d\u95f4\u8d77\u4f0f\u8def\u5f84\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc24",
+          "type": "animation",
+          "description": "\u4e3b\u4f53\uff1a\u4e00\u679a\u5fae\u5c0f\u7684\u2018\u6301\u6709\u4eba\u2019\u5706\u70b9\u6cbf\u6574\u6761\u8d77\u4f0f\u8def\u5f84\u7f13\u6162\u524d\u884c\uff0c\u6700\u540e\u65b9\u5411\u5411\u4e0a\u4f46\u4e2d\u9014\u591a\u6b21\u8fdb\u5165\u98ce\u9669\u7ea2\u533a\u57df\u3002\u573a\u666f\uff1a\u5168\u7247\u6700\u5b89\u9759\u7684\u8fd0\u52a8\u955c\u5934\uff1b\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 185,
+          "end_seconds": 190,
+          "script_section_id": "s8",
+          "framing": "\u8def\u5f84\u6a2a\u8de8\u4e0b\u534a\u5c4f\uff0c\u5706\u70b9\u4e3a\u552f\u4e00\u79fb\u52a8\u4e3b\u4f53\uff0c\u4e0a\u534a\u5c4f\u4fdd\u6301\u7a7a\u767d\u3002",
+          "movement": "\u5706\u70b9\u4ee5\u4e0d\u5747\u5300\u901f\u5ea6\u7a7f\u8fc7\u4e0b\u8dcc\u548c\u6062\u590d\uff0c\u6700\u540e\u505c\u5728\u7ec8\u70b9\uff1b\u753b\u9762\u7f13\u6162\u964d\u6697\u3002",
+          "transition_in": "labels fade, path remains",
+          "transition_out": "fade to final information card",
+          "overlay_notes": "\u6700\u540e\u4e00\u53e5\u2018\u4e2d\u95f4\u90a3\u6bb5\u8def\uff0c\u8fd8\u662f\u4f1a\u6bd4\u4f60\u60f3\u8c61\u5f97\u96be\u71ac\u5f88\u591a\u3002\u2019\u4ec5\u505a\u4e00\u6b21\u5b57\u5e55\uff0c\u4e0d\u505a\u5927\u5b57\u590d\u8bfb\u3002",
+          "shot_intent": "\u7528\u8eab\u4f53\u611f\u7ed3\u675f\uff0c\u800c\u4e0d\u662f\u518d\u8865\u4e00\u4e2a\u65b9\u6cd5\u6216CTA\u3002",
+          "narrative_role": "emotional_beat",
+          "information_role": "\u628a\u6301\u6709\u8fc7\u7a0b\u7684\u96be\u71ac\u7559\u7ed9\u89c2\u4f17\u3002",
+          "required_assets": [
+            {
+              "type": "native_path_animation",
+              "description": "\u6cbf\u8def\u5f84\u79fb\u52a8\u7684\u6301\u6709\u4eba\u5706\u70b9\u4e0e\u98ce\u9669\u7ea2\u6c34\u4e0b\u533a\u3002",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "sc25",
+          "type": "text_card",
+          "description": "\u672c\u89c6\u9891\u4ec5\u4f5c\u77e5\u8bc6\u5206\u4eab\uff0c\u4e0d\u6784\u6210\u4efb\u4f55\u6295\u8d44\u5efa\u8bae\u3002\u5e02\u573a\u6709\u98ce\u9669\uff0c\u6295\u8d44\u9700\u8c28\u614e\u3002\u539f\u751fRemotion\u6700\u7ec8\u6587\u5b57\u5361\uff1b\u540c\u4e00\u753b\u9762\u6b21\u5c42\u663e\u793a\u6570\u636e\u6765\u6e90\u53ca\u7edf\u8ba1\u53e3\u5f84\uff1a\u4e3b\u56de\u6d4b\u7ec4\u5408\u73b0\u8d27\u65e5\u5ea6\u4ef7\u683c2001-01-01\u20142026-08-20\uff0cDukascopy XAU/USD\u4e0eCOMEX\u8fde\u7eed\u671f\u8d27\u4f5c\u7a33\u5065\u6027\u590d\u6838\uff0c\u7f8e\u5143\u540d\u4e49\u4ef7\u683c\uff0c\u672a\u6263\u8d39\u7528\u3001\u4ef7\u5dee\u3001\u7a0e\u8d39\u53ca\u4eba\u6c11\u5e01\u6c47\u7387\u5f71\u54cd\u3002\u76f8\u673a\uff1aN/A\u3002",
+          "start_seconds": 190,
+          "end_seconds": 198,
+          "script_section_id": "s9",
+          "framing": "\u514d\u8d23\u58f0\u660e\u5360\u4e2d\u4e0a\u90e8\u4e3b\u5c42\uff0c\u5b57\u53f7\u4e0e\u884c\u8ddd\u4fdd\u8bc1\u624b\u673a\u53ef\u8bfb\uff1b\u6765\u6e90\u4e0e\u53e3\u5f84\u6b21\u5c42\u7f6e\u5e95\u4f46\u4e0d\u5c0f\u4e8e\u5b89\u5168\u5b57\u53f7\u3002",
+          "movement": "\u6574\u5361\u8f7b\u67d4\u6de1\u5165\u540e\u9759\u6b628\u79d2\uff1b\u65e0\u81ea\u52a8\u5b57\u5e55\u3001\u65e0logo\u52a8\u753b\u3001\u65e0\u540e\u7eed\u573a\u666f\u3002",
+          "transition_in": "gentle fade from path",
+          "transition_out": "none \u2014 final frame hold",
+          "overlay_notes": "\u514d\u8d23\u58f0\u660e\u5fc5\u987b\u9010\u5b57\u7cbe\u786e\uff1b\u6765\u6e90\u7b80\u79f0\uff1aLBMA\u5386\u53f2\u5b58\u6863/Alpha Vantage\u3001Dukascopy\u3001Yahoo GC=F\u3002",
+          "shot_intent": "\u5b8c\u6210\u6570\u636e\u62ab\u9732\u548c\u6cd5\u5b9a\u5408\u89c4\u6536\u5c3e\uff0c\u4e0d\u6253\u65ad\u524d\u4e00\u6bb5\u65c1\u767d\u3002",
+          "narrative_role": "resolution",
+          "information_role": "\u8ba9\u89c2\u4f17\u5728\u79bb\u573a\u524d\u770b\u5230\u6765\u6e90\u3001\u9650\u5236\u548c\u514d\u8d23\u58f0\u660e\u3002",
+          "required_assets": [
+            {
+              "type": "native_exact_text",
+              "description": "\u539f\u751f\u7cbe\u786e\u514d\u8d23\u58f0\u660e\u3001\u6765\u6e90\u548c\u53e3\u5f84\u6587\u5b57\uff1b\u4e25\u7981AI\u56fe\u7247\u6587\u5b57\u3002",
+              "source": "generate"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "content_category": "finance",
+        "total_duration_seconds": 198,
+        "narration_seconds_planned": 190,
+        "silent_end_card_seconds": 8,
+        "render_runtime": "remotion",
+        "composition_mode": "atelier",
+        "renderer_family": "explainer-data",
+        "visual_coverage_strategy": "composition-only",
+        "caption_policy": "accessibility subtitles only; suppress captions when identical large on-screen text is already present",
+        "data_accuracy_policy": "all numbers, dates, axes and labels rendered natively from verified project data",
+        "scene_inventory": [
+          {
+            "scene_id": "sc01",
+            "primary_subject": "casual opening sentence and dormant price ruler"
+          },
+          {
+            "scene_id": "sc02",
+            "primary_subject": "2026 three-phase price path"
+          },
+          {
+            "scene_id": "sc03",
+            "primary_subject": "buy pointer paused at price mountain"
+          },
+          {
+            "scene_id": "sc04",
+            "primary_subject": "two unfinished future paths"
+          },
+          {
+            "scene_id": "sc05",
+            "primary_subject": "handwritten danger hypothesis"
+          },
+          {
+            "scene_id": "sc06",
+            "primary_subject": "2001\u20132026 calibrated history ruler"
+          },
+          {
+            "scene_id": "sc07",
+            "primary_subject": "single breakout above historical waterline"
+          },
+          {
+            "scene_id": "sc08",
+            "primary_subject": "T+1 entry and four holding windows"
+          },
+          {
+            "scene_id": "sc09",
+            "primary_subject": "199 built from event dots"
+          },
+          {
+            "scene_id": "sc10",
+            "primary_subject": "half-year positive-result sample field"
+          },
+          {
+            "scene_id": "sc11",
+            "primary_subject": "one-year maturity measurement frame"
+          },
+          {
+            "scene_id": "sc12",
+            "primary_subject": "23.8 percent over return distribution"
+          },
+          {
+            "scene_id": "sc13",
+            "primary_subject": "ordinary-day versus high-day sampling tracks"
+          },
+          {
+            "scene_id": "sc14",
+            "primary_subject": "75.0 versus 76.1 probability columns"
+          },
+          {
+            "scene_id": "sc15",
+            "primary_subject": "danger and magic extremes crossed out"
+          },
+          {
+            "scene_id": "sc16",
+            "primary_subject": "199 dated-event wall"
+          },
+          {
+            "scene_id": "sc17",
+            "primary_subject": "three adjacent highs in one bull cluster"
+          },
+          {
+            "scene_id": "sc18",
+            "primary_subject": "199-to-8 magnetic compression"
+          },
+          {
+            "scene_id": "sc19",
+            "primary_subject": "profit not-equal-to holdability equation"
+          },
+          {
+            "scene_id": "sc20",
+            "primary_subject": "2008 full underwater path"
+          },
+          {
+            "scene_id": "sc21",
+            "primary_subject": "100000 to 80600 value block"
+          },
+          {
+            "scene_id": "sc22",
+            "primary_subject": "historical highs are not inherently scary statement"
+          },
+          {
+            "scene_id": "sc23",
+            "primary_subject": "balanced pair of rejected extremes"
+          },
+          {
+            "scene_id": "sc24",
+            "primary_subject": "holder dot traveling the difficult path"
+          },
+          {
+            "scene_id": "sc25",
+            "primary_subject": "exact disclaimer and source card"
+          }
+        ],
+        "chart_questions": [
+          {
+            "scene_id": "sc02",
+            "question": "\u4e3a\u4ec0\u4e48\u73b0\u5728\u91cd\u65b0\u8ba8\u8bba\u9ec4\u91d1\u8ffd\u9ad8\uff1f"
+          },
+          {
+            "scene_id": "sc10",
+            "question": "\u65b0\u9ad8\u540e\u6301\u6709\u534a\u5e74\u8d5a\u94b1\u7684\u6bd4\u4f8b\u662f\u591a\u5c11\uff1f"
+          },
+          {
+            "scene_id": "sc11",
+            "question": "\u65b0\u9ad8\u540e\u6301\u6709\u4e00\u5e74\u8d5a\u94b1\u7684\u6bd4\u4f8b\u548c\u6210\u719f\u6837\u672c\u6570\u662f\u591a\u5c11\uff1f"
+          },
+          {
+            "scene_id": "sc14",
+            "question": "\u65b0\u9ad8\u65e5\u4e0e\u666e\u901a\u65e5\u7684\u4e00\u5e74\u6b63\u6536\u76ca\u6982\u7387\u5dee\u591a\u5c11\uff1f"
+          },
+          {
+            "scene_id": "sc18",
+            "question": "199\u4e2a\u65b0\u9ad8\u65e5\u4e2d\u6709\u591a\u5c11\u76f8\u5bf9\u72ec\u7acb\u4e8b\u4ef6\uff1f"
+          },
+          {
+            "scene_id": "sc20",
+            "question": "2008\u6848\u4f8b\u7684\u7ec8\u70b9\u6536\u76ca\u548c\u8fc7\u7a0b\u8def\u5f84\u6709\u4ec0\u4e48\u5dee\u522b\uff1f"
+          },
+          {
+            "scene_id": "sc21",
+            "question": "19.4%\u6700\u5927\u6d6e\u4e8f\u6362\u621010\u4e07\u5143\u662f\u4ec0\u4e48\u4f53\u9a8c\uff1f"
+          }
+        ]
+      }
+    }
+  },
+  "style_playbook": "custom: gold-high-water-marks",
+  "review": {
+    "stage": "scene_plan",
+    "round": 1,
+    "decision": "PASS",
+    "findings": [
+      {
+        "severity": "suggestion",
+        "title": "\u6700\u7ec8\u8282\u594f\u4ecd\u9700\u4ee5\u5b9e\u9645\u65c1\u767d\u56de\u586b",
+        "description": "\u5f53\u524d198\u79d2\u65f6\u95f4\u8f74\u6309901\u4e2a\u6709\u6548\u4e2d\u6587\u5b57\u7b26\u7684\u81ea\u7136\u8bed\u901f\u4f30\u7b97\uff1b\u8c46\u5305\u5b9e\u6d4b\u540e\u5404\u573a\u666f\u8fb9\u754c\u53ef\u80fd\u9700\u8981\u5c0f\u5e45\u987a\u5ef6\u3002",
+        "proposed_change": "\u8d44\u4ea7\u9636\u6bb5\u5148\u751f\u6210s1\u6837\u672c\uff0c\u58f0\u97f3\u786e\u8ba4\u540e\u6279\u91cf\u751f\u6210\u65c1\u767d\uff1b\u518d\u4ee5\u5b9e\u9645\u6bb5\u843d\u65f6\u957f\u66f4\u65b0scene_plan\uff0c\u4e0d\u5220\u7528\u6237\u6587\u6848\u3002",
+        "status": "accepted"
+      }
+    ],
+    "summary": {
+      "critical": 0,
+      "suggestions": 1,
+      "nitpicks": 0,
+      "success_criteria_met": "5/5",
+      "checks": {
+        "schema_valid": true,
+        "scene_count": 25,
+        "scene_types": 3,
+        "timeline_contiguous": true,
+        "script_sections_covered": "9/9",
+        "slideshow_risk_average": 0.67,
+        "slideshow_risk_verdict": "strong",
+        "atelier_primary_subjects_unique": true,
+        "native_data_only": true,
+        "mandatory_disclaimer_exact_native_and_last": true
+      }
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0.0,
+    "approved_budget_usd": 2.0,
+    "estimated_total_usd": 0.4
+  },
+  "metadata": {
+    "planned_duration_seconds": 198,
+    "source_copy_preserved": true
+  }
+}

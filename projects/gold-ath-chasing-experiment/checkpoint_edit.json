@@ -1,0 +1,439 @@
+{
+  "version": "1.0",
+  "project_id": "gold-ath-chasing-experiment",
+  "pipeline_type": "animated-explainer",
+  "stage": "edit",
+  "status": "completed",
+  "timestamp": "2026-08-21T09:43:55.754000+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": false,
+  "artifacts": {
+    "edit_decisions": {
+      "version": "1.0",
+      "renderer_family": "explainer-data",
+      "render_runtime": "remotion",
+      "composition_mode": "atelier",
+      "bespoke": {
+        "entry": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/index.tsx",
+        "composition_id": "GoldAthChasingExperiment",
+        "props_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/artifacts/props.json",
+        "public_dir": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/public",
+        "art_direction": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/art-direction.md",
+        "scale": 1.0,
+        "crf": 18,
+        "concurrency": 6
+      },
+      "cuts": [
+        {
+          "id": "cut-sc01",
+          "source": "atelier-visual-spec",
+          "in_seconds": 0.0,
+          "out_seconds": 4.724,
+          "type": "text_card",
+          "layer": "primary",
+          "transition_in": "cut",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u4ee5\u81ea\u7136\u89c2\u5bdf\u53e3\u543b\u800c\u975e\u62a5\u544a\u5f00\u573a\u3002"
+        },
+        {
+          "id": "cut-sc02",
+          "source": "atelier-visual-spec",
+          "in_seconds": 4.724,
+          "out_seconds": 15.116,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u663e\u793a\u731b\u51b2\u3001\u4e0b\u7838\u3001\u56de\u5347\u4e09\u6bb5\u8def\u5f84\u3002"
+        },
+        {
+          "id": "cut-sc03",
+          "source": "atelier-visual-spec",
+          "in_seconds": 15.116,
+          "out_seconds": 20.784,
+          "type": "diagram",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u5c06\u4e70\u5728\u5c71\u9876\u7684\u62c5\u5fe7\u7a7a\u95f4\u5316\u3002"
+        },
+        {
+          "id": "cut-sc04",
+          "source": "atelier-visual-spec",
+          "in_seconds": 20.784,
+          "out_seconds": 27.069,
+          "type": "diagram",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u672a\u6765\u4e24\u6761\u8def\u5f84\u7b49\u6743\u5448\u73b0\u3002"
+        },
+        {
+          "id": "cut-sc05",
+          "source": "atelier-visual-spec",
+          "in_seconds": 27.069,
+          "out_seconds": 31.559,
+          "type": "text_card",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u628a\u5e38\u89c1\u76f4\u89c9\u8f6c\u6210\u5f85\u9a8c\u8bc1\u5047\u8bbe\u3002"
+        },
+        {
+          "id": "cut-sc06",
+          "source": "atelier-visual-spec",
+          "in_seconds": 31.559,
+          "out_seconds": 37.844,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u56de\u6eaf2001\u81f32026\u3002"
+        },
+        {
+          "id": "cut-sc07",
+          "source": "atelier-visual-spec",
+          "in_seconds": 37.844,
+          "out_seconds": 46.437,
+          "type": "diagram",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u539f\u751f\u89e3\u91ca\u65b0\u9ad8\u5b9a\u4e49\u3002"
+        },
+        {
+          "id": "cut-sc08",
+          "source": "atelier-visual-spec",
+          "in_seconds": 46.437,
+          "out_seconds": 55.031,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u5448\u73b0T+1\u4e70\u5165\u4e0e\u56db\u4e2a\u89c2\u5bdf\u7a97\u53e3\u3002"
+        },
+        {
+          "id": "cut-sc09",
+          "source": "atelier-visual-spec",
+          "in_seconds": 55.031,
+          "out_seconds": 63.624,
+          "type": "text_card",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "199\u4e2a\u6837\u672c\u70b9\u5f62\u6210\u7b2c\u4e00\u6b21\u60ac\u5ff5\u3002"
+        },
+        {
+          "id": "cut-sc10",
+          "source": "atelier-visual-spec",
+          "in_seconds": 63.624,
+          "out_seconds": 71.115,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "100\u70b9\u6982\u7387\u573a\u5c55\u793a\u534a\u5e7477.4%\u3002"
+        },
+        {
+          "id": "cut-sc11",
+          "source": "atelier-visual-spec",
+          "in_seconds": 71.115,
+          "out_seconds": 78.607,
+          "type": "diagram",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u4e00\u5e7476.1%\u4e0en=163\u540c\u5c4f\u3002"
+        },
+        {
+          "id": "cut-sc12",
+          "source": "atelier-visual-spec",
+          "in_seconds": 78.607,
+          "out_seconds": 87.168,
+          "type": "text_card",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u5e73\u5747\u6536\u76ca23.8%\u4e0e\u5e73\u5747\u503c\u8fb9\u754c\u3002"
+        },
+        {
+          "id": "cut-sc13",
+          "source": "atelier-visual-spec",
+          "in_seconds": 87.168,
+          "out_seconds": 94.54,
+          "type": "diagram",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u5efa\u7acb\u666e\u901a\u4ea4\u6613\u65e5\u5bf9\u7167\u7ec4\u3002"
+        },
+        {
+          "id": "cut-sc14",
+          "source": "atelier-visual-spec",
+          "in_seconds": 94.54,
+          "out_seconds": 102.832,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u7b49\u8f74\u6bd4\u8f8375.0%\u548c76.1%\u3002"
+        },
+        {
+          "id": "cut-sc15",
+          "source": "atelier-visual-spec",
+          "in_seconds": 102.832,
+          "out_seconds": 110.204,
+          "type": "text_card",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u660e\u786e\u65b0\u9ad8\u65e2\u975e\u5371\u9669\u4fe1\u53f7\u4e5f\u975e\u9b54\u6cd5\u6307\u6807\u3002"
+        },
+        {
+          "id": "cut-sc16",
+          "source": "atelier-visual-spec",
+          "in_seconds": 110.204,
+          "out_seconds": 118.042,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u518d\u6b21\u5c55\u793a199\u7684\u8868\u9762\u6837\u672c\u91cf\u3002"
+        },
+        {
+          "id": "cut-sc17",
+          "source": "atelier-visual-spec",
+          "in_seconds": 118.042,
+          "out_seconds": 127.839,
+          "type": "diagram",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u76f8\u90bb\u65b0\u9ad8\u5f52\u5c5e\u4e8e\u540c\u4e00\u8f6e\u884c\u60c5\u3002"
+        },
+        {
+          "id": "cut-sc18",
+          "source": "atelier-visual-spec",
+          "in_seconds": 127.839,
+          "out_seconds": 138.616,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u7b7e\u540d\u573a\uff1a199\u70b9\u538b\u7f29\u4e3a8\u7ec4\u3002"
+        },
+        {
+          "id": "cut-sc19",
+          "source": "atelier-visual-spec",
+          "in_seconds": 138.616,
+          "out_seconds": 144.598,
+          "type": "text_card",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u7ed3\u5c40\u76c8\u5229\u4e0d\u7b49\u4e8e\u8fc7\u7a0b\u62ff\u5f97\u4f4f\u3002"
+        },
+        {
+          "id": "cut-sc20",
+          "source": "atelier-visual-spec",
+          "in_seconds": 144.598,
+          "out_seconds": 156.563,
+          "type": "diagram",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "2008\u4e70\u5165\u81f3\u4e00\u5e74\u540e+0.7%\u3002"
+        },
+        {
+          "id": "cut-sc21",
+          "source": "atelier-visual-spec",
+          "in_seconds": 156.563,
+          "out_seconds": 168.528,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "-19.4%\u6700\u5927\u6d6e\u4e8f\u53ca10\u4e07\u81f3\u7ea680600\u3002"
+        },
+        {
+          "id": "cut-sc22",
+          "source": "atelier-visual-spec",
+          "in_seconds": 168.528,
+          "out_seconds": 175.879,
+          "type": "text_card",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u514b\u5236\u9648\u8ff0\u65b0\u9ad8\u672c\u8eab\u6ca1\u90a3\u4e48\u53ef\u6015\u3002"
+        },
+        {
+          "id": "cut-sc23",
+          "source": "atelier-visual-spec",
+          "in_seconds": 175.879,
+          "out_seconds": 183.229,
+          "type": "diagram",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u533a\u5206\u65b9\u5411\u4e0e\u6301\u6709\u4f53\u9a8c\u3002"
+        },
+        {
+          "id": "cut-sc24",
+          "source": "atelier-visual-spec",
+          "in_seconds": 183.229,
+          "out_seconds": 188.48,
+          "type": "animation",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "transition_duration": 0.3,
+          "reason": "\u4ee5\u66f2\u6298\u8def\u5f84\u5b8c\u6210\u81ea\u7136\u6536\u675f\u3002"
+        },
+        {
+          "id": "cut-sc25",
+          "source": "atelier-visual-spec",
+          "in_seconds": 188.48,
+          "out_seconds": 196.48,
+          "type": "text_card",
+          "text": "\u672c\u89c6\u9891\u4ec5\u4f5c\u77e5\u8bc6\u5206\u4eab\uff0c\u4e0d\u6784\u6210\u4efb\u4f55\u6295\u8d44\u5efa\u8bae\u3002\u5e02\u573a\u6709\u98ce\u9669\uff0c\u6295\u8d44\u9700\u8c28\u614e\u3002",
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "cut",
+          "transition_duration": 0.3,
+          "reason": "\u6700\u540e8\u79d2\u539f\u751f\u6765\u6e90\u3001\u53e3\u5f84\u4e0e\u7cbe\u786e\u514d\u8d23\u58f0\u660e\u5361\uff1b\u6b64\u540e\u65e0\u4efb\u4f55\u753b\u9762\u3002"
+        }
+      ],
+      "audio": {
+        "narration": {
+          "segments": [
+            {
+              "asset_id": "narration-s1",
+              "start_seconds": 0.0,
+              "end_seconds": 20.184
+            },
+            {
+              "asset_id": "narration-s2",
+              "start_seconds": 20.784,
+              "end_seconds": 37.344
+            },
+            {
+              "asset_id": "narration-s3",
+              "start_seconds": 37.844,
+              "end_seconds": 62.924
+            },
+            {
+              "asset_id": "narration-s4",
+              "start_seconds": 63.624,
+              "end_seconds": 86.568
+            },
+            {
+              "asset_id": "narration-s5",
+              "start_seconds": 87.168,
+              "end_seconds": 109.704
+            },
+            {
+              "asset_id": "narration-s6",
+              "start_seconds": 110.504,
+              "end_seconds": 137.816
+            },
+            {
+              "asset_id": "narration-s7",
+              "start_seconds": 138.616,
+              "end_seconds": 167.728
+            },
+            {
+              "asset_id": "narration-s8",
+              "start_seconds": 168.528,
+              "end_seconds": 187.68
+            }
+          ]
+        },
+        "sfx": []
+      },
+      "subtitles": {
+        "enabled": true,
+        "style": "word-by-word",
+        "source": "captions-json",
+        "font": "PingFang SC",
+        "font_size": 40,
+        "color": "#E9E1D1",
+        "outline_color": "#090A0C",
+        "background": "#090A0CDC",
+        "position": "bottom-center",
+        "max_words_per_line": 10
+      },
+      "slideshow_risk_score": {
+        "average": 0.71,
+        "verdict": "strong"
+      },
+      "metadata": {
+        "target_duration_seconds": 196.48,
+        "timing_source": "approved Doubao word timestamps",
+        "music_source": "none",
+        "caption_cues": 118,
+        "native_scene_count": 25,
+        "runtime_swap_detected": false,
+        "final_cut_is_exact_disclaimer": true
+      }
+    }
+  },
+  "style_playbook": "custom: gold-high-water-marks",
+  "review": {
+    "stage": "edit",
+    "round": 1,
+    "decision": "PASS",
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "nitpicks": 0,
+      "success_criteria_met": "7/7",
+      "scores": {
+        "continuity": 5,
+        "pacing": 5,
+        "audio_visual_sync": 5,
+        "subtitle_quality": 5,
+        "transition_coherence": 5
+      },
+      "checks": {
+        "schema_valid": true,
+        "cuts_contiguous": "25/25",
+        "actual_audio_timing_used": true,
+        "narration_non_overlapping": true,
+        "captions_enabled": true,
+        "music_layer_absent": true,
+        "runtime_and_mode_preserved": true,
+        "mandatory_disclaimer_exact_native_and_last": true
+      }
+    }
+  },
+  "cost_snapshot": {
+    "budget_usd": 2.0,
+    "spent_usd": 0.0176,
+    "remaining_usd": 1.9824
+  }
+}

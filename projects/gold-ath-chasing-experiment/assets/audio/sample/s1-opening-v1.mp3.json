@@ -1,0 +1,328 @@
+{
+  "code": 20000000,
+  "data": {
+    "audio_url": "https://lf3-lab-speech-tt-sign.bytespeech.com/tos-cn-o-14155/oUALGSIWIe2IEWAfSee0QAG9qtAMUG56IAIA3C?x-expires=1787307906&x-signature=oUf%2Fd%2BCb4zNTOwqJ7ZZKFmHhvpw%3D",
+    "req_text_length": 58,
+    "sentences": [
+      {
+        "endTime": 2.215,
+        "startTime": 0.155,
+        "text": "最近黄金这走势，还挺有意思的。\n\n",
+        "words": [
+          {
+            "confidence": 0.8869635,
+            "endTime": 0.285,
+            "startTime": 0.155,
+            "word": "最"
+          },
+          {
+            "confidence": 0.9040941,
+            "endTime": 0.395,
+            "startTime": 0.285,
+            "word": "近"
+          },
+          {
+            "confidence": 0.9246494,
+            "endTime": 0.565,
+            "startTime": 0.395,
+            "word": "黄"
+          },
+          {
+            "confidence": 0.9005045,
+            "endTime": 0.665,
+            "startTime": 0.565,
+            "word": "金"
+          },
+          {
+            "confidence": 0.88970804,
+            "endTime": 0.775,
+            "startTime": 0.665,
+            "word": "这"
+          },
+          {
+            "confidence": 0.7920886,
+            "endTime": 0.895,
+            "startTime": 0.775,
+            "word": "走"
+          },
+          {
+            "confidence": 0.9389357,
+            "endTime": 1.375,
+            "startTime": 0.895,
+            "word": "势，"
+          },
+          {
+            "confidence": 0.9266217,
+            "endTime": 1.655,
+            "startTime": 1.515,
+            "word": "还"
+          },
+          {
+            "confidence": 0.9030989,
+            "endTime": 1.765,
+            "startTime": 1.655,
+            "word": "挺"
+          },
+          {
+            "confidence": 0.9084719,
+            "endTime": 1.835,
+            "startTime": 1.765,
+            "word": "有"
+          },
+          {
+            "confidence": 0.91995186,
+            "endTime": 1.975,
+            "startTime": 1.835,
+            "word": "意"
+          },
+          {
+            "confidence": 0.5770573,
+            "endTime": 2.065,
+            "startTime": 1.975,
+            "word": "思"
+          },
+          {
+            "confidence": 0.86215216,
+            "endTime": 2.215,
+            "startTime": 2.065,
+            "word": "的。"
+          }
+        ]
+      },
+      {
+        "endTime": 8.84,
+        "startTime": 2.78,
+        "text": "年初一路猛冲，1月底刚创完历史新高，后面又突然往下砸，6月底一度回到4000美元附近。\n",
+        "words": [
+          {
+            "confidence": 0.86058325,
+            "endTime": 2.94,
+            "startTime": 2.78,
+            "word": "年"
+          },
+          {
+            "confidence": 0.92575526,
+            "endTime": 3.14,
+            "startTime": 2.94,
+            "word": "初"
+          },
+          {
+            "confidence": 0.86504066,
+            "endTime": 3.26,
+            "startTime": 3.14,
+            "word": "一"
+          },
+          {
+            "confidence": 0.84795016,
+            "endTime": 3.37,
+            "startTime": 3.26,
+            "word": "路"
+          },
+          {
+            "confidence": 0.8914485,
+            "endTime": 3.52,
+            "startTime": 3.37,
+            "word": "猛"
+          },
+          {
+            "confidence": 0.9624576,
+            "endTime": 3.81,
+            "startTime": 3.52,
+            "word": "冲，"
+          },
+          {
+            "confidence": 0.8760944,
+            "endTime": 4.12,
+            "startTime": 4,
+            "word": "一"
+          },
+          {
+            "confidence": 0.9456966,
+            "endTime": 4.26,
+            "startTime": 4.12,
+            "word": "月"
+          },
+          {
+            "confidence": 0.8355337,
+            "endTime": 4.4399999999999995,
+            "startTime": 4.26,
+            "word": "底"
+          },
+          {
+            "confidence": 0.96216404,
+            "endTime": 4.63,
+            "startTime": 4.4399999999999995,
+            "word": "刚"
+          },
+          {
+            "confidence": 0.948355,
+            "endTime": 4.83,
+            "startTime": 4.63,
+            "word": "创"
+          },
+          {
+            "confidence": 0.8491283,
+            "endTime": 4.95,
+            "startTime": 4.83,
+            "word": "完"
+          },
+          {
+            "confidence": 0.97301215,
+            "endTime": 5.0600000000000005,
+            "startTime": 4.95,
+            "word": "历"
+          },
+          {
+            "confidence": 0.8854153,
+            "endTime": 5.18,
+            "startTime": 5.0600000000000005,
+            "word": "史"
+          },
+          {
+            "confidence": 0.96462226,
+            "endTime": 5.34,
+            "startTime": 5.18,
+            "word": "新"
+          },
+          {
+            "confidence": 0.97319376,
+            "endTime": 5.609999999999999,
+            "startTime": 5.34,
+            "word": "高，"
+          },
+          {
+            "confidence": 0.9734103,
+            "endTime": 5.83,
+            "startTime": 5.68,
+            "word": "后"
+          },
+          {
+            "confidence": 0.97049075,
+            "endTime": 5.95,
+            "startTime": 5.83,
+            "word": "面"
+          },
+          {
+            "confidence": 0.85673314,
+            "endTime": 6.05,
+            "startTime": 5.95,
+            "word": "又"
+          },
+          {
+            "confidence": 0.9649902,
+            "endTime": 6.2,
+            "startTime": 6.05,
+            "word": "突"
+          },
+          {
+            "confidence": 0.922515,
+            "endTime": 6.27,
+            "startTime": 6.2,
+            "word": "然"
+          },
+          {
+            "confidence": 0.8887307,
+            "endTime": 6.37,
+            "startTime": 6.27,
+            "word": "往"
+          },
+          {
+            "confidence": 0.94755983,
+            "endTime": 6.54,
+            "startTime": 6.37,
+            "word": "下"
+          },
+          {
+            "confidence": 0.9224551,
+            "endTime": 6.84,
+            "startTime": 6.54,
+            "word": "砸，"
+          },
+          {
+            "confidence": 0.8572587,
+            "endTime": 7.18,
+            "startTime": 7.06,
+            "word": "六"
+          },
+          {
+            "confidence": 0.8151359,
+            "endTime": 7.28,
+            "startTime": 7.18,
+            "word": "月"
+          },
+          {
+            "confidence": 0.887836,
+            "endTime": 7.49,
+            "startTime": 7.28,
+            "word": "底"
+          },
+          {
+            "confidence": 0.8300788,
+            "endTime": 7.55,
+            "startTime": 7.49,
+            "word": "一"
+          },
+          {
+            "confidence": 0.8484906,
+            "endTime": 7.68,
+            "startTime": 7.55,
+            "word": "度"
+          },
+          {
+            "confidence": 0.9591907,
+            "endTime": 7.85,
+            "startTime": 7.68,
+            "word": "回"
+          },
+          {
+            "confidence": 0.9375479,
+            "endTime": 7.99,
+            "startTime": 7.85,
+            "word": "到"
+          },
+          {
+            "confidence": 0.85454226,
+            "endTime": 8.15,
+            "startTime": 7.99,
+            "word": "四"
+          },
+          {
+            "confidence": 0.821148,
+            "endTime": 8.26,
+            "startTime": 8.15,
+            "word": "千"
+          },
+          {
+            "confidence": 0.7757294,
+            "endTime": 8.39,
+            "startTime": 8.26,
+            "word": "美"
+          },
+          {
+            "confidence": 0.52562296,
+            "endTime": 8.46,
+            "startTime": 8.39,
+            "word": "元"
+          },
+          {
+            "confidence": 0.91122687,
+            "endTime": 8.65,
+            "startTime": 8.46,
+            "word": "附"
+          },
+          {
+            "confidence": 0.95215297,
+            "endTime": 8.84,
+            "startTime": 8.65,
+            "word": "近。"
+          }
+        ]
+      }
+    ],
+    "synthesize_text_length": 58,
+    "task_id": "1b79138f-e882-4848-b718-7aa1a0bd89a7",
+    "task_status": 2,
+    "url_expire_time": 1787307906
+  },
+  "message": "ok"
+}

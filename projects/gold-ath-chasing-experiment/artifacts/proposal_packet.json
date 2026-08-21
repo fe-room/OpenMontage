@@ -1,0 +1,245 @@
+{
+  "version": "1.0",
+  "content_category": "finance",
+  "concept_options": [
+    {
+      "id": "c1",
+      "title": "如果每次黄金创新高我都追进去，结果会怎样？",
+      "hook": "过去25年，黄金每次创新高我都买。最意外的结果，不是赚了多少。",
+      "narrative_structure": "data_narrative",
+      "visual_approach": "用高水位刻度尺串联199个新高样本、1年胜率、199压缩为8以及2008水下路径；所有数据原生绘制。",
+      "suggested_playbook": "custom: gold-high-water-marks",
+      "target_audience": "对黄金创新高存在追高焦虑、能理解基础收益率但不熟悉回撤与样本聚集的普通投资者",
+      "target_platform": "tiktok",
+      "target_duration_seconds": 198,
+      "key_points": [
+        "2001年至2026年主现货口径记录199个创新高交易日，其中一年成熟样本163个，正收益概率76.1%",
+        "连续新高高度聚集，按60个交易日去重后主样本只有8次，不能把199次当成独立实验",
+        "2008年初案例一年最终接近持平，但途中按收盘价最大浮亏约19.4%，赚钱概率不等于持有体验",
+        "判断创新高不能只看价格标签，还要看持有期、可承受回撤、样本独立性和可交易产品成本"
+      ],
+      "core_message": "创新高不是自动危险或自动安全的信号；它只是一个需要结合概率、路径和口径判断的位置。",
+      "cta": "下次看到‘又创新高’，先按四项清单检查，而不是先猜涨跌。",
+      "tone": "理性、克制、反直觉，像一个数据敏感的朋友展示实验",
+      "grounded_in": ["data_points[0]", "data_points[2]", "data_points[3]", "data_points[4]"],
+      "why_this_works": "它先用76.1%的反直觉结果制造注意，再用199到8和2008浮亏立即降温，完整满足证据优先、风险对称和可复用判断方法。"
+    },
+    {
+      "id": "c2",
+      "title": "10万元每次追黄金新高，会变成多少？",
+      "hook": "每次黄金创新高都投入10万元，这笔钱一年后通常会去哪？",
+      "narrative_structure": "journey",
+      "visual_approach": "以10万元账户数字和时间推进为主，将不同持有期映射成资金路径；费用与人民币汇率缺失会明确标注。",
+      "suggested_playbook": "custom: gold-high-water-marks",
+      "target_audience": "更关注实际金额而非统计术语的入门投资者",
+      "target_platform": "tiktok",
+      "target_duration_seconds": 95,
+      "key_points": [
+        "用名义美元金价把百分比翻译成10万元无费用模拟",
+        "展示平均结果与最差路径的巨大差别",
+        "强调当前并非任何具体黄金ETF、积存金或实物金的净收益"
+      ],
+      "core_message": "金额模拟能帮助理解波动，但产品费用、汇率和持有纪律决定真实体验。",
+      "cta": "先确认自己实际买的产品，再讨论回测数字能否落地。",
+      "tone": "直观、生活化、带轻微实验感",
+      "grounded_in": ["data_points[0]", "data_points[3]", "audience_insights.common_questions[1]"],
+      "why_this_works": "金额比收益率更容易理解，但因当前数据未覆盖具体产品费用和人民币汇率，适合作为备选而非主方案。"
+    },
+    {
+      "id": "c3",
+      "title": "最倒霉的一次黄金追高",
+      "hook": "这次追高一年后几乎没亏，但中间先跌了接近五分之一。",
+      "narrative_structure": "story",
+      "visual_approach": "从2008年1月买入切入，用一条水下路径讲清最大浮亏、回本与最终收益，再拉回总体统计。",
+      "suggested_playbook": "custom: gold-high-water-marks",
+      "target_audience": "对亏损体验和回本时间更敏感的风险厌恶型观众",
+      "target_platform": "tiktok",
+      "target_duration_seconds": 85,
+      "key_points": [
+        "2008年案例一年内最大浮亏约19.4%，一年收益约0.7%",
+        "最终收益与途中最大浮亏回答的是不同问题",
+        "单一案例不能替代全部样本和独立事件统计"
+      ],
+      "core_message": "判断一次买入能否承受，先看最坏路径，而不只是终点。",
+      "cta": "投资前先问自己：如果先跌20%，原来的计划还成立吗？",
+      "tone": "克制叙事、风险优先、低煽情",
+      "grounded_in": ["data_points[3]", "audience_insights.misconceptions[1]"],
+      "why_this_works": "痛苦案例具有强故事性和记忆点，但统计全貌较弱，因此不如c1适合作为这组完整研究的主片。"
+    }
+  ],
+  "selected_concept": {
+    "concept_id": "c1",
+    "rationale": "用户明确批准推荐方案；该方向能同时呈现反直觉结果、样本聚集、最坏路径和可复用方法。",
+    "modifications": [
+      "采用用户提供的优化文案原文，不为110秒目标随意删减",
+      "按自然语速将旁白调整为约190秒，并增加8秒静默收尾卡"
+    ]
+  },
+  "production_plan": {
+    "pipeline": "animated-explainer",
+    "playbook": "custom: gold-high-water-marks",
+    "stages": [
+      {
+        "stage": "script",
+        "tools": [],
+        "approach": "按财经八拍结构写110秒普通话旁白，所有核心数字引用research_brief，并以精确免责声明结尾。"
+      },
+      {
+        "stage": "scene_plan",
+        "tools": [],
+        "approach": "逐幕定义原生SVG图表、数据刻度、样本压缩和水下路径；每个画面声明其回答的问题。"
+      },
+      {
+        "stage": "assets",
+        "tools": [
+          {
+            "tool_name": "tts_selector",
+            "role": "普通话旁白生成",
+            "provider": "doubao",
+            "available": true,
+            "estimated_cost_usd": 0.4,
+            "why_this_provider": "当前已配置且默认声音大壹2.0适合克制、有可信度的男性财经叙述。"
+          }
+        ],
+        "approach": "先生成最敏感反转段的声音样本供确认，再批量生成旁白；图表不使用AI图片。",
+        "fallback_if_unavailable": "停止并报告豆包认证或服务阻塞；未经用户批准不切换声音供应商。"
+      },
+      {
+        "stage": "compose",
+        "tools": [
+          {
+            "tool_name": "video_compose",
+            "role": "Remotion Atelier竖屏构图与渲染",
+            "provider": "ffmpeg/remotion",
+            "available": true,
+            "estimated_cost_usd": 0.0,
+            "why_this_provider": "原生React/SVG最适合精确重绘概率、样本量和回撤路径，并支持逐词字幕。"
+          },
+          {
+            "tool_name": "audio_mixer",
+            "role": "旁白电平和最终音轨封装",
+            "provider": "ffmpeg",
+            "available": true,
+            "estimated_cost_usd": 0.0,
+            "why_this_provider": "本地确定性处理，不改变已批准的无背景音乐方案。"
+          }
+        ],
+        "approach": "在项目目录手工编写一次性Remotion构图，不调用共享场景组件；先出逐幕审阅静帧，经素材门批准后再渲染全片。",
+        "fallback_if_unavailable": "停止并报告Remotion运行时问题；不自动降级到FFmpeg模板或HyperFrames。"
+      }
+    ],
+    "quality_tradeoffs": [
+      {
+        "tradeoff": "Remotion Atelier对比模板化Remotion",
+        "recommendation": "选择Atelier",
+        "quality_impact": "获得本片专属的数据隐喻和场景语法，但需要更多手工构图与视觉校验。"
+      },
+      {
+        "tradeoff": "纯构图动效对比AI生成视频镜头",
+        "recommendation": "选择纯构图动效",
+        "quality_impact": "减少电影感素材，但保证金融数字、标签和比较完全准确。"
+      },
+      {
+        "tradeoff": "无背景音乐对比音乐铺底",
+        "recommendation": "维持无背景音乐",
+        "quality_impact": "氛围更克制，旁白和数据节奏必须承担全部听觉结构。"
+      }
+    ],
+    "alternative_paths": [
+      {
+        "description": "推荐：Remotion Atelier + 豆包旁白 + 原生数据图表",
+        "total_cost_usd": 0.4,
+        "quality_level": "premium",
+        "what_changes": "专属视觉语言，110秒竖屏成片。"
+      },
+      {
+        "description": "模板化Remotion + 豆包旁白",
+        "total_cost_usd": 0.2,
+        "quality_level": "standard",
+        "what_changes": "制作更快，但画面更像通用财经数据模板。"
+      },
+      {
+        "description": "FFmpeg静态图表轮播 + 豆包旁白",
+        "total_cost_usd": 0.2,
+        "quality_level": "budget",
+        "what_changes": "运动表达明显降低，不满足已批准的动效品质。"
+      }
+    ],
+    "delivery_promise": {
+      "promise_type": "data_explainer",
+      "motion_required": true,
+      "source_required": false,
+      "tone_mode": "educational",
+      "quality_floor": "broadcast",
+      "approved_fallback": null
+    },
+    "renderer_family": "explainer-data",
+    "render_runtime": "remotion",
+    "composition_mode": "atelier",
+    "art_direction": "projects/gold-ath-chasing-experiment/art-direction.md — 黑曜石研究仪器感，以仅出现一次的‘199个高水位刻度压缩为8组’作为签名装置。",
+    "taste_profile": {
+      "design_read": "面向普通投资者的可信数据实验；画面像精密测量仪器，不像黄金广告或交易喊单。",
+      "visual_variance": 7,
+      "motion_intensity": 6,
+      "information_density": 6,
+      "palette_discipline": "黑曜石底，旧金只代表证据，风险红只代表下行，骨白承载正文。",
+      "layout_variation": "交替使用宽幅图表、数字近景、分屏证据和方法清单；每幕主体不同。",
+      "reference_strategy": "本地两张图只作数据结构参考，所有数字与图表由Remotion原生重绘。",
+      "anti_patterns": ["金条金币广告画面", "K线终端墙", "泛紫色科技渐变", "AI生成数字", "每幕重复同一折线图"],
+      "quality_gates": ["每个概率同屏显示期限和成熟样本数", "收益后必须呈现回撤与样本独立性", "最终免责声明精确且可读"]
+    },
+    "music_source": {
+      "source_type": "none",
+      "estimated_cost_usd": 0.0,
+      "inherited_from_defaults": true
+    },
+    "voice_selection": {
+      "provider": "doubao",
+      "voice_id": "zh_male_dayi_saturn_bigtts",
+      "voice_name": "大壹 2.0",
+      "resource_id": "seed-tts-2.0",
+      "speech_rate": 0,
+      "inherited_from_defaults": true,
+      "rationale": "克制、可靠的中文男声适合研究型财经叙述；当前已配置。",
+      "estimated_cost_usd": 0.4,
+      "delivery_style": "冷静而有好奇心的研究者，反转处留白，风险提示不加速",
+      "pacing_policy": "开头短句偏快；规则段放慢；76.1%后停顿；199到8显著降速；结尾方法与免责声明平稳清晰。",
+      "sample_approval_required": true
+    },
+    "decision_log_ref": "projects/gold-ath-chasing-experiment/artifacts/decision_log.json"
+  },
+  "cost_estimate": {
+    "total_estimated_usd": 0.4,
+    "line_items": [
+      {
+        "tool": "doubao_tts",
+        "operation": "约190秒普通话旁白，先样本后批量",
+        "quantity": 1,
+        "estimated_usd": 0.4,
+        "notes": "以预算预留计，实际由工具回报为准。"
+      },
+      {
+        "tool": "video_compose/remotion",
+        "operation": "本地Atelier构图、逐幕静帧和最终渲染",
+        "quantity": 1,
+        "estimated_usd": 0.0,
+        "notes": "本地运行，无API生成费用。"
+      }
+    ],
+    "budget_cap_usd": 2.0,
+    "budget_verdict": "within_budget",
+    "savings_options": ["当前已经不使用AI图片、AI视频和背景音乐，无需进一步降级。"]
+  },
+  "approval": {
+    "status": "approved",
+    "user_notes": "用户回复‘按推荐进行’。",
+    "approved_budget_usd": 2.0
+  },
+  "metadata": {
+    "approved_at": "2026-08-21",
+    "platform_profile": "9:16 vertical",
+    "resolution": "1080x1920",
+    "revised_duration_seconds": 198,
+    "fps": 30
+  }
+}

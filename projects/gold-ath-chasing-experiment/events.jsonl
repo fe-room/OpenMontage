@@ -1,0 +1,50 @@
+{"ts": "2026-08-21T09:23:25.663208+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/sample/s1-opening-v1.mp3"}
+{"ts": "2026-08-21T09:23:26.446724+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/sample/s1-opening-v1.mp3"}
+{"ts": "2026-08-21T09:23:26.451094+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/sample/s1-opening-v1.mp3", "success": false, "cost_usd": 0.0, "duration_s": 0.0}
+{"ts": "2026-08-21T09:23:26.451288+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/sample/s1-opening-v1.mp3", "success": false, "cost_usd": 0.0, "duration_s": 0.79}
+{"ts": "2026-08-21T09:25:00.664775+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/sample/s1-opening-v1.mp3"}
+{"ts": "2026-08-21T09:25:01.428491+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/sample/s1-opening-v1.mp3"}
+{"ts": "2026-08-21T09:25:06.833089+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/sample/s1-opening-v1.mp3", "success": true, "cost_usd": 0.0009, "duration_s": 5.4}
+{"ts": "2026-08-21T09:25:06.834035+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/sample/s1-opening-v1.mp3", "success": true, "cost_usd": 0.0009, "duration_s": 6.17}
+{"ts": "2026-08-21T09:28:29.542540+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s1.mp3"}
+{"ts": "2026-08-21T09:28:30.370253+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s1.mp3"}
+{"ts": "2026-08-21T09:28:36.522480+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s1.mp3", "success": true, "cost_usd": 0.0019, "duration_s": 6.15}
+{"ts": "2026-08-21T09:28:36.523478+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s1.mp3", "success": true, "cost_usd": 0.0019, "duration_s": 6.98}
+{"ts": "2026-08-21T09:28:36.523973+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s2.mp3"}
+{"ts": "2026-08-21T09:28:36.533970+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s2.mp3"}
+{"ts": "2026-08-21T09:28:42.186110+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s2.mp3", "success": true, "cost_usd": 0.0016, "duration_s": 5.65}
+{"ts": "2026-08-21T09:28:42.187151+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s2.mp3", "success": true, "cost_usd": 0.0016, "duration_s": 5.66}
+{"ts": "2026-08-21T09:28:42.187666+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s3.mp3"}
+{"ts": "2026-08-21T09:28:42.195520+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s3.mp3"}
+{"ts": "2026-08-21T09:28:49.890513+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s3.mp3", "success": true, "cost_usd": 0.0021, "duration_s": 7.69}
+{"ts": "2026-08-21T09:28:49.891808+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s3.mp3", "success": true, "cost_usd": 0.0021, "duration_s": 7.7}
+{"ts": "2026-08-21T09:28:49.892563+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s4.mp3"}
+{"ts": "2026-08-21T09:28:49.902071+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s4.mp3"}
+{"ts": "2026-08-21T09:28:57.860879+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s4.mp3", "success": true, "cost_usd": 0.002, "duration_s": 7.96}
+{"ts": "2026-08-21T09:28:57.861904+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s4.mp3", "success": true, "cost_usd": 0.002, "duration_s": 7.97}
+{"ts": "2026-08-21T09:28:57.862432+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s5.mp3"}
+{"ts": "2026-08-21T09:28:57.870162+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s5.mp3"}
+{"ts": "2026-08-21T09:29:06.999213+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s5.mp3", "success": true, "cost_usd": 0.0023, "duration_s": 9.13}
+{"ts": "2026-08-21T09:29:07.000222+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s5.mp3", "success": true, "cost_usd": 0.0023, "duration_s": 9.14}
+{"ts": "2026-08-21T09:29:07.000744+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s6.mp3"}
+{"ts": "2026-08-21T09:29:07.009212+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s6.mp3"}
+{"ts": "2026-08-21T09:29:14.673997+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s6.mp3", "success": true, "cost_usd": 0.0025, "duration_s": 7.66}
+{"ts": "2026-08-21T09:29:14.674962+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s6.mp3", "success": true, "cost_usd": 0.0025, "duration_s": 7.67}
+{"ts": "2026-08-21T09:29:14.675452+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s7.mp3"}
+{"ts": "2026-08-21T09:29:14.682780+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s7.mp3"}
+{"ts": "2026-08-21T09:29:22.214629+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s7.mp3", "success": true, "cost_usd": 0.0027, "duration_s": 7.53}
+{"ts": "2026-08-21T09:29:22.215723+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s7.mp3", "success": true, "cost_usd": 0.0027, "duration_s": 7.54}
+{"ts": "2026-08-21T09:29:22.216259+00:00", "tool": "tts_selector", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s8.mp3"}
+{"ts": "2026-08-21T09:29:22.224149+00:00", "tool": "doubao_tts", "depth": 1, "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s8.mp3"}
+{"ts": "2026-08-21T09:29:29.880577+00:00", "tool": "doubao_tts", "depth": 1, "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s8.mp3", "success": true, "cost_usd": 0.0016, "duration_s": 7.66}
+{"ts": "2026-08-21T09:29:29.881627+00:00", "tool": "tts_selector", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s8.mp3", "success": true, "cost_usd": 0.0016, "duration_s": 7.67}
+{"ts": "2026-08-21T09:30:56.881148+00:00", "tool": "subtitle_gen", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/subtitles.srt"}
+{"ts": "2026-08-21T09:30:56.886289+00:00", "tool": "subtitle_gen", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/subtitles.srt", "success": true, "cost_usd": 0.0, "duration_s": 0.0}
+{"ts": "2026-08-21T09:30:56.886650+00:00", "tool": "subtitle_gen", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/assets/captions.json"}
+{"ts": "2026-08-21T09:30:56.900074+00:00", "tool": "subtitle_gen", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/assets/captions.json", "success": true, "cost_usd": 0.0, "duration_s": 0.01}
+{"ts": "2026-08-21T09:50:55.162977+00:00", "tool": "video_compose", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/renders/final.mp4"}
+{"ts": "2026-08-21T09:55:58.509940+00:00", "tool": "video_compose", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/renders/final.mp4", "success": true, "cost_usd": 0.0, "duration_s": 303.34}
+{"ts": "2026-08-21T09:58:16.709144+00:00", "tool": "video_compose", "event": "start", "output_path": "projects/gold-ath-chasing-experiment/renders/final.mp4"}
+{"ts": "2026-08-21T10:03:54.411697+00:00", "tool": "video_compose", "event": "finish", "output_path": "projects/gold-ath-chasing-experiment/renders/final.mp4", "success": true, "cost_usd": 0.0, "duration_s": 337.69}
+{"ts": "2026-08-21T10:04:30.920536+00:00", "tool": "frame_sampler", "event": "start"}
+{"ts": "2026-08-21T10:04:38.706721+00:00", "tool": "frame_sampler", "event": "finish", "success": true, "cost_usd": 0.0, "duration_s": 7.79}

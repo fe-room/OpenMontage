@@ -1,0 +1,82 @@
+[
+  {
+    "section_id": "s1",
+    "success": true,
+    "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s1.mp3",
+    "provider": "doubao",
+    "model": "seed-tts-2.0",
+    "duration_seconds": null,
+    "cost_usd": null,
+    "metadata_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s1.mp3.json"
+  },
+  {
+    "section_id": "s2",
+    "success": true,
+    "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s2.mp3",
+    "provider": "doubao",
+    "model": "seed-tts-2.0",
+    "duration_seconds": null,
+    "cost_usd": null,
+    "metadata_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s2.mp3.json"
+  },
+  {
+    "section_id": "s3",
+    "success": true,
+    "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s3.mp3",
+    "provider": "doubao",
+    "model": "seed-tts-2.0",
+    "duration_seconds": null,
+    "cost_usd": null,
+    "metadata_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s3.mp3.json"
+  },
+  {
+    "section_id": "s4",
+    "success": true,
+    "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s4.mp3",
+    "provider": "doubao",
+    "model": "seed-tts-2.0",
+    "duration_seconds": null,
+    "cost_usd": null,
+    "metadata_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s4.mp3.json"
+  },
+  {
+    "section_id": "s5",
+    "success": true,
+    "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s5.mp3",
+    "provider": "doubao",
+    "model": "seed-tts-2.0",
+    "duration_seconds": null,
+    "cost_usd": null,
+    "metadata_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s5.mp3.json"
+  },
+  {
+    "section_id": "s6",
+    "success": true,
+    "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s6.mp3",
+    "provider": "doubao",
+    "model": "seed-tts-2.0",
+    "duration_seconds": null,
+    "cost_usd": null,
+    "metadata_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s6.mp3.json"
+  },
+  {
+    "section_id": "s7",
+    "success": true,
+    "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s7.mp3",
+    "provider": "doubao",
+    "model": "seed-tts-2.0",
+    "duration_seconds": null,
+    "cost_usd": null,
+    "metadata_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s7.mp3.json"
+  },
+  {
+    "section_id": "s8",
+    "success": true,
+    "output_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s8.mp3",
+    "provider": "doubao",
+    "model": "seed-tts-2.0",
+    "duration_seconds": null,
+    "cost_usd": null,
+    "metadata_path": "projects/gold-ath-chasing-experiment/assets/audio/narration/s8.mp3.json"
+  }
+]

@@ -1,0 +1,444 @@
+{
+  "version": "1.0",
+  "project_id": "gold-ath-chasing-experiment",
+  "pipeline_type": "animated-explainer",
+  "stage": "assets",
+  "status": "completed",
+  "timestamp": "2026-08-21T09:36:14.340967+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "asset_manifest": {
+      "version": "1.0",
+      "assets": [
+        {
+          "id": "narration-s1",
+          "type": "narration",
+          "path": "assets/audio/narration/s1.mp3",
+          "source_tool": "tts_selector",
+          "scene_id": "sc01",
+          "model": "seed-tts-2.0",
+          "provider": "doubao",
+          "cost_usd": 0.0019,
+          "duration_seconds": 20.184,
+          "format": "mp3/24000Hz/mono",
+          "quality_score": 0.98,
+          "voice_performance": {
+            "source_section_id": "s1",
+            "delivery_cues_applied": true,
+            "provider_text_used": false,
+            "provider_settings": {
+              "voice_id": "zh_male_dayi_saturn_bigtts",
+              "resource_id": "seed-tts-2.0",
+              "speech_rate": 0,
+              "timestamps": true
+            },
+            "sample_approved": true,
+            "sample_path": "assets/audio/sample/s1-opening-v1.mp3",
+            "review_notes": "\u7528\u6237\u660e\u786e\u786e\u8ba4\u6837\u97f3\u6ca1\u95ee\u9898\uff1b\u6279\u91cf\u6cbf\u7528\u5b8c\u5168\u76f8\u540c\u7684\u63d0\u4f9b\u65b9\u3001\u6a21\u578b\u3001\u97f3\u8272\u548c\u8bed\u901f\u3002"
+          }
+        },
+        {
+          "id": "narration-s2",
+          "type": "narration",
+          "path": "assets/audio/narration/s2.mp3",
+          "source_tool": "tts_selector",
+          "scene_id": "sc04",
+          "model": "seed-tts-2.0",
+          "provider": "doubao",
+          "cost_usd": 0.0016,
+          "duration_seconds": 16.56,
+          "format": "mp3/24000Hz/mono",
+          "quality_score": 0.98,
+          "voice_performance": {
+            "source_section_id": "s2",
+            "delivery_cues_applied": true,
+            "provider_text_used": false,
+            "provider_settings": {
+              "voice_id": "zh_male_dayi_saturn_bigtts",
+              "resource_id": "seed-tts-2.0",
+              "speech_rate": 0,
+              "timestamps": true
+            },
+            "sample_approved": true,
+            "sample_path": "assets/audio/sample/s1-opening-v1.mp3",
+            "review_notes": "\u4e0e\u6279\u51c6\u6837\u97f3\u8bbe\u7f6e\u4e00\u81f4\u3002"
+          }
+        },
+        {
+          "id": "narration-s3",
+          "type": "narration",
+          "path": "assets/audio/narration/s3.mp3",
+          "source_tool": "tts_selector",
+          "scene_id": "sc07",
+          "model": "seed-tts-2.0",
+          "provider": "doubao",
+          "cost_usd": 0.0021,
+          "duration_seconds": 25.08,
+          "format": "mp3/24000Hz/mono",
+          "quality_score": 0.98,
+          "voice_performance": {
+            "source_section_id": "s3",
+            "delivery_cues_applied": true,
+            "provider_text_used": false,
+            "provider_settings": {
+              "voice_id": "zh_male_dayi_saturn_bigtts",
+              "resource_id": "seed-tts-2.0",
+              "speech_rate": 0,
+              "timestamps": true
+            },
+            "sample_approved": true,
+            "sample_path": "assets/audio/sample/s1-opening-v1.mp3",
+            "review_notes": "\u4e0e\u6279\u51c6\u6837\u97f3\u8bbe\u7f6e\u4e00\u81f4\u3002"
+          }
+        },
+        {
+          "id": "narration-s4",
+          "type": "narration",
+          "path": "assets/audio/narration/s4.mp3",
+          "source_tool": "tts_selector",
+          "scene_id": "sc10",
+          "model": "seed-tts-2.0",
+          "provider": "doubao",
+          "cost_usd": 0.002,
+          "duration_seconds": 22.944,
+          "format": "mp3/24000Hz/mono",
+          "quality_score": 0.98,
+          "voice_performance": {
+            "source_section_id": "s4",
+            "delivery_cues_applied": true,
+            "provider_text_used": false,
+            "provider_settings": {
+              "voice_id": "zh_male_dayi_saturn_bigtts",
+              "resource_id": "seed-tts-2.0",
+              "speech_rate": 0,
+              "timestamps": true
+            },
+            "sample_approved": true,
+            "sample_path": "assets/audio/sample/s1-opening-v1.mp3",
+            "review_notes": "\u4e0e\u6279\u51c6\u6837\u97f3\u8bbe\u7f6e\u4e00\u81f4\u3002"
+          }
+        },
+        {
+          "id": "narration-s5",
+          "type": "narration",
+          "path": "assets/audio/narration/s5.mp3",
+          "source_tool": "tts_selector",
+          "scene_id": "sc13",
+          "model": "seed-tts-2.0",
+          "provider": "doubao",
+          "cost_usd": 0.0023,
+          "duration_seconds": 22.536,
+          "format": "mp3/24000Hz/mono",
+          "quality_score": 0.98,
+          "voice_performance": {
+            "source_section_id": "s5",
+            "delivery_cues_applied": true,
+            "provider_text_used": false,
+            "provider_settings": {
+              "voice_id": "zh_male_dayi_saturn_bigtts",
+              "resource_id": "seed-tts-2.0",
+              "speech_rate": 0,
+              "timestamps": true
+            },
+            "sample_approved": true,
+            "sample_path": "assets/audio/sample/s1-opening-v1.mp3",
+            "review_notes": "\u4e0e\u6279\u51c6\u6837\u97f3\u8bbe\u7f6e\u4e00\u81f4\u3002"
+          }
+        },
+        {
+          "id": "narration-s6",
+          "type": "narration",
+          "path": "assets/audio/narration/s6.mp3",
+          "source_tool": "tts_selector",
+          "scene_id": "sc16",
+          "model": "seed-tts-2.0",
+          "provider": "doubao",
+          "cost_usd": 0.0025,
+          "duration_seconds": 27.312,
+          "format": "mp3/24000Hz/mono",
+          "quality_score": 0.98,
+          "voice_performance": {
+            "source_section_id": "s6",
+            "delivery_cues_applied": true,
+            "provider_text_used": false,
+            "provider_settings": {
+              "voice_id": "zh_male_dayi_saturn_bigtts",
+              "resource_id": "seed-tts-2.0",
+              "speech_rate": 0,
+              "timestamps": true
+            },
+            "sample_approved": true,
+            "sample_path": "assets/audio/sample/s1-opening-v1.mp3",
+            "review_notes": "\u4e0e\u6279\u51c6\u6837\u97f3\u8bbe\u7f6e\u4e00\u81f4\u3002"
+          }
+        },
+        {
+          "id": "narration-s7",
+          "type": "narration",
+          "path": "assets/audio/narration/s7.mp3",
+          "source_tool": "tts_selector",
+          "scene_id": "sc20",
+          "model": "seed-tts-2.0",
+          "provider": "doubao",
+          "cost_usd": 0.0027,
+          "duration_seconds": 29.112,
+          "format": "mp3/24000Hz/mono",
+          "quality_score": 0.98,
+          "voice_performance": {
+            "source_section_id": "s7",
+            "delivery_cues_applied": true,
+            "provider_text_used": false,
+            "provider_settings": {
+              "voice_id": "zh_male_dayi_saturn_bigtts",
+              "resource_id": "seed-tts-2.0",
+              "speech_rate": 0,
+              "timestamps": true
+            },
+            "sample_approved": true,
+            "sample_path": "assets/audio/sample/s1-opening-v1.mp3",
+            "review_notes": "\u4e0e\u6279\u51c6\u6837\u97f3\u8bbe\u7f6e\u4e00\u81f4\u3002"
+          }
+        },
+        {
+          "id": "narration-s8",
+          "type": "narration",
+          "path": "assets/audio/narration/s8.mp3",
+          "source_tool": "tts_selector",
+          "scene_id": "sc23",
+          "model": "seed-tts-2.0",
+          "provider": "doubao",
+          "cost_usd": 0.0016,
+          "duration_seconds": 19.152,
+          "format": "mp3/24000Hz/mono",
+          "quality_score": 0.98,
+          "voice_performance": {
+            "source_section_id": "s8",
+            "delivery_cues_applied": true,
+            "provider_text_used": false,
+            "provider_settings": {
+              "voice_id": "zh_male_dayi_saturn_bigtts",
+              "resource_id": "seed-tts-2.0",
+              "speech_rate": 0,
+              "timestamps": true
+            },
+            "sample_approved": true,
+            "sample_path": "assets/audio/sample/s1-opening-v1.mp3",
+            "review_notes": "\u4e0e\u6279\u51c6\u6837\u97f3\u8bbe\u7f6e\u4e00\u81f4\u3002"
+          }
+        },
+        {
+          "id": "narration-full-review",
+          "type": "narration",
+          "path": "assets/audio/narration/full-narration.mp3",
+          "source_tool": "ffmpeg",
+          "scene_id": "sc01-sc24",
+          "cost_usd": 0.0,
+          "duration_seconds": 187.728,
+          "format": "mp3/192kbps/24000Hz/mono",
+          "quality_score": 0.98,
+          "generation_summary": "\u516b\u6bb5\u6279\u51c6\u8bbe\u7f6e\u7684\u65c1\u767d\u6309\u5b9e\u9645\u65f6\u95f4\u8f74\u5408\u6210\uff0c\u4ec5\u7528\u4e8e\u8fde\u7eed\u8bd5\u542c\uff1b\u6210\u7247\u4ecd\u6309\u5206\u6bb5\u97f3\u8f68\u7f16\u6392\u3002"
+        },
+        {
+          "id": "subtitles-srt",
+          "type": "subtitle",
+          "path": "assets/subtitles.srt",
+          "source_tool": "subtitle_gen",
+          "scene_id": "sc01-sc24",
+          "cost_usd": 0.0,
+          "format": "srt",
+          "quality_score": 0.97,
+          "generation_summary": "\u76f4\u63a5\u4f7f\u7528\u8c46\u5305\u9010\u5b57\u65f6\u95f4\u6233\u751f\u6210118\u6761\u5b57\u5e55\u3002"
+        },
+        {
+          "id": "captions-json",
+          "type": "subtitle",
+          "path": "assets/captions.json",
+          "source_tool": "subtitle_gen",
+          "scene_id": "sc01-sc24",
+          "cost_usd": 0.0,
+          "format": "json",
+          "quality_score": 0.97,
+          "generation_summary": "Remotion\u5b57\u5e55\u6570\u636e\uff0c\u6765\u81ea\u8c46\u5305\u9010\u5b57\u65f6\u95f4\u6233\u3002"
+        },
+        {
+          "id": "atelier-visual-spec",
+          "type": "animation",
+          "path": "assets/visual-specs/atelier-scene-spec.json",
+          "source_tool": "remotion_atelier_native",
+          "scene_id": "sc01-sc25",
+          "cost_usd": 0.0,
+          "format": "json",
+          "quality_score": 1.0,
+          "generation_summary": "25\u4e2a\u539f\u751f\u6587\u5b57\u3001SVG\u3001\u56fe\u8868\u4e0e\u6570\u636e\u52a8\u753b\u573a\u666f\u7684\u6279\u51c6\u5206\u955c\u5feb\u7167\uff1b\u4e0d\u4f7f\u7528AI\u56fe\u7247\u6216\u6a21\u677f\u7ec4\u4ef6\u3002"
+        },
+        {
+          "id": "data-summary-statistics",
+          "type": "diagram",
+          "path": "assets/data/summary-statistics.csv",
+          "source_tool": "user_source_data",
+          "scene_id": "sc10",
+          "cost_usd": 0.0,
+          "format": "csv",
+          "quality_score": 1.0,
+          "generation_summary": "\u539f\u59cb\u76ee\u5f55\u56de\u6d4b\u7ed3\u679c\uff0c\u7528\u4e8e77.4%\u300176.1%\u300123.8%\u7b49\u539f\u751f\u56fe\u8868\u3002"
+        },
+        {
+          "id": "data-ordinary-comparison",
+          "type": "diagram",
+          "path": "assets/data/comparison-vs-ordinary.csv",
+          "source_tool": "user_source_data",
+          "scene_id": "sc13",
+          "cost_usd": 0.0,
+          "format": "csv",
+          "quality_score": 1.0,
+          "generation_summary": "\u65b0\u9ad8\u65e5\u4e0e\u666e\u901a\u4ea4\u6613\u65e5\u7684\u4e00\u5e74\u6b63\u6536\u76ca\u6982\u7387\u6bd4\u8f83\u3002"
+        },
+        {
+          "id": "data-worst-60d-events",
+          "type": "diagram",
+          "path": "assets/data/worst-60d-events.csv",
+          "source_tool": "user_source_data",
+          "scene_id": "sc21",
+          "cost_usd": 0.0,
+          "format": "csv",
+          "quality_score": 1.0,
+          "generation_summary": "60\u65e5\u53bb\u91cd\u4e8b\u4ef6\u4e0e2008\u5e74\u6848\u4f8b\u7684\u6536\u76ca\u3001\u6700\u5927\u6d6e\u4e8f\u548c\u8d26\u6237\u8def\u5f84\u3002"
+        },
+        {
+          "id": "data-daily-prices",
+          "type": "diagram",
+          "path": "assets/data/gold-daily-prices.csv",
+          "source_tool": "user_source_data",
+          "scene_id": "sc02",
+          "cost_usd": 0.0,
+          "format": "csv",
+          "quality_score": 1.0,
+          "generation_summary": "\u9ec4\u91d1\u65e5\u5ea6\u4ef7\u683c\uff0c\u7528\u4e8e\u4ef7\u683c\u8def\u5f84\u53ca2008\u6c34\u4e0b\u66f2\u7ebf\u7684\u539f\u751f\u91cd\u7ed8\u3002"
+        },
+        {
+          "id": "data-daily-signals",
+          "type": "diagram",
+          "path": "assets/data/gold-daily-signals.csv",
+          "source_tool": "user_source_data",
+          "scene_id": "sc18",
+          "cost_usd": 0.0,
+          "format": "csv",
+          "quality_score": 1.0,
+          "generation_summary": "\u5386\u53f2\u65b0\u9ad8\u53ca60\u4ea4\u6613\u65e5\u53bb\u91cd\u4fe1\u53f7\uff0c\u7528\u4e8e199\u538b\u7f29\u4e3a8\u7684\u7b7e\u540d\u52a8\u753b\u3002"
+        },
+        {
+          "id": "data-backtest-report",
+          "type": "code_snippet",
+          "path": "assets/data/backtest-report.md",
+          "source_tool": "user_source_data",
+          "scene_id": "sc25",
+          "cost_usd": 0.0,
+          "format": "markdown",
+          "quality_score": 1.0,
+          "generation_summary": "\u56de\u6d4b\u53e3\u5f84\u4e0e\u6765\u6e90\u8bf4\u660e\uff0c\u4f9b\u7ed3\u5c3e\u539f\u751f\u6765\u6e90\u5361\u548c\u6210\u7247\u590d\u6838\u3002"
+        }
+      ],
+      "total_cost_usd": 0.0176,
+      "metadata": {
+        "content_category": "finance",
+        "generation_summary": {
+          "narration_sections": 8,
+          "native_visual_scenes": 25,
+          "ai_images": 0,
+          "generated_video_clips": 0,
+          "music_tracks": 0,
+          "subtitle_cues": 118
+        },
+        "sample": {
+          "approved": true,
+          "path": "assets/audio/sample/s1-opening-v1.mp3",
+          "provider": "doubao",
+          "model": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_saturn_bigtts",
+          "speech_rate": 0,
+          "cost_usd": 0.0009
+        },
+        "audio_review": {
+          "all_sections_present": true,
+          "source_text_exact_after_whitespace_normalization": true,
+          "task_status_complete": true,
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "full_review_mean_volume_db": -21.4,
+          "full_review_peak_db": -3.3
+        },
+        "timing": {
+          "timeline_path": "assets/audio/narration/timeline.json",
+          "narration_audio_seconds": 182.88,
+          "continuous_review_audio_seconds": 187.728,
+          "editorial_end_seconds": 188.48,
+          "silent_disclaimer_seconds": 8.0,
+          "planned_video_seconds": 196.48,
+          "policy": "follow approved natural voice rhythm; no arbitrary deletion or speed-up"
+        },
+        "music_status": "disabled_by_user_default",
+        "visual_strategy": "composition-only native Remotion Atelier; precision-critical charts and exact text are deterministic",
+        "mandatory_final_disclaimer": "\u672c\u89c6\u9891\u4ec5\u4f5c\u77e5\u8bc6\u5206\u4eab\uff0c\u4e0d\u6784\u6210\u4efb\u4f55\u6295\u8d44\u5efa\u8bae\u3002\u5e02\u573a\u6709\u98ce\u9669\uff0c\u6295\u8d44\u9700\u8c28\u614e\u3002",
+        "cost": {
+          "sample_usd": 0.0009,
+          "batch_narration_usd": 0.0167,
+          "total_usd": 0.0176,
+          "approved_budget_usd": 2.0,
+          "remaining_usd": 1.9824
+        }
+      }
+    }
+  },
+  "style_playbook": "custom: gold-high-water-marks",
+  "review": {
+    "stage": "assets",
+    "round": 1,
+    "decision": "PASS",
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "nitpicks": 0,
+      "success_criteria_met": "7/7",
+      "scores": {
+        "completeness": 5,
+        "audio_quality": 5,
+        "visual_consistency": 5,
+        "budget_adherence": 5,
+        "playbook_fidelity": 5
+      },
+      "checks": {
+        "schema_valid": true,
+        "all_asset_paths_exist": true,
+        "narration_sections_covered": "8/8",
+        "source_text_exact": true,
+        "approved_sample_settings_preserved": true,
+        "section_duration_within_15_percent": "8/8",
+        "timestamp_metadata_present": "8/8",
+        "music_assets_absent": true,
+        "native_finance_data_preserved": true,
+        "mandatory_disclaimer_native_and_final_in_scene_plan": true
+      }
+    }
+  },
+  "cost_snapshot": {
+    "budget_usd": 2.0,
+    "spent_usd": 0.0176,
+    "remaining_usd": 1.9824
+  },
+  "metadata": {
+    "partial_progress": {
+      "phase": "asset_review",
+      "completed_units": 18,
+      "total_units": 18,
+      "narration_sections": 8,
+      "subtitle_cues": 118,
+      "native_visual_scenes": 25,
+      "planned_video_seconds": 196.48,
+      "status": "awaiting_human"
+    },
+    "approval_note": "\u7528\u6237\u660e\u786e\u56de\u590d\uff1a\u901a\u8fc7"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "version": "1.0",
+  "project_id": "gold-ath-chasing-experiment",
+  "pipeline_type": "animated-explainer",
+  "stage": "compose",
+  "status": "completed",
+  "timestamp": "2026-08-21T10:07:32.631122+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": false,
+  "artifacts": {
+    "render_report": {
+      "version": "1.0",
+      "outputs": [
+        {
+          "path": "renders/final.mp4",
+          "format": "mp4",
+          "codec": "h264",
+          "audio_codec": "aac",
+          "resolution": "1080x1920",
+          "fps": 30,
+          "duration_seconds": 196.5,
+          "file_size_bytes": 21624237,
+          "platform_target": "vertical social video"
+        }
+      ],
+      "warnings": [
+        "\u672c\u5730 WhisperX/faster-whisper \u672a\u5b89\u88c5\uff0c\u65e0\u6cd5\u6267\u884c\u72ec\u7acb\u4e2d\u6587 ASR\uff1b\u5df2\u7528\u8c46\u5305\u539f\u59cb\u9010\u5b57\u6587\u672c\u5339\u914d\u4e0e\u6210\u7247\u516b\u6bb5\u80fd\u91cf\u5305\u7edc\u76f8\u5173\u6027\u68c0\u67e5\u66ff\u4ee3\u3002"
+      ],
+      "verification_notes": [
+        "25/25 \u4e2a\u955c\u5934\u4e2d\u70b9\u4ece\u6700\u7ec8 MP4 \u62bd\u53d6\u5e76\u5b8c\u6210\u89c6\u89c9\u68c0\u67e5\u3002",
+        "\u6700\u7ec8\u5bb9\u5668\u5305\u542b 1080x1920 H.264 \u89c6\u9891\u6d41\u548c 48kHz \u53cc\u58f0\u9053 AAC \u97f3\u9891\u6d41\u3002",
+        "\u516b\u6bb5\u6210\u7247\u97f3\u8f68\u4e0e\u6279\u51c6\u6e90\u97f3\u9891\u7684\u80fd\u91cf\u5305\u7edc\u76f8\u5173\u7cfb\u6570\u4e3a 0.9844\u20140.9874\uff0c\u5168\u90e8\u901a\u8fc7\uff1b\u97f3\u9891\u6d41\u5728187.733\u79d2\u7ed3\u675f\uff0c\u968f\u540e\u4fdd\u6301\u514d\u8d23\u58f0\u660e\u5361\u9759\u9ed8\u3002",
+        "118\u6761\u9010\u5b57\u5b57\u5e55\u5df2\u539f\u751f\u70d8\u7119\uff0c\u5b57\u5e55\u6765\u6e90\u6587\u4ef6\u5b58\u5728\uff0c\u81ea\u52a8\u68c0\u67e5\u8986\u76d6\u7387\u4e3a1.0\u3002",
+        "\u6700\u7ec8192.48\u79d2\u62bd\u5e27\u786e\u8ba4\u6765\u6e90\u3001\u7edf\u8ba1\u53e3\u5f84\u548c\u7cbe\u786e\u514d\u8d23\u58f0\u660e\u53ef\u8bfb\uff0c\u5e76\u4e14\u6b64\u540e\u6ca1\u6709CTA\u6216\u5176\u4ed6\u573a\u666f\u3002"
+      ],
+      "render_grammar": "explainer-data",
+      "slideshow_risk_score": {
+        "average": 0.71,
+        "verdict": "strong"
+      },
+      "decision_log_ref": "projects/gold-ath-chasing-experiment/decision_log.json",
+      "final_review_ref": "projects/gold-ath-chasing-experiment/artifacts/final_review.json",
+      "metadata": {
+        "render_runtime": "remotion",
+        "composition_mode": "atelier",
+        "runtime_swap_detected": false,
+        "native_scene_count": 25,
+        "caption_cues": 118,
+        "background_music": false,
+        "total_cost_usd": 0.0176
+      }
+    },
+    "final_review": {
+      "version": "1.0",
+      "output_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/renders/final.mp4",
+      "status": "pass",
+      "checks": {
+        "technical_probe": {
+          "valid_container": true,
+          "duration_seconds": 196.5,
+          "resolution": "1080x1920",
+          "fps": 30,
+          "has_audio": true,
+          "codec": "h264",
+          "file_size_bytes": 21624237,
+          "issues": []
+        },
+        "visual_spotcheck": {
+          "frames_sampled": 25,
+          "frame_paths": [
+            "renders/review-frames-25/frame_0000.png",
+            "renders/review-frames-25/frame_0001.png",
+            "renders/review-frames-25/frame_0002.png",
+            "renders/review-frames-25/frame_0003.png",
+            "renders/review-frames-25/frame_0004.png",
+            "renders/review-frames-25/frame_0005.png",
+            "renders/review-frames-25/frame_0006.png",
+            "renders/review-frames-25/frame_0007.png",
+            "renders/review-frames-25/frame_0008.png",
+            "renders/review-frames-25/frame_0009.png",
+            "renders/review-frames-25/frame_0010.png",
+            "renders/review-frames-25/frame_0011.png",
+            "renders/review-frames-25/frame_0012.png",
+            "renders/review-frames-25/frame_0013.png",
+            "renders/review-frames-25/frame_0014.png",
+            "renders/review-frames-25/frame_0015.png",
+            "renders/review-frames-25/frame_0016.png",
+            "renders/review-frames-25/frame_0017.png",
+            "renders/review-frames-25/frame_0018.png",
+            "renders/review-frames-25/frame_0019.png",
+            "renders/review-frames-25/frame_0020.png",
+            "renders/review-frames-25/frame_0021.png",
+            "renders/review-frames-25/frame_0022.png",
+            "renders/review-frames-25/frame_0023.png",
+            "renders/review-frames-25/frame_0024.png"
+          ],
+          "black_frames_detected": false,
+          "broken_overlays": false,
+          "missing_assets": false,
+          "unreadable_text": false,
+          "issues": []
+        },
+        "opening_frame_check": {
+          "frame_path": "renders/.final_review_frames/opening_frame_0.png",
+          "extracted": true,
+          "large_blank_area_detected": false,
+          "theme_elements_visible": true,
+          "blank_area_ratio": 0.5818,
+          "edge_density": 0.0192,
+          "inspection_method": "pixel_statistics_plus_human_semantic_review",
+          "issues": []
+        },
+        "audio_spotcheck": {
+          "narration_present": true,
+          "music_present": false,
+          "unexpected_silence": false,
+          "clipping_detected": false,
+          "mix_intelligible": true,
+          "issues": []
+        },
+        "promise_preservation": {
+          "delivery_promise_honored": true,
+          "renderer_family_used": "explainer-data",
+          "render_runtime_used": "remotion",
+          "runtime_swap_detected": false,
+          "runtime_swap_check": "ok \u2014 proposal and edit agree; Remotion Atelier executed",
+          "motion_ratio_actual": 1.0,
+          "silent_downgrade_detected": false,
+          "issues": []
+        },
+        "subtitle_check": {
+          "subtitles_expected": true,
+          "subtitles_present": true,
+          "coverage_ratio": 1.0,
+          "timing_drift_detected": false,
+          "issues": []
+        },
+        "compliance": {
+          "financial_disclaimer_present": true,
+          "financial_disclaimer_exact": true,
+          "financial_disclaimer_readable": true,
+          "financial_disclaimer_at_end": true,
+          "issues": []
+        },
+        "transcript_comparison": {
+          "transcript_matches_script": null,
+          "word_accuracy": null,
+          "issues": [
+            "\u672c\u5730ASR\u4e0d\u53ef\u7528\uff1b\u6539\u75288/8\u6bb5\u8c46\u5305\u8fd4\u56de\u6587\u672c\u9010\u6bb5\u7cbe\u786e\u5339\u914d\u548c\u6210\u7247\u97f3\u8f68\u80fd\u91cf\u5305\u7edc\u76f8\u5173\u6027\u68c0\u67e5\uff0c\u5168\u90e8\u901a\u8fc7\u3002"
+          ]
+        },
+        "atelier": {
+          "stock_reuse_detected": false,
+          "offending_imports": [],
+          "art_direction_declared": true,
+          "art_direction": "projects/gold-ath-chasing-experiment/art-direction.md",
+          "issues": []
+        }
+      },
+      "issues_found": [],
+      "recommended_action": "present_to_user",
+      "metadata": {
+        "distinctness_review": "\u901a\u8fc7\uff1a\u6bcf\u4e00\u6bb5\u4e3b\u4f53\u4e0d\u540c\uff1b\u7b7e\u540d\u88c5\u7f6e199\u21928\u4ec5\u7528\u4e8e\u9ad8\u6f6e\uff0c\u6ca1\u6709\u590d\u7528\u6a21\u677f\u5316\u82f1\u96c4\u7ec4\u4ef6\u3002",
+        "audio_integrity": {
+          "method": "per-section 10ms RMS energy-envelope correlation against approved source audio",
+          "sections_passed": "8/8",
+          "correlation_range": [
+            0.9844,
+            0.9874
+          ],
+          "codec_alignment_offset_ms": 45
+        },
+        "final_frame_reviewed_at_seconds": 192.48
+      }
+    }
+  },
+  "style_playbook": "custom: gold-high-water-marks",
+  "review": {
+    "stage": "compose",
+    "round": 2,
+    "decision": "PASS",
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "nitpicks": 0,
+      "success_criteria_met": "10/10",
+      "scores": {
+        "playability": 5,
+        "duration_accuracy": 5,
+        "audio_quality": 5,
+        "visual_quality": 5,
+        "subtitle_accuracy": 5
+      },
+      "checks": {
+        "schema_valid": true,
+        "output_exists": true,
+        "technical_probe_passed": true,
+        "frames_reviewed": "25/25",
+        "audio_sections_verified": "8/8",
+        "subtitles_present": true,
+        "runtime_swap_detected": false,
+        "stock_reuse_detected": false,
+        "mandatory_disclaimer_present_exact_readable_and_at_end": true,
+        "no_music_layer": true
+      }
+    }
+  },
+  "cost_snapshot": {
+    "budget_usd": 2.0,
+    "spent_usd": 0.0176,
+    "remaining_usd": 1.9824
+  },
+  "metadata": {
+    "partial_progress": {
+      "phase": "complete",
+      "completed_units": 25,
+      "total_units": 25,
+      "status": "complete"
+    }
+  }
+}

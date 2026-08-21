@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "renderer_family": "explainer-data",
+  "render_runtime": "remotion",
+  "composition_mode": "atelier",
+  "bespoke": {
+    "entry": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/index.tsx",
+    "composition_id": "GoldAthChasingExperiment",
+    "props_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/artifacts/props.json",
+    "public_dir": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/public",
+    "art_direction": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/art-direction.md",
+    "scale": 1.0,
+    "crf": 18,
+    "concurrency": 6
+  },
+  "cuts": [
+    {"id":"cut-sc01","source":"atelier-visual-spec","in_seconds":0.0,"out_seconds":4.724,"type":"text_card","layer":"primary","transition_in":"cut","transition_out":"fade","transition_duration":0.3,"reason":"以自然观察口吻而非报告开场。"},
+    {"id":"cut-sc02","source":"atelier-visual-spec","in_seconds":4.724,"out_seconds":15.116,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"显示猛冲、下砸、回升三段路径。"},
+    {"id":"cut-sc03","source":"atelier-visual-spec","in_seconds":15.116,"out_seconds":20.784,"type":"diagram","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"将买在山顶的担忧空间化。"},
+    {"id":"cut-sc04","source":"atelier-visual-spec","in_seconds":20.784,"out_seconds":27.069,"type":"diagram","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"未来两条路径等权呈现。"},
+    {"id":"cut-sc05","source":"atelier-visual-spec","in_seconds":27.069,"out_seconds":31.559,"type":"text_card","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"把常见直觉转成待验证假设。"},
+    {"id":"cut-sc06","source":"atelier-visual-spec","in_seconds":31.559,"out_seconds":37.844,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"回溯2001至2026。"},
+    {"id":"cut-sc07","source":"atelier-visual-spec","in_seconds":37.844,"out_seconds":46.437,"type":"diagram","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"原生解释新高定义。"},
+    {"id":"cut-sc08","source":"atelier-visual-spec","in_seconds":46.437,"out_seconds":55.031,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"呈现T+1买入与四个观察窗口。"},
+    {"id":"cut-sc09","source":"atelier-visual-spec","in_seconds":55.031,"out_seconds":63.624,"type":"text_card","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"199个样本点形成第一次悬念。"},
+    {"id":"cut-sc10","source":"atelier-visual-spec","in_seconds":63.624,"out_seconds":71.115,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"100点概率场展示半年77.4%。"},
+    {"id":"cut-sc11","source":"atelier-visual-spec","in_seconds":71.115,"out_seconds":78.607,"type":"diagram","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"一年76.1%与n=163同屏。"},
+    {"id":"cut-sc12","source":"atelier-visual-spec","in_seconds":78.607,"out_seconds":87.168,"type":"text_card","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"平均收益23.8%与平均值边界。"},
+    {"id":"cut-sc13","source":"atelier-visual-spec","in_seconds":87.168,"out_seconds":94.54,"type":"diagram","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"建立普通交易日对照组。"},
+    {"id":"cut-sc14","source":"atelier-visual-spec","in_seconds":94.54,"out_seconds":102.832,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"等轴比较75.0%和76.1%。"},
+    {"id":"cut-sc15","source":"atelier-visual-spec","in_seconds":102.832,"out_seconds":110.204,"type":"text_card","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"明确新高既非危险信号也非魔法指标。"},
+    {"id":"cut-sc16","source":"atelier-visual-spec","in_seconds":110.204,"out_seconds":118.042,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"再次展示199的表面样本量。"},
+    {"id":"cut-sc17","source":"atelier-visual-spec","in_seconds":118.042,"out_seconds":127.839,"type":"diagram","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"相邻新高归属于同一轮行情。"},
+    {"id":"cut-sc18","source":"atelier-visual-spec","in_seconds":127.839,"out_seconds":138.616,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"签名场：199点压缩为8组。"},
+    {"id":"cut-sc19","source":"atelier-visual-spec","in_seconds":138.616,"out_seconds":144.598,"type":"text_card","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"结局盈利不等于过程拿得住。"},
+    {"id":"cut-sc20","source":"atelier-visual-spec","in_seconds":144.598,"out_seconds":156.563,"type":"diagram","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"2008买入至一年后+0.7%。"},
+    {"id":"cut-sc21","source":"atelier-visual-spec","in_seconds":156.563,"out_seconds":168.528,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"-19.4%最大浮亏及10万至约80600。"},
+    {"id":"cut-sc22","source":"atelier-visual-spec","in_seconds":168.528,"out_seconds":175.879,"type":"text_card","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"克制陈述新高本身没那么可怕。"},
+    {"id":"cut-sc23","source":"atelier-visual-spec","in_seconds":175.879,"out_seconds":183.229,"type":"diagram","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"区分方向与持有体验。"},
+    {"id":"cut-sc24","source":"atelier-visual-spec","in_seconds":183.229,"out_seconds":188.48,"type":"animation","layer":"primary","transition_in":"fade","transition_out":"fade","transition_duration":0.3,"reason":"以曲折路径完成自然收束。"},
+    {"id":"cut-sc25","source":"atelier-visual-spec","in_seconds":188.48,"out_seconds":196.48,"type":"text_card","text":"本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。","layer":"primary","transition_in":"fade","transition_out":"cut","transition_duration":0.3,"reason":"最后8秒原生来源、口径与精确免责声明卡；此后无任何画面。"}
+  ],
+  "audio": {
+    "narration": {
+      "segments": [
+        {"asset_id":"narration-s1","start_seconds":0.0,"end_seconds":20.184},
+        {"asset_id":"narration-s2","start_seconds":20.784,"end_seconds":37.344},
+        {"asset_id":"narration-s3","start_seconds":37.844,"end_seconds":62.924},
+        {"asset_id":"narration-s4","start_seconds":63.624,"end_seconds":86.568},
+        {"asset_id":"narration-s5","start_seconds":87.168,"end_seconds":109.704},
+        {"asset_id":"narration-s6","start_seconds":110.504,"end_seconds":137.816},
+        {"asset_id":"narration-s7","start_seconds":138.616,"end_seconds":167.728},
+        {"asset_id":"narration-s8","start_seconds":168.528,"end_seconds":187.68}
+      ]
+    },
+    "sfx": []
+  },
+  "subtitles": {
+    "enabled": true,
+    "style": "word-by-word",
+    "source": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/assets/subtitles.srt",
+    "font": "PingFang SC",
+    "font_size": 40,
+    "color": "#E9E1D1",
+    "outline_color": "#090A0C",
+    "background": "#090A0CDC",
+    "position": "bottom-center",
+    "max_words_per_line": 10
+  },
+  "slideshow_risk_score": {"average":0.71,"verdict":"strong"},
+  "metadata": {
+    "target_duration_seconds":196.48,
+    "timing_source":"approved Doubao word timestamps",
+    "music_source":"none",
+    "caption_cues":118,
+    "native_scene_count":25,
+    "runtime_swap_detected":false,
+    "final_cut_is_exact_disclaimer":true
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "version": "1.0",
+  "project_id": "gold-ath-chasing-experiment",
+  "decisions": [
+    {
+      "decision_id": "d-001",
+      "stage": "proposal",
+      "category": "pipeline_selection",
+      "subject": "Production pipeline",
+      "options_considered": [
+        {"option_id": "animated-explainer", "label": "Animated explainer", "score": 0.95, "reason": "源材料是研究、图表和脚本规划，适合全生成数据解说。"},
+        {"option_id": "hybrid", "label": "Hybrid source plus generated visuals", "score": 0.45, "reason": "没有人物或实拍源素材，混合管线不会增加信息价值。", "rejected_because": "缺少需要保留的源视频。"}
+      ],
+      "selected": "animated-explainer",
+      "reason": "数据与论证是主角，原生图表和旁白足以兑现内容承诺。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.95
+    },
+    {
+      "decision_id": "d-002",
+      "stage": "proposal",
+      "category": "concept_selection",
+      "subject": "Narrative concept",
+      "options_considered": [
+        {"option_id": "c1", "label": "199次其实只有8次", "score": 0.96, "reason": "同时覆盖反直觉结果、样本独立性、回撤和方法。"},
+        {"option_id": "c2", "label": "10万元追高实验", "score": 0.72, "reason": "直观但缺少具体产品费用和人民币汇率。", "rejected_because": "容易让无费用模拟显得过于贴近实际投资。"},
+        {"option_id": "c3", "label": "最倒霉的一次追高", "score": 0.78, "reason": "故事性强但统计覆盖不完整。", "rejected_because": "单一案例不能承载整组研究。"}
+      ],
+      "selected": "c1",
+      "reason": "用户批准推荐方案，且它最能完整回答唯一核心问题。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.94
+    },
+    {
+      "decision_id": "d-003",
+      "stage": "proposal",
+      "category": "renderer_family_selection",
+      "subject": "Creative renderer family",
+      "options_considered": [
+        {"option_id": "explainer-data", "label": "Data explainer", "score": 0.97, "reason": "图表、概率、样本压缩和风险路径是叙事本体。"},
+        {"option_id": "documentary-montage", "label": "Documentary montage", "score": 0.52, "reason": "可增加真实感，但素材镜头无法准确承载统计口径。", "rejected_because": "装饰画面会稀释证据。"}
+      ],
+      "selected": "explainer-data",
+      "reason": "原生数据语法最能保证准确和移动端可读性。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.97
+    },
+    {
+      "decision_id": "d-004",
+      "stage": "proposal",
+      "category": "render_runtime_selection",
+      "subject": "Composition render runtime",
+      "options_considered": [
+        {"option_id": "remotion", "label": "Remotion", "score": 0.96, "reason": "已可用，最适合原生React/SVG图表和逐词字幕。"},
+        {"option_id": "hyperframes", "label": "HyperFrames", "score": 0.79, "reason": "字体和GSAP表现力强，但当前Node 18未满足运行要求且字幕能力较弱。", "rejected_because": "本片精确图表和字幕优先级更高。"},
+        {"option_id": "ffmpeg", "label": "FFmpeg", "score": 0.38, "reason": "可用但只适合基础拼接，无法兑现样本压缩的核心动效。", "rejected_because": "运动表现低于质量底线。"}
+      ],
+      "selected": "remotion",
+      "reason": "内容适配和当前可执行性同时最佳。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.96
+    },
+    {
+      "decision_id": "d-005",
+      "stage": "proposal",
+      "category": "composition_mode",
+      "subject": "Composition authoring mode",
+      "options_considered": [
+        {"option_id": "atelier", "label": "Atelier", "score": 0.95, "reason": "单条英雄作品需要专属视觉隐喻和逐幕差异。"},
+        {"option_id": "templated", "label": "Templated", "score": 0.58, "reason": "更快更稳，但容易像常见财经数据模板。", "rejected_because": "无法形成‘199压缩为8’的专属视觉识别。"}
+      ],
+      "selected": "atelier",
+      "reason": "用户批准定制制作，并接受更高的手工迭代成本。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.93
+    },
+    {
+      "decision_id": "d-006",
+      "stage": "proposal",
+      "category": "motion_commitment",
+      "subject": "Visual coverage strategy",
+      "options_considered": [
+        {"option_id": "composition-only", "label": "Composition-only", "score": 0.94, "reason": "精确数字、规则和因果关系全部可由原生动效表达。"},
+        {"option_id": "light-hybrid", "label": "Light hybrid", "score": 0.61, "reason": "少量黄金实拍可增加质感，但不回答任何核心问题。", "rejected_because": "会增加装饰镜头并分散数据注意力。"},
+        {"option_id": "footage-led", "label": "Footage-led", "score": 0.25, "reason": "没有需保留的实拍源内容。", "rejected_because": "不符合数据实验的媒介需求。"}
+      ],
+      "selected": "composition-only",
+      "reason": "精准信息是硬要求，装饰性实拍不增加语义。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.92
+    },
+    {
+      "decision_id": "d-007",
+      "stage": "proposal",
+      "category": "voice_selection",
+      "subject": "Narration TTS provider",
+      "options_considered": [
+        {"option_id": "doubao-dayi", "label": "Doubao 大壹 2.0", "score": 0.91, "reason": "已配置，中文克制男声适合财经研究。"},
+        {"option_id": "openai", "label": "OpenAI TTS", "score": 0.82, "reason": "表达指令强但当前未配置。", "rejected_because": "没有必要为本片新增认证。"},
+        {"option_id": "elevenlabs", "label": "ElevenLabs", "score": 0.78, "reason": "自然度高但当前未配置。", "rejected_because": "中文研究语气不构成足够的升级收益。"}
+      ],
+      "selected": "doubao-dayi",
+      "reason": "内容适配且立即可执行，正式批量前仍需样本确认。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.9
+    },
+    {
+      "decision_id": "d-008",
+      "stage": "proposal",
+      "category": "music_source",
+      "subject": "Background music source",
+      "options_considered": [
+        {"option_id": "none", "label": "No BGM", "score": 0.91, "reason": "继承用户默认，保持研究感和数字清晰度。"},
+        {"option_id": "stock", "label": "Stock music", "score": 0.62, "reason": "Pixabay搜索可用，但会给严肃数据增加不必要情绪。", "rejected_because": "用户未启用音乐。"},
+        {"option_id": "ai", "label": "AI-generated music", "score": 0.3, "reason": "当前无音乐生成供应商配置。", "rejected_because": "不可用且无内容必要性。"}
+      ],
+      "selected": "none",
+      "reason": "无背景音乐是已批准方案，旁白与少量可选数据音效承担节奏。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.91
+    },
+    {
+      "decision_id": "d-009",
+      "stage": "proposal",
+      "category": "playbook_selection",
+      "subject": "Visual playbook",
+      "options_considered": [
+        {"option_id": "gold-high-water-marks", "label": "Custom Gold High-Water Marks", "score": 0.96, "reason": "以199到8的样本压缩形成专属视觉语言。"},
+        {"option_id": "clean-professional", "label": "Clean Professional preset", "score": 0.55, "reason": "可信但过于通用。", "rejected_because": "不能体现黄金新高实验的独特性。"}
+      ],
+      "selected": "gold-high-water-marks",
+      "reason": "Atelier要求为本片先定义不可替换的视觉识别。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.94
+    },
+    {
+      "decision_id": "d-010",
+      "stage": "script",
+      "category": "concept_selection",
+      "subject": "Narrative concept",
+      "options_considered": [
+        {"option_id": "c1-revised", "label": "Current-market hook plus historical test", "score": 0.97, "reason": "从2026年猛涨、急跌、8月反弹的真实情绪自然进入历史回测。"},
+        {"option_id": "c1-original", "label": "Abstract data experiment hook", "score": 0.42, "reason": "结构完整但切入僵硬，像标准AI数据实验模板。", "rejected_because": "用户指出缺少本话题真实的当下动因。"},
+        {"option_id": "method-ending", "label": "Reusable judgment method ending", "score": 0.28, "reason": "符合通用财经编辑框架，但与本题的自然收束不匹配。", "rejected_because": "用户明确要求删除。"}
+      ],
+      "selected": "c1-revised",
+      "reason": "根据用户反馈重写：当下行情切入、边界移至收尾卡、删除可复用方法。",
+      "user_visible": true,
+      "user_approved": false,
+      "confidence": 0.96
+    },
+    {
+      "decision_id": "d-011",
+      "stage": "script",
+      "category": "concept_selection",
+      "subject": "Narrative concept",
+      "options_considered": [
+        {"option_id": "user-final-copy", "label": "User-optimized full copy", "score": 1.0, "reason": "用户提供最终口语稿并明确要求以质量为重、不要随意删减。"},
+        {"option_id": "c1-revised", "label": "Assistant revised 110-second copy", "score": 0.58, "reason": "结构已改善但仍不如用户稿自然。", "rejected_because": "已被用户定稿替代。"},
+        {"option_id": "compressed-110", "label": "Compress user copy to 110 seconds", "score": 0.35, "reason": "需要删减约40%，会损害用户刻意保留的口语节奏。", "rejected_because": "用户明确选择质量优先。"}
+      ],
+      "selected": "user-final-copy",
+      "reason": "正文逐字作为后续制作基准，仅根据自然语速重新计时。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 1.0
+    },
+    {
+      "decision_id": "d-012",
+      "stage": "script",
+      "category": "budget_tradeoff",
+      "subject": "Narration duration versus compression",
+      "options_considered": [
+        {"option_id": "natural-190", "label": "Natural pacing, about 190 seconds", "score": 0.97, "reason": "完整保留901个有效中文字符和自然停顿。"},
+        {"option_id": "fast-110", "label": "Force into 110 seconds", "score": 0.2, "reason": "需达到每秒约8.2个字，听感过快。", "rejected_because": "不符合质量优先。"}
+      ],
+      "selected": "natural-190",
+      "reason": "用户明确批准推荐的自然语速方案，并接受时长增加。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.98
+    }
+  ]
+}

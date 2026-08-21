@@ -1,0 +1,584 @@
+{
+  "code": 20000000,
+  "data": {
+    "audio_url": "https://lf9-lab-speech-tt-sign.bytespeech.com/tos-cn-o-14155/oADSELGfbpB8nAAv9QIINTEbNAFAOMAZEVeWfE?x-expires=1787308169&x-signature=gGbZqemE0X%2FZop%2FA3El6jJri7%2Bs%3D",
+    "req_text_length": 100,
+    "sentences": [
+      {
+        "endTime": 4.095,
+        "startTime": 0.095,
+        "text": "所以我看完这组数据以后，最大的感受反而很简单：\n\n",
+        "words": [
+          {
+            "confidence": 0.764686,
+            "endTime": 0.275,
+            "startTime": 0.095,
+            "word": "所"
+          },
+          {
+            "confidence": 0.90475285,
+            "endTime": 0.525,
+            "startTime": 0.275,
+            "word": "以"
+          },
+          {
+            "confidence": 0.79406625,
+            "endTime": 0.735,
+            "startTime": 0.525,
+            "word": "我"
+          },
+          {
+            "confidence": 0.9448391,
+            "endTime": 1.065,
+            "startTime": 0.825,
+            "word": "看"
+          },
+          {
+            "confidence": 0.8891939,
+            "endTime": 1.185,
+            "startTime": 1.065,
+            "word": "完"
+          },
+          {
+            "confidence": 0.948834,
+            "endTime": 1.295,
+            "startTime": 1.185,
+            "word": "这"
+          },
+          {
+            "confidence": 0.6270624,
+            "endTime": 1.385,
+            "startTime": 1.295,
+            "word": "组"
+          },
+          {
+            "confidence": 0.9215707,
+            "endTime": 1.575,
+            "startTime": 1.385,
+            "word": "数"
+          },
+          {
+            "confidence": 0.94395,
+            "endTime": 1.745,
+            "startTime": 1.575,
+            "word": "据"
+          },
+          {
+            "confidence": 0.7872195,
+            "endTime": 1.795,
+            "startTime": 1.745,
+            "word": "以"
+          },
+          {
+            "confidence": 0.95185083,
+            "endTime": 2.195,
+            "startTime": 1.795,
+            "word": "后，"
+          },
+          {
+            "confidence": 0.7567596,
+            "endTime": 2.635,
+            "startTime": 2.505,
+            "word": "最"
+          },
+          {
+            "confidence": 0.9293282,
+            "endTime": 2.745,
+            "startTime": 2.635,
+            "word": "大"
+          },
+          {
+            "confidence": 0.9441674,
+            "endTime": 2.845,
+            "startTime": 2.745,
+            "word": "的"
+          },
+          {
+            "confidence": 0.97793734,
+            "endTime": 2.995,
+            "startTime": 2.845,
+            "word": "感"
+          },
+          {
+            "confidence": 0.9709941,
+            "endTime": 3.165,
+            "startTime": 2.995,
+            "word": "受"
+          },
+          {
+            "confidence": 0.8790723,
+            "endTime": 3.425,
+            "startTime": 3.165,
+            "word": "反"
+          },
+          {
+            "confidence": 0.7494658,
+            "endTime": 3.475,
+            "startTime": 3.425,
+            "word": "而"
+          },
+          {
+            "confidence": 0.87465566,
+            "endTime": 3.665,
+            "startTime": 3.475,
+            "word": "很"
+          },
+          {
+            "confidence": 0.5123672,
+            "endTime": 3.955,
+            "startTime": 3.665,
+            "word": "简"
+          },
+          {
+            "confidence": 0.3804251,
+            "endTime": 4.095,
+            "startTime": 3.955,
+            "word": "单："
+          }
+        ]
+      },
+      {
+        "endTime": 6.1930000000000005,
+        "startTime": 4.4830000000000005,
+        "text": "历史新高，本身没那么可怕。\n\n",
+        "words": [
+          {
+            "confidence": 0.43865493,
+            "endTime": 4.543,
+            "startTime": 4.4830000000000005,
+            "word": "历"
+          },
+          {
+            "confidence": 0.77351075,
+            "endTime": 4.673,
+            "startTime": 4.543,
+            "word": "史"
+          },
+          {
+            "confidence": 0.8851402,
+            "endTime": 4.853000000000001,
+            "startTime": 4.673,
+            "word": "新"
+          },
+          {
+            "confidence": 0.94208974,
+            "endTime": 5.173,
+            "startTime": 4.853000000000001,
+            "word": "高，"
+          },
+          {
+            "confidence": 0.8521652,
+            "endTime": 5.543,
+            "startTime": 5.433,
+            "word": "本"
+          },
+          {
+            "confidence": 0.77756834,
+            "endTime": 5.6530000000000005,
+            "startTime": 5.543,
+            "word": "身"
+          },
+          {
+            "confidence": 0.9356176,
+            "endTime": 5.783,
+            "startTime": 5.6530000000000005,
+            "word": "没"
+          },
+          {
+            "confidence": 0.8967432,
+            "endTime": 5.853000000000001,
+            "startTime": 5.783,
+            "word": "那"
+          },
+          {
+            "confidence": 0.930049,
+            "endTime": 5.923,
+            "startTime": 5.853000000000001,
+            "word": "么"
+          },
+          {
+            "confidence": 0.898535,
+            "endTime": 6.053000000000001,
+            "startTime": 5.923,
+            "word": "可"
+          },
+          {
+            "confidence": 0.9723513,
+            "endTime": 6.1930000000000005,
+            "startTime": 6.053000000000001,
+            "word": "怕。"
+          }
+        ]
+      },
+      {
+        "endTime": 8.224,
+        "startTime": 6.654000000000001,
+        "text": "它不天然等于“马上要站岗”，\n\n",
+        "words": [
+          {
+            "confidence": 0.96109194,
+            "endTime": 6.7940000000000005,
+            "startTime": 6.654000000000001,
+            "word": "它"
+          },
+          {
+            "confidence": 0.9229262,
+            "endTime": 6.914000000000001,
+            "startTime": 6.7940000000000005,
+            "word": "不"
+          },
+          {
+            "confidence": 0.8928432,
+            "endTime": 7.144,
+            "startTime": 6.914000000000001,
+            "word": "天"
+          },
+          {
+            "confidence": 0.81648684,
+            "endTime": 7.314,
+            "startTime": 7.144,
+            "word": "然"
+          },
+          {
+            "confidence": 0.61577594,
+            "endTime": 7.604,
+            "startTime": 7.314,
+            "word": "等"
+          },
+          {
+            "confidence": 0.2439887,
+            "endTime": 7.634,
+            "startTime": 7.604,
+            "word": "于“"
+          },
+          {
+            "confidence": 0.79277533,
+            "endTime": 7.794,
+            "startTime": 7.634,
+            "word": "马"
+          },
+          {
+            "confidence": 0.9694573,
+            "endTime": 7.934,
+            "startTime": 7.794,
+            "word": "上"
+          },
+          {
+            "confidence": 0.874747,
+            "endTime": 8.024000000000001,
+            "startTime": 7.934,
+            "word": "要"
+          },
+          {
+            "confidence": 0.848502,
+            "endTime": 8.194,
+            "startTime": 8.024000000000001,
+            "word": "站"
+          },
+          {
+            "confidence": 0.33789107,
+            "endTime": 8.224,
+            "startTime": 8.194,
+            "word": "岗”，"
+          }
+        ]
+      },
+      {
+        "endTime": 11.482,
+        "startTime": 9.042000000000002,
+        "text": "但也绝对不意味着接下来会一路舒服地涨。\n\n",
+        "words": [
+          {
+            "confidence": 0.9466549,
+            "endTime": 9.192,
+            "startTime": 9.042000000000002,
+            "word": "但"
+          },
+          {
+            "confidence": 0.9542063,
+            "endTime": 9.312,
+            "startTime": 9.192,
+            "word": "也"
+          },
+          {
+            "confidence": 0.9454426,
+            "endTime": 9.482,
+            "startTime": 9.312,
+            "word": "绝"
+          },
+          {
+            "confidence": 0.908886,
+            "endTime": 9.602,
+            "startTime": 9.482,
+            "word": "对"
+          },
+          {
+            "confidence": 0.9518075,
+            "endTime": 9.752,
+            "startTime": 9.602,
+            "word": "不"
+          },
+          {
+            "confidence": 0.93639064,
+            "endTime": 9.872,
+            "startTime": 9.752,
+            "word": "意"
+          },
+          {
+            "confidence": 0.91250014,
+            "endTime": 9.982,
+            "startTime": 9.872,
+            "word": "味"
+          },
+          {
+            "confidence": 0.866785,
+            "endTime": 10.102,
+            "startTime": 9.982,
+            "word": "着"
+          },
+          {
+            "confidence": 0.8997691,
+            "endTime": 10.232,
+            "startTime": 10.102,
+            "word": "接"
+          },
+          {
+            "confidence": 0.9395204,
+            "endTime": 10.352,
+            "startTime": 10.232,
+            "word": "下"
+          },
+          {
+            "confidence": 0.9698429,
+            "endTime": 10.502,
+            "startTime": 10.352,
+            "word": "来"
+          },
+          {
+            "confidence": 0.964174,
+            "endTime": 10.662,
+            "startTime": 10.502,
+            "word": "会"
+          },
+          {
+            "confidence": 0.84123874,
+            "endTime": 10.762,
+            "startTime": 10.662,
+            "word": "一"
+          },
+          {
+            "confidence": 0.97086996,
+            "endTime": 10.902,
+            "startTime": 10.762,
+            "word": "路"
+          },
+          {
+            "confidence": 0.88933384,
+            "endTime": 11.092,
+            "startTime": 10.902,
+            "word": "舒"
+          },
+          {
+            "confidence": 0.95773333,
+            "endTime": 11.192,
+            "startTime": 11.092,
+            "word": "服"
+          },
+          {
+            "confidence": 0.984485,
+            "endTime": 11.292000000000002,
+            "startTime": 11.192,
+            "word": "地"
+          },
+          {
+            "confidence": 0.96490407,
+            "endTime": 11.482,
+            "startTime": 11.292000000000002,
+            "word": "涨。"
+          }
+        ]
+      },
+      {
+        "endTime": 14.273,
+        "startTime": 12.203,
+        "text": "有时候，方向最后是对的，\n\n",
+        "words": [
+          {
+            "confidence": 0.8607149,
+            "endTime": 12.323,
+            "startTime": 12.203,
+            "word": "有"
+          },
+          {
+            "confidence": 0.93563193,
+            "endTime": 12.443,
+            "startTime": 12.323,
+            "word": "时"
+          },
+          {
+            "confidence": 0.7071119,
+            "endTime": 12.643,
+            "startTime": 12.443,
+            "word": "候，"
+          },
+          {
+            "confidence": 0.7280071,
+            "endTime": 13.223,
+            "startTime": 13.033,
+            "word": "方"
+          },
+          {
+            "confidence": 0.9442153,
+            "endTime": 13.513,
+            "startTime": 13.223,
+            "word": "向"
+          },
+          {
+            "confidence": 0.9597627,
+            "endTime": 13.663,
+            "startTime": 13.513,
+            "word": "最"
+          },
+          {
+            "confidence": 0.9781976,
+            "endTime": 13.783,
+            "startTime": 13.663,
+            "word": "后"
+          },
+          {
+            "confidence": 0.9397634,
+            "endTime": 13.943,
+            "startTime": 13.783,
+            "word": "是"
+          },
+          {
+            "confidence": 0.978159,
+            "endTime": 14.143,
+            "startTime": 13.943,
+            "word": "对"
+          },
+          {
+            "confidence": 0.95961857,
+            "endTime": 14.273,
+            "startTime": 14.143,
+            "word": "的，"
+          }
+        ]
+      },
+      {
+        "endTime": 18.809,
+        "startTime": 14.579,
+        "text": "中间那段路，还是会比你想象得难熬很多。\n",
+        "words": [
+          {
+            "confidence": 0.90043503,
+            "endTime": 14.839,
+            "startTime": 14.579,
+            "word": "中"
+          },
+          {
+            "confidence": 0.8682463,
+            "endTime": 15.099,
+            "startTime": 14.839,
+            "word": "间"
+          },
+          {
+            "confidence": 0.84867096,
+            "endTime": 15.249,
+            "startTime": 15.099,
+            "word": "那"
+          },
+          {
+            "confidence": 0.8368744,
+            "endTime": 15.459,
+            "startTime": 15.249,
+            "word": "段"
+          },
+          {
+            "confidence": 0.97209585,
+            "endTime": 15.709,
+            "startTime": 15.459,
+            "word": "路，"
+          },
+          {
+            "confidence": 0.9430574,
+            "endTime": 16.479,
+            "startTime": 16.199,
+            "word": "还"
+          },
+          {
+            "confidence": 0.94125485,
+            "endTime": 16.719,
+            "startTime": 16.479,
+            "word": "是"
+          },
+          {
+            "confidence": 0.9658009,
+            "endTime": 16.919,
+            "startTime": 16.719,
+            "word": "会"
+          },
+          {
+            "confidence": 0.96029633,
+            "endTime": 17.049,
+            "startTime": 16.919,
+            "word": "比"
+          },
+          {
+            "confidence": 0.9620499,
+            "endTime": 17.169,
+            "startTime": 17.049,
+            "word": "你"
+          },
+          {
+            "confidence": 0.9595267,
+            "endTime": 17.479,
+            "startTime": 17.169,
+            "word": "想"
+          },
+          {
+            "confidence": 0.9352564,
+            "endTime": 17.729,
+            "startTime": 17.479,
+            "word": "象"
+          },
+          {
+            "confidence": 0.9092139,
+            "endTime": 17.929,
+            "startTime": 17.729,
+            "word": "得"
+          },
+          {
+            "confidence": 0.87519604,
+            "endTime": 18.139,
+            "startTime": 17.929,
+            "word": "难"
+          },
+          {
+            "confidence": 0.7842077,
+            "endTime": 18.299,
+            "startTime": 18.139,
+            "word": "熬"
+          },
+          {
+            "confidence": 0.9588406,
+            "endTime": 18.509,
+            "startTime": 18.299,
+            "word": "很"
+          },
+          {
+            "confidence": 0.97550654,
+            "endTime": 18.809,
+            "startTime": 18.509,
+            "word": "多。"
+          }
+        ]
+      }
+    ],
+    "synthesize_text_length": 100,
+    "task_id": "b0180208-c19a-4511-804c-4fc7c2f34795",
+    "task_status": 2,
+    "url_expire_time": 1787308169
+  },
+  "message": "ok"
+}

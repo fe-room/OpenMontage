@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "status": "ready",
+  "source_video_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/renders/final.mp4",
+  "primary_cover": {
+    "id": "gold-ath-cover-primary",
+    "path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/assets/images/cover.png",
+    "format": "png",
+    "width": 1080,
+    "height": 1440,
+    "aspect_ratio": "3:4",
+    "role": "primary",
+    "text_overlay": [
+      "黄金创新高后，还能不能买？",
+      "199个新高日",
+      "按60个交易日去重以后：8次",
+      "新高不是结论，历史数据也不是预言。",
+      "历史回测 · 非买入建议"
+    ],
+    "source_tool": "Remotion local deterministic compositor",
+    "file_size_bytes": 958367,
+    "cost_usd": 0.0
+  },
+  "variants": [],
+  "creative_rationale": "采用合成式封面，延续成片的黑曜石、旧金和风险红视觉体系；标题只提出视频真实回答的问题，主体使用成片签名装置，把199个新高日按60个交易日去重为8次，形成清晰但不夸大证据的视觉张力。",
+  "decision_log_ref": "projects/gold-ath-chasing-experiment/artifacts/decision_log.json",
+  "verification": {
+    "file_exists": true,
+    "dimensions_match": true,
+    "text_checked": true,
+    "mobile_readability_checked": true,
+    "content_match": true,
+    "issues": []
+  },
+  "metadata": {
+    "cover_approach": "composited",
+    "resolved_cover_spec": {
+      "width": 1080,
+      "height": 1440,
+      "aspect_ratio": "3:4",
+      "basis": "vertical-video default from cover-director"
+    },
+    "mobile_check_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/assets/images/cover-mobile-check.png",
+    "content_category": "finance",
+    "financial_claim_review": "标题保持问句；数据标签保留去重条件；未把历史结果改写为买入结论。"
+  }
+}

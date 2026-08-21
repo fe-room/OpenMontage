@@ -1,0 +1,589 @@
+{
+  "code": 20000000,
+  "data": {
+    "audio_url": "https://lf6-lab-speech-tt-sign.bytespeech.com/tos-cn-o-14155/osGeAIeASAGERLip7EieCSTkJpAxEbA1IVEDbB?x-expires=1787308121&x-signature=Ji1hAxhKGyspLiEjaCz7NOCKRxE%3D",
+    "req_text_length": 102,
+    "sentences": [
+      {
+        "endTime": 2.135,
+        "startTime": 0.325,
+        "text": "这个问题，其实我也挺好奇。\n\n",
+        "words": [
+          {
+            "confidence": 0.9637432,
+            "endTime": 0.455,
+            "startTime": 0.325,
+            "word": "这"
+          },
+          {
+            "confidence": 0.56638217,
+            "endTime": 0.525,
+            "startTime": 0.455,
+            "word": "个"
+          },
+          {
+            "confidence": 0.9422367,
+            "endTime": 0.625,
+            "startTime": 0.525,
+            "word": "问"
+          },
+          {
+            "confidence": 0.9267222,
+            "endTime": 0.985,
+            "startTime": 0.625,
+            "word": "题，"
+          },
+          {
+            "confidence": 0.90971166,
+            "endTime": 1.395,
+            "startTime": 1.235,
+            "word": "其"
+          },
+          {
+            "confidence": 0.9697578,
+            "endTime": 1.495,
+            "startTime": 1.395,
+            "word": "实"
+          },
+          {
+            "confidence": 0.9708339,
+            "endTime": 1.605,
+            "startTime": 1.495,
+            "word": "我"
+          },
+          {
+            "confidence": 0.92234063,
+            "endTime": 1.655,
+            "startTime": 1.605,
+            "word": "也"
+          },
+          {
+            "confidence": 0.8927941,
+            "endTime": 1.775,
+            "startTime": 1.655,
+            "word": "挺"
+          },
+          {
+            "confidence": 0.91221374,
+            "endTime": 1.935,
+            "startTime": 1.775,
+            "word": "好"
+          },
+          {
+            "confidence": 0.8053779,
+            "endTime": 2.135,
+            "startTime": 1.935,
+            "word": "奇。"
+          }
+        ]
+      },
+      {
+        "endTime": 6.574,
+        "startTime": 2.6540000000000004,
+        "text": "未来会继续涨，还是反弹完再掉下来，这个谁也猜不准。\n\n",
+        "words": [
+          {
+            "confidence": 0.76405877,
+            "endTime": 2.774,
+            "startTime": 2.6540000000000004,
+            "word": "未"
+          },
+          {
+            "confidence": 0.94724864,
+            "endTime": 2.954,
+            "startTime": 2.774,
+            "word": "来"
+          },
+          {
+            "confidence": 0.9680763,
+            "endTime": 3.144,
+            "startTime": 2.954,
+            "word": "会"
+          },
+          {
+            "confidence": 0.92656267,
+            "endTime": 3.2940000000000005,
+            "startTime": 3.144,
+            "word": "继"
+          },
+          {
+            "confidence": 0.9694521,
+            "endTime": 3.4240000000000004,
+            "startTime": 3.2940000000000005,
+            "word": "续"
+          },
+          {
+            "confidence": 0.9604154,
+            "endTime": 3.614,
+            "startTime": 3.4240000000000004,
+            "word": "涨，"
+          },
+          {
+            "confidence": 0.93601406,
+            "endTime": 4.004,
+            "startTime": 3.864,
+            "word": "还"
+          },
+          {
+            "confidence": 0.8304798,
+            "endTime": 4.254,
+            "startTime": 4.004,
+            "word": "是"
+          },
+          {
+            "confidence": 0.9252691,
+            "endTime": 4.434,
+            "startTime": 4.254,
+            "word": "反"
+          },
+          {
+            "confidence": 0.8671856,
+            "endTime": 4.594,
+            "startTime": 4.434,
+            "word": "弹"
+          },
+          {
+            "confidence": 0.8994014,
+            "endTime": 4.764,
+            "startTime": 4.594,
+            "word": "完"
+          },
+          {
+            "confidence": 0.9112242,
+            "endTime": 4.894,
+            "startTime": 4.764,
+            "word": "再"
+          },
+          {
+            "confidence": 0.9297293,
+            "endTime": 5.064,
+            "startTime": 4.894,
+            "word": "掉"
+          },
+          {
+            "confidence": 0.9275369,
+            "endTime": 5.174,
+            "startTime": 5.064,
+            "word": "下"
+          },
+          {
+            "confidence": 0.97981155,
+            "endTime": 5.394,
+            "startTime": 5.174,
+            "word": "来，"
+          },
+          {
+            "confidence": 0.9345338,
+            "endTime": 5.764,
+            "startTime": 5.594,
+            "word": "这"
+          },
+          {
+            "confidence": 0.5346583,
+            "endTime": 5.904,
+            "startTime": 5.764,
+            "word": "个"
+          },
+          {
+            "confidence": 0.78301746,
+            "endTime": 6.114000000000001,
+            "startTime": 5.904,
+            "word": "谁"
+          },
+          {
+            "confidence": 0.8162832,
+            "endTime": 6.174,
+            "startTime": 6.114000000000001,
+            "word": "也"
+          },
+          {
+            "confidence": 0.9079821,
+            "endTime": 6.354,
+            "startTime": 6.174,
+            "word": "猜"
+          },
+          {
+            "confidence": 0.958458,
+            "endTime": 6.444000000000001,
+            "startTime": 6.354,
+            "word": "不"
+          },
+          {
+            "confidence": 0.9346599,
+            "endTime": 6.574,
+            "startTime": 6.444000000000001,
+            "word": "准。"
+          }
+        ]
+      },
+      {
+        "endTime": 7.631,
+        "startTime": 6.831,
+        "text": "但我突然想到一件事：\n\n",
+        "words": [
+          {
+            "confidence": 0.72685975,
+            "endTime": 6.941000000000001,
+            "startTime": 6.831,
+            "word": "但"
+          },
+          {
+            "confidence": 0.9113467,
+            "endTime": 7.051,
+            "startTime": 6.941000000000001,
+            "word": "我"
+          },
+          {
+            "confidence": 0.783824,
+            "endTime": 7.171,
+            "startTime": 7.051,
+            "word": "突"
+          },
+          {
+            "confidence": 0.5668687,
+            "endTime": 7.231000000000001,
+            "startTime": 7.171,
+            "word": "然"
+          },
+          {
+            "confidence": 0.90202975,
+            "endTime": 7.381,
+            "startTime": 7.231000000000001,
+            "word": "想"
+          },
+          {
+            "confidence": 0.8239152,
+            "endTime": 7.501,
+            "startTime": 7.381,
+            "word": "到"
+          },
+          {
+            "confidence": 0.5630299,
+            "endTime": 7.531000000000001,
+            "startTime": 7.501,
+            "word": "一"
+          },
+          {
+            "confidence": 0.68642396,
+            "endTime": 7.601000000000001,
+            "startTime": 7.531000000000001,
+            "word": "件"
+          },
+          {
+            "confidence": 0.28938586,
+            "endTime": 7.631,
+            "startTime": 7.601000000000001,
+            "word": "事："
+          }
+        ]
+      },
+      {
+        "endTime": 12.648,
+        "startTime": 8.838000000000001,
+        "text": "我们总觉得“创新高以后买”很危险，可历史上，真的是这样吗？\n\n",
+        "words": [
+          {
+            "confidence": 0.9487124,
+            "endTime": 8.928,
+            "startTime": 8.838000000000001,
+            "word": "我"
+          },
+          {
+            "confidence": 0.9791511,
+            "endTime": 8.998000000000001,
+            "startTime": 8.928,
+            "word": "们"
+          },
+          {
+            "confidence": 0.9275875,
+            "endTime": 9.128,
+            "startTime": 8.998000000000001,
+            "word": "总"
+          },
+          {
+            "confidence": 0.65440243,
+            "endTime": 9.278,
+            "startTime": 9.128,
+            "word": "觉"
+          },
+          {
+            "confidence": 0.3110082,
+            "endTime": 9.318,
+            "startTime": 9.278,
+            "word": "得“"
+          },
+          {
+            "confidence": 0.88155717,
+            "endTime": 9.488,
+            "startTime": 9.318,
+            "word": "创"
+          },
+          {
+            "confidence": 0.9802367,
+            "endTime": 9.628,
+            "startTime": 9.488,
+            "word": "新"
+          },
+          {
+            "confidence": 0.9595023,
+            "endTime": 9.808,
+            "startTime": 9.628,
+            "word": "高"
+          },
+          {
+            "confidence": 0.90195376,
+            "endTime": 9.878,
+            "startTime": 9.808,
+            "word": "以"
+          },
+          {
+            "confidence": 0.6705109,
+            "endTime": 10.098,
+            "startTime": 9.878,
+            "word": "后"
+          },
+          {
+            "confidence": 0.25290638,
+            "endTime": 10.168,
+            "startTime": 10.098,
+            "word": "买”"
+          },
+          {
+            "confidence": 0.8289672,
+            "endTime": 10.408,
+            "startTime": 10.168,
+            "word": "很"
+          },
+          {
+            "confidence": 0.92463094,
+            "endTime": 10.568,
+            "startTime": 10.408,
+            "word": "危"
+          },
+          {
+            "confidence": 0.87469935,
+            "endTime": 10.768,
+            "startTime": 10.568,
+            "word": "险，"
+          },
+          {
+            "confidence": 0.9580962,
+            "endTime": 11.038,
+            "startTime": 10.908,
+            "word": "可"
+          },
+          {
+            "confidence": 0.94385904,
+            "endTime": 11.148,
+            "startTime": 11.038,
+            "word": "历"
+          },
+          {
+            "confidence": 0.88823295,
+            "endTime": 11.278,
+            "startTime": 11.148,
+            "word": "史"
+          },
+          {
+            "confidence": 0.9384616,
+            "endTime": 11.498,
+            "startTime": 11.278,
+            "word": "上，"
+          },
+          {
+            "confidence": 0.937127,
+            "endTime": 12.048,
+            "startTime": 11.918,
+            "word": "真"
+          },
+          {
+            "confidence": 0.9863389,
+            "endTime": 12.138000000000002,
+            "startTime": 12.048,
+            "word": "的"
+          },
+          {
+            "confidence": 0.96889186,
+            "endTime": 12.228000000000002,
+            "startTime": 12.138000000000002,
+            "word": "是"
+          },
+          {
+            "confidence": 0.96109194,
+            "endTime": 12.328,
+            "startTime": 12.228000000000002,
+            "word": "这"
+          },
+          {
+            "confidence": 0.96345973,
+            "endTime": 12.458,
+            "startTime": 12.328,
+            "word": "样"
+          },
+          {
+            "confidence": 0.9622706,
+            "endTime": 12.648,
+            "startTime": 12.458,
+            "word": "吗？"
+          }
+        ]
+      },
+      {
+        "endTime": 16.098000000000003,
+        "startTime": 13.038000000000002,
+        "text": "所以我干脆把过去二十多年的黄金价格翻出来看了一遍。\n",
+        "words": [
+          {
+            "confidence": 0.75444245,
+            "endTime": 13.178000000000004,
+            "startTime": 13.038000000000002,
+            "word": "所"
+          },
+          {
+            "confidence": 0.9174629,
+            "endTime": 13.268000000000002,
+            "startTime": 13.178000000000004,
+            "word": "以"
+          },
+          {
+            "confidence": 0.96134824,
+            "endTime": 13.378000000000002,
+            "startTime": 13.268000000000002,
+            "word": "我"
+          },
+          {
+            "confidence": 0.91771674,
+            "endTime": 13.528000000000002,
+            "startTime": 13.378000000000002,
+            "word": "干"
+          },
+          {
+            "confidence": 0.8429128,
+            "endTime": 13.688000000000002,
+            "startTime": 13.528000000000002,
+            "word": "脆"
+          },
+          {
+            "confidence": 0.88704604,
+            "endTime": 13.818,
+            "startTime": 13.688000000000002,
+            "word": "把"
+          },
+          {
+            "confidence": 0.9184301,
+            "endTime": 13.988,
+            "startTime": 13.818,
+            "word": "过"
+          },
+          {
+            "confidence": 0.93694544,
+            "endTime": 14.118000000000002,
+            "startTime": 13.988,
+            "word": "去"
+          },
+          {
+            "confidence": 0.9322815,
+            "endTime": 14.198000000000002,
+            "startTime": 14.118000000000002,
+            "word": "二"
+          },
+          {
+            "confidence": 0.9313076,
+            "endTime": 14.318,
+            "startTime": 14.198000000000002,
+            "word": "十"
+          },
+          {
+            "confidence": 0.9771964,
+            "endTime": 14.438000000000002,
+            "startTime": 14.318,
+            "word": "多"
+          },
+          {
+            "confidence": 0.9748587,
+            "endTime": 14.558000000000002,
+            "startTime": 14.438000000000002,
+            "word": "年"
+          },
+          {
+            "confidence": 0.95625174,
+            "endTime": 14.648,
+            "startTime": 14.558000000000002,
+            "word": "的"
+          },
+          {
+            "confidence": 0.89005625,
+            "endTime": 14.808000000000002,
+            "startTime": 14.648,
+            "word": "黄"
+          },
+          {
+            "confidence": 0.9287877,
+            "endTime": 14.908,
+            "startTime": 14.808000000000002,
+            "word": "金"
+          },
+          {
+            "confidence": 0.9645785,
+            "endTime": 15.108000000000002,
+            "startTime": 14.908,
+            "word": "价"
+          },
+          {
+            "confidence": 0.9416293,
+            "endTime": 15.228000000000002,
+            "startTime": 15.108000000000002,
+            "word": "格"
+          },
+          {
+            "confidence": 0.884644,
+            "endTime": 15.368000000000002,
+            "startTime": 15.228000000000002,
+            "word": "翻"
+          },
+          {
+            "confidence": 0.952568,
+            "endTime": 15.468000000000002,
+            "startTime": 15.368000000000002,
+            "word": "出"
+          },
+          {
+            "confidence": 0.9445793,
+            "endTime": 15.538000000000002,
+            "startTime": 15.468000000000002,
+            "word": "来"
+          },
+          {
+            "confidence": 0.9850046,
+            "endTime": 15.748,
+            "startTime": 15.538000000000002,
+            "word": "看"
+          },
+          {
+            "confidence": 0.9073703,
+            "endTime": 15.838,
+            "startTime": 15.748,
+            "word": "了"
+          },
+          {
+            "confidence": 0.89589405,
+            "endTime": 15.908,
+            "startTime": 15.838,
+            "word": "一"
+          },
+          {
+            "confidence": 0.91947144,
+            "endTime": 16.098000000000003,
+            "startTime": 15.908,
+            "word": "遍。"
+          }
+        ]
+      }
+    ],
+    "synthesize_text_length": 102,
+    "task_id": "0c95e111-c9e6-4f63-921d-258300c79e14",
+    "task_status": 2,
+    "url_expire_time": 1787308121
+  },
+  "message": "ok"
+}

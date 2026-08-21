@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "outputs": [
+    {
+      "path": "renders/final.mp4",
+      "format": "mp4",
+      "codec": "h264",
+      "audio_codec": "aac",
+      "resolution": "1080x1920",
+      "fps": 30,
+      "duration_seconds": 196.5,
+      "file_size_bytes": 21624237,
+      "platform_target": "vertical social video"
+    }
+  ],
+  "warnings": [
+    "本地 WhisperX/faster-whisper 未安装，无法执行独立中文 ASR；已用豆包原始逐字文本匹配与成片八段能量包络相关性检查替代。"
+  ],
+  "verification_notes": [
+    "25/25 个镜头中点从最终 MP4 抽取并完成视觉检查。",
+    "最终容器包含 1080x1920 H.264 视频流和 48kHz 双声道 AAC 音频流。",
+    "八段成片音轨与批准源音频的能量包络相关系数为 0.9844—0.9874，全部通过；音频流在187.733秒结束，随后保持免责声明卡静默。",
+    "118条逐字字幕已原生烘焙，字幕来源文件存在，自动检查覆盖率为1.0。",
+    "最终192.48秒抽帧确认来源、统计口径和精确免责声明可读，并且此后没有CTA或其他场景。"
+  ],
+  "render_grammar": "explainer-data",
+  "slideshow_risk_score": {"average": 0.71, "verdict": "strong"},
+  "decision_log_ref": "projects/gold-ath-chasing-experiment/decision_log.json",
+  "final_review_ref": "projects/gold-ath-chasing-experiment/artifacts/final_review.json",
+  "metadata": {
+    "render_runtime": "remotion",
+    "composition_mode": "atelier",
+    "runtime_swap_detected": false,
+    "native_scene_count": 25,
+    "caption_cues": 118,
+    "background_music": false,
+    "total_cost_usd": 0.0176
+  }
+}

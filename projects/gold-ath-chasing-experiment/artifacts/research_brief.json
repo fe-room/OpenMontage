@@ -1,0 +1,251 @@
+{
+  "version": "1.0",
+  "topic": "如果过去25年每次黄金创历史新高后买入，结果会怎样？",
+  "research_date": "2026-08-21",
+  "landscape": {
+    "existing_content": [
+      {
+        "title": "Gold Mid-Year Outlook 2026: Point break",
+        "url": "https://www.gold.org/goldhub/research/gold-mid-year-outlook-2026",
+        "source": "World Gold Council research",
+        "angle": "从宏观驱动和历史回撤解释黄金在创纪录后的波动",
+        "what_it_covers": "2026年新高、随后回撤、波动率与历史上超过20%的回撤事件",
+        "what_it_misses": "没有回答普通投资者按统一规则在每个新高后买入的多周期胜率，也没有处理连续新高的样本聚集",
+        "engagement_signal": "权威机构的当期研究，直接回应创纪录后的回撤问题"
+      },
+      {
+        "title": "Gold Keeps Reaching New Heights. Here’s Why Investors Should Proceed With Caution",
+        "url": "https://www.morningstar.com/markets/gold-keeps-reaching-new-heights-heres-why-investors-should-proceed-with-caution",
+        "source": "Morningstar analysis",
+        "angle": "强调黄金接近历史高位时的估值与长期回撤风险",
+        "what_it_covers": "真实购买焦虑、通胀调整后的长期高低点与谨慎观点",
+        "what_it_misses": "没有用可复现的事件定义检验‘创新高本身是否危险’",
+        "engagement_signal": "标题直接命中‘创新高还能不能买’的主流疑问"
+      },
+      {
+        "title": "I want to buy more gold atm, but looking at these historical graph. Quite scary",
+        "url": "https://www.reddit.com/r/Gold/comments/1o7euzx/i_want_to_buy_more_gold_atm_but_looking_at_these/",
+        "source": "Reddit audience discussion",
+        "angle": "真实投资者面对历史新高时在追涨和等待回调之间摇摆",
+        "what_it_covers": "是否等待回调、长期持有还是止盈等真实问题",
+        "what_it_misses": "讨论主要是观点和经验，缺少统一口径的历史检验",
+        "engagement_signal": "帖子获得500余次赞同，问题与目标观众高度重合"
+      }
+    ],
+    "saturated_angles": [
+      "用美联储、美元和地缘政治预测黄金下一步涨跌",
+      "只讲黄金避险属性和央行购金的泛科普",
+      "用1980年或2011年单一高点证明追高一定危险"
+    ],
+    "underserved_gaps": [
+      "用同一交易规则统计每次历史新高后的多周期结果，并将最终收益与过程中的痛苦分开",
+      "同时展示全部新高日与60交易日去重事件，避免把一轮牛市误当成大量独立样本",
+      "用现货主回测、独立现货源和期货口径三重核验，而不是依赖单一数据源"
+    ]
+  },
+  "trending": {
+    "recent_developments": [
+      {
+        "headline": "2026年上半年黄金创下12次以上新高，随后从纪录高位显著回撤",
+        "url": "https://www.gold.org/goldhub/research/gold-mid-year-outlook-2026",
+        "date": "2026-07-01",
+        "relevance": "让‘创新高后会不会站岗’同时具备当下性和真实痛感"
+      },
+      {
+        "headline": "世界黄金协会统计2024年以来出现大量新高日",
+        "url": "https://www.gold.org/goldhub/research/gold-market-commentary-december-2025",
+        "date": "2025-12",
+        "relevance": "说明连续新高并非独立事件，必须在视频里解释样本聚集"
+      }
+    ],
+    "active_discussions": [
+      {
+        "platform": "Reddit r/Gold",
+        "topic_or_url": "https://www.reddit.com/r/Gold/comments/1igm0zq/",
+        "sentiment": "一边担心买在顶部，一边后悔此前因等待回调而错过，分歧强烈"
+      },
+      {
+        "platform": "Reddit r/Gold",
+        "topic_or_url": "https://www.reddit.com/r/Gold/comments/1o7euzx/i_want_to_buy_more_gold_atm_but_looking_at_these/",
+        "sentiment": "看到历史图后明显恐惧，希望知道该买、等回调还是分批买"
+      }
+    ],
+    "timeliness_window": "weeks"
+  },
+  "data_points": [
+    {
+      "claim": "组合现货主回测中，2001-01-01至2026-08-20共有199个创新高交易日；创新高后1年平均收益23.8%，正收益概率76.1%，成熟样本163个。",
+      "source_url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/results/%E5%9B%9E%E6%B5%8B%E6%8A%A5%E5%91%8A.md",
+      "source_name": "本地现货主回测报告",
+      "credibility": "primary_source",
+      "surprise_factor": "counterintuitive",
+      "usable_as": "hook, stat_card, script_anchor"
+    },
+    {
+      "claim": "创新高后6个月正收益概率为77.4%，普通交易日为71.1%；差异存在，但不能把它解释成‘新高必赚’。",
+      "source_url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/results/comparison_vs_ordinary.csv",
+      "source_name": "本地创新高与普通日对照表",
+      "credibility": "primary_source",
+      "surprise_factor": "surprising",
+      "usable_as": "comparison_chart"
+    },
+    {
+      "claim": "按60个交易日去重后，主现货独立事件仅8次；其中1年正收益概率87.5%，但小样本意味着不确定性很高。",
+      "source_url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/results/summary_statistics.csv",
+      "source_name": "本地汇总统计",
+      "credibility": "primary_source",
+      "surprise_factor": "notable",
+      "usable_as": "boundary_condition, stat_card"
+    },
+    {
+      "claim": "最痛苦的主现货60日去重案例是2008年初：买入后一年内按收盘价最大浮亏约19.4%，即使最终一年收益接近持平，持有过程也很难熬。",
+      "source_url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/results/worst_60d_events.csv",
+      "source_name": "本地最痛苦事件表",
+      "credibility": "primary_source",
+      "surprise_factor": "surprising",
+      "usable_as": "narrative_case, retention_turn"
+    },
+    {
+      "claim": "Dukascopy独立现货复核中，创新高后1年正收益概率为76.6%，与主现货76.1%接近；两套数据源的一年方向一致。",
+      "source_url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/results/spot_vs_dukascopy_summary.csv",
+      "source_name": "本地Dukascopy独立复核",
+      "credibility": "primary_source",
+      "surprise_factor": "notable",
+      "usable_as": "credibility_anchor"
+    },
+    {
+      "claim": "世界黄金协会指出，自1971年以来有8次黄金在创纪录后回撤超过20%，这些事件的平均回撤为36%、中位数为29%。",
+      "source_url": "https://www.gold.org/goldhub/research/gold-mid-year-outlook-2026",
+      "source_name": "World Gold Council",
+      "credibility": "primary_source",
+      "surprise_factor": "surprising",
+      "usable_as": "boundary_condition"
+    }
+  ],
+  "audience_insights": {
+    "common_questions": [
+      "黄金已经创新高，现在买是不是大概率接盘？",
+      "应该现在买、等回调，还是分批买？",
+      "如果买在顶部，需要多久才能回本？",
+      "黄金长期上涨是否意味着历史新高其实很常见？"
+    ],
+    "misconceptions": [
+      {
+        "myth": "创新高等于价格已经见顶。",
+        "reality": "创新高只是相对过去价格的位置；它既可能延续趋势，也可能随后深度回撤，必须同时看概率和路径。",
+        "source": "本地回测与World Gold Council历史回撤研究"
+      },
+      {
+        "myth": "最后赚钱就说明当时买得安全。",
+        "reality": "终点收益会掩盖中间最大浮亏和漫长水下期；2008年案例就显示两者可能完全不同。",
+        "source": "本地worst_60d_events.csv"
+      },
+      {
+        "myth": "199个创新高日就是199次独立实验。",
+        "reality": "新高日高度聚集，60交易日去重后主样本只有8次，因此独立事件结论必须保留不确定性。",
+        "source": "本地回测报告"
+      }
+    ],
+    "knowledge_level": "面向懂得收益率但不熟悉样本聚集、最大回撤和删失样本的普通投资者；术语必须立即翻译成日常语言。",
+    "pain_points": [
+      "害怕买在高点后长期站岗",
+      "把预测下一次涨跌和评估历史信号混为一谈",
+      "看到高胜率就忽略小样本、费用和数据源差异"
+    ]
+  },
+  "expert_voices": [
+    {
+      "name": "World Gold Council research team",
+      "title_or_affiliation": "World Gold Council",
+      "position": "历史上黄金在创纪录后仍可能出现幅度很深的回撤，必须把上涨概率和下行路径同时看。",
+      "source_url": "https://www.gold.org/goldhub/research/gold-mid-year-outlook-2026"
+    }
+  ],
+  "angles_discovered": [
+    {
+      "name": "追高竟然没那么危险？",
+      "hook": "我把过去25年所有黄金新高日都买了一遍，结果最反直觉的不是收益，而是‘新高’这个标签本身。",
+      "type": "data_driven",
+      "why_now": "2026年黄金经历多次新高和显著回撤，观众正在真实纠结是否站岗；本地199个事件能直接检验这个问题。",
+      "grounded_in": ["data_points[0]", "data_points[1]", "audience_insights.common_questions[0]"]
+    },
+    {
+      "name": "赚钱不等于拿得住",
+      "hook": "一年后可能没亏，但中间先亏掉五分之一，你真的还能拿住吗？",
+      "type": "narrative",
+      "why_now": "本地2008年和2020年事件把终点收益与持有痛苦分开，比单一胜率更接近真实决策。",
+      "grounded_in": ["data_points[3]", "audience_insights.misconceptions[1]"]
+    },
+    {
+      "name": "199次其实只有8次",
+      "hook": "表面上有199次实验，但真正相对独立的事件可能只有8次。",
+      "type": "contrarian",
+      "why_now": "大量财经内容用大样本数字制造确定感，而本项目能公开演示连续新高如何夸大样本量。",
+      "grounded_in": ["data_points[2]", "audience_insights.misconceptions[2]"]
+    }
+  ],
+  "visual_references": [
+    {
+      "description": "黄金价格长周期折线，历史新高用暖金色脉冲点逐次点亮，回撤区间用暗红透明带显示。",
+      "url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/results/charts/gold_price_all_time_highs.png",
+      "what_works": "可作为全片世界观底图和时间推进主轴，数字与轴标签应由构图引擎原生渲染"
+    },
+    {
+      "description": "创新高与普通日各持有期正收益概率对照图。",
+      "url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/results/charts/positive_probability_comparison.png",
+      "what_works": "适合核心结果揭示，但应重绘成移动端可读的原生动画图表"
+    }
+  ],
+  "sources": [
+    {
+      "url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/results/%E5%9B%9E%E6%B5%8B%E6%8A%A5%E5%91%8A.md",
+      "title": "黄金创新高追高实验：现货主回测报告",
+      "used_for": "核心统计、方法、限制和案例",
+      "reliability": "primary"
+    },
+    {
+      "url": "file:///Users/jishubu/Desktop/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86/gold/%E9%A1%B9%E7%9B%AE%E6%95%B0%E6%8D%AE%E8%AF%B4%E6%98%8E%E4%B8%8E%E6%9D%A5%E6%BA%90.md",
+      "title": "黄金创新高项目：数据、组合口径与来源说明",
+      "used_for": "数据源、清洗口径和缺陷披露",
+      "reliability": "primary"
+    },
+    {
+      "url": "https://www.gold.org/goldhub/research/gold-mid-year-outlook-2026",
+      "title": "Gold Mid-Year Outlook 2026: Point break",
+      "used_for": "2026当下性与创纪录后大幅回撤的历史外部参照",
+      "reliability": "primary"
+    },
+    {
+      "url": "https://www.gold.org/goldhub/research/whats-a-bear-case-for-gold",
+      "title": "What's a bear case for gold: A historical perspective",
+      "used_for": "黄金主要历史熊市和回撤边界",
+      "reliability": "primary"
+    },
+    {
+      "url": "https://www.lbma.org.uk/prices-and-data/lbma-gold-price/lbma-gold-price",
+      "title": "LBMA Gold Price FAQs",
+      "used_for": "LBMA价格方法与授权边界",
+      "reliability": "primary"
+    },
+    {
+      "url": "https://www.reddit.com/r/Gold/comments/1o7euzx/i_want_to_buy_more_gold_atm_but_looking_at_these/",
+      "title": "I want to buy more gold atm, but looking at these historical graph. Quite scary",
+      "used_for": "真实受众问题与恐惧",
+      "reliability": "anecdotal"
+    },
+    {
+      "url": "https://www.reddit.com/r/Gold/comments/1igm0zq/",
+      "title": "Buying at All time high",
+      "used_for": "真实受众对等待回调与长期持有的分歧",
+      "reliability": "anecdotal"
+    }
+  ],
+  "research_summary": "最有价值的结论不是‘创新高可以买’或‘不能买’，而是创新高这个标签单独看并不足以给出确定答案：本地回测显示短中期胜率并不差，且多个数据源方向接近；但连续新高让199个表面样本压缩成仅8个60日去重事件，2008等案例又说明最终收益可能掩盖接近两成甚至更深的持有痛苦。因此视频应以一个问题贯穿：创新高到底是危险信号，还是一个需要结合持有期、回撤承受力、产品成本和样本独立性来判断的价格位置？",
+  "metadata": {
+    "content_category": "finance",
+    "core_question": "黄金创新高本身，到底是不是一个危险的买入信号？",
+    "source_directory": "/Users/jishubu/Desktop/数据收集/gold",
+    "data_as_of": "2026-08-20",
+    "external_research_as_of": "2026-08-21"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "project_id": "gold-ath-chasing-experiment",
+  "pipeline_type": "animated-explainer",
+  "stage": "cover",
+  "status": "awaiting_human",
+  "timestamp": "2026-08-21T10:16:39.308325+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": false,
+  "artifacts": {
+    "cover_package": {
+      "version": "1.0",
+      "status": "ready",
+      "source_video_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/renders/final.mp4",
+      "primary_cover": {
+        "id": "gold-ath-cover-primary",
+        "path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/assets/images/cover.png",
+        "format": "png",
+        "width": 1080,
+        "height": 1440,
+        "aspect_ratio": "3:4",
+        "role": "primary",
+        "text_overlay": [
+          "\u9ec4\u91d1\u521b\u65b0\u9ad8\u540e\uff0c\u8fd8\u80fd\u4e0d\u80fd\u4e70\uff1f",
+          "199\u4e2a\u65b0\u9ad8\u65e5",
+          "\u630960\u4e2a\u4ea4\u6613\u65e5\u53bb\u91cd\u4ee5\u540e\uff1a8\u6b21",
+          "\u65b0\u9ad8\u4e0d\u662f\u7ed3\u8bba\uff0c\u5386\u53f2\u6570\u636e\u4e5f\u4e0d\u662f\u9884\u8a00\u3002",
+          "\u5386\u53f2\u56de\u6d4b \u00b7 \u975e\u4e70\u5165\u5efa\u8bae"
+        ],
+        "source_tool": "Remotion local deterministic compositor",
+        "file_size_bytes": 958367,
+        "cost_usd": 0.0
+      },
+      "variants": [],
+      "creative_rationale": "\u91c7\u7528\u5408\u6210\u5f0f\u5c01\u9762\uff0c\u5ef6\u7eed\u6210\u7247\u7684\u9ed1\u66dc\u77f3\u3001\u65e7\u91d1\u548c\u98ce\u9669\u7ea2\u89c6\u89c9\u4f53\u7cfb\uff1b\u6807\u9898\u53ea\u63d0\u51fa\u89c6\u9891\u771f\u5b9e\u56de\u7b54\u7684\u95ee\u9898\uff0c\u4e3b\u4f53\u4f7f\u7528\u6210\u7247\u7b7e\u540d\u88c5\u7f6e\uff0c\u628a199\u4e2a\u65b0\u9ad8\u65e5\u630960\u4e2a\u4ea4\u6613\u65e5\u53bb\u91cd\u4e3a8\u6b21\uff0c\u5f62\u6210\u6e05\u6670\u4f46\u4e0d\u5938\u5927\u8bc1\u636e\u7684\u89c6\u89c9\u5f20\u529b\u3002",
+      "decision_log_ref": "projects/gold-ath-chasing-experiment/artifacts/decision_log.json",
+      "verification": {
+        "file_exists": true,
+        "dimensions_match": true,
+        "text_checked": true,
+        "mobile_readability_checked": true,
+        "content_match": true,
+        "issues": []
+      },
+      "metadata": {
+        "cover_approach": "composited",
+        "resolved_cover_spec": {
+          "width": 1080,
+          "height": 1440,
+          "aspect_ratio": "3:4",
+          "basis": "vertical-video default from cover-director"
+        },
+        "mobile_check_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/assets/images/cover-mobile-check.png",
+        "content_category": "finance",
+        "financial_claim_review": "\u6807\u9898\u4fdd\u6301\u95ee\u53e5\uff1b\u6570\u636e\u6807\u7b7e\u4fdd\u7559\u53bb\u91cd\u6761\u4ef6\uff1b\u672a\u628a\u5386\u53f2\u7ed3\u679c\u6539\u5199\u4e3a\u4e70\u5165\u7ed3\u8bba\u3002"
+      }
+    }
+  },
+  "style_playbook": "custom: gold-high-water-marks",
+  "review": {
+    "stage": "cover",
+    "round": 1,
+    "decision": "PASS",
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "nitpicks": 0,
+      "success_criteria_met": "2/2",
+      "notes": [
+        "1080x1440 (3:4) PNG exists and matches the resolved vertical cover specification.",
+        "Exact Chinese headline and 199-to-8 evidence labels remain readable in the 270x360 mobile check.",
+        "Finance framing remains qualified: question headline, explicit de-duplication condition, and no buy recommendation."
+      ]
+    }
+  },
+  "cost_snapshot": {
+    "budget_usd": 2.0,
+    "spent_usd": 0.0176,
+    "remaining_usd": 1.9824
+  },
+  "metadata": {
+    "gate_reason": "Cover requires human review before publish."
+  }
+}

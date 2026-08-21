@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "output_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/renders/final.mp4",
+  "status": "pass",
+  "checks": {
+    "technical_probe": {
+      "valid_container": true,
+      "duration_seconds": 196.5,
+      "resolution": "1080x1920",
+      "fps": 30,
+      "has_audio": true,
+      "codec": "h264",
+      "file_size_bytes": 21624237,
+      "issues": []
+    },
+    "visual_spotcheck": {
+      "frames_sampled": 25,
+      "frame_paths": [
+        "renders/review-frames-25/frame_0000.png", "renders/review-frames-25/frame_0001.png", "renders/review-frames-25/frame_0002.png", "renders/review-frames-25/frame_0003.png", "renders/review-frames-25/frame_0004.png",
+        "renders/review-frames-25/frame_0005.png", "renders/review-frames-25/frame_0006.png", "renders/review-frames-25/frame_0007.png", "renders/review-frames-25/frame_0008.png", "renders/review-frames-25/frame_0009.png",
+        "renders/review-frames-25/frame_0010.png", "renders/review-frames-25/frame_0011.png", "renders/review-frames-25/frame_0012.png", "renders/review-frames-25/frame_0013.png", "renders/review-frames-25/frame_0014.png",
+        "renders/review-frames-25/frame_0015.png", "renders/review-frames-25/frame_0016.png", "renders/review-frames-25/frame_0017.png", "renders/review-frames-25/frame_0018.png", "renders/review-frames-25/frame_0019.png",
+        "renders/review-frames-25/frame_0020.png", "renders/review-frames-25/frame_0021.png", "renders/review-frames-25/frame_0022.png", "renders/review-frames-25/frame_0023.png", "renders/review-frames-25/frame_0024.png"
+      ],
+      "black_frames_detected": false,
+      "broken_overlays": false,
+      "missing_assets": false,
+      "unreadable_text": false,
+      "issues": []
+    },
+    "opening_frame_check": {
+      "frame_path": "renders/.final_review_frames/opening_frame_0.png",
+      "extracted": true,
+      "large_blank_area_detected": false,
+      "theme_elements_visible": true,
+      "blank_area_ratio": 0.5818,
+      "edge_density": 0.0192,
+      "inspection_method": "pixel_statistics_plus_human_semantic_review",
+      "issues": []
+    },
+    "audio_spotcheck": {
+      "narration_present": true,
+      "music_present": false,
+      "unexpected_silence": false,
+      "clipping_detected": false,
+      "mix_intelligible": true,
+      "issues": []
+    },
+    "promise_preservation": {
+      "delivery_promise_honored": true,
+      "renderer_family_used": "explainer-data",
+      "render_runtime_used": "remotion",
+      "runtime_swap_detected": false,
+      "runtime_swap_check": "ok — proposal and edit agree; Remotion Atelier executed",
+      "motion_ratio_actual": 1.0,
+      "silent_downgrade_detected": false,
+      "issues": []
+    },
+    "subtitle_check": {
+      "subtitles_expected": true,
+      "subtitles_present": true,
+      "coverage_ratio": 1.0,
+      "timing_drift_detected": false,
+      "issues": []
+    },
+    "compliance": {
+      "financial_disclaimer_present": true,
+      "financial_disclaimer_exact": true,
+      "financial_disclaimer_readable": true,
+      "financial_disclaimer_at_end": true,
+      "issues": []
+    },
+    "transcript_comparison": {
+      "transcript_matches_script": null,
+      "word_accuracy": null,
+      "issues": [
+        "本地ASR不可用；改用8/8段豆包返回文本逐段精确匹配和成片音轨能量包络相关性检查，全部通过。"
+      ]
+    },
+    "atelier": {
+      "stock_reuse_detected": false,
+      "offending_imports": [],
+      "art_direction_declared": true,
+      "art_direction": "projects/gold-ath-chasing-experiment/art-direction.md",
+      "issues": []
+    }
+  },
+  "issues_found": [],
+  "recommended_action": "present_to_user",
+  "metadata": {
+    "distinctness_review": "通过：每一段主体不同；签名装置199→8仅用于高潮，没有复用模板化英雄组件。",
+    "audio_integrity": {
+      "method": "per-section 10ms RMS energy-envelope correlation against approved source audio",
+      "sections_passed": "8/8",
+      "correlation_range": [0.9844, 0.9874],
+      "codec_alignment_offset_ms": 45
+    },
+    "final_frame_reviewed_at_seconds": 192.48
+  }
+}
