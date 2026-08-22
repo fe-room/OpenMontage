@@ -22,6 +22,44 @@ A counterintuitive angle is welcome; a counterfactual one is not. Every material
 conclusion must be traceable to data, a real case, or an explicitly identified
 live/account record.
 
+## Default Mandarin Narration Voice
+
+For original Mandarin finance narration, the default house voice is
+`old_friend_observational`（老朋友观察型）. At the script stage, read and apply
+the complete canonical guide
+[`财经视频旁白文案 AI 生成规则｜老朋友观察型.md`](../../财经视频旁白文案%20AI%20生成规则｜老朋友观察型.md)
+before drafting narration. This is a binding writing reference, not optional
+inspiration.
+
+The narrator is a curious, well-prepared friend sharing how they investigated a
+real market or business question. Preserve the feeling of discovery:
+
+- Begin with a recent phenomenon and a concrete question a normal viewer would
+  actually ask; do not open as a news anchor, analyst, lecturer, or report.
+- Let the narrator's path remain audible: what caught their attention, what they
+  expected, what they checked, what surprised them, and how a second finding
+  revised the first interpretation.
+- Use restrained conversational Mandarin, short spoken sentences, natural
+  pauses, and thought-turn transitions. Avoid classroom scaffolding, report
+  prose, hype-host slang, fear/FOMO, canned AI summaries, and forced aphorisms.
+- Keep only numbers that move the reasoning forward. Immediately translate each
+  important number into ordinary language or a human-scale experience, and say
+  plainly when a difference is small or inconclusive.
+- Close by answering the opening question with a more precise understanding.
+  Do not broaden the ending into life advice, a slogan, or an unsolicited CTA.
+
+The reusable judgment method required below should feel like one natural,
+question-specific takeaway from the investigation. Do not turn it into a
+numbered lesson, a generic investment lecture, or a late change of subject.
+
+This house voice applies when OpenMontage writes or substantially rewrites
+Mandarin narration. For transcription, clipping, quotation, or faithful
+localization, preserve the source speaker's voice and meaning; use the guide
+only for newly written bridges or framing unless the user explicitly requests a
+full rewrite. An explicit user-selected voice or format overrides this default,
+while the evidence, uncertainty, and compliance rules in this skill remain
+binding.
+
 ## Stage Integration
 
 ### Intake / Idea / Proposal
@@ -83,9 +121,13 @@ For auditability, record these values under `script.metadata.finance_editorial`:
   "core_question": "The single question this video answers",
   "evidence_refs": ["research_brief.data_points[0]"],
   "boundary_conditions": ["The scope or condition that limits the result"],
-  "reusable_judgment_method": "What viewers should check next time"
+  "reusable_judgment_method": "What viewers should check next time",
+  "narration_style": "old_friend_observational"
 }
 ```
+
+Use `narration_style: "source_voice_preserved"` instead when the source-preserving
+exception above applies, or record the explicit user-selected style identifier.
 
 After the reusable judgment method, append the mandatory disclaimer as its own
 final script section, exactly as defined in `AGENT_GUIDE.md`. The disclaimer is
@@ -130,8 +172,10 @@ Also verify:
 - every material claim has a traceable evidence reference;
 - every number or chart advances the reasoning;
 - probability and boundary conditions are stated honestly;
+- original Mandarin narration follows the canonical 老朋友观察型 guide, avoids
+  presenter/lecturer/AI-summary voice, and makes the investigation path audible;
 - `script.metadata.finance_editorial` records the question, evidence,
-  boundaries, and method;
+  boundaries, method, and narration style;
 - the mandatory exact disclaimer remains the final item at every required
   downstream stage.
 

@@ -90,7 +90,7 @@ Key capability families to look for in the output:
 
 | Skill | File | Trigger |
 |---|---|---|
-| Finance Video Editorial Policy | `meta/finance-video-editorial.md` | Only when canonical `content_category` is `finance`; resolved from a pipeline manifest's `conditional_skills` |
+| Finance Video Editorial Policy | `meta/finance-video-editorial.md` | Only when canonical `content_category` is `finance`; resolves evidence/compliance rules and the default Mandarin `old_friend_observational` narration voice from the canonical root guide |
 | Finance Video → WeChat Editorial Policy | `meta/finance-wechat-editorial.md` | Only in the `finance-wechat-article` derivative pipeline; screening, evidence, article, visual, and manual hand-off rules |
 
 ## Creative Skills

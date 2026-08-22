@@ -71,3 +71,15 @@ def test_finance_skill_contains_activation_boundary_and_four_iron_rules():
     assert "plain-language explanation" in text
     assert "reusable judgment method" in text
     assert "For non-finance productions this entire review gate is skipped" in text
+
+
+def test_finance_skill_routes_original_mandarin_narration_to_house_voice_guide():
+    text = (PROJECT_ROOT / "skills/meta/finance-video-editorial.md").read_text()
+    guide = PROJECT_ROOT / "财经视频旁白文案 AI 生成规则｜老朋友观察型.md"
+
+    assert guide.is_file()
+    assert "old_friend_observational" in text
+    assert guide.name.replace(" ", "%20") in text
+    assert '"narration_style": "old_friend_observational"' in text
+    assert "source_voice_preserved" in text
+    assert "binding writing reference" in text
