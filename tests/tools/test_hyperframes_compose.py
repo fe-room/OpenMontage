@@ -1159,6 +1159,54 @@ def test_scaffold_workspace_generates_html_and_assets(tmp_path: Path):
     assert "#0B0F1A" in design_text or "test-playbook" in design_text
 
 
+def test_scaffold_workspace_accepts_single_full_narration_asset(tmp_path: Path):
+    hero = tmp_path / "hero.png"
+    hero.write_bytes(b"\x89PNG\r\n\x1a\n" + b"0" * 1024)
+    narration = tmp_path / "narration_full.mp3"
+    narration.write_bytes(b"ID3" + b"0" * 1024)
+    workspace = tmp_path / "hyperframes"
+
+    result = HyperFramesCompose().execute(
+        {
+            "operation": "scaffold_workspace",
+            "workspace_path": str(workspace),
+            "edit_decisions": {
+                "version": "1.0",
+                "renderer_family": "animation-first",
+                "render_runtime": "hyperframes",
+                "cuts": [
+                    {
+                        "id": "c1",
+                        "source": "asset_hero",
+                        "in_seconds": 0,
+                        "out_seconds": 6,
+                        "type": "image",
+                    }
+                ],
+                "audio": {
+                    "narration": {
+                        "asset_id": "narration-full",
+                        "start_seconds": 0,
+                        "volume": 1.0,
+                    }
+                },
+            },
+            "asset_manifest": {
+                "assets": [
+                    {"id": "asset_hero", "path": str(hero)},
+                    {"id": "narration-full", "path": str(narration)},
+                ]
+            },
+        }
+    )
+
+    assert result.success, result.error
+    html = (workspace / "index.html").read_text(encoding="utf-8")
+    assert 'id="nar-0"' in html
+    assert 'data-start="0"' in html
+    assert "narration_full.mp3" in html
+
+
 def test_scaffold_rejects_empty_cuts(tmp_path: Path):
     result = HyperFramesCompose().execute(
         {
@@ -1279,6 +1327,7 @@ def test_schemas_accept_voice_performance_contract():
     assert "delivery_style" in voice_selection
     assert "pacing_policy" in voice_selection
     assert "sample_approval_required" in voice_selection
+    assert "generation_mode" in voice_selection
 
     asset_schema = json.loads(
         (root / "schemas" / "artifacts" / "asset_manifest.schema.json").read_text(
@@ -1288,6 +1337,8 @@ def test_schemas_accept_voice_performance_contract():
     asset_props = asset_schema["properties"]["assets"]["items"]["properties"]
     assert "voice_performance" in asset_props
     assert "provider_settings" in asset_props["voice_performance"]["properties"]
+    assert "synthesis_mode" in asset_props["voice_performance"]["properties"]
+    assert "source_section_ids" in asset_props["voice_performance"]["properties"]
 
 
 def test_tts_provider_contracts_match_supported_fields():

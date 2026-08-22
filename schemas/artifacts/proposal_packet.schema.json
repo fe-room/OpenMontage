@@ -192,6 +192,11 @@
             "voice_name": { "type": "string" },
             "resource_id": { "type": "string" },
             "speech_rate": { "type": "integer", "minimum": -50, "maximum": 100 },
+            "generation_mode": {
+              "type": "string",
+              "enum": ["single_pass", "segmented"],
+              "description": "How TTS requests are made. single_pass keeps one voice state for the complete narration; segmented is an explicit exception for provider limits or special production needs."
+            },
             "inherited_from_defaults": { "type": "boolean", "description": "True when this voice selection came from persistent user defaults." },
             "rationale": { "type": "string" },
             "estimated_cost_usd": { "type": "number", "minimum": 0 },
@@ -205,7 +210,7 @@
             },
             "sample_approval_required": {
               "type": "boolean",
-              "description": "True when a TTS sample must be approved before batch narration generation."
+              "description": "True when a short TTS audition must be approved before the single full production narration request."
             }
           },
           "additionalProperties": false

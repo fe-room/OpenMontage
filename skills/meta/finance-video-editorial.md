@@ -60,6 +60,14 @@ full rewrite. An explicit user-selected voice or format overrides this default,
 while the evidence, uncertainty, and compliance rules in this skill remain
 binding.
 
+To preserve timbre, pronunciation context, and the feeling of one continuous
+conversation, synthesize original narration in one full-script TTS request when
+`narration_defaults.generation_mode` is `single_pass`. Script sections remain
+useful for scene planning, evidence references, and timing; they are not TTS
+chunks. Do not generate one voice file per section. If the selected provider has
+a hard input limit, report the blocker and obtain approval before using
+segmented synthesis or changing provider.
+
 ## Stage Integration
 
 ### Intake / Idea / Proposal

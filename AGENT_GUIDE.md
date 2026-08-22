@@ -314,7 +314,7 @@ projects/<project-name>/
 │   ├── images/         # Generated images (PNG)
 │   │   └── cover.png   # Approved post-render video cover
 │   ├── video/          # Generated video clips (MP4)
-│   ├── audio/          # Narration segments + final mix (MP3/WAV)
+│   ├── audio/          # Full narration track, sample, mix, and timing metadata
 │   ├── music/          # Background music track (MP3)
 │   └── subtitles.srt   # Generated subtitles
 └── renders/
@@ -727,10 +727,15 @@ Before proposing narration or music, load `OpenMontageConfig` from
 `config.yaml`. These are persistent user choices, not weak suggestions:
 
 - `narration_defaults` supplies the default TTS provider, voice ID/name,
-  resource ID, speech rate, and sample policy. Inherit every field into
+  resource ID, speech rate, sample policy, and generation mode. Inherit every field into
   `proposal_packet.production_plan.voice_selection` and pass the provider as
   `tts_selector.preferred_provider`. A project may replace these values only
-  when the user explicitly asks for a different voice/provider.
+  when the user explicitly asks for a different voice/provider or synthesis
+  mode. With `generation_mode: single_pass`, keep script sections for editorial
+  structure and timing, but concatenate their final provider-ready text in order
+  and make exactly one full-narration TTS request. Do not synthesize one file per
+  section. A provider hard input limit may block the selected path; surface the
+  limit and ask before changing to segmented synthesis.
 - When `media_defaults.background_music_enabled` is `false`, resolve the music
   plan as `source_type: "none"` (or the pipeline-equivalent `source: "none"`)
   immediately. State once that the persistent no-BGM default was applied, log

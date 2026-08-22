@@ -51,7 +51,9 @@ Asset Task:
 ```
 
 Also create tasks for:
-- **Narration audio** — one per script section (use `tts_selector` or a concrete TTS provider)
+- **Narration audio** — one full-script production asset at
+  `assets/audio/narration_full.mp3` (use `tts_selector`; script sections are not
+  separate production requests)
 - **Background music** — one track for the whole video (use `music_gen` or select from library)
 - **Sound effects** — per playbook's `sfx_style` (optional, use `music_gen` or stock)
 
@@ -70,7 +72,7 @@ Before generating anything:
 
 Before batch-generating assets, produce one sample of each expensive asset type and present them to the user for approval:
 
-1. **TTS sample**: Generate narration for `script.voice_performance.sample_section_id` when present; otherwise pick the section with the most demanding delivery. Play it for the user. Confirm voice, pace, pauses, emphasis, and tone are acceptable before generating the rest.
+1. **TTS sample**: Generate an audition from `script.voice_performance.sample_section_id` when present; otherwise pick the section with the most demanding delivery. Play it for the user. Confirm voice, pace, pauses, emphasis, and tone. This sample is approval material only; after approval, generate the complete production narration in one new request rather than batching the remaining sections.
 2. **Image sample**: Generate one image for the most representative scene. Show it to the user. Confirm the style, quality, and prompt approach before batch-generating all images.
 3. **Music sample** (if using `music_gen`): Generate one short clip. Confirm mood and energy before committing.
 
@@ -83,31 +85,50 @@ This step typically costs $0.03–0.08 total and prevents $1–3 of wasted gener
 
 ### Step 3: Generate Narration
 
-For each script section:
-1. Extract the narration text
-2. Read `script.voice_performance` and section `delivery_cues`
-3. Use `delivery_cues.provider_text` when present; otherwise transform the section text with purposeful punctuation and break tags only when the selected provider supports them
-4. Apply speaker directions from the script (pace, emphasis, emotion)
-5. Apply the playbook's `audio.voice_style`
-6. Read `proposal_packet.production_plan.voice_selection` and pass its
+Read `proposal_packet.production_plan.voice_selection.generation_mode`, inherited
+from `narration_defaults`. For the default `single_pass` mode:
+
+1. Read every final script section in order. Exclude only non-spoken native text
+   cards explicitly marked as such; include spoken compliance copy when the
+   approved script calls for it.
+2. Build one provider-ready narration string. Prefer each section's
+   `delivery_cues.provider_text` when present, otherwise use its final `text`.
+   Join sections with purposeful punctuation or supported break tags so the
+   provider receives the full linguistic context in one request.
+3. Read `script.voice_performance` plus all section `delivery_cues`, and express
+   the overall pacing, emphasis, emotion, pronunciation, and energy curve in the
+   single request. Do not make one request per section.
+4. Apply the playbook's `audio.voice_style`.
+5. Read `proposal_packet.production_plan.voice_selection` and pass its
    `provider` as `preferred_provider`, plus its `voice_id`, `resource_id`, and
    `speech_rate`. When the proposal does not override them, `tts_selector`
    inherits the configured Doubao 大壹 2.0 defaults automatically.
-7. Map cues to provider parameters:
+6. Map cues to provider parameters:
    - OpenAI: `instructions` only with `model: "gpt-4o-mini-tts"`; use `response_format` for output format
    - Google TTS: `input_type: "ssml"` when using `<break>` tags, plus `speaking_rate` in `0.25..2.0` and `pitch` in `-20..20`
    - ElevenLabs: `stability`, `similarity_boost`, `style`, `speed`, and `use_speaker_boost`
-8. Generate using `tts_selector`. The configured/project provider preference
+7. Generate exactly one production file with `tts_selector`, using explicit
+   `output_path: projects/<project-id>/assets/audio/narration_full.mp3`. The configured/project provider preference
    wins when available; a different provider is a major change and requires
    user approval. Check the registry's `best_for` fields for tradeoffs.
-9. Record the applied `voice_performance` metadata on each narration asset
-10. Verify the audio file exists and duration matches expected timing (±15%)
+8. Record `synthesis_mode: "single_pass"`, the ordered source section IDs, the
+   approved sample path/settings, and applied `voice_performance` metadata on
+   the single narration asset.
+9. Verify the file exists, contains the complete script, and its duration is
+   plausible for the total script timing. Transcribe the full file to obtain
+   word/phrase timestamps for subtitles and visual alignment.
+
+`segmented` mode is an exception, not an automatic fallback. Use it only when
+the user explicitly selected it or the approved provider rejects the complete
+text because of a documented hard input limit. In the latter case, stop,
+surface the exact limit and provider alternatives, and get approval before
+changing synthesis mode or provider.
 
 **Pronunciation guide**: If the script contains technical terms, jargon, or names with non-obvious pronunciation, include a pronunciation map in the TTS request.
 
 **Flat voice failure:** If the approved voice sounds monotone, robotic, rushed,
-or ignores intended pauses, do not batch the remaining sections. Revise the
-`voice_performance` plan or provider parameters and regenerate the sample.
+or ignores intended pauses, do not generate the full production take. Revise
+the `voice_performance` plan or provider parameters and regenerate the sample.
 
 ### Step 4: Generate Visual Assets
 
@@ -162,13 +183,13 @@ Assemble all generated assets into the manifest:
   "version": "1.0",
   "assets": [
     {
-      "id": "narration-s1",
+      "id": "narration-full",
       "type": "audio",
       "subtype": "narration",
-      "path": "assets/narration/s1.mp3",
+      "path": "assets/audio/narration_full.mp3",
       "source_tool": "tts_selector",
-      "scene_id": "scene-1",
-      "duration_seconds": 8.2,
+      "scene_id": "all-scenes",
+      "duration_seconds": 58.2,
       "cost_usd": 0.003
     },
     {
@@ -191,7 +212,8 @@ Assemble all generated assets into the manifest:
   ],
   "total_cost_usd": 0.053,
   "generation_summary": {
-    "narration_sections": 5,
+    "narration_assets": 1,
+    "narration_synthesis_mode": "single_pass",
     "images_generated": 8,
     "diagrams_generated": 2,
     "music_tracks": 1
@@ -219,7 +241,8 @@ Assemble all generated assets into the manifest:
 
 **Existence check:**
 - [ ] Every asset `path` exists on disk
-- [ ] Every narration section has a corresponding audio file
+- [ ] Exactly one complete production narration file exists for `single_pass`
+- [ ] Full-audio transcription covers the complete spoken script and supplies timing cues
 - [ ] Every scene with `required_assets` has all assets generated
 - [ ] Background music file exists
 
@@ -264,7 +287,9 @@ the AI model's training data — it may be wrong or outdated.
 
 - **Generating before checking budget**: Always estimate total cost first. A 60-second video with 15 images can burn $3+ quickly.
 - **Inconsistent image style**: Each image_selector call is independent. Use consistent anchors, but adapt them per scene. If you paste the same style prefix into every prompt, the video will feel machine-made and repetitive.
-- **Ignoring narration timing**: If TTS produces 12s of audio for a 10s section, the edit phase will struggle. Check durations.
+- **Turning script sections into TTS calls**: This resets voice state and can
+  cause timbre drift or unclear words. Generate the final script once, then let
+  its transcript timestamps drive scene timing.
 - **Ignoring delivery cues**: Generating raw script text when `provider_text` or `delivery_cues` exist will flatten the read. Apply the voice-performance contract first.
 - **Missing pronunciation guide**: "PostgreSQL" or "Kubernetes" will be mispronounced without explicit guidance.
 - **One retry then give up**: If an image doesn't match, refine the prompt specifically — don't just retry the same prompt.

@@ -83,3 +83,5 @@ def test_finance_skill_routes_original_mandarin_narration_to_house_voice_guide()
     assert '"narration_style": "old_friend_observational"' in text
     assert "source_voice_preserved" in text
     assert "binding writing reference" in text
+    assert "one full-script TTS request" in text
+    assert "Do not generate one voice file per section" in text

@@ -1399,6 +1399,24 @@ class VideoCompose(BaseTool):
 
         # Build asset lookup: id -> asset info
         asset_lookup = {a["id"]: a for a in asset_manifest.get("assets", [])}
+        project_root = (asset_manifest.get("metadata") or {}).get("project_root")
+
+        # Resolve the preferred single full-narration asset into the runtime's
+        # `src` form. Script sections remain timeline metadata; audio is one
+        # continuous production take. Legacy `segments[]` artifacts continue to
+        # be handled by their existing paths.
+        resolved_audio = json.loads(json.dumps(edit_decisions.get("audio") or {}))
+        for audio_layer in ("narration", "music"):
+            layer = resolved_audio.get(audio_layer)
+            if not isinstance(layer, dict):
+                continue
+            asset_id = layer.get("asset_id")
+            if not asset_id or asset_id not in asset_lookup:
+                continue
+            asset_path = Path(asset_lookup[asset_id]["path"])
+            if project_root and not asset_path.is_absolute() and not asset_path.exists():
+                asset_path = Path(project_root) / asset_path
+            layer["src"] = str(asset_path)
 
         cuts = edit_decisions.get("cuts", [])
         if not cuts:
@@ -1411,7 +1429,6 @@ class VideoCompose(BaseTool):
             resolved_cut = dict(cut)
             if source_id in asset_lookup:
                 asset_path = Path(asset_lookup[source_id]["path"])
-                project_root = (asset_manifest.get("metadata") or {}).get("project_root")
                 if project_root and not asset_path.is_absolute() and not asset_path.exists():
                     asset_path = Path(project_root) / asset_path
                 resolved_cut["source"] = str(asset_path)
@@ -1437,8 +1454,12 @@ class VideoCompose(BaseTool):
             )
         if render_runtime == "ffmpeg":
             # Caller explicitly asked for FFmpeg — don't auto-upgrade to Remotion.
+            ffmpeg_inputs = dict(inputs)
+            narration_src = (resolved_audio.get("narration") or {}).get("src")
+            if narration_src and not ffmpeg_inputs.get("audio_path"):
+                ffmpeg_inputs["audio_path"] = narration_src
             return self._render_via_ffmpeg(
-                inputs=inputs,
+                inputs=ffmpeg_inputs,
                 edit_decisions=edit_decisions,
                 resolved_cuts=resolved_cuts,
                 output_path=output_path,
@@ -1447,7 +1468,7 @@ class VideoCompose(BaseTool):
         # --- Explicit Remotion path (render_runtime == 'remotion') ---
         if self._needs_remotion(resolved_cuts):
             remotion_inputs: dict[str, Any] = {
-                "edit_decisions": dict(edit_decisions, cuts=resolved_cuts),
+                "edit_decisions": dict(edit_decisions, cuts=resolved_cuts, audio=resolved_audio),
                 "output_path": str(output_path),
             }
             if profile:
@@ -1490,8 +1511,11 @@ class VideoCompose(BaseTool):
 
             # Build compose inputs
             compose_inputs = dict(inputs)
-            compose_inputs["edit_decisions"] = dict(edit_decisions, cuts=resolved_cuts)
+            compose_inputs["edit_decisions"] = dict(edit_decisions, cuts=resolved_cuts, audio=resolved_audio)
             compose_inputs["output_path"] = str(output_path)
+            narration_src = (resolved_audio.get("narration") or {}).get("src")
+            if narration_src and not compose_inputs.get("audio_path"):
+                compose_inputs["audio_path"] = narration_src
             if subtitle_path:
                 compose_inputs["subtitle_path"] = subtitle_path
             if profile:

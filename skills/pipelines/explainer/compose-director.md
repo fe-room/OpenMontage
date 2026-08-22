@@ -207,7 +207,7 @@ Do NOT use `audio_mixer` for ducking/mixing when rendering via Remotion.
 
 **FFmpeg fallback (ONLY when Remotion is unavailable):**
 Call the `audio_mixer` tool to:
-1. Layer narration segments in order
+1. Use the single full narration track without concatenating speech segments
 2. Mix background music at playbook volume
 3. Apply ducking (music dips during narration)
 4. Normalize overall audio levels
@@ -361,7 +361,7 @@ result = Transcriber().execute({
 **6e. Audio inspection — check transcript against script:**
 - Is the full narration captured? (compare last transcribed word to last scripted word)
 - Any words cut off at the end? (narration exceeding video duration)
-- Timing alignment — do narration segments roughly match their intended scenes?
+- Timing alignment — do visual scene changes match the intended words in the full narration transcript?
 - Is background music audible? (transcriber may not capture music, but ffprobe confirms audio stream)
 
 **6f. Compile and present review to user:**
@@ -449,7 +449,9 @@ Validate the render_report against the schema and persist via checkpoint.
 ## Common Pitfalls
 
 - **Missing asset files**: Always verify every referenced file exists before starting the render. A missing file mid-render wastes time.
-- **Audio sync drift**: Accumulated timing errors across narration segments cause audio-visual desync. Use absolute timestamps, not relative offsets.
+- **Re-segmenting narration at compose time**: Do not cut and rejoin the full
+  production narration merely to match scenes. Keep its continuous audio clock
+  and adjust visual cuts from transcript timestamps.
 - **Subtitle encoding**: Burn subtitles into the video (hardcoded) for maximum compatibility. Don't rely on soft subtitles for social media.
 - **Single-pass encode**: Two-pass encoding produces better quality at the same file size. Worth the extra render time.
 - **Ignoring media profile**: YouTube and TikTok have very different requirements. Always check the target profile.

@@ -37,6 +37,9 @@ narration_defaults:
   resource_id: seed-tts-2.0
   speech_rate: 0
   sample_approval_required: true
+  # Keep one voice state across the full script. Script sections remain as
+  # editorial/timing metadata; they are not separate TTS requests.
+  generation_mode: single_pass
 
 paths:
   pipeline_dir: pipeline

@@ -257,7 +257,7 @@ CHECK: Style consistency
 CHECK: Timeline completeness
   - Verify edit decisions cover 0 to total_duration with no gaps
   - Verify all asset references point to existing files
-  - Verify audio ducking is configured for all narration segments
+  - Verify audio ducking follows the single continuous narration track
 
 CHECK: A/V sync pre-validation
   - For each cut: narration_start aligns with visual_start (±0.5s)

@@ -29,7 +29,7 @@ Do not hide a blocked avatar path. Record it.
 
 Before batch-generating assets, produce one sample of each expensive type and show the user:
 
-1. **TTS sample** (if generating narration): Generate one section. Confirm voice, pace, and persona before batching the rest.
+1. **TTS sample** (if generating narration): Generate one short audition. Confirm voice, pace, and persona, then synthesize the complete production narration in one request before avatar/lip-sync work.
 2. **Avatar sample** (if using `talking_head`): Generate a short test clip. Confirm the avatar quality is acceptable before committing to full generation.
 
 If rejected, adjust parameters and retry (max 3 iterations). Do not batch until approved.

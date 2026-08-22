@@ -39,6 +39,16 @@
             "description": "Applied voice-performance contract for narration assets.",
             "properties": {
               "source_section_id": { "type": "string" },
+              "source_section_ids": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Ordered script sections represented by a full-narration asset."
+              },
+              "synthesis_mode": {
+                "type": "string",
+                "enum": ["single_pass", "segmented", "source_audio"],
+                "description": "Whether this narration was generated in one request, split across requests, or supplied by source media."
+              },
               "delivery_cues_applied": { "type": "boolean" },
               "provider_text_used": { "type": "boolean" },
               "provider_settings": {

@@ -286,6 +286,7 @@ class TestConfig:
         assert config.checkpoint.policy.value == "guided"
         assert config.media_defaults.background_music_enabled is False
         assert config.narration_defaults.provider == "doubao"
+        assert config.narration_defaults.generation_mode == "single_pass"
 
     def test_load_from_yaml(self):
         config = OpenMontageConfig.load()
@@ -295,6 +296,7 @@ class TestConfig:
         assert config.narration_defaults.voice_id == "zh_male_dayi_saturn_bigtts"
         assert config.narration_defaults.resource_id == "seed-tts-2.0"
         assert config.narration_defaults.speech_rate == 0
+        assert config.narration_defaults.generation_mode == "single_pass"
 
 
 # ---- Schemas ----

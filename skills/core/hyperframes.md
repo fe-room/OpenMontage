@@ -151,7 +151,8 @@ OpenMontage artifacts into HyperFrames project files:
 | `edit_decisions.cuts[i].in_seconds / out_seconds` | `data-start` / `data-duration` on the clip element |
 | `edit_decisions.cuts[i].type` (scene kind) | Registry block installed via `hyperframes add`, OR a hand-authored sub-composition template |
 | `asset_manifest.assets[]` paths | Copied or symlinked into `projects/<p>/hyperframes/assets/` and referenced with relative `src=` |
-| `audio.narration.segments[]` | `<audio>` element with matching `data-start` / `data-duration` |
+| `audio.narration.asset_id` | One continuous `<audio>` element spanning the narration timeline (preferred) |
+| `audio.narration.segments[]` | Legacy/approved-exception audio elements with matching `data-start` / `data-duration` |
 | `audio.music` | Second `<audio>` element, lower `data-volume` |
 | `subtitles` (enabled + source) | Either a registry `captions` block or hand-authored per-word spans — NOT `remotion_caption_burn` |
 | Selected playbook (`flat-motion-graphics`, `clean-professional`, etc.) | `:root` CSS custom properties + `DESIGN.md`. See `lib/hyperframes_style_bridge.py`. |

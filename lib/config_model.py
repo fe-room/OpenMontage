@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from enum import Enum
 from pathlib import Path
-from typing import Optional
+from typing import Literal, Optional
 
 import yaml
 from pydantic import BaseModel, Field
@@ -67,6 +67,7 @@ class NarrationDefaultsConfig(BaseModel):
     resource_id: str = "seed-tts-2.0"
     speech_rate: int = 0
     sample_approval_required: bool = True
+    generation_mode: Literal["single_pass", "segmented"] = "single_pass"
 
 
 class PathsConfig(BaseModel):

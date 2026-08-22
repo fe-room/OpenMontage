@@ -315,7 +315,7 @@ CHECK: Programmatic asset integrity (if Manim/Remotion)
 CHECK: Timeline completeness
   - Verify edit decisions cover 0 to total_duration with no gaps
   - Verify all asset references point to existing files
-  - Verify audio ducking is configured for all narration segments
+  - Verify audio ducking follows the single continuous narration track
 
 CHECK: Hold time preservation (ANIMATION-SPECIFIC)
   - Verify hold times from scene_plan are preserved in edit decisions
