@@ -362,6 +362,32 @@
       "user_visible": true,
       "user_approved": true,
       "confidence": 0.98
+    },
+    {
+      "decision_id": "d-013",
+      "stage": "cover",
+      "category": "provider_selection",
+      "subject": "Cover artwork generation provider",
+      "options_considered": [
+        {
+          "option_id": "codex-image-gen",
+          "label": "Codex built-in image_gen",
+          "score": 0.97,
+          "reason": "\u7528\u6237\u660e\u786e\u8981\u6c42\u4f7f\u7528Codex\u5185\u7f6e\u751f\u56fe\u80fd\u529b\u751f\u6210\u5b8c\u6574\u89c6\u89c9\uff0c\u9002\u5408\u5236\u4f5c\u7194\u91d1\u4e0e\u9ed1\u66dc\u77f3\u7684\u7f16\u8f91\u6027\u4e3b\u753b\u9762\u3002"
+        },
+        {
+          "option_id": "remotion-composited",
+          "label": "Remotion deterministic composite",
+          "score": 0.2,
+          "reason": "\u6587\u5b57\u548c\u6570\u636e\u51c6\u786e\uff0c\u4f46\u5448\u73b0\u4e3a\u56fe\u8868\u5408\u6210\u5f0f\u5c01\u9762\u3002",
+          "rejected_because": "\u7528\u6237\u660e\u786e\u5426\u5b9a\u5408\u6210\u5f0f\u5c01\u9762\u5e76\u8981\u6c42\u6539\u7528Codex\u5185\u7f6e\u751f\u56fe\u3002"
+        }
+      ],
+      "selected": "codex-image-gen",
+      "reason": "\u6309\u7528\u6237\u6700\u65b0\u660e\u786e\u6307\u4ee4\uff0c\u4ee5Codex\u5185\u7f6eimage_gen\u5206\u522b\u751f\u6210\u7ad6\u5c4f\u4e0e\u6a2a\u5c4f\u5b8c\u6574\u5c01\u9762\u3002",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.99
     }
   ]
 }

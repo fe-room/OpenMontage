@@ -1,28 +1,56 @@
 {
   "version": "1.0",
   "status": "ready",
-  "source_video_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/renders/final.mp4",
+  "source_video_path": "/Users/y20/Code/OpenMontage/projects/gold-ath-chasing-experiment/renders/final.mp4",
   "primary_cover": {
-    "id": "gold-ath-cover-primary",
-    "path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/assets/images/cover.png",
+    "id": "gold-ath-cover-ai-vertical",
+    "path": "/Users/y20/Code/OpenMontage/projects/gold-ath-chasing-experiment/assets/images/cover-ai-vertical-1080x1440.png",
     "format": "png",
     "width": 1080,
     "height": 1440,
     "aspect_ratio": "3:4",
     "role": "primary",
     "text_overlay": [
-      "黄金创新高后，还能不能买？",
-      "199个新高日",
-      "按60个交易日去重以后：8次",
-      "新高不是结论，历史数据也不是预言。",
-      "历史回测 · 非买入建议"
+      "黄金又涨回来了",
+      "现在买，会不会站岗？"
     ],
-    "source_tool": "Remotion local deterministic compositor",
-    "file_size_bytes": 958367,
+    "source_tool": "Codex built-in image_gen",
+    "provider": "OpenAI",
+    "model": "host-default built-in image model",
+    "prompt": "生成式财经封面：黑曜石与熔金构成冲高、深度回落、再次走强的路径；右侧恢复低于前高；精确中文标题‘黄金又涨回来了／现在买，会不会站岗？’；无图表面板、无金币金条、无额外文字。",
+    "style_reference_paths": [
+      "projects/gold-ath-chasing-experiment/art-direction.md",
+      "projects/gold-ath-chasing-experiment/renders/final.mp4"
+    ],
+    "file_size_bytes": 2023692,
     "cost_usd": 0.0
   },
-  "variants": [],
-  "creative_rationale": "采用合成式封面，延续成片的黑曜石、旧金和风险红视觉体系；标题只提出视频真实回答的问题，主体使用成片签名装置，把199个新高日按60个交易日去重为8次，形成清晰但不夸大证据的视觉张力。",
+  "variants": [
+    {
+      "id": "gold-ath-cover-ai-horizontal",
+      "path": "/Users/y20/Code/OpenMontage/projects/gold-ath-chasing-experiment/assets/images/cover-ai-horizontal-1280x720.png",
+      "format": "png",
+      "width": 1280,
+      "height": 720,
+      "aspect_ratio": "16:9",
+      "role": "variant",
+      "text_overlay": [
+        "黄金又涨回来了",
+        "现在买，会不会站岗？"
+      ],
+      "source_tool": "Codex built-in image_gen",
+      "provider": "OpenAI",
+      "model": "host-default built-in image model",
+      "prompt": "横屏生成式财经封面：宽幅黑曜石熔金山脊表现冲高、回落、再次走强，恢复段低于前高；左侧精确中文标题‘黄金又涨回来了／现在买，会不会站岗？’；无合成图表、无金币金条、无额外文字。",
+      "style_reference_paths": [
+        "projects/gold-ath-chasing-experiment/art-direction.md",
+        "projects/gold-ath-chasing-experiment/renders/final.mp4"
+      ],
+      "file_size_bytes": 1227902,
+      "cost_usd": 0.0
+    }
+  ],
+  "creative_rationale": "根据用户明确反馈，废弃确定性图表合成封面，改用Codex内置image_gen生成完整视觉。熔金山脊把今年的冲高、回落与重新走强转化为单一生成式隐喻；恢复段低于前峰，避免暗示当前正在创新高。竖屏与横屏分别独立构图，不采用裁切复用。",
   "decision_log_ref": "projects/gold-ath-chasing-experiment/artifacts/decision_log.json",
   "verification": {
     "file_exists": true,
@@ -33,15 +61,23 @@
     "issues": []
   },
   "metadata": {
-    "cover_approach": "composited",
-    "resolved_cover_spec": {
-      "width": 1080,
-      "height": 1440,
-      "aspect_ratio": "3:4",
-      "basis": "vertical-video default from cover-director"
-    },
-    "mobile_check_path": "/Users/jishubu/project/OpenMontage/projects/gold-ath-chasing-experiment/assets/images/cover-mobile-check.png",
+    "cover_approach": "generated_editorial",
+    "generation_mode": "Codex built-in image_gen; no Remotion, HTML/CSS, SVG, or infographic composition in final selected covers",
+    "resolved_cover_specs": [
+      {
+        "width": 1080,
+        "height": 1440,
+        "aspect_ratio": "3:4",
+        "role": "vertical"
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "aspect_ratio": "16:9",
+        "role": "horizontal"
+      }
+    ],
     "content_category": "finance",
-    "financial_claim_review": "标题保持问句；数据标签保留去重条件；未把历史结果改写为买入结论。"
+    "financial_claim_review": "标题承接回升语境；生成视觉的右侧恢复低于前峰；未声称当前正在创新高，也未给出买入结论。"
   }
 }
