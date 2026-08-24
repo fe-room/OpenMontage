@@ -274,10 +274,34 @@ class DoubaoTTS(BaseTool):
         if not audio_url:
             raise RuntimeError("Doubao task completed but did not return data.audio_url")
 
-        audio_response = requests.get(audio_url, timeout=(10, 120))
-        audio_response.raise_for_status()
-        output_path.write_bytes(audio_response.content)
+        # Persist the completed task response before downloading the potentially
+        # large narration file. If the CDN connection drops, the task id and
+        # signed URL remain available for diagnosis or manual recovery.
         metadata_path.write_text(json.dumps(query_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+        # Long-form narration can be tens of megabytes. Stream it to a partial
+        # file and retry transient/incomplete CDN reads without resubmitting the
+        # paid synthesis task. Replace the final path only after a full download.
+        partial_path = output_path.with_suffix(output_path.suffix + ".part")
+        download_error: Exception | None = None
+        for attempt in range(3):
+            try:
+                with requests.get(audio_url, timeout=(10, 300), stream=True) as audio_response:
+                    audio_response.raise_for_status()
+                    with open(partial_path, "wb") as audio_file:
+                        for chunk in audio_response.iter_content(chunk_size=1024 * 1024):
+                            if chunk:
+                                audio_file.write(chunk)
+                partial_path.replace(output_path)
+                download_error = None
+                break
+            except Exception as exc:
+                download_error = exc
+                partial_path.unlink(missing_ok=True)
+                if attempt < 2:
+                    time.sleep(2 ** attempt)
+        if download_error is not None:
+            raise download_error
 
         audio_duration = self._audio_duration(output_path)
         usage = data.get("usage")
