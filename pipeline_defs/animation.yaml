@@ -230,7 +230,7 @@ stages:
       - Hold times and staggered reveals are preserved
       - Motion serves hierarchy rather than decoration
       - Timeline logic is consistent across scenes
-      - Audio ducking configured for the continuous narration track
+      - Audio ducking configured for narration segments
     success_criteria:
       - Schema-valid edit_decisions artifact
       - Edit decisions cover all planned animation beats

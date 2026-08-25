@@ -6,10 +6,11 @@ The goal is to make generated narration sound directed, not merely read. Do not
 leave expressiveness as "read naturally" in a prompt. Carry a concrete voice
 performance plan from script to asset generation, then verify it with a sample.
 
-The persistent production default is `generation_mode: single_pass`. Section
-delivery cues describe changes inside one continuous performance; they do not
-authorize separate production TTS calls. After sample approval, join the final
-ordered provider-ready section text and synthesize the full narration once.
+The persistent production default is `generation_mode: segmented`. After sample
+approval, synthesize every final spoken script section separately. Each request
+must use that section's `provider_text` and `delivery_cues`, while keeping the
+approved provider, voice, model, speed, and global performance intent consistent
+across the batch.
 
 ## Required Contract
 
@@ -71,26 +72,23 @@ Section-level delivery cues:
 - ElevenLabs: use lower `stability` for more variation, moderate `style` for
   expressiveness, `speed` in the provider's `0.7..1.2` range, and keep
   `similarity_boost` high enough to preserve the voice.
-- Offline/basic voices: rely on punctuation and shorter spoken sentences. Do
-  not split production narration merely because provider-level emotion controls
-  are unavailable.
+- Offline/basic voices: rely on punctuation, shorter sentences, and explicit
+  segment splitting because provider-level emotion controls may be unavailable.
 
 ## Sample Gate
 
-Before full production narration generation:
+Before batch narration generation:
 
 1. Generate a sample from the most performance-sensitive section, not
    automatically the first section.
 2. Verify voice, pace, pauses, emphasis, and emotional arc.
 3. If the sample is flat, adjust the `voice_performance` plan or provider
-   settings before generating the complete production take.
+   settings before generating the rest.
 4. Record the approved sample path and provider settings in the asset manifest.
 
-The audition is not a reusable production segment. Once approved, synthesize
-the complete narration—including the sampled words—in one request so timbre,
-pronunciation context, and cadence remain continuous. If a documented provider
-input limit blocks that request, surface the blocker and get approval before
-changing provider or using segmented synthesis.
+The approved sample may be reused as its production section only when it was
+generated from the final section text with the exact approved production
+settings. Otherwise regenerate that section with the rest of the batch.
 
 ## Failure Conditions
 

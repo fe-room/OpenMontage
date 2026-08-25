@@ -31,12 +31,10 @@ This prevents the most expensive mistake: generating 10+ dubbed assets in a dire
 
 ### 2. Generate Dubbed Audio Per Language
 
-Use the approved translated script package, not raw machine output. For each
-language/version, synthesize the complete approved narration in one request and
-produce one full dub track. Do not generate one production file per scene or
-script section. Record which voice or synthesis path was used for each language.
-If a provider hard limit prevents the full request, surface it and obtain
-approval before segmented synthesis or a provider change.
+Use the approved translated script package, not raw machine output. Generate
+dubbed audio per approved translated section for each language/version, preserve
+the section order and timing metadata, and record which voice or synthesis path
+was used for each language.
 
 ### 3. Treat Lip Sync As Optional
 

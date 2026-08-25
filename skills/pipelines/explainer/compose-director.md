@@ -192,8 +192,13 @@ Before building either runtime's audio props, inspect the resolved
 not add a music path, music `<Audio>` component, ducking, generated silence, or
 an `audio_mixer` music input.
 
-**Remotion path (DEFAULT):** Skip external audio mixing entirely. Remotion handles all audio
-natively via `<Audio>` components. Pass audio sources in the composition props:
+**Remotion path (DEFAULT):** TTS generation remains segmented. Before render,
+use `audio_mixer` with `operation: "full_mix"` to place the approved narration
+section files at their absolute `start_seconds` and write a narration-only
+working track at `assets/audio/narration_full.mp3`. This is deterministic
+timeline assembly, not a new full-script TTS request. Do not merge music into
+this working track; Remotion handles music and SFX natively via `<Audio>`
+components. Pass the assembled narration track in the composition props:
 ```json
 {
   "audio": {
@@ -202,12 +207,12 @@ natively via `<Audio>` components. Pass audio sources in the composition props:
   }
 }
 ```
-Remotion renders audio and video in a single pass — no external muxing needed.
-Do NOT use `audio_mixer` for ducking/mixing when rendering via Remotion.
+Remotion renders the assembled narration, music, and video in a single pass.
+Do NOT use `audio_mixer` for music ducking/mixing when rendering via Remotion.
 
 **FFmpeg fallback (ONLY when Remotion is unavailable):**
 Call the `audio_mixer` tool to:
-1. Use the single full narration track without concatenating speech segments
+1. Layer narration segments in order
 2. Mix background music at playbook volume
 3. Apply ducking (music dips during narration)
 4. Normalize overall audio levels
@@ -220,7 +225,8 @@ Subtitles are mandatory for all explainer content. Generate them from the narrat
 
 **Remotion path (DEFAULT — when using Remotion render):**
 
-1. **Transcribe** the full narration using the `transcriber` tool (whisperx):
+1. **Transcribe** the assembled narration working track using the `transcriber`
+   tool (whisperx). Keep the original per-section narration assets unchanged:
    ```python
    from tools.analysis.transcriber import Transcriber
    result = Transcriber().execute({
@@ -361,7 +367,7 @@ result = Transcriber().execute({
 **6e. Audio inspection — check transcript against script:**
 - Is the full narration captured? (compare last transcribed word to last scripted word)
 - Any words cut off at the end? (narration exceeding video duration)
-- Timing alignment — do visual scene changes match the intended words in the full narration transcript?
+- Timing alignment — do narration segments roughly match their intended scenes?
 - Is background music audible? (transcriber may not capture music, but ffprobe confirms audio stream)
 
 **6f. Compile and present review to user:**
@@ -449,9 +455,7 @@ Validate the render_report against the schema and persist via checkpoint.
 ## Common Pitfalls
 
 - **Missing asset files**: Always verify every referenced file exists before starting the render. A missing file mid-render wastes time.
-- **Re-segmenting narration at compose time**: Do not cut and rejoin the full
-  production narration merely to match scenes. Keep its continuous audio clock
-  and adjust visual cuts from transcript timestamps.
+- **Audio sync drift**: Accumulated timing errors across narration segments cause audio-visual desync. Use absolute timestamps, not relative offsets.
 - **Subtitle encoding**: Burn subtitles into the video (hardcoded) for maximum compatibility. Don't rely on soft subtitles for social media.
 - **Single-pass encode**: Two-pass encoding produces better quality at the same file size. Worth the extra render time.
 - **Ignoring media profile**: YouTube and TikTok have very different requirements. Always check the target profile.

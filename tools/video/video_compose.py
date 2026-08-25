@@ -1401,10 +1401,9 @@ class VideoCompose(BaseTool):
         asset_lookup = {a["id"]: a for a in asset_manifest.get("assets", [])}
         project_root = (asset_manifest.get("metadata") or {}).get("project_root")
 
-        # Resolve the preferred single full-narration asset into the runtime's
-        # `src` form. Script sections remain timeline metadata; audio is one
-        # continuous production take. Legacy `segments[]` artifacts continue to
-        # be handled by their existing paths.
+        # Resolve the optional single-track narration form into the runtime's
+        # `src` shape. Default segmented narration continues through the
+        # existing `segments[]` paths.
         resolved_audio = json.loads(json.dumps(edit_decisions.get("audio") or {}))
         for audio_layer in ("narration", "music"):
             layer = resolved_audio.get(audio_layer)

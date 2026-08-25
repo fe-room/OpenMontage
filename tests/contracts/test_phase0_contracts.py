@@ -286,7 +286,22 @@ class TestConfig:
         assert config.checkpoint.policy.value == "guided"
         assert config.media_defaults.background_music_enabled is False
         assert config.narration_defaults.provider == "doubao"
-        assert config.narration_defaults.generation_mode == "single_pass"
+        assert config.narration_defaults.generation_mode == "segmented"
+
+    def test_segmented_narration_is_the_documented_production_default(self):
+        root = Path(__file__).resolve().parents[2]
+        guide = (root / "AGENT_GUIDE.md").read_text(encoding="utf-8")
+        asset_director = (
+            root / "skills" / "pipelines" / "explainer" / "asset-director.md"
+        ).read_text(encoding="utf-8")
+        edit_director = (
+            root / "skills" / "pipelines" / "explainer" / "edit-director.md"
+        ).read_text(encoding="utf-8")
+
+        assert "default `generation_mode: segmented`" in guide
+        assert "For each final spoken script section, in order" in asset_director
+        assert 'synthesis_mode: "segmented"' in asset_director
+        assert '"segments"' in edit_director
 
     def test_load_from_yaml(self):
         config = OpenMontageConfig.load()
@@ -296,7 +311,7 @@ class TestConfig:
         assert config.narration_defaults.voice_id == "zh_male_dayi_saturn_bigtts"
         assert config.narration_defaults.resource_id == "seed-tts-2.0"
         assert config.narration_defaults.speech_rate == 0
-        assert config.narration_defaults.generation_mode == "single_pass"
+        assert config.narration_defaults.generation_mode == "segmented"
 
 
 # ---- Schemas ----

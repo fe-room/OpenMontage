@@ -195,7 +195,7 @@
             "generation_mode": {
               "type": "string",
               "enum": ["single_pass", "segmented"],
-              "description": "How TTS requests are made. single_pass keeps one voice state for the complete narration; segmented is an explicit exception for provider limits or special production needs."
+              "description": "How TTS requests are made. segmented is the production default and creates one narration asset per final spoken script section; single_pass remains supported for explicitly approved projects."
             },
             "inherited_from_defaults": { "type": "boolean", "description": "True when this voice selection came from persistent user defaults." },
             "rationale": { "type": "string" },
@@ -210,7 +210,7 @@
             },
             "sample_approval_required": {
               "type": "boolean",
-              "description": "True when a short TTS audition must be approved before the single full production narration request."
+              "description": "True when a TTS sample must be approved before batch narration generation."
             }
           },
           "additionalProperties": false

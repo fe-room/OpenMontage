@@ -67,7 +67,7 @@ class NarrationDefaultsConfig(BaseModel):
     resource_id: str = "seed-tts-2.0"
     speech_rate: int = 0
     sample_approval_required: bool = True
-    generation_mode: Literal["single_pass", "segmented"] = "single_pass"
+    generation_mode: Literal["single_pass", "segmented"] = "segmented"
 
 
 class PathsConfig(BaseModel):

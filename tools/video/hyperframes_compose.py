@@ -1044,9 +1044,9 @@ class HyperFramesCompose(BaseTool):
         out: dict[str, Any] = {"narration": [], "music": None}
 
         narration = audio.get("narration", {}) or {}
-        # New projects use one full narration asset. `segments[]` remains a
-        # backwards-compatible exception for older artifacts and explicitly
-        # approved segmented synthesis.
+        # Segmented narration is the project default. A single `asset_id`
+        # remains supported for explicitly approved single-pass narration and
+        # source-audio projects.
         if narration.get("asset_id"):
             narration_refs = [
                 {
@@ -1184,7 +1184,7 @@ class HyperFramesCompose(BaseTool):
         - still images (img.clip)
         - video clips (video.clip, muted playsinline + separate audio if needed)
         - text cards (div.clip with styled <h1>)
-        - one continuous narration track, with legacy segment support (audio)
+        - ordered narration segments, with single-track support (audio)
         - music bed (audio, lower volume)
 
         Richer scene types (registry blocks, kinetic typography) are authored

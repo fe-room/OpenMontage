@@ -29,16 +29,14 @@ It must remain the last timeline item; do not append a CTA or logo cut after it.
 
 For each scene in the scene plan:
 1. Find the matching assets from the asset manifest (by `scene_id`)
-2. Reference the single `narration-full` audio asset for the whole timeline
-3. Use the full narration transcript/caption timestamps to locate the words or
-   phrases associated with this scene
-4. Note the scene's timing (`start_seconds`, `end_seconds`)
+2. Find the matching narration audio (by script section)
+3. Note the scene's timing (`start_seconds`, `end_seconds`)
 
 Build a timeline map:
 ```
-0s-10s: scene-1 (talking_head) | narration-full 0s-10s | img-intro.png
-10s-18s: scene-2 (diagram) | narration-full 10s-18s | diagram-flow.svg
-18s-22s: scene-3 (text_card) | narration-full 18s-22s | [text overlay]
+0s-10s: scene-1 (talking_head) | narration-s1 | img-intro.png
+10s-18s: scene-2 (diagram) | narration-s2 | diagram-flow.svg
+18s-22s: scene-3 (text_card) | narration-s3 | [text overlay]
 ...
 ```
 
@@ -105,9 +103,10 @@ When a real music asset was approved, use the following shape:
 {
   "audio": {
     "narration": {
-      "asset_id": "narration-full",
-      "start_seconds": 0,
-      "volume": 1.0
+      "segments": [
+        { "asset_id": "narration-s1", "start_seconds": 0 },
+        { "asset_id": "narration-s2", "start_seconds": 10 }
+      ]
     },
     "music": {
       "asset_id": "music-bg",
@@ -148,12 +147,12 @@ Adjust cut timing if any violates these rules.
 
 **Asset references:**
 - [ ] Every cut's `source` references a valid asset_id from the manifest
-- [ ] The one full narration reference resolves to a valid audio asset
+- [ ] Every narration segment references a valid audio asset
 - [ ] Music asset exists
 
 **Audio sync:**
-- [ ] Narration begins once and plays continuously without duplicated or overlapping audio
-- [ ] Visual cuts align to timestamps derived from the full narration transcript
+- [ ] Narration segments are ordered and non-overlapping
+- [ ] Narration timing aligns with corresponding visual cuts
 - [ ] Music ducking is configured
 
 **Subtitles:**

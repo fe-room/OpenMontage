@@ -49,7 +49,7 @@ Prefer the lowest-variance useful path:
 
 Before batch-generating assets, produce one sample of each expensive type and show the user:
 
-1. **TTS sample** (if narration-led): Generate an audition from `script.voice_performance.sample_section_id` when present; otherwise choose the section with the strongest emotional or pacing change. Confirm voice, pace, pauses, emphasis, and tone, then generate the complete production narration in one full-script request.
+1. **TTS sample** (if narration-led): Generate `script.voice_performance.sample_section_id` when present; otherwise choose the section with the strongest emotional or pacing change. Confirm voice, pace, pauses, emphasis, and tone before batching.
 2. **Visual sample**: Generate one representative scene visual (diagram, illustration, or motion background). Confirm style and quality before batching the rest.
 
 If rejected, adjust parameters and retry (max 3 iterations). Do not batch until approved.
@@ -102,11 +102,9 @@ Create once:
 
 If the project is narration-led, produce or source narration. Read
 `skills/meta/voice-performance-director.md`, then apply `script.voice_performance`
-and every section's `delivery_cues` when building one full-script TTS request.
-Join the ordered `provider_text` values (or final section text) with natural
-punctuation/breaks and write one `assets/audio/narration_full.mp3`. Do not make
-one production request per section. Record `synthesis_mode: single_pass` and
-the applied settings on the narration asset. If it is text-led or music-led, say so
+and each section's `delivery_cues` when building TTS requests. Use
+`provider_text` when present, map cues to provider controls, and record the
+applied settings on each narration asset. If it is text-led or music-led, say so
 clearly in metadata.
 
 ### 4. Use Metadata For Feasibility Truth

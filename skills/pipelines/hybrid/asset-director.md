@@ -29,7 +29,7 @@ Start with reusable systems:
 
 Before batch-generating support assets, produce one sample of each expensive generated type and show the user:
 
-1. **TTS sample** (if narration is needed): Generate one short audition. Confirm voice and tone, then synthesize the complete production narration in one request; do not batch by script section.
+1. **TTS sample** (if narration is needed): Generate one section. Confirm voice and tone before batching.
 2. **Image/video sample** (if generating inserts): Generate one representative visual. Confirm style fits the source footage before batching.
 
 If rejected, adjust parameters and retry (max 3 iterations). Do not batch until approved.

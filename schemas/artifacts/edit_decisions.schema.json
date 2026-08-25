@@ -107,14 +107,14 @@
           "properties": {
             "asset_id": {
               "type": "string",
-              "description": "Preferred new-project form: one full-narration asset generated in a single TTS pass."
+              "description": "Optional single-track narration form for explicitly approved single-pass projects or supplied source audio."
             },
             "start_seconds": { "type": "number", "minimum": 0 },
             "end_seconds": { "type": "number", "minimum": 0 },
             "volume": { "type": "number", "minimum": 0, "maximum": 1 },
             "segments": {
               "type": "array",
-              "description": "Legacy/exception form. Use only when segmented synthesis was explicitly approved or required by a provider hard limit.",
+              "description": "Default narration form: ordered references to separately synthesized script-section assets.",
               "items": {
                 "type": "object",
                 "required": ["asset_id", "start_seconds"],

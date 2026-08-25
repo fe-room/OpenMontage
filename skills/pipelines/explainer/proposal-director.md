@@ -379,10 +379,9 @@ Before selecting audio tools, load `OpenMontageConfig` from `config.yaml`:
   (`zh_male_dayi_saturn_bigtts`, `seed-tts-2.0`, `speech_rate=0`). Treat it as
   selected unless the user explicitly requests another voice/provider. Pass
   the configured provider to `tts_selector.preferred_provider` at asset time.
-  Also inherit `generation_mode`. The persistent default is `single_pass`: one
-  TTS request and one `assets/audio/narration_full.mp3` for the complete final
-  script. Script sections remain timing/editorial metadata and must not become
-  separate synthesis calls.
+  Also inherit `generation_mode`. The persistent default is `segmented`: create
+  one narration asset per final spoken script section and preserve section IDs,
+  order, and timing metadata for edit and composition.
 - If `media_defaults.background_music_enabled` is false, set
   `production_plan.music_source.source_type = "none"`, estimated music cost to
   zero, and explain that the persistent no-BGM default was inherited. Do not
