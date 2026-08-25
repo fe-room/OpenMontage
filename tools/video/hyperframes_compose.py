@@ -860,15 +860,35 @@ class HyperFramesCompose(BaseTool):
 
         steps: dict[str, Any] = {}
 
-        # 1. Scaffold — generate HTML/CSS/assets.
-        scaffold = self._scaffold(inputs)
-        steps["scaffold"] = scaffold.data
-        if not scaffold.success:
-            return ToolResult(
-                success=False,
-                error=f"Scaffold failed: {scaffold.error}",
-                data={"steps": steps},
-            )
+        # 1. Scaffold — generate HTML/CSS/assets for the templated path.
+        #
+        # HyperFrames atelier projects are hand-authored upstream and arrive
+        # with a complete workspace (index.html + bespoke sub-compositions).
+        # Re-scaffolding them here would silently overwrite the approved work
+        # with the generic cut-schema renderer immediately before delivery.
+        # Preserve an existing atelier workspace and continue with the same
+        # lint -> validate -> render gates instead.
+        edit_decisions = inputs.get("edit_decisions") or {}
+        preserve_atelier = (
+            edit_decisions.get("composition_mode") == "atelier"
+            and (workspace / "index.html").is_file()
+        )
+        if preserve_atelier:
+            steps["scaffold"] = {
+                "operation": "preserve_existing_workspace",
+                "workspace": str(workspace),
+                "index": str(workspace / "index.html"),
+                "composition_mode": "atelier",
+            }
+        else:
+            scaffold = self._scaffold(inputs)
+            steps["scaffold"] = scaffold.data
+            if not scaffold.success:
+                return ToolResult(
+                    success=False,
+                    error=f"Scaffold failed: {scaffold.error}",
+                    data={"steps": steps},
+                )
 
         # 2. Lint — static contract checks.
         lint = self._lint({"workspace_path": str(workspace)})

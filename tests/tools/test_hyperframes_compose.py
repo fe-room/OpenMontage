@@ -507,6 +507,50 @@ def test_hyperframes_render_resolves_relative_output_path_once(tmp_path, monkeyp
     assert result.artifacts == [str(expected)]
 
 
+def test_hyperframes_render_preserves_existing_atelier_workspace(tmp_path, monkeypatch):
+    """Atelier render must not replace hand-authored HTML with scaffolding."""
+    import subprocess
+
+    from tools.base_tool import ToolResult
+
+    workspace = tmp_path / "workspace"
+    workspace.mkdir()
+    index = workspace / "index.html"
+    bespoke_html = "<html><body>hand-authored atelier</body></html>"
+    index.write_text(bespoke_html, encoding="utf-8")
+
+    tool = HyperFramesCompose()
+    monkeypatch.setattr(tool, "_runtime_check", lambda: {"runtime_available": True})
+
+    def scaffold_must_not_run(inputs):
+        raise AssertionError("atelier workspace was unexpectedly re-scaffolded")
+
+    monkeypatch.setattr(tool, "_scaffold", scaffold_must_not_run)
+    monkeypatch.setattr(tool, "_lint", lambda inputs: ToolResult(success=True, data={}))
+    monkeypatch.setattr(tool, "_validate", lambda inputs: ToolResult(success=True, data={}))
+
+    def run_render(args, *, cwd, timeout, check):
+        output = Path(args[args.index("--output") + 1])
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_bytes(b"rendered")
+        return subprocess.CompletedProcess(args, 0, "", "")
+
+    monkeypatch.setattr(tool, "_run_hf", run_render)
+
+    output = tmp_path / "final.mp4"
+    result = tool._render(
+        {
+            "workspace_path": str(workspace),
+            "output_path": str(output),
+            "edit_decisions": {"composition_mode": "atelier"},
+        }
+    )
+
+    assert result.success, result.error
+    assert index.read_text(encoding="utf-8") == bespoke_html
+    assert result.data["steps"]["scaffold"]["operation"] == "preserve_existing_workspace"
+
+
 # ------------------------------------------------------------------
 # video_compose runtime routing
 # ------------------------------------------------------------------

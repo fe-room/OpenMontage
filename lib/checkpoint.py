@@ -461,10 +461,15 @@ def write_checkpoint(
         except (json.JSONDecodeError, OSError):
             continue
     policy_artifacts.update(artifacts)
-    try:
-        enforce_financial_disclaimer(stage, policy_artifacts)
-    except ContentPolicyError as exc:
-        raise CheckpointValidationError(str(exc)) from exc
+    # In-progress checkpoints intentionally may not contain the stage's final
+    # canonical artifact yet. Enforce cross-stage content policy only once a
+    # stage claims a reviewable or completed result; otherwise finance compose
+    # runs cannot record liveness before ``final_review`` exists.
+    if status != "in_progress":
+        try:
+            enforce_financial_disclaimer(stage, policy_artifacts)
+        except ContentPolicyError as exc:
+            raise CheckpointValidationError(str(exc)) from exc
 
     # Merge decision_log: if this checkpoint carries new decisions,
     # append them to the project-level decision log file, then write the
