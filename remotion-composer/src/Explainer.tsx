@@ -75,7 +75,7 @@ import type {
   ThesisBreakerCondition,
 } from "./components/finance";
 import type { ParticleType } from "./components/ParticleOverlay";
-import { resolveTheme, type ThemeConfig, DEFAULT_THEME } from "./Root";
+import { resolveTheme, type ThemeConfig } from "./theme";
 
 // Keep the explainer render offline-safe. Chinese text falls back to the
 // platform CJK sans stack, while Latin labels use a local system sans font.
@@ -296,7 +296,7 @@ interface Cut {
   cursorStartAt?: [number, number];
   // Finance dossier props
   label?: string;
-  primaryValue?: string;
+  primaryValue?: string | number;
   supportingMetrics?: SupportingMetric[];
   period?: string;
   sourceLabel?: string;
@@ -305,9 +305,9 @@ interface Cut {
   interpretation?: string;
   variant?: string;
   metric?: string;
-  expectedValue?: string;
-  actualValue?: string;
-  delta?: string;
+  expectedValue?: string | number;
+  actualValue?: string | number;
+  delta?: string | number;
   unit?: string;
   nodes?: Array<FlowNode | CausalNode>;
   edges?: Array<FlowEdge | CausalEdge>;
@@ -360,6 +360,9 @@ export interface ExplainerProps {
   overlays?: Overlay[];
   captions?: WordCaption[];
   audio?: AudioConfig;
+  width?: number;
+  height?: number;
+  brand?: { label?: string; series?: string; issue?: string };
 }
 
 // ---------------------------------------------------------------------------
@@ -580,7 +583,7 @@ const BackgroundVideoLayer: React.FC<{
   );
 };
 
-const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme }) => {
+const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig; brand?: ExplainerProps["brand"] }> = ({ cut, theme, brand }) => {
   // Wrap component with background video or image if specified
   const maybeWrapWithBg = (element: React.ReactElement) => {
     if (cut.backgroundVideo) {
@@ -679,7 +682,9 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
     sourceDate: cut.sourceDate,
     sampleData: cut.sampleData,
   };
-  if (cut.type === "evidence_card" && cut.label && cut.primaryValue) {
+  const financeContext = { ...financeSource, theme, brand };
+  const isPresent = <T,>(value: T | undefined | null): value is T => value !== undefined && value !== null;
+  if (cut.type === "evidence_card" && cut.label && isPresent(cut.primaryValue)) {
     return (
       <EvidenceCard
         label={cut.label}
@@ -687,11 +692,11 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
         supportingMetrics={cut.supportingMetrics}
         interpretation={cut.interpretation}
         variant={(cut.variant as "hero-number" | "comparison" | "document" | "table") || "hero-number"}
-        {...financeSource}
+        {...financeContext}
       />
     );
   }
-  if (cut.type === "expectation_gap" && cut.metric && cut.expectedValue && cut.actualValue && cut.delta) {
+  if (cut.type === "expectation_gap" && cut.metric && isPresent(cut.expectedValue) && isPresent(cut.actualValue) && isPresent(cut.delta)) {
     return (
       <ExpectationGap
         metric={cut.metric}
@@ -701,7 +706,7 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
         unit={cut.unit}
         interpretation={cut.interpretation}
         variant={(cut.variant as "split" | "stacked" | "delta" | "reveal") || "split"}
-        {...financeSource}
+        {...financeContext}
       />
     );
   }
@@ -713,7 +718,7 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
         edges={cut.edges as FlowEdge[]}
         highlightedPath={cut.highlightedPath}
         variant={(cut.variant as "vertical" | "horizontal" | "radial" | "split" | "sankey-lite") || "horizontal"}
-        {...financeSource}
+        {...financeContext}
       />
     );
   }
@@ -726,7 +731,7 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
         activeNodeId={cut.activeNodeId}
         hypothesis={cut.hypothesis}
         variant={(cut.variant as "linear" | "branching") || "linear"}
-        {...financeSource}
+        {...financeContext}
       />
     );
   }
@@ -737,7 +742,7 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
         events={cut.events}
         highlightedIndex={cut.highlightedIndex}
         variant={(cut.variant as "horizontal" | "vertical") || "vertical"}
-        {...financeSource}
+        {...financeContext}
       />
     );
   }
@@ -747,12 +752,12 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme 
         title={cut.title}
         scenarios={cut.scenarios}
         highlightedScenario={cut.highlightedScenario}
-        {...financeSource}
+        {...financeContext}
       />
     );
   }
   if (cut.type === "thesis_breaker" && cut.thesis && cut.conditions) {
-    return <ThesisBreaker thesis={cut.thesis} conditions={cut.conditions} {...financeSource} />;
+    return <ThesisBreaker thesis={cut.thesis} conditions={cut.conditions} {...financeContext} />;
   }
 
   // --- Chart types — use theme.chartColors as default palette ---
@@ -868,7 +873,7 @@ const OverlayRenderer: React.FC<{ overlay: Overlay }> = ({ overlay }) => {
   if (overlay.type === "section_title") {
     return (
       <SectionTitle
-        title={overlay.text}
+        title={overlay.text ?? ""}
         subtitle={overlay.subtitle}
         accentColor={overlay.accentColor}
         position={(overlay.position as any) || "top-left"}
@@ -878,7 +883,7 @@ const OverlayRenderer: React.FC<{ overlay: Overlay }> = ({ overlay }) => {
   if (overlay.type === "stat_reveal") {
     return (
       <StatReveal
-        stat={overlay.text}
+        stat={overlay.text ?? ""}
         label={overlay.subtitle}
         accentColor={overlay.accentColor}
         position={(overlay.position as any) || "bottom-right"}
@@ -886,7 +891,7 @@ const OverlayRenderer: React.FC<{ overlay: Overlay }> = ({ overlay }) => {
     );
   }
   if (overlay.type === "hero_title") {
-    return <HeroTitle title={overlay.text} subtitle={overlay.subtitle} />;
+    return <HeroTitle title={overlay.text ?? ""} subtitle={overlay.subtitle} />;
   }
   if (overlay.type === "provider_chip" && overlay.providers) {
     return (
@@ -907,7 +912,7 @@ const OverlayRenderer: React.FC<{ overlay: Overlay }> = ({ overlay }) => {
 // ---------------------------------------------------------------------------
 
 export const Explainer: React.FC<ExplainerProps> = (props) => {
-  const { cuts, overlays, captions, audio } = props;
+  const { cuts, overlays, captions, audio, brand } = props;
   const { fps, durationInFrames } = useVideoConfig();
 
   // Resolve theme from props — playbook name, theme name, or custom themeConfig
@@ -925,7 +930,7 @@ export const Explainer: React.FC<ExplainerProps> = (props) => {
 
         return (
           <Sequence key={cut.id} from={from} durationInFrames={duration}>
-            <SceneRenderer cut={cut} theme={theme} />
+            <SceneRenderer cut={cut} theme={theme} brand={brand} />
           </Sequence>
         );
       })}

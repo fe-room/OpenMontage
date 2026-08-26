@@ -1,8 +1,18 @@
+import type { ThemeConfig } from "../../theme";
+
+export type FinanceValue = string | number;
+
+export type FinanceBrand = {
+  label?: string;
+  series?: string;
+  issue?: string;
+};
+
 export type FinanceLayoutVariant = "hero-number" | "comparison" | "document" | "table";
 
 export type SupportingMetric = {
   label: string;
-  value: string;
+  value: FinanceValue;
   direction?: "up" | "down" | "flat";
 };
 
@@ -13,10 +23,15 @@ export type SourceContext = {
   sampleData?: boolean;
 };
 
+export type FinanceRenderContext = SourceContext & {
+  theme?: ThemeConfig;
+  brand?: FinanceBrand;
+};
+
 export type FlowNode = {
   id: string;
   label: string;
-  value?: string;
+  value?: FinanceValue;
 };
 
 export type FlowEdge = {

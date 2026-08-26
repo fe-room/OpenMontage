@@ -6,6 +6,8 @@ Produce `render_report` and `final_review` by routing strictly from the approved
 
 Use the existing `Explainer` composition and finance cut dispatch. Run `composition_validator` before render, then TypeScript/bundle validation as appropriate. Do not create another engine or composition router.
 
+The normal short-form contract is explicit `width: 1080`, `height: 1920`. Respect an approved alternate size. Explainer jobs without dimensions remain legacy 1920×1080.
+
 ## Atelier path
 
 Follow `skills/meta/bespoke-composition.md`. Retain the finance-dossier palette, typography, evidence/source treatment, and analytical restraint, but do not import or reconstruct reusable finance scene components. Produce per-scene stills for the assets gate before the full render.

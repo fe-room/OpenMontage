@@ -1,8 +1,8 @@
 import { useCurrentFrame } from "remotion";
 import { FINANCE_COLORS, FINANCE_MONO, FinanceFrame, reveal } from "./FinanceFrame";
-import type { Scenario, SourceContext } from "./types";
+import type { FinanceRenderContext, Scenario } from "./types";
 
-export type ScenarioBoardProps = SourceContext & {
+export type ScenarioBoardProps = FinanceRenderContext & {
   title?: string;
   scenarios: Scenario[];
   highlightedScenario?: string;
@@ -12,11 +12,13 @@ export const ScenarioBoard: React.FC<ScenarioBoardProps> = ({
   title = "Conditional scenario board",
   scenarios,
   highlightedScenario,
+  theme,
+  brand,
   ...source
 }) => {
   const frame = useCurrentFrame();
   return (
-    <FinanceFrame eyebrow="DECISION / SCENARIOS — NOT FORECASTS" source={source}>
+    <FinanceFrame eyebrow="DECISION / SCENARIOS — NOT FORECASTS" source={source} theme={theme} brand={brand}>
       <div style={{ position: "absolute", inset: "13% 6% 12%" }}>
         <h1 style={{ margin: 0, fontSize: 50 }}>{title}</h1>
         <div style={{ marginTop: 42, display: "grid", gridTemplateColumns: `repeat(${Math.min(scenarios.length, 3)}, minmax(0, 1fr))`, gap: 18 }}>
@@ -28,7 +30,7 @@ export const ScenarioBoard: React.FC<ScenarioBoardProps> = ({
                 style={{
                   minHeight: 780,
                   padding: "28px 24px",
-                  background: active ? "#E7E0D4" : FINANCE_COLORS.surface,
+                  background: FINANCE_COLORS.surface,
                   borderTop: `7px solid ${active ? FINANCE_COLORS.vermillion : index === 1 ? FINANCE_COLORS.teal : FINANCE_COLORS.ochre}`,
                   opacity: reveal(frame, index * 7, 20 + index * 7),
                 }}

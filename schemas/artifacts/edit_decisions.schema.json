@@ -70,7 +70,7 @@
           },
           "reason": { "type": "string" },
           "label": { "type": "string" },
-          "primaryValue": { "type": "string" },
+          "primaryValue": { "type": ["string", "number"] },
           "supportingMetrics": {
             "type": "array",
             "items": {
@@ -78,7 +78,7 @@
               "required": ["label", "value"],
               "properties": {
                 "label": { "type": "string" },
-                "value": { "type": "string" },
+                "value": { "type": ["string", "number"] },
                 "direction": { "type": "string", "enum": ["up", "down", "flat"] }
               },
               "additionalProperties": false
@@ -91,9 +91,9 @@
           "interpretation": { "type": "string" },
           "variant": { "type": "string" },
           "metric": { "type": "string" },
-          "expectedValue": { "type": "string" },
-          "actualValue": { "type": "string" },
-          "delta": { "type": "string" },
+          "expectedValue": { "type": ["string", "number"] },
+          "actualValue": { "type": ["string", "number"] },
+          "delta": { "type": ["string", "number"] },
           "unit": { "type": "string" },
           "nodes": {
             "type": "array",
@@ -103,7 +103,7 @@
               "properties": {
                 "id": { "type": "string" },
                 "label": { "type": "string" },
-                "value": { "type": "string" },
+                "value": { "type": ["string", "number"] },
                 "detail": { "type": "string" }
               },
               "additionalProperties": false
@@ -335,6 +335,18 @@
       "type": "string",
       "enum": ["templated", "atelier"],
       "description": "Locked at proposal — HOW the composition is built. Edit MUST carry forward unchanged. 'atelier' routes video_compose to _render_via_atelier (no cut-schema, no stock registry); requires `bespoke` block below."
+    },
+    "width": { "type": "integer", "minimum": 1, "description": "Explicit Remotion composition width in pixels." },
+    "height": { "type": "integer", "minimum": 1, "description": "Explicit Remotion composition height in pixels." },
+    "brand": {
+      "type": "object",
+      "description": "Optional public-facing Finance Dossier identity. Engine names are never rendered by default.",
+      "properties": {
+        "label": { "type": "string" },
+        "series": { "type": "string" },
+        "issue": { "type": "string" }
+      },
+      "additionalProperties": false
     },
     "bespoke": {
       "type": "object",

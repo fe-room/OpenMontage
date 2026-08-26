@@ -1,19 +1,19 @@
 import { useCurrentFrame } from "remotion";
 import { FINANCE_COLORS, FINANCE_MONO, FinanceFrame, reveal } from "./FinanceFrame";
-import type { SourceContext, ThesisBreakerCondition } from "./types";
+import type { FinanceRenderContext, ThesisBreakerCondition } from "./types";
 
-export type ThesisBreakerProps = SourceContext & {
+export type ThesisBreakerProps = FinanceRenderContext & {
   thesis: string;
   conditions: Array<string | ThesisBreakerCondition>;
 };
 
-export const ThesisBreaker: React.FC<ThesisBreakerProps> = ({ thesis, conditions, ...source }) => {
+export const ThesisBreaker: React.FC<ThesisBreakerProps> = ({ thesis, conditions, theme, brand, ...source }) => {
   const frame = useCurrentFrame();
   const normalized = conditions.slice(0, 4).map((condition) =>
     typeof condition === "string" ? { title: condition } : condition
   );
   return (
-    <FinanceFrame eyebrow="DECISION / THESIS BREAKER" source={source}>
+    <FinanceFrame eyebrow="DECISION / THESIS BREAKER" source={source} theme={theme} brand={brand}>
       <div style={{ position: "absolute", inset: "14% 7% 12%" }}>
         <div style={{ fontFamily: FINANCE_MONO, fontSize: 21, color: FINANCE_COLORS.vermillion }}>WHAT WOULD CHANGE THE THESIS?</div>
         <h1 style={{ fontSize: 45, lineHeight: 1.28, margin: "24px 0 45px", maxWidth: 900 }}>{thesis}</h1>

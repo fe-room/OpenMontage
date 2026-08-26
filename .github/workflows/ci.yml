@@ -4,9 +4,11 @@ on:
   pull_request:
     branches:
       - main
+      - master
   push:
     branches:
       - main
+      - master
 
 permissions:
   contents: read
@@ -44,3 +46,45 @@ jobs:
 
       - name: Run test suite
         run: make test
+
+  remotion:
+    name: Validate Remotion / TypeScript
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: remotion-composer
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: remotion-composer/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compile TypeScript
+        run: npm run typecheck
+
+      - name: Bundle Remotion project
+        run: npm run bundle:remotion
+
+      - name: Discover compositions
+        run: npm run validate:remotion
+
+      - name: Render Finance Dossier smoke stills
+        run: npm run smoke:finance
+
+      - name: Upload Finance Dossier smoke stills
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: finance-dossier-smoke-stills
+          path: remotion-composer/out/finance-smoke/*.png
+          if-no-files-found: warn

@@ -7,6 +7,7 @@ import {
 } from "remotion";
 
 interface HeroTitleProps {
+  [key: string]: unknown;
   title: string;
   subtitle?: string;
 }

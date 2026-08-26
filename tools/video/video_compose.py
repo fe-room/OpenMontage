@@ -1114,8 +1114,9 @@ class VideoCompose(BaseTool):
 
             bg = palette.get("background", "#FFFFFF")
             text = palette.get("text", "#1F2937")
-            surface = palette.get("surface", bg)
-            muted = palette.get("muted_text", "#6B7280")
+            stat_overlay = playbook.get("overlays", {}).get("stat_card", {})
+            surface = palette.get("surface", stat_overlay.get("bg", bg))
+            muted = palette.get("muted", palette.get("muted_text", "#6B7280"))
 
             # Build chart colors from all palette entries
             chart_colors = []
@@ -1123,7 +1124,10 @@ class VideoCompose(BaseTool):
                 val = palette.get(key)
                 if val:
                     chart_colors.append(val[0] if isinstance(val, list) else val)
-            if len(chart_colors) < 3:
+            declared_chart_palette = playbook.get("chart_palette")
+            if isinstance(declared_chart_palette, list) and declared_chart_palette:
+                chart_colors = declared_chart_palette
+            elif len(chart_colors) < 3:
                 chart_colors = [primary, accent, "#10B981", "#8B5CF6", "#EC4899", "#06B6D4"]
 
             theme = {

@@ -1,0 +1,20 @@
+{
+  "theme": "finance-dossier",
+  "width": 1080,
+  "height": 1920,
+  "brand": { "label": "SAMPLE RESEARCH", "issue": "SMOKE 001" },
+  "cuts": [
+    { "id": "evidence", "source": "", "type": "evidence_card", "in_seconds": 0, "out_seconds": 3, "label": "FICTIONAL REVENUE", "primaryValue": 0, "supportingMetrics": [{ "label": "Margin", "value": 0, "direction": "flat" }], "period": "FY2030 / SAMPLE", "sampleData": true },
+    { "id": "gap-split", "source": "", "type": "expectation_gap", "in_seconds": 3, "out_seconds": 6, "metric": "Split comparison", "expectedValue": 0, "actualValue": -8, "delta": -8, "unit": "%", "variant": "split", "sampleData": true },
+    { "id": "gap-stacked", "source": "", "type": "expectation_gap", "in_seconds": 6, "out_seconds": 9, "metric": "Stacked comparison", "expectedValue": 0, "actualValue": -8, "delta": -8, "unit": "%", "variant": "stacked", "sampleData": true },
+    { "id": "gap-delta", "source": "", "type": "expectation_gap", "in_seconds": 9, "out_seconds": 12, "metric": "Gap is the hero", "expectedValue": 30, "actualValue": 24, "delta": "−6 pts", "unit": "%", "variant": "delta", "sampleData": true },
+    { "id": "gap-reveal", "source": "", "type": "expectation_gap", "in_seconds": 12, "out_seconds": 15, "metric": "Actual first, expectation second", "expectedValue": 35, "actualValue": 28, "delta": "−7 pts", "unit": "%", "variant": "reveal", "sampleData": true },
+    { "id": "flow-horizontal", "source": "", "type": "money_flow", "in_seconds": 15, "out_seconds": 18, "title": "Horizontal baseline", "nodes": [{ "id": "capex", "label": "Cloud CAPEX", "value": 100 }, { "id": "gpu", "label": "GPU", "value": 60 }, { "id": "dc", "label": "Data Center", "value": 30 }], "edges": [{ "from": "capex", "to": "gpu", "value": 60 }, { "from": "capex", "to": "dc", "value": 30 }], "variant": "horizontal", "sampleData": true },
+    { "id": "flow-sankey", "source": "", "type": "money_flow", "in_seconds": 18, "out_seconds": 21, "title": "Value-weighted Sankey-lite", "nodes": [{ "id": "capex", "label": "Cloud CAPEX", "value": 100 }, { "id": "gpu", "label": "GPU", "value": 60 }, { "id": "dc", "label": "Data Center", "value": 30 }, { "id": "net", "label": "Networking", "value": 10 }], "edges": [{ "from": "capex", "to": "gpu", "value": 60 }, { "from": "capex", "to": "dc", "value": 30 }, { "from": "capex", "to": "net", "value": 10 }], "highlightedPath": ["capex", "gpu"], "variant": "sankey-lite", "sampleData": true },
+    { "id": "timeline", "source": "", "type": "research_timeline", "in_seconds": 21, "out_seconds": 24, "events": [{ "date": "2030-01", "title": "Fictional filing", "source": "SAMPLE" }, { "date": "2030-02", "title": "Fictional update", "source": "SAMPLE" }], "sampleData": true },
+    { "id": "scenarios", "source": "", "type": "scenario_board", "in_seconds": 24, "out_seconds": 27, "scenarios": [{ "name": "BASE", "description": "Sample base case", "trigger": "Metric stays flat", "probability": 0 }, { "name": "RISK", "description": "Sample risk case", "trigger": "Metric weakens" }], "sampleData": true }
+  ],
+  "overlays": [],
+  "captions": [],
+  "audio": {}
+}

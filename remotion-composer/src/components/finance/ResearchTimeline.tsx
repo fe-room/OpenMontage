@@ -1,8 +1,8 @@
 import { useCurrentFrame } from "remotion";
 import { FINANCE_COLORS, FINANCE_MONO, FinanceFrame, reveal } from "./FinanceFrame";
-import type { ResearchTimelineEvent, SourceContext } from "./types";
+import type { FinanceRenderContext, ResearchTimelineEvent } from "./types";
 
-export type ResearchTimelineProps = SourceContext & {
+export type ResearchTimelineProps = FinanceRenderContext & {
   title?: string;
   events: ResearchTimelineEvent[];
   highlightedIndex?: number;
@@ -14,12 +14,14 @@ export const ResearchTimeline: React.FC<ResearchTimelineProps> = ({
   events,
   highlightedIndex,
   variant = "vertical",
+  theme,
+  brand,
   ...source
 }) => {
   const frame = useCurrentFrame();
   const horizontal = variant === "horizontal";
   return (
-    <FinanceFrame eyebrow={`DOCUMENT / TIMELINE / ${variant.toUpperCase()}`} source={source}>
+    <FinanceFrame eyebrow={`DOCUMENT / TIMELINE / ${variant.toUpperCase()}`} source={source} theme={theme} brand={brand}>
       <div style={{ position: "absolute", inset: "13% 7% 12%" }}>
         <h1 style={{ margin: 0, fontSize: 52 }}>{title}</h1>
         <div

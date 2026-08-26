@@ -348,6 +348,32 @@ def _merge_decision_log(
         json.dump(existing, f, indent=2)
 
 
+def _attach_finance_scene_variety_review(checkpoint: dict[str, Any]) -> None:
+    """Attach deterministic advisory finance warnings to the existing review rail."""
+
+    if (
+        checkpoint.get("pipeline_type") != "finance-dossier"
+        or checkpoint.get("stage") != "scene_plan"
+        or checkpoint.get("status") == "in_progress"
+    ):
+        return
+    scene_plan = checkpoint.get("artifacts", {}).get("scene_plan")
+    if not isinstance(scene_plan, dict):
+        return
+
+    from lib.finance_scene_variety import FinanceSceneVarietyValidator
+
+    result = FinanceSceneVarietyValidator().validate(scene_plan)
+    unique: dict[tuple[str, tuple[str, ...]], dict[str, Any]] = {}
+    for warning in result.get("warnings", []):
+        key = (str(warning.get("code", "")), tuple(str(item) for item in warning.get("scene_ids", [])))
+        unique[key] = warning
+    result["warnings"] = list(unique.values())
+    review = dict(checkpoint.get("review") or {})
+    review["finance_scene_variety"] = result
+    checkpoint["review"] = review
+
+
 def write_checkpoint(
     pipeline_dir: Path,
     project_id: str,
@@ -491,6 +517,11 @@ def write_checkpoint(
                 else:
                     plan_or_top["decision_log_ref"] = log_ref
 
+    # Validate the canonical artifact first, then run the finance-only advisory
+    # extension and validate the final checkpoint shape. Creative warnings do
+    # not change checkpoint status or hard-fail production.
+    validate_checkpoint(checkpoint)
+    _attach_finance_scene_variety_review(checkpoint)
     validate_checkpoint(checkpoint)
 
     path = _checkpoint_path(pipeline_dir, project_id, stage)

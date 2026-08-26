@@ -29,6 +29,7 @@ DEMO_DESCRIPTIONS = {
     "world-in-numbers": "Global scale story with titles, stats, and charts",
     "code-to-screen": "Developer workflow explainer with comparison and KPI cards",
     "focusflow-pitch": "Startup-style pitch built only from Remotion components",
+    "finance-dossier-sample": "Evidence-first fictional finance short (1080x1920)",
 }
 
 
@@ -71,6 +72,15 @@ def validate_props_file(path: Path) -> None:
 
     if not isinstance(payload.get("cuts"), list) or not payload["cuts"]:
         raise SystemExit(f"Error: {path} must define at least one cut.")
+    if ("width" in payload) != ("height" in payload):
+        raise SystemExit(f"Error: {path} must define width and height together.")
+    if "width" in payload and (
+        not isinstance(payload["width"], int)
+        or not isinstance(payload["height"], int)
+        or payload["width"] <= 0
+        or payload["height"] <= 0
+    ):
+        raise SystemExit(f"Error: {path} width and height must be positive integers.")
 
 
 def render_demo(name: str, props_path: Path, npx_cmd: str) -> None:

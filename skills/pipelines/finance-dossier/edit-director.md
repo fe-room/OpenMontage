@@ -5,6 +5,7 @@ Produce schema-valid `edit_decisions` from the approved scene plan and asset man
 ## Cut construction
 
 - Carry `render_runtime` and `composition_mode` from the approved proposal without silent substitution.
+- Set explicit Explainer `width: 1080` and `height: 1920` for the normal Douyin, Xiaohongshu, YouTube Shorts, and TikTok-style delivery. Preserve any explicitly approved alternative resolution instead of inferring orientation from the platform name.
 - Map finance scenes to the existing Explainer cut dispatch using flat props: `evidence_card`, `expectation_gap`, `money_flow`, `causal_chain`, `research_timeline`, `scenario_board`, or `thesis_breaker`.
 - Preserve layout `variant`, source label/date, period, claim class, and sample-data marker. Use probability only when the research supplies it.
 - Ensure every edge references valid nodes. Label uncertain causal relations and never turn correlation into an unqualified causal arrow.

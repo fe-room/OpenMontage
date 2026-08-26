@@ -5,6 +5,10 @@
   "scripts": {
     "start": "npx remotion studio",
     "build": "npx remotion render src/index.tsx Explainer out/video.mp4",
+    "typecheck": "tsc --noEmit",
+    "validate:remotion": "remotion compositions src/index.tsx --props=public/demo-props/finance-dossier-sample.json",
+    "bundle:remotion": "remotion bundle src/index.tsx --out-dir=out/remotion-bundle",
+    "smoke:finance": "node scripts/finance-smoke.mjs",
     "upgrade": "npx remotion upgrade"
   },
   "dependencies": {

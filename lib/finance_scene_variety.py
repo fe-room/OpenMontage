@@ -9,6 +9,8 @@ warnings and may record a deliberate justification for a simple plan.
 from __future__ import annotations
 
 from collections import Counter
+import json
+import re
 from typing import Any
 
 
@@ -27,6 +29,12 @@ FINANCE_TYPES = {
 CARD_LIKE_TYPES = {"stat_card", "kpi_grid", "evidence_card", "expectation_gap"}
 MECHANISM_TYPES = {"money_flow", "causal_chain"}
 FACTUAL_TYPES = {"chart", "evidence_card", "expectation_gap", "research_timeline"}
+LEGACY_FINANCIAL_DATA_TYPES = {"stat_card", "kpi_grid"}
+FINANCIAL_NUMBER_RE = re.compile(
+    r"(?:[-+−]?\d[\d,.]*(?:\.\d+)?\s*(?:%|％|bps?|pts?|元|万元|亿元|美元|倍))"
+    r"|(?:[¥￥$€]\s*[-+−]?\d[\d,.]*(?:\.\d+)?)",
+    re.IGNORECASE,
+)
 MECHANISM_TERMS = {
     "because",
     "causes",
@@ -69,6 +77,29 @@ def _family(scene: dict[str, Any]) -> str | None:
 
 def _warn(code: str, message: str, scene_ids: list[str] | None = None) -> dict[str, Any]:
     return {"code": code, "message": message, "scene_ids": scene_ids or []}
+
+
+def _contains_financial_number(scene: dict[str, Any]) -> bool:
+    """Detect a numerical finance claim without treating any number as a fact."""
+
+    fields = {
+        key: scene.get(key)
+        for key in (
+            "description", "information_role", "stat", "primaryValue",
+            "supportingMetrics", "chartData", "metrics", "value",
+        )
+        if scene.get(key) is not None
+    }
+    return bool(FINANCIAL_NUMBER_RE.search(json.dumps(fields, ensure_ascii=False)))
+
+
+def _requires_source_anchor(scene: dict[str, Any], scene_type: str) -> bool:
+    claim_class = str(scene.get("claim_class", "")).strip().upper()
+    if claim_class:
+        return claim_class == "FACT"
+    if scene_type in FACTUAL_TYPES:
+        return True
+    return scene_type in LEGACY_FINANCIAL_DATA_TYPES and _contains_financial_number(scene)
 
 
 class FinanceSceneVarietyValidator:
@@ -147,7 +178,7 @@ class FinanceSceneVarietyValidator:
         missing_source_ids: list[str] = []
         for scene in scenes:
             scene_type = _finance_type(scene)
-            important_fact = scene.get("claim_class") == "FACT" or scene_type in FACTUAL_TYPES
+            important_fact = _requires_source_anchor(scene, scene_type)
             if important_fact and not scene.get("source_anchor") and not scene.get("finance_justification"):
                 missing_source_ids.append(str(scene.get("id", "")))
         if missing_source_ids:

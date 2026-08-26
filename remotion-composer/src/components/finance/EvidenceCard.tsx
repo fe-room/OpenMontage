@@ -6,11 +6,11 @@ import {
   FinanceFrame,
   reveal,
 } from "./FinanceFrame";
-import type { FinanceLayoutVariant, SourceContext, SupportingMetric } from "./types";
+import type { FinanceLayoutVariant, FinanceRenderContext, FinanceValue, SupportingMetric } from "./types";
 
-export type EvidenceCardProps = SourceContext & {
+export type EvidenceCardProps = FinanceRenderContext & {
   label: string;
-  primaryValue: string;
+  primaryValue: FinanceValue;
   supportingMetrics?: SupportingMetric[];
   interpretation?: string;
   variant?: FinanceLayoutVariant;
@@ -22,6 +22,8 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
   supportingMetrics = [],
   interpretation,
   variant = "hero-number",
+  theme,
+  brand,
   ...source
 }) => {
   const frame = useCurrentFrame();
@@ -31,7 +33,7 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
   const isTable = variant === "table";
 
   return (
-    <FinanceFrame eyebrow={`EVIDENCE / ${variant.toUpperCase()}`} source={source}>
+    <FinanceFrame eyebrow={`EVIDENCE / ${variant.toUpperCase()}`} source={source} theme={theme} brand={brand}>
       <div
         style={{
           position: "absolute",

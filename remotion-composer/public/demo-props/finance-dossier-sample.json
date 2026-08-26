@@ -1,5 +1,11 @@
 {
   "theme": "finance-dossier",
+  "width": 1080,
+  "height": 1920,
+  "brand": {
+    "label": "FINANCE DOSSIER",
+    "issue": "DOSSIER 038"
+  },
   "cuts": [
     {
       "id": "sample-evidence",

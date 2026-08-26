@@ -1,8 +1,8 @@
 import { useCurrentFrame } from "remotion";
 import { FINANCE_COLORS, FINANCE_MONO, FinanceFrame, reveal } from "./FinanceFrame";
-import type { CausalEdge, CausalNode, SourceContext } from "./types";
+import type { CausalEdge, CausalNode, FinanceRenderContext } from "./types";
 
-export type CausalChainProps = SourceContext & {
+export type CausalChainProps = FinanceRenderContext & {
   title?: string;
   nodes: CausalNode[];
   edges: CausalEdge[];
@@ -18,6 +18,8 @@ export const CausalChain: React.FC<CausalChainProps> = ({
   activeNodeId,
   hypothesis = false,
   variant = "linear",
+  theme,
+  brand,
   ...source
 }) => {
   const frame = useCurrentFrame();
@@ -31,7 +33,7 @@ export const CausalChain: React.FC<CausalChainProps> = ({
   );
 
   return (
-    <FinanceFrame eyebrow={hypothesis ? "MECHANISM / HYPOTHESIS" : "MECHANISM / CAUSAL CHAIN"} source={source}>
+    <FinanceFrame eyebrow={hypothesis ? "MECHANISM / HYPOTHESIS" : "MECHANISM / CAUSAL CHAIN"} source={source} theme={theme} brand={brand}>
       <div style={{ position: "absolute", inset: "12% 6% 11%" }}>
         <h1 style={{ margin: "0 0 18px", fontSize: 48 }}>{title}</h1>
         {hypothesis && (
@@ -74,7 +76,7 @@ export const CausalChain: React.FC<CausalChainProps> = ({
             const active = node.id === activeNodeId;
             return (
               <g key={node.id} opacity={reveal(frame, index * 6, 18 + index * 6)}>
-                <rect x={point.x - 260} y={point.y - 66} width="520" height="132" rx="3" fill={active ? "#E6DDD0" : FINANCE_COLORS.surface} stroke={active ? FINANCE_COLORS.vermillion : FINANCE_COLORS.line} strokeWidth={active ? 5 : 2} />
+                <rect x={point.x - 260} y={point.y - 66} width="520" height="132" rx="3" fill={FINANCE_COLORS.surface} stroke={active ? FINANCE_COLORS.vermillion : FINANCE_COLORS.line} strokeWidth={active ? 5 : 2} />
                 <text x={point.x} y={point.y - 5} textAnchor="middle" fontSize="31" fontWeight="700" fill={FINANCE_COLORS.ink}>{node.label}</text>
                 {node.detail && <text x={point.x} y={point.y + 35} textAnchor="middle" fontSize="21" fill={FINANCE_COLORS.muted}>{node.detail}</text>}
               </g>
