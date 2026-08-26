@@ -17,3 +17,23 @@ export type { ParticleType } from "./ParticleOverlay";
 export type { CameraMotion, AnimeSceneProps } from "./AnimeScene";
 export type { TerminalStep } from "./TerminalScene";
 export type { ScreenshotStep, Region, Point } from "./ScreenshotScene";
+export {
+  EvidenceCard,
+  ExpectationGap,
+  MoneyFlow,
+  CausalChain,
+  ResearchTimeline,
+  ScenarioBoard,
+  ThesisBreaker,
+  SourceStrip,
+} from "./finance";
+export type {
+  EvidenceCardProps,
+  ExpectationGapProps,
+  MoneyFlowProps,
+  CausalChainProps,
+  ResearchTimelineProps,
+  ScenarioBoardProps,
+  ThesisBreakerProps,
+  SourceStripProps,
+} from "./finance";

@@ -1,0 +1,142 @@
+identity:
+  name: "Finance Dossier"
+  category: custom
+  mood: analytical, restrained, evidence-led, editorial
+  pace: deliberate
+  best_for: "Finance research shorts, filings-led analysis, expectation gaps, mechanisms, and conditional scenarios"
+
+taste_profile:
+  design_read: "A financial research dossier assembled at an analyst desk: source-first, annotated, calm, and skeptical of easy conclusions."
+  visual_variance: 6
+  motion_intensity: 3
+  information_density: 6
+  palette_discipline: "Warm paper and black ink dominate; vermillion annotates, teal explains structure, and ochre highlights evidence."
+  layout_variation: "Alternate document crops, asymmetric evidence fields, deterministic diagrams, timelines, and decision boards according to information structure."
+  reference_strategy: "Use primary-source documents and data layouts as references; never imitate broadcast-finance or trading-terminal interfaces."
+  anti_patterns:
+    - "CNBC or Bloomberg Terminal imitation"
+    - "neon fintech and glowing dashboards"
+    - "generic stock-market montage or candlestick wallpaper"
+    - "decorative office, handshake, skyscraper, coin, or rocket imagery"
+    - "red and green as the sole carrier of direction"
+  quality_gates:
+    - "Every important factual or numerical frame has a readable source anchor and period context where relevant."
+    - "Each frame carries one primary claim and motion reveals the reasoning behind it."
+    - "Fact, inference, thesis, and scenario remain visibly and verbally distinct."
+
+visual_language:
+  color_palette:
+    primary: ["#171715", "#345C5B"]
+    accent: ["#B44736", "#C5A64A"]
+    background: "#F2EFE7"
+    text: "#171715"
+    muted: "#6C6860"
+  composition: "Asymmetric editorial grids with hard alignment, generous negative space, document crops, analyst annotations, small source metadata, and one primary claim per frame"
+  texture: "Warm matte paper with subtle grain only; no decorative visual noise"
+
+typography:
+  headings:
+    font: '"Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif'
+    weight: 700
+    tracking: "-0.015em"
+    line_height: 1.15
+  body:
+    font: '"Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif'
+    weight: 400
+    line_height: 1.5
+  code:
+    font: '"IBM Plex Mono", "SFMono-Regular", Consolas, monospace'
+    weight: 500
+    tracking: "0.025em"
+  stat_card:
+    font: '"IBM Plex Mono", "SFMono-Regular", Consolas, monospace'
+    weight: 700
+    size_multiplier: 3.0
+  scale_system: major_third
+  weight_matrix:
+    title: 700
+    heading: 700
+    body: 400
+    caption: 500
+
+motion:
+  transitions: [hard-cut, mask-reveal, restrained-fade, subtle-slide]
+  animation_style: "Reasoning-led masks, underline draws, document zooms and crops, connector lines, progressive causal reveals, and restrained fades; no constant springy card motion"
+  pacing_rules:
+    min_scene_hold_seconds: 3
+    max_scene_hold_seconds: 12
+    text_card_hold_seconds: 4
+    stat_card_hold_seconds: 4
+    transition_duration_seconds: 0.3
+  entrance: "masked reveal or 16px editorial slide with clamped ease-out"
+  exit: "hard editorial cut or restrained opacity fade"
+
+audio:
+  voice_style: "calm, analytical, restrained, and confident without hype; short pauses before important numbers or thesis changes"
+  music_mood: "minimal investigative editorial pulse with low emotional manipulation"
+  music_volume: 0.05
+  sfx_style: "subtle paper, pencil, keyboard, calculator, and soft ticks; no excessive whooshes or impacts"
+  ducking_threshold_db: -5
+  voice_variation_allowed: false
+  hero_moment_voice_shift: "brief pause, slightly slower delivery, preserve analytical restraint"
+  transition_voice_shift: "short pause before a new evidence or thesis category"
+
+asset_generation:
+  image_prompt_prefix: "financial research dossier, editorial analyst desk, warm paper, source documents, precise annotations, evidence-led asymmetric grid, restrained data visualization, generous negative space, "
+  image_negative_prompt: "generic businessmen, handshakes, floating coins, money rain, glowing dollar symbols, random candlestick backgrounds, Wall Street filler footage, skyscraper filler footage, blue-purple corporate gradients, neon trading terminals, HUD interfaces, holographic finance graphics, generic office teams, rocket metaphors, CNBC clone, Bloomberg Terminal clone"
+  diagram_style: "Deterministic thin-line editorial diagram on warm paper; teal structure, vermillion annotation, explicit direction symbols and labels"
+  consistency_anchors:
+    - "Warm paper background #F2EFE7 with ink text #171715"
+    - "Small monospace source metadata remains readable"
+    - "Vermillion annotations and deep-teal explanatory structure"
+    - "Direction always includes +/-, arrows, or textual labels in addition to color"
+    - "One primary claim per frame"
+
+overlays:
+  stat_card:
+    bg: "#F8F5ED"
+    border: "#CEC8BA"
+    text: "#171715"
+    radius: 3
+    shadow: "0 2px 8px rgba(23,23,21,0.06)"
+  key_term:
+    bg: "#E7E0D4"
+    border: "#B44736"
+    text: "#171715"
+    radius: 2
+    highlight: "#C5A64A"
+  code_block:
+    bg: "#171715"
+    border: "#345C5B"
+    text: "#F2EFE7"
+    radius: 2
+    highlight: "#C5A64A"
+
+quality_rules:
+  - "Every major factual claim needs an evidence or source anchor"
+  - "Numerical claims include the relevant period and comparison context whenever relevant"
+  - "Use one primary claim per frame"
+  - "Prefer evidence, documents, diagrams, and charts over generic stock imagery"
+  - "Never use stock-market imagery as meaningless decoration"
+  - "Do not use color as the only carrier of financial direction; include +/-, arrows, or textual labels"
+  - "Motion reveals reasoning rather than merely adding energy"
+  - "Sources remain readable at the target mobile resolution"
+  - "Avoid generic AI-finance imagery and deterministic investment language"
+  - "Clearly distinguish FACT, INFERENCE, THESIS, and SCENARIO"
+  - "Never fabricate expected values, analyst consensus, probabilities, market prices, or real-time data"
+
+chart_palette:
+  - "#345C5B"
+  - "#B44736"
+  - "#C5A64A"
+  - "#171715"
+  - "#6C6860"
+
+color_rules:
+  harmony_type: split-complementary
+  contrast_validation: true
+  colorblind_safe: true
+
+overrides:
+  max_deviation_ratio: 0.2
+  scene_overrides: []

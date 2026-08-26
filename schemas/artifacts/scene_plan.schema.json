@@ -94,6 +94,45 @@
             "items": { "type": "string" },
             "description": "Visual texture descriptors: grain, clean, anamorphic, gritty, ethereal, etc."
           },
+          "finance_family": {
+            "type": "string",
+            "enum": ["DOCUMENT", "DATA", "MECHANISM", "DECISION"],
+            "description": "Conceptual information responsibility for finance-dossier scenes."
+          },
+          "finance_scene_type": {
+            "type": "string",
+            "enum": ["document", "chart", "evidence_card", "expectation_gap", "money_flow", "causal_chain", "research_timeline", "scenario_board", "thesis_breaker", "watch_list"],
+            "description": "Finance-specific visual treatment selected within the existing scene_plan artifact."
+          },
+          "claim_class": {
+            "type": "string",
+            "enum": ["FACT", "INFERENCE", "THESIS", "SCENARIO"],
+            "description": "Editorial status of the scene's primary claim."
+          },
+          "source_anchor": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "date": { "type": "string" },
+              "period": { "type": "string" },
+              "url": { "type": "string" },
+              "tier": { "type": "integer", "minimum": 1, "maximum": 3 }
+            },
+            "required": ["label"],
+            "additionalProperties": false
+          },
+          "mechanism_importance": {
+            "type": "boolean",
+            "description": "Whether this beat contains an important causal or value-flow explanation that merits a mechanism visual."
+          },
+          "layout_variant": {
+            "type": "string",
+            "description": "Deterministic finance component layout selected from the information structure."
+          },
+          "finance_justification": {
+            "type": "string",
+            "description": "Reason for a deliberate validator exception or simplified family choice."
+          },
           "required_assets": {
             "type": "array",
             "items": {

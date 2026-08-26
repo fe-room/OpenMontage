@@ -109,6 +109,7 @@ Key capability families to look for in the output:
 | â†³ LTX Prompting | `creative/prompting/ltx-prompting.md` | LTX-2 6-element structure, audio prompting | `ltx2` |
 | â†³ HunyuanVideo Prompting | `creative/prompting/hunyuan-prompting.md` | HunyuanVideo formula, I2V best practices | â€" |
 | Storytelling | `creative/storytelling.md` | Narrative structure, hooks, pacing, Mayer's principles | â€" |
+| Finance Storytelling | `creative/finance-storytelling.md` | Evidence hierarchy, FACT/INFERENCE/THESIS/SCENARIO labels, dossier narrative and scene grammar | `remotion-best-practices` |
 | Sound Design | `creative/sound-design.md` | Audio ducking, LUFS targets, SFX timing, AI TTS mixing | `elevenlabs` |
 | Typography | `creative/typography.md` | Font selection, text sizing, safe zones, caption styling | â€" |
 | ManimCE Usage | `creative/manim-usage.md` | Scene composition, animation timing, color usage | `manimce-best-practices` |
@@ -159,6 +160,20 @@ Stage director skills teach the agent HOW to execute each pipeline stage. Each s
 | **Shared Cover Director** | `pipelines/shared/cover-director.md` | `cover` | Post-render cover generation, platform sizing, exact text, visual verification |
 
 > **Note:** The old `idea-director.md` still exists for reference but is superseded by the research + proposal two-stage flow in v2.0. The talking-head pipeline continues to use its own `idea-director`.
+
+### Finance Dossier Pipeline (`pipelines/finance-dossier/`) — v1.0
+
+| Skill | File | Stage | Key Capabilities |
+|-------|------|-------|-----------------|
+| Executive Producer | `pipelines/finance-dossier/executive-producer.md` | `all` | Evidence-first orchestration, finance compliance, cross-stage source integrity |
+| Research Director | `pipelines/finance-dossier/research-director.md` | `research` | Tiered sources and FACT/INFERENCE/THESIS/SCENARIO classification |
+| Proposal Director | `pipelines/finance-dossier/proposal-director.md` | `proposal` | Runtime, authoring mode, motion coverage, capability and cost decisions |
+| Script Director | `pipelines/finance-dossier/script-director.md` | `script` | Anomaly-to-mechanism narrative and thesis-changing conditions |
+| Scene Director | `pipelines/finance-dossier/scene-director.md` | `scene_plan` | DOCUMENT/DATA/MECHANISM/DECISION families and variety validation |
+| Asset Director | `pipelines/finance-dossier/asset-director.md` | `assets` | Source provenance, restrained narration, anti-generic asset rules |
+| Edit Director | `pipelines/finance-dossier/edit-director.md` | `edit` | Finance cut props, direction encoding, exact disclaimer cut |
+| Compose Director | `pipelines/finance-dossier/compose-director.md` | `compose` | Existing Explainer dispatch, atelier boundary, source/disclaimer QA |
+| Publish Director | `pipelines/finance-dossier/publish-director.md` | `publish` | Evidence notes and non-sensational packaging |
 
 ### Talking Head Pipeline (`pipelines/talking-head/`)
 
@@ -303,6 +318,7 @@ Style playbooks (`styles/*.yaml`) define visual language, typography, motion, au
 | `premium-minimalist` | minimalist | calm, editorial | Investor updates, expert explainers, product narratives |
 | `flat-motion-graphics` | motion-graphics | energetic, bold | Social media, TikTok, startups |
 | `minimalist-diagram` | whiteboard | focused, technical | Technical deep-dives, architecture |
+| `finance-dossier` | custom | analytical, restrained, evidence-led | Finance research, filings, mechanisms, scenarios |
 
 Load via `styles/playbook_loader.py`: `load_playbook("clean-professional")`
 

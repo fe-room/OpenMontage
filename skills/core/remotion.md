@@ -60,6 +60,13 @@ The Explainer composition supports the following cut types:
 | `kpi_grid` | `chartData` [{label, value, prefix, suffix, change, icon}] | Dashboards, traction metrics |
 | `progress_bar` | `progress` (0-100), optional `progressSegments` | Journey viz, completion, stacked metrics |
 | `anime_scene` | `images` (1-4 paths), optional `animation`, `particles`, `particleColor`, `particleCount`, `particleIntensity`, `vignette`, `lightingFrom`, `lightingTo` | Anime/Ghibli-style scenes with multi-image crossfade, camera motion, particle overlays |
+| `evidence_card` | `label`, `primaryValue`, optional `supportingMetrics`, source fields, `variant` | Finance claim with evidence and readable source context |
+| `expectation_gap` | `metric`, `expectedValue`, `actualValue`, `delta`, optional `unit`, source fields, `variant` | Expected-versus-actual finance analysis |
+| `money_flow` | `nodes`, `edges`, optional `highlightedPath`, `variant` | Deterministic capital/value flow |
+| `causal_chain` | `nodes`, `edges`, optional `hypothesis`, `activeNodeId`, `variant` | Causal reasoning or an explicitly labeled hypothesis |
+| `research_timeline` | `events`, optional `highlightedIndex`, `variant` | Sourced event progression |
+| `scenario_board` | `scenarios`, optional `highlightedScenario` | Conditional cases, triggers, and metrics to watch |
+| `thesis_breaker` | `thesis`, `conditions` | Evidence that would weaken or invalidate a thesis |
 
 **Chart animations:** `grow-up`, `slide-in`, `pop` (bar), `draw`, `fade-in` (line), `spin`, `expand`, `sequential` (pie), `count-up`, `pop`, `cascade` (kpi)
 

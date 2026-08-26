@@ -374,6 +374,7 @@ If the folder has tracks, the proposal and asset stages should present them as o
 | `localization-dub` | Subtitle, dub, and translated variants | beta |
 | `framework-smoke` | Test: minimal 2-stage smoke test | test |
 | `finance-wechat-article` | Screen finance videos and create evidence-first 公众号 article packages | beta |
+| `finance-dossier` | Evidence-first finance research shorts with documents, mechanisms, and scenario framing | beta |
 
 > **Beta pipelines** have not been fully audited. They work, but expect rough edges. Mention this when the user selects one.
 
@@ -543,6 +544,7 @@ For these requests:
 
 See `remotion-composer/SCENE_TYPES.md` for the authoritative list and their cut schemas. Current scene types usable via `cut.type`:
 `text_card`, `stat_card`, `callout`, `comparison`, `hero_title`, `terminal_scene`, `anime_scene`, `bar_chart`, `line_chart`, `pie_chart`, `kpi_grid`, `progress_bar`. Overlay types include `section_title`, `stat_reveal`, `hero_title`, `provider_chip`.
+Finance dossier cut types extend the same dispatch: `evidence_card`, `expectation_gap`, `money_flow`, `causal_chain`, `research_timeline`, `scenario_board`, and `thesis_breaker`.
 
 These stock scene-types are the **templated** path — fast and reliable, but they are why videos look alike. For **hero work, prefer atelier mode** (hand-authored composition) over this catalog; read those types as a *mechanics codex*, not a menu to assemble. See "Composition Authoring Mode" above and `skills/meta/bespoke-composition.md`.
 
@@ -868,6 +870,7 @@ Tool rules:
 | `premium-minimalist` | Investor updates, expert explainers, product narratives |
 | `flat-motion-graphics` | Social media, TikTok, startups |
 | `minimalist-diagram` | Technical deep-dives, architecture |
+| `finance-dossier` | Finance research, filings, expectation gaps, mechanisms, and conditional scenarios |
 | `ink-sketch` (Ink Theater) | Hand-drawn ink-on-white doodle animation; a character that draws itself, walks, dances; contraption explainers |
 
 For custom, atelier, brand, launch, or hero work, read `skills/meta/taste-direction.md` before choosing a playbook. Carry its `taste_profile` into the proposal so later stages can preserve the design read, visual variance, motion intensity, information density, reference strategy, and anti-patterns.

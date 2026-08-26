@@ -1,0 +1,212 @@
+name: finance-dossier
+version: "1.0"
+description: >
+  Evidence-first finance video pipeline for filings, source documents, analyst annotations,
+  expectation gaps, mechanisms, and conditional decision frames. Uses the existing canonical
+  artifact lifecycle and the Remotion Explainer runtime rather than a parallel renderer.
+category: generated
+stability: beta
+deliverable_type: video
+default_checkpoint_policy: guided
+
+reference_input:
+  supported: true
+  analysis_depth: standard
+  analysis_tools: [video_analyzer, transcript_fetcher, video_downloader, scene_detect, frame_sampler]
+
+conditional_skills:
+  - skill: meta/finance-video-editorial
+    when: {content_category: finance}
+    stages: [research, proposal, script, scene_plan, assets, edit, compose, cover, publish]
+
+extensions:
+  custom_scripts: true
+  custom_playbooks: true
+  custom_skills: true
+  custom_tools: false
+
+required_skills:
+  - pipelines/finance-dossier/executive-producer
+  - pipelines/finance-dossier/research-director
+  - pipelines/finance-dossier/proposal-director
+  - pipelines/finance-dossier/script-director
+  - pipelines/finance-dossier/scene-director
+  - pipelines/finance-dossier/asset-director
+  - pipelines/finance-dossier/edit-director
+  - pipelines/finance-dossier/compose-director
+  - pipelines/finance-dossier/publish-director
+  - creative/finance-storytelling
+  - meta/reviewer
+  - meta/checkpoint-protocol
+  - meta/animation-runtime-selector
+  - meta/voice-performance-director
+
+orchestration:
+  mode: executive-producer
+  skill: pipelines/finance-dossier/executive-producer
+  budget_default_usd: 2.00
+  max_revisions_per_stage: 3
+  max_send_backs: 3
+  max_wall_time_minutes: 30
+
+compatible_playbooks:
+  recommended: [finance-dossier]
+  also_works: [premium-minimalist, minimalist-diagram]
+  custom_allowed: true
+
+metadata:
+  canonical_content_category: finance
+  default_renderer_family: explainer-data
+  default_composition_mode_daily: templated
+  default_composition_mode_hero: atelier
+
+stages:
+  - name: research
+    skill: pipelines/finance-dossier/research-director
+    produces: [research_brief]
+    tools_available: []
+    checkpoint_required: false
+    human_approval_default: false
+    review_focus:
+      - "content_category is finance and source hierarchy is explicit"
+      - "Major claims are tagged conceptually as FACT, INFERENCE, THESIS, or SCENARIO"
+      - "Tier 1 sources lead; Tier 3 is never sole support for a major factual claim"
+      - "Numerical claims include period and comparison context"
+      - "No invented consensus, probability, price, forecast, or real-time value"
+    success_criteria:
+      - "Schema-valid research_brief with at least 3 evidence-bearing data points"
+      - "At least 5 sources, prioritizing Tier 1 when available"
+
+  - name: proposal
+    skill: pipelines/finance-dossier/proposal-director
+    required_artifacts_in: [research_brief]
+    produces: [proposal_packet, decision_log]
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Concepts use finance narrative grammars rather than generic three-point structures"
+      - "Remotion and HyperFrames are both presented before runtime selection"
+      - "Templated daily and atelier hero authoring modes are compared"
+      - "Composition-only, light-hybrid, and footage-led coverage are compared by semantic responsibility"
+      - "Capability status, cost, voice, and resolved music plan are explicit"
+    success_criteria:
+      - "Schema-valid proposal_packet with at least 3 differentiated concepts"
+      - "Approved render_runtime, composition_mode, and finance-dossier playbook are logged"
+      - "Asset generation does not begin without explicit approval"
+
+  - name: script
+    skill: pipelines/finance-dossier/script-director
+    required_artifacts_in: [proposal_packet]
+    optional_artifacts_in: [research_brief]
+    produces: [script]
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Claims remain visibly distinct as FACT, INFERENCE, THESIS, or SCENARIO"
+      - "Narrative follows anomaly-to-mechanism reasoning where appropriate"
+      - "Uncertainty and thesis-changing conditions are explicit"
+      - "Final section exactly contains the mandatory finance disclaimer"
+    success_criteria:
+      - "Schema-valid script within ten percent of target duration"
+      - "Final spoken or silent-card section is the exact mandatory disclaimer"
+
+  - name: scene_plan
+    skill: pipelines/finance-dossier/scene-director
+    required_artifacts_in: [script]
+    optional_artifacts_in: [proposal_packet, research_brief]
+    produces: [scene_plan]
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Scenes are classified as DOCUMENT, DATA, MECHANISM, or DECISION"
+      - "FinanceSceneVarietyValidator warnings are recorded and addressed deliberately"
+      - "Important factual and data scenes include source anchors"
+      - "Motion reveals evidence and reasoning"
+      - "Final native text_card contains the exact mandatory disclaimer"
+    success_criteria:
+      - "Schema-valid scene_plan with finance metadata on applicable scenes"
+      - "Videos of 45 seconds or longer prefer at least three useful visual families"
+
+  - name: assets
+    skill: pipelines/finance-dossier/asset-director
+    required_artifacts_in: [scene_plan, script, proposal_packet]
+    produces: [asset_manifest]
+    required_tools: [tts_selector]
+    optional_tools: [image_selector, video_selector, diagram_gen, music_gen]
+    tools_available: [tts_selector, image_selector, video_selector, diagram_gen, music_gen]
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Source documents preserve provenance and readable crops"
+      - "Generated imagery avoids all finance-dossier negative-prompt anti-patterns"
+      - "Narration is calm, segmented, analytical, and complete"
+      - "No music asset exists when the resolved music source is none"
+    success_criteria:
+      - "Schema-valid asset_manifest and all paths resolve inside the project workspace"
+
+  - name: edit
+    skill: pipelines/finance-dossier/edit-director
+    required_artifacts_in: [scene_plan, asset_manifest, proposal_packet]
+    optional_artifacts_in: [script, research_brief]
+    produces: [edit_decisions]
+    tools_available: []
+    checkpoint_required: true
+    human_approval_default: false
+    review_focus:
+      - "Finance cut props preserve source context, periods, variants, and uncertainty"
+      - "No red or green direction is used without signs, arrows, or text labels"
+      - "Final cut is the exact native disclaimer text_card"
+      - "render_runtime and composition_mode match the approved proposal"
+    success_criteria:
+      - "Schema-valid edit_decisions with complete timeline coverage"
+
+  - name: compose
+    skill: pipelines/finance-dossier/compose-director
+    required_artifacts_in: [edit_decisions, asset_manifest, proposal_packet]
+    optional_artifacts_in: [scene_plan, script]
+    produces: [render_report, final_review]
+    required_tools: [video_compose, audio_mixer]
+    optional_tools: [video_stitch]
+    tools_available: [video_compose, hyperframes_compose, video_stitch, audio_mixer]
+    checkpoint_required: true
+    human_approval_default: false
+    review_focus:
+      - "Composition validation and TypeScript/runtime checks pass"
+      - "Sources and evidence metadata remain readable at delivery resolution"
+      - "Render uses the approved runtime without silent substitution"
+      - "Ending frame contains the exact mandatory disclaimer at the end"
+    success_criteria:
+      - "Schema-valid render_report and final_review"
+      - "Output passes ffprobe, audio, visual spot-check, and disclaimer verification"
+
+  - name: cover
+    skill: pipelines/shared/cover-director
+    required_artifacts_in: [render_report]
+    optional_artifacts_in: [final_review, script, proposal_packet, research_brief, scene_plan, asset_manifest]
+    produces: [cover_package]
+    optional_tools: [image_selector, visual_qa]
+    tools_available: [image_selector, visual_qa]
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Cover is an exact-text editorial dossier design rather than generic finance imagery"
+      - "Primary cover exists, is mobile-readable, and matches the actual analysis"
+    success_criteria:
+      - "Schema-valid cover_package and verified primary cover"
+
+  - name: publish
+    skill: pipelines/finance-dossier/publish-director
+    required_artifacts_in: [render_report, final_review, cover_package]
+    optional_artifacts_in: [proposal_packet, research_brief]
+    produces: [publish_log]
+    tools_available: [export_bundle]
+    checkpoint_required: true
+    human_approval_default: true
+    review_focus:
+      - "Packaging preserves evidence notes, source list, and uncertainty language"
+      - "Metadata avoids deterministic investment claims and sensational framing"
+    success_criteria:
+      - "Schema-valid publish_log and complete local export bundle"

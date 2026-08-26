@@ -216,6 +216,7 @@ stages:
 | `screen-demo` | screen_recording | Software screen recordings and walkthroughs |
 | `talking-head` | talking_head | Footage-led speaker videos |
 | `framework-smoke` | custom | Minimal smoke test for framework validation |
+| `finance-dossier` | generated | Evidence-first finance research videos using the canonical artifact lifecycle and Remotion dispatch |
 
 ### Standard Stage Progression
 
@@ -424,6 +425,7 @@ Style playbooks in `styles/` define visual language for pipelines:
 - `clean-professional.yaml` — Corporate, polished look
 - `flat-motion-graphics.yaml` — Modern flat design
 - `minimalist-diagram.yaml` — Technical, minimal diagrams
+- `finance-dossier.yaml` — Editorial finance research dossier with source-first data and mechanism visuals
 
 Loaded by `styles/playbook_loader.py`. Each pipeline declares `compatible_playbooks` in its manifest. Validated against `schemas/styles/playbook.schema.json`.
 

@@ -1,0 +1,154 @@
+{
+  "theme": "finance-dossier",
+  "cuts": [
+    {
+      "id": "sample-evidence",
+      "source": "",
+      "type": "evidence_card",
+      "in_seconds": 0,
+      "out_seconds": 5.5,
+      "label": "Fictional Aurora Tools / quarterly filing",
+      "primaryValue": "+18%",
+      "supportingMetrics": [
+        { "label": "Revenue growth", "value": "+18%", "direction": "up" },
+        { "label": "Gross margin", "value": "42%", "direction": "flat" },
+        { "label": "Cash conversion", "value": "61%", "direction": "down" }
+      ],
+      "period": "FY2030 Q2 / FICTIONAL",
+      "sourceLabel": "Aurora Tools sample filing",
+      "sourceDate": "2030-08-12",
+      "sampleData": true,
+      "interpretation": "The headline improved, but the cash signal did not move with it.",
+      "variant": "document"
+    },
+    {
+      "id": "sample-gap",
+      "source": "",
+      "type": "expectation_gap",
+      "in_seconds": 5.5,
+      "out_seconds": 10.5,
+      "metric": "Why can a strong result still disappoint?",
+      "expectedValue": "+24",
+      "actualValue": "+18",
+      "delta": "−6 pts ↓",
+      "unit": "%",
+      "period": "FY2030 Q2 / FICTIONAL",
+      "sourceLabel": "SAMPLE consensus table",
+      "sourceDate": "2030-08-12",
+      "sampleData": true,
+      "interpretation": "Actual growth was positive, but below the fictional expectation.",
+      "variant": "split"
+    },
+    {
+      "id": "sample-flow",
+      "source": "",
+      "type": "money_flow",
+      "in_seconds": 10.5,
+      "out_seconds": 16,
+      "title": "The cash path tells a different story",
+      "nodes": [
+        { "id": "sales", "label": "Sales", "value": "100 units" },
+        { "id": "receivables", "label": "Receivables", "value": "+19 units ↑" },
+        { "id": "cash", "label": "Operating cash", "value": "61 units ↓" }
+      ],
+      "edges": [
+        { "from": "sales", "to": "receivables", "value": 14, "label": "not yet collected" },
+        { "from": "receivables", "to": "cash", "value": 8, "label": "cash conversion" }
+      ],
+      "highlightedPath": ["sales", "receivables", "cash"],
+      "period": "FY2030 Q2 / FICTIONAL",
+      "sourceLabel": "Aurora Tools sample cash-flow note",
+      "sourceDate": "2030-08-12",
+      "sampleData": true,
+      "variant": "vertical"
+    },
+    {
+      "id": "sample-causal",
+      "source": "",
+      "type": "causal_chain",
+      "in_seconds": 16,
+      "out_seconds": 21.5,
+      "title": "A hypothesis, not a proven causal claim",
+      "nodes": [
+        { "id": "expectations", "label": "Higher expectations", "detail": "fictional benchmark" },
+        { "id": "gap", "label": "Positive result, negative gap", "detail": "+18% actual vs +24% sample expectation" },
+        { "id": "reaction", "label": "Disappointment risk", "detail": "conditional interpretation" }
+      ],
+      "edges": [
+        { "from": "expectations", "to": "gap", "relation": "uncertain", "label": "frames" },
+        { "from": "gap", "to": "reaction", "relation": "uncertain", "label": "may affect" }
+      ],
+      "activeNodeId": "gap",
+      "hypothesis": true,
+      "period": "FICTIONAL MECHANISM",
+      "sourceLabel": "SAMPLE DATA",
+      "sampleData": true,
+      "variant": "linear"
+    },
+    {
+      "id": "sample-timeline",
+      "source": "",
+      "type": "research_timeline",
+      "in_seconds": 21.5,
+      "out_seconds": 27,
+      "title": "What changed between the headline and the reaction",
+      "events": [
+        { "date": "2030-07-10", "title": "Sample expectation rises", "source": "FICTIONAL analyst note" },
+        { "date": "2030-08-12", "title": "Results beat last year", "description": "But miss the higher sample expectation.", "source": "FICTIONAL filing" },
+        { "date": "2030-08-13", "title": "Cash conversion becomes the question", "source": "SAMPLE DATA" }
+      ],
+      "highlightedIndex": 1,
+      "period": "FICTIONAL RESEARCH TIMELINE",
+      "sourceLabel": "Curated demo sources",
+      "sampleData": true,
+      "variant": "vertical"
+    },
+    {
+      "id": "sample-scenarios",
+      "source": "",
+      "type": "scenario_board",
+      "in_seconds": 27,
+      "out_seconds": 33,
+      "title": "Three conditional paths — not forecasts",
+      "scenarios": [
+        { "name": "RECOVERY", "description": "Cash conversion recovers while demand remains stable.", "trigger": "Receivables normalize", "metrics": ["cash conversion", "receivable days"] },
+        { "name": "BASE", "description": "Growth stays positive but the expectation gap persists.", "trigger": "Stable orders, slow collections", "metrics": ["orders", "operating cash"] },
+        { "name": "DOWNSIDE", "description": "Demand and collections both weaken.", "trigger": "Cancellations rise", "metrics": ["cancellations", "inventory"] }
+      ],
+      "highlightedScenario": "BASE",
+      "period": "FICTIONAL SCENARIOS",
+      "sourceLabel": "SAMPLE DATA",
+      "sampleData": true
+    },
+    {
+      "id": "sample-breaker",
+      "source": "",
+      "type": "thesis_breaker",
+      "in_seconds": 33,
+      "out_seconds": 39.5,
+      "thesis": "Sample thesis: the disappointment is mainly an expectation and cash-conversion gap.",
+      "conditions": [
+        { "title": "Receivables normalize", "description": "Cash conversion returns to the fictional historical range.", "evidenceToWatch": "next sample filing" },
+        { "title": "Expectation data was wrong", "description": "The supposed benchmark is not supported by a real source.", "evidenceToWatch": "source methodology" },
+        { "title": "Demand weakens materially", "description": "The issue shifts from expectations to fundamentals.", "evidenceToWatch": "orders and cancellations" }
+      ],
+      "period": "FICTIONAL SCENARIO",
+      "sourceLabel": "SAMPLE DATA",
+      "sampleData": true
+    },
+    {
+      "id": "finance-disclaimer",
+      "source": "",
+      "type": "text_card",
+      "in_seconds": 39.5,
+      "out_seconds": 45,
+      "text": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "fontSize": 48,
+      "backgroundColor": "#F2EFE7",
+      "color": "#171715"
+    }
+  ],
+  "overlays": [],
+  "captions": [],
+  "audio": {}
+}
