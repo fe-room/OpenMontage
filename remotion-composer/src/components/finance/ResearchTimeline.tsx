@@ -1,5 +1,6 @@
 import { useCurrentFrame } from "remotion";
 import { FINANCE_COLORS, FINANCE_MONO, FinanceFrame, reveal } from "./FinanceFrame";
+import { FinanceTitle } from "./FinanceTitle";
 import type { FinanceRenderContext, ResearchTimelineEvent } from "./types";
 
 export type ResearchTimelineProps = FinanceRenderContext & {
@@ -10,23 +11,29 @@ export type ResearchTimelineProps = FinanceRenderContext & {
 };
 
 export const ResearchTimeline: React.FC<ResearchTimelineProps> = ({
-  title = "Research timeline",
+  title = "研究时间线",
   events,
   highlightedIndex,
   variant = "vertical",
   theme,
   brand,
-  ...source
+  canvasMode = "document",
+  headerTreatment = "compact",
+  sourceTreatment = "compact",
+  sourceLabel,
+  sourceDate,
+  period,
+  sampleData,
 }) => {
   const frame = useCurrentFrame();
   const horizontal = variant === "horizontal";
   return (
-    <FinanceFrame eyebrow={`DOCUMENT / TIMELINE / ${variant.toUpperCase()}`} source={source} theme={theme} brand={brand}>
-      <div style={{ position: "absolute", inset: "13% 7% 12%" }}>
-        <h1 style={{ margin: 0, fontSize: 52 }}>{title}</h1>
+    <FinanceFrame eyebrow={`DOCUMENT / TIMELINE / ${variant.toUpperCase()}`} source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+      <div style={{ position: "absolute", inset: "12% 8% 11% 12%" }}>
+        <FinanceTitle preferredFontSize={52} minFontSize={38} maxWidth={820}>{title}</FinanceTitle>
         <div
           style={{
-            marginTop: 55,
+            marginTop: 72,
             display: "grid",
             gridTemplateColumns: horizontal ? `repeat(${events.length}, minmax(0, 1fr))` : "1fr",
             gap: horizontal ? 18 : 0,
@@ -41,7 +48,8 @@ export const ResearchTimeline: React.FC<ResearchTimelineProps> = ({
                 key={`${event.date}-${index}`}
                 style={{
                   position: "relative",
-                  padding: horizontal ? "32px 12px" : "0 0 34px 38px",
+                  minHeight: horizontal ? 280 : Math.max(190, 820 / Math.max(events.length, 1)),
+                  padding: horizontal ? "32px 12px" : "0 0 42px 42px",
                   opacity: reveal(frame, 5 + index * 7, 20 + index * 7),
                 }}
               >

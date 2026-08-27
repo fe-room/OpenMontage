@@ -67,6 +67,10 @@ import {
 import type {
   CausalEdge,
   CausalNode,
+  FinanceCanvasMode,
+  FinanceDensity,
+  FinanceHeaderTreatment,
+  FinanceSourceTreatment,
   FlowEdge,
   FlowNode,
   ResearchTimelineEvent,
@@ -320,6 +324,12 @@ interface Cut {
   highlightedScenario?: string;
   thesis?: string;
   conditions?: Array<string | ThesisBreakerCondition>;
+  canvasMode?: FinanceCanvasMode;
+  density?: FinanceDensity;
+  headerTreatment?: FinanceHeaderTreatment;
+  sourceTreatment?: FinanceSourceTreatment;
+  analystNote?: string;
+  evidenceIndex?: string;
 }
 
 interface Overlay {
@@ -682,7 +692,17 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig; brand?: ExplainerP
     sourceDate: cut.sourceDate,
     sampleData: cut.sampleData,
   };
-  const financeContext = { ...financeSource, theme, brand };
+  const financeContext = {
+    ...financeSource,
+    theme,
+    brand,
+    canvasMode: cut.canvasMode,
+    density: cut.density,
+    headerTreatment: cut.headerTreatment,
+    sourceTreatment: cut.sourceTreatment,
+    analystNote: cut.analystNote,
+    evidenceIndex: cut.evidenceIndex,
+  };
   const isPresent = <T,>(value: T | undefined | null): value is T => value !== undefined && value !== null;
   if (cut.type === "evidence_card" && cut.label && isPresent(cut.primaryValue)) {
     return (

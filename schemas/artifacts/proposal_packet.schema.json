@@ -10,7 +10,7 @@
     "content_category": {
       "type": "string",
       "enum": ["finance", "education", "technology", "health", "legal", "news", "entertainment", "lifestyle", "other"],
-      "description": "Editorial classification carried from intake. Finance activates the mandatory end-card disclaimer policy."
+      "description": "Editorial classification carried from intake. Finance activates the mandatory exact-text compliance policy; presentation may be native ending metadata or an explicitly required standalone card."
     },
     "concept_options": {
       "type": "array",

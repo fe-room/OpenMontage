@@ -23,6 +23,8 @@ taste_profile:
     - "Every important factual or numerical frame has a readable source anchor and period context where relevant."
     - "Each frame carries one primary claim and motion reveals the reasoning behind it."
     - "Fact, inference, thesis, and scenario remain visibly and verbally distinct."
+    - "Chinese carries narrative meaning while English primarily carries editorial taxonomy and metadata."
+    - "Canvas composition varies with information structure without weakening publication identity."
 
 visual_language:
   color_palette:
@@ -124,6 +126,15 @@ quality_rules:
   - "Avoid generic AI-finance imagery and deterministic investment language"
   - "Clearly distinguish FACT, INFERENCE, THESIS, and SCENARIO"
   - "Never fabricate expected values, analyst consensus, probabilities, market prices, or real-time data"
+  - "Chinese carries narrative meaning; English primarily carries metadata and taxonomy"
+  - "Avoid stranded Chinese characters caused by poor headline wrapping"
+  - "Negative space must feel intentional rather than accidental, especially on 1080x1920 canvases"
+  - "Do not put every content group inside a bordered card; prefer rules, alignment, spacing, brackets, and annotations"
+  - "Editorial annotations must explain, question, or emphasize evidence rather than decorate it"
+  - "Use canvas composition variety while preserving palette, typography, source treatment, and analytical restraint"
+  - "Source label, source name, period or date, and sample-data status remain readable and hierarchically distinct"
+  - "Financial flow graphics prioritize flow, direction, and value labels over node-box chrome"
+  - "Avoid identical header and footer treatment in every scene when another composition better fits the information"
 
 chart_palette:
   - "#345C5B"

@@ -14,12 +14,19 @@ export { ThesisBreaker } from "./ThesisBreaker";
 export type { ThesisBreakerProps } from "./ThesisBreaker";
 export { SourceStrip, FinanceFrame } from "./FinanceFrame";
 export type { SourceStripProps } from "./FinanceFrame";
+export { FinanceTitle, layoutFinanceTitle } from "./FinanceTitle";
+export type { FinanceTitleProps } from "./FinanceTitle";
+export { AnalystNote, BracketMark, EvidenceIndex, UnderlineMark } from "./EditorialMarks";
 export type {
   CausalEdge,
   CausalNode,
   FinanceLayoutVariant,
   FinanceBrand,
+  FinanceCanvasMode,
+  FinanceDensity,
+  FinanceHeaderTreatment,
   FinanceRenderContext,
+  FinanceSourceTreatment,
   FinanceValue,
   FlowEdge,
   FlowNode,

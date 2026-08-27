@@ -179,7 +179,13 @@
                 }
               ]
             }
-          }
+          },
+          "canvasMode": { "type": "string", "enum": ["paper", "document", "data", "margin-note", "dark-ink", "full-bleed"] },
+          "density": { "type": "string", "enum": ["sparse", "standard", "dense"] },
+          "headerTreatment": { "type": "string", "enum": ["full", "compact", "none"] },
+          "sourceTreatment": { "type": "string", "enum": ["full", "compact", "inline"] },
+          "analystNote": { "type": "string" },
+          "evidenceIndex": { "type": "string" }
         },
         "additionalProperties": false
       }

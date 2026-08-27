@@ -1,0 +1,227 @@
+{
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "01-research",
+      "topic": "为什么一家公司的营收创新高，股价却下跌？",
+      "primary_mode": "RESEARCH",
+      "classification_confidence": "high",
+      "audience_task": "evaluate_company_results_against_market_pricing",
+      "rationale": ["The core task is to reconcile company results with what the market had already priced, not to explain an intraday event."],
+      "evidence_priority": ["company_filings", "earnings_results", "market_expectations", "price_reaction_context"],
+      "visual_priority": ["document", "expectation_gap", "chart", "causal_chain"],
+      "canvas_preference": ["document", "paper", "margin-note", "data"],
+      "density_profile": {"opening": "sparse", "body": "standard", "evidence": "dense", "ending": "sparse"},
+      "hook_grammar": "CONTRADICTION",
+      "ending_grammar": "WATCH_LIST",
+      "key_editorial_risk": "Do not assume that a falling price proves weak fundamentals or invent a consensus gap.",
+      "key_anti_pattern": "Do not turn every reported metric into an EvidenceCard."
+    },
+    {
+      "id": "02-market",
+      "topic": "为什么港股今天下午突然跳水？",
+      "fixture_context": "Fictional sample: a verified policy clarification and a broad index move occur inside a defined afternoon reaction window; no real current event is asserted.",
+      "primary_mode": "MARKET",
+      "classification_confidence": "high",
+      "audience_task": "reconstruct_timestamped_market_move",
+      "rationale": ["The intended fixture asks what moved during a defined window, what verified event preceded it, and which transmission paths remain plausible."],
+      "evidence_priority": ["timestamped_market_data", "official_announcement", "reaction_window", "alternative_explanations"],
+      "visual_priority": ["chart", "research_timeline", "causal_chain", "document"],
+      "canvas_preference": ["data", "full-bleed", "dark-ink", "paper"],
+      "density_profile": {"opening": "sparse", "body": "dense", "evidence": "dense", "ending": "sparse"},
+      "hook_grammar": "WHAT_MOVED",
+      "ending_grammar": "WATCH_LIST",
+      "key_editorial_risk": "Do not collapse several plausible drivers into one certain cause.",
+      "key_anti_pattern": "Do not use slow filing-page pacing for a defined intraday move."
+    },
+    {
+      "id": "03-macro",
+      "topic": "为什么降息以后，美债收益率反而可能上涨？",
+      "primary_mode": "MACRO",
+      "secondary_mode": "EXPLAIN",
+      "classification_confidence": "high",
+      "audience_task": "understand_conditional_macro_transmission",
+      "rationale": ["The apparent contradiction is resolved through policy expectations, inflation, term premium, and bond-market transmission; the educational lens supports the macro task."],
+      "evidence_priority": ["central_bank", "rates_data", "inflation_expectations", "term_premium_research"],
+      "visual_priority": ["causal_chain", "chart", "research_timeline", "scenario_board"],
+      "canvas_preference": ["data", "document", "margin-note"],
+      "density_profile": {"opening": "sparse", "body": "standard", "evidence": "dense", "ending": "sparse"},
+      "hook_grammar": "CONTRADICTION",
+      "ending_grammar": "CHAIN_BREAKER",
+      "key_editorial_risk": "Do not imply that a policy-rate cut mechanically fixes every Treasury yield.",
+      "key_anti_pattern": "Do not draw a single deterministic arrow from rate cuts to bond prices."
+    },
+    {
+      "id": "04-flow",
+      "topic": "AI 每投入 100 美元，最终谁拿走最多的钱？",
+      "primary_mode": "FLOW",
+      "classification_confidence": "high",
+      "audience_task": "trace_value_allocation_and_capture",
+      "rationale": ["The central question is an additive allocation and value-capture problem with a bottleneck, not a list of company metrics."],
+      "evidence_priority": ["segment_disclosures", "cost_structures", "industry_value_chain", "allocation_basis"],
+      "visual_priority": ["money_flow", "causal_chain", "chart", "evidence_card"],
+      "canvas_preference": ["full-bleed", "data", "margin-note"],
+      "density_profile": {"opening": "sparse", "body": "standard", "evidence": "dense", "ending": "sparse"},
+      "hook_grammar": "ALLOCATION_QUESTION",
+      "ending_grammar": "BOTTLENECK_IMPLICATION",
+      "key_editorial_risk": "The 100-dollar frame must use comparable, additive values and disclose its basis.",
+      "key_anti_pattern": "Do not use Sankey for unrelated or non-additive numbers."
+    },
+    {
+      "id": "05-explain",
+      "topic": "为什么 PE 越低，不一定代表股票越便宜？",
+      "primary_mode": "EXPLAIN",
+      "classification_confidence": "high",
+      "audience_task": "correct_a_valuation_misconception",
+      "rationale": ["The viewer needs the valuation mechanism and one clear counterexample, not a company recommendation or time-sensitive market account."],
+      "evidence_priority": ["authoritative_definition", "worked_example", "earnings_quality_context"],
+      "visual_priority": ["causal_chain", "evidence_card", "chart"],
+      "canvas_preference": ["paper", "data", "margin-note"],
+      "density_profile": {"opening": "sparse", "body": "standard", "evidence": "standard", "ending": "sparse"},
+      "hook_grammar": "MISCONCEPTION",
+      "ending_grammar": "ONE_LINE_TAKEAWAY",
+      "key_editorial_risk": "Do not imply that high PE is automatically attractive or low PE automatically dangerous.",
+      "key_anti_pattern": "Do not add institutional research density merely to look professional."
+    },
+    {
+      "id": "06-research-flow",
+      "topic": "Costco 为什么能够靠会员费赚这么多钱？",
+      "primary_mode": "RESEARCH",
+      "secondary_mode": "FLOW",
+      "classification_confidence": "high",
+      "audience_task": "evaluate_company_economics_through_value_flow",
+      "rationale": ["The main judgment concerns Costco's company economics; membership-fee flow explains the mechanism and quality of those economics."],
+      "evidence_priority": ["company_filings", "segment_disclosures", "membership_metrics", "cost_structure"],
+      "visual_priority": ["document", "money_flow", "evidence_card", "causal_chain"],
+      "canvas_preference": ["document", "data", "margin-note", "paper"],
+      "density_profile": {"opening": "sparse", "body": "standard", "evidence": "dense", "ending": "sparse"},
+      "hook_grammar": "STRANGE_NUMBER",
+      "ending_grammar": "WATCH_LIST",
+      "key_editorial_risk": "Do not equate membership-fee revenue directly with total company profit without cost context.",
+      "key_anti_pattern": "Do not let the flow diagram replace company-specific evidence."
+    },
+    {
+      "id": "07-market-macro",
+      "topic": "美元突然走强，为什么黄金承压？",
+      "fixture_context": "The intended question is a fictional immediate move in a defined reaction window following a verified repricing of rate expectations.",
+      "primary_mode": "MARKET",
+      "secondary_mode": "MACRO",
+      "classification_confidence": "high",
+      "audience_task": "explain_immediate_move_and_macro_transmission",
+      "rationale": ["The sudden timestamped move is the editorial lead; real-yield and dollar transmission provide the macro explanation."],
+      "evidence_priority": ["timestamped_fx_data", "gold_price_window", "rates_data", "official_trigger"],
+      "visual_priority": ["chart", "research_timeline", "causal_chain"],
+      "canvas_preference": ["data", "dark-ink", "full-bleed"],
+      "density_profile": {"opening": "sparse", "body": "dense", "evidence": "dense", "ending": "sparse"},
+      "hook_grammar": "WHAT_MOVED",
+      "ending_grammar": "WHAT_NEXT",
+      "key_editorial_risk": "Do not present dollar strength as the only possible driver of gold in every period.",
+      "key_anti_pattern": "Do not replace timestamped evidence with generic gold or currency imagery."
+    },
+    {
+      "id": "08-macro-research",
+      "topic": "利率下降为什么特别影响高估值科技股？",
+      "primary_mode": "MACRO",
+      "secondary_mode": "RESEARCH",
+      "classification_confidence": "medium",
+      "audience_task": "understand_rate_transmission_into_company_valuation",
+      "rationale": ["The causal spine is rate → discount rate → present value of distant cash flows; company context is the endpoint rather than the opening task."],
+      "evidence_priority": ["rates_data", "valuation_methodology", "cash_flow_duration", "company_context"],
+      "visual_priority": ["causal_chain", "chart", "evidence_card"],
+      "canvas_preference": ["data", "margin-note", "paper"],
+      "density_profile": {"opening": "sparse", "body": "standard", "evidence": "dense", "ending": "sparse"},
+      "hook_grammar": "VARIABLE_SHIFT",
+      "ending_grammar": "CHAIN_BREAKER",
+      "key_editorial_risk": "Do not claim a uniform or deterministic price response across technology companies.",
+      "key_anti_pattern": "Do not classify as RESEARCH merely because technology companies are named."
+    },
+    {
+      "id": "09-macro-policy",
+      "topic": "一项房地产刺激政策，是怎么传导到银行和消费的？",
+      "primary_mode": "MACRO",
+      "classification_confidence": "high",
+      "audience_task": "trace_policy_transmission_and_conditions",
+      "rationale": ["The question explicitly asks how policy moves through credit, balance sheets, confidence, and consumption, including where the chain may weaken."],
+      "evidence_priority": ["policy_document", "official_statistics", "banking_data", "household_consumption_data"],
+      "visual_priority": ["document", "causal_chain", "chart", "scenario_board"],
+      "canvas_preference": ["document", "data", "full-bleed", "margin-note"],
+      "density_profile": {"opening": "sparse", "body": "standard", "evidence": "dense", "ending": "standard"},
+      "hook_grammar": "POLICY_TO_SYSTEM",
+      "ending_grammar": "CHAIN_BREAKER",
+      "key_editorial_risk": "Do not imply that policy announcement, credit creation, and consumption response are the same event.",
+      "key_anti_pattern": "Do not compress a conditional policy chain into one certain arrow."
+    },
+    {
+      "id": "10-explain-research",
+      "topic": "自由现金流和净利润为什么经常不是一回事？",
+      "primary_mode": "EXPLAIN",
+      "secondary_mode": "RESEARCH",
+      "classification_confidence": "high",
+      "audience_task": "distinguish_accounting_concepts_with_company_context",
+      "rationale": ["The primary task is conceptual understanding of accrual profit versus cash conversion; company statements supply grounded examples."],
+      "evidence_priority": ["accounting_definition", "cash_flow_statement", "worked_company_example"],
+      "visual_priority": ["causal_chain", "money_flow", "evidence_card", "document"],
+      "canvas_preference": ["paper", "data", "margin-note"],
+      "density_profile": {"opening": "sparse", "body": "standard", "evidence": "standard", "ending": "sparse"},
+      "hook_grammar": "CONTRADICTION",
+      "ending_grammar": "ONE_LINE_TAKEAWAY",
+      "key_editorial_risk": "Do not imply that either metric is universally superior without explaining the analytical task.",
+      "key_anti_pattern": "Do not turn a stable accounting mechanism into a pseudo-investment recommendation."
+    }
+  ],
+  "representative_scene_plans": {
+    "RESEARCH": {
+      "editorial_intent": "Reconcile record revenue with market pricing, then leave the viewer with thesis conditions and a concrete watch list.",
+      "metadata": {"compliance": {"financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。", "presentation": "footer", "placement": "ending", "ending_scene_id": "r5"}},
+      "scenes": [
+        {"id": "r1", "type": "animation", "finance_scene_type": "document", "finance_family": "DOCUMENT", "claim_class": "FACT", "source_anchor": {"label": "Fictional Q2 filing"}, "description": "Document crop establishes record revenue.", "information_role": "Verify the reported result before interpreting the price move.", "shot_intent": "A document is the strongest visual because this task is proof.", "transition_in": "question → source evidence", "start_seconds": 0, "end_seconds": 5},
+        {"id": "r2", "type": "animation", "finance_scene_type": "expectation_gap", "finance_family": "DATA", "claim_class": "FACT", "source_anchor": {"label": "Fictional consensus sample"}, "description": "One composition combines expected value, actual value, and the gap.", "information_role": "Compare the verified result with the supplied market expectation.", "shot_intent": "ExpectationGap prevents expected, actual, and delta from becoming three redundant scenes.", "transition_in": "evidence → comparison", "start_seconds": 5, "end_seconds": 11},
+        {"id": "r3", "type": "animation", "finance_scene_type": "chart", "finance_family": "DATA", "claim_class": "FACT", "source_anchor": {"label": "Fictional segment table"}, "description": "Margin-mix chart tests whether the headline growth was high quality.", "information_role": "Evaluate the quality of the result after the expectation comparison.", "shot_intent": "A chart shows composition change more directly than a causal diagram.", "transition_in": "comparison → evidence quality", "start_seconds": 11, "end_seconds": 17},
+        {"id": "r4", "type": "animation", "finance_scene_type": "thesis_breaker", "finance_family": "DECISION", "claim_class": "THESIS", "description": "State what evidence would invalidate the current reading.", "information_role": "Convert the evidence into bounded thesis conditions.", "shot_intent": "ThesisBreaker is earned because the cognitive task changes from reading evidence to testing a thesis.", "transition_in": "evidence → thesis condition", "start_seconds": 17, "end_seconds": 22},
+        {"id": "r5", "type": "animation", "finance_scene_type": "watch_list", "finance_family": "DECISION", "claim_class": "THESIS", "description": "Close on the next margin and guidance datapoints to watch.", "information_role": "Give the viewer a reusable monitoring action.", "shot_intent": "The watch list completes the audience task and remains the final meaningful editorial scene.", "transition_in": "thesis condition → monitoring", "start_seconds": 22, "end_seconds": 27}
+      ]
+    },
+    "MARKET": {
+      "editorial_intent": "Lead with a fictional move, establish time, separate verified trigger from plausible transmission, and end on what to watch.",
+      "metadata": {"compliance": {"financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。", "presentation": "overlay", "placement": "ending", "ending_scene_id": "m5"}},
+      "scenes": [
+        {"id": "m1", "type": "animation", "finance_scene_type": "chart", "finance_family": "DATA", "claim_class": "FACT", "source_anchor": {"label": "Fictional intraday series"}, "description": "Full-bleed hero chart establishes the move and magnitude.", "information_role": "Identify what moved before discussing why.", "shot_intent": "A chart makes magnitude and direction legible within one second.", "transition_in": "question → observed move", "start_seconds": 0, "end_seconds": 4},
+        {"id": "m2", "type": "animation", "finance_scene_type": "research_timeline", "finance_family": "DOCUMENT", "claim_class": "FACT", "source_anchor": {"label": "Fictional event log"}, "description": "Timestamped timeline aligns the move with the event window.", "information_role": "Locate when the move began and what preceded it.", "shot_intent": "Chronology, not causality, is the information structure.", "transition_in": "move → timing", "start_seconds": 4, "end_seconds": 9},
+        {"id": "m3", "type": "animation", "finance_scene_type": "document", "finance_family": "DOCUMENT", "claim_class": "FACT", "source_anchor": {"label": "Fictional official clarification"}, "description": "Compact source excerpt separates the verified trigger from rumor.", "information_role": "Verify the event that can be stated as fact.", "shot_intent": "A source document is stronger than an inferred arrow for trigger evidence.", "transition_in": "timing → verified trigger", "start_seconds": 9, "end_seconds": 14},
+        {"id": "m4", "type": "animation", "finance_scene_type": "chart", "finance_family": "DATA", "claim_class": "INFERENCE", "source_anchor": {"label": "Fictional breadth sample"}, "description": "Breadth and sector reaction chart tests whether the move was broad or concentrated.", "information_role": "Evaluate the reaction pattern without claiming one causal path.", "shot_intent": "Reaction data answers this task better than CausalChain.", "transition_in": "trigger → market reaction", "start_seconds": 14, "end_seconds": 20},
+        {"id": "m5", "type": "animation", "finance_scene_type": "watch_list", "finance_family": "DECISION", "claim_class": "SCENARIO", "description": "Close on the next official timestamp and breadth metric.", "information_role": "Tell the viewer what would confirm or weaken the interpretation.", "shot_intent": "What-next is the editorial ending; compliance remains a quiet overlay.", "transition_in": "reaction → what next", "start_seconds": 20, "end_seconds": 25}
+      ]
+    },
+    "MACRO": {
+      "editorial_intent": "Explain conditional transmission from a macro variable through second-order effects into an asset outcome.",
+      "metadata": {"compliance": {"financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。", "presentation": "footer", "placement": "ending", "ending_scene_id": "ma5"}},
+      "scenes": [
+        {"id": "ma1", "type": "animation", "finance_scene_type": "chart", "finance_family": "DATA", "claim_class": "FACT", "source_anchor": {"label": "Fictional rates sample"}, "description": "Policy rate and long yield move in opposite directions.", "information_role": "Establish the macro contradiction that needs explanation.", "shot_intent": "A chart proves the observed divergence before any mechanism is proposed.", "transition_in": "question → variable evidence", "start_seconds": 0, "end_seconds": 5},
+        {"id": "ma2", "type": "diagram", "finance_scene_type": "causal_chain", "finance_family": "MECHANISM", "claim_class": "INFERENCE", "mechanism_importance": true, "finance_justification": "The audience task requires following policy expectations through inflation expectations and term premium into the long yield.", "description": "A hypothesis-labeled chain shows two conditional transmission branches.", "information_role": "Follow the directional steps that can reconcile the divergence.", "shot_intent": "CausalChain is genuinely required because the viewer must carry A influences B influences C across multiple conditional steps.", "transition_in": "variable evidence → possible transmission", "start_seconds": 5, "end_seconds": 12},
+        {"id": "ma3", "type": "animation", "finance_scene_type": "document", "finance_family": "DOCUMENT", "claim_class": "FACT", "source_anchor": {"label": "Fictional policy minutes"}, "description": "A policy passage anchors one condition in the proposed path.", "information_role": "Separate sourced policy language from analytical inference.", "shot_intent": "Document evidence is needed to keep the causal chain from looking more certain than its source.", "transition_in": "possible transmission → source boundary", "start_seconds": 12, "end_seconds": 17},
+        {"id": "ma4", "type": "animation", "finance_scene_type": "chart", "finance_family": "DATA", "claim_class": "FACT", "source_anchor": {"label": "Fictional term-premium series"}, "description": "Term-premium data tests the second-order branch.", "information_role": "Check whether the proposed mechanism is consistent with supporting data.", "shot_intent": "A chart tests the mechanism without pretending to prove causality.", "transition_in": "source boundary → mechanism test", "start_seconds": 17, "end_seconds": 22},
+        {"id": "ma5", "type": "animation", "finance_scene_type": "scenario_board", "finance_family": "DECISION", "claim_class": "SCENARIO", "description": "Close on the conditions that could break each branch.", "information_role": "Turn a possible transmission path into conditional monitoring.", "shot_intent": "ScenarioBoard is the editorial ending because the outcome is conditional, not deterministic.", "transition_in": "mechanism test → chain breaker", "start_seconds": 22, "end_seconds": 28}
+      ]
+    },
+    "FLOW": {
+      "editorial_intent": "Establish an additive source, let the flow carry the frame, isolate the bottleneck, and then state value-capture implications.",
+      "metadata": {"compliance": {"financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。", "presentation": "footer", "placement": "ending", "ending_scene_id": "f4"}},
+      "scenes": [
+        {"id": "f1", "type": "animation", "finance_scene_type": "evidence_card", "finance_family": "DATA", "claim_class": "FACT", "source_anchor": {"label": "Fictional $100 allocation basis"}, "description": "Define the comparable $100 source, period, and additive basis.", "information_role": "Establish what the total represents before allocating it.", "shot_intent": "One evidence frame prevents the Sankey from implying an unsupported denominator.", "transition_in": "question → allocation basis", "start_seconds": 0, "end_seconds": 5},
+        {"id": "f2", "type": "diagram", "finance_scene_type": "money_flow", "finance_family": "MECHANISM", "claim_class": "FACT", "source_anchor": {"label": "Fictional value-chain sample"}, "mechanism_importance": true, "layout_variant": "sankey-lite", "description": "Full-bleed Sankey-lite shows additive allocation and value capture.", "information_role": "Trace who receives each part of the same $100 total.", "shot_intent": "MoneyFlow is the hero because allocation—not causality—is the information structure.", "transition_in": "allocation basis → allocation", "start_seconds": 5, "end_seconds": 13},
+        {"id": "f3", "type": "animation", "finance_scene_type": "chart", "finance_family": "DATA", "claim_class": "FACT", "source_anchor": {"label": "Fictional capacity series"}, "description": "Capacity chart and one annotation identify the bottleneck without a second mechanism scene.", "information_role": "Test why the largest recipient may retain its value share.", "shot_intent": "A chart plus annotation explains the bottleneck more directly than another CausalChain.", "transition_in": "allocation → bottleneck evidence", "start_seconds": 13, "end_seconds": 19},
+        {"id": "f4", "type": "text_card", "claim_class": "THESIS", "description": "Value capture stays concentrated only while the capacity bottleneck persists.", "information_role": "State the bounded value-capture implication.", "shot_intent": "A concise implication completes the audience task; compliance sits in the footer rather than replacing it.", "transition_in": "bottleneck evidence → implication", "start_seconds": 19, "end_seconds": 24}
+      ]
+    },
+    "EXPLAIN": {
+      "editorial_intent": "Start with one misconception, explain the mechanism with one worked example, and finish with a reusable judgment rule.",
+      "metadata": {"compliance": {"financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。", "presentation": "footer", "placement": "ending", "ending_scene_id": "e4"}},
+      "scenes": [
+        {"id": "e1", "type": "text_card", "description": "低 PE，为什么不一定便宜？", "information_role": "Surface the misconception the viewer needs to correct.", "shot_intent": "A quiet question frame creates the conceptual task without research-page overhead.", "transition_in": "opening → misconception", "start_seconds": 0, "end_seconds": 4},
+        {"id": "e2", "type": "animation", "finance_scene_type": "evidence_card", "finance_family": "DATA", "claim_class": "SCENARIO", "description": "One comparison composition holds price constant and contrasts durable versus collapsing earnings.", "information_role": "Use a worked A-versus-B example to reveal what the ratio omits.", "shot_intent": "The comparison variant handles both examples in one scene; no causal chain is needed.", "transition_in": "misconception → worked comparison", "start_seconds": 4, "end_seconds": 10},
+        {"id": "e3", "type": "animation", "finance_scene_type": "chart", "finance_family": "DATA", "claim_class": "SCENARIO", "description": "A simple earnings-decline chart shows how a low denominator can be temporary.", "information_role": "Generalize the example into a reusable earnings-quality check.", "shot_intent": "A trend chart is the correct structure because the information is movement over time.", "transition_in": "worked comparison → general pattern", "start_seconds": 10, "end_seconds": 16},
+        {"id": "e4", "type": "text_card", "description": "先问盈利是否可持续，再讨论倍数高低。", "information_role": "Give the viewer one reusable valuation rule.", "shot_intent": "The takeaway is the final meaningful content; the exact compliance line remains a quiet footer.", "transition_in": "general pattern → takeaway", "start_seconds": 16, "end_seconds": 21}
+      ]
+    }
+  }
+}

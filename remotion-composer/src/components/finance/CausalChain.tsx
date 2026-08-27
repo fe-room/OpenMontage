@@ -1,5 +1,6 @@
 import { useCurrentFrame } from "remotion";
 import { FINANCE_COLORS, FINANCE_MONO, FinanceFrame, reveal } from "./FinanceFrame";
+import { FinanceTitle } from "./FinanceTitle";
 import type { CausalEdge, CausalNode, FinanceRenderContext } from "./types";
 
 export type CausalChainProps = FinanceRenderContext & {
@@ -12,7 +13,7 @@ export type CausalChainProps = FinanceRenderContext & {
 };
 
 export const CausalChain: React.FC<CausalChainProps> = ({
-  title = "How the mechanism may work",
+  title = "机制可能如何传导",
   nodes,
   edges,
   activeNodeId,
@@ -20,7 +21,13 @@ export const CausalChain: React.FC<CausalChainProps> = ({
   variant = "linear",
   theme,
   brand,
-  ...source
+  canvasMode = "data",
+  headerTreatment = "compact",
+  sourceTreatment = "compact",
+  sourceLabel,
+  sourceDate,
+  period,
+  sampleData,
 }) => {
   const frame = useCurrentFrame();
   const positions = Object.fromEntries(
@@ -33,15 +40,15 @@ export const CausalChain: React.FC<CausalChainProps> = ({
   );
 
   return (
-    <FinanceFrame eyebrow={hypothesis ? "MECHANISM / HYPOTHESIS" : "MECHANISM / CAUSAL CHAIN"} source={source} theme={theme} brand={brand}>
-      <div style={{ position: "absolute", inset: "12% 6% 11%" }}>
-        <h1 style={{ margin: "0 0 18px", fontSize: 48 }}>{title}</h1>
+    <FinanceFrame eyebrow={hypothesis ? "MECHANISM / HYPOTHESIS" : "MECHANISM / CAUSAL CHAIN"} source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+      <div style={{ position: "absolute", inset: "11% 6% 10%" }}>
+        <FinanceTitle preferredFontSize={50} minFontSize={38} maxWidth={880}>{title}</FinanceTitle>
         {hypothesis && (
-          <div style={{ color: FINANCE_COLORS.vermillion, fontFamily: FINANCE_MONO, fontSize: 20 }}>
-            HYPOTHESIS — CORRELATION ALONE DOES NOT ESTABLISH CAUSALITY
+          <div style={{ color: FINANCE_COLORS.vermillion, fontSize: 21, marginTop: 14 }}>
+            <span style={{ fontFamily: FINANCE_MONO, letterSpacing: "0.08em" }}>HYPOTHESIS</span> · 相关性不等于因果
           </div>
         )}
-        <svg viewBox="0 0 1000 1250" style={{ width: "100%", height: "86%" }}>
+        <svg viewBox="0 0 1000 1250" style={{ width: "100%", height: "88%" }}>
           <defs>
             <marker id="causal-arrow" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="18" refY="10" orient="auto">
               <path d="M 0 0 L 20 10 L 0 20 z" fill={FINANCE_COLORS.muted} />

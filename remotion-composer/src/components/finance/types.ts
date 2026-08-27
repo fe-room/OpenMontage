@@ -8,6 +8,11 @@ export type FinanceBrand = {
   issue?: string;
 };
 
+export type FinanceCanvasMode = "paper" | "document" | "data" | "margin-note" | "dark-ink" | "full-bleed";
+export type FinanceDensity = "sparse" | "standard" | "dense";
+export type FinanceHeaderTreatment = "full" | "compact" | "none";
+export type FinanceSourceTreatment = "full" | "compact" | "inline";
+
 export type FinanceLayoutVariant = "hero-number" | "comparison" | "document" | "table";
 
 export type SupportingMetric = {
@@ -26,6 +31,12 @@ export type SourceContext = {
 export type FinanceRenderContext = SourceContext & {
   theme?: ThemeConfig;
   brand?: FinanceBrand;
+  canvasMode?: FinanceCanvasMode;
+  density?: FinanceDensity;
+  headerTreatment?: FinanceHeaderTreatment;
+  sourceTreatment?: FinanceSourceTreatment;
+  analystNote?: string;
+  evidenceIndex?: string;
 };
 
 export type FlowNode = {

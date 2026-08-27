@@ -1,8 +1,10 @@
 """Cross-stage editorial policies that must fail closed.
 
 Creative classification remains an agent decision. Once a production is marked
-as financial, however, the required disclaimer is enforced here so a later
-stage cannot accidentally omit it.
+as financial, however, the exact disclaimer is enforced here so a later stage
+cannot accidentally omit it. Finance Dossier may carry the text as native
+footer/overlay metadata on its editorial ending; legacy and explicitly required
+standalone end cards remain supported.
 """
 
 from __future__ import annotations
@@ -15,6 +17,8 @@ FINANCIAL_DISCLAIMER_ZH = (
 )
 
 _FINANCIAL_CATEGORIES = {"finance", "financial", "金融", "财经", "投资"}
+_EMBEDDED_PRESENTATIONS = {"footer", "overlay"}
+_PRESENTATIONS = _EMBEDDED_PRESENTATIONS | {"standalone"}
 
 
 class ContentPolicyError(ValueError):
@@ -48,13 +52,66 @@ def _contains_exact_disclaimer(value: Any) -> bool:
     return isinstance(value, str) and FINANCIAL_DISCLAIMER_ZH in value
 
 
+def _compliance_contract(artifact: Any) -> Mapping[str, Any] | None:
+    if not isinstance(artifact, Mapping):
+        return None
+    metadata = artifact.get("metadata")
+    if not isinstance(metadata, Mapping):
+        return None
+    compliance = metadata.get("compliance")
+    return compliance if isinstance(compliance, Mapping) else None
+
+
+def _validate_compliance_contract(
+    stage: str,
+    artifact: Mapping[str, Any],
+    items_key: str,
+    ending_id_key: str,
+) -> str | None:
+    """Validate an opt-in native compliance presentation and return its mode."""
+
+    compliance = _compliance_contract(artifact)
+    if compliance is None:
+        return None
+    presentation = compliance.get("presentation")
+    if presentation not in _PRESENTATIONS:
+        raise ContentPolicyError(
+            f"Financial video policy: {stage} compliance presentation must be "
+            "footer, overlay, or standalone."
+        )
+    if compliance.get("financial_disclaimer") != FINANCIAL_DISCLAIMER_ZH:
+        raise ContentPolicyError(
+            "Financial video policy: compliance metadata must preserve the exact "
+            f"disclaimer: {FINANCIAL_DISCLAIMER_ZH}"
+        )
+    if compliance.get("placement") != "ending":
+        raise ContentPolicyError(
+            "Financial video policy: compliance metadata must use placement='ending'."
+        )
+    if presentation in _EMBEDDED_PRESENTATIONS:
+        items = artifact.get(items_key, [])
+        final = items[-1] if isinstance(items, list) and items else {}
+        if not isinstance(final, Mapping) or compliance.get(ending_id_key) != final.get("id"):
+            raise ContentPolicyError(
+                f"Financial video policy: {ending_id_key} must identify the final "
+                "meaningful editorial item that carries the native compliance line."
+            )
+    return str(presentation)
+
+
 def enforce_financial_disclaimer(stage: str, artifacts: Mapping[str, Any]) -> None:
-    """Enforce the financial end-card contract at every downstream boundary."""
+    """Enforce exact financial compliance without prescribing one ending shape."""
     if not is_financial_production(artifacts):
         return
 
     if stage == "script":
-        sections = artifacts.get("script", {}).get("sections", [])
+        script = artifacts.get("script", {})
+        presentation = _validate_compliance_contract(
+            "script", script, "sections", "ending_section_id"
+        )
+        sections = script.get("sections", [])
+        if presentation in _EMBEDDED_PRESENTATIONS:
+            return
         if not sections or not _contains_exact_disclaimer(sections[-1].get("text")):
             raise ContentPolicyError(
                 "Financial video policy: the final script section must contain the exact "
@@ -62,8 +119,14 @@ def enforce_financial_disclaimer(stage: str, artifacts: Mapping[str, Any]) -> No
             )
 
     elif stage == "scene_plan":
-        scenes = artifacts.get("scene_plan", {}).get("scenes", [])
+        scene_plan = artifacts.get("scene_plan", {})
+        presentation = _validate_compliance_contract(
+            "scene_plan", scene_plan, "scenes", "ending_scene_id"
+        )
+        scenes = scene_plan.get("scenes", [])
         final = scenes[-1] if scenes else {}
+        if presentation in _EMBEDDED_PRESENTATIONS:
+            return
         if final.get("type") != "text_card" or not _contains_exact_disclaimer(
             final.get("description")
         ):
@@ -73,8 +136,14 @@ def enforce_financial_disclaimer(stage: str, artifacts: Mapping[str, Any]) -> No
             )
 
     elif stage == "edit":
-        cuts = artifacts.get("edit_decisions", {}).get("cuts", [])
+        edit_decisions = artifacts.get("edit_decisions", {})
+        presentation = _validate_compliance_contract(
+            "edit", edit_decisions, "cuts", "ending_cut_id"
+        )
+        cuts = edit_decisions.get("cuts", [])
         final = cuts[-1] if cuts else {}
+        if presentation in _EMBEDDED_PRESENTATIONS:
+            return
         exact_text = any(
             _contains_exact_disclaimer(final.get(field))
             for field in ("text", "title", "subtitle")
@@ -86,6 +155,10 @@ def enforce_financial_disclaimer(stage: str, artifacts: Mapping[str, Any]) -> No
             )
 
     elif stage == "compose":
+        edit_presentation = None
+        edit_contract = _compliance_contract(artifacts.get("edit_decisions", {}))
+        if edit_contract is not None:
+            edit_presentation = edit_contract.get("presentation")
         compliance = (
             artifacts.get("final_review", {})
             .get("checks", {})
@@ -100,4 +173,11 @@ def enforce_financial_disclaimer(stage: str, artifacts: Mapping[str, Any]) -> No
             raise ContentPolicyError(
                 "Financial video policy: final_review must confirm the disclaimer is "
                 "present, exact, readable, and shown at the end of the rendered video."
+            )
+        if edit_presentation in _EMBEDDED_PRESENTATIONS and compliance.get(
+            "financial_disclaimer_presentation"
+        ) != edit_presentation:
+            raise ContentPolicyError(
+                "Financial video policy: final_review must confirm the approved "
+                f"{edit_presentation} compliance presentation on the editorial ending."
             )

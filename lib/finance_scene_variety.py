@@ -13,6 +13,8 @@ import json
 import re
 from typing import Any
 
+from lib.finance_editorial import extract_editorial_direction, normalize_editorial_direction
+
 
 FINANCE_TYPES = {
     "document",
@@ -35,21 +37,7 @@ FINANCIAL_NUMBER_RE = re.compile(
     r"|(?:[¥￥$€]\s*[-+−]?\d[\d,.]*(?:\.\d+)?)",
     re.IGNORECASE,
 )
-MECHANISM_TERMS = {
-    "because",
-    "causes",
-    "causal",
-    "mechanism",
-    "drives",
-    "leads to",
-    "flows to",
-    "transmission",
-    "因果",
-    "机制",
-    "导致",
-    "传导",
-    "流向",
-}
+TRANSMISSION_TERMS = {"transmission", "transmit", "causal", "传导", "因果路径"}
 
 
 def _finance_type(scene: dict[str, Any]) -> str:
@@ -100,6 +88,107 @@ def _requires_source_anchor(scene: dict[str, Any], scene_type: str) -> bool:
     if scene_type in FACTUAL_TYPES:
         return True
     return scene_type in LEGACY_FINANCIAL_DATA_TYPES and _contains_financial_number(scene)
+
+
+def _editorial_warnings(
+    scene_plan: dict[str, Any],
+    scenes: list[dict[str, Any]],
+    scene_types: list[str],
+) -> tuple[list[dict[str, Any]], str | None]:
+    """Return mode-aware advisory warnings without overriding creative choice."""
+
+    raw_direction = extract_editorial_direction(scene_plan)
+    if raw_direction is None:
+        return [], None
+    try:
+        direction = normalize_editorial_direction(raw_direction)
+    except ValueError as exc:
+        return [_warn("EDITORIAL_DIRECTION_INVALID", str(exc))], None
+
+    mode = direction["primary_mode"]
+    warnings: list[dict[str, Any]] = []
+    justified = any(scene.get("finance_justification") for scene in scenes)
+    type_counts = Counter(scene_types)
+    mechanism_count = sum(type_counts[item] for item in MECHANISM_TYPES)
+
+    if mode == "FLOW" and mechanism_count == 0 and not justified:
+        warnings.append(
+            _warn(
+                "MODE_VISUAL_MISMATCH",
+                "FLOW is the primary editorial mode, but the plan has no money_flow or causal_chain treatment for its central allocation/value-capture question.",
+            )
+        )
+    direction_text = " ".join(
+        [str(direction.get("audience_task", ""))]
+        + [str(item) for item in direction.get("rationale", [])]
+    ).lower()
+    directional_task = any(term in direction_text for term in TRANSMISSION_TERMS)
+
+    if mode == "MACRO" and directional_task and mechanism_count == 0 and not justified:
+        warnings.append(
+            _warn(
+                "MODE_VISUAL_MISMATCH",
+                "MACRO is the primary editorial mode, but the plan has no mechanism visual for transmission or conditional second-order effects.",
+            )
+        )
+    elif mode == "EXPLAIN" and mechanism_count == 0 and direction["audience_task"] == "understand_mechanism" and not justified:
+        warnings.append(
+            _warn(
+                "MODE_VISUAL_MISMATCH",
+                "EXPLAIN asks the viewer to understand a mechanism, but the plan has no causal_chain or money_flow treatment.",
+            )
+        )
+
+    document_like = sum(type_counts[item] for item in ("document", "evidence_card"))
+    market_language = sum(type_counts[item] for item in ("research_timeline", "chart", "causal_chain"))
+    if mode == "MARKET" and len(scenes) >= 5 and document_like / len(scenes) > 0.5 and market_language == 0 and not justified:
+        warnings.append(
+            _warn(
+                "EDITORIAL_GRAMMAR_MISMATCH",
+                "The MARKET plan is dominated by filing/evidence-card pacing without a timing, move, or transmission treatment.",
+            )
+        )
+
+    explain_complexity = sum(type_counts[item] for item in ("document", "scenario_board", "thesis_breaker"))
+    if mode == "EXPLAIN" and len(scenes) >= 5 and explain_complexity / len(scenes) > 0.5 and not justified:
+        warnings.append(
+            _warn(
+                "EDITORIAL_GRAMMAR_MISMATCH",
+                "The EXPLAIN plan is dominated by document/decision treatments; verify that institutional complexity helps the concept rather than styling it as research.",
+            )
+        )
+
+    evidence_ids = [
+        str(scene.get("id", ""))
+        for scene in scenes
+        if _finance_type(scene) == "evidence_card"
+    ]
+    if mode == "RESEARCH" and len(evidence_ids) >= 3 and len(evidence_ids) / len(scenes) > 0.5 and not justified:
+        warnings.append(
+            _warn(
+                "MODE_COMPONENT_OVERUSE",
+                "RESEARCH is dominated by EvidenceCard; use documents, charts, mechanisms, or decision treatments where they better express the evidence.",
+                evidence_ids,
+            )
+        )
+
+    unsupported_causal_ids = [
+        str(scene.get("id", ""))
+        for scene in scenes
+        if _finance_type(scene) == "causal_chain"
+        and not scene.get("mechanism_importance")
+        and not scene.get("finance_justification")
+    ]
+    if unsupported_causal_ids:
+        warnings.append(
+            _warn(
+                "MODE_COMPONENT_OVERUSE",
+                "CausalChain appears without an explicit directional mechanism need; verify that chronology, comparison, flow, evidence, chart, scenario, or a simpler diagram would not fit better.",
+                unsupported_causal_ids,
+            )
+        )
+
+    return warnings, mode
 
 
 class FinanceSceneVarietyValidator:
@@ -161,12 +250,6 @@ class FinanceSceneVarietyValidator:
             )
 
         mechanism_needed = any(bool(scene.get("mechanism_importance")) for scene in scenes)
-        if not mechanism_needed:
-            combined_text = " ".join(
-                f"{scene.get('description', '')} {scene.get('information_role', '')}".lower()
-                for scene in scenes
-            )
-            mechanism_needed = any(term in combined_text for term in MECHANISM_TERMS)
         if mechanism_needed and not any(scene_type in MECHANISM_TYPES for scene_type in scene_types):
             warnings.append(
                 _warn(
@@ -190,6 +273,11 @@ class FinanceSceneVarietyValidator:
                 )
             )
 
+        editorial_mode = None
+        if isinstance(scene_plan, dict):
+            mode_warnings, editorial_mode = _editorial_warnings(scene_plan, scenes, scene_types)
+            warnings.extend(mode_warnings)
+
         return {
             "valid": True,
             "warnings": warnings,
@@ -198,6 +286,7 @@ class FinanceSceneVarietyValidator:
                 "duration_seconds": duration,
                 "families": sorted(families),
                 "type_counts": dict(sorted(type_counts.items())),
+                "editorial_mode": editorial_mode,
             },
         }
 
@@ -208,3 +297,69 @@ def validate_finance_scene_variety(
     """Functional entry point for directors and tests."""
 
     return FinanceSceneVarietyValidator().validate(scene_plan)
+
+
+def validate_finance_mode_signatures(
+    plans: dict[str, dict[str, Any]] | list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Review a current fixture/project plan set for compound template signals.
+
+    This is deliberately local and advisory. Equal scene counts alone never
+    trigger a warning; the count must coincide with another repeated structural
+    signature such as universal CausalChain or universal standalone disclaimers.
+    """
+
+    items = list(plans.values()) if isinstance(plans, dict) else list(plans)
+    if len(items) < 3:
+        return {"valid": True, "warnings": [], "summary": {"plan_count": len(items)}}
+
+    scene_lists = [item.get("scenes", []) for item in items]
+    counts = [len(scenes) for scenes in scene_lists]
+    signatures = [tuple(_finance_type(scene) for scene in scenes) for scenes in scene_lists]
+    same_count = len(set(counts)) == 1
+    same_sequence = len(set(signatures)) == 1
+    causal_in_every_plan = all(
+        any(_finance_type(scene) == "causal_chain" for scene in scenes)
+        for scenes in scene_lists
+    )
+    standalone_in_every_plan = all(
+        bool(scenes)
+        and _finance_type(scenes[-1]) == "text_card"
+        and "不构成" in str(scenes[-1].get("description", ""))
+        for scenes in scene_lists
+    )
+
+    warnings: list[dict[str, Any]] = []
+    if same_sequence or (
+        same_count and (causal_in_every_plan or standalone_in_every_plan)
+    ):
+        repeated = []
+        if same_count:
+            repeated.append(f"the same {counts[0]}-scene count")
+        if same_sequence:
+            repeated.append("the same component sequence")
+        if causal_in_every_plan:
+            repeated.append("CausalChain in every plan")
+        if standalone_in_every_plan:
+            repeated.append("a standalone disclaimer in every plan")
+        warnings.append(
+            _warn(
+                "MODE_SIGNATURE_TOO_REGULAR",
+                "Representative editorial modes share compound template signals: "
+                + ", ".join(repeated)
+                + ". Re-check scene boundaries against each audience_task; do not vary them randomly.",
+            )
+        )
+
+    return {
+        "valid": True,
+        "warnings": warnings,
+        "summary": {
+            "plan_count": len(items),
+            "scene_counts": counts,
+            "same_scene_count": same_count,
+            "same_component_sequence": same_sequence,
+            "causal_chain_in_every_plan": causal_in_every_plan,
+            "standalone_disclaimer_in_every_plan": standalone_in_every_plan,
+        },
+    }

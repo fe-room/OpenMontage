@@ -1,5 +1,6 @@
 import { useCurrentFrame } from "remotion";
 import { FINANCE_COLORS, FINANCE_MONO, FinanceFrame, reveal } from "./FinanceFrame";
+import { FinanceTitle } from "./FinanceTitle";
 import type { FinanceRenderContext, Scenario } from "./types";
 
 export type ScenarioBoardProps = FinanceRenderContext & {
@@ -9,29 +10,36 @@ export type ScenarioBoardProps = FinanceRenderContext & {
 };
 
 export const ScenarioBoard: React.FC<ScenarioBoardProps> = ({
-  title = "Conditional scenario board",
+  title = "条件情景，不是预测",
   scenarios,
   highlightedScenario,
   theme,
   brand,
-  ...source
+  canvasMode = "paper",
+  headerTreatment = "full",
+  sourceTreatment = "compact",
+  sourceLabel,
+  sourceDate,
+  period,
+  sampleData,
 }) => {
   const frame = useCurrentFrame();
   return (
-    <FinanceFrame eyebrow="DECISION / SCENARIOS — NOT FORECASTS" source={source} theme={theme} brand={brand}>
-      <div style={{ position: "absolute", inset: "13% 6% 12%" }}>
-        <h1 style={{ margin: 0, fontSize: 50 }}>{title}</h1>
-        <div style={{ marginTop: 42, display: "grid", gridTemplateColumns: `repeat(${Math.min(scenarios.length, 3)}, minmax(0, 1fr))`, gap: 18 }}>
+    <FinanceFrame eyebrow="DECISION / SCENARIO" source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+      <div style={{ position: "absolute", inset: "13% 6% 11%" }}>
+        <FinanceTitle preferredFontSize={50} minFontSize={38} maxWidth={880}>{title}</FinanceTitle>
+        <div style={{ marginTop: 58, display: "grid", gridTemplateColumns: `repeat(${Math.min(scenarios.length, 3)}, minmax(0, 1fr))`, gap: 22 }}>
           {scenarios.map((scenario, index) => {
             const active = scenario.name === highlightedScenario;
             return (
               <div
                 key={`${scenario.name}-${index}`}
                 style={{
-                  minHeight: 780,
-                  padding: "28px 24px",
-                  background: FINANCE_COLORS.surface,
+                  minHeight: 900,
+                  padding: "30px 24px",
+                  background: active ? FINANCE_COLORS.surface : "transparent",
                   borderTop: `7px solid ${active ? FINANCE_COLORS.vermillion : index === 1 ? FINANCE_COLORS.teal : FINANCE_COLORS.ochre}`,
+                  borderBottom: `2px solid ${FINANCE_COLORS.line}`,
                   opacity: reveal(frame, index * 7, 20 + index * 7),
                 }}
               >

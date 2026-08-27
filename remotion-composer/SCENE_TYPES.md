@@ -25,13 +25,15 @@ When you add a new component, append it here and in `src/components/index.ts`.
 | `anime_scene` | `AnimeScene` | `images` (list) | `particles`, `lightingFrom`, `lightingTo`, `vignette` | Still-image anime scene with particles + camera motion |
 | **`terminal_scene`** | **`TerminalScene`** | **`steps`** (list of cmd/out/pause/pill) | **`terminalTitle`, `prompt`, `accentColor`** | **Synthetic terminal animation — NO real capture needed. See [`.agents/skills/synthetic-screen-recording/SKILL.md`](../.agents/skills/synthetic-screen-recording/SKILL.md)** |
 | **`screenshot_scene`** | **`ScreenshotScene`** | **`backgroundImage`** (path in `public/`), **`screenshotSteps`** (list of overlays) | **`screenshotSize` (natural px w/h), `cursorStartAt`, `accentColor`** | **Approach-1 synthetic UI — drop any screenshot, animate scripted overlays on top (cursor, click_pulse, type_into, bubble_append, typing_dots, highlight_box, callout_balloon). Viewer-indistinguishable from a real recording for 15–30s focused demos. Coordinates are normalized (0–1) against the contain-fit rect. See [`.agents/skills/synthetic-ui-recording/SKILL.md`](../.agents/skills/synthetic-ui-recording/SKILL.md) (planned).** |
-| `evidence_card` | `EvidenceCard` | `label`, `primaryValue` | `supportingMetrics`, `period`, `sourceLabel`, `sourceDate`, `interpretation`, `variant` | Evidence and source context; variants: hero-number, comparison, document, table |
-| `expectation_gap` | `ExpectationGap` | `metric`, `expectedValue`, `actualValue`, `delta` | `unit`, `interpretation`, source fields, `variant` | Expected versus actual with explicit delta |
-| `money_flow` | `MoneyFlow` | `nodes`, `edges` | `highlightedPath`, `title`, source fields, `variant` | Deterministic value/capital flow diagram |
+| `evidence_card` | `EvidenceCard` | `label`, `primaryValue` | `supportingMetrics`, source fields, `interpretation`, `variant`, finance presentation fields | Evidence and source context; variants: hero-number, comparison, document, table |
+| `expectation_gap` | `ExpectationGap` | `metric`, `expectedValue`, `actualValue`, `delta` | `unit`, source fields, `variant`, finance presentation fields | Expected versus actual with explicit delta |
+| `money_flow` | `MoneyFlow` | `nodes`, `edges` | `highlightedPath`, `title`, source fields, `variant`, finance presentation fields | Deterministic value/capital flow diagram |
 | `causal_chain` | `CausalChain` | `nodes`, `edges` | `activeNodeId`, `hypothesis`, source fields, `variant` | Directed mechanism or explicitly labeled hypothesis |
 | `research_timeline` | `ResearchTimeline` | `events` | `highlightedIndex`, `title`, source fields, `variant` | Sourced event progression |
 | `scenario_board` | `ScenarioBoard` | `scenarios` | `highlightedScenario`, `title`, source fields | Conditional future cases; probabilities are optional and must be sourced |
 | `thesis_breaker` | `ThesisBreaker` | `thesis`, `conditions` | source fields | One to four conditions that would weaken or invalidate a thesis |
+
+Finance presentation fields are additive and optional: `canvasMode` (`paper`, `document`, `data`, `margin-note`, `dark-ink`, `full-bleed`), `density` (`sparse`, `standard`, `dense`), `headerTreatment` (`full`, `compact`, `none`), `sourceTreatment` (`full`, `compact`, `inline`), `analystNote`, and `evidenceIndex`. Omitting them preserves component defaults and legacy props remain valid.
 
 ---
 

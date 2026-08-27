@@ -17,7 +17,7 @@ Follow `skills/meta/bespoke-composition.md`. Retain the finance-dossier palette,
 1. Run ffprobe: verify video/audio streams, resolution, fps, size, and duration.
 2. Extract representative frames for every scene family and inspect layout, clipping, mobile readability, one-claim-per-frame, direction labels, and source strips.
 3. Transcribe narration and compare coverage to the approved script.
-4. Inspect the ending frame and record that `本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。` is exact, readable, native text, and at the end.
+4. Inspect the final meaningful editorial frame and record that `本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。` is exact, readable, native text, at the end, and uses the approved footer/overlay presentation. If a standalone card was explicitly required, verify that presentation instead.
 5. Verify no runtime/provider substitution occurred and no music layer exists when source is none.
 
 Any unreadable source, fabricated value, deterministic scenario language, or missing disclaimer is critical and requires re-render.

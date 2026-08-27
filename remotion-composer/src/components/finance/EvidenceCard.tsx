@@ -1,11 +1,7 @@
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import {
-  DirectionMark,
-  FINANCE_COLORS,
-  FINANCE_MONO,
-  FinanceFrame,
-  reveal,
-} from "./FinanceFrame";
+import { AnalystNote, EvidenceIndex, UnderlineMark } from "./EditorialMarks";
+import { DirectionMark, FINANCE_COLORS, FINANCE_MONO, FinanceFrame, reveal } from "./FinanceFrame";
+import { FinanceTitle } from "./FinanceTitle";
 import type { FinanceLayoutVariant, FinanceRenderContext, FinanceValue, SupportingMetric } from "./types";
 
 export type EvidenceCardProps = FinanceRenderContext & {
@@ -17,104 +13,45 @@ export type EvidenceCardProps = FinanceRenderContext & {
 };
 
 export const EvidenceCard: React.FC<EvidenceCardProps> = ({
-  label,
-  primaryValue,
-  supportingMetrics = [],
-  interpretation,
-  variant = "hero-number",
-  theme,
-  brand,
-  ...source
+  label, primaryValue, supportingMetrics = [], interpretation, variant = "hero-number",
+  theme, brand, canvasMode = variant === "document" ? "document" : "paper", density = "standard",
+  headerTreatment = canvasMode === "full-bleed" ? "none" : "full",
+  sourceTreatment = canvasMode === "document" ? "compact" : "full", analystNote, evidenceIndex,
+  sourceLabel, sourceDate, period, sampleData,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const valueY = interpolate(reveal(frame, 8, 8 + fps * 0.7), [0, 1], [28, 0]);
-  const isDocument = variant === "document";
+  const isDocument = canvasMode === "document";
+  const marginNote = canvasMode === "margin-note";
   const isTable = variant === "table";
+  const source = { sourceLabel, sourceDate, period, sampleData };
+  const note = analystNote || (marginNote ? interpretation : undefined);
 
   return (
-    <FinanceFrame eyebrow={`EVIDENCE / ${variant.toUpperCase()}`} source={source} theme={theme} brand={brand}>
-      <div
-        style={{
-          position: "absolute",
-          left: isDocument ? "10%" : "7%",
-          right: isDocument ? "7%" : "7%",
-          top: isDocument ? "15%" : "18%",
-          bottom: "12%",
-          display: "grid",
-          gridTemplateColumns: variant === "comparison" ? "1.2fr 1fr" : "1fr",
-          alignContent: "center",
-          gap: 42,
-          borderLeft: isDocument ? `8px solid ${FINANCE_COLORS.vermillion}` : undefined,
-          paddingLeft: isDocument ? 48 : 0,
-        }}
-      >
+    <FinanceFrame eyebrow={evidenceIndex || "EVIDENCE"} source={source} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+      <div style={{ position: "absolute", left: isDocument ? "13%" : "7%", right: marginNote ? "39%" : isDocument ? "9%" : "7%", top: headerTreatment === "none" ? "9%" : "14%", bottom: "13%", display: "grid", gridTemplateRows: density === "sparse" ? "auto 1fr auto" : "auto auto 1fr auto", alignContent: "start", gap: density === "dense" ? 28 : 42 }}>
+        <EvidenceIndex label={evidenceIndex || "EVIDENCE"} />
         <div>
-          <div
-            style={{
-              fontFamily: FINANCE_MONO,
-              fontSize: 24,
-              letterSpacing: "0.08em",
-              color: FINANCE_COLORS.vermillion,
-              marginBottom: 28,
-              opacity: reveal(frame, 0, 12),
-            }}
-          >
-            {label.toUpperCase()}
-          </div>
-          <div
-            style={{
-              fontFamily: FINANCE_MONO,
-              fontSize: isTable ? 108 : 154,
-              lineHeight: 0.92,
-              fontWeight: 700,
-              letterSpacing: "-0.055em",
-              opacity: reveal(frame, 8, 24),
-              transform: `translateY(${valueY}px)`,
-            }}
-          >
-            {primaryValue}
-          </div>
-          {interpretation && (
-            <div
-              style={{
-                marginTop: 34,
-                maxWidth: 760,
-                fontSize: 33,
-                lineHeight: 1.45,
-                opacity: reveal(frame, 22, 38),
-              }}
-            >
-              {interpretation}
-            </div>
-          )}
+          <FinanceTitle preferredFontSize={isDocument ? 46 : 52} minFontSize={36} maxWidth={marginNote ? 540 : 850}>{label}</FinanceTitle>
+          <div style={{ marginTop: 14 }}><UnderlineMark width={Math.min(360, Math.max(160, label.length * 20))} /></div>
+        </div>
+        <div style={{ alignSelf: "center", padding: density === "dense" ? "20px 0" : "52px 0 40px" }}>
+          <div style={{ fontFamily: FINANCE_MONO, fontSize: isTable ? 104 : density === "sparse" ? 176 : 154, lineHeight: 0.9, fontWeight: 700, letterSpacing: "-0.055em", opacity: reveal(frame, 8, 24), translate: `0 ${valueY}px` }}>{primaryValue}</div>
+          {interpretation && !marginNote && <div style={{ marginTop: 38, maxWidth: 760, fontSize: 31, lineHeight: 1.5, opacity: reveal(frame, 22, 38) }}>{interpretation}</div>}
         </div>
         {supportingMetrics.length > 0 && (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: isTable ? "1fr" : "repeat(2, minmax(0, 1fr))",
-              borderTop: `1px solid ${FINANCE_COLORS.line}`,
-            }}
-          >
+          <div style={{ display: "grid", gridTemplateColumns: isTable ? "1fr" : `repeat(${Math.min(supportingMetrics.length, 2)}, minmax(0, 1fr))`, gap: "0 34px", borderTop: `2px solid ${FINANCE_COLORS.line}`, alignSelf: "end" }}>
             {supportingMetrics.map((metric, index) => (
-              <div
-                key={`${metric.label}-${index}`}
-                style={{
-                  padding: "24px 18px 22px 0",
-                  borderBottom: `1px solid ${FINANCE_COLORS.line}`,
-                  opacity: reveal(frame, 24 + index * 5, 39 + index * 5),
-                }}
-              >
+              <div key={`${metric.label}-${index}`} style={{ padding: "24px 8px 22px 0", borderBottom: `2px solid ${FINANCE_COLORS.line}`, opacity: reveal(frame, 24 + index * 5, 39 + index * 5) }}>
                 <div style={{ color: FINANCE_COLORS.muted, fontSize: 21 }}>{metric.label}</div>
-                <div style={{ fontFamily: FINANCE_MONO, fontSize: 36, marginTop: 8 }}>
-                  {metric.value} <DirectionMark direction={metric.direction} />
-                </div>
+                <div style={{ fontFamily: FINANCE_MONO, fontSize: 36, marginTop: 8 }}>{metric.value} <DirectionMark direction={metric.direction} /></div>
               </div>
             ))}
           </div>
         )}
       </div>
+      {note && <div style={{ position: "absolute", right: "8.5%", top: marginNote ? "35%" : "68%", width: marginNote ? "27%" : "44%" }}><AnalystNote compact={marginNote}>{note}</AnalystNote></div>}
     </FinanceFrame>
   );
 };

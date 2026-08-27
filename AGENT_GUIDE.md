@@ -84,12 +84,17 @@ be shortened, paraphrased, translated, or replaced:
 
 > 本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。
 
-It must be the video's final scene: a native exact-text card (never text baked
-into an AI-generated image), held long enough to read. Carry it through the
-final script section, the final `scene_plan` scene, and the final
-`edit_decisions.cuts` item. During post-render review, inspect the ending frame
-and record that the sentence is present, exact, readable, and at the end.
-Checkpoint validation fails closed when any of these requirements is missing.
+It must be native readable text at the end of the video and never baked into an
+AI-generated image. For `finance-dossier`, the normal presentation is a quiet
+`footer` or `overlay` on the final meaningful editorial scene, carried through
+`script.metadata.compliance`, `scene_plan.metadata.compliance`, and
+`edit_decisions.metadata.compliance`. A standalone exact-text card remains
+allowed when explicitly requested or required by an external platform, legal,
+or workflow policy. Other finance pipelines retain their declared compliance
+presentation until their own manifests opt into the metadata contract. During
+post-render review, inspect the ending frame and record that the sentence is
+present, exact, readable, and at the end. Checkpoint validation fails closed
+when the approved presentation or exact wording is missing.
 
 ## Conditional Financial Editorial Workflow
 

@@ -21,6 +21,8 @@ Never present `INFERENCE`, `THESIS`, or `SCENARIO` as `FACT`. Every numerical cl
 
 ## Narrative grammar
 
+First read `creative/finance-editorial-direction.md`. Its primary mode identifies the editorial question; this skill governs evidence discipline and the shared Finance Dossier voice. Mode is not a theme and does not force components.
+
 Do not default to `hook -> three points -> conclusion`. Prefer this reasoning sequence, omitting stages that do not serve the topic:
 
 `ANOMALY -> CONVENTIONAL EXPLANATION -> EVIDENCE -> MECHANISM -> EXPECTATION -> IMPLICATION -> WHAT WOULD CHANGE THE THESIS`
@@ -40,6 +42,8 @@ Choose an ending that keeps uncertainty useful:
 - `OPEN_QUESTION` — the unresolved question and what evidence could answer it.
 
 Avoid repeating the same opening, beat order, or ending across consecutive productions when another grammar better fits the evidence.
+
+The anomaly-to-thesis sequence is most natural for `RESEARCH`, not a universal finance template. `MARKET`, `MACRO`, `FLOW`, and `EXPLAIN` use their own preferred reasoning grammars from Editorial Direction. Preserve one brand while allowing materially different pacing, evidence order, and endings.
 
 ## Scene families
 
@@ -68,10 +72,10 @@ For videos around 45 seconds or longer, prefer at least three useful families wh
 - Routine or daily finance content: recommend `composition_mode: templated` and the reusable finance component grammar.
 - Hero or deep-research content: consider `composition_mode: atelier`, preserve the finance-dossier palette, typography, source treatment, evidence orientation, and restraint, but do not import or reassemble reusable finance scenes. Follow `skills/meta/bespoke-composition.md`: reuse engine knowledge, not creative compositions.
 
-## Mandatory ending
+## Compliance ending
 
-Every finance video ends with this native exact-text card, unchanged:
+Every Finance Dossier video carries this native exact text at the end, unchanged:
 
 > 本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。
 
-Carry it through the final script section, final `scene_plan` scene, final `edit_decisions.cuts` item, and ending-frame review.
+Normally render it as a quiet footer or overlay on the final meaningful editorial scene and carry the presentation through artifact `metadata.compliance`. The ending itself must still answer the audience task. Use a standalone exact-text card only when explicitly requested or required by an external platform, legal, or workflow policy. Never bake the line into generated imagery.

@@ -51,6 +51,60 @@ def test_financial_scene_plan_requires_disclaimer_as_final_text_card():
     enforce_financial_disclaimer("scene_plan", artifacts)
 
 
+def test_finance_dossier_scene_plan_accepts_native_footer_on_editorial_ending():
+    artifacts = _finance_context()
+    artifacts["scene_plan"] = {
+        "metadata": {
+            "compliance": {
+                "financial_disclaimer": FINANCIAL_DISCLAIMER_ZH,
+                "presentation": "footer",
+                "placement": "ending",
+                "ending_scene_id": "watch-next",
+            }
+        },
+        "scenes": [
+            {"id": "evidence", "type": "animation", "description": "Evidence"},
+            {"id": "watch-next", "type": "animation", "description": "What to watch next"},
+        ],
+    }
+    enforce_financial_disclaimer("scene_plan", artifacts)
+
+
+def test_embedded_compliance_must_target_final_meaningful_scene():
+    artifacts = _finance_context()
+    artifacts["scene_plan"] = {
+        "metadata": {
+            "compliance": {
+                "financial_disclaimer": FINANCIAL_DISCLAIMER_ZH,
+                "presentation": "overlay",
+                "placement": "ending",
+                "ending_scene_id": "not-final",
+            }
+        },
+        "scenes": [{"id": "final", "type": "text_card", "description": "Takeaway"}],
+    }
+    with pytest.raises(ContentPolicyError, match="ending_scene_id"):
+        enforce_financial_disclaimer("scene_plan", artifacts)
+
+
+def test_explicit_standalone_compliance_remains_supported():
+    artifacts = _finance_context()
+    artifacts["scene_plan"] = {
+        "metadata": {
+            "compliance": {
+                "financial_disclaimer": FINANCIAL_DISCLAIMER_ZH,
+                "presentation": "standalone",
+                "placement": "ending",
+            }
+        },
+        "scenes": [
+            {"id": "ending", "type": "text_card", "description": "Takeaway"},
+            {"id": "compliance", "type": "text_card", "description": FINANCIAL_DISCLAIMER_ZH},
+        ],
+    }
+    enforce_financial_disclaimer("scene_plan", artifacts)
+
+
 def test_financial_edit_requires_disclaimer_as_final_text_card_cut():
     artifacts = _finance_context()
     artifacts["edit_decisions"] = {
@@ -61,6 +115,35 @@ def test_financial_edit_requires_disclaimer_as_final_text_card_cut():
         enforce_financial_disclaimer("edit", artifacts)
 
     artifacts["edit_decisions"]["cuts"][-1]["text"] = FINANCIAL_DISCLAIMER_ZH
+    enforce_financial_disclaimer("edit", artifacts)
+
+
+def test_finance_dossier_script_and_edit_accept_ending_compliance_metadata():
+    artifacts = _finance_context()
+    artifacts["script"] = {
+        "metadata": {
+            "compliance": {
+                "financial_disclaimer": FINANCIAL_DISCLAIMER_ZH,
+                "presentation": "footer",
+                "placement": "ending",
+                "ending_section_id": "takeaway",
+            }
+        },
+        "sections": [{"id": "takeaway", "text": "先看盈利质量。"}],
+    }
+    enforce_financial_disclaimer("script", artifacts)
+
+    artifacts["edit_decisions"] = {
+        "metadata": {
+            "compliance": {
+                "financial_disclaimer": FINANCIAL_DISCLAIMER_ZH,
+                "presentation": "footer",
+                "placement": "ending",
+                "ending_cut_id": "takeaway",
+            }
+        },
+        "cuts": [{"id": "takeaway", "type": "text_card", "text": "先看盈利质量。"}],
+    }
     enforce_financial_disclaimer("edit", artifacts)
 
 
@@ -78,6 +161,37 @@ def test_financial_compose_requires_rendered_end_frame_confirmation():
         "financial_disclaimer_at_end": True,
     }
     enforce_financial_disclaimer("compose", artifacts)
+
+
+def test_financial_compose_confirms_approved_embedded_presentation():
+    artifacts = _finance_context()
+    artifacts["edit_decisions"] = {
+        "metadata": {
+            "compliance": {
+                "financial_disclaimer": FINANCIAL_DISCLAIMER_ZH,
+                "presentation": "overlay",
+                "placement": "ending",
+                "ending_cut_id": "ending",
+            }
+        },
+        "cuts": [{"id": "ending", "type": "text_card", "text": "What next"}],
+    }
+    artifacts["final_review"] = {
+        "checks": {
+            "compliance": {
+                "financial_disclaimer_present": True,
+                "financial_disclaimer_exact": True,
+                "financial_disclaimer_readable": True,
+                "financial_disclaimer_at_end": True,
+                "financial_disclaimer_presentation": "overlay",
+            }
+        }
+    }
+    enforce_financial_disclaimer("compose", artifacts)
+
+    artifacts["final_review"]["checks"]["compliance"]["financial_disclaimer_presentation"] = "footer"
+    with pytest.raises(ContentPolicyError, match="approved overlay"):
+        enforce_financial_disclaimer("compose", artifacts)
 
 
 def test_checkpoint_loads_upstream_classification_and_fails_closed(tmp_path):

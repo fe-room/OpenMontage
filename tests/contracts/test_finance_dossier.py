@@ -280,6 +280,24 @@ def test_finance_component_contracts_cover_zero_values_and_distinct_variants():
     assert "node.value !== undefined && node.value !== null" in flow
 
 
+def test_finance_v12_presentation_contract_and_title_cases_are_additive():
+    fixture = json.loads((ROOT / "remotion-composer" / "test-fixtures" / "finance-dossier-v1.2.json").read_text())
+    labels = {cut.get("label") for cut in fixture["cuts"]}
+    assert {
+        "自由现金流同比增长为什么低于市场预期？",
+        "AI Infrastructure Revenue · 市场预期 vs 实际结果",
+        "Adjusted EBITDA Margin · 调整后 EBITDA 利润率",
+    } <= labels
+    finance_dir = ROOT / "remotion-composer" / "src" / "components" / "finance"
+    title = (finance_dir / "FinanceTitle.tsx").read_text()
+    frame = (finance_dir / "FinanceFrame.tsx").read_text()
+    assert "avoidChineseOrphan" in title and "maxLines = 2" in title
+    for mode in ("paper", "document", "data", "margin-note", "dark-ink", "full-bleed"):
+        assert mode in (finance_dir / "types.ts").read_text()
+    for treatment in ('"full"', '"compact"', '"none"'):
+        assert treatment in frame
+
+
 def test_finance_engine_branding_is_not_rendered():
     finance_frame = (ROOT / "remotion-composer" / "src" / "components" / "finance" / "FinanceFrame.tsx").read_text()
     assert "OPENMONTAGE" not in finance_frame.upper()

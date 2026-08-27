@@ -9,6 +9,7 @@
     "validate:remotion": "remotion compositions src/index.tsx --props=public/demo-props/finance-dossier-sample.json",
     "bundle:remotion": "remotion bundle src/index.tsx --out-dir=out/remotion-bundle",
     "smoke:finance": "node scripts/finance-smoke.mjs",
+    "stills:finance-v1.2": "node scripts/finance-v1.2-stills.mjs",
     "upgrade": "npx remotion upgrade"
   },
   "dependencies": {

@@ -4,7 +4,9 @@ Turn the `research_brief` into the existing `proposal_packet` plus append-only `
 
 ## Proposal requirements
 
-Present 4–5 directions when the brief is open, otherwise at least 3. Differentiate them with the four hook grammars, evidence spine, mechanism, and one of `SCENARIO_BOARD`, `THESIS_BREAKER`, `WATCH_LIST`, or `OPEN_QUESTION` endings.
+Read `research_brief.metadata.editorial_direction`. Confirm it against the evidence rather than treating the first classification as immutable. If the core question, required evidence, or viewer takeaway supports a better mode, revise it with a concise rationale. Carry the approved object into `proposal_packet.metadata.editorial_direction`; never add a third mode.
+
+Present 4–5 directions when the brief is open, otherwise at least 3. Differentiate them within the selected Editorial Direction through hooks, evidence spines, mechanisms, and semantically appropriate endings. Do not force `SCENARIO_BOARD`, `THESIS_BREAKER`, `WATCH_LIST`, or `OPEN_QUESTION` when the mode and evidence suggest a simpler resolution.
 
 Before availability checks, recommend the best content-fit path. Then run the mandatory provider menu preflight and report capabilities, setup options, costs, and tradeoffs.
 
@@ -17,3 +19,5 @@ Present these decisions explicitly:
 - Music: apply the persistent no-BGM default or follow the full music-source protocol when explicitly enabled.
 
 Use `finance-dossier` as the recommended playbook. Include itemized cost and production stages. Log runtime, composition mode, coverage, voice, music, and approval decisions. Do not generate assets in this stage.
+
+Editorial Mode is a storytelling strategy, not a visual theme or a separate production path. The proposal must retain one Finance Dossier brand and the existing pipeline/components.

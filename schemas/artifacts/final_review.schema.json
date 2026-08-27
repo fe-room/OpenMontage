@@ -150,6 +150,11 @@
             "financial_disclaimer_exact": { "type": "boolean" },
             "financial_disclaimer_readable": { "type": "boolean" },
             "financial_disclaimer_at_end": { "type": "boolean" },
+            "financial_disclaimer_presentation": {
+              "type": "string",
+              "enum": ["footer", "overlay", "standalone"],
+              "description": "Native presentation verified on the editorial ending or as an explicitly required standalone card."
+            },
             "issues": { "type": "array", "items": { "type": "string" } }
           },
           "additionalProperties": false

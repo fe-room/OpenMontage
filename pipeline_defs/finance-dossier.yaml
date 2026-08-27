@@ -1,9 +1,9 @@
 name: finance-dossier
-version: "1.1"
+version: "1.3.1"
 description: >
-  Evidence-first finance video pipeline for filings, source documents, analyst annotations,
-  expectation gaps, mechanisms, and conditional decision frames. Uses the existing canonical
-  artifact lifecycle and the Remotion Explainer runtime rather than a parallel renderer.
+  Editorially routed, evidence-first finance video pipeline for company research, market moves,
+  macro transmission, value flow, and financial explanation. Uses one Finance Dossier brand,
+  the existing canonical artifact lifecycle, and the existing rendering system.
 category: generated
 stability: beta
 deliverable_type: video
@@ -35,6 +35,7 @@ required_skills:
   - pipelines/finance-dossier/edit-director
   - pipelines/finance-dossier/compose-director
   - pipelines/finance-dossier/publish-director
+  - creative/finance-editorial-direction
   - creative/finance-storytelling
   - meta/reviewer
   - meta/checkpoint-protocol
@@ -71,6 +72,8 @@ stages:
     checkpoint_required: false
     human_approval_default: false
     review_focus:
+      - "Editorial Direction classifies the viewer task semantically before broad research"
+      - "Mode-specific evidence priorities are followed without weakening the source hierarchy"
       - "content_category is finance and source hierarchy is explicit"
       - "Major claims are tagged conceptually as FACT, INFERENCE, THESIS, or SCENARIO"
       - "Tier 1 sources lead; Tier 3 is never sole support for a major factual claim"
@@ -79,6 +82,7 @@ stages:
     success_criteria:
       - "Schema-valid research_brief with at least 3 evidence-bearing data points"
       - "At least 5 sources, prioritizing Tier 1 when available"
+      - "research_brief metadata carries one primary editorial mode and at most one secondary mode"
 
   - name: proposal
     skill: pipelines/finance-dossier/proposal-director
@@ -88,6 +92,7 @@ stages:
     checkpoint_required: true
     human_approval_default: true
     review_focus:
+      - "Editorial Direction is confirmed or revised from actual evidence and carried forward"
       - "Concepts use finance narrative grammars rather than generic three-point structures"
       - "Remotion and HyperFrames are both presented before runtime selection"
       - "Templated daily and atelier hero authoring modes are compared"
@@ -107,13 +112,15 @@ stages:
     checkpoint_required: true
     human_approval_default: true
     review_focus:
+      - "The approved Editorial Direction is used as a storytelling prior, not a rigid template"
+      - "Mode grammar labels are reasoning prompts rather than mandatory script sections"
       - "Claims remain visibly distinct as FACT, INFERENCE, THESIS, or SCENARIO"
       - "Narrative follows anomaly-to-mechanism reasoning where appropriate"
       - "Uncertainty and thesis-changing conditions are explicit"
-      - "Final section exactly contains the mandatory finance disclaimer"
+      - "The final meaningful section completes the audience task and carries approved compliance metadata"
     success_criteria:
       - "Schema-valid script within ten percent of target duration"
-      - "Final spoken or silent-card section is the exact mandatory disclaimer"
+      - "Exact native disclaimer text is carried as ending footer/overlay metadata or an explicitly required standalone card"
 
   - name: scene_plan
     skill: pipelines/finance-dossier/scene-director
@@ -124,14 +131,19 @@ stages:
     checkpoint_required: true
     human_approval_default: true
     review_focus:
+      - "Editorial Direction influences family mix, canvas, density, pacing, header, and ending treatment"
+      - "Scene boundaries follow cognitive-task transitions rather than a mode-specific count"
+      - "CausalChain is selected only for genuine directional mechanisms"
+      - "MODE_VISUAL_MISMATCH, EDITORIAL_GRAMMAR_MISMATCH, MODE_COMPONENT_OVERUSE, and MODE_SIGNATURE_TOO_REGULAR warnings are reviewed as advisory"
       - "Scenes are classified as DOCUMENT, DATA, MECHANISM, or DECISION"
       - "FinanceSceneVarietyValidator warnings are recorded and addressed deliberately"
       - "Important factual and data scenes include source anchors"
       - "Motion reveals evidence and reasoning"
-      - "Final native text_card contains the exact mandatory disclaimer"
+      - "The final meaningful scene completes the editorial task and carries exact native compliance metadata"
     success_criteria:
       - "Schema-valid scene_plan with finance metadata on applicable scenes"
-      - "Videos of 45 seconds or longer prefer at least three useful visual families"
+      - "Every scene boundary corresponds to a material cognitive-task or visual-reset need"
+      - "No mode-specific scene count or component checklist is enforced"
 
   - name: assets
     skill: pipelines/finance-dossier/asset-director
@@ -161,7 +173,7 @@ stages:
     review_focus:
       - "Finance cut props preserve source context, periods, variants, and uncertainty"
       - "No red or green direction is used without signs, arrows, or text labels"
-      - "Final cut is the exact native disclaimer text_card"
+      - "Final meaningful cut carries exact native footer/overlay compliance unless standalone was explicitly required"
       - "render_runtime and composition_mode match the approved proposal"
     success_criteria:
       - "Schema-valid edit_decisions with complete timeline coverage"
@@ -180,7 +192,7 @@ stages:
       - "Composition validation and TypeScript/runtime checks pass"
       - "Sources and evidence metadata remain readable at delivery resolution"
       - "Render uses the approved runtime without silent substitution"
-      - "Ending frame contains the exact mandatory disclaimer at the end"
+      - "Ending frame contains the exact native disclaimer in the approved footer, overlay, or standalone presentation"
     success_criteria:
       - "Schema-valid render_report and final_review"
       - "Output passes ffprobe, audio, visual spot-check, and disclaimer verification"
