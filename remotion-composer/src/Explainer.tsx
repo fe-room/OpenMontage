@@ -330,6 +330,7 @@ interface Cut {
   sourceTreatment?: FinanceSourceTreatment;
   analystNote?: string;
   evidenceIndex?: string;
+  complianceText?: string;
 }
 
 interface Overlay {
@@ -702,6 +703,7 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig; brand?: ExplainerP
     sourceTreatment: cut.sourceTreatment,
     analystNote: cut.analystNote,
     evidenceIndex: cut.evidenceIndex,
+    complianceText: cut.complianceText,
   };
   const isPresent = <T,>(value: T | undefined | null): value is T => value !== undefined && value !== null;
   if (cut.type === "evidence_card" && cut.label && isPresent(cut.primaryValue)) {

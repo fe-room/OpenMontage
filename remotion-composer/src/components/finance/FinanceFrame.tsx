@@ -51,6 +51,7 @@ export type SourceStripProps = {
   sampleData?: boolean;
   treatment?: FinanceSourceTreatment;
   dark?: boolean;
+  complianceText?: string;
 };
 
 export const SourceStrip: React.FC<SourceStripProps> = ({
@@ -60,6 +61,7 @@ export const SourceStrip: React.FC<SourceStripProps> = ({
   sampleData = false,
   treatment = "full",
   dark = false,
+  complianceText,
 }) => {
   const frame = useCurrentFrame();
   const opacity = reveal(frame, 10, 24);
@@ -74,7 +76,7 @@ export const SourceStrip: React.FC<SourceStripProps> = ({
         position: "absolute",
         left: inline ? "57%" : "7%",
         right: "7%",
-        bottom: compact ? "3.8%" : "4.6%",
+        bottom: complianceText ? "7.2%" : compact ? "3.8%" : "4.6%",
         borderTop: inline ? undefined : `2px solid ${dark ? "rgba(242,239,231,0.28)" : FINANCE_COLORS.line}`,
         paddingTop: inline ? 0 : compact ? 10 : 14,
         display: "grid",
@@ -98,6 +100,11 @@ export const SourceStrip: React.FC<SourceStripProps> = ({
       {sampleData && (
         <span style={{ color: FINANCE_COLORS.vermillion, fontFamily: FINANCE_MONO, fontWeight: 700, letterSpacing: "0.06em", whiteSpace: "nowrap" }}>SAMPLE DATA</span>
       )}
+      {complianceText && (
+        <div style={{ position: "fixed", left: "7%", right: "7%", bottom: "3.1%", borderTop: `1px solid ${dark ? "rgba(242,239,231,0.2)" : FINANCE_COLORS.line}`, paddingTop: 10, textAlign: "center", fontSize: 18, lineHeight: 1.35, color: dark ? "rgba(242,239,231,0.72)" : FINANCE_COLORS.muted }}>
+          {complianceText}
+        </div>
+      )}
     </div>
   );
 };
@@ -111,7 +118,8 @@ export const FinanceFrame: React.FC<{
   canvasMode?: FinanceCanvasMode;
   headerTreatment?: FinanceHeaderTreatment;
   sourceTreatment?: FinanceSourceTreatment;
-}> = ({ eyebrow, children, source, theme, brand, canvasMode = "paper", headerTreatment = "full", sourceTreatment = "full" }) => {
+  complianceText?: string;
+}> = ({ eyebrow, children, source, theme, brand, canvasMode = "paper", headerTreatment = "full", sourceTreatment = "full", complianceText }) => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
   const grainOpacity = 0.018 + Math.sin(frame / 19) * 0.003;
@@ -163,7 +171,7 @@ export const FinanceFrame: React.FC<{
         </div>
       )}
       {children}
-      {source && <SourceStrip {...source} treatment={sourceTreatment} dark={dark} />}
+      {source && <SourceStrip {...source} treatment={sourceTreatment} dark={dark} complianceText={complianceText} />}
     </AbsoluteFill>
   );
 };

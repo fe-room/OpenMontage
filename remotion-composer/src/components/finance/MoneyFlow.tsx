@@ -85,7 +85,7 @@ export const MoneyFlow: React.FC<MoneyFlowProps> = ({
   canvasMode = variant === "sankey-lite" ? "data" : "paper",
   headerTreatment = canvasMode === "full-bleed" ? "none" : canvasMode === "data" ? "compact" : "full",
   sourceTreatment = canvasMode === "full-bleed" ? "inline" : "compact",
-  evidenceIndex, sourceLabel, sourceDate, period, sampleData,
+  evidenceIndex, sourceLabel, sourceDate, period, sampleData, complianceText,
 }) => {
   const frame = useCurrentFrame();
   const positions = moneyFlowPositions(nodes, edges, variant);
@@ -96,7 +96,7 @@ export const MoneyFlow: React.FC<MoneyFlowProps> = ({
   const source = { sourceLabel, sourceDate, period, sampleData };
 
   return (
-    <FinanceFrame eyebrow="MONEY FLOW" source={source} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+    <FinanceFrame eyebrow="MONEY FLOW" source={source} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment} complianceText={complianceText}>
       <div style={{ position: "absolute", inset: headerTreatment === "none" ? "7% 4.5% 9%" : "11% 4.5% 10%" }}>
         <div style={{ marginLeft: "2.5%" }}><EvidenceIndex label={evidenceIndex || "MONEY FLOW"} /><FinanceTitle preferredFontSize={52} minFontSize={38} maxWidth={900} style={{ marginTop: 16 }}>{title}</FinanceTitle></div>
         <svg viewBox="0 0 1000 1250" style={{ width: "100%", height: "86%", marginTop: 8, overflow: "visible" }}>

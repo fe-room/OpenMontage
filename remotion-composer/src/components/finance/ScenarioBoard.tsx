@@ -22,10 +22,11 @@ export const ScenarioBoard: React.FC<ScenarioBoardProps> = ({
   sourceDate,
   period,
   sampleData,
+  complianceText,
 }) => {
   const frame = useCurrentFrame();
   return (
-    <FinanceFrame eyebrow="DECISION / SCENARIO" source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+    <FinanceFrame eyebrow="DECISION / SCENARIO" source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment} complianceText={complianceText}>
       <div style={{ position: "absolute", inset: "13% 6% 11%" }}>
         <FinanceTitle preferredFontSize={50} minFontSize={38} maxWidth={880}>{title}</FinanceTitle>
         <div style={{ marginTop: 58, display: "grid", gridTemplateColumns: `repeat(${Math.min(scenarios.length, 3)}, minmax(0, 1fr))`, gap: 22 }}>

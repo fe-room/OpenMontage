@@ -28,6 +28,7 @@ export const CausalChain: React.FC<CausalChainProps> = ({
   sourceDate,
   period,
   sampleData,
+  complianceText,
 }) => {
   const frame = useCurrentFrame();
   const positions = Object.fromEntries(
@@ -40,7 +41,7 @@ export const CausalChain: React.FC<CausalChainProps> = ({
   );
 
   return (
-    <FinanceFrame eyebrow={hypothesis ? "MECHANISM / HYPOTHESIS" : "MECHANISM / CAUSAL CHAIN"} source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+    <FinanceFrame eyebrow={hypothesis ? "MECHANISM / HYPOTHESIS" : "MECHANISM / CAUSAL CHAIN"} source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment} complianceText={complianceText}>
       <div style={{ position: "absolute", inset: "11% 6% 10%" }}>
         <FinanceTitle preferredFontSize={50} minFontSize={38} maxWidth={880}>{title}</FinanceTitle>
         {hypothesis && (

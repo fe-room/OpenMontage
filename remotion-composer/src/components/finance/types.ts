@@ -37,6 +37,7 @@ export type FinanceRenderContext = SourceContext & {
   sourceTreatment?: FinanceSourceTreatment;
   analystNote?: string;
   evidenceIndex?: string;
+  complianceText?: string;
 };
 
 export type FlowNode = {

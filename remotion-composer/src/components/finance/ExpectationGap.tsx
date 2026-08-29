@@ -31,7 +31,7 @@ export const ExpectationGap: React.FC<ExpectationGapProps> = ({
   canvasMode = "paper", density = variant === "delta" ? "sparse" : "standard",
   headerTreatment = canvasMode === "full-bleed" ? "none" : canvasMode === "data" ? "compact" : "full",
   sourceTreatment = canvasMode === "margin-note" ? "inline" : canvasMode === "data" ? "compact" : "full",
-  analystNote, evidenceIndex, sourceLabel, sourceDate, period, sampleData,
+  analystNote, evidenceIndex, sourceLabel, sourceDate, period, sampleData, complianceText,
 }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
@@ -45,7 +45,7 @@ export const ExpectationGap: React.FC<ExpectationGapProps> = ({
   const deltaText = String(delta);
 
   return (
-    <FinanceFrame eyebrow="EXPECTATION GAP" source={source} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+    <FinanceFrame eyebrow="EXPECTATION GAP" source={source} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment} complianceText={complianceText}>
       <div style={{ position: "absolute", left: "7%", right: contentRight, top: headerTreatment === "none" ? "8%" : "13.5%", bottom: "13%", display: "flex", flexDirection: "column" }}>
         <EvidenceIndex label={evidenceIndex || "EXPECTATION GAP"} />
         <FinanceTitle preferredFontSize={56} minFontSize={39} maxWidth={marginNote ? 560 : 900} style={{ marginTop: 18 }}>{metric}</FinanceTitle>

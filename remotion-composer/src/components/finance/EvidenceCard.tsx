@@ -17,7 +17,7 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
   theme, brand, canvasMode = variant === "document" ? "document" : "paper", density = "standard",
   headerTreatment = canvasMode === "full-bleed" ? "none" : "full",
   sourceTreatment = canvasMode === "document" ? "compact" : "full", analystNote, evidenceIndex,
-  sourceLabel, sourceDate, period, sampleData,
+  sourceLabel, sourceDate, period, sampleData, complianceText,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -29,7 +29,7 @@ export const EvidenceCard: React.FC<EvidenceCardProps> = ({
   const note = analystNote || (marginNote ? interpretation : undefined);
 
   return (
-    <FinanceFrame eyebrow={evidenceIndex || "EVIDENCE"} source={source} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+    <FinanceFrame eyebrow={evidenceIndex || "EVIDENCE"} source={source} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment} complianceText={complianceText}>
       <div style={{ position: "absolute", left: isDocument ? "13%" : "7%", right: marginNote ? "39%" : isDocument ? "9%" : "7%", top: headerTreatment === "none" ? "9%" : "14%", bottom: "13%", display: "grid", gridTemplateRows: density === "sparse" ? "auto 1fr auto" : "auto auto 1fr auto", alignContent: "start", gap: density === "dense" ? 28 : 42 }}>
         <EvidenceIndex label={evidenceIndex || "EVIDENCE"} />
         <div>

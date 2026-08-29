@@ -24,11 +24,12 @@ export const ResearchTimeline: React.FC<ResearchTimelineProps> = ({
   sourceDate,
   period,
   sampleData,
+  complianceText,
 }) => {
   const frame = useCurrentFrame();
   const horizontal = variant === "horizontal";
   return (
-    <FinanceFrame eyebrow={`DOCUMENT / TIMELINE / ${variant.toUpperCase()}`} source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment}>
+    <FinanceFrame eyebrow={`DOCUMENT / TIMELINE / ${variant.toUpperCase()}`} source={{sourceLabel, sourceDate, period, sampleData}} theme={theme} brand={brand} canvasMode={canvasMode} headerTreatment={headerTreatment} sourceTreatment={sourceTreatment} complianceText={complianceText}>
       <div style={{ position: "absolute", inset: "12% 8% 11% 12%" }}>
         <FinanceTitle preferredFontSize={52} minFontSize={38} maxWidth={820}>{title}</FinanceTitle>
         <div
