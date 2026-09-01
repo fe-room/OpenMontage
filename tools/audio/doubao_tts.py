@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import base64
 import json
 import os
+import re
 import time
 import uuid
+import warnings
 from pathlib import Path
 from typing import Any
 
@@ -56,7 +59,9 @@ class DoubaoTTS(BaseTool):
         "offline": False,
         "native_audio": True,
         "timestamps": True,
-        "long_text_async": True,
+        "long_text_async": False,
+        "official_unidirectional_streaming": True,
+        "semantic_chunk_limit": 400,
     }
     best_for = [
         "natural Mandarin narration",
@@ -103,6 +108,18 @@ class DoubaoTTS(BaseTool):
                 "maximum": 100,
                 "description": "Doubao speech rate. 0=normal, 100=2x, -50=0.5x.",
             },
+            "api_mode": {
+                "type": "string",
+                "default": "unidirectional",
+                "enum": ["unidirectional", "async_legacy"],
+                "description": "Official V3 unidirectional streaming API, or the deprecated async submit/query path.",
+            },
+            "max_chars_per_request": {
+                "type": "integer",
+                "default": 400,
+                "minimum": 50,
+                "description": "Fail closed above this size so callers split long narration semantically.",
+            },
             "enable_timestamp": {
                 "type": "boolean",
                 "default": True,
@@ -112,6 +129,14 @@ class DoubaoTTS(BaseTool):
                 "type": "boolean",
                 "default": False,
                 "description": "Pass through Doubao markdown filtering behavior. Defaults to API-safe false.",
+            },
+            "disable_emoji_filter": {
+                "type": "boolean",
+                "default": False,
+            },
+            "enable_latex_tn": {
+                "type": "boolean",
+                "default": True,
             },
             "context_texts": {
                 "type": "array",
@@ -136,7 +161,7 @@ class DoubaoTTS(BaseTool):
             "output_path": {"type": "string"},
             "metadata_path": {
                 "type": "string",
-                "description": "Where to save the full query JSON. Defaults next to output_path.",
+                "description": "Where to save request/response metadata. Defaults next to output_path.",
             },
             "poll_interval_seconds": {
                 "type": "number",
@@ -178,7 +203,7 @@ class DoubaoTTS(BaseTool):
     idempotency_key_fields = ["text", "voice_id", "resource_id", "speech_rate", "sample_rate"]
     side_effects = [
         "writes audio file to output_path",
-        "writes Doubao query metadata JSON next to output_path",
+        "writes redacted Doubao request/response metadata JSON next to output_path",
         "calls Volcengine Doubao Speech API",
     ]
     user_visible_verification = [
@@ -188,8 +213,9 @@ class DoubaoTTS(BaseTool):
     quality_score = 0.88
     latency_p50_seconds = 8.0
 
-    SUBMIT_URL = "https://openspeech.bytedance.com/api/v3/tts/submit"
-    QUERY_URL = "https://openspeech.bytedance.com/api/v3/tts/query"
+    UNIDIRECTIONAL_URL = "https://openspeech.bytedance.com/api/v3/tts/unidirectional"
+    LEGACY_SUBMIT_URL = "https://openspeech.bytedance.com/api/v3/tts/submit"
+    LEGACY_QUERY_URL = "https://openspeech.bytedance.com/api/v3/tts/query"
     DEFAULT_RESOURCE_ID = "seed-tts-2.0"
     DEFAULT_VOICE_ENV = "DOUBAO_SPEECH_VOICE_TYPE"
 
@@ -215,6 +241,45 @@ class DoubaoTTS(BaseTool):
         # and prefer provider-returned usage when available.
         return round(len(inputs.get("text", "")) * 0.000015, 4)
 
+    @staticmethod
+    def split_text_semantically(text: str, max_chars: int = 400) -> list[str]:
+        """Split long Mandarin narration at paragraph/sentence boundaries."""
+        if max_chars < 50:
+            raise ValueError("max_chars must be at least 50")
+        paragraphs = [part.strip() for part in re.split(r"\n{2,}", text) if part.strip()]
+        units: list[str] = []
+        for paragraph in paragraphs:
+            if len(paragraph) <= max_chars:
+                units.append(paragraph)
+                continue
+            sentences = [
+                part.strip()
+                for part in re.findall(r".*?(?:[。！？!?]+[”’']?|$)", paragraph)
+                if part.strip()
+            ]
+            for sentence in sentences:
+                if len(sentence) <= max_chars:
+                    units.append(sentence)
+                else:
+                    units.extend(
+                        sentence[index:index + max_chars]
+                        for index in range(0, len(sentence), max_chars)
+                    )
+
+        chunks: list[str] = []
+        current = ""
+        for unit in units:
+            candidate = unit if not current else f"{current}\n\n{unit}"
+            if len(candidate) <= max_chars:
+                current = candidate
+            else:
+                if current:
+                    chunks.append(current)
+                current = unit
+        if current:
+            chunks.append(current)
+        return chunks
+
     def execute(self, inputs: dict[str, Any]) -> ToolResult:
         api_key = os.environ.get("DOUBAO_SPEECH_API_KEY")
         if not api_key:
@@ -234,6 +299,25 @@ class DoubaoTTS(BaseTool):
                 ),
             )
 
+        api_mode = inputs.get("api_mode", "unidirectional")
+        if api_mode == "async_legacy":
+            warnings.warn(
+                "Doubao async submit/query mode is deprecated; use the official "
+                "V3 unidirectional streaming mode.",
+                DeprecationWarning,
+                stacklevel=2,
+            )
+        max_chars = int(inputs.get("max_chars_per_request", 400))
+        if api_mode == "unidirectional" and len(inputs["text"]) > max_chars:
+            return ToolResult(
+                success=False,
+                error=(
+                    f"Doubao official unidirectional request has {len(inputs['text'])} characters, "
+                    f"above the configured {max_chars}-character quality limit. Split the text "
+                    "at semantic sentence boundaries and synthesize the chunks separately."
+                ),
+            )
+
         start = time.time()
         try:
             result = self._generate(inputs, api_key=api_key, voice_id=voice_id)
@@ -246,6 +330,152 @@ class DoubaoTTS(BaseTool):
         return result
 
     def _generate(self, inputs: dict[str, Any], *, api_key: str, voice_id: str) -> ToolResult:
+        if inputs.get("api_mode", "unidirectional") == "async_legacy":
+            return self._generate_async_legacy(inputs, api_key=api_key, voice_id=voice_id)
+        return self._generate_unidirectional(inputs, api_key=api_key, voice_id=voice_id)
+
+    def _generate_unidirectional(
+        self,
+        inputs: dict[str, Any],
+        *,
+        api_key: str,
+        voice_id: str,
+    ) -> ToolResult:
+        import requests
+
+        text = inputs["text"]
+        fmt = inputs.get("format", "mp3")
+        resource_id = inputs.get("resource_id", self.DEFAULT_RESOURCE_ID)
+        output_path = Path(inputs.get("output_path", f"doubao_tts.{self._extension_for_format(fmt)}"))
+        metadata_path = Path(
+            inputs.get("metadata_path") or output_path.with_suffix(output_path.suffix + ".json")
+        )
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        metadata_path.parent.mkdir(parents=True, exist_ok=True)
+
+        request_id = str(uuid.uuid4())
+        headers = self._headers(
+            api_key=api_key,
+            resource_id=resource_id,
+            request_id=request_id,
+            return_usage=bool(inputs.get("return_usage", True)),
+        )
+        headers["Connection"] = "keep-alive"
+        body = self._unidirectional_body(inputs, voice_id=voice_id)
+
+        audio_data = bytearray()
+        response_events: list[dict[str, Any]] = []
+        sentences: list[dict[str, Any]] = []
+        usage: dict[str, Any] | None = None
+        completed = False
+
+        with requests.Session() as session:
+            with session.post(
+                self.UNIDIRECTIONAL_URL,
+                headers=headers,
+                json=body,
+                stream=True,
+                timeout=(10, int(inputs.get("timeout_seconds", 300))),
+            ) as response:
+                response.raise_for_status()
+                log_id = response.headers.get("X-Tt-Logid") or response.headers.get("X-Tt-LogId")
+                for line in response.iter_lines(decode_unicode=True):
+                    if not line:
+                        continue
+                    event = json.loads(line)
+                    code = event.get("code", 0)
+                    encoded_audio = event.get("data")
+                    if code == 0 and encoded_audio:
+                        audio_data.extend(base64.b64decode(encoded_audio))
+                    sentence = event.get("sentence")
+                    # The final stream event may repeat the full input as a summary
+                    # sentence without word timing. Keep only timing-bearing entries
+                    # in the public subtitle list; raw events remain in metadata.
+                    if isinstance(sentence, dict) and sentence.get("words"):
+                        sentences.append(sentence)
+                    if isinstance(event.get("usage"), dict):
+                        usage = event["usage"]
+                    response_events.append(
+                        {
+                            key: value
+                            for key, value in event.items()
+                            if key != "data"
+                        }
+                        | ({"audio_base64_chars": len(encoded_audio)} if encoded_audio else {})
+                    )
+                    if code == 20000000:
+                        completed = True
+                        break
+                    if isinstance(code, int) and code > 0:
+                        raise RuntimeError(
+                            f"Doubao unidirectional synthesis failed: code {code}: "
+                            f"{event.get('message', 'unknown error')}"
+                        )
+
+        if not completed:
+            raise RuntimeError("Doubao unidirectional stream ended without completion code 20000000")
+        if not audio_data:
+            raise RuntimeError("Doubao unidirectional stream completed without audio data")
+
+        partial_path = output_path.with_suffix(output_path.suffix + ".part")
+        partial_path.write_bytes(audio_data)
+        partial_path.replace(output_path)
+
+        request_record = {
+            "endpoint": self.UNIDIRECTIONAL_URL,
+            "api_mode": "unidirectional",
+            "request_id": request_id,
+            "log_id": log_id,
+            "request": {
+                "headers": {
+                    key: value
+                    for key, value in headers.items()
+                    if key.lower() != "x-api-key"
+                },
+                "body": body,
+            },
+            "response_events": response_events,
+            "usage": usage,
+        }
+        metadata_path.write_text(
+            json.dumps(request_record, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+        audio_duration = self._audio_duration(output_path)
+        cost = self._cost_from_usage(usage) or self.estimate_cost(inputs)
+        return ToolResult(
+            success=True,
+            data={
+                "provider": self.provider,
+                "model": resource_id,
+                "resource_id": resource_id,
+                "voice_id": voice_id,
+                "api_mode": "unidirectional",
+                "format": fmt,
+                "sample_rate": inputs.get("sample_rate", 24000),
+                "speech_rate": inputs.get("speech_rate", 0),
+                "text_length": len(text),
+                "request_id": request_id,
+                "log_id": log_id,
+                "audio_duration_seconds": round(audio_duration, 2) if audio_duration else None,
+                "output": str(output_path),
+                "metadata_path": str(metadata_path),
+                "sentences": sentences,
+                "usage": usage,
+            },
+            artifacts=[str(output_path), str(metadata_path)],
+            cost_usd=cost,
+            model=resource_id,
+        )
+
+    def _generate_async_legacy(
+        self,
+        inputs: dict[str, Any],
+        *,
+        api_key: str,
+        voice_id: str,
+    ) -> ToolResult:
         import requests
 
         text = inputs["text"]
@@ -267,7 +497,7 @@ class DoubaoTTS(BaseTool):
         )
         body = self._submit_body(inputs, voice_id=voice_id, request_id=req_id)
 
-        submit_response = requests.post(self.SUBMIT_URL, headers=headers, json=body, timeout=(10, 60))
+        submit_response = requests.post(self.LEGACY_SUBMIT_URL, headers=headers, json=body, timeout=(10, 60))
         submit_data = self._json_or_raise(submit_response)
         self._raise_for_doubao_error(submit_response.status_code, submit_data)
 
@@ -364,8 +594,34 @@ class DoubaoTTS(BaseTool):
             "Content-Type": "application/json",
         }
         if return_usage:
-            headers["X-Control-Require-Usage-Tokens-Return"] = "true"
+            headers["X-Control-Require-Usage-Tokens-Return"] = "*"
         return headers
+
+    def _unidirectional_body(self, inputs: dict[str, Any], *, voice_id: str) -> dict[str, Any]:
+        additions = {
+            "disable_markdown_filter": bool(inputs.get("disable_markdown_filter", False)),
+            "disable_emoji_filter": bool(inputs.get("disable_emoji_filter", False)),
+            "enable_latex_tn": bool(inputs.get("enable_latex_tn", True)),
+        }
+        context_texts = inputs.get("context_texts")
+        if context_texts:
+            additions["context_texts"] = list(context_texts)
+        section_id = inputs.get("section_id")
+        if section_id:
+            additions["section_id"] = section_id
+        return {
+            "req_params": {
+                "text": inputs["text"],
+                "speaker": voice_id,
+                "additions": json.dumps(additions, ensure_ascii=False),
+                "audio_params": {
+                    "format": inputs.get("format", "mp3"),
+                    "sample_rate": inputs.get("sample_rate", 24000),
+                    "speech_rate": inputs.get("speech_rate", 0),
+                    "enable_subtitle": bool(inputs.get("enable_timestamp", True)),
+                },
+            }
+        }
 
     def _submit_body(self, inputs: dict[str, Any], *, voice_id: str, request_id: str) -> dict[str, Any]:
         audio_params = {
@@ -414,7 +670,7 @@ class DoubaoTTS(BaseTool):
                 request_id=str(uuid.uuid4()),
                 return_usage=return_usage,
             )
-            response = requests_module.post(self.QUERY_URL, headers=headers, json={"task_id": task_id}, timeout=(10, 60))
+            response = requests_module.post(self.LEGACY_QUERY_URL, headers=headers, json={"task_id": task_id}, timeout=(10, 60))
             query_data = self._json_or_raise(response)
             self._raise_for_doubao_error(response.status_code, query_data)
             status = query_data.get("data", {}).get("task_status")

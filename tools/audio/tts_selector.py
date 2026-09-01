@@ -55,6 +55,16 @@ class TTSSelector(BaseTool):
                 "maximum": 100,
                 "description": "Doubao speech-rate control. Inherits config.yaml narration_defaults.speech_rate when Doubao is selected.",
             },
+            "api_mode": {
+                "type": "string",
+                "enum": ["unidirectional", "async_legacy"],
+                "description": "Doubao API path; inherits the configured official unidirectional default.",
+            },
+            "max_chars_per_request": {
+                "type": "integer",
+                "minimum": 50,
+                "description": "Maximum characters in one Doubao synthesis request.",
+            },
             "voice_language": {
                 "type": "string",
                 "enum": ["zh", "en"],
@@ -266,6 +276,8 @@ class TTSSelector(BaseTool):
         if defaults.resource_id:
             resolved.setdefault("resource_id", defaults.resource_id)
         resolved.setdefault("speech_rate", defaults.speech_rate)
+        resolved.setdefault("api_mode", defaults.api_mode)
+        resolved.setdefault("max_chars_per_request", defaults.max_chars_per_request)
         return resolved
 
     def _select_best_tool(

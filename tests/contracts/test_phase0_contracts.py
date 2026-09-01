@@ -308,9 +308,11 @@ class TestConfig:
         assert config.budget.total_usd == 10.0
         assert config.media_defaults.background_music_enabled is False
         assert config.narration_defaults.voice_name == "大壹 2.0"
-        assert config.narration_defaults.voice_id == "zh_male_dayi_saturn_bigtts"
+        assert config.narration_defaults.voice_id == "zh_male_dayi_uranus_bigtts"
         assert config.narration_defaults.resource_id == "seed-tts-2.0"
         assert config.narration_defaults.speech_rate == 0
+        assert config.narration_defaults.api_mode == "unidirectional"
+        assert config.narration_defaults.max_chars_per_request == 400
         assert config.narration_defaults.generation_mode == "segmented"
 
 

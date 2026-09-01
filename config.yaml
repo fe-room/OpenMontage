@@ -33,9 +33,11 @@ media_defaults:
 narration_defaults:
   provider: doubao
   voice_name: "大壹 2.0"
-  voice_id: zh_male_dayi_saturn_bigtts
+  voice_id: zh_male_dayi_uranus_bigtts
   resource_id: seed-tts-2.0
   speech_rate: 0
+  api_mode: unidirectional
+  max_chars_per_request: 400
   sample_approval_required: true
   # Synthesize each final script section separately so narration timing can be
   # reviewed and adjusted section by section before the edit is assembled.

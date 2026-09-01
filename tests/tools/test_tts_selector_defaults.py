@@ -38,9 +38,11 @@ def test_selector_inherits_dayi_and_doubao_defaults(monkeypatch):
 
     assert result.success
     assert provider.received["preferred_provider"] == "doubao"
-    assert provider.received["voice_id"] == "zh_male_dayi_saturn_bigtts"
+    assert provider.received["voice_id"] == "zh_male_dayi_uranus_bigtts"
     assert provider.received["resource_id"] == "seed-tts-2.0"
     assert provider.received["speech_rate"] == 0
+    assert provider.received["api_mode"] == "unidirectional"
+    assert provider.received["max_chars_per_request"] == 400
 
 
 def test_explicit_project_voice_override_wins(monkeypatch):

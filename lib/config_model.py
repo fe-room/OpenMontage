@@ -66,6 +66,8 @@ class NarrationDefaultsConfig(BaseModel):
     voice_id: Optional[str] = None
     resource_id: str = "seed-tts-2.0"
     speech_rate: int = 0
+    api_mode: Literal["unidirectional", "async_legacy"] = "unidirectional"
+    max_chars_per_request: int = 400
     sample_approval_required: bool = True
     generation_mode: Literal["single_pass", "segmented"] = "segmented"
 

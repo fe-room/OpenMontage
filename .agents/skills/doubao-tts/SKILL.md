@@ -19,14 +19,16 @@ X-Api-Resource-Id: seed-tts-2.0
 
 Do not use `X-Api-App-Id` and `X-Api-Access-Key` with a new-console API Key. If the API returns `load grant: requested grant not found`, the key type or auth header is probably wrong.
 
-For long-form video narration, prefer the async endpoint:
+Use the official V3 unidirectional HTTP streaming endpoint by default:
 
 ```text
-POST https://openspeech.bytedance.com/api/v3/tts/submit
-POST https://openspeech.bytedance.com/api/v3/tts/query
+POST https://openspeech.bytedance.com/api/v3/tts/unidirectional
 ```
 
-This returns `audio_url` plus `sentences[].words[]` timing metadata that can be used to build subtitles.
+Keep each request at or below the configured semantic chunk limit (400 Chinese
+characters by default). Split longer narration at sentence boundaries. The old
+`submit/query` implementation remains available only as `api_mode:
+"async_legacy"` for rollback and must not be selected for new production.
 
 ## OpenMontage Usage
 
@@ -60,14 +62,14 @@ result = DoubaoTTS().execute({
 The provider writes:
 
 - `output_path`: downloaded audio file
-- `metadata_path`: full query response JSON, defaulting to `<output_path>.json`
+- `metadata_path`: redacted request and streamed response metadata JSON, defaulting to `<output_path>.json`
 
 ## Recommended Workflow
 
 1. Generate a 10-15 second sample before a full paid narration.
 2. Ask the user to approve voice naturalness, accent, and speed.
 3. Generate the full narration only after approval.
-4. Keep the query JSON. It is the source of truth for subtitle timing.
+4. Keep the metadata JSON. Its timing-bearing streamed sentence events are the source of truth for subtitle timing.
 5. Build captions from `sentences[].words[]`, not from estimated text length.
 6. Group captions by Chinese semantic phrases before applying timestamps. Do not split only by fixed character count; it can break phrases like "在不押单个公司的情况下" or "可能会被慢慢稀释" and hurt comprehension.
 7. Let the video duration follow the approved voice rhythm unless the user explicitly asks to match a prior runtime.
@@ -80,6 +82,8 @@ The provider writes:
 - `sample_rate`: default `24000`.
 - `enable_timestamp`: default `true`.
 - `return_usage`: default `true`, requests usage metadata when available.
+- `api_mode`: defaults to `unidirectional`; `async_legacy` is deprecated.
+- `max_chars_per_request`: defaults to `400` and fails closed above the limit.
 
 Do not pass `additions.explicit_language` by default. Some endpoint/key combinations reject `zh-cn` with `unsupported additions explicit language zh-cn`.
 
@@ -90,7 +94,7 @@ For calm Mandarin explainers, start with `speech_rate: 0`. If the result is too 
 - `load grant: requested grant not found`: wrong key type or wrong auth header. Use `X-Api-Key` for new-console API Keys.
 - `speaker permission denied`: voice id is wrong or not authorized for the selected resource.
 - `quota exceeded`: quota, lifetime characters, or concurrency exceeded.
-- Missing timestamps: verify `enable_timestamp: true`, keep the query JSON, and confirm the selected endpoint returned `sentences`.
+- Missing timestamps: verify `enable_timestamp: true`, keep the metadata JSON, and confirm the selected endpoint returned timing-bearing `sentences`.
 
 ## Safety
 
