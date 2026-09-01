@@ -114,6 +114,19 @@ class TTSSelector(BaseTool):
                 "type": "object",
                 "description": "Structured voice-performance plan or section delivery cues from the script artifact.",
             },
+            "context_texts": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Provider-level context or voice instructions when supported.",
+            },
+            "section_id": {
+                "type": "string",
+                "description": "Provider-level context id shared by serial synthesis requests.",
+            },
+            "disable_markdown_filter": {
+                "type": "boolean",
+                "description": "Provider-specific Markdown filtering behavior.",
+            },
             "sample_mode": {
                 "type": "boolean",
                 "default": False,

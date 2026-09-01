@@ -113,6 +113,21 @@ class DoubaoTTS(BaseTool):
                 "default": False,
                 "description": "Pass through Doubao markdown filtering behavior. Defaults to API-safe false.",
             },
+            "context_texts": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": (
+                    "Doubao Speech 2.0 voice-performance instructions. Sent in "
+                    "req_params.additions.context_texts."
+                ),
+            },
+            "section_id": {
+                "type": "string",
+                "description": (
+                    "Stable context id shared by serial Speech 2.0 requests to preserve "
+                    "speaker and delivery continuity."
+                ),
+            },
             "return_usage": {
                 "type": "boolean",
                 "default": True,
@@ -362,6 +377,12 @@ class DoubaoTTS(BaseTool):
         additions = {
             "disable_markdown_filter": bool(inputs.get("disable_markdown_filter", False)),
         }
+        context_texts = inputs.get("context_texts")
+        if context_texts:
+            additions["context_texts"] = list(context_texts)
+        section_id = inputs.get("section_id")
+        if section_id:
+            additions["section_id"] = section_id
         return {
             "user": {"uid": inputs.get("user_id", "openmontage")},
             "unique_id": request_id,
