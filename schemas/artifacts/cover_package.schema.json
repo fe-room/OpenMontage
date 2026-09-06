@@ -13,7 +13,7 @@
     "verification"
   ],
   "properties": {
-    "version": { "type": "string", "const": "1.0" },
+    "version": { "type": "string", "enum": ["1.0", "1.1"] },
     "status": {
       "type": "string",
       "enum": ["ready", "needs_revision"]
@@ -26,6 +26,20 @@
     },
     "creative_rationale": { "type": "string" },
     "decision_log_ref": { "type": "string" },
+    "generation_policy": {
+      "type": "string",
+      "enum": [
+        "codex_generated_visual_native_text",
+        "user_approved_alternative",
+        "non_codex_host"
+      ]
+    },
+    "cover_approach": {
+      "type": "string",
+      "enum": ["generated_editorial", "composited", "frame_led"]
+    },
+    "visual_source": { "$ref": "#/$defs/visualSource" },
+    "override": { "$ref": "#/$defs/override" },
     "verification": {
       "type": "object",
       "required": [
@@ -52,6 +66,37 @@
     "metadata": { "type": "object" }
   },
   "$defs": {
+    "visualSource": {
+      "type": "object",
+      "required": ["kind", "source_tool", "provider", "path"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "codex_builtin_image_gen",
+            "video_frame",
+            "existing_asset",
+            "external_image_provider",
+            "local_composition"
+          ]
+        },
+        "source_tool": { "type": "string", "minLength": 1 },
+        "provider": { "type": "string", "minLength": 1 },
+        "model": { "type": "string" },
+        "path": { "type": "string", "minLength": 1 },
+        "prompt": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "override": {
+      "type": "object",
+      "required": ["user_approved", "reason"],
+      "properties": {
+        "user_approved": { "type": "boolean", "const": true },
+        "reason": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
     "coverAsset": {
       "type": "object",
       "required": [
@@ -91,5 +136,45 @@
       "additionalProperties": false
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "version": { "const": "1.1" } },
+        "required": ["version"]
+      },
+      "then": {
+        "required": ["generation_policy", "cover_approach", "visual_source"]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "version": { "const": "1.1" },
+          "generation_policy": { "const": "codex_generated_visual_native_text" }
+        },
+        "required": ["version", "generation_policy"]
+      },
+      "then": {
+        "properties": {
+          "visual_source": {
+            "properties": {
+              "kind": { "const": "codex_builtin_image_gen" }
+            },
+            "required": ["kind"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "version": { "const": "1.1" },
+          "generation_policy": { "const": "user_approved_alternative" }
+        },
+        "required": ["version", "generation_policy"]
+      },
+      "then": { "required": ["override"] }
+    }
+  ],
   "additionalProperties": false
 }

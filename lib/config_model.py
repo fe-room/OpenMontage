@@ -72,6 +72,14 @@ class NarrationDefaultsConfig(BaseModel):
     generation_mode: Literal["single_pass", "segmented"] = "segmented"
 
 
+class CoverDefaultsConfig(BaseModel):
+    """Persistent cover policy applied by the post-render cover stage."""
+
+    codex_primary_visual_required: bool = True
+    exact_text_compositor: Literal["native", "generated"] = "native"
+    require_explicit_approval_for_alternative: bool = True
+
+
 class PathsConfig(BaseModel):
     pipeline_dir: str = "pipeline"
     library_dir: str = "library"
@@ -89,6 +97,7 @@ class OpenMontageConfig(BaseModel):
     output: OutputConfig = Field(default_factory=OutputConfig)
     media_defaults: MediaDefaultsConfig = Field(default_factory=MediaDefaultsConfig)
     narration_defaults: NarrationDefaultsConfig = Field(default_factory=NarrationDefaultsConfig)
+    cover_defaults: CoverDefaultsConfig = Field(default_factory=CoverDefaultsConfig)
     paths: PathsConfig = Field(default_factory=PathsConfig)
 
     @classmethod

@@ -43,6 +43,15 @@ narration_defaults:
   # reviewed and adjusted section by section before the edit is assembled.
   generation_mode: segmented
 
+# In Codex sessions, the primary cover visual must come from the host built-in
+# image_gen capability. Exact text is added locally so Chinese and numeric
+# claims remain deterministic. A different visual source needs explicit user
+# approval for that project.
+cover_defaults:
+  codex_primary_visual_required: true
+  exact_text_compositor: native
+  require_explicit_approval_for_alternative: true
+
 paths:
   pipeline_dir: pipeline
   library_dir: library

@@ -157,6 +157,11 @@
             "items": { "type": "string" },
             "description": "All tools the agent can use in this stage (union of required + optional)"
           },
+          "host_tools_available": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Host-native capabilities available outside the Python tool registry"
+          },
           "review_focus": {
             "type": "array",
             "items": { "type": "string" },

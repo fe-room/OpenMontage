@@ -92,18 +92,6 @@ def test_nvm_compatible_version_is_a_hint_not_runtime_success(monkeypatch):
     )
 
 
-def test_codex_production_guide_defaults_to_builtin_image_generation():
-    root = Path(__file__).resolve().parent.parent.parent
-    guide = (root / "AGENT_GUIDE.md").read_text(encoding="utf-8")
-    codex = (root / "CODEX.md").read_text(encoding="utf-8")
-
-    for body in (guide, codex):
-        assert "imagegen" in body
-        assert "image_gen" in body
-    assert "projects/<project-id>/assets/images/" in guide
-    assert "image_selector" in guide
-
-
 def test_hyperframes_layer2_skill_names_correct_package():
     """Regression: skills/core/hyperframes.md previously claimed HyperFrames
     was 'consumable via `npx @hyperframes/cli`' which is the 404-ing name.

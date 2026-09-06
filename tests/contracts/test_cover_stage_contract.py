@@ -25,6 +25,11 @@ def test_every_production_pipeline_generates_a_cover_after_compose():
         assert cover["skill"] == "pipelines/shared/cover-director", pipeline_name
         assert cover["required_artifacts_in"] == ["render_report"], pipeline_name
         assert "cover_package" in cover["produces"], pipeline_name
+        assert cover["host_tools_available"] == ["codex_builtin_image_gen"], pipeline_name
+        assert any(
+            "built-in image_gen" in item and "explicit user-approved override" in item
+            for item in cover["review_focus"]
+        ), pipeline_name
         assert cover["checkpoint_required"] is True, pipeline_name
         assert cover["human_approval_default"] is True, pipeline_name
 

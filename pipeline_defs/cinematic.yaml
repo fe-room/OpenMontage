@@ -264,9 +264,11 @@ stages:
     produces: [cover_package]
     optional_tools: [image_selector, visual_qa]
     tools_available: [image_selector, visual_qa]
+    host_tools_available: [codex_builtin_image_gen]
     checkpoint_required: true
     human_approval_default: true
     review_focus:
+      - "In Codex, the core visual uses built-in image_gen unless an explicit user-approved override is recorded"
       - Cover matches the promise and actual content of the final render
       - Headline text is exact and readable at mobile thumbnail size
       - Dimensions and aspect ratio match the resolved platform cover spec

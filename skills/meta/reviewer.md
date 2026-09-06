@@ -341,10 +341,23 @@ Run at **compose**, **cover**, and **publish** stages. Ensures the agent reviewe
 3. If `final_review.issues_found` is non-empty and `recommended_action` is not `present_to_user`: **SUGGESTION** — "Self-review found issues; verify they were resolved before publishing"
 
 ### At cover stage:
-1. Verify `cover_package.primary_cover.path` exists and has the declared dimensions
-2. Verify the cover matches the actual rendered video's topic and approved visual direction
-3. If text is present, require legibility at mobile thumbnail size and no malformed glyphs
-4. If `cover_package.verification` contains failures or unresolved issues: **CRITICAL** — do not approve or publish the cover
+1. Require new cover runs to emit `cover_package.version: "1.1"` with
+   `generation_policy`, `cover_approach`, and `visual_source`. A newly created
+   1.0 artifact is **CRITICAL**; 1.0 remains valid only as historical data.
+2. In a Codex session with `cover_defaults.codex_primary_visual_required: true`,
+   require `generation_policy: "codex_generated_visual_native_text"` and
+   `visual_source.kind: "codex_builtin_image_gen"`. A primary visual sourced
+   only from Remotion, HTML/CSS/SVG, FFmpeg, a video frame, an existing asset,
+   or `image_selector` is **CRITICAL** unless
+   `generation_policy: "user_approved_alternative"` includes
+   `override.user_approved: true` and a concrete reason.
+3. Verify both `visual_source.path` and `primary_cover.path` exist inside the
+   project. Provenance text alone is not evidence that Codex image generation
+   ran.
+4. Verify `cover_package.primary_cover.path` has the declared dimensions.
+5. Verify the cover matches the actual rendered video's topic and approved visual direction.
+6. If text is present, require legibility at mobile thumbnail size and no malformed glyphs.
+7. If `cover_package.verification` contains failures or unresolved issues: **CRITICAL** — do not approve or publish the cover.
 
 ## Semantic Motion Coverage Review
 

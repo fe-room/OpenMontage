@@ -616,6 +616,16 @@ generation is unavailable in a Codex session.
 - On non-Codex agents, continue to route through `image_selector` and the live
   registry unless that host exposes an equivalent capability explicitly.
 
+For the post-render `cover` stage, the persistent `cover_defaults` policy is
+stronger than the general still-image preference: in a Codex session the
+primary cover's core visual MUST be generated with the host `imagegen` skill +
+built-in `image_gen` tool. Add exact Chinese, numbers, logos, and compliance
+text afterward with a deterministic native compositor. Frame-led, existing-
+asset-only, pure Remotion/HTML/SVG, `image_selector`, or FFmpeg-only primary
+covers require an explicit user-approved override for that project; convenience,
+cost, or a usable final-video frame is not an override. Record the policy,
+visual-source provenance, and any approved override in `cover_package` v1.1.
+
 ## Tool Families
 
 **Do not maintain hardcoded tool lists.** Always query the registry at runtime:

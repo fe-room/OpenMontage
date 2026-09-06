@@ -287,6 +287,9 @@ class TestConfig:
         assert config.media_defaults.background_music_enabled is False
         assert config.narration_defaults.provider == "doubao"
         assert config.narration_defaults.generation_mode == "segmented"
+        assert config.cover_defaults.codex_primary_visual_required is True
+        assert config.cover_defaults.exact_text_compositor == "native"
+        assert config.cover_defaults.require_explicit_approval_for_alternative is True
 
     def test_segmented_narration_is_the_documented_production_default(self):
         root = Path(__file__).resolve().parents[2]
@@ -314,6 +317,9 @@ class TestConfig:
         assert config.narration_defaults.api_mode == "unidirectional"
         assert config.narration_defaults.max_chars_per_request == 400
         assert config.narration_defaults.generation_mode == "segmented"
+        assert config.cover_defaults.codex_primary_visual_required is True
+        assert config.cover_defaults.exact_text_compositor == "native"
+        assert config.cover_defaults.require_explicit_approval_for_alternative is True
 
 
 # ---- Schemas ----
@@ -338,6 +344,47 @@ class TestSchemas:
 
     def test_cover_package_validates(self):
         validate_artifact("cover_package", sample_artifact("cover_package"))
+
+    def test_cover_package_v11_requires_codex_visual_source_for_codex_policy(self):
+        artifact = sample_artifact("cover_package")
+        artifact.update({
+            "version": "1.1",
+            "generation_policy": "codex_generated_visual_native_text",
+            "cover_approach": "composited",
+            "visual_source": {
+                "kind": "codex_builtin_image_gen",
+                "source_tool": "codex_builtin_image_gen",
+                "provider": "OpenAI Codex",
+                "path": "assets/images/cover-visual.png",
+            },
+        })
+        validate_artifact("cover_package", artifact)
+
+        artifact["visual_source"]["kind"] = "local_composition"
+        with pytest.raises(Exception):
+            validate_artifact("cover_package", artifact)
+
+    def test_cover_package_v11_requires_explicit_approved_override(self):
+        artifact = sample_artifact("cover_package")
+        artifact.update({
+            "version": "1.1",
+            "generation_policy": "user_approved_alternative",
+            "cover_approach": "frame_led",
+            "visual_source": {
+                "kind": "video_frame",
+                "source_tool": "ffmpeg",
+                "provider": "local",
+                "path": "assets/images/cover-frame.png",
+            },
+        })
+        with pytest.raises(Exception):
+            validate_artifact("cover_package", artifact)
+
+        artifact["override"] = {
+            "user_approved": True,
+            "reason": "User requested the recognizable on-camera frame.",
+        }
+        validate_artifact("cover_package", artifact)
 
     def test_edit_decisions_omits_music_when_disabled(self):
         artifact = sample_artifact("edit_decisions")
