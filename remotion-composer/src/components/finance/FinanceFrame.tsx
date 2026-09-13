@@ -66,9 +66,17 @@ export const SourceStrip: React.FC<SourceStripProps> = ({
   const frame = useCurrentFrame();
   const opacity = reveal(frame, 10, 24);
   const hasSource = Boolean(sourceLabel || sourceDate || period || sampleData);
-  if (!hasSource) return null;
+  if (!hasSource && !complianceText) return null;
   const compact = treatment === "compact";
   const inline = treatment === "inline";
+
+  if (!hasSource && complianceText) {
+    return (
+      <div style={{ position: "fixed", left: "7%", right: "7%", bottom: "3.1%", borderTop: `1px solid ${dark ? "rgba(242,239,231,0.2)" : FINANCE_COLORS.line}`, paddingTop: 10, textAlign: "center", fontSize: 18, lineHeight: 1.35, color: dark ? "rgba(242,239,231,0.72)" : FINANCE_COLORS.muted, opacity }}>
+        {complianceText}
+      </div>
+    );
+  }
 
   return (
     <div

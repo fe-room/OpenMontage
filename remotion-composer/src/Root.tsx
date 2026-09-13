@@ -25,7 +25,7 @@ export const calculateExplainerMetadata: CalculateMetadataFunction<ExplainerProp
   const cuts = props.cuts || [];
   const durationInFrames = cuts.length === 0
     ? 30 * 60
-    : Math.ceil((Math.max(...cuts.map((c) => c.out_seconds || 0)) + 1) * 30);
+    : Math.ceil(Math.max(...cuts.map((c) => c.out_seconds || 0)) * 30);
   const hasResolution = Number.isInteger(props.width) && Number.isInteger(props.height)
     && (props.width ?? 0) > 0 && (props.height ?? 0) > 0;
   return {

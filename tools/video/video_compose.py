@@ -1751,6 +1751,17 @@ class VideoCompose(BaseTool):
                 error="npx not found. Install Node.js to use Remotion rendering.",
             )
 
+        # remotion-composer lives at project root. Resolve it before hydrating
+        # audio so project-local files can be staged into Remotion's public/
+        # tree instead of being passed as file:// URLs (Remotion's asset
+        # downloader accepts HTTP(S) or staticFile paths, not file:// audio).
+        composer_dir = Path(__file__).resolve().parent.parent.parent / "remotion-composer"
+        if not composer_dir.exists():
+            return ToolResult(
+                success=False,
+                error=f"Remotion composer project not found at {composer_dir}",
+            )
+
         composition_data = inputs.get("edit_decisions") or inputs.get("composition_data")
         if not composition_data:
             return ToolResult(
@@ -1765,6 +1776,49 @@ class VideoCompose(BaseTool):
 
         # Deep-copy props so we don't mutate the original
         props = json.loads(json.dumps(composition_data))
+
+        # Bridge canonical metadata contracts into renderer-only props.  The
+        # artifact schema keeps these concerns in metadata while the Remotion
+        # components need explicit runtime values.
+        composition_meta = composition_data.get("metadata") or {}
+        caption_contract = composition_meta.get("caption_runtime_contract") or {}
+        if caption_contract.get("words_per_page") is not None:
+            props["captionWordsPerPage"] = int(caption_contract["words_per_page"])
+
+        # Bridge the canonical subtitle style into the Remotion caption layer.
+        # Keep base and highlight colors explicit so a dark theme token cannot
+        # accidentally make active Chinese captions look black before they
+        # switch to the default white state.
+        subtitle_style = composition_data.get("subtitles") or {}
+        if subtitle_style.get("enabled"):
+            if subtitle_style.get("font_size") is not None:
+                props["captionFontSize"] = int(subtitle_style["font_size"])
+            if subtitle_style.get("color"):
+                props["captionColor"] = subtitle_style["color"]
+            if subtitle_style.get("highlight_color"):
+                props["captionHighlightColor"] = subtitle_style["highlight_color"]
+            elif subtitle_style.get("color"):
+                props["captionHighlightColor"] = subtitle_style["color"]
+            if subtitle_style.get("background"):
+                props["captionBackgroundColor"] = subtitle_style["background"]
+            if subtitle_style.get("font"):
+                props["captionFontFamily"] = subtitle_style["font"]
+
+        # Editorial provenance remains in edit_decisions, but internal source
+        # labels and planning notes are not automatically viewer-facing copy.
+        if composition_meta.get("render_source_strips") is False:
+            for cut in props.get("cuts", []):
+                for key in ("sourceLabel", "sourceDate", "period", "sampleData"):
+                    cut.pop(key, None)
+
+        compliance = composition_meta.get("compliance") or {}
+        ending_cut_id = compliance.get("ending_cut_id")
+        disclaimer = compliance.get("financial_disclaimer")
+        if ending_cut_id and disclaimer:
+            for cut in props.get("cuts", []):
+                if cut.get("id") == ending_cut_id:
+                    cut["complianceText"] = disclaimer
+                    break
 
         # Explainer captions are generated as a project artifact from the
         # approved provider timestamps. Keep the edit artifact compact and
@@ -1799,9 +1853,9 @@ class VideoCompose(BaseTool):
                     posix = resolved.as_posix()
                     cut["source"] = f"file:///{posix}" if not posix.startswith("/") else f"file://{posix}"
 
-        # Audio sources follow the same local-file rule as visual sources.
-        # Explainer's <Audio> resolver treats non-URL values as public assets,
-        # while pipeline artifacts live under projects/<id>/assets.
+        # Stage project-local audio into Remotion public/ and pass a staticFile
+        # path. Unlike images rendered directly by Chromium, Remotion's audio
+        # preloader rejects file:// URLs.
         audio_props = props.get("audio") or {}
         for audio_layer in ("narration", "music"):
             layer = audio_props.get(audio_layer) or {}
@@ -1809,8 +1863,18 @@ class VideoCompose(BaseTool):
             if src and Path(str(src)).is_absolute() and not str(src).startswith(("http://", "https://", "file://")):
                 resolved = Path(str(src)).resolve()
                 if resolved.exists():
-                    posix = resolved.as_posix()
-                    layer["src"] = f"file://{posix}" if posix.startswith("/") else f"file:///{posix}"
+                    project_id = "project"
+                    parts = resolved.parts
+                    if "projects" in parts:
+                        projects_index = parts.index("projects")
+                        if projects_index + 1 < len(parts):
+                            project_id = parts[projects_index + 1]
+                    staged_rel = Path("openmontage") / project_id / "audio" / resolved.name
+                    staged_path = composer_dir / "public" / staged_rel
+                    staged_path.parent.mkdir(parents=True, exist_ok=True)
+                    if not staged_path.exists() or staged_path.stat().st_size != resolved.stat().st_size:
+                        shutil.copy2(resolved, staged_path)
+                    layer["src"] = staged_rel.as_posix()
 
         # Build a custom themeConfig from the playbook's actual colors.
         # This ensures every video gets a unique visual identity derived
@@ -1829,14 +1893,6 @@ class VideoCompose(BaseTool):
         props_path = output_path.parent / ".remotion_props.json"
         with open(props_path, "w", encoding="utf-8") as f:
             json.dump(props, f)
-
-        # remotion-composer lives at project root
-        composer_dir = Path(__file__).resolve().parent.parent.parent / "remotion-composer"
-        if not composer_dir.exists():
-            return ToolResult(
-                success=False,
-                error=f"Remotion composer project not found at {composer_dir}",
-            )
 
         # Route to the correct Remotion composition based on renderer_family.
         # This prevents all pipelines from collapsing into the Explainer visual grammar.

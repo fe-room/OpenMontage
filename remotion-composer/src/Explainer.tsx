@@ -331,6 +331,7 @@ interface Cut {
   analystNote?: string;
   evidenceIndex?: string;
   complianceText?: string;
+  initialReveal?: boolean;
 }
 
 interface Overlay {
@@ -370,6 +371,12 @@ export interface ExplainerProps {
   cuts: Cut[];
   overlays?: Overlay[];
   captions?: WordCaption[];
+  captionWordsPerPage?: number;
+  captionFontSize?: number;
+  captionColor?: string;
+  captionHighlightColor?: string;
+  captionBackgroundColor?: string;
+  captionFontFamily?: string;
   audio?: AudioConfig;
   width?: number;
   height?: number;
@@ -714,6 +721,7 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig; brand?: ExplainerP
         supportingMetrics={cut.supportingMetrics}
         interpretation={cut.interpretation}
         variant={(cut.variant as "hero-number" | "comparison" | "document" | "table") || "hero-number"}
+        initialReveal={cut.initialReveal}
         {...financeContext}
       />
     );
@@ -779,7 +787,15 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig; brand?: ExplainerP
     );
   }
   if (cut.type === "thesis_breaker" && cut.thesis && cut.conditions) {
-    return <ThesisBreaker thesis={cut.thesis} conditions={cut.conditions} {...financeContext} />;
+    return (
+      <ThesisBreaker
+        thesis={cut.thesis}
+        conditions={cut.conditions}
+        eyebrow={cut.label}
+        prompt={cut.title}
+        {...financeContext}
+      />
+    );
   }
 
   // --- Chart types — use theme.chartColors as default palette ---
@@ -934,7 +950,19 @@ const OverlayRenderer: React.FC<{ overlay: Overlay }> = ({ overlay }) => {
 // ---------------------------------------------------------------------------
 
 export const Explainer: React.FC<ExplainerProps> = (props) => {
-  const { cuts, overlays, captions, audio, brand } = props;
+  const {
+    cuts,
+    overlays,
+    captions,
+    captionWordsPerPage,
+    captionFontSize,
+    captionColor,
+    captionHighlightColor,
+    captionBackgroundColor,
+    captionFontFamily,
+    audio,
+    brand,
+  } = props;
   const { fps, durationInFrames } = useVideoConfig();
 
   // Resolve theme from props — playbook name, theme name, or custom themeConfig
@@ -975,10 +1003,12 @@ export const Explainer: React.FC<ExplainerProps> = (props) => {
       {captions && captions.length > 0 && (
         <CaptionOverlay
           words={captions}
-          wordsPerPage={6}
-          fontSize={42}
-          highlightColor={theme.captionHighlightColor}
-          backgroundColor={theme.captionBackgroundColor}
+          wordsPerPage={captionWordsPerPage ?? 6}
+          fontSize={captionFontSize ?? 42}
+          color={captionColor ?? "#F8FAFC"}
+          highlightColor={captionHighlightColor ?? theme.captionHighlightColor}
+          backgroundColor={captionBackgroundColor ?? theme.captionBackgroundColor}
+          fontFamily={captionFontFamily ?? theme.bodyFont}
         />
       )}
 

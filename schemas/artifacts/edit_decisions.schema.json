@@ -186,6 +186,8 @@
           "sourceTreatment": { "type": "string", "enum": ["full", "compact", "inline"] },
           "analystNote": { "type": "string" },
           "evidenceIndex": { "type": "string" }
+          ,
+          "initialReveal": { "type": "boolean" }
         },
         "additionalProperties": false
       }
@@ -296,6 +298,7 @@
         "font": { "type": "string" },
         "font_size": { "type": "integer" },
         "color": { "type": "string", "description": "Primary text color (hex or ASS format)" },
+        "highlight_color": { "type": "string", "description": "Active caption color. Set equal to color for a stable non-karaoke treatment." },
         "outline_color": { "type": "string" },
         "background": { "type": "string", "description": "Background color with optional alpha (e.g. #00000088)" },
         "position": { "type": "string", "enum": ["top-center", "bottom-center", "center"] },
