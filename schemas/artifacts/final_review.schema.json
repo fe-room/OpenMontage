@@ -136,6 +136,11 @@
             "subtitles_present": { "type": "boolean" },
             "coverage_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
             "timing_drift_detected": { "type": "boolean" },
+            "safe_area_policy": { "type": "string" },
+            "safe_area_applied": { "type": "boolean" },
+            "bottom_clearance_px": { "type": "integer", "minimum": 0 },
+            "minimum_bottom_clearance_px": { "type": "integer", "minimum": 0 },
+            "side_clearance_px": { "type": "integer", "minimum": 0 },
             "issues": {
               "type": "array",
               "items": { "type": "string" }

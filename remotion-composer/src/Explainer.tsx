@@ -377,6 +377,8 @@ export interface ExplainerProps {
   captionHighlightColor?: string;
   captionBackgroundColor?: string;
   captionFontFamily?: string;
+  captionBottomOffset?: number;
+  captionSidePadding?: number;
   audio?: AudioConfig;
   width?: number;
   height?: number;
@@ -960,6 +962,8 @@ export const Explainer: React.FC<ExplainerProps> = (props) => {
     captionHighlightColor,
     captionBackgroundColor,
     captionFontFamily,
+    captionBottomOffset,
+    captionSidePadding,
     audio,
     brand,
   } = props;
@@ -1009,6 +1013,8 @@ export const Explainer: React.FC<ExplainerProps> = (props) => {
           highlightColor={captionHighlightColor ?? theme.captionHighlightColor}
           backgroundColor={captionBackgroundColor ?? theme.captionBackgroundColor}
           fontFamily={captionFontFamily ?? theme.bodyFont}
+          bottomOffset={captionBottomOffset}
+          sidePadding={captionSidePadding}
         />
       )}
 

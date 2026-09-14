@@ -11,6 +11,23 @@ from enum import Enum
 from typing import Optional
 
 
+# A single conservative caption lane for 9:16 masters distributed across
+# TikTok, Instagram Reels, and YouTube Shorts. The bottom 520 px are treated
+# as platform UI territory, while 96 px on each side keeps text away from
+# edge controls and phone crops.
+SOCIAL_PORTRAIT_CAPTION_BOTTOM_PX = 520
+SOCIAL_PORTRAIT_CAPTION_SIDE_PX = 96
+
+
+@dataclass(frozen=True)
+class CaptionSafeArea:
+    """Minimum clearances for burned-in captions, in output pixels."""
+
+    bottom_px: int
+    side_px: int
+    policy: str = "social-ui-safe"
+
+
 class AspectRatio(str, Enum):
     LANDSCAPE_16_9 = "16:9"
     PORTRAIT_9_16 = "9:16"
@@ -34,7 +51,14 @@ class MediaProfile:
     max_file_size_mb: Optional[float] = None
     max_duration_seconds: Optional[float] = None
     caption_format: str = "srt"
+    caption_safe_area: Optional[CaptionSafeArea] = None
     notes: str = ""
+
+
+SOCIAL_PORTRAIT_CAPTION_SAFE_AREA = CaptionSafeArea(
+    bottom_px=SOCIAL_PORTRAIT_CAPTION_BOTTOM_PX,
+    side_px=SOCIAL_PORTRAIT_CAPTION_SIDE_PX,
+)
 
 
 # ---- Platform profiles ----
@@ -64,6 +88,7 @@ YOUTUBE_SHORTS = MediaProfile(
     fps=30, codec="libx264", audio_codec="aac", crf=20,
     max_duration_seconds=60,
     caption_format="srt",
+    caption_safe_area=SOCIAL_PORTRAIT_CAPTION_SAFE_AREA,
     notes="YouTube Shorts (max 60s, vertical)",
 )
 
@@ -75,6 +100,7 @@ INSTAGRAM_REELS = MediaProfile(
     max_file_size_mb=250,
     max_duration_seconds=90,
     caption_format="srt",
+    caption_safe_area=SOCIAL_PORTRAIT_CAPTION_SAFE_AREA,
     notes="Instagram Reels (max 90s, vertical)",
 )
 
@@ -96,6 +122,7 @@ TIKTOK = MediaProfile(
     max_file_size_mb=287,
     max_duration_seconds=600,
     caption_format="srt",
+    caption_safe_area=SOCIAL_PORTRAIT_CAPTION_SAFE_AREA,
     notes="TikTok (max 10min, vertical preferred)",
 )
 
@@ -150,6 +177,34 @@ def get_profile(name: str) -> MediaProfile:
 def get_profiles_for_platform(platform: str) -> list[MediaProfile]:
     """Get all profiles matching a platform prefix."""
     return [p for name, p in ALL_PROFILES.items() if name.startswith(platform)]
+
+
+def resolve_caption_safe_area(
+    width: int,
+    height: int,
+    profile_name: Optional[str] = None,
+) -> Optional[CaptionSafeArea]:
+    """Return the mandatory caption clearance for an output canvas.
+
+    Named profiles carry the canonical policy. Custom portrait outputs use
+    the same proportions so a 9:16 export cannot silently fall back to a
+    bottom-edge subtitle position merely because it lacks a platform name.
+    Landscape and square outputs retain their existing layout.
+    """
+    if profile_name:
+        try:
+            profile = get_profile(profile_name)
+        except ValueError:
+            profile = None
+        if profile and profile.caption_safe_area:
+            return profile.caption_safe_area
+
+    if height > width:
+        return CaptionSafeArea(
+            bottom_px=round(height * SOCIAL_PORTRAIT_CAPTION_BOTTOM_PX / 1920),
+            side_px=round(width * SOCIAL_PORTRAIT_CAPTION_SIDE_PX / 1080),
+        )
+    return None
 
 
 def ffmpeg_output_args(profile: MediaProfile) -> list[str]:

@@ -45,7 +45,11 @@ export interface LyricOverlayProps {
   bottomY?: number; // 0..1, vertical center of subtitle band
 }
 
-const LyricLine: React.FC<{ lyric: Lyric; bottomY: number }> = ({ lyric, bottomY }) => {
+const LyricLine: React.FC<{ lyric: Lyric; bottomY: number; sidePadding: number }> = ({
+  lyric,
+  bottomY,
+  sidePadding,
+}) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const inFrame = lyric.inSeconds * fps;
@@ -105,7 +109,7 @@ const LyricLine: React.FC<{ lyric: Lyric; bottomY: number }> = ({ lyric, bottomY
         style={{
           transform: `translateY(${yRise}px)`,
           textAlign: "center",
-          padding: "0 60px",
+          padding: `0 ${sidePadding}px`,
           filter: "drop-shadow(0 0 18px rgba(255, 200, 120, 0.22))",
           position: "relative",
           zIndex: 2,
@@ -170,12 +174,21 @@ export const LyricOverlay: React.FC<LyricOverlayProps> = ({
   lyrics,
   bottomY = 0.88,
 }) => {
-  const { durationInFrames } = useVideoConfig();
+  const { width, height } = useVideoConfig();
+  const portrait = height > width;
+  const safeBottomY = 1 - 520 / 1920;
+  const resolvedBottomY = portrait ? Math.min(bottomY, safeBottomY) : bottomY;
+  const sidePadding = portrait ? Math.round(width * 96 / 1080) : 60;
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <OffthreadVideo src={resolveAsset(videoSrc)} />
       {lyrics.map((l, i) => (
-        <LyricLine key={i} lyric={l} bottomY={bottomY} />
+        <LyricLine
+          key={i}
+          lyric={l}
+          bottomY={resolvedBottomY}
+          sidePadding={sidePadding}
+        />
       ))}
     </AbsoluteFill>
   );

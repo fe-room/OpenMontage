@@ -112,6 +112,20 @@ class RemotionCaptionBurn(BaseTool):
                 "default": "#22D3EE",
                 "description": "Highlight color for the active word (hex).",
             },
+            "caption_bottom_offset": {
+                "type": "integer",
+                "description": (
+                    "Bottom clearance in output pixels. Portrait video is always "
+                    "clamped to the shared social-platform safe area."
+                ),
+            },
+            "caption_side_padding": {
+                "type": "integer",
+                "description": (
+                    "Left/right clearance in output pixels. Portrait video is always "
+                    "clamped to the shared social-platform safe area."
+                ),
+            },
             "corrections": {
                 "type": "object",
                 "description": (
@@ -145,7 +159,7 @@ class RemotionCaptionBurn(BaseTool):
     idempotency_key_fields = ["input_path", "segments", "srt_path"]
     side_effects = ["writes captioned video to output_path"]
     user_visible_verification = [
-        "Play the output video and verify captions appear at the bottom of the frame",
+        "Play the output video and verify portrait captions stay above the social UI safe area",
         "Check that the active word is highlighted in the specified color",
         "Verify face is not occluded by caption text",
     ]
@@ -273,6 +287,8 @@ class RemotionCaptionBurn(BaseTool):
         font_size: int,
         highlight_color: str,
         overlays: list[dict] | None = None,
+        caption_bottom_offset: int | None = None,
+        caption_side_padding: int | None = None,
     ) -> ToolResult:
         root = self._find_remotion_root()
         if root is None:
@@ -303,6 +319,12 @@ class RemotionCaptionBurn(BaseTool):
         width = int(dim_parts[0])
         height = int(dim_parts[1])
 
+        from lib.media_profiles import resolve_caption_safe_area
+        safe_area = resolve_caption_safe_area(width, height)
+        if safe_area:
+            caption_bottom_offset = max(caption_bottom_offset or 0, safe_area.bottom_px)
+            caption_side_padding = max(caption_side_padding or 0, safe_area.side_px)
+
         # Copy video to Remotion public folder
         pub_dir = root / "public" / "talking-head"
         pub_dir.mkdir(parents=True, exist_ok=True)
@@ -318,6 +340,8 @@ class RemotionCaptionBurn(BaseTool):
             "wordsPerPage": words_per_page,
             "fontSize": font_size,
             "highlightColor": highlight_color,
+            "captionBottomOffset": caption_bottom_offset,
+            "captionSidePadding": caption_side_padding,
         }
         props_dir = root / "public" / "demo-props"
         props_dir.mkdir(parents=True, exist_ok=True)
@@ -364,8 +388,10 @@ class RemotionCaptionBurn(BaseTool):
         input_path: str,
         output_path: str,
         captions: list[dict],
+        caption_bottom_offset: int | None = None,
+        caption_side_padding: int | None = None,
     ) -> ToolResult:
-        """Fall back to FFmpeg subtitle burning at bottom of frame."""
+        """Fall back to FFmpeg subtitle burning in the safe caption lane."""
         # Generate temporary SRT from word captions
         tmp_srt = Path(output_path).parent / f"_tmp_captions_{int(time.time())}.srt"
         tmp_srt.parent.mkdir(parents=True, exist_ok=True)
@@ -392,6 +418,21 @@ class RemotionCaptionBurn(BaseTool):
         # Escape path for FFmpeg subtitles filter (Windows colon issue)
         srt_escaped = str(tmp_srt).replace("\\", "/").replace(":", "\\:")
 
+        dim_cmd = [
+            "ffprobe", "-v", "error", "-select_streams", "v:0",
+            "-show_entries", "stream=width,height", "-of", "csv=p=0:s=x",
+            input_path,
+        ]
+        dim_result = self.run_command(dim_cmd)
+        width, height = (int(value) for value in dim_result.stdout.strip().split("x"))
+        from lib.media_profiles import resolve_caption_safe_area
+        safe_area = resolve_caption_safe_area(width, height)
+        if safe_area:
+            caption_bottom_offset = max(caption_bottom_offset or 0, safe_area.bottom_px)
+            caption_side_padding = max(caption_side_padding or 0, safe_area.side_px)
+        margin_v = caption_bottom_offset or 100
+        margin_h = caption_side_padding or 0
+
         cmd = [
             "ffmpeg", "-y",
             "-i", input_path,
@@ -399,7 +440,8 @@ class RemotionCaptionBurn(BaseTool):
                 f"subtitles='{srt_escaped}'"
                 ":force_style='FontName=Segoe UI,FontSize=24,Bold=1,"
                 "PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,"
-                "Outline=3,Shadow=2,Alignment=2,MarginV=100'"
+                f"Outline=3,Shadow=2,Alignment=2,MarginV={margin_v},"
+                f"MarginL={margin_h},MarginR={margin_h}'"
             ),
             "-c:v", "libx264", "-preset", "fast", "-crf", "18",
             "-pix_fmt", "yuv420p",
@@ -448,6 +490,8 @@ class RemotionCaptionBurn(BaseTool):
         words_per_page = inputs.get("words_per_page", 4)
         font_size = inputs.get("font_size", 52)
         highlight_color = inputs.get("highlight_color", "#22D3EE")
+        caption_bottom_offset = inputs.get("caption_bottom_offset")
+        caption_side_padding = inputs.get("caption_side_padding")
 
         if not Path(input_path).exists():
             return ToolResult(success=False, error=f"Input video not found: {input_path}")
@@ -480,9 +524,17 @@ class RemotionCaptionBurn(BaseTool):
                 input_path, output_path, captions,
                 words_per_page, font_size, highlight_color,
                 overlays=overlays,
+                caption_bottom_offset=caption_bottom_offset,
+                caption_side_padding=caption_side_padding,
             )
         else:
-            result = self._render_ffmpeg(input_path, output_path, captions)
+            result = self._render_ffmpeg(
+                input_path,
+                output_path,
+                captions,
+                caption_bottom_offset=caption_bottom_offset,
+                caption_side_padding=caption_side_padding,
+            )
 
         result.duration_seconds = round(time.time() - start, 2)
         return result

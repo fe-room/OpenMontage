@@ -302,7 +302,17 @@
         "outline_color": { "type": "string" },
         "background": { "type": "string", "description": "Background color with optional alpha (e.g. #00000088)" },
         "position": { "type": "string", "enum": ["top-center", "bottom-center", "center"] },
-        "max_words_per_line": { "type": "integer", "minimum": 1 }
+        "max_words_per_line": { "type": "integer", "minimum": 1 },
+        "safe_area": {
+          "type": "object",
+          "description": "Caption clearance from social-platform UI. For portrait outputs the renderer clamps these values to the shared social-ui-safe minimum.",
+          "properties": {
+            "policy": { "type": "string", "enum": ["social-ui-safe", "custom"] },
+            "bottom_offset_px": { "type": "integer", "minimum": 0 },
+            "side_margin_px": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
       },
       "additionalProperties": false
     },

@@ -520,6 +520,19 @@ print('HyperFrames note:', info.get('hyperframes_note'))
 
 `render_runtime` is **locked at proposal** (`proposal_packet.production_plan.render_runtime`) and **carried through edit_decisions unchanged**. `video_compose` routes based on this field; silent runtime swaps are forbidden. If the chosen runtime becomes unavailable at compose time, surface a structured blocker per "Escalate Blockers Explicitly" above. See `skills/core/hyperframes.md` for the Remotion-vs-HyperFrames decision matrix.
 
+### Portrait Social Caption Safe Area (HARD RULE)
+
+Every portrait output (`height > width`), including custom 1080x1920 masters,
+uses the shared `social-ui-safe` caption lane so platform titles, account/avatar
+rows, and interaction chrome cannot cover burned-in subtitles. At 1080x1920 the
+minimum clearances are `520px` from the bottom and `96px` from both sides;
+other portrait sizes scale proportionally. Record the policy in
+`edit_decisions.subtitles.safe_area`. Remotion and FFmpeg clamp smaller values
+automatically. HyperFrames and atelier compositions must implement and declare
+the same clearances explicitly. Post-render review must populate the subtitle
+safe-area fields and treat a missing/undersized portrait safe area as a revision
+blocker. Read `skills/core/subtitle-sync.md` for the full contract.
+
 ### Critical Rule: Motion-Required Requests
 
 For any request where the deliverable inherently depends on motion rather than static coverage, treat motion as a hard requirement. Examples:

@@ -151,6 +151,8 @@ class VideoCompose(BaseTool):
                     "outline_color": {"type": "string", "default": "&H000000"},
                     "outline_width": {"type": "number", "default": 2},
                     "margin_v": {"type": "integer", "default": 40},
+                    "margin_l": {"type": "integer", "default": 0},
+                    "margin_r": {"type": "integer", "default": 0},
                     "alignment": {"type": "integer", "default": 2},
                 },
             },
@@ -447,6 +449,12 @@ class VideoCompose(BaseTool):
             inputs.get("subtitle_style"),
             edit_decisions,
             playbook_data,
+        )
+        resolved_sub_style = self._apply_caption_safe_area(
+            resolved_sub_style,
+            width=target_w,
+            height=target_h,
+            profile_name=profile_name,
         )
         inputs = dict(inputs)
         inputs["subtitle_style"] = resolved_sub_style
@@ -1804,6 +1812,29 @@ class VideoCompose(BaseTool):
             if subtitle_style.get("font"):
                 props["captionFontFamily"] = subtitle_style["font"]
 
+            target_w = int((composition_meta.get("compose_target") or {}).get("width", props.get("width", 1920)))
+            target_h = int((composition_meta.get("compose_target") or {}).get("height", props.get("height", 1080)))
+            profile_name = inputs.get("profile")
+            if profile_name:
+                try:
+                    from lib.media_profiles import get_profile
+                    media_profile = get_profile(profile_name)
+                    target_w, target_h = media_profile.width, media_profile.height
+                except (ImportError, ValueError):
+                    pass
+            safe_area = subtitle_style.get("safe_area") or {}
+            from lib.media_profiles import resolve_caption_safe_area
+            required_safe_area = resolve_caption_safe_area(target_w, target_h, profile_name)
+            if required_safe_area:
+                props["captionBottomOffset"] = max(
+                    int(safe_area.get("bottom_offset_px", 0)),
+                    required_safe_area.bottom_px,
+                )
+                props["captionSidePadding"] = max(
+                    int(safe_area.get("side_margin_px", 0)),
+                    required_safe_area.side_px,
+                )
+
         # Editorial provenance remains in edit_decisions, but internal source
         # labels and planning notes are not automatically viewer-facing copy.
         if composition_meta.get("render_source_strips") is False:
@@ -2235,6 +2266,8 @@ class VideoCompose(BaseTool):
             "valid_container": False,
             "issues": [],
         }
+        width = 0
+        height = 0
         try:
             cmd = [
                 "ffprobe", "-v", "quiet", "-print_format", "json",
@@ -2552,6 +2585,47 @@ class VideoCompose(BaseTool):
             ed_subs = edit_decisions.get("subtitles", {})
             subtitle_check["subtitles_expected"] = bool(ed_subs.get("enabled"))
 
+            if subtitle_check["subtitles_expected"] and height > width:
+                from lib.media_profiles import resolve_caption_safe_area
+
+                required = resolve_caption_safe_area(width, height)
+                declared = ed_subs.get("safe_area") or {}
+                render_runtime = edit_decisions.get("render_runtime")
+                composition_mode = edit_decisions.get("composition_mode")
+                renderer_family = edit_decisions.get("renderer_family")
+                is_atelier = composition_mode == "atelier" or renderer_family == "bespoke"
+                renderer_enforces_policy = (
+                    render_runtime == "ffmpeg"
+                    or (render_runtime == "remotion" and not is_atelier)
+                )
+                declared_bottom = int(declared.get("bottom_offset_px", 0))
+                declared_side = int(declared.get("side_margin_px", 0))
+                bottom_clearance = max(
+                    declared_bottom,
+                    required.bottom_px if renderer_enforces_policy and required else 0,
+                )
+                side_clearance = max(
+                    declared_side,
+                    required.side_px if renderer_enforces_policy and required else 0,
+                )
+                safe_area_applied = bool(
+                    required
+                    and bottom_clearance >= required.bottom_px
+                    and side_clearance >= required.side_px
+                )
+                subtitle_check.update({
+                    "safe_area_policy": "social-ui-safe",
+                    "safe_area_applied": safe_area_applied,
+                    "bottom_clearance_px": bottom_clearance,
+                    "minimum_bottom_clearance_px": required.bottom_px if required else 0,
+                    "side_clearance_px": side_clearance,
+                })
+                if not safe_area_applied:
+                    subtitle_check["issues"].append(
+                        "Caption safe area missing: portrait social captions must clear "
+                        f"the bottom {required.bottom_px}px and {required.side_px}px side margins"
+                    )
+
             # Check if output has subtitle stream
             if technical_probe.get("valid_container"):
                 try:
@@ -2607,6 +2681,7 @@ class VideoCompose(BaseTool):
                 "effectively silent", "ffprobe failed", "suspiciously short",
                 "tts punctuation leak",  # reading literal punctuation aloud
                 "opening frame", "frame zero",
+                "caption safe area",
             ])
         ]
         opening_frame_failed = (
@@ -2684,6 +2759,13 @@ class VideoCompose(BaseTool):
             return ToolResult(success=False, error=f"Subtitle file not found: {subtitle_path}")
 
         style = inputs.get("subtitle_style", {})
+        width, height = self._probe_video_dimensions(input_path)
+        style = self._apply_caption_safe_area(
+            style,
+            width=width,
+            height=height,
+            profile_name=inputs.get("profile"),
+        )
         ass_style = self._build_subtitle_style(style)
         sub_escaped = str(subtitle_path.resolve()).replace("\\", "/").replace(":", "\\:")
         codec = inputs.get("codec", "libx264")
@@ -2708,6 +2790,24 @@ class VideoCompose(BaseTool):
             },
             artifacts=[str(output_path)],
         )
+
+    @staticmethod
+    def _probe_video_dimensions(path: Path) -> tuple[int, int]:
+        """Read display dimensions for layout rules; return zeros on failure."""
+        try:
+            proc = subprocess.run(
+                [
+                    "ffprobe", "-v", "error", "-select_streams", "v:0",
+                    "-show_entries", "stream=width,height", "-of", "json", str(path),
+                ],
+                capture_output=True,
+                text=True,
+                timeout=15,
+            )
+            stream = (json.loads(proc.stdout).get("streams") or [{}])[0]
+            return int(stream.get("width", 0)), int(stream.get("height", 0))
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            return 0, 0
 
     def _overlay(self, inputs: dict[str, Any]) -> ToolResult:
         """Composite overlay images/videos on top of base video."""
@@ -2861,10 +2961,21 @@ class VideoCompose(BaseTool):
 
         # Layer 2: edit_decisions subtitle style
         if edit_decisions:
-            ed_style = edit_decisions.get("subtitles", {}).get("style", {})
-            for k, v in ed_style.items():
-                if v is not None:
-                    resolved[k] = v
+            ed_subtitles = edit_decisions.get("subtitles", {})
+            # Older artifacts sometimes stored an ASS-style dict in `style`
+            # before that field became the display-mode string in the schema.
+            ed_style = ed_subtitles.get("ass_style") or ed_subtitles.get("style", {})
+            if isinstance(ed_style, dict):
+                for k, v in ed_style.items():
+                    if v is not None:
+                        resolved[k] = v
+            safe_area = ed_subtitles.get("safe_area", {})
+            if isinstance(safe_area, dict):
+                if safe_area.get("bottom_offset_px") is not None:
+                    resolved["margin_v"] = safe_area["bottom_offset_px"]
+                if safe_area.get("side_margin_px") is not None:
+                    resolved["margin_l"] = safe_area["side_margin_px"]
+                    resolved["margin_r"] = safe_area["side_margin_px"]
 
         # Layer 3: Explicit override (highest priority)
         if explicit_style:
@@ -2872,6 +2983,25 @@ class VideoCompose(BaseTool):
                 if v is not None:
                     resolved[k] = v
 
+        return resolved
+
+    @staticmethod
+    def _apply_caption_safe_area(
+        style: dict,
+        *,
+        width: int,
+        height: int,
+        profile_name: str | None = None,
+    ) -> dict:
+        """Clamp caption margins to the shared portrait social safe lane."""
+        from lib.media_profiles import resolve_caption_safe_area
+
+        resolved = dict(style)
+        safe_area = resolve_caption_safe_area(width, height, profile_name)
+        if safe_area:
+            resolved["margin_v"] = max(int(resolved.get("margin_v", 0)), safe_area.bottom_px)
+            resolved["margin_l"] = max(int(resolved.get("margin_l", 0)), safe_area.side_px)
+            resolved["margin_r"] = max(int(resolved.get("margin_r", 0)), safe_area.side_px)
         return resolved
 
     @staticmethod
@@ -2892,6 +3022,8 @@ class VideoCompose(BaseTool):
         parts.append(f"Outline={style.get('outline_width', 2)}")
         parts.append(f"Shadow={style.get('shadow', 0)}")
         parts.append(f"MarginV={style.get('margin_v', 40)}")
+        parts.append(f"MarginL={style.get('margin_l', 0)}")
+        parts.append(f"MarginR={style.get('margin_r', 0)}")
         parts.append(f"Alignment={style.get('alignment', 2)}")
         return ",".join(parts)
 

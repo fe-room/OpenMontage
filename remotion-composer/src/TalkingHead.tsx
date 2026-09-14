@@ -302,6 +302,8 @@ export interface TalkingHeadProps {
   wordsPerPage?: number;
   fontSize?: number;
   highlightColor?: string;
+  captionBottomOffset?: number;
+  captionSidePadding?: number;
 }
 
 export const TalkingHead: React.FC<TalkingHeadProps> = ({
@@ -311,6 +313,8 @@ export const TalkingHead: React.FC<TalkingHeadProps> = ({
   wordsPerPage = 4,
   fontSize = 52,
   highlightColor = "#22D3EE",
+  captionBottomOffset,
+  captionSidePadding,
 }) => {
   const { fps } = useVideoConfig();
 
@@ -347,6 +351,8 @@ export const TalkingHead: React.FC<TalkingHeadProps> = ({
         highlightColor={highlightColor}
         backgroundColor="rgba(0, 0, 0, 0.65)"
         color="#FFFFFF"
+        bottomOffset={captionBottomOffset}
+        sidePadding={captionSidePadding}
       />
     </AbsoluteFill>
   );

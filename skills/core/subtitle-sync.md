@@ -54,7 +54,9 @@ primary_color: &H00FFFFFF      # white (ASS format: alpha=00, BGR=FFFFFF)
 outline_color: &H00000000      # black
 outline_width: 3               # thick outline for readability on varied backgrounds
 shadow: 2
-margin_v: 50                   # pixels from bottom edge
+margin_v: 520                  # shared social UI safe area; renderer enforces this minimum
+margin_l: 96                   # keep clear of edge controls/crops
+margin_r: 96
 alignment: 2                   # bottom center
 ```
 
@@ -77,7 +79,34 @@ alignment: 2
 - **Wrong color format:** `&HFFFFFF` breaks positioning. Always use full 8-char `&H00FFFFFF`.
 - **Font too large on vertical:** `font_size: 28` fills the center of a 9:16 frame. Use 18 max.
 - **Too many words per cue on vertical:** 5+ words creates multi-line blocks that cover the face.
-- **MarginV too large:** Values over 200 push text off-screen. Stay under 100 for most cases.
+- **Using the old 40-100px bottom margin on portrait video:** this puts captions behind the platform title, account/avatar, and interaction chrome. The shared 1080x1920 minimum is 520px.
+- **Per-platform guesswork:** use the single conservative `social-ui-safe` lane for a master that may be posted to TikTok, Reels, or Shorts. Do not lower it for one platform unless the user explicitly requests a platform-only variant.
+
+## Portrait Social Safe Area (Mandatory)
+
+For every output where `height > width`, caption placement uses the shared
+`social-ui-safe` policy. At 1080x1920 this means:
+
+- bottom clearance: at least `520px`;
+- left/right clearance: at least `96px`;
+- caption copy stays centered in the resulting lane;
+- a larger project-specific clearance is allowed, but a smaller value is
+  clamped by Remotion and FFmpeg.
+
+Record the decision in `edit_decisions.subtitles.safe_area`:
+
+```json
+{
+  "policy": "social-ui-safe",
+  "bottom_offset_px": 520,
+  "side_margin_px": 96
+}
+```
+
+Remotion's shared `CaptionOverlay`, `video_compose`'s FFmpeg subtitle burn, and
+`remotion_caption_burn` all apply the same rule automatically. HyperFrames or
+atelier compositions must implement these clearances explicitly and declare
+them in `edit_decisions`; post-render review fails the safe-area check otherwise.
 
 ## Timing Best Practices
 
@@ -97,7 +126,8 @@ to segment-level timing with even distribution.
 
 - [ ] Every spoken word appears in a subtitle cue
 - [ ] No cue exceeds the character limit for the target format
-- [ ] Subtitles are in the bottom 20% of frame — never covering the face
+- [ ] Portrait subtitles sit above the bottom social UI exclusion zone (520px at 1080x1920), not at the physical bottom edge
+- [ ] Portrait subtitles keep at least 96px side clearance at 1080x1920
 - [ ] Text is readable on mobile at native resolution
 - [ ] Timing matches speech — no early or late cues
 - [ ] Cues don't overlap each other
