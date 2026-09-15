@@ -173,7 +173,13 @@ class PexelsVideo(BaseTool):
                     selected_file = vf
                     break
             if not selected_file and video_files:
-                selected_file = video_files[0]
+                # Some current API results omit quality. Do not silently pick
+                # the first (often 360p) rendition for an HD request.
+                mp4_files = [vf for vf in video_files if vf.get('file_type', 'video/mp4') == 'video/mp4']
+                candidates = mp4_files or video_files
+                target_width = 1920 if preferred_quality == 'hd' else 960
+                within_target = [vf for vf in candidates if (vf.get('width') or 0) <= target_width]
+                selected_file = max(within_target or candidates, key=lambda vf: vf.get('width') or 0)
 
             if not selected_file:
                 return ToolResult(success=False, error="No downloadable video file found.")
