@@ -119,7 +119,7 @@ assets:
   html_snippets: []
 
 x_openmontage:
-  approved_preview: "projects/xiaosan-economics-02-tradeoffs/snapshots/paper-texture-preview-v1.png"
+  approved_preview: "styles/references/xiaosan-tactile-research-paper/approved-preview.png"
   approved_on: "2026-09-15"
   reuse_scope: "material tokens and texture recipe only; never reuse completed scene compositions"
   texture_recipe:
@@ -149,4 +149,3 @@ style into a fixed scene template.
 - Keep texture static while paper geometry moves.
 - Apply edge/shadow layers to paper objects, not to the whole canvas.
 - For portrait delivery, maintain the shared social UI safe area for captions.
-
