@@ -1,0 +1,437 @@
+{
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/unidirectional",
+  "api_mode": "unidirectional",
+  "request_id": "20e1841b-103f-448d-9115-255c626b131a",
+  "log_id": "2026092109523928B45817A88497660C2D",
+  "request": {
+    "headers": {
+      "X-Api-Resource-Id": "seed-tts-2.0",
+      "X-Api-Request-Id": "20e1841b-103f-448d-9115-255c626b131a",
+      "Content-Type": "application/json",
+      "X-Control-Require-Usage-Tokens-Return": "*",
+      "Connection": "keep-alive"
+    },
+    "body": {
+      "req_params": {
+        "text": "但经济学算成本，有时候根本不只看你花了多少钱。它还会问你一个问题：这一天，你本来还能拿去干什么？",
+        "speaker": "zh_male_dayi_uranus_bigtts",
+        "additions": "{\"disable_markdown_filter\": false, \"disable_emoji_filter\": false, \"enable_latex_tn\": true}",
+        "audio_params": {
+          "format": "mp3",
+          "sample_rate": 24000,
+          "speech_rate": 0,
+          "enable_subtitle": true
+        }
+      }
+    }
+  },
+  "response_events": [
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3388
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 2048
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6656
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 256
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 8192
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1792
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6912
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "但经济学算成本，有时候根本不只看你花了多少钱。",
+        "words": [
+          {
+            "confidence": 0.26785636,
+            "endTime": 0.185,
+            "startTime": 0.125,
+            "word": "但"
+          },
+          {
+            "confidence": 0.60022235,
+            "endTime": 0.325,
+            "startTime": 0.185,
+            "word": "经"
+          },
+          {
+            "confidence": 0.4823156,
+            "endTime": 0.395,
+            "startTime": 0.325,
+            "word": "济"
+          },
+          {
+            "confidence": 0.68307555,
+            "endTime": 0.515,
+            "startTime": 0.395,
+            "word": "学"
+          },
+          {
+            "confidence": 0.85279465,
+            "endTime": 0.675,
+            "startTime": 0.515,
+            "word": "算"
+          },
+          {
+            "confidence": 0.9486282,
+            "endTime": 0.835,
+            "startTime": 0.675,
+            "word": "成"
+          },
+          {
+            "confidence": 0.92533255,
+            "endTime": 0.995,
+            "startTime": 0.835,
+            "word": "本，"
+          },
+          {
+            "confidence": 0.970487,
+            "endTime": 1.415,
+            "startTime": 1.295,
+            "word": "有"
+          },
+          {
+            "confidence": 0.9617783,
+            "endTime": 1.515,
+            "startTime": 1.415,
+            "word": "时"
+          },
+          {
+            "confidence": 0.9196067,
+            "endTime": 1.655,
+            "startTime": 1.515,
+            "word": "候"
+          },
+          {
+            "confidence": 0.9501122,
+            "endTime": 1.805,
+            "startTime": 1.655,
+            "word": "根"
+          },
+          {
+            "confidence": 0.9418454,
+            "endTime": 1.955,
+            "startTime": 1.805,
+            "word": "本"
+          },
+          {
+            "confidence": 0.917006,
+            "endTime": 2.105,
+            "startTime": 1.955,
+            "word": "不"
+          },
+          {
+            "confidence": 0.9168214,
+            "endTime": 2.325,
+            "startTime": 2.105,
+            "word": "只"
+          },
+          {
+            "confidence": 0.9161935,
+            "endTime": 2.625,
+            "startTime": 2.325,
+            "word": "看"
+          },
+          {
+            "confidence": 0.9329159,
+            "endTime": 2.735,
+            "startTime": 2.625,
+            "word": "你"
+          },
+          {
+            "confidence": 0.95976216,
+            "endTime": 2.975,
+            "startTime": 2.735,
+            "word": "花"
+          },
+          {
+            "confidence": 0.9353189,
+            "endTime": 3.065,
+            "startTime": 2.975,
+            "word": "了"
+          },
+          {
+            "confidence": 0.97317904,
+            "endTime": 3.175,
+            "startTime": 3.065,
+            "word": "多"
+          },
+          {
+            "confidence": 0.9599572,
+            "endTime": 3.315,
+            "startTime": 3.175,
+            "word": "少"
+          },
+          {
+            "confidence": 0.95075315,
+            "endTime": 3.735,
+            "startTime": 3.315,
+            "word": "钱。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1280
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4608
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "但经济学算成本，有时候根本不只看你花了多少钱。它还会问你一个问题：这一天，你本来还能拿去干什么？",
+        "words": []
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "它还会问你一个问题：这一天，你本来还能拿去干什么？",
+        "words": [
+          {
+            "confidence": 0.8412132,
+            "endTime": 4.1950417,
+            "startTime": 4.035042,
+            "word": "它"
+          },
+          {
+            "confidence": 0.60709286,
+            "endTime": 4.305042,
+            "startTime": 4.1950417,
+            "word": "还"
+          },
+          {
+            "confidence": 0.87939906,
+            "endTime": 4.435042,
+            "startTime": 4.305042,
+            "word": "会"
+          },
+          {
+            "confidence": 0.89849836,
+            "endTime": 4.535042,
+            "startTime": 4.435042,
+            "word": "问"
+          },
+          {
+            "confidence": 0.89164746,
+            "endTime": 4.645042,
+            "startTime": 4.535042,
+            "word": "你"
+          },
+          {
+            "confidence": 0.83790153,
+            "endTime": 4.6950417,
+            "startTime": 4.645042,
+            "word": "一"
+          },
+          {
+            "confidence": 0.91763103,
+            "endTime": 4.785042,
+            "startTime": 4.6950417,
+            "word": "个"
+          },
+          {
+            "confidence": 0.83561623,
+            "endTime": 4.975042,
+            "startTime": 4.785042,
+            "word": "问"
+          },
+          {
+            "confidence": 0.08544961,
+            "endTime": 5.005042,
+            "startTime": 4.975042,
+            "word": "题："
+          },
+          {
+            "confidence": 0.96399564,
+            "endTime": 5.745042,
+            "startTime": 5.585042,
+            "word": "这"
+          },
+          {
+            "confidence": 0.82593775,
+            "endTime": 5.835042,
+            "startTime": 5.745042,
+            "word": "一"
+          },
+          {
+            "confidence": 0.968404,
+            "endTime": 6.1950417,
+            "startTime": 5.835042,
+            "word": "天，"
+          },
+          {
+            "confidence": 0.97697914,
+            "endTime": 6.5650415,
+            "startTime": 6.415042,
+            "word": "你"
+          },
+          {
+            "confidence": 0.93271935,
+            "endTime": 6.825042,
+            "startTime": 6.5650415,
+            "word": "本"
+          },
+          {
+            "confidence": 0.9251504,
+            "endTime": 7.0250416,
+            "startTime": 6.825042,
+            "word": "来"
+          },
+          {
+            "confidence": 0.94201964,
+            "endTime": 7.205042,
+            "startTime": 7.0250416,
+            "word": "还"
+          },
+          {
+            "confidence": 0.9184845,
+            "endTime": 7.3150415,
+            "startTime": 7.205042,
+            "word": "能"
+          },
+          {
+            "confidence": 0.603644,
+            "endTime": 7.3950415,
+            "startTime": 7.3150415,
+            "word": "拿"
+          },
+          {
+            "confidence": 0.16878292,
+            "endTime": 7.455042,
+            "startTime": 7.3950415,
+            "word": "去"
+          },
+          {
+            "confidence": 0.1140876,
+            "endTime": 7.515042,
+            "startTime": 7.455042,
+            "word": "干"
+          },
+          {
+            "confidence": 0.20282921,
+            "endTime": 7.575042,
+            "startTime": 7.515042,
+            "word": "什"
+          },
+          {
+            "confidence": 0.20676804,
+            "endTime": 7.6350417,
+            "startTime": 7.575042,
+            "word": "么？"
+          }
+        ]
+      }
+    },
+    {
+      "code": 20000000,
+      "message": "OK",
+      "usage": {
+        "text_words": 48
+      }
+    }
+  ],
+  "usage": {
+    "text_words": 48
+  }
+}

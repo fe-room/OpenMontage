@@ -1,0 +1,364 @@
+{
+  "version": "1.0",
+  "topic": "周末在家躺一天，一分钱没花，这一天的成本真的是0吗？（机会成本）",
+  "research_date": "2026-09-21",
+  "landscape": {
+    "existing_content": [
+      {
+        "title": "Real-Life Examples of Opportunity Cost (Page One Economics 延伸解读)",
+        "url": "https://www.stlouisfed.org/open-vault/2020/january/real-life-examples-opportunity-cost",
+        "source": "central_bank_education",
+        "angle": "从日常消费场景（奶昔、通勤、买车选装）切入，把'经济学家眼镜'套在显性成本与隐性成本上",
+        "what_it_covers": "机会成本定义、显性与隐性成本区分、通勤时间价值",
+        "what_it_misses": "没有回答'没花钱的时间段本身有没有成本'这个更尖锐的问题，也没有处理'是不是所有没做的事都算成本'这个高频误解",
+        "engagement_signal": "美联储分行经济学教育栏目长期高阅读量文章"
+      },
+      {
+        "title": "Opportunity Cost Explained (With How to Calculate It)",
+        "url": "https://www.econlearn.org/blog/opportunity-cost-explained",
+        "source": "economics_education_site",
+        "angle": "考试向教学：定义 + 计算 + 显性/隐性成本 + 沉没成本排除",
+        "what_it_covers": "次优替代方案价值、教学算例（打工120美元 vs 演唱会90美元 vs 徒步40美元）、会计利润与经济利润差异",
+        "what_it_misses": "几乎不讨论'休息、陪伴'等非货币、不可通约的价值，也没有回答'有成本是否等于选错了'",
+        "engagement_signal": "面向 AP 经济学备考人群的常引用解释页"
+      },
+      {
+        "title": "Opportunity Costs: The Hidden Price of Every Decision",
+        "url": "https://efp.ucsb.edu/think-economist/opportunity-costs-hidden-price-every-decision",
+        "source": "university_outreach",
+        "angle": "认知视角：机会成本'看不见'，需要刻意做反事实推演才能被意识到",
+        "what_it_covers": "不可通约价值（陪家人 vs 职业晋升）、量化困难、个人/企业/社会三个层面的机会成本",
+        "what_it_misses": "偏概念陈述，缺少一个可以停留、可以被观众拿去解释自己生活的具体场景",
+        "engagement_signal": "高校经济教育项目科普文章"
+      },
+      {
+        "title": "Opportunity cost（微经济学条目）",
+        "url": "https://simple.wikipedia.com/wiki/Opportunity_cost",
+        "source": "encyclopedia",
+        "angle": "词典式定义 + 显性/隐性成本 + 排除沉成本与边际成本",
+        "what_it_covers": "在资源有限、需在若干互斥选项间抉择的条件下，机会成本是'最佳被放弃方案'的价值",
+        "what_it_misses": "定义式表述对普通观众缺少代入感，'互斥性'这一关键前提几乎不会被观众记住",
+        "engagement_signal": "长期被引用的基础条目"
+      }
+    ],
+    "saturated_angles": [
+      "抽象定义开场：'机会成本是指……'然后给两三个互不相关的行业案例",
+      "把机会成本等同于'没赚到的钱'，一路只谈收益率差和复利曲线",
+      "用'选择读大学放弃四年工资'作为唯一案例，已经被讲到没有新鲜感",
+      "结尾升华为'人生没有免费午餐'式的口号，不给可复用的判断动作"
+    ],
+    "underserved_gaps": [
+      "几乎没人正面回答'不花钱的休息时间有没有成本'这个最生活化的问题",
+      "极少有内容专门处理'是不是所有没做的事都要加起来'这个高频误解，多数内容一句带过",
+      "缺少'有成本 ≠ 这个选择是错的'这一步纠偏，导致观众把机会成本误读成'休息就是浪费'",
+      "很少有内容明确说清'机会成本不要求把一切换算成钱'，导致观众把陪伴、休息一律折算成工资"
+    ]
+  },
+  "trending": {
+    "recent_developments": [
+      {
+        "headline": "存量时代下'时间该怎么用'成为个人理财讨论的常见分支，副业与休息的对立被反复讨论",
+        "date": "2026-09-21",
+        "relevance": "本期的核心场景（周六下午4小时：休息/拍视频/兼职/健身）正是这一讨论的最小切口，观众自带真实困惑"
+      }
+    ],
+    "active_discussions": [
+      {
+        "platform": "内容平台评论区",
+        "topic_or_url": "机会成本类科普内容下的观众提问",
+        "sentiment": "观众普遍能复述定义，但一旦落到自己身上就会退回'那休息岂不是亏了'的价值判断",
+        "key_quotes": [
+          "那排队抢优惠券两个小时也算吗？",
+          "那辞职考研怎么算？",
+          "那自己做饭和点外卖怎么比较？"
+        ]
+      }
+    ],
+    "timeliness_window": "evergreen"
+  },
+  "data_points": [
+    {
+      "claim": "机会成本是做出选择时所放弃的次优（最佳替代）方案的价值；在微观经济学中，它的前提是资源有限、必须在若干互斥的备选方案之间做出选择。",
+      "source_url": "https://simple.wikipedia.com/wiki/Opportunity_cost",
+      "source_name": "Opportunity cost — 微观经济学基础条目",
+      "credibility": "secondary_source",
+      "surprise_factor": "notable",
+      "usable_as": "核心定义锚点，用于第05场景'最佳被放弃方案'的准确表述"
+    },
+    {
+      "claim": "美国联邦储备银行圣路易斯分行在其经济学教育内容中把机会成本定义为'做出决策时次优替代方案的价值，也就是被放弃的东西'，并区分显性成本（当场就能看到、可计量的金钱取舍）与隐性成本（不易察觉、超出即时财务考量的取舍，如长期财务机会、个人福祉、职业发展、时间与生产力、未来收入潜力）。",
+      "source_url": "https://www.stlouisfed.org/open-vault/2020/january/real-life-examples-opportunity-cost",
+      "source_name": "Federal Reserve Bank of St. Louis — Real-Life Examples of Opportunity Cost",
+      "credibility": "primary_source",
+      "surprise_factor": "notable",
+      "usable_as": "支撑'成本不只看花了多少钱'以及'免费咖啡排队两小时'案例的权威依据"
+    },
+    {
+      "claim": "机会成本只计算单个次优替代方案，不是所有被放弃选项的总和。教学算例：某个周六可以打工赚120美元、看演唱会值90美元、徒步值40美元，那么选择打工的机会成本是90美元，而不是130美元——因为在这一段时间里你本来也只能完成其中一个方案。",
+      "source_url": "https://www.econlearn.org/blog/opportunity-cost-explained",
+      "source_name": "EconLearn — Opportunity Cost Explained",
+      "credibility": "secondary_source",
+      "surprise_factor": "counterintuitive",
+      "usable_as": "第二次反转的直接依据：'不是所有没选的东西加起来'"
+    },
+    {
+      "claim": "机会成本不局限于货币或财务成本：被放弃的产出、损失的时间、愉悦感受，以及其他任何提供效用的收益，都应计入机会成本。",
+      "source_url": "https://simple.wikipedia.com/wiki/Opportunity_cost",
+      "source_name": "Opportunity cost — 微观经济学基础条目",
+      "credibility": "secondary_source",
+      "surprise_factor": "notable",
+      "usable_as": "支撑'机会成本不要求把所有东西都换算成钱'（第08场景）"
+    },
+    {
+      "claim": "机会成本难以量化，并且可能涉及无法换算成同一量纲的价值——例如'陪家人的时间'与'职业晋升'之间并没有共同单位可比。即便只是近似估算，把隐含的取舍显性化也能改善决策质量。",
+      "source_url": "https://efp.ucsb.edu/think-economist/opportunity-costs-hidden-price-every-decision",
+      "source_name": "UC Santa Barbara — Opportunity Costs: The Hidden Price of Every Decision",
+      "credibility": "secondary_source",
+      "surprise_factor": "notable",
+      "usable_as": "支撑'机会成本是比较选择的工具，不是把人生全部货币化的公式'这句关键限定"
+    },
+    {
+      "claim": "在投资比较中，把债券收益率5%与股票预期收益8%相比，选择债券的机会成本是3个百分点；但这一比较同时还应考虑两者风险差异，机会成本框架只是分析的起点，本身并不给出'该选哪个'的结论。",
+      "source_url": "https://frontend.prod.fiveable.me/key-terms/intermediate-microeconomic-theory/allocation-of-resources",
+      "source_name": "Fiveable — 1.1 Scarcity, choice, and opportunity cost",
+      "credibility": "secondary_source",
+      "surprise_factor": "notable",
+      "usable_as": "投资连接段（第09场景）的证据锚点，并自带'风险不同不能机械比较'的限定条件"
+    },
+    {
+      "claim": "机会成本是前瞻性的、且带有主观性：它取决于你个人最看重的那个替代方案，并且只关乎未来将要放弃什么，与已经花掉、无法收回的钱无关。",
+      "source_url": "https://www.econlearn.org/blog/opportunity-cost-explained",
+      "source_name": "EconLearn — Opportunity Cost Explained",
+      "credibility": "secondary_source",
+      "surprise_factor": "notable",
+      "usable_as": "支撑第三次反转'有机会成本不等于这个选择是错的'的证据基础"
+    }
+  ],
+  "audience_insights": {
+    "common_questions": [
+      "在家躺着休息、睡觉、陪家人，明明没花钱，这也有成本吗？",
+      "如果所有没做的事情都算成本，那我岂不是每天都在亏钱？",
+      "机会成本到底能不能算出一个具体数字？休息4小时该算多少钱？",
+      "既然休息有成本，是不是说明我应该少休息、多去赚钱？",
+      "免费的东西（免费咖啡、免费课程）是不是其实也有成本？"
+    ],
+    "misconceptions": [
+      {
+        "myth": "没花钱 = 没成本",
+        "reality": "成本不只看现金支出。被放弃的最佳替代方案的价值同样是成本，哪怕它一分钱都没有从银行卡里扣走。",
+        "source": "Federal Reserve Bank of St. Louis（显性/隐性成本区分）"
+      },
+      {
+        "myth": "机会成本 = 所有没做的事情加起来",
+        "reality": "机会成本只计算被放弃方案中对你最有价值的那个。因为同一段时间里你本来也只能真正完成其中一个方案。",
+        "source": "EconLearn 教学算例（120 / 90 / 40 美元）"
+      },
+      {
+        "myth": "有成本 = 这个选择是错的",
+        "reality": "机会成本只回答'你为了这个选择放弃了什么'，它不回答'这个选择值不值得'。如果被放弃的方案对你价值更低，这个选择依然可能更好。",
+        "source": "UC Santa Barbara（机会成本是分析起点，不替代价值判断）"
+      },
+      {
+        "myth": "机会成本必须换算成钱",
+        "reality": "被放弃的可能是时间、精力、陪伴、休息或一次学习机会，这些价值并不需要、也常常无法被强行货币化。",
+        "source": "UC Santa Barbara（不可通约价值）"
+      }
+    ],
+    "knowledge_level": "观众多半听过'机会成本'这个词，甚至能背出'次优选择的价值'这类表述，但普遍停留在术语层面：一旦落到自己的具体选择上，就会退回'没花钱就是没成本'和'有成本就是选错了'两种直觉。因此本期不缺术语，缺的是把术语拆成可复用的判断动作。",
+    "pain_points": [
+      "术语能背，但不会用：听完定义仍然算不出自己那个选择的机会成本。",
+      "把机会成本误读成道德评判，听完之后产生'那我休息就是浪费生命'的焦虑。",
+      "把机会成本误解成记账：试图把所有放弃的选项相加，得到一个虚高的数字，然后觉得这个概念没有用。"
+    ]
+  },
+  "expert_voices": [
+    {
+      "name": "美联储圣路易斯分行经济教育团队（Andrea Caceres-Santamaria）",
+      "title_or_affiliation": "Federal Reserve Bank of St. Louis",
+      "position": "机会成本是'做出决策时次优替代方案的价值，也就是被放弃的东西'；很多真正重要的取舍属于不易察觉的隐性成本，需要'超越当下、评估资金的替代用途'。",
+      "source_url": "https://www.stlouisfed.org/open-vault/2020/january/real-life-examples-opportunity-cost",
+      "contrarian": false
+    },
+    {
+      "name": "N. Gregory Mankiw（曼昆）",
+      "title_or_affiliation": "《经济学原理》",
+      "position": "机会成本是'为了得到某样东西而必须放弃的东西'，是稀缺性下每个选择的必然伴随物，也是经济学十大原理之一。",
+      "source_url": "https://www.csun.edu/sites/default/files/micro1.pdf",
+      "contrarian": false
+    },
+    {
+      "name": "UC Santa Barbara 经济教育项目",
+      "title_or_affiliation": "UCSB Economics — Think Economist",
+      "position": "机会成本常常'看不见'，必须通过刻意的反事实推演才能被意识到；而且它涉及无法换算为单一量纲的价值，因此它是改善决策的工具，而不是一个把人生货币化的公式。",
+      "source_url": "https://efp.ucsb.edu/think-economist/opportunity-costs-hidden-price-every-decision",
+      "contrarian": true
+    }
+  ],
+  "angles_discovered": [
+    {
+      "name": "躺一天，真的花掉了500块？",
+      "hook": "周末在家躺一天，一分钱没花——可有人会告诉你，你其实花掉了500块。",
+      "type": "contrarian",
+      "why_now": "直接命中观众最生活化的场景，并在2秒内制造'这个说法不对劲'的冲突，正面回应策略里'先制造认知冲突'的要求。",
+      "grounded_in": [
+        "data_points[0]",
+        "data_points[2]",
+        "audience_insights.misconceptions[0]"
+      ]
+    },
+    {
+      "name": "一个周六下午，把机会成本追到底",
+      "hook": "假设周六下午你有4个小时，休息、拍视频、兼职、健身——你只能选一个。",
+      "type": "narrative",
+      "why_now": "用单一场景贯穿全片，避免上一期'横向案例太多、节奏被拖慢'的问题；所有解释都能回到同一个4小时。",
+      "grounded_in": [
+        "data_points[0]",
+        "data_points[1]",
+        "audience_insights.pain_points[2]"
+      ]
+    },
+    {
+      "name": "机会成本不是所有没做的事情相加",
+      "hook": "那我不休息能干三件事，是不是三件的价值都要加起来？不是。",
+      "type": "data_driven",
+      "why_now": "这是教学资料里被反复标注为'最常见的错误'，也是观众最容易被绊倒的一步，专门拆开讲能显著提升内容的可信度。",
+      "grounded_in": [
+        "data_points[2]",
+        "audience_insights.misconceptions[1]"
+      ]
+    },
+    {
+      "name": "免费的东西，往往最贵",
+      "hook": "商场送一杯免费咖啡，但要排队两个小时——咖啡不要钱，那两个小时呢？",
+      "type": "evergreen",
+      "why_now": "用一个极短案例完成'免费≠没有成本'的收口，把概念从'钱'扩展到'时间与精力'。",
+      "grounded_in": [
+        "data_points[3]",
+        "data_points[1]",
+        "data_points[4]"
+      ]
+    },
+    {
+      "name": "有成本，不代表你选错了",
+      "hook": "如果休息有500块的机会成本，那你这一周累到不行的时候，是不是更该躺着？",
+      "type": "contrarian",
+      "why_now": "主动纠偏'机会成本=道德评判'的误读，这是现有内容普遍缺失的一步，也是本期避免让观众产生焦虑的关键。",
+      "grounded_in": [
+        "data_points[6]",
+        "data_points[4]",
+        "audience_insights.misconceptions[2]",
+        "audience_insights.pain_points[1]"
+      ]
+    }
+  ],
+  "visual_references": [
+    {
+      "description": "美联储圣路易斯分行科普文章使用'奶昔二选一''通勤火车 vs 开车'等极小场景，把抽象定义落到一个具体动作上",
+      "what_works": "小切口 + 具体数字，观众不需要经济学背景也能立刻代入"
+    },
+    {
+      "description": "教学类内容用'120 / 90 / 40 美元三选一'的排列表格来演示机会成本只取次优值",
+      "what_works": "同屏并列比较，让'取最大而非求和'这一步在视觉上无法被绕过"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.stlouisfed.org/open-vault/2020/january/real-life-examples-opportunity-cost",
+      "title": "Real-Life Examples of Opportunity Cost — Federal Reserve Bank of St. Louis",
+      "used_for": "机会成本权威定义、显性/隐性成本区分、'免费'时间与时间价值的论证",
+      "reliability": "primary"
+    },
+    {
+      "url": "https://www.csun.edu/sites/default/files/micro1.pdf",
+      "title": "Microeconomics Topic 1 — 依据 Mankiw《Principles of Microeconomics》编写的教学讲义",
+      "used_for": "'为了得到某样东西而必须放弃的东西'这一经典表述与稀缺性前提",
+      "reliability": "primary"
+    },
+    {
+      "url": "https://simple.wikipedia.com/wiki/Opportunity_cost",
+      "title": "Opportunity cost — 微观经济学基础条目",
+      "used_for": "核心定义、互斥备选前提、机会成本不限于货币成本",
+      "reliability": "secondary"
+    },
+    {
+      "url": "https://www.econlearn.org/blog/opportunity-cost-explained",
+      "title": "Opportunity Cost Explained (With How to Calculate It) — EconLearn",
+      "used_for": "'只取次优方案、不是全部相加'的教学算例，以及机会成本的前瞻性与主观性",
+      "reliability": "secondary"
+    },
+    {
+      "url": "https://efp.ucsb.edu/think-economist/opportunity-costs-hidden-price-every-decision",
+      "title": "Opportunity Costs: The Hidden Price of Every Decision — UC Santa Barbara",
+      "used_for": "不可通约价值、量化困难，以及'分析工具而非货币化公式'的关键限定",
+      "reliability": "secondary"
+    },
+    {
+      "url": "https://frontend.prod.fiveable.me/key-terms/intermediate-microeconomic-theory/allocation-of-resources",
+      "title": "1.1 Scarcity, choice, and opportunity cost — Fiveable",
+      "used_for": "投资比较算例（5% vs 8%，机会成本3个百分点）及其风险差异限定",
+      "reliability": "secondary"
+    },
+    {
+      "url": "https://www.econlearn.org/glossary/opportunity-cost",
+      "title": "Opportunity Cost — AP Economics Definition (EconLearn 术语表)",
+      "used_for": "'机会成本不总是以金钱衡量，也可能是时间、愉悦、睡眠'的表述",
+      "reliability": "secondary"
+    }
+  ],
+  "research_summary": "机会成本在权威资料里的核心只有一句话——它是你为了当前选择而放弃的、价值最高的那个替代方案，而不是所有没做的事情相加，也不等于从银行卡里划走的钱。但研究发现，真正被现有内容忽略的是观众在落地时的两次回退：一是把机会成本误解成'所有放弃项求和'，二是把'有成本'直接读成'这个选择是错的'。美联储圣路易斯分行与曼昆教材提供了'显性/隐性成本'的权威拆分，EconLearn 的 120/90/40 算例则给出了与本期'500元兼职'几乎同构、且被明确标为'学生最常犯错误'的教学证据。因此本期不新增概念，而是用'周六下午4小时'这一个场景，把观众从'0成本'直觉出发，连续三次修正到'最佳被放弃方案'的正确理解，并用一句可复用的判断动作收尾：下次遇到免费的东西，除了'我要花多少钱'，再问一句'为了它，我放弃了什么'。",
+  "metadata": {
+    "content_category": "finance",
+    "content_category_rationale": "本期含有投资比较段落（3% vs 5% 收益率比较），观众可能将其理解为投资判断参考，故归类为 finance，并在成片结尾保留不可改写的原生合规文案。",
+    "editorial_direction": {
+      "primary_mode": "EXPLAIN",
+      "secondary_mode": null,
+      "classification_confidence": "high",
+      "audience_task": "understand_mechanism",
+      "rationale": [
+        "核心问题是一个稳定的概念性追问（没花钱为什么仍有成本），不依赖公司内部信息、时点行情或政策传导。",
+        "机制（放弃最佳替代方案）与一个清晰的可演算示例（周六4小时）足以回答核心问题，不需要研究资料密度。",
+        "观众的落地障碍是理解误区而非证据缺口，因此优先满足'用一个例子把机制讲明白'的 EXPLAIN 任务。"
+      ],
+      "evidence_priority": [
+        "authoritative_concept_sources",
+        "stable_definitions",
+        "worked_example"
+      ],
+      "visual_priority": [
+        "text_diagram",
+        "comparison_via_data_scenes",
+        "simple_chart"
+      ],
+      "canvas_preference": [
+        "paper",
+        "margin-note"
+      ],
+      "density_profile": {
+        "opening": "sparse",
+        "body": "standard",
+        "evidence": "standard",
+        "ending": "sparse"
+      },
+      "hook_grammar": "CONTRADICTION",
+      "ending_grammar": "REUSABLE_METHOD",
+      "key_editorial_risk": "不要把机会成本讲成'休息就是浪费'的价值判断；必须在第三次反转明确'有机会成本不等于这个选择是错的'。",
+      "key_anti_pattern": "不要为稳定概念强行套上机构研究密度、ThesisBreaker 或 ScenarioBoard。"
+    },
+    "claim_classes": {
+      "FACT": [
+        "机会成本的定义是所放弃的次优替代方案的价值（data_points[0]）",
+        "机会成本只取单个次优方案，不是所有被放弃选项之和（data_points[2]）",
+        "机会成本不限于货币成本，也包括时间、精力、愉悦等（data_points[3]）"
+      ],
+      "INFERENCE": [
+        "把'休息'的价值与'兼职净价值'比较，可以判断哪个选择对当事人更好（data_points[6]）"
+      ],
+      "THESIS": [
+        "对普通观众而言，机会成本的价值在于提供一个'我放弃了什么'的追问动作，而不是一个可加总的价格标签"
+      ],
+      "SCENARIO": [
+        "假设周六下午4小时只能用于休息/拍视频/兼职/健身四者之一，且兼职净价值约500元（本期设定的演示算例，非真实收入数据）"
+      ]
+    }
+  }
+}

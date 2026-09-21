@@ -1,0 +1,42 @@
+{
+ "version": "1.0",
+ "outputs": [
+  {
+   "path": "projects/etf-100k-four-fund-race/renders/final.mp4",
+   "format": "mp4",
+   "codec": "h264",
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "duration_seconds": 99.0,
+   "file_size_bytes": 12331555,
+   "platform_target": "douyin"
+  }
+ ],
+ "render_grammar": "explainer-data",
+ "warnings": [
+  "渲染器默认输出附带一条空的 AAC 音轨，与设计声明（音轨数 0）不符，已在后处理中用 -an 无损剥离。",
+  "video_compose 自带的 final_review 对本片报 status=revise（原因为静音与缺少转写）。两条均为本片交付目标下的预期现象，已在 final_review.metadata.tool_findings_reconciliation 逐条核对。"
+ ],
+ "verification_notes": [
+  "ffprobe: 1080x1920 @ 30.00fps, duration 99.000s, codec=h264, frames=2970, audio streams=0, subtitle streams=0",
+  "首帧墨迹(<120) = 1.71%，亮部(>200) = 97.85%",
+  "抽检 15 帧；最低墨迹(<190) = 0.84%",
+  "可读文字最低行（全帧最大）= 1372（上限 1400）",
+  "可读文字横向范围 = 93..985（允许 96..984）",
+  "赛跑窗口 1 秒逐帧变化 = 1.18% 像素",
+  "合规页脚带墨迹 = 9.47%",
+  "完整解码：`ffmpeg -v error -i final.mp4 -f null -` 零错误输出。"
+ ],
+ "slideshow_risk_score": {
+  "average": 0.18,
+  "verdict": "strong"
+ },
+ "decision_log_ref": "projects/etf-100k-four-fund-race/artifacts/decision_log.json",
+ "final_review_ref": "projects/etf-100k-four-fund-race/artifacts/final_review.json",
+ "metadata": {
+  "content_category": "finance",
+  "audio_streams": 0,
+  "composition_mode": "atelier",
+  "frame_count": 2970
+ }
+}

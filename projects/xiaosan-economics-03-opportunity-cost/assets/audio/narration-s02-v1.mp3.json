@@ -1,0 +1,517 @@
+{
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/unidirectional",
+  "api_mode": "unidirectional",
+  "request_id": "6faf4121-df03-4693-884b-579b5afe2b9a",
+  "log_id": "20260921095237071451C49B035C395689",
+  "request": {
+    "headers": {
+      "X-Api-Resource-Id": "seed-tts-2.0",
+      "X-Api-Request-Id": "6faf4121-df03-4693-884b-579b5afe2b9a",
+      "Content-Type": "application/json",
+      "X-Control-Require-Usage-Tokens-Return": "*",
+      "Connection": "keep-alive"
+    },
+    "body": {
+      "req_params": {
+        "text": "按我们平时理解“成本”的方式，好像确实是这样。没买东西。没打车。没出去吃饭。银行卡一分钱都没少。怎么看都是0成本。",
+        "speaker": "zh_male_dayi_uranus_bigtts",
+        "additions": "{\"disable_markdown_filter\": false, \"disable_emoji_filter\": false, \"enable_latex_tn\": true}",
+        "audio_params": {
+          "format": "mp3",
+          "sample_rate": 24000,
+          "speech_rate": 0,
+          "enable_subtitle": true
+        }
+      }
+    }
+  },
+  "response_events": [
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3388
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1024
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 7424
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1536
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6912
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 512
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 7936
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "按我们平时理解“成本”的方式，好像确实是这样。",
+        "words": [
+          {
+            "confidence": 0.586489,
+            "endTime": 0.185,
+            "startTime": 0.155,
+            "word": "按"
+          },
+          {
+            "confidence": 0.9460186,
+            "endTime": 0.285,
+            "startTime": 0.185,
+            "word": "我"
+          },
+          {
+            "confidence": 0.7514767,
+            "endTime": 0.345,
+            "startTime": 0.285,
+            "word": "们"
+          },
+          {
+            "confidence": 0.7047533,
+            "endTime": 0.455,
+            "startTime": 0.345,
+            "word": "平"
+          },
+          {
+            "confidence": 0.7042392,
+            "endTime": 0.515,
+            "startTime": 0.455,
+            "word": "时"
+          },
+          {
+            "confidence": 0.5880471,
+            "endTime": 0.665,
+            "startTime": 0.515,
+            "word": "理"
+          },
+          {
+            "confidence": 0.37616077,
+            "endTime": 0.705,
+            "startTime": 0.665,
+            "word": "解“"
+          },
+          {
+            "confidence": 0.83365345,
+            "endTime": 0.935,
+            "startTime": 0.705,
+            "word": "成"
+          },
+          {
+            "confidence": 0.4224399,
+            "endTime": 0.985,
+            "startTime": 0.935,
+            "word": "本”"
+          },
+          {
+            "confidence": 0.9082488,
+            "endTime": 1.075,
+            "startTime": 0.985,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9800742,
+            "endTime": 1.205,
+            "startTime": 1.075,
+            "word": "方"
+          },
+          {
+            "confidence": 0.9178877,
+            "endTime": 1.395,
+            "startTime": 1.205,
+            "word": "式，"
+          },
+          {
+            "confidence": 0.8479613,
+            "endTime": 1.505,
+            "startTime": 1.395,
+            "word": "好"
+          },
+          {
+            "confidence": 0.48936075,
+            "endTime": 1.565,
+            "startTime": 1.505,
+            "word": "像"
+          },
+          {
+            "confidence": 0.9462963,
+            "endTime": 1.755,
+            "startTime": 1.565,
+            "word": "确"
+          },
+          {
+            "confidence": 0.8762202,
+            "endTime": 1.865,
+            "startTime": 1.755,
+            "word": "实"
+          },
+          {
+            "confidence": 0.79441404,
+            "endTime": 1.955,
+            "startTime": 1.865,
+            "word": "是"
+          },
+          {
+            "confidence": 0.8022933,
+            "endTime": 2.035,
+            "startTime": 1.955,
+            "word": "这"
+          },
+          {
+            "confidence": 0.8364244,
+            "endTime": 2.115,
+            "startTime": 2.035,
+            "word": "样。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 256
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 8448
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "没买东西。",
+        "words": [
+          {
+            "confidence": 0.8134795,
+            "endTime": 2.8650415,
+            "startTime": 2.7250416,
+            "word": "没"
+          },
+          {
+            "confidence": 0.92002875,
+            "endTime": 2.9950416,
+            "startTime": 2.8650415,
+            "word": "买"
+          },
+          {
+            "confidence": 0.976532,
+            "endTime": 3.1450415,
+            "startTime": 2.9950416,
+            "word": "东"
+          },
+          {
+            "confidence": 0.53909546,
+            "endTime": 3.2850416,
+            "startTime": 3.1450415,
+            "word": "西。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "没打车。",
+        "words": [
+          {
+            "confidence": 0.85864955,
+            "endTime": 4.045083,
+            "startTime": 3.8950832,
+            "word": "没"
+          },
+          {
+            "confidence": 0.9129307,
+            "endTime": 4.175083,
+            "startTime": 4.045083,
+            "word": "打"
+          },
+          {
+            "confidence": 0.97425836,
+            "endTime": 4.5150833,
+            "startTime": 4.175083,
+            "word": "车。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 2304
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6400
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "没出去吃饭。",
+        "words": [
+          {
+            "confidence": 0.60870206,
+            "endTime": 5.0751247,
+            "startTime": 4.975125,
+            "word": "没"
+          },
+          {
+            "confidence": 0.791595,
+            "endTime": 5.205125,
+            "startTime": 5.0751247,
+            "word": "出"
+          },
+          {
+            "confidence": 0.42182145,
+            "endTime": 5.265125,
+            "startTime": 5.205125,
+            "word": "去"
+          },
+          {
+            "confidence": 0.8475959,
+            "endTime": 5.4051247,
+            "startTime": 5.265125,
+            "word": "吃"
+          },
+          {
+            "confidence": 0.97880733,
+            "endTime": 5.665125,
+            "startTime": 5.4051247,
+            "word": "饭。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1280
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6912
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "按我们平时理解“成本”的方式，好像确实是这样。没买东西。没打车。没出去吃饭。银行卡一分钱都没少。怎么看都是0成本。",
+        "words": []
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "银行卡一分钱都没少。",
+        "words": [
+          {
+            "confidence": 0.49711072,
+            "endTime": 6.2751665,
+            "startTime": 6.2451663,
+            "word": "银"
+          },
+          {
+            "confidence": 0.8249742,
+            "endTime": 6.425166,
+            "startTime": 6.2751665,
+            "word": "行"
+          },
+          {
+            "confidence": 0.92844474,
+            "endTime": 6.6451664,
+            "startTime": 6.425166,
+            "word": "卡"
+          },
+          {
+            "confidence": 0.823843,
+            "endTime": 6.7551665,
+            "startTime": 6.6451664,
+            "word": "一"
+          },
+          {
+            "confidence": 0.9422294,
+            "endTime": 6.885166,
+            "startTime": 6.7551665,
+            "word": "分"
+          },
+          {
+            "confidence": 0.903955,
+            "endTime": 6.9951663,
+            "startTime": 6.885166,
+            "word": "钱"
+          },
+          {
+            "confidence": 0.9302669,
+            "endTime": 7.0851665,
+            "startTime": 6.9951663,
+            "word": "都"
+          },
+          {
+            "confidence": 0.95791674,
+            "endTime": 7.1951666,
+            "startTime": 7.0851665,
+            "word": "没"
+          },
+          {
+            "confidence": 0.93769616,
+            "endTime": 7.4551663,
+            "startTime": 7.1951666,
+            "word": "少。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "怎么看都是零成本。",
+        "words": [
+          {
+            "confidence": 0.928833,
+            "endTime": 8.035208,
+            "startTime": 7.905208,
+            "word": "怎"
+          },
+          {
+            "confidence": 0.96226746,
+            "endTime": 8.135208,
+            "startTime": 8.035208,
+            "word": "么"
+          },
+          {
+            "confidence": 0.9762045,
+            "endTime": 8.305208,
+            "startTime": 8.135208,
+            "word": "看"
+          },
+          {
+            "confidence": 0.8032599,
+            "endTime": 8.415208,
+            "startTime": 8.305208,
+            "word": "都"
+          },
+          {
+            "confidence": 0.91926265,
+            "endTime": 8.535208,
+            "startTime": 8.415208,
+            "word": "是"
+          },
+          {
+            "confidence": 0.9325514,
+            "endTime": 8.655209,
+            "startTime": 8.535208,
+            "word": "零"
+          },
+          {
+            "confidence": 0.9074375,
+            "endTime": 8.795208,
+            "startTime": 8.655209,
+            "word": "成"
+          },
+          {
+            "confidence": 0.7954632,
+            "endTime": 8.915208,
+            "startTime": 8.795208,
+            "word": "本。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 20000000,
+      "message": "OK",
+      "usage": {
+        "text_words": 57
+      }
+    }
+  ],
+  "usage": {
+    "text_words": 57
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "entries": [
+    {
+      "platform": "douyin",
+      "status": "exported",
+      "export_path": "projects/xiaosan-economics-03-opportunity-cost/deliverables/publish",
+      "visibility": "private",
+      "timestamp": "2026-09-21T10:55:00+08:00",
+      "metadata_used": {
+        "title": "周末躺一天，一分钱没花，成本真的是0吗？｜小散经济学 03",
+        "tags": [
+          "机会成本",
+          "经济学思维",
+          "小散经济学",
+          "周末躺一天",
+          "成本",
+          "投资思维",
+          "决策",
+          "免费不等于没有成本"
+        ],
+        "cover": "images/cover.png",
+        "chapters": [
+          {
+            "section_id": "s01",
+            "title": "01 开场｜没花钱是不是就没成本",
+            "start_seconds": 0.0,
+            "timestamp": "00:00"
+          },
+          {
+            "section_id": "s02",
+            "title": "02 强化直觉｜为什么大家觉得成本是0",
+            "start_seconds": 4.886,
+            "timestamp": "00:04"
+          },
+          {
+            "section_id": "s03",
+            "title": "03 第一次反转｜经济学为什么不只看花了多少钱",
+            "start_seconds": 15.542,
+            "timestamp": "00:15"
+          },
+          {
+            "section_id": "s04",
+            "title": "04 核心场景｜4小时能怎么用",
+            "start_seconds": 24.466,
+            "timestamp": "00:24"
+          },
+          {
+            "section_id": "s05",
+            "title": "05 核心揭晓｜什么才是机会成本",
+            "start_seconds": 42.13,
+            "timestamp": "00:42"
+          },
+          {
+            "section_id": "s06",
+            "title": "06 第二次反转｜是不是所有没选的都加起来",
+            "start_seconds": 66.01,
+            "timestamp": "01:06"
+          },
+          {
+            "section_id": "s07",
+            "title": "07 第三次反转｜那休息是不是亏了",
+            "start_seconds": 98.266,
+            "timestamp": "01:38"
+          },
+          {
+            "section_id": "s08",
+            "title": "08 补充认知｜成本是不是一定是钱",
+            "start_seconds": 139.138,
+            "timestamp": "02:19"
+          },
+          {
+            "section_id": "s09",
+            "title": "09 投资连接｜机会成本和投资有什么关系",
+            "start_seconds": 172.218,
+            "timestamp": "02:52"
+          },
+          {
+            "section_id": "s10",
+            "title": "10 收束｜留下现实思考",
+            "start_seconds": 202.974,
+            "timestamp": "03:22"
+          }
+        ],
+        "subtitles": "subtitles.srt"
+      }
+    }
+  ],
+  "metadata": {
+    "content_category": "finance",
+    "manual_publish_required": true,
+    "published_by_agent": false,
+    "note": "仅生成本地交付包；未登录、未上传、未在平台创建草稿。发布由人工完成。",
+    "cover_handoff": {
+      "path": "images/cover.png",
+      "ratio": "3:4",
+      "source": "projects/xiaosan-economics-03-opportunity-cost/assets/images/cover.png"
+    },
+    "compliance": {
+      "content_category": "finance",
+      "financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "publishing_rule": "标题与简介保持提问式，不把机会成本说成确定的投资结论，也不做绝对化承诺。"
+    },
+    "bundle_files": [
+      "final.mp4",
+      "images/cover.png",
+      "manifest.json",
+      "metadata.json",
+      "sources.md",
+      "subtitles.srt",
+      "发布文案.md"
+    ]
+  }
+}

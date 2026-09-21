@@ -1,0 +1,544 @@
+{
+  "version": "1.0",
+  "content_category": "finance",
+  "concept_options": [
+    {
+      "id": "c1",
+      "title": "周末躺一天，一分钱没花，成本真的是0吗？",
+      "hook": "周末在家躺一天，一分钱没花——这一天的成本，是不是0？",
+      "narrative_structure": "myth_busting",
+      "visual_approach": "沿用系列已批准的纸张质感；开场用真实生活素材把'躺一天'落到观众自己的周六，随后全程围绕'周六下午4小时'这一个选择集合展开：四张选项纸卡 → 休息被选中、其余变暗 → 最佳被放弃方案重新高亮 → 机会成本知识卡停留 → 多选项逐个熄灭澄清'不是相加' → '成本≠错误'纠偏卡 → 免费咖啡排队两小时（真实动态）→ 3% vs 5% 投资比较 → 核心公式卡 → 结尾追问卡并以原生footer承载合规文案。 ｜ 叙事结构：问题 → 直觉答案 → 第一次反转 → 继续追问 → 第二次反转 → 核心概念 → 防误解 → 收束。",
+      "suggested_playbook": "finance-dossier + xiaosan-tactile-research-paper",
+      "target_audience": "关注投资、但希望建立基础经济学判断框架的普通观众；听过'机会成本'这个词，却不会用在自己身上",
+      "target_platform": "generic",
+      "target_duration_seconds": 215,
+      "key_points": [
+        "没花钱不等于没成本：成本不只看现金支出。",
+        "机会成本看的是被放弃的最佳替代方案，不是所有没做的事情相加。",
+        "机会成本不要求把所有东西换算成钱，被放弃的可能是时间、精力、陪伴或一次学习机会。",
+        "有机会成本，不等于这个选择是错的——它只回答'你放弃了什么'，不替你判断值不值得。",
+        "免费不等于没有成本：一杯不要钱的咖啡，可能要用两个小时来换。"
+      ],
+      "core_message": "判断一个选择，不能只看它给了你什么，还要看为了它你放弃了什么。",
+      "cta": "下次遇到一件'免费'的事，除了问'我要花多少钱'，再多问一句'为了它，我放弃了什么'。",
+      "tone": "老朋友观察型；克制、口语、短句；不寒暄、不介绍栏目、不先给定义",
+      "grounded_in": [
+        "research_brief.data_points[0]",
+        "research_brief.data_points[1]",
+        "research_brief.data_points[2]",
+        "research_brief.data_points[4]",
+        "research_brief.audience_insights.misconceptions[0]",
+        "research_brief.audience_insights.misconceptions[1]",
+        "research_brief.audience_insights.misconceptions[2]"
+      ],
+      "why_this_works": "完全按用户提供的内容规划执行：第一秒直接进入问题、一期只追一个问题、并在同一条主线上完成三次认知修正。它同时解决上一期暴露的两个问题——开头不够尖锐，以及中后段横向案例过多导致的节奏拖沓。"
+    },
+    {
+      "id": "c2",
+      "title": "你先花掉了500块，然后才发现自己什么都没买",
+      "hook": "如果我说，你这个周末其实花掉了500块钱，你信吗？",
+      "narrative_structure": "data_narrative",
+      "visual_approach": "开场先直接抛出'500元'这个数字制造违和感，再用一张'隐形支出账单'把它拆开——账单上没有一条是真实付款，全部是被放弃的方案。 ｜ 叙事结构：数字冲击 → 反直觉解释 → 机制补课 → 边界澄清。",
+      "suggested_playbook": "finance-dossier + xiaosan-tactile-research-paper",
+      "target_audience": "对'钱'更敏感的观众，投资内容熟悉度较高",
+      "target_platform": "generic",
+      "target_duration_seconds": 200,
+      "key_points": [
+        "被放弃的方案会以'隐性成本'的形式出现在你的决策里。",
+        "但隐性成本不是一笔可以从账户里查到的钱。",
+        "把所有放弃项相加会得到一个虚高的数字，这不是机会成本。"
+      ],
+      "core_message": "最贵的支出，往往不会出现在你的账单上。",
+      "cta": "看看你最近一次'没花钱'的决定，账单之外还有什么。",
+      "tone": "更快的节奏，更强的钩子，但同样克制",
+      "grounded_in": [
+        "research_brief.data_points[1]",
+        "research_brief.data_points[2]",
+        "research_brief.audience_insights.misconceptions[0]"
+      ],
+      "why_this_works": "数字冲击在2秒内更抓人，但风险是把机会成本暗示成一笔真实存在的账目，容易强化'货币化'误解，需要在片中额外花时间纠正。"
+    },
+    {
+      "id": "c3",
+      "title": "商场送你的那杯免费咖啡，可能是你今年喝过最贵的一杯",
+      "hook": "咖啡不要钱，但要排队两个小时——那两个小时，是免费的吗？",
+      "narrative_structure": "story",
+      "visual_approach": "从一条真实排队队伍切入，用时间流逝把'两小时'变成体感，再回推到'休息4小时'这个更大的场景。 ｜ 叙事结构：具体案例悬念 → 时间成本揭晓 → 泛化到休息与选择 → 机制与边界。",
+      "suggested_playbook": "finance-dossier + xiaosan-tactile-research-paper",
+      "target_audience": "对生活消费场景敏感的观众",
+      "target_platform": "generic",
+      "target_duration_seconds": 200,
+      "key_points": [
+        "免费的是价格，不是成本。",
+        "时间被放弃时，它的价值没有消失，只是没有被记账。",
+        "机会成本可以完全不涉及金钱。"
+      ],
+      "core_message": "免费和没有成本，是两回事。",
+      "cta": "下次看到'免费'，先问一句它要你付出什么。",
+      "tone": "场景先行，故事感略强",
+      "grounded_in": [
+        "research_brief.data_points[1]",
+        "research_brief.data_points[3]",
+        "research_brief.data_points[4]"
+      ],
+      "why_this_works": "案例小、记忆点强；但'免费咖啡'与本期主线'躺一天没花钱'之间需要一次额外转场，开头与核心场景的贴合度不如 c1。"
+    },
+    {
+      "id": "c4",
+      "title": "如果今天你不得不做点什么，你最可能去做什么？",
+      "hook": "先别急着算成本。如果今天你不能躺着，你最可能去做什么？",
+      "narrative_structure": "journey",
+      "visual_approach": "开场直接向观众抛出一个需要自己回答的问题，让答案由观众产生，再把这个答案命名为机会成本。 ｜ 叙事结构：提问开场 → 观众自答 → 用自答定义机会成本 → 反转与澄清。",
+      "suggested_playbook": "finance-dossier + xiaosan-tactile-research-paper",
+      "target_audience": "愿意参与思考、互动意愿更强的观众",
+      "target_platform": "generic",
+      "target_duration_seconds": 195,
+      "key_points": [
+        "机会成本的定义可以由观众自己的答案推导出来。",
+        "每个人的最佳替代方案不同，所以机会成本是主观的。"
+      ],
+      "core_message": "机会成本不是一个外部给你的数字，而是你自己给出的答案。",
+      "cta": "把你刚才想到的那件事，和你的选择放在一起比较。",
+      "tone": "互动感强，但缺少具体画面锚点",
+      "grounded_in": [
+        "research_brief.data_points[0]",
+        "research_brief.data_points[6]",
+        "research_brief.audience_insights.common_questions[2]"
+      ],
+      "why_this_works": "参与感最强，但抽象开场，2秒留存风险高于 c1，且与规划中'沙发/0元/成本=0？'的三画面快闪设计不兼容。"
+    }
+  ],
+  "selected_concept": {
+    "concept_id": "c1",
+    "rationale": "用户已提供完整内容规划，c1 即规划本身的表达结构，并被要求严格据此执行。c1 也是四个方向中唯一同时满足'第一秒进入问题''一期只追一个问题''三次认知修正完整'的选择，且开头与核心场景（周六下午4小时）完全同源。",
+    "modifications": [
+      "严格采用规划第22节的完整推荐口播作为最终旁白，不做删改；仅按语义边界切分为脚本 section。",
+      "视觉沿用系列已批准的纸张质感参数（基纸 #F4F1E8、石墨文字、朱红批注、深青结构线），但不复用上一期的四小时纸尺装置——本期改用'四张选项纸卡 + 熄灭/高亮'的新装置，避免系列一致性退化为模板感。",
+      "按规划要求不铺设整段口播字幕，只保留分层短句大字 + 关键词强调。"
+    ]
+  },
+  "production_plan": {
+    "pipeline": "finance-dossier",
+    "playbook": "finance-dossier",
+    "renderer_family": "explainer-data",
+    "render_runtime": "remotion",
+    "composition_mode": "atelier",
+    "delivery_promise": {
+      "promise_type": "data_explainer",
+      "motion_required": true,
+      "source_required": false,
+      "tone_mode": "educational",
+      "quality_floor": "presentable",
+      "approved_fallback": null
+    },
+    "art_direction": "projects/xiaosan-economics-03-opportunity-cost/art-direction-tactile-paper-v2.md（中性象牙白 #F4F1E8 基纸、石墨文字、朱红批注、深青结构线；标志装置为四张选项纸卡的选中/变暗/重新高亮与逐个熄灭；纹理固定 seed 不逐帧随机；禁止大面积纯黄、咖啡渍做旧、全局强噪点、每段都套卡片、过重阴影）",
+    "taste_profile": {
+      "design_read": "触感研究纸上的经济学拆解——克制、可触摸、无课堂感；观众应感觉像有人把一张纸推到自己面前，把那个周六下午一层层摊开。",
+      "visual_variance": 6,
+      "motion_intensity": 5,
+      "information_density": 4,
+      "palette_discipline": "仅四色：象牙白基纸 #F4F1E8、石墨文字、朱红批注（反转与纠偏）、深青结构线（关系与箭头）。不引入第五种强调色。",
+      "layout_variation": "每个场景重新构图，但共享同一套纸片层级与暗边规则；禁止连续三个场景使用同一版式。",
+      "reference_strategy": "继承第02期纸张材质参数，但不复用其四小时纸尺装置；本期使用全新的四张选项纸卡装置。",
+      "anti_patterns": [
+        "黄底PPT卡片拼接",
+        "满屏口播字幕",
+        "课堂式\"首先其次最后\"",
+        "数字堆砌",
+        "金币/钞票/K线等泛金融空镜"
+      ],
+      "quality_gates": [
+        "中文排版零错字、零裁切",
+        "数字与定义文字逐帧可读",
+        "竖屏字幕安全区（距底520px、距侧96px）不被遮挡",
+        "结尾合规文案原生、完整、可读"
+      ]
+    },
+    "voice_selection": {
+      "provider": "doubao",
+      "voice_id": "zh_male_dayi_uranus_bigtts",
+      "voice_name": "大壹 2.0",
+      "resource_id": "seed-tts-2.0",
+      "speech_rate": 0,
+      "generation_mode": "segmented",
+      "inherited_from_defaults": true,
+      "rationale": "继承用户持久配音默认（config.yaml narration_defaults）。",
+      "delivery_style": "平静、克制的老朋友观察型；不寒暄、不介绍栏目、不先给定义。",
+      "pacing_policy": "短句为主，句间留自然停顿；三次反转前各留一处明显停顿；纠偏句\"有机会成本，不等于不应该做\"加重但不提高音量。",
+      "sample_approval_required": true,
+      "estimated_cost_usd": 0.06
+    },
+    "music_source": {
+      "source_type": "none",
+      "inherited_from_defaults": true
+    },
+    "decision_log_ref": "projects/xiaosan-economics-03-opportunity-cost/artifacts/decision_log.json",
+    "provider_rankings": {
+      "tts": [
+        {
+          "tool_name": "tts_selector",
+          "provider": "doubao",
+          "weighted_score": 0.95,
+          "task_fit": 0.96,
+          "output_quality": 0.93,
+          "explanation": "持久默认，普通话自然并支持时间戳对齐；1/7 configured。"
+        }
+      ],
+      "video": [
+        {
+          "tool_name": "pexels",
+          "provider": "pexels",
+          "weighted_score": 0.88,
+          "task_fit": 0.9,
+          "output_quality": 0.86,
+          "explanation": "真实生活场景素材，零成本；适合开场躺卧与排队两个体感节点。"
+        },
+        {
+          "tool_name": "pixabay",
+          "provider": "pixabay",
+          "weighted_score": 0.85,
+          "task_fit": 0.88,
+          "output_quality": 0.84,
+          "explanation": "作为 pexels 的备用素材源；2/22 configured。"
+        }
+      ],
+      "image": [
+        {
+          "tool_name": "host_image_generation",
+          "provider": "host",
+          "weighted_score": 0.9,
+          "task_fit": 0.92,
+          "output_quality": 0.9,
+          "explanation": "仅用于封面阶段；中文与数字由本地确定性排版叠加。"
+        }
+      ],
+      "music": [
+        {
+          "tool_name": "none",
+          "provider": "none",
+          "weighted_score": 0.9,
+          "task_fit": 1.0,
+          "output_quality": 1.0,
+          "explanation": "应用持久无BGM默认（music_generation 0/3 configured）。"
+        }
+      ]
+    },
+    "stages": [
+      {
+        "stage": "research",
+        "tools": [],
+        "approach": "已用权威概念资料（美联储圣路易斯分行、曼昆《经济学原理》）与教学算例核实定义边界；已完成。"
+      },
+      {
+        "stage": "proposal",
+        "tools": [],
+        "approach": "锁定叙事、运行时、创作模式、动态覆盖、配音、音乐与预算；当前等待审批。"
+      },
+      {
+        "stage": "script",
+        "tools": [],
+        "approach": "严格采用规划第22节完整口播，按语义切分为约 215 秒的分段旁白，并写入配音表演提示。"
+      },
+      {
+        "stage": "scene_plan",
+        "tools": [],
+        "approach": "按规划第5节11个段落与第18节节奏（快→慢→停→快→慢→收）切场；精确信息、语义动态与装饰素材分别标记。"
+      },
+      {
+        "stage": "assets",
+        "tools": [
+          {
+            "tool_name": "tts_selector",
+            "role": "分段生成普通话旁白与时间戳",
+            "provider": "doubao",
+            "available": true,
+            "estimated_cost_usd": 0.06,
+            "why_this_provider": "继承用户默认的大壹 2.0，中文自然且支持字幕对齐。"
+          },
+          {
+            "tool_name": "pexels/pixabay",
+            "role": "为开场'躺一天'与'免费咖啡排队两小时'两个节点提供真实生活动态素材",
+            "provider": "stock",
+            "available": true,
+            "estimated_cost_usd": 0,
+            "why_this_provider": "真实运动比生成素材更可信，且零成本。"
+          }
+        ],
+        "approach": "先审豆包样音；素材仅用于两个能贡献真实体感与空间尺度的节点。",
+        "fallback_if_unavailable": "不自动换配音、不删除动态节点；回到审批并呈现替代方案。"
+      },
+      {
+        "stage": "edit",
+        "tools": [],
+        "approach": "锁定画面、旁白、竖屏社交字幕安全区（距底520px、距侧96px）与结尾原生合规footer。"
+      },
+      {
+        "stage": "compose",
+        "tools": [
+          {
+            "tool_name": "video_compose",
+            "role": "渲染项目本地手写 Remotion Atelier 合成",
+            "provider": "local",
+            "available": true,
+            "estimated_cost_usd": 0,
+            "why_this_provider": "能稳定实现纸张材质、纸卡让位动效、中文排版与确定性时间轴。"
+          },
+          {
+            "tool_name": "audio_mixer",
+            "role": "混合旁白并保持无背景音乐",
+            "provider": "ffmpeg",
+            "available": true,
+            "estimated_cost_usd": 0,
+            "why_this_provider": "本地确定性处理，避免生成无意义音轨。"
+          }
+        ],
+        "approach": "1080×1920、30fps；先逐场景快照审批，再渲染完整成片并做抽帧与合规校验。",
+        "fallback_if_unavailable": "禁止静默切换 HyperFrames 或 FFmpeg；先请求用户批准。"
+      },
+      {
+        "stage": "cover",
+        "tools": [
+          {
+            "tool_name": "host_image_generation",
+            "role": "生成封面核心视觉，中文字与角标由本地确定性排版添加",
+            "provider": "host",
+            "available": true,
+            "estimated_cost_usd": 0.03,
+            "why_this_provider": "符合封面策略，并避免 AI 生成中文出错。"
+          }
+        ],
+        "approach": "成片完成后再生成真实封面，并按规划封面原则单独审批：只卖问题不卖术语。"
+      },
+      {
+        "stage": "publish",
+        "tools": [
+          {
+            "tool_name": "export_bundle",
+            "role": "打包本地成片、封面、来源与发布文案",
+            "provider": "local",
+            "available": true,
+            "estimated_cost_usd": 0,
+            "why_this_provider": "保持本地交付，不执行远程发布。"
+          }
+        ],
+        "approach": "生成本地发布包并等待最终确认。"
+      }
+    ],
+    "quality_tradeoffs": [
+      {
+        "tradeoff": "Remotion 与 HyperFrames",
+        "recommendation": "Remotion",
+        "quality_impact": "Remotion 对纸张材质、中文排版和确定性时间轴更稳；HyperFrames 的排版动势更强，但本期大量画面是精确的卡片关系与数字，确定性优先。"
+      },
+      {
+        "tradeoff": "Atelier 与模板化",
+        "recommendation": "Atelier",
+        "quality_impact": "Atelier 需要更多编排与审片时间，但能避免回到黄底卡片模板，也避免系列一致性变成模板感。"
+      },
+      {
+        "tradeoff": "轻混合与纯合成",
+        "recommendation": "轻混合",
+        "quality_impact": "两个现实动态节点让'躺一天'和'排队两小时'变成体感；所有精确信息与数字仍由原生动画承担。"
+      },
+      {
+        "tradeoff": "完整口播与压缩时长",
+        "recommendation": "完整口播",
+        "quality_impact": "规划要求以表达完整为优先而非强行限时；完整口播约 996 个汉字，对应约 215 秒，比压缩版长约 30-40 秒，但保留三次认知修正的完整链条。"
+      }
+    ],
+    "alternative_paths": [
+      {
+        "description": "Remotion 模板化纯合成（无库存动态素材）",
+        "total_cost_usd": 0.06,
+        "quality_level": "standard",
+        "what_changes": "更快、更稳定，但开场'躺一天'与'排队两小时'失去真实体感，2秒留存的设计意图会被削弱。"
+      },
+      {
+        "description": "HyperFrames 排版优先方案",
+        "total_cost_usd": 0.06,
+        "quality_level": "standard",
+        "what_changes": "排版动势更强，但精确卡片关系与数字图层需要额外验证，且中文竖屏字幕安全区需显式实现。"
+      },
+      {
+        "description": "FFmpeg 纯剪辑拼接",
+        "total_cost_usd": 0.06,
+        "quality_level": "budget",
+        "what_changes": "无法实现纸卡让位与高亮动效，会退化为静帧拼接，不满足本期 motion_required=true 的交付承诺。"
+      }
+    ]
+  },
+  "cost_estimate": {
+    "total_estimated_usd": 0.09,
+    "line_items": [
+      {
+        "tool": "doubao_tts",
+        "operation": "约 215 秒中文分段旁白与时间戳",
+        "quantity": 1,
+        "estimated_usd": 0.06,
+        "notes": "先生成短样音，用户确认后再批量；最终以供应商 usage 为准。"
+      },
+      {
+        "tool": "pexels/pixabay",
+        "operation": "最多 3 个语义动态镜头",
+        "quantity": 3,
+        "estimated_usd": 0,
+        "notes": "免费库存素材，只在真实体感或空间尺度有信息价值时使用。"
+      },
+      {
+        "tool": "video_compose/audio_mixer",
+        "operation": "本地 Remotion Atelier 渲染与音频混合",
+        "quantity": 1,
+        "estimated_usd": 0,
+        "notes": "本地计算，不计 API 费用。"
+      },
+      {
+        "tool": "host_image_generation",
+        "operation": "成片后生成 1 张封面核心视觉",
+        "quantity": 1,
+        "estimated_usd": 0.03,
+        "notes": "预估占位；中文字、角标与合规文字由本地原生排版添加。"
+      }
+    ],
+    "budget_cap_usd": 2,
+    "budget_verdict": "within_budget",
+    "savings_options": [
+      "若不使用库存动态素材，API 成本不变（素材本身免费），但会降低开头的真实体感。",
+      "封面阶段若该平台不需要封面，可在届时审批点取消。"
+    ]
+  },
+  "approval": {
+    "status": "approved",
+    "user_notes": "用户于 2026-09-21 明确确认：概念 c1、Remotion、Atelier、轻混合、豆包大壹 2.0、无 BGM、约 215 秒完整口播。",
+    "approved_budget_usd": 2
+  },
+  "metadata": {
+    "editorial_direction": {
+      "primary_mode": "EXPLAIN",
+      "secondary_mode": null,
+      "classification_confidence": "high",
+      "audience_task": "understand_mechanism",
+      "rationale": [
+        "核心问题是一个稳定的概念性追问（没花钱为什么仍有成本），不依赖公司内部信息、时点行情或政策传导。",
+        "机制（放弃最佳替代方案）与一个清晰示例（周六4小时）足以回答核心问题，不需要研究资料密度。",
+        "观众的落地障碍是理解误区而非证据缺口，因此优先满足'用一个例子把机制讲明白'的 EXPLAIN 任务。"
+      ],
+      "evidence_priority": [
+        "authoritative_concept_sources",
+        "stable_definitions",
+        "worked_example"
+      ],
+      "visual_priority": [
+        "text_diagram",
+        "comparison_via_data_scenes",
+        "simple_chart"
+      ],
+      "canvas_preference": [
+        "paper",
+        "margin-note"
+      ],
+      "density_profile": {
+        "opening": "sparse",
+        "body": "standard",
+        "evidence": "standard",
+        "ending": "sparse"
+      },
+      "hook_grammar": "CONTRADICTION",
+      "ending_grammar": "REUSABLE_METHOD",
+      "key_editorial_risk": "不要把机会成本讲成'休息就是浪费'的价值判断；第三次反转必须明确'有机会成本不等于这个选择是错的'。",
+      "key_anti_pattern": "不要为稳定概念强行套上机构研究密度、ThesisBreaker 或 ScenarioBoard。"
+    },
+    "capability_status": {
+      "composition": {
+        "ffmpeg": true,
+        "remotion": true,
+        "hyperframes": true
+      },
+      "tts": "1/7 configured: Doubao",
+      "video_generation": "2/22 configured: Pexels, Pixabay",
+      "image_generation_registry": "2/12 configured (stock only); host image generation additionally available",
+      "music_generation": "0/3 configured; persistent no-BGM default applied",
+      "video_post": "9/9 configured",
+      "runtime_warnings": [
+        "comfyui_video: resource_profile 是 ComfyUI 提供方的下限，不代表每个工作流都能装进 8GB 显存；本期不使用该能力。"
+      ],
+      "preflight_verdict": "passed"
+    },
+    "semantic_motion_audit": [
+      {
+        "beat": "开场：周末在家躺一天（沙发/床/手机）",
+        "responsibility": "semantic_motion_candidate",
+        "treatment": "真实生活素材承担'躺一天'的身体经验，让观众在2秒内认出这是自己的周六；'0元''成本=0？'两屏大字由原生图层承担。",
+        "information_contributed": "把抽象提问变成观众已经历过的具体处境，直接服务2秒留存目标。"
+      },
+      {
+        "beat": "周六下午4小时只能使用一次",
+        "responsibility": "semantic_motion_candidate",
+        "treatment": "短促的真实时间流逝素材提供'4小时正在过去'的体感；四张选项卡、'只能使用一次'的约束与全部数字由原生动画承担。",
+        "information_contributed": "让'只能使用一次'从一句话变成可感知的紧迫性，支撑后续'互斥选项'的推理前提。"
+      },
+      {
+        "beat": "免费咖啡排队两小时",
+        "responsibility": "semantic_motion_candidate",
+        "treatment": "真实排队素材让'两小时'可被体感；咖啡0元与时间成本的对比数字由原生图层承担。",
+        "information_contributed": "提供'免费≠没有成本'的具身证据，比纯卡片更有说服力。"
+      },
+      {
+        "beat": "银行卡0支出流水",
+        "responsibility": "precision_critical",
+        "treatment": "原生排版的0支出账单，确定性呈现'没买东西/没打车/没出去吃饭/银行卡一分钱都没少'。"
+      },
+      {
+        "beat": "A/B/C/D 四张选项卡与最佳被放弃方案高亮",
+        "responsibility": "precision_critical",
+        "treatment": "Remotion 手写纸卡让位与高亮动画；选中态、变暗态、重新高亮态必须精确对应旁白。"
+      },
+      {
+        "beat": "机会成本知识卡（≠花出去的钱 / = 最佳替代方案的价值）",
+        "responsibility": "precision_critical",
+        "treatment": "原生大字知识卡，单独停留一屏，确保定义文字零歧义。"
+      },
+      {
+        "beat": "多选项逐个熄灭（不是相加）",
+        "responsibility": "precision_critical",
+        "treatment": "确定性熄灭动画，配合算术式被划掉的视觉否定。"
+      },
+      {
+        "beat": "成本≠错误选择 纠偏卡",
+        "responsibility": "precision_critical",
+        "treatment": "朱红批注式纠偏卡，与'有机会成本，不等于不应该做'同步。"
+      },
+      {
+        "beat": "3% vs 5% 投资比较",
+        "responsibility": "precision_critical",
+        "treatment": "原生确定性比较图，带'风险/流动性/限制相当'的前提标注与'不能只拿收益率机械比较'的限定。"
+      },
+      {
+        "beat": "核心公式卡与结尾追问卡",
+        "responsibility": "precision_critical",
+        "treatment": "原生排版；结尾卡同时以原生 footer 承载合规文案。"
+      },
+      {
+        "beat": "金币飘落、K线、握手、服务器机房等泛金融空镜",
+        "responsibility": "decorative_only",
+        "treatment": "拒绝使用"
+      }
+    ],
+    "motion_commitment_summary": "选定 light-hybrid：3 个语义动态节点由真实素材承担，其余 10 个 beat 全部由确定性合成承担。不存在'本期完全不需要动态素材'的结论，因为开场与'排队两小时'两处的体感无法由排版单独建立。",
+    "compliance": {
+      "content_category": "finance",
+      "exact_text": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "presentation": "native_footer_on_final_meaningful_scene",
+      "carried_through": [
+        "script.metadata.compliance",
+        "scene_plan.metadata.compliance",
+        "edit_decisions.metadata.compliance"
+      ]
+    },
+    "duration_estimate": {
+      "nagration_han_chars": 996,
+      "chars_per_second_basis": 4.79,
+      "basis_note": "依据第02期成片实测语速（1541 汉字 / 321.768 秒）推算。",
+      "estimated_seconds": 215
+    }
+  }
+}

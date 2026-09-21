@@ -1,0 +1,1151 @@
+{
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/unidirectional",
+  "api_mode": "unidirectional",
+  "request_id": "25b0ea57-59e9-4f79-a151-458835e1d5f3",
+  "log_id": "2026092109522349FA4084A2A2AA36C2AE",
+  "request": {
+    "headers": {
+      "X-Api-Resource-Id": "seed-tts-2.0",
+      "X-Api-Request-Id": "25b0ea57-59e9-4f79-a151-458835e1d5f3",
+      "Content-Type": "application/json",
+      "X-Control-Require-Usage-Tokens-Return": "*",
+      "Connection": "keep-alive"
+    },
+    "body": {
+      "req_params": {
+        "text": "但经济学会继续问：如果你没有选择休息，你最可能去做的那件事是什么？假设你认真想了一下。如果不休息，你大概率会去接一个兼职。那个兼职对你的净价值，大概是500块钱。那你选择休息的时候，虽然没有真的掏出500块钱，但你确实放弃了一个价值大概500块钱的替代方案。这就是机会成本。",
+        "speaker": "zh_male_dayi_uranus_bigtts",
+        "additions": "{\"disable_markdown_filter\": false, \"disable_emoji_filter\": false, \"enable_latex_tn\": true}",
+        "audio_params": {
+          "format": "mp3",
+          "sample_rate": 24000,
+          "speech_rate": 0,
+          "enable_subtitle": true
+        }
+      }
+    }
+  },
+  "response_events": [
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3132
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4608
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3840
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4608
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "但经济学会继续问：如果你没有选择休息，",
+        "words": [
+          {
+            "confidence": 0.81777996,
+            "endTime": 0.405,
+            "startTime": 0.235,
+            "word": "但"
+          },
+          {
+            "confidence": 0.9265292,
+            "endTime": 0.575,
+            "startTime": 0.405,
+            "word": "经"
+          },
+          {
+            "confidence": 0.9221792,
+            "endTime": 0.695,
+            "startTime": 0.575,
+            "word": "济"
+          },
+          {
+            "confidence": 0.95848435,
+            "endTime": 0.855,
+            "startTime": 0.695,
+            "word": "学"
+          },
+          {
+            "confidence": 0.97311187,
+            "endTime": 1.015,
+            "startTime": 0.855,
+            "word": "会"
+          },
+          {
+            "confidence": 0.94127536,
+            "endTime": 1.185,
+            "startTime": 1.015,
+            "word": "继"
+          },
+          {
+            "confidence": 0.80231863,
+            "endTime": 1.385,
+            "startTime": 1.185,
+            "word": "续"
+          },
+          {
+            "confidence": 0.2809537,
+            "endTime": 1.415,
+            "startTime": 1.385,
+            "word": "问："
+          },
+          {
+            "confidence": 0.9813215,
+            "endTime": 1.975,
+            "startTime": 1.805,
+            "word": "如"
+          },
+          {
+            "confidence": 0.98477083,
+            "endTime": 2.095,
+            "startTime": 1.975,
+            "word": "果"
+          },
+          {
+            "confidence": 0.9785658,
+            "endTime": 2.255,
+            "startTime": 2.095,
+            "word": "你"
+          },
+          {
+            "confidence": 0.95229864,
+            "endTime": 2.445,
+            "startTime": 2.255,
+            "word": "没"
+          },
+          {
+            "confidence": 0.94551,
+            "endTime": 2.485,
+            "startTime": 2.445,
+            "word": "有"
+          },
+          {
+            "confidence": 0.9070352,
+            "endTime": 2.685,
+            "startTime": 2.485,
+            "word": "选"
+          },
+          {
+            "confidence": 0.87136674,
+            "endTime": 2.815,
+            "startTime": 2.685,
+            "word": "择"
+          },
+          {
+            "confidence": 0.886648,
+            "endTime": 3.015,
+            "startTime": 2.815,
+            "word": "休"
+          },
+          {
+            "confidence": 0.7664971,
+            "endTime": 3.215,
+            "startTime": 3.015,
+            "word": "息，"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "你最可能去做的那件事是什么？",
+        "words": [
+          {
+            "confidence": 0.838441,
+            "endTime": 3.5750418,
+            "startTime": 3.4400418,
+            "word": "你"
+          },
+          {
+            "confidence": 0.9573564,
+            "endTime": 3.8050418,
+            "startTime": 3.5750418,
+            "word": "最"
+          },
+          {
+            "confidence": 0.94526,
+            "endTime": 4.0250416,
+            "startTime": 3.8050418,
+            "word": "可"
+          },
+          {
+            "confidence": 0.97368276,
+            "endTime": 4.185042,
+            "startTime": 4.0250416,
+            "word": "能"
+          },
+          {
+            "confidence": 0.9365035,
+            "endTime": 4.3450418,
+            "startTime": 4.185042,
+            "word": "去"
+          },
+          {
+            "confidence": 0.95118964,
+            "endTime": 4.575042,
+            "startTime": 4.3450418,
+            "word": "做"
+          },
+          {
+            "confidence": 0.9660395,
+            "endTime": 4.665042,
+            "startTime": 4.575042,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9390143,
+            "endTime": 4.785042,
+            "startTime": 4.665042,
+            "word": "那"
+          },
+          {
+            "confidence": 0.7743662,
+            "endTime": 4.895042,
+            "startTime": 4.785042,
+            "word": "件"
+          },
+          {
+            "confidence": 0.91668266,
+            "endTime": 5.205042,
+            "startTime": 4.895042,
+            "word": "事"
+          },
+          {
+            "confidence": 0.9502852,
+            "endTime": 5.335042,
+            "startTime": 5.205042,
+            "word": "是"
+          },
+          {
+            "confidence": 0.97821814,
+            "endTime": 5.4850416,
+            "startTime": 5.335042,
+            "word": "什"
+          },
+          {
+            "confidence": 0.9506069,
+            "endTime": 5.6450415,
+            "startTime": 5.4850416,
+            "word": "么？"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "假设你认真想了一下。",
+        "words": [
+          {
+            "confidence": 0.66587585,
+            "endTime": 6.0050836,
+            "startTime": 5.9200835,
+            "word": "假"
+          },
+          {
+            "confidence": 0.82197267,
+            "endTime": 6.2250834,
+            "startTime": 6.0050836,
+            "word": "设"
+          },
+          {
+            "confidence": 0.8871325,
+            "endTime": 6.3850837,
+            "startTime": 6.2250834,
+            "word": "你"
+          },
+          {
+            "confidence": 0.903947,
+            "endTime": 6.5250835,
+            "startTime": 6.3850837,
+            "word": "认"
+          },
+          {
+            "confidence": 0.9628966,
+            "endTime": 6.6650834,
+            "startTime": 6.5250835,
+            "word": "真"
+          },
+          {
+            "confidence": 0.89795315,
+            "endTime": 6.9550834,
+            "startTime": 6.6650834,
+            "word": "想"
+          },
+          {
+            "confidence": 0.71527183,
+            "endTime": 7.0250835,
+            "startTime": 6.9550834,
+            "word": "了"
+          },
+          {
+            "confidence": 0.8215034,
+            "endTime": 7.095083,
+            "startTime": 7.0250835,
+            "word": "一"
+          },
+          {
+            "confidence": 0.98404276,
+            "endTime": 7.3750834,
+            "startTime": 7.095083,
+            "word": "下。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "如果不休息，你大概率会去接一个兼职。",
+        "words": [
+          {
+            "confidence": 0.96706915,
+            "endTime": 7.8951254,
+            "startTime": 7.7351255,
+            "word": "如"
+          },
+          {
+            "confidence": 0.9819838,
+            "endTime": 8.0251255,
+            "startTime": 7.8951254,
+            "word": "果"
+          },
+          {
+            "confidence": 0.9865557,
+            "endTime": 8.145125,
+            "startTime": 8.0251255,
+            "word": "不"
+          },
+          {
+            "confidence": 0.9275075,
+            "endTime": 8.355125,
+            "startTime": 8.145125,
+            "word": "休"
+          },
+          {
+            "confidence": 0.77031535,
+            "endTime": 8.575126,
+            "startTime": 8.355125,
+            "word": "息，"
+          },
+          {
+            "confidence": 0.87590265,
+            "endTime": 8.865126,
+            "startTime": 8.665125,
+            "word": "你"
+          },
+          {
+            "confidence": 0.95442015,
+            "endTime": 9.075126,
+            "startTime": 8.865126,
+            "word": "大"
+          },
+          {
+            "confidence": 0.96585923,
+            "endTime": 9.235126,
+            "startTime": 9.075126,
+            "word": "概"
+          },
+          {
+            "confidence": 0.9615044,
+            "endTime": 9.395125,
+            "startTime": 9.235126,
+            "word": "率"
+          },
+          {
+            "confidence": 0.9605069,
+            "endTime": 9.565125,
+            "startTime": 9.395125,
+            "word": "会"
+          },
+          {
+            "confidence": 0.9530608,
+            "endTime": 9.705126,
+            "startTime": 9.565125,
+            "word": "去"
+          },
+          {
+            "confidence": 0.8690582,
+            "endTime": 9.915125,
+            "startTime": 9.705126,
+            "word": "接"
+          },
+          {
+            "confidence": 0.87891847,
+            "endTime": 10.005125,
+            "startTime": 9.915125,
+            "word": "一"
+          },
+          {
+            "confidence": 0.9415693,
+            "endTime": 10.105125,
+            "startTime": 10.005125,
+            "word": "个"
+          },
+          {
+            "confidence": 0.9433384,
+            "endTime": 10.325125,
+            "startTime": 10.105125,
+            "word": "兼"
+          },
+          {
+            "confidence": 0.9493167,
+            "endTime": 10.635125,
+            "startTime": 10.325125,
+            "word": "职。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1024
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 7424
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3584
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4864
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "那个兼职对你的净价值，大概是五百块钱。",
+        "words": [
+          {
+            "confidence": 0.7873269,
+            "endTime": 11.115167,
+            "startTime": 10.995167,
+            "word": "那"
+          },
+          {
+            "confidence": 0.6184914,
+            "endTime": 11.195167,
+            "startTime": 11.115167,
+            "word": "个"
+          },
+          {
+            "confidence": 0.7844152,
+            "endTime": 11.415167,
+            "startTime": 11.195167,
+            "word": "兼"
+          },
+          {
+            "confidence": 0.87079793,
+            "endTime": 11.625167,
+            "startTime": 11.415167,
+            "word": "职"
+          },
+          {
+            "confidence": 0.9569827,
+            "endTime": 11.795167,
+            "startTime": 11.625167,
+            "word": "对"
+          },
+          {
+            "confidence": 0.96178037,
+            "endTime": 11.905167,
+            "startTime": 11.795167,
+            "word": "你"
+          },
+          {
+            "confidence": 0.95113355,
+            "endTime": 12.015166,
+            "startTime": 11.905167,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9083793,
+            "endTime": 12.285167,
+            "startTime": 12.015166,
+            "word": "净"
+          },
+          {
+            "confidence": 0.97161794,
+            "endTime": 12.505167,
+            "startTime": 12.285167,
+            "word": "价"
+          },
+          {
+            "confidence": 0.96018296,
+            "endTime": 12.815166,
+            "startTime": 12.505167,
+            "word": "值，"
+          },
+          {
+            "confidence": 0.8998697,
+            "endTime": 13.095166,
+            "startTime": 12.945167,
+            "word": "大"
+          },
+          {
+            "confidence": 0.97039616,
+            "endTime": 13.245167,
+            "startTime": 13.095166,
+            "word": "概"
+          },
+          {
+            "confidence": 0.90464914,
+            "endTime": 13.465166,
+            "startTime": 13.245167,
+            "word": "是"
+          },
+          {
+            "confidence": 0.6332828,
+            "endTime": 13.495167,
+            "startTime": 13.465166,
+            "word": "五"
+          },
+          {
+            "confidence": 0.22888368,
+            "endTime": 13.555166,
+            "startTime": 13.495167,
+            "word": "百"
+          },
+          {
+            "confidence": 0.18663114,
+            "endTime": 13.615167,
+            "startTime": 13.555166,
+            "word": "块"
+          },
+          {
+            "confidence": 0.32924092,
+            "endTime": 13.675167,
+            "startTime": 13.615167,
+            "word": "钱。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1792
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6656
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3840
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4608
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 2048
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3840
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "但经济学会继续问：如果你没有选择休息，你最可能去做的那件事是什么？假设你认真想了一下。如果不休息，你大概率会去接一个兼职。那个兼职对你的净价值，大概是500块钱。那你选择休息的时候，虽然没有真的掏出500块钱，但你确实放弃了一个价值大概500块钱的替代方案。这就是机会成本。",
+        "words": []
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "那你选择休息的时候，虽然没有真的掏出五百块钱，但你确实放弃了一个价值大概五百块钱的替代方案。",
+        "words": [
+          {
+            "confidence": 0.94480616,
+            "endTime": 14.775208,
+            "startTime": 14.635208,
+            "word": "那"
+          },
+          {
+            "confidence": 0.96565616,
+            "endTime": 14.905209,
+            "startTime": 14.775208,
+            "word": "你"
+          },
+          {
+            "confidence": 0.94728434,
+            "endTime": 15.065208,
+            "startTime": 14.905209,
+            "word": "选"
+          },
+          {
+            "confidence": 0.9231864,
+            "endTime": 15.185208,
+            "startTime": 15.065208,
+            "word": "择"
+          },
+          {
+            "confidence": 0.8876907,
+            "endTime": 15.425208,
+            "startTime": 15.185208,
+            "word": "休"
+          },
+          {
+            "confidence": 0.7697955,
+            "endTime": 15.545208,
+            "startTime": 15.425208,
+            "word": "息"
+          },
+          {
+            "confidence": 0.9439682,
+            "endTime": 15.625208,
+            "startTime": 15.545208,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9859182,
+            "endTime": 15.785208,
+            "startTime": 15.625208,
+            "word": "时"
+          },
+          {
+            "confidence": 0.5949749,
+            "endTime": 16.045208,
+            "startTime": 15.785208,
+            "word": "候，"
+          },
+          {
+            "confidence": 0.82585084,
+            "endTime": 16.465208,
+            "startTime": 16.235209,
+            "word": "虽"
+          },
+          {
+            "confidence": 0.9430428,
+            "endTime": 16.595207,
+            "startTime": 16.465208,
+            "word": "然"
+          },
+          {
+            "confidence": 0.9795854,
+            "endTime": 16.775208,
+            "startTime": 16.595207,
+            "word": "没"
+          },
+          {
+            "confidence": 0.9181927,
+            "endTime": 16.835209,
+            "startTime": 16.775208,
+            "word": "有"
+          },
+          {
+            "confidence": 0.9512819,
+            "endTime": 16.995209,
+            "startTime": 16.835209,
+            "word": "真"
+          },
+          {
+            "confidence": 0.9742782,
+            "endTime": 17.115208,
+            "startTime": 16.995209,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9607986,
+            "endTime": 17.365208,
+            "startTime": 17.115208,
+            "word": "掏"
+          },
+          {
+            "confidence": 0.93290854,
+            "endTime": 17.565208,
+            "startTime": 17.365208,
+            "word": "出"
+          },
+          {
+            "confidence": 0.64926374,
+            "endTime": 17.605207,
+            "startTime": 17.565208,
+            "word": "五"
+          },
+          {
+            "confidence": 0.9716093,
+            "endTime": 17.735209,
+            "startTime": 17.605207,
+            "word": "百"
+          },
+          {
+            "confidence": 0.98337036,
+            "endTime": 17.905209,
+            "startTime": 17.735209,
+            "word": "块"
+          },
+          {
+            "confidence": 0.97341156,
+            "endTime": 18.195208,
+            "startTime": 17.905209,
+            "word": "钱，"
+          },
+          {
+            "confidence": 0.90474075,
+            "endTime": 18.535208,
+            "startTime": 18.385208,
+            "word": "但"
+          },
+          {
+            "confidence": 0.92473394,
+            "endTime": 18.675209,
+            "startTime": 18.535208,
+            "word": "你"
+          },
+          {
+            "confidence": 0.9024553,
+            "endTime": 18.905209,
+            "startTime": 18.675209,
+            "word": "确"
+          },
+          {
+            "confidence": 0.9563327,
+            "endTime": 19.095207,
+            "startTime": 18.905209,
+            "word": "实"
+          },
+          {
+            "confidence": 0.9725845,
+            "endTime": 19.395208,
+            "startTime": 19.095207,
+            "word": "放"
+          },
+          {
+            "confidence": 0.96442986,
+            "endTime": 19.585209,
+            "startTime": 19.395208,
+            "word": "弃"
+          },
+          {
+            "confidence": 0.91266894,
+            "endTime": 19.685207,
+            "startTime": 19.585209,
+            "word": "了"
+          },
+          {
+            "confidence": 0.8693636,
+            "endTime": 19.785208,
+            "startTime": 19.685207,
+            "word": "一"
+          },
+          {
+            "confidence": 0.96819514,
+            "endTime": 19.935207,
+            "startTime": 19.785208,
+            "word": "个"
+          },
+          {
+            "confidence": 0.96120745,
+            "endTime": 20.175209,
+            "startTime": 19.935207,
+            "word": "价"
+          },
+          {
+            "confidence": 0.91649824,
+            "endTime": 20.35521,
+            "startTime": 20.175209,
+            "word": "值"
+          },
+          {
+            "confidence": 0.897799,
+            "endTime": 20.505207,
+            "startTime": 20.35521,
+            "word": "大"
+          },
+          {
+            "confidence": 0.95131576,
+            "endTime": 20.665209,
+            "startTime": 20.505207,
+            "word": "概"
+          },
+          {
+            "confidence": 0.88121,
+            "endTime": 20.815208,
+            "startTime": 20.665209,
+            "word": "五"
+          },
+          {
+            "confidence": 0.98378056,
+            "endTime": 20.955208,
+            "startTime": 20.815208,
+            "word": "百"
+          },
+          {
+            "confidence": 0.9873219,
+            "endTime": 21.115208,
+            "startTime": 20.955208,
+            "word": "块"
+          },
+          {
+            "confidence": 0.96644217,
+            "endTime": 21.245209,
+            "startTime": 21.115208,
+            "word": "钱"
+          },
+          {
+            "confidence": 0.908827,
+            "endTime": 21.365208,
+            "startTime": 21.245209,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9139819,
+            "endTime": 21.565208,
+            "startTime": 21.365208,
+            "word": "替"
+          },
+          {
+            "confidence": 0.94895077,
+            "endTime": 21.69521,
+            "startTime": 21.565208,
+            "word": "代"
+          },
+          {
+            "confidence": 0.9158276,
+            "endTime": 21.885208,
+            "startTime": 21.69521,
+            "word": "方"
+          },
+          {
+            "confidence": 0.9455451,
+            "endTime": 22.075209,
+            "startTime": 21.885208,
+            "word": "案。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "这就是机会成本。",
+        "words": [
+          {
+            "confidence": 0.7373548,
+            "endTime": 22.48525,
+            "startTime": 22.34025,
+            "word": "这"
+          },
+          {
+            "confidence": 0.9528296,
+            "endTime": 22.60525,
+            "startTime": 22.48525,
+            "word": "就"
+          },
+          {
+            "confidence": 0.917466,
+            "endTime": 22.73525,
+            "startTime": 22.60525,
+            "word": "是"
+          },
+          {
+            "confidence": 0.16903971,
+            "endTime": 22.79525,
+            "startTime": 22.73525,
+            "word": "机"
+          },
+          {
+            "confidence": 0.10848789,
+            "endTime": 22.85525,
+            "startTime": 22.79525,
+            "word": "会"
+          },
+          {
+            "confidence": 0.122950144,
+            "endTime": 22.91525,
+            "startTime": 22.85525,
+            "word": "成"
+          },
+          {
+            "confidence": 0.206166,
+            "endTime": 22.97525,
+            "startTime": 22.91525,
+            "word": "本。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 20000000,
+      "message": "OK",
+      "usage": {
+        "text_words": 137
+      }
+    }
+  ],
+  "usage": {
+    "text_words": 137
+  }
+}

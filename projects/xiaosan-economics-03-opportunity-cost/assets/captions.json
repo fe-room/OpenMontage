@@ -1,0 +1,687 @@
+{
+  "version": "1.0",
+  "timing_method": "deterministic punctuation-aware distribution over real per-section TTS durations",
+  "timing_method_note": "豆包未在本地持久化词级时间戳，故不使用 ASR；字幕文字与已批准旁白逐字一致。",
+  "total_duration_seconds": 213.198,
+  "captions": [
+    {
+      "id": "cap-s01-01",
+      "section_id": "s01",
+      "text": "周末在家躺一天",
+      "start_seconds": 0.12,
+      "end_seconds": 1.525
+    },
+    {
+      "id": "cap-s01-02",
+      "section_id": "s01",
+      "text": "一分钱没花",
+      "start_seconds": 1.525,
+      "end_seconds": 2.529
+    },
+    {
+      "id": "cap-s01-03",
+      "section_id": "s01",
+      "text": "这一天的成本是不是0",
+      "start_seconds": 2.529,
+      "end_seconds": 4.536
+    },
+    {
+      "id": "cap-s02-04",
+      "section_id": "s02",
+      "text": "按我们平时理解成本的方式",
+      "start_seconds": 4.886,
+      "end_seconds": 7.25
+    },
+    {
+      "id": "cap-s02-05",
+      "section_id": "s02",
+      "text": "好像确实是这样",
+      "start_seconds": 7.25,
+      "end_seconds": 8.629
+    },
+    {
+      "id": "cap-s02-06",
+      "section_id": "s02",
+      "text": "没买东西",
+      "start_seconds": 8.629,
+      "end_seconds": 9.417
+    },
+    {
+      "id": "cap-s02-07",
+      "section_id": "s02",
+      "text": "没打车",
+      "start_seconds": 9.417,
+      "end_seconds": 10.008
+    },
+    {
+      "id": "cap-s02-08",
+      "section_id": "s02",
+      "text": "没出去吃饭",
+      "start_seconds": 10.008,
+      "end_seconds": 10.993
+    },
+    {
+      "id": "cap-s02-09",
+      "section_id": "s02",
+      "text": "银行卡一分钱都没少",
+      "start_seconds": 10.993,
+      "end_seconds": 12.766
+    },
+    {
+      "id": "cap-s02-10",
+      "section_id": "s02",
+      "text": "怎么看都是0成本",
+      "start_seconds": 12.766,
+      "end_seconds": 14.342
+    },
+    {
+      "id": "cap-s03-11",
+      "section_id": "s03",
+      "text": "但经济学算成本",
+      "start_seconds": 15.542,
+      "end_seconds": 16.913
+    },
+    {
+      "id": "cap-s03-12",
+      "section_id": "s03",
+      "text": "有时候根本不只看你花了多少钱",
+      "start_seconds": 16.913,
+      "end_seconds": 19.656
+    },
+    {
+      "id": "cap-s03-13",
+      "section_id": "s03",
+      "text": "它还会问你一个问题",
+      "start_seconds": 19.656,
+      "end_seconds": 21.419
+    },
+    {
+      "id": "cap-s03-14",
+      "section_id": "s03",
+      "text": "这一天你本来还能拿去干什么",
+      "start_seconds": 21.419,
+      "end_seconds": 23.966
+    },
+    {
+      "id": "cap-s04-15",
+      "section_id": "s04",
+      "text": "比如这个周六下午你一共有4个小时",
+      "start_seconds": 24.466,
+      "end_seconds": 27.604
+    },
+    {
+      "id": "cap-s04-16",
+      "section_id": "s04",
+      "text": "你可以在家休息",
+      "start_seconds": 27.604,
+      "end_seconds": 28.977
+    },
+    {
+      "id": "cap-s04-17",
+      "section_id": "s04",
+      "text": "也可以拍一期视频",
+      "start_seconds": 28.977,
+      "end_seconds": 30.546
+    },
+    {
+      "id": "cap-s04-18",
+      "section_id": "s04",
+      "text": "可以接一个兼职",
+      "start_seconds": 30.546,
+      "end_seconds": 31.919
+    },
+    {
+      "id": "cap-s04-19",
+      "section_id": "s04",
+      "text": "或者去健身",
+      "start_seconds": 31.919,
+      "end_seconds": 32.9
+    },
+    {
+      "id": "cap-s04-20",
+      "section_id": "s04",
+      "text": "问题是这4个小时你只能真正使用一次",
+      "start_seconds": 32.9,
+      "end_seconds": 36.234
+    },
+    {
+      "id": "cap-s04-21",
+      "section_id": "s04",
+      "text": "最后你决定什么都不干就在家休息",
+      "start_seconds": 36.234,
+      "end_seconds": 39.176
+    },
+    {
+      "id": "cap-s04-22",
+      "section_id": "s04",
+      "text": "从银行卡来看支出确实是0",
+      "start_seconds": 39.176,
+      "end_seconds": 41.53
+    },
+    {
+      "id": "cap-s05-23",
+      "section_id": "s05",
+      "text": "但经济学会继续问",
+      "start_seconds": 42.13,
+      "end_seconds": 43.582
+    },
+    {
+      "id": "cap-s05-24",
+      "section_id": "s05",
+      "text": "如果你没有选择休息",
+      "start_seconds": 43.582,
+      "end_seconds": 45.214
+    },
+    {
+      "id": "cap-s05-25",
+      "section_id": "s05",
+      "text": "你最可能去做的那件事是什么",
+      "start_seconds": 45.214,
+      "end_seconds": 47.573
+    },
+    {
+      "id": "cap-s05-26",
+      "section_id": "s05",
+      "text": "假设你认真想了一下",
+      "start_seconds": 47.573,
+      "end_seconds": 49.206
+    },
+    {
+      "id": "cap-s05-27",
+      "section_id": "s05",
+      "text": "如果不休息你大概率会去接一个兼职",
+      "start_seconds": 49.206,
+      "end_seconds": 52.109
+    },
+    {
+      "id": "cap-s05-28",
+      "section_id": "s05",
+      "text": "那个兼职对你的净价值",
+      "start_seconds": 52.109,
+      "end_seconds": 53.924
+    },
+    {
+      "id": "cap-s05-29",
+      "section_id": "s05",
+      "text": "大概是500块钱",
+      "start_seconds": 53.924,
+      "end_seconds": 55.375
+    },
+    {
+      "id": "cap-s05-30",
+      "section_id": "s05",
+      "text": "那你选择休息的时候",
+      "start_seconds": 55.375,
+      "end_seconds": 57.008
+    },
+    {
+      "id": "cap-s05-31",
+      "section_id": "s05",
+      "text": "虽然没有真的掏出500块钱",
+      "start_seconds": 57.008,
+      "end_seconds": 59.367
+    },
+    {
+      "id": "cap-s05-32",
+      "section_id": "s05",
+      "text": "但你确实放弃了一个价值大概500块钱的替代方案",
+      "start_seconds": 59.367,
+      "end_seconds": 63.54
+    },
+    {
+      "id": "cap-s05-33",
+      "section_id": "s05",
+      "text": "这就是机会成本",
+      "start_seconds": 63.54,
+      "end_seconds": 64.81
+    },
+    {
+      "id": "cap-s06-34",
+      "section_id": "s06",
+      "text": "不过这里有一个特别容易搞错的地方",
+      "start_seconds": 66.01,
+      "end_seconds": 69.461
+    },
+    {
+      "id": "cap-s06-35",
+      "section_id": "s06",
+      "text": "你还可以拍视频可以健身可以出去玩",
+      "start_seconds": 69.461,
+      "end_seconds": 72.911
+    },
+    {
+      "id": "cap-s06-36",
+      "section_id": "s06",
+      "text": "那这些是不是全部都要加起来",
+      "start_seconds": 72.911,
+      "end_seconds": 75.715
+    },
+    {
+      "id": "cap-s06-37",
+      "section_id": "s06",
+      "text": "不是",
+      "start_seconds": 75.715,
+      "end_seconds": 76.146
+    },
+    {
+      "id": "cap-s06-38",
+      "section_id": "s06",
+      "text": "因为就算你不休息",
+      "start_seconds": 76.146,
+      "end_seconds": 77.872
+    },
+    {
+      "id": "cap-s06-39",
+      "section_id": "s06",
+      "text": "你也不可能同时完整做完所有这些事情",
+      "start_seconds": 77.872,
+      "end_seconds": 81.538
+    },
+    {
+      "id": "cap-s06-40",
+      "section_id": "s06",
+      "text": "机会成本通常关注的是",
+      "start_seconds": 81.538,
+      "end_seconds": 83.695
+    },
+    {
+      "id": "cap-s06-41",
+      "section_id": "s06",
+      "text": "你放弃掉的最佳替代方案",
+      "start_seconds": 83.695,
+      "end_seconds": 86.067
+    },
+    {
+      "id": "cap-s06-42",
+      "section_id": "s06",
+      "text": "也就是说你选择A真正付出的机会成本",
+      "start_seconds": 86.067,
+      "end_seconds": 89.733
+    },
+    {
+      "id": "cap-s06-43",
+      "section_id": "s06",
+      "text": "不是所有BCD全部加起来",
+      "start_seconds": 89.733,
+      "end_seconds": 92.321
+    },
+    {
+      "id": "cap-s06-44",
+      "section_id": "s06",
+      "text": "而是那些没有被选择的方案里",
+      "start_seconds": 92.321,
+      "end_seconds": 95.125
+    },
+    {
+      "id": "cap-s06-45",
+      "section_id": "s06",
+      "text": "对你最有价值的那个",
+      "start_seconds": 95.125,
+      "end_seconds": 97.066
+    },
+    {
+      "id": "cap-s07-46",
+      "section_id": "s07",
+      "text": "不过说到这里可能又会产生另一个误会",
+      "start_seconds": 98.266,
+      "end_seconds": 101.447
+    },
+    {
+      "id": "cap-s07-47",
+      "section_id": "s07",
+      "text": "既然休息的机会成本可能是500块钱",
+      "start_seconds": 101.447,
+      "end_seconds": 104.628
+    },
+    {
+      "id": "cap-s07-48",
+      "section_id": "s07",
+      "text": "那是不是说明我躺这4个小时就亏了500",
+      "start_seconds": 104.628,
+      "end_seconds": 108.184
+    },
+    {
+      "id": "cap-s07-49",
+      "section_id": "s07",
+      "text": "也不是",
+      "start_seconds": 108.184,
+      "end_seconds": 108.745
+    },
+    {
+      "id": "cap-s07-50",
+      "section_id": "s07",
+      "text": "机会成本告诉你的只是",
+      "start_seconds": 108.745,
+      "end_seconds": 110.617
+    },
+    {
+      "id": "cap-s07-51",
+      "section_id": "s07",
+      "text": "你为了现在这个选择放弃了什么",
+      "start_seconds": 110.617,
+      "end_seconds": 113.237
+    },
+    {
+      "id": "cap-s07-52",
+      "section_id": "s07",
+      "text": "它并没有替你决定",
+      "start_seconds": 113.237,
+      "end_seconds": 114.734
+    },
+    {
+      "id": "cap-s07-53",
+      "section_id": "s07",
+      "text": "这个选择到底对不对",
+      "start_seconds": 114.734,
+      "end_seconds": 116.418
+    },
+    {
+      "id": "cap-s07-54",
+      "section_id": "s07",
+      "text": "如果你这一周已经非常累",
+      "start_seconds": 116.418,
+      "end_seconds": 118.476
+    },
+    {
+      "id": "cap-s07-55",
+      "section_id": "s07",
+      "text": "你觉得休息4个小时带来的恢复",
+      "start_seconds": 118.476,
+      "end_seconds": 121.096
+    },
+    {
+      "id": "cap-s07-56",
+      "section_id": "s07",
+      "text": "比接那单兼职对你更重要",
+      "start_seconds": 121.096,
+      "end_seconds": 123.155
+    },
+    {
+      "id": "cap-s07-57",
+      "section_id": "s07",
+      "text": "那么休息完全可能就是更好的选择",
+      "start_seconds": 123.155,
+      "end_seconds": 125.962
+    },
+    {
+      "id": "cap-s07-58",
+      "section_id": "s07",
+      "text": "所以有机会成本不等于不应该做",
+      "start_seconds": 125.962,
+      "end_seconds": 128.581
+    },
+    {
+      "id": "cap-s07-59",
+      "section_id": "s07",
+      "text": "睡觉有机会成本",
+      "start_seconds": 128.581,
+      "end_seconds": 129.891
+    },
+    {
+      "id": "cap-s07-60",
+      "section_id": "s07",
+      "text": "陪家人有机会成本",
+      "start_seconds": 129.891,
+      "end_seconds": 131.388
+    },
+    {
+      "id": "cap-s07-61",
+      "section_id": "s07",
+      "text": "学习有机会成本",
+      "start_seconds": 131.388,
+      "end_seconds": 132.698
+    },
+    {
+      "id": "cap-s07-62",
+      "section_id": "s07",
+      "text": "工作同样有机会成本",
+      "start_seconds": 132.698,
+      "end_seconds": 134.382
+    },
+    {
+      "id": "cap-s07-63",
+      "section_id": "s07",
+      "text": "只要你在做选择",
+      "start_seconds": 134.382,
+      "end_seconds": 135.692
+    },
+    {
+      "id": "cap-s07-64",
+      "section_id": "s07",
+      "text": "其他可能性就一定会被放弃",
+      "start_seconds": 135.692,
+      "end_seconds": 137.938
+    },
+    {
+      "id": "cap-s08-65",
+      "section_id": "s08",
+      "text": "而且机会成本也不意味着",
+      "start_seconds": 139.138,
+      "end_seconds": 141.537
+    },
+    {
+      "id": "cap-s08-66",
+      "section_id": "s08",
+      "text": "所有东西都必须换算成钱",
+      "start_seconds": 141.537,
+      "end_seconds": 143.936
+    },
+    {
+      "id": "cap-s08-67",
+      "section_id": "s08",
+      "text": "有些时候你放弃的是收入",
+      "start_seconds": 143.936,
+      "end_seconds": 146.336
+    },
+    {
+      "id": "cap-s08-68",
+      "section_id": "s08",
+      "text": "有些时候放弃的是时间",
+      "start_seconds": 146.336,
+      "end_seconds": 148.517
+    },
+    {
+      "id": "cap-s08-69",
+      "section_id": "s08",
+      "text": "有些时候是精力",
+      "start_seconds": 148.517,
+      "end_seconds": 150.043
+    },
+    {
+      "id": "cap-s08-70",
+      "section_id": "s08",
+      "text": "还有些时候是陪伴休息或者一次学习机会",
+      "start_seconds": 150.043,
+      "end_seconds": 153.969
+    },
+    {
+      "id": "cap-s08-71",
+      "section_id": "s08",
+      "text": "所以经济学里的成本",
+      "start_seconds": 153.969,
+      "end_seconds": 155.932
+    },
+    {
+      "id": "cap-s08-72",
+      "section_id": "s08",
+      "text": "其实比我们平时理解的花了多少钱要宽得多",
+      "start_seconds": 155.932,
+      "end_seconds": 160.076
+    },
+    {
+      "id": "cap-s08-73",
+      "section_id": "s08",
+      "text": "比如商场送一杯免费咖啡",
+      "start_seconds": 160.076,
+      "end_seconds": 162.476
+    },
+    {
+      "id": "cap-s08-74",
+      "section_id": "s08",
+      "text": "咖啡确实不要钱",
+      "start_seconds": 162.476,
+      "end_seconds": 164.002
+    },
+    {
+      "id": "cap-s08-75",
+      "section_id": "s08",
+      "text": "但如果你要排两个小时的队",
+      "start_seconds": 164.002,
+      "end_seconds": 166.62
+    },
+    {
+      "id": "cap-s08-76",
+      "section_id": "s08",
+      "text": "那两个小时并不是免费的",
+      "start_seconds": 166.62,
+      "end_seconds": 169.019
+    },
+    {
+      "id": "cap-s08-77",
+      "section_id": "s08",
+      "text": "所以免费不等于没有成本",
+      "start_seconds": 169.019,
+      "end_seconds": 171.418
+    },
+    {
+      "id": "cap-s09-78",
+      "section_id": "s09",
+      "text": "投资里也是一样",
+      "start_seconds": 172.218,
+      "end_seconds": 173.532
+    },
+    {
+      "id": "cap-s09-79",
+      "section_id": "s09",
+      "text": "假设两个选择的风险流动性和其他限制都差不多",
+      "start_seconds": 173.532,
+      "end_seconds": 177.476
+    },
+    {
+      "id": "cap-s09-80",
+      "section_id": "s09",
+      "text": "A最后赚了3%",
+      "start_seconds": 177.476,
+      "end_seconds": 178.79
+    },
+    {
+      "id": "cap-s09-81",
+      "section_id": "s09",
+      "text": "B本来可以赚5%",
+      "start_seconds": 178.79,
+      "end_seconds": 180.292
+    },
+    {
+      "id": "cap-s09-82",
+      "section_id": "s09",
+      "text": "那从机会成本的角度",
+      "start_seconds": 180.292,
+      "end_seconds": 181.982
+    },
+    {
+      "id": "cap-s09-83",
+      "section_id": "s09",
+      "text": "你还会多问一句",
+      "start_seconds": 181.982,
+      "end_seconds": 183.297
+    },
+    {
+      "id": "cap-s09-84",
+      "section_id": "s09",
+      "text": "我为了选择A放弃了什么",
+      "start_seconds": 183.297,
+      "end_seconds": 185.362
+    },
+    {
+      "id": "cap-s09-85",
+      "section_id": "s09",
+      "text": "当然现实里的投资选择不会这么简单",
+      "start_seconds": 185.362,
+      "end_seconds": 188.367
+    },
+    {
+      "id": "cap-s09-86",
+      "section_id": "s09",
+      "text": "风险流动性和确定性往往都不同",
+      "start_seconds": 188.367,
+      "end_seconds": 190.995
+    },
+    {
+      "id": "cap-s09-87",
+      "section_id": "s09",
+      "text": "所以不能只拿最终收益率机械比较",
+      "start_seconds": 190.995,
+      "end_seconds": 193.812
+    },
+    {
+      "id": "cap-s09-88",
+      "section_id": "s09",
+      "text": "但机会成本会提醒我们一件事",
+      "start_seconds": 193.812,
+      "end_seconds": 196.253
+    },
+    {
+      "id": "cap-s09-89",
+      "section_id": "s09",
+      "text": "判断一个选择",
+      "start_seconds": 196.253,
+      "end_seconds": 197.38
+    },
+    {
+      "id": "cap-s09-90",
+      "section_id": "s09",
+      "text": "有时候不能只看它给了你什么",
+      "start_seconds": 197.38,
+      "end_seconds": 199.821
+    },
+    {
+      "id": "cap-s09-91",
+      "section_id": "s09",
+      "text": "还要看",
+      "start_seconds": 199.821,
+      "end_seconds": 200.384
+    },
+    {
+      "id": "cap-s09-92",
+      "section_id": "s09",
+      "text": "为了它你放弃了什么",
+      "start_seconds": 200.384,
+      "end_seconds": 202.074
+    },
+    {
+      "id": "cap-s10-93",
+      "section_id": "s10",
+      "text": "所以下次再遇到一件免费的事情",
+      "start_seconds": 202.974,
+      "end_seconds": 205.441
+    },
+    {
+      "id": "cap-s10-94",
+      "section_id": "s10",
+      "text": "别急着只问",
+      "start_seconds": 205.441,
+      "end_seconds": 206.322
+    },
+    {
+      "id": "cap-s10-95",
+      "section_id": "s10",
+      "text": "我要花多少钱",
+      "start_seconds": 206.322,
+      "end_seconds": 207.379
+    },
+    {
+      "id": "cap-s10-96",
+      "section_id": "s10",
+      "text": "也可以多问一句",
+      "start_seconds": 207.379,
+      "end_seconds": 208.612
+    },
+    {
+      "id": "cap-s10-97",
+      "section_id": "s10",
+      "text": "为了它我放弃了什么",
+      "start_seconds": 208.612,
+      "end_seconds": 210.198
+    }
+  ]
+}

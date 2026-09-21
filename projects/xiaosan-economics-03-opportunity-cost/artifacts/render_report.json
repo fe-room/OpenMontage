@@ -1,0 +1,121 @@
+{
+  "version": "1.0",
+  "outputs": [
+    {
+      "path": "projects/xiaosan-economics-03-opportunity-cost/renders/final-v3.mp4",
+      "format": "mp4",
+      "codec": "h264",
+      "audio_codec": "aac",
+      "resolution": "1080x1920",
+      "fps": 30,
+      "duration_seconds": 216.256,
+      "file_size_bytes": 29711262,
+      "platform_target": "vertical social master"
+    }
+  ],
+  "render_grammar": "explainer-data",
+  "decision_log_ref": "projects/xiaosan-economics-03-opportunity-cost/artifacts/decision_log.json",
+  "final_review_ref": "projects/xiaosan-economics-03-opportunity-cost/artifacts/final_review.json",
+  "warnings": [
+    "渲染工具自带的 audio_spotcheck 报出 music_present=true，这是启发式误报：成片仅含 1 条音轨（人声母带），edit_decisions 中不存在 music 键，全片无音乐层。",
+    "宿主图像生成成本未被计入本次渲染成本。"
+  ],
+  "verification_notes": [
+    "完整解码无错误；6486 帧。",
+    "首帧质量：亮像素占比 11.8%（加入系列页眉与主标题纸面板之前为 0%），不再接近纯暗帧。",
+    "系列页眉细线在实拍与纸面场景上均连续（9/9 段各 95/95 像素），压暗底衬 + 细线投影修复了亮背景吞线问题。",
+    "结尾帧已抽出并确认原生合规文案完整、可读、位于最末端。",
+    "竖屏字幕安全区距底 520px、距侧 96px。",
+    "render_runtime=remotion、composition_mode=atelier，与提案锁定值一致，无静默替换。"
+  ],
+  "metadata": {
+    "render_runtime": "remotion",
+    "composition_mode": "atelier",
+    "final_review_status": "pass",
+    "render_wall_clock_seconds": 368.7,
+    "frame_count": 6486,
+    "qa_artifacts": "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/",
+    "music_layer_present": false,
+    "audio_stream_count": 1,
+    "first_frame_quality": {
+      "path": "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/first-frame.png",
+      "mean_luma": 60.3,
+      "bright_pixel_ratio": 0.1179,
+      "bright_pixel_ratio_ok": true,
+      "has_text_panel": true,
+      "note": "首帧承载系列页眉与主标题纸面板；平台按第 0 帧做质量判定，不允许接近纯暗帧。"
+    },
+    "series_header": {
+      "text": "小散经济学 03 · 机会成本",
+      "present_on_scenes": "sc01-sc21（sc01/sc18 实拍用 light 变体 + 压暗底衬）",
+      "suppressed": "sc22",
+      "rule_contiguity": {
+        "text": "小散经济学 03 · 机会成本",
+        "rule_contiguity": [
+          {
+            "t": 1.2,
+            "scene": "sc01-light",
+            "best_row": 293,
+            "bright_px": 859,
+            "segments_95px": [
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95
+            ],
+            "contiguous": true
+          },
+          {
+            "t": 30.0,
+            "scene": "sc03-ink",
+            "best_row": 288,
+            "bright_px": 860,
+            "segments_95px": [
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95
+            ],
+            "contiguous": true
+          },
+          {
+            "t": 170.0,
+            "scene": "sc18-light",
+            "best_row": 293,
+            "bright_px": 859,
+            "segments_95px": [
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95
+            ],
+            "contiguous": true
+          }
+        ],
+        "all_contiguous": true,
+        "note": "实拍场景用压暗底衬 + 细线投影，保证线在亮背景上不断。"
+      }
+    },
+    "version_history": {
+      "final-v1-preheader.mp4": "加入页眉之前的版本（保留）",
+      "final-v2.mp4": "加入页眉、但首帧仍为空、实拍细线会被亮背景吞掉的版本（保留）",
+      "final-v3.mp4": "当前交付主文件：首帧海报化 + 细线连续",
+      "final.mp4": "final-v3 的交付副本"
+    }
+  }
+}

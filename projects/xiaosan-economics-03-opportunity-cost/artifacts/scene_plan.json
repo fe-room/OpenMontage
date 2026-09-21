@@ -1,0 +1,847 @@
+{
+  "version": "1.0",
+  "style_playbook": "finance-dossier",
+  "scenes": [
+    {
+      "id": "sc01",
+      "type": "broll",
+      "description": "真实生活素材：周末在家躺卧／沙发／手机，画面右上角压一行叠字「周末在家躺一天」（原生排版，不是素材里的字）。",
+      "start_seconds": 0.0,
+      "end_seconds": 2.689,
+      "script_section_id": "s01",
+      "information_role": "开场：把提问落到观众自己的周六",
+      "shot_intent": "在2秒内让观众认出这是自己刚刚度过的周末，把抽象提问变成已经历过的处境。",
+      "transition_in": "冷开场，无转场铺垫",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "broll",
+          "description": "周末在家躺卧的真实生活素材（沙发/床/手机/周末氛围）",
+          "source": "source"
+        }
+      ],
+      "claim_class": "SCENARIO"
+    },
+    {
+      "id": "sc02",
+      "type": "text_card",
+      "description": "两屏极速切换：先出「一分钱没花」，紧接着放大到全屏大字「成本 = 0？」。第二屏的字重明显大于第一屏。",
+      "start_seconds": 2.689,
+      "end_seconds": 4.886,
+      "script_section_id": "s01",
+      "information_role": "开场：把冲突压成一行",
+      "shot_intent": "35 秒内不解释任何概念，只把冲突摆上桌。",
+      "transition_in": "硬切",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "两屏原生大字叠字：一分钱没花 / 成本 = 0？",
+          "source": "generate"
+        }
+      ],
+      "claim_class": "SCENARIO"
+    },
+    {
+      "id": "sc03",
+      "type": "animation",
+      "description": "纸张质感的极简支出清单，四行逐行落下：「没买东西」「没打车」「没出去吃饭」「银行卡一分钱都没少」，每行右侧都是 0 元。四行齐了之后，整张清单下方压出结论「怎么看都是0成本」。",
+      "start_seconds": 4.886,
+      "end_seconds": 15.542,
+      "script_section_id": "s02",
+      "information_role": "强化直觉：让观众先站到0成本这一边",
+      "shot_intent": "顺着观众的直觉走，不给任何转折提示，为第一次反转蓄势。",
+      "transition_in": "清单从空开始，逐行补全",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "animation",
+          "description": "原生排版的0支出清单与逐行落字动效",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "DATA",
+      "claim_class": "SCENARIO"
+    },
+    {
+      "id": "sc04",
+      "type": "text_card",
+      "description": "「但经济学算成本，根本不只看你花了多少钱」——「花了多少钱」四字被一道朱红横线划掉，划掉的动作跟随朗读节奏完成。",
+      "start_seconds": 15.542,
+      "end_seconds": 19.78,
+      "script_section_id": "s03",
+      "information_role": "第一次反转：经济学为什么不只看花了多少钱",
+      "shot_intent": "第一次认知反转的落点。用划掉这个动作代替任何解释性文字。",
+      "transition_in": "朱红横线从左侧进入",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "animation",
+          "description": "朱红批注划删动效",
+          "source": "generate"
+        }
+      ],
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Federal Reserve Bank of St. Louis — 显性成本与隐性成本区分（Money and Missed Opportunities 延伸）",
+        "url": "https://www.stlouisfed.org/open-vault/2020/january/real-life-examples-opportunity-cost",
+        "date": "2020-01",
+        "tier": 1
+      },
+      "mechanism_importance": false,
+      "layout_variant": "headline-annotation",
+      "finance_justification": "第一次认知反转的落点。用划掉这个动作代替任何解释性文字。"
+    },
+    {
+      "id": "sc05",
+      "type": "diagram",
+      "description": "一个问题占满画面：「这一天，你本来还能拿去干什么？」问号下方伸出四条极细的深青短线，指向画面下方四个尚未填写的空白纸位——预告下一场的选择集合。",
+      "start_seconds": 19.78,
+      "end_seconds": 24.466,
+      "script_section_id": "s03",
+      "information_role": "第一次反转：把追问摆出来",
+      "shot_intent": "把'机会成本'的第一层含义压缩成一个观众必须自己回答的问题。",
+      "transition_in": "承上，四条线引出下一场",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "diagram",
+          "description": "原生问句排版 + 深青引导线",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "MECHANISM",
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Opportunity cost — 微观经济学基础条目（互斥备选前提；机会成本不限于货币成本）",
+        "url": "https://simple.wikipedia.com/wiki/Opportunity_cost",
+        "tier": 2
+      },
+      "mechanism_importance": true,
+      "layout_variant": "question-diagram",
+      "finance_justification": "把'机会成本'的第一层含义压缩成一个观众必须自己回答的问题。"
+    },
+    {
+      "id": "sc06",
+      "type": "text_card",
+      "description": "画面中央一行：「周六下午：4 小时」。上方留大量空白，下方什么都没有——先把约束立住，再给选项。",
+      "start_seconds": 24.466,
+      "end_seconds": 29.108,
+      "script_section_id": "s04",
+      "information_role": "核心场景：建立约束",
+      "shot_intent": "让'4 小时'这个有限资源成为整期的度量单位。",
+      "transition_in": "从上一场的引导线收拢到这一行",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "原生大字：周六下午：4 小时",
+          "source": "generate"
+        }
+      ],
+      "claim_class": "SCENARIO"
+    },
+    {
+      "id": "sc07",
+      "type": "animation",
+      "description": "四张等权纸卡依次落到画面：A 在家休息 / B 拍一期视频 / C 接一个兼职 / D 去健身。每张卡落下时有轻微旋转与投影，形成纸张厚度。四个选项读完后不停留。",
+      "start_seconds": 29.108,
+      "end_seconds": 35.457,
+      "script_section_id": "s04",
+      "information_role": "核心场景：建立选择集合",
+      "shot_intent": "把'你本来还能拿去干什么'具体化为四个互斥选项。",
+      "transition_in": "第一张卡从上方落下，其余依次跟随",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "animation",
+          "description": "四张选项纸卡的原生让位与落纸动效",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "MECHANISM",
+      "claim_class": "SCENARIO"
+    },
+    {
+      "id": "sc08",
+      "type": "animation",
+      "description": "一条朱红横线划过四张卡：「这 4 个小时，你只能真正使用一次」。随后 A 卡被抬起加厚，B/C/D 转为暗态但轮廓仍可读。画面右下角压出「支出：0 元」。",
+      "start_seconds": 35.457,
+      "end_seconds": 42.13,
+      "script_section_id": "s04",
+      "information_role": "核心场景：互斥约束与选中",
+      "shot_intent": "先把互斥性钉死（这是后面'不能相加'的伏笔），再完成选择。",
+      "transition_in": "朱红线一次性划过四张卡",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "broll",
+          "description": "短促的真实时间流逝素材，用于让'4小时正在过去'可被体感",
+          "source": "source"
+        },
+        {
+          "type": "animation",
+          "description": "朱红约束线 + A卡抬起 + B/C/D 暗态",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "MECHANISM",
+      "claim_class": "SCENARIO"
+    },
+    {
+      "id": "sc09",
+      "type": "text_card",
+      "description": "「如果你没有选择休息，你最可能去做的那件事是什么？」逐字打出，打出速度比朗读略慢，制造'认真想一想'的感觉。",
+      "start_seconds": 42.13,
+      "end_seconds": 48.686,
+      "script_section_id": "s05",
+      "information_role": "核心揭晓：把追问再推进一层",
+      "shot_intent": "让观众自己产出答案，再由画面命名它——这比直接给定义更不容易被划走。",
+      "transition_in": "黑场极短，然后逐字打出",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "原生逐字打出排版",
+          "source": "generate"
+        }
+      ],
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Opportunity cost — 微观经济学基础条目（互斥备选前提；机会成本不限于货币成本）",
+        "url": "https://simple.wikipedia.com/wiki/Opportunity_cost",
+        "tier": 2
+      },
+      "mechanism_importance": false,
+      "layout_variant": "question-headline",
+      "finance_justification": "让观众自己产出答案，再由画面命名它——这比直接给定义更不容易被划走。"
+    },
+    {
+      "id": "sc10",
+      "type": "animation",
+      "description": "B/C/D 全部暗下，只有 C（接一个兼职）重新点亮并放大，卡面浮出「最佳被放弃方案」，下方接一行「净价值约 500 元」。最后一屏放大到「机会成本」。",
+      "start_seconds": 48.686,
+      "end_seconds": 58.59,
+      "script_section_id": "s05",
+      "information_role": "核心揭晓：命名机会成本",
+      "shot_intent": "精确呈现定义：不是所有选项，而是被你放弃的那个最佳替代方案。",
+      "transition_in": "暗场一次，再逐个点亮，只留一张",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "animation",
+          "description": "选项卡变暗/重新高亮的确定性状态动效",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "MECHANISM",
+      "finance_scene_type": "causal_chain",
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Federal Reserve Bank of St. Louis — Real-Life Examples of Opportunity Cost",
+        "url": "https://www.stlouisfed.org/open-vault/2020/january/real-life-examples-opportunity-cost",
+        "date": "2020-01",
+        "tier": 1
+      },
+      "mechanism_importance": true,
+      "layout_variant": "highlight-reveal",
+      "finance_justification": "精确呈现定义：不是所有选项，而是被你放弃的那个最佳替代方案。",
+      "hero_moment": true
+    },
+    {
+      "id": "sc11",
+      "type": "text_card",
+      "description": "整屏定义卡：「机会成本 ≠ 你花出去的钱」「机会成本 = 为了当前选择而放弃的最佳替代方案的价值」。卡片下方以小字给出引用来源。整屏静止 1.2 秒后离开。",
+      "start_seconds": 58.59,
+      "end_seconds": 66.01,
+      "script_section_id": "s05",
+      "information_role": "核心概念：定义卡单独停留一屏",
+      "shot_intent": "定义需要被读到，而不是被听到。这是全片唯一一次让画面完全静止。",
+      "transition_in": "从上一场的放大态推入，静止",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "原生定义卡排版 + 来源小字",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "DOCUMENT",
+      "finance_scene_type": "document",
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Federal Reserve Bank of St. Louis — Real-Life Examples of Opportunity Cost",
+        "url": "https://www.stlouisfed.org/open-vault/2020/january/real-life-examples-opportunity-cost",
+        "date": "2020-01",
+        "tier": 1
+      },
+      "mechanism_importance": false,
+      "layout_variant": "definition-card",
+      "finance_justification": "定义需要被读到，而不是被听到。这是全片唯一一次让画面完全静止。"
+    },
+    {
+      "id": "sc12",
+      "type": "text_card",
+      "description": "先打出「那这些是不是全部都要加起来？」，停半拍，整屏翻成一个大字「不是。」「不是」二字用干燥的字重，不带任何装饰。",
+      "start_seconds": 66.01,
+      "end_seconds": 77.995,
+      "script_section_id": "s06",
+      "information_role": "第二次反转：先立问题再否定",
+      "shot_intent": "先让观众自己产生'求和'的直觉，再用一个最短的否定切断它。",
+      "transition_in": "从上一屏静止直接翻页",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "原生大字翻页：不是。",
+          "source": "generate"
+        }
+      ],
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "EconLearn — Opportunity Cost Explained（教学算例：机会成本只取次优方案，非全部相加）",
+        "url": "https://www.econlearn.org/blog/opportunity-cost-explained",
+        "tier": 3
+      },
+      "mechanism_importance": false,
+      "layout_variant": "hero-negation",
+      "finance_justification": "先让观众自己产生'求和'的直觉，再用一个最短的否定切断它。"
+    },
+    {
+      "id": "sc13",
+      "type": "animation",
+      "description": "朱红算式「B + C + D = 机会成本」被逐字划掉。同时 B/C/D 三张卡逐个熄灭（不是消失，是失去对比度并下沉）。最后重新浮现一句话：「你放弃掉的最佳替代方案」。",
+      "start_seconds": 77.995,
+      "end_seconds": 98.266,
+      "script_section_id": "s06",
+      "information_role": "第二次反转：拆解为什么不能相加",
+      "shot_intent": "用'熄灭'和'划掉的加号'两个动作完成一次纯视觉的否定，不依赖口播。",
+      "transition_in": "算式先出现，再被划掉",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "animation",
+          "description": "逐个熄灭 + 算式朱红划删动效",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "MECHANISM",
+      "finance_scene_type": "causal_chain",
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "EconLearn — Opportunity Cost Explained（教学算例：机会成本只取次优方案，非全部相加）",
+        "url": "https://www.econlearn.org/blog/opportunity-cost-explained",
+        "tier": 3
+      },
+      "mechanism_importance": true,
+      "layout_variant": "extinguish-arithmetic",
+      "finance_justification": "用'熄灭'和'划掉的加号'两个动作完成一次纯视觉的否定，不依赖口播。"
+    },
+    {
+      "id": "sc14",
+      "type": "text_card",
+      "description": "先浮现观众的误会：「躺这 4 个小时就'亏了500'？」（整句套在虚线框里，表示这是待纠正的说法）。随后翻出「也不是。」",
+      "start_seconds": 98.266,
+      "end_seconds": 110.501,
+      "script_section_id": "s07",
+      "information_role": "第三次反转：提出误会再否定",
+      "shot_intent": "第三次反转必须先立起误会，否则纠偏没有对象。虚线框承担'这是误读'的信号。",
+      "transition_in": "从上一场的熄灭态起",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "原生虚线框误会卡 + 翻页",
+          "source": "generate"
+        }
+      ],
+      "claim_class": "INFERENCE",
+      "source_anchor": {
+        "label": "UC Santa Barbara — Opportunity Costs: The Hidden Price of Every Decision（分析工具而非货币化公式）",
+        "url": "https://efp.ucsb.edu/think-economist/opportunity-costs-hidden-price-every-decision",
+        "tier": 2
+      },
+      "mechanism_importance": false,
+      "layout_variant": "misread-card",
+      "finance_justification": "第三次反转必须先立起误会，否则纠偏没有对象。虚线框承担'这是误读'的信号。"
+    },
+    {
+      "id": "sc15",
+      "type": "diagram",
+      "description": "一条水平基准线，左端压「休息4小时的恢复」，右端压「兼职净价值约500元」，两端之间不给出胜负——线上方标注「机会成本只回答：你放弃了什么」。线下方另起一行「它不替你决定：这个选择对不对」。",
+      "start_seconds": 110.501,
+      "end_seconds": 125.124,
+      "script_section_id": "s07",
+      "information_role": "第三次反转：机会成本不替你判断",
+      "shot_intent": "把'机会成本是分析工具，不是价值判断'做成一个可见的结构，而不是一句口号。",
+      "transition_in": "静态基准线先出现，两端再压上纸片",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "diagram",
+          "description": "原生基准线与纸片比较（不给胜负结论）",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "MECHANISM",
+      "claim_class": "INFERENCE",
+      "source_anchor": {
+        "label": "UC Santa Barbara — Opportunity Costs: The Hidden Price of Every Decision（分析工具而非货币化公式）",
+        "url": "https://efp.ucsb.edu/think-economist/opportunity-costs-hidden-price-every-decision",
+        "tier": 2
+      },
+      "mechanism_importance": true,
+      "layout_variant": "balance-diagram",
+      "finance_justification": "把'机会成本是分析工具，不是价值判断'做成一个可见的结构，而不是一句口号。"
+    },
+    {
+      "id": "sc16",
+      "type": "text_card",
+      "description": "朱红批注式大字：「有机会成本，不等于不应该做。」停留一拍。随后四行小字快速并列落下：睡觉 / 陪家人 / 学习 / 工作——每行后面都跟着同一个词「有机会成本」。",
+      "start_seconds": 125.124,
+      "end_seconds": 139.138,
+      "script_section_id": "s07",
+      "information_role": "第三次反转：纠偏落点",
+      "shot_intent": "全片最重要的一次纠偏，防止观众把机会成本读成'休息就是浪费'。",
+      "transition_in": "从上一场的基准线收拢",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "原生朱红批注卡 + 四行并列小字",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "DECISION",
+      "finance_scene_type": "thesis_breaker",
+      "claim_class": "INFERENCE",
+      "source_anchor": {
+        "label": "UC Santa Barbara — Opportunity Costs: The Hidden Price of Every Decision（分析工具而非货币化公式）",
+        "url": "https://efp.ucsb.edu/think-economist/opportunity-costs-hidden-price-every-decision",
+        "tier": 2
+      },
+      "mechanism_importance": false,
+      "layout_variant": "annotation-card",
+      "finance_justification": "全片最重要的一次纠偏，防止观众把机会成本读成'休息就是浪费'。",
+      "hero_moment": true
+    },
+    {
+      "id": "sc17",
+      "type": "animation",
+      "description": "画面中一个朱红等号被划掉。随后四类被放弃项以纸片形式依次落下：收入 / 时间 / 精力 / 陪伴·休息·一次学习机会。每类纸片的形状不同，但都没有价格标签。",
+      "start_seconds": 139.138,
+      "end_seconds": 155.775,
+      "script_section_id": "s08",
+      "information_role": "补充认知：成本不必货币化",
+      "shot_intent": "明确否掉'所有东西都必须换算成钱'，这是机会成本最容易被误用的地方。",
+      "transition_in": "等号先被划掉，再落下四类纸片",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "animation",
+          "description": "等号划删 + 四类无价签纸片落纸",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "DATA",
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Opportunity cost — 微观经济学基础条目（互斥备选前提；机会成本不限于货币成本）",
+        "url": "https://simple.wikipedia.com/wiki/Opportunity_cost",
+        "tier": 2
+      },
+      "mechanism_importance": false,
+      "layout_variant": "strike-the-equals",
+      "finance_justification": "明确否掉'所有东西都必须换算成钱'，这是机会成本最容易被误用的地方。"
+    },
+    {
+      "id": "sc18",
+      "type": "broll",
+      "description": "真实排队素材：一条缓慢移动的队伍。画面上半部压「咖啡 0 元」，下半部压「那两个小时，不是免费的」。最后一行结论「免费，不等于没有成本」。",
+      "start_seconds": 155.775,
+      "end_seconds": 172.218,
+      "script_section_id": "s08",
+      "information_role": "补充认知：免费不等于没有成本",
+      "shot_intent": "用一个具体、极短的案例把'免费'和'没有成本'分开，避免抽象说教。",
+      "transition_in": "从纸面切到真实画面，形成一次材质对照",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "broll",
+          "description": "商场/门店前缓慢排队两小时的真实素材",
+          "source": "source"
+        },
+        {
+          "type": "overlay",
+          "description": "原生对比文字：咖啡 0 元 / 那两个小时不是免费的",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "DATA",
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Federal Reserve Bank of St. Louis — 显性成本与隐性成本区分（Money and Missed Opportunities 延伸）",
+        "url": "https://www.stlouisfed.org/open-vault/2020/january/real-life-examples-opportunity-cost",
+        "date": "2020-01",
+        "tier": 1
+      },
+      "mechanism_importance": false,
+      "layout_variant": "full-bleed-real",
+      "finance_justification": "用一个具体、极短的案例把'免费'和'没有成本'分开，避免抽象说教。"
+    },
+    {
+      "id": "sc19",
+      "type": "diagram",
+      "description": "两个并排的确定性柱形：A 3% / B 5%。柱形上方明确标注前提「风险、流动性与其他限制相当」。两柱之间用一个问号括号连起来，标注「为了选 A，你放弃了什么？」。",
+      "start_seconds": 172.218,
+      "end_seconds": 182.351,
+      "script_section_id": "s09",
+      "information_role": "投资连接：确定性收益率比较",
+      "shot_intent": "把机会成本接到投资上，但把前提写在图上而不是藏在口播里。",
+      "transition_in": "从真实画面回到纸面",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "diagram",
+          "description": "原生确定性柱形比较图 + 前提标注",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "DATA",
+      "finance_scene_type": "chart",
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Fiveable — 1.1 Scarcity, choice, and opportunity cost（投资比较算例及风险差异限定）",
+        "url": "https://frontend.prod.fiveable.me/key-terms/intermediate-microeconomic-theory/allocation-of-resources",
+        "tier": 3
+      },
+      "mechanism_importance": false,
+      "layout_variant": "comparison-chart",
+      "finance_justification": "把机会成本接到投资上，但把前提写在图上而不是藏在口播里。"
+    },
+    {
+      "id": "sc20",
+      "type": "text_card",
+      "description": "三条边界条件逐行落下：「风险不同」「流动性不同」「确定性不同」，随后一行结论「所以不能只拿最终收益率机械比较」。这一屏刻意不放慢，但字距略宽以便读完。",
+      "start_seconds": 182.351,
+      "end_seconds": 193.726,
+      "script_section_id": "s09",
+      "information_role": "投资连接：边界条件不能被赶",
+      "shot_intent": "限定条件必须与结论同屏，不能被快节奏带过——否则这句比较就变成了投资建议。",
+      "transition_in": "柱形图淡出，转入条款式排版",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "原生边界条件条款排版",
+          "source": "generate"
+        }
+      ],
+      "claim_class": "FACT",
+      "source_anchor": {
+        "label": "Fiveable — 1.1 Scarcity, choice, and opportunity cost（投资比较算例及风险差异限定）",
+        "url": "https://frontend.prod.fiveable.me/key-terms/intermediate-microeconomic-theory/allocation-of-resources",
+        "tier": 3
+      },
+      "mechanism_importance": false,
+      "layout_variant": "boundary-card",
+      "finance_justification": "限定条件必须与结论同屏，不能被快节奏带过——否则这句比较就变成了投资建议。"
+    },
+    {
+      "id": "sc21",
+      "type": "animation",
+      "description": "「判断一个选择，不能只看它给了你什么」——这一行先出现，其下方留空。紧接着「为了它，你放弃了什么」从右侧补进空白处，两行合成一个完整的判断动作。",
+      "start_seconds": 193.726,
+      "end_seconds": 202.974,
+      "script_section_id": "s09",
+      "information_role": "投资连接：把判断动作补全",
+      "shot_intent": "把'关注收益'补全为'同时关注放弃'，为结尾的追问做铺垫。",
+      "transition_in": "从边界条件收进一个完整句",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "animation",
+          "description": "原生两行补全动效",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "DECISION",
+      "claim_class": "THESIS",
+      "source_anchor": {
+        "label": "Fiveable — 1.1 Scarcity, choice, and opportunity cost（投资比较算例及风险差异限定）",
+        "url": "https://frontend.prod.fiveable.me/key-terms/intermediate-microeconomic-theory/allocation-of-resources",
+        "tier": 3
+      },
+      "mechanism_importance": false,
+      "layout_variant": "completion-reveal",
+      "finance_justification": "把'关注收益'补全为'同时关注放弃'，为结尾的追问做铺垫。"
+    },
+    {
+      "id": "sc22",
+      "type": "text_card",
+      "description": "先出「我要花多少钱？」（灰），其下方补出「为了它，我放弃了什么？」（石墨重字）。画面底部小字角标「小散经济学 03｜机会成本」。最底部以原生小字固定呈现合规文案：「本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。」",
+      "start_seconds": 202.974,
+      "end_seconds": 216.198,
+      "script_section_id": "s10",
+      "information_role": "收束：留下一个现实思考",
+      "shot_intent": "只留一个可复用的判断动作，不做课程式预告。合规文案必须原生、完整、可读，并留在成片最末端。",
+      "transition_in": "从补全句直接收到这一屏，不放任何转场花活",
+      "framing": "1080x1920 竖屏；关键文字与数字全部落在社交安全区内（距底 520px、距侧 96px）",
+      "movement": "见 description 中的动效说明；纹理固定 seed，不逐帧随机",
+      "overlay_notes": "不铺设整段口播字幕；只保留分层短句大字与关键词强调",
+      "required_assets": [
+        {
+          "type": "overlay",
+          "description": "原生结尾追问卡 + 系列角标 + 合规 footer",
+          "source": "generate"
+        }
+      ],
+      "finance_family": "DECISION",
+      "finance_scene_type": "watch_list",
+      "claim_class": "THESIS",
+      "source_anchor": {
+        "label": "本期可复用判断动作（收束自 research_brief.data_points[0] 的机会成本定义）",
+        "tier": 2
+      },
+      "mechanism_importance": false,
+      "layout_variant": "closing-card",
+      "finance_justification": "只留一个可复用的判断动作，不做课程式预告。合规文案必须原生、完整、可读，并留在成片最末端。"
+    }
+  ],
+  "metadata": {
+    "content_category": "finance",
+    "editorial_direction": {
+      "primary_mode": "EXPLAIN",
+      "secondary_mode": null,
+      "classification_confidence": "high",
+      "audience_task": "understand_mechanism",
+      "rationale": [
+        "核心问题是一个稳定的概念性追问（没花钱为什么仍有成本），不依赖公司内部信息、时点行情或政策传导。",
+        "机制（放弃最佳替代方案）与一个清晰示例（周六4小时）足以回答核心问题，不需要研究资料密度。",
+        "观众的落地障碍是理解误区而非证据缺口，因此优先满足'用一个例子把机制讲明白'的 EXPLAIN 任务。"
+      ],
+      "evidence_priority": [
+        "authoritative_concept_sources",
+        "stable_definitions",
+        "worked_example"
+      ],
+      "visual_priority": [
+        "text_diagram",
+        "comparison_via_data_scenes",
+        "simple_chart"
+      ],
+      "canvas_preference": [
+        "paper",
+        "margin-note"
+      ],
+      "density_profile": {
+        "opening": "sparse",
+        "body": "standard",
+        "evidence": "standard",
+        "ending": "sparse"
+      },
+      "hook_grammar": "CONTRADICTION",
+      "ending_grammar": "REUSABLE_METHOD",
+      "key_editorial_risk": "不要把机会成本讲成'休息就是浪费'的价值判断；第三次反转必须明确'有机会成本不等于这个选择是错的'。",
+      "key_anti_pattern": "不要为稳定概念强行套上机构研究密度、ThesisBreaker 或 ScenarioBoard。"
+    },
+    "art_direction": "projects/xiaosan-economics-03-opportunity-cost/art-direction-tactile-paper-v2.md（中性象牙白 #F4F1E8 基纸、石墨文字、朱红批注、深青结构线；标志装置为四张选项纸卡的选中/变暗/重新高亮与逐个熄灭；纹理固定 seed 不逐帧随机；禁止大面积纯黄、咖啡渍做旧、全局强噪点、每段都套卡片、过重阴影）",
+    "composition_mode": "atelier",
+    "render_runtime": "remotion",
+    "canvas": {
+      "width": 1080,
+      "height": 1920,
+      "fps": 30
+    },
+    "subtitle_safe_area": {
+      "bottom_px": 520,
+      "side_px": 96,
+      "policy": "social-ui-safe"
+    },
+    "rhythm": [
+      "快(sc01-sc02)",
+      "慢(sc03)",
+      "快(sc04)",
+      "停(sc05)",
+      "慢(sc06-sc08)",
+      "停(sc09-sc11)",
+      "快(sc12-sc13)",
+      "慢(sc14-sc16)",
+      "慢(sc17-sc18)",
+      "慢(sc19-sc21)",
+      "收(sc22)"
+    ],
+    "scene_count_rationale": "22 个场景，每个边界对应一次认知任务的实质变化（提问→直觉→反转→选择集合→定义→否定求和→纠偏→边界→投资→收束）。EXPLAIN 模式不强制组件清单，也未为凑数量而拆场。",
+    "finance_family_mix": [
+      "DATA",
+      "DECISION",
+      "DOCUMENT",
+      "MECHANISM"
+    ],
+    "scene_type_mix": [
+      "animation",
+      "broll",
+      "diagram",
+      "text_card"
+    ],
+    "max_consecutive_same_type": 2,
+    "semantic_motion_usage": [
+      {
+        "scene": "sc01",
+        "why": "开场躺卧：让抽象提问变成观众已经历过的具体处境，直接服务2秒留存"
+      },
+      {
+        "scene": "sc08",
+        "why": "4小时流逝：把'只能使用一次'从一句话变成可感知的紧迫性，支撑互斥前提"
+      },
+      {
+        "scene": "sc18",
+        "why": "排队两小时：为'免费≠没有成本'提供具身证据，比纯卡片更有说服力"
+      }
+    ],
+    "source_verification": "所有数字（4小时、500元、3%、5%、0元）均为演示算例或原生图表数值，逐帧由确定性图层渲染；素材镜头不承载任何需要被读准的事实。",
+    "trailing_hold_seconds": 3.0,
+    "scene_section_fractions": {
+      "sc01": [
+        0.0,
+        0.5818
+      ],
+      "sc02": [
+        0.5818,
+        1.0
+      ],
+      "sc03": [
+        0.0,
+        1.0
+      ],
+      "sc04": [
+        0.0,
+        0.503
+      ],
+      "sc05": [
+        0.503,
+        1.0
+      ],
+      "sc06": [
+        0.0,
+        0.272
+      ],
+      "sc07": [
+        0.272,
+        0.6441
+      ],
+      "sc08": [
+        0.6441,
+        1.0
+      ],
+      "sc09": [
+        0.0,
+        0.289
+      ],
+      "sc10": [
+        0.289,
+        0.7258
+      ],
+      "sc11": [
+        0.7258,
+        1.0
+      ],
+      "sc12": [
+        0.0,
+        0.3859
+      ],
+      "sc13": [
+        0.3859,
+        1.0
+      ],
+      "sc14": [
+        0.0,
+        0.3084
+      ],
+      "sc15": [
+        0.3084,
+        0.677
+      ],
+      "sc16": [
+        0.677,
+        1.0
+      ],
+      "sc17": [
+        0.0,
+        0.5154
+      ],
+      "sc18": [
+        0.5154,
+        1.0
+      ],
+      "sc19": [
+        0.0,
+        0.3394
+      ],
+      "sc20": [
+        0.3394,
+        0.7204
+      ],
+      "sc21": [
+        0.7204,
+        1.0
+      ],
+      "sc22": [
+        0.0,
+        1.0
+      ]
+    },
+    "scene_timing_basis": "每个场景以所属脚本段落内的比例定位，再映射到实测配音时长；重建时间轴不会移动场景边界。",
+    "compliance": {
+      "content_category": "finance",
+      "financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "exact_text": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "presentation": "footer",
+      "placement": "ending",
+      "ending_scene_id": "sc22",
+      "note": "合规文案以原生小字固定呈现在最终意义场景 sc22 的页脚，不朗读、不单独成场。"
+    }
+  }
+}

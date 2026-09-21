@@ -1,0 +1,225 @@
+{
+  "version": "1.0",
+  "project_id": "xiaosan-economics-03-opportunity-cost",
+  "pipeline_type": "finance-dossier",
+  "stage": "compose",
+  "status": "completed",
+  "timestamp": "2026-09-21T02:54:04.222590+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": false,
+  "artifacts": {
+    "render_report": {
+      "version": "1.0",
+      "outputs": [
+        {
+          "path": "projects/xiaosan-economics-03-opportunity-cost/renders/final-v1.mp4",
+          "format": "mp4",
+          "codec": "h264",
+          "audio_codec": "aac",
+          "resolution": "1080x1920",
+          "fps": 30,
+          "duration_seconds": 216.256,
+          "file_size_bytes": 30107364,
+          "platform_target": "vertical social master"
+        }
+      ],
+      "render_grammar": "explainer-data",
+      "decision_log_ref": "projects/xiaosan-economics-03-opportunity-cost/artifacts/decision_log.json",
+      "final_review_ref": "projects/xiaosan-economics-03-opportunity-cost/artifacts/final_review.json",
+      "warnings": [
+        "\u6e32\u67d3\u5de5\u5177\u81ea\u5e26\u7684 audio_spotcheck \u62a5\u51fa music_present=true\uff0c\u8fd9\u662f\u542f\u53d1\u5f0f\u8bef\u62a5\uff1a\u6210\u7247\u4ec5\u542b 1 \u6761\u97f3\u8f68\uff08\u4eba\u58f0\u6bcd\u5e26\uff09\uff0cedit_decisions \u4e2d\u4e0d\u5b58\u5728 music \u952e\uff0c\u5168\u7247\u65e0\u97f3\u4e50\u5c42\u3002",
+        "\u5bbf\u4e3b\u56fe\u50cf\u751f\u6210\u6210\u672c\u672a\u88ab\u8ba1\u5165\u672c\u6b21\u6e32\u67d3\u6210\u672c\u3002"
+      ],
+      "verification_notes": [
+        "\u5b8c\u6574\u89e3\u7801\u65e0\u9519\u8bef\uff1b6486 \u5e27\u3002",
+        "\u7ed3\u5c3e\u5e27\u5df2\u62bd\u51fa\u5e76\u786e\u8ba4\u539f\u751f\u5408\u89c4\u6587\u6848\u5b8c\u6574\u3001\u53ef\u8bfb\u3001\u4f4d\u4e8e\u6700\u672b\u7aef\u3002",
+        "\u7ad6\u5c4f\u5b57\u5e55\u5b89\u5168\u533a\u8ddd\u5e95 520px\u3001\u8ddd\u4fa7 96px\u3002",
+        "render_runtime=remotion\u3001composition_mode=atelier\uff0c\u4e0e\u63d0\u6848\u9501\u5b9a\u503c\u4e00\u81f4\uff0c\u65e0\u9759\u9ed8\u66ff\u6362\u3002"
+      ],
+      "metadata": {
+        "render_runtime": "remotion",
+        "composition_mode": "atelier",
+        "final_review_status": "pass",
+        "render_wall_clock_seconds": 402.9,
+        "frame_count": 6486,
+        "qa_artifacts": "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/",
+        "music_layer_present": false,
+        "audio_stream_count": 1
+      }
+    },
+    "final_review": {
+      "version": "1.0",
+      "output_path": "projects/xiaosan-economics-03-opportunity-cost/renders/final-v1.mp4",
+      "status": "pass",
+      "checks": {
+        "technical_probe": {
+          "valid_container": true,
+          "duration_seconds": 216.256,
+          "resolution": "1080x1920",
+          "fps": 30.0,
+          "has_audio": true,
+          "codec": "h264",
+          "file_size_bytes": 30107364,
+          "issues": []
+        },
+        "visual_spotcheck": {
+          "frames_sampled": 23,
+          "frame_paths": [
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc01.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc02.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc03.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc04.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc05.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc06.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc07.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc08.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc09.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc10.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc11.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc12.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc13.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc14.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc15.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc16.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc17.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc18.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc19.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc20.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc21.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc22.png",
+            "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/ending-frame.png"
+          ],
+          "black_frames_detected": false,
+          "broken_overlays": false,
+          "missing_assets": false,
+          "unreadable_text": false,
+          "issues": []
+        },
+        "opening_frame_check": {
+          "frame_path": "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc01.png",
+          "extracted": true,
+          "large_blank_area_detected": false,
+          "theme_elements_visible": true,
+          "inspection_method": "human_semantic_review_of_rendered_stills",
+          "issues": []
+        },
+        "audio_spotcheck": {
+          "narration_present": true,
+          "music_present": false,
+          "unexpected_silence": false,
+          "clipping_detected": false,
+          "mix_intelligible": true,
+          "issues": [
+            "\u66f4\u6b63\u6e32\u67d3\u5de5\u5177\u81ea\u5e26\u7684\u97f3\u9891\u542f\u53d1\u5f0f\uff1a\u5b83\u62a5\u544a music_present=true\uff0c\u4f46\u6210\u7247\u53ea\u6709 1 \u6761\u97f3\u8f68\uff08\u4eba\u58f0\u6bcd\u5e26\uff09\uff0cedit_decisions \u4e2d\u4e0d\u5b58\u5728 music \u952e\u3002\u5224\u5b9a\u4e3a\u5de5\u5177\u8bef\u62a5\uff0c\u5b9e\u9645\u65e0\u97f3\u4e50\u5c42\u3002"
+          ]
+        },
+        "promise_preservation": {
+          "delivery_promise_honored": true,
+          "renderer_family_used": "explainer-data",
+          "render_runtime_used": "remotion",
+          "runtime_swap_detected": false,
+          "runtime_swap_check": "proposal_packet.production_plan.render_runtime=remotion\u3001composition_mode=atelier\uff0c\u4e0e edit_decisions \u4e00\u81f4",
+          "motion_ratio_actual": 0.62,
+          "silent_downgrade_detected": false,
+          "issues": []
+        },
+        "subtitle_check": {
+          "subtitles_expected": true,
+          "subtitles_present": true,
+          "coverage_ratio": 1.0,
+          "timing_drift_detected": false,
+          "safe_area_policy": "social-ui-safe",
+          "safe_area_applied": true,
+          "bottom_clearance_px": 520,
+          "minimum_bottom_clearance_px": 520,
+          "side_clearance_px": 96,
+          "issues": []
+        },
+        "compliance": {
+          "financial_disclaimer_present": true,
+          "financial_disclaimer_exact": true,
+          "financial_disclaimer_readable": true,
+          "financial_disclaimer_at_end": true,
+          "financial_disclaimer_presentation": "footer",
+          "issues": []
+        },
+        "atelier": {
+          "stock_reuse_detected": false,
+          "offending_imports": [],
+          "art_direction_declared": true,
+          "art_direction": "projects/xiaosan-economics-03-opportunity-cost/art-direction-tactile-paper-v2.md",
+          "issues": []
+        }
+      },
+      "issues_found": [],
+      "recommended_action": "present_to_user",
+      "metadata": {
+        "content_category": "finance",
+        "project_id": "xiaosan-economics-03-opportunity-cost",
+        "extra_verification": {
+          "duration": {
+            "actual_seconds": 216.256,
+            "expected_seconds": 216.198,
+            "within_5pct": true
+          },
+          "no_music_layer": {
+            "audio_stream_count": 1,
+            "edit_decisions_has_music_key": false,
+            "ok": true
+          },
+          "decode": {
+            "clean": true,
+            "errors": []
+          },
+          "timeline_coverage": {
+            "scene_total_seconds": 216.198,
+            "gaps": 0,
+            "ok": true
+          },
+          "slideshow_risk": {
+            "static_hold_seconds": 39.47,
+            "share_of_total": 0.183,
+            "verdict": "strong",
+            "note": "22 \u573a\u4e2d 3 \u573a\u542b\u771f\u5b9e\u8fd0\u52a8\u7d20\u6750\u30015 \u573a\u542b\u72b6\u6001\u52a8\u6548\uff1b\u5176\u4f59\u4e3a\u4e3b\u52a8\u52a8\u6548\u6392\u7248\uff0c\u4e0d\u662f\u9759\u5e27\u8f6e\u64ad\u3002"
+          },
+          "ending_frame": {
+            "path": "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/ending-frame.png",
+            "frame": 6480,
+            "disclaimer_visually_confirmed": true
+          }
+        },
+        "verification_notes": [
+          "\u5b8c\u6574\u89e3\u7801\u65e0\u9519\u8bef\uff1b6486 \u5e27\u3002",
+          "\u7ed3\u5c3e\u5e27\u5df2\u62bd\u51fa\u5e76\u4eba\u5de5\u786e\u8ba4\u539f\u751f\u5408\u89c4\u6587\u6848\u5b8c\u6574\u3001\u53ef\u8bfb\u3001\u4f4d\u4e8e\u6210\u7247\u6700\u672b\u7aef\u3002",
+          "\u5168\u7247\u4ec5 1 \u6761\u97f3\u8f68\uff08\u4eba\u58f0\u6bcd\u5e26\uff09\uff0c\u4e0d\u5b58\u5728\u97f3\u4e50\u5c42\u3002",
+          "\u7ad6\u5c4f\u5b57\u5e55\u5b89\u5168\u533a\u4e3a\u8ddd\u5e95 520px\u3001\u8ddd\u4fa7 96px\uff0c\u6ee1\u8db3\u5171\u4eab social-ui-safe \u4e0b\u9650\u3002",
+          "render_runtime \u4e0e\u63d0\u6848\u9501\u5b9a\u503c\u4e00\u81f4\uff08remotion + atelier\uff09\uff0c\u65e0\u9759\u9ed8\u66ff\u6362\u3002",
+          "atelier \u68c0\u67e5\uff1a\u6e90\u7801\u672a\u5f15\u7528 stock \u573a\u666f\u6ce8\u518c\u8868\u3002"
+        ]
+      }
+    }
+  },
+  "style_playbook": "finance-dossier",
+  "review": {
+    "round": 1,
+    "decision": "pass",
+    "critical": 0,
+    "suggestions": 0,
+    "notes": [
+      "Remotion Atelier \u6e32\u67d3\u5b8c\u6210\uff1a216.256s\u30016486 \u5e27\u30011080x1920@30fps\u3001h264+aac\u300130.1MB\u3002",
+      "\u5b8c\u6574\u89e3\u7801\u65e0\u9519\u8bef\uff1b\u4ec5 1 \u6761\u97f3\u8f68\uff08\u4eba\u58f0\u6bcd\u5e26\uff09\uff0c\u65e0\u97f3\u4e50\u5c42\u3002",
+      "\u7ed3\u5c3e\u5e27\u7684\u539f\u751f\u5408\u89c4\u6587\u6848\u5df2\u62bd\u51fa\u5e76\u786e\u8ba4\u5b8c\u6574\u3001\u53ef\u8bfb\u3001\u4f4d\u4e8e\u6700\u672b\u7aef\uff08present/exact/readable/at_end \u56db\u9879\u5168\u901a\u8fc7\uff09\u3002",
+      "render_runtime=remotion\u3001composition_mode=atelier\uff0c\u4e0e\u63d0\u6848\u9501\u5b9a\u503c\u4e00\u81f4\uff0c\u65e0\u9759\u9ed8\u66ff\u6362\uff1batelier \u68c0\u67e5\u672a\u53d1\u73b0 stock \u7ec4\u4ef6\u590d\u7528\u3002",
+      "\u5de5\u5177\u81ea\u5e26 audio_spotcheck \u7684 music_present=true \u4e3a\u542f\u53d1\u5f0f\u8bef\u62a5\uff0c\u5df2\u5728 final_review.metadata \u4e0e render_report.warnings \u4e2d\u66f4\u6b63\u8bb0\u5f55\u3002"
+    ]
+  },
+  "cost_snapshot": {
+    "spent_usd": 0.0,
+    "budget_default_usd": 2.0
+  },
+  "metadata": {
+    "content_category": "finance",
+    "duration_actual": "216.256"
+  }
+}

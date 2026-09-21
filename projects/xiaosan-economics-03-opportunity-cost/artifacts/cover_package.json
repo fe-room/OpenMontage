@@ -1,0 +1,83 @@
+{
+  "version": "1.1",
+  "status": "ready",
+  "source_video_path": "projects/xiaosan-economics-03-opportunity-cost/renders/final-v1.mp4",
+  "generation_policy": "non_codex_host",
+  "cover_approach": "composited",
+  "visual_source": {
+    "kind": "external_image_provider",
+    "source_tool": "ImageGen",
+    "provider": "WorkBuddy host image generation",
+    "model": "host default text-to-image",
+    "path": "projects/xiaosan-economics-03-opportunity-cost/assets/images/cover-hero-v1.png",
+    "prompt": "Editorial still-life, top-down ivory linen sofa corner in soft daylight; face-down smartphone, blank textured paper sheet, slippers, water glass; no text/letters/numbers/logos/watermarks; warm ivory #F4F1E8 with soft ink shadows; upper two thirds left empty for typographic overlay; muted tactile paper-like grain, restrained documentary finance-editorial mood."
+  },
+  "primary_cover": {
+    "id": "cover-primary-3x4",
+    "path": "projects/xiaosan-economics-03-opportunity-cost/assets/images/cover.png",
+    "format": "png",
+    "width": 1080,
+    "height": 1440,
+    "aspect_ratio": "3:4",
+    "role": "primary",
+    "text_overlay": [
+      "小散经济学 03",
+      "一分钱没花",
+      "成本却可能很高？"
+    ],
+    "source_tool": "host_image_gen + native_pillow_compositor",
+    "provider": "WorkBuddy host image generation",
+    "model": "host default text-to-image",
+    "prompt": "core visual generated text-free; headline typeset locally with Songti SC",
+    "style_reference_paths": []
+  },
+  "variants": [
+    {
+      "id": "cover-base-textless",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/images/cover-base-v1.png",
+      "format": "png",
+      "width": 1080,
+      "height": 1440,
+      "aspect_ratio": "3:4",
+      "role": "variant",
+      "text_overlay": [],
+      "source_tool": "ffmpeg-crop-equivalent (Pillow)",
+      "provider": "local",
+      "prompt": "generated core visual, cropped to 3:4 with the generator watermark removed"
+    }
+  ],
+  "creative_rationale": "严格遵守规划第3节的封面原则：只卖问题，不卖术语——把「机会成本」留在片内作为揭晓，封面只用规划指定的两行大字与系列角标。核心视觉延续片内触感研究纸的象牙色调与克制气质，上方三分之二留白用于承载标题，缩略图尺寸下两行大字仍清晰可读。",
+  "decision_log_ref": "projects/xiaosan-economics-03-opportunity-cost/artifacts/decision_log.json",
+  "verification": {
+    "file_exists": true,
+    "dimensions_match": true,
+    "text_checked": true,
+    "mobile_readability_checked": true,
+    "content_match": true,
+    "issues": [
+      "生成的核心视觉右下角带有生成器水印，已通过 3:4 裁切移除（裁切后基底见 variants）。",
+      "非 Codex 宿主：核心视觉由宿主图像生成能力承担，中文字与数字全部由本地确定性排版叠加，未写入生成像素。"
+    ]
+  },
+  "metadata": {
+    "content_category": "finance",
+    "platform_spec": {
+      "resolved_from": "vertical video default",
+      "ratio": "3:4",
+      "dimensions": "1080x1440"
+    },
+    "compliance": {
+      "content_category": "finance",
+      "financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "presentation": "footer",
+      "placement": "ending",
+      "note": "合规文案在成片结尾原生呈现；封面按规划要求只承载问题，不承载合规句，也不出现投资结论。"
+    },
+    "forbidden_on_cover": [
+      "机会成本（术语不上海报）",
+      "收益率数字",
+      "任何投资结论或建议",
+      "生成式中文文字"
+    ]
+  }
+}

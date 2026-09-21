@@ -1,0 +1,68 @@
+{
+  "video": "projects/xiaosan-economics-03-opportunity-cost/renders/final-v2.mp4",
+  "checks": [
+    {
+      "t": 3.0,
+      "frame": "hdr-sc01.png",
+      "tone": "light",
+      "header_ink_rows": [
+        210,
+        259
+      ],
+      "header_present": true,
+      "rule_rows": [
+        285,
+        286,
+        287
+      ]
+    },
+    {
+      "t": 30.0,
+      "frame": "hdr-sc03.png",
+      "tone": "ink",
+      "header_ink_rows": [
+        229,
+        250
+      ],
+      "header_present": true,
+      "rule_rows": [
+        285,
+        286,
+        287
+      ]
+    },
+    {
+      "t": 170.0,
+      "frame": "hdr-sc18.png",
+      "tone": "light",
+      "header_ink_rows": [
+        229,
+        250
+      ],
+      "header_present": true,
+      "rule_rows": [
+        294
+      ]
+    },
+    {
+      "t": 212.0,
+      "frame": "hdr-sc22.png",
+      "tone": "ink",
+      "header_ink_rows": [
+        null,
+        null
+      ],
+      "header_present": false,
+      "rule_rows": [
+        285,
+        286,
+        287
+      ]
+    }
+  ],
+  "conclusion": {
+    "present_on_sc01": true,
+    "present_on_sc18": true,
+    "absent_on_closing_card": true
+  }
+}

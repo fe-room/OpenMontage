@@ -1,0 +1,432 @@
+{
+  "version": "1.0",
+  "title": "小散经济学 03｜周末躺一天，一分钱没花，成本真的是0吗？",
+  "total_duration_seconds": 213.198,
+  "voice_performance": {
+    "performance_intent": "老朋友观察型：平静、克制，像把一个刚想明白的问题讲给熟悉的朋友听。不寒暄、不介绍栏目、不先给定义。全片不加背景音乐，人声是唯一声源。",
+    "pacing_profile": "contemplative",
+    "energy_curve": "整体持平偏低。s01-s02 顺着观众直觉平稳铺陈；s03 转折处略压低；s04 摊开选择集合时放慢；s05 揭晓核心概念时最稳最慢；s06 先用平铺语气再以『不是』短促切断；s07 纠偏处最认真；s08-s09 回到日常语气；s10 收束留白。全程不提高音量，靠停顿制造重量。",
+    "pause_policy": "句间留自然停顿。每段结束留 0.9 秒呼吸位；三次反转前的句子后各留 1.2 秒明显停顿（s02 后、s05 后、s06 后、s07 后）。数字『4 个小时』『500 块钱』『3%』『5%』单独放慢读出，不连读。",
+    "sample_section_id": "s05",
+    "provider_notes": {
+      "provider": "doubao",
+      "voice_name": "大壹 2.0",
+      "voice_id": "zh_male_dayi_uranus_bigtts",
+      "resource_id": "seed-tts-2.0",
+      "generation_mode": "segmented",
+      "speech_rate": "0",
+      "emphasis_handling": "六处需要加重但不提高音量：『成本 = 0？』『这一天，你本来还能拿去干什么？』『这就是机会成本。』『不是。』『有机会成本，不等于不应该做。』『免费，不等于没有成本。』doubao 无 SSML，通过标点与断句实现：关键句独立成句、前后加逗号或句号。",
+      "number_handling": "阿拉伯数字在 provider_text 中保留原样，交由 TTS 数字归一化；『4个小时』『500块钱』『3%』『5%』前加逗号制造停顿。",
+      "prohibited": "不添加任何欢快／上扬的播报腔；不使用网络主播语气词；不朗读合规文案。"
+    }
+  },
+  "sections": [
+    {
+      "id": "s01",
+      "label": "01 开场｜没花钱是不是就没成本",
+      "text": "周末在家躺一天，一分钱没花。这一天的成本是不是0？",
+      "start_seconds": 0.12,
+      "end_seconds": 4.536,
+      "delivery_cues": {
+        "pace": "brisk",
+        "energy": "平静但直接，像把一个问题放到桌上",
+        "emphasis_words": [
+          "躺一天",
+          "一分钱没花",
+          "成本",
+          "0"
+        ],
+        "pause_after_seconds": 0.6,
+        "delivery_note": "不寒暄、不介绍栏目、不解释概念。第一句就要进入问题。",
+        "provider_text": "周末在家躺一天，一分钱没花。这一天的成本是不是0？"
+      },
+      "speaker_directions": "老朋友观察型；平静但直接，像把一个问题放到桌上"
+    },
+    {
+      "id": "s02",
+      "label": "02 强化直觉｜为什么大家觉得成本是0",
+      "text": "按我们平时理解“成本”的方式，好像确实是这样。没买东西。没打车。没出去吃饭。银行卡一分钱都没少。怎么看都是0成本。",
+      "start_seconds": 4.886,
+      "end_seconds": 14.342,
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "顺着对方说，不急于否定",
+        "emphasis_words": [
+          "没买东西",
+          "没打车",
+          "没出去吃饭",
+          "银行卡一分钱都没少",
+          "0成本"
+        ],
+        "pause_after_seconds": 1.2,
+        "delivery_note": "让观众先站到『0成本』这一边。最后一句『怎么看都是0成本』要平，不暗示转折。",
+        "provider_text": "按我们平时理解“成本”的方式，好像确实是这样。没买东西。没打车。没出去吃饭。银行卡一分钱都没少。怎么看都是0成本。"
+      },
+      "speaker_directions": "老朋友观察型；顺着对方说，不急于否定"
+    },
+    {
+      "id": "s03",
+      "label": "03 第一次反转｜经济学为什么不只看花了多少钱",
+      "text": "但经济学算成本，有时候根本不只看你花了多少钱。它还会问你一个问题：这一天，你本来还能拿去干什么？",
+      "start_seconds": 15.542,
+      "end_seconds": 23.966,
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "转折，略压低",
+        "emphasis_words": [
+          "根本不只看你花了多少钱",
+          "本来还能拿去干什么"
+        ],
+        "pause_after_seconds": 0.8,
+        "delivery_note": "『但』之后稍作停顿再进入。末句是全片第一个反问，尾音不要上扬成疑问播报腔。",
+        "provider_text": "但经济学算成本，有时候根本不只看你花了多少钱。它还会问你一个问题：这一天，你本来还能拿去干什么？"
+      },
+      "speaker_directions": "老朋友观察型；转折，略压低"
+    },
+    {
+      "id": "s04",
+      "label": "04 核心场景｜4小时能怎么用",
+      "text": "比如这个周六下午，你一共有4个小时。你可以在家休息。也可以拍一期视频。可以接一个兼职。或者去健身。问题是：这4个小时，你只能真正使用一次。最后你决定什么都不干，就在家休息。从银行卡来看，支出确实是0。",
+      "start_seconds": 24.466,
+      "end_seconds": 41.53,
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "摊开选择集合，克制、不催促",
+        "emphasis_words": [
+          "4个小时",
+          "只能真正使用一次",
+          "在家休息"
+        ],
+        "pause_after_seconds": 0.8,
+        "delivery_note": "四个选项逐项读出，每项之间留短停顿，让观众真正读完集合。『只能真正使用一次』是全段重心。",
+        "provider_text": "比如这个周六下午，你一共有4个小时。你可以在家休息。也可以拍一期视频。可以接一个兼职。或者去健身。问题是：这4个小时，你只能真正使用一次。最后你决定什么都不干，就在家休息。从银行卡来看，支出确实是0。"
+      },
+      "speaker_directions": "老朋友观察型；摊开选择集合，克制、不催促"
+    },
+    {
+      "id": "s05",
+      "label": "05 核心揭晓｜什么才是机会成本",
+      "text": "但经济学会继续问：如果你没有选择休息，你最可能去做的那件事是什么？假设你认真想了一下。如果不休息，你大概率会去接一个兼职。那个兼职对你的净价值，大概是500块钱。那你选择休息的时候，虽然没有真的掏出500块钱，但你确实放弃了一个价值大概500块钱的替代方案。这就是机会成本。",
+      "start_seconds": 42.13,
+      "end_seconds": 64.81,
+      "delivery_cues": {
+        "pace": "slow",
+        "energy": "揭晓，最稳最慢",
+        "emphasis_words": [
+          "最可能去做的那件事",
+          "净价值",
+          "500块钱",
+          "这就是机会成本"
+        ],
+        "pause_after_seconds": 1.2,
+        "delivery_note": "本段是样音审核段。『这就是机会成本。』独立成句，前后各留停顿，不加任何强调腔。",
+        "provider_text": "但经济学会继续问：如果你没有选择休息，你最可能去做的那件事是什么？假设你认真想了一下。如果不休息，你大概率会去接一个兼职。那个兼职对你的净价值，大概是500块钱。那你选择休息的时候，虽然没有真的掏出500块钱，但你确实放弃了一个价值大概500块钱的替代方案。这就是机会成本。"
+      },
+      "speaker_directions": "老朋友观察型；揭晓，最稳最慢"
+    },
+    {
+      "id": "s06",
+      "label": "06 第二次反转｜是不是所有没选的都加起来",
+      "text": "不过这里有一个特别容易搞错的地方。你还可以拍视频，可以健身，可以出去玩。那这些是不是全部都要加起来？不是。因为就算你不休息，你也不可能同时完整做完所有这些事情。机会成本通常关注的是：你放弃掉的最佳替代方案。也就是说，你选择A真正付出的机会成本，不是所有B、C、D全部加起来，而是那些没有被选择的方案里，对你最有价值的那个。",
+      "start_seconds": 66.01,
+      "end_seconds": 97.066,
+      "delivery_cues": {
+        "pace": "conversational",
+        "energy": "先平铺，再用『不是』短促切断",
+        "emphasis_words": [
+          "全部都要加起来",
+          "不是",
+          "最佳替代方案",
+          "最有价值的那个"
+        ],
+        "pause_after_seconds": 1.2,
+        "delivery_note": "『不是。』要短、要干，不做成反问。后半段解释『为什么不能相加』时语速略快，像顺理成章。",
+        "provider_text": "不过这里有一个特别容易搞错的地方。你还可以拍视频，可以健身，可以出去玩。那这些是不是全部都要加起来？不是。因为就算你不休息，你也不可能同时完整做完所有这些事情。机会成本通常关注的是：你放弃掉的最佳替代方案。也就是说，你选择A真正付出的机会成本，不是所有B、C、D全部加起来，而是那些没有被选择的方案里，对你最有价值的那个。"
+      },
+      "speaker_directions": "老朋友观察型；先平铺，再用『不是』短促切断"
+    },
+    {
+      "id": "s07",
+      "label": "07 第三次反转｜那休息是不是亏了",
+      "text": "不过说到这里，可能又会产生另一个误会。既然休息的机会成本可能是500块钱，那是不是说明我躺这4个小时就“亏了500”？也不是。机会成本告诉你的只是：你为了现在这个选择，放弃了什么。它并没有替你决定：这个选择到底对不对。如果你这一周已经非常累，你觉得休息4个小时带来的恢复，比接那单兼职对你更重要，那么休息完全可能就是更好的选择。所以：有机会成本，不等于不应该做。睡觉有机会成本。陪家人有机会成本。学习有机会成本。工作同样有机会成本。只要你在做选择，其他可能性就一定会被放弃。",
+      "start_seconds": 98.266,
+      "end_seconds": 137.938,
+      "delivery_cues": {
+        "pace": "slow",
+        "energy": "认真纠正，回避说教",
+        "emphasis_words": [
+          "亏了500",
+          "也不是",
+          "放弃了什么",
+          "有机会成本，不等于不应该做"
+        ],
+        "pause_after_seconds": 1.2,
+        "delivery_note": "这是全片最重要的纠偏段，不能赶。『有机会成本，不等于不应该做。』独立成句、放慢，但不加重音量。",
+        "provider_text": "不过说到这里，可能又会产生另一个误会。既然休息的机会成本可能是500块钱，那是不是说明我躺这4个小时就“亏了500”？也不是。机会成本告诉你的只是：你为了现在这个选择，放弃了什么。它并没有替你决定：这个选择到底对不对。如果你这一周已经非常累，你觉得休息4个小时带来的恢复，比接那单兼职对你更重要，那么休息完全可能就是更好的选择。所以：有机会成本，不等于不应该做。睡觉有机会成本。陪家人有机会成本。学习有机会成本。工作同样有机会成本。只要你在做选择，其他可能性就一定会被放弃。"
+      },
+      "speaker_directions": "老朋友观察型；认真纠正，回避说教"
+    },
+    {
+      "id": "s08",
+      "label": "08 补充认知｜成本是不是一定是钱",
+      "text": "而且机会成本也不意味着，所有东西都必须换算成钱。有些时候，你放弃的是收入。有些时候，放弃的是时间。有些时候，是精力。还有些时候，是陪伴、休息或者一次学习机会。所以经济学里的“成本”，其实比我们平时理解的“花了多少钱”要宽得多。比如商场送一杯免费咖啡。咖啡确实不要钱。但如果你要排两个小时的队，那两个小时并不是免费的。所以：免费，不等于没有成本。",
+      "start_seconds": 139.138,
+      "end_seconds": 171.418,
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "回到日常语气，扩展边界",
+        "emphasis_words": [
+          "换算成钱",
+          "时间",
+          "精力",
+          "免费咖啡",
+          "两个小时",
+          "免费，不等于没有成本"
+        ],
+        "pause_after_seconds": 0.9,
+        "delivery_note": "排比四句（收入／时间／精力／陪伴休息学习）用同一语调读完，不逐句加重。结尾判断句独立成句。",
+        "provider_text": "而且机会成本也不意味着，所有东西都必须换算成钱。有些时候，你放弃的是收入。有些时候，放弃的是时间。有些时候，是精力。还有些时候，是陪伴、休息或者一次学习机会。所以经济学里的“成本”，其实比我们平时理解的“花了多少钱”要宽得多。比如商场送一杯免费咖啡。咖啡确实不要钱。但如果你要排两个小时的队，那两个小时并不是免费的。所以：免费，不等于没有成本。"
+      },
+      "speaker_directions": "老朋友观察型；回到日常语气，扩展边界"
+    },
+    {
+      "id": "s09",
+      "label": "09 投资连接｜机会成本和投资有什么关系",
+      "text": "投资里也是一样。假设两个选择的风险、流动性和其他限制都差不多。A最后赚了3%。B本来可以赚5%。那从机会成本的角度，你还会多问一句：我为了选择A，放弃了什么？当然，现实里的投资选择不会这么简单。风险、流动性和确定性往往都不同。所以不能只拿最终收益率机械比较。但机会成本会提醒我们一件事：判断一个选择，有时候不能只看它给了你什么，还要看：为了它，你放弃了什么。",
+      "start_seconds": 172.218,
+      "end_seconds": 202.074,
+      "delivery_cues": {
+        "pace": "measured",
+        "energy": "轻量连接投资，自带限定",
+        "emphasis_words": [
+          "3%",
+          "5%",
+          "放弃了什么",
+          "不能只拿最终收益率机械比较"
+        ],
+        "pause_after_seconds": 0.9,
+        "delivery_note": "『3%』『5%』放慢分开读。限定句（风险、流动性和确定性往往都不同）不能被赶，它不是免责套话，是本段的边界条件。",
+        "provider_text": "投资里也是一样。假设两个选择的风险、流动性和其他限制都差不多。A最后赚了3%。B本来可以赚5%。那从机会成本的角度，你还会多问一句：我为了选择A，放弃了什么？当然，现实里的投资选择不会这么简单。风险、流动性和确定性往往都不同。所以不能只拿最终收益率机械比较。但机会成本会提醒我们一件事：判断一个选择，有时候不能只看它给了你什么，还要看：为了它，你放弃了什么。"
+      },
+      "speaker_directions": "老朋友观察型；轻量连接投资，自带限定"
+    },
+    {
+      "id": "s10",
+      "label": "10 收束｜留下现实思考",
+      "text": "所以下次再遇到一件“免费”的事情，别急着只问：我要花多少钱？也可以多问一句：为了它，我放弃了什么？",
+      "start_seconds": 202.974,
+      "end_seconds": 210.198,
+      "delivery_cues": {
+        "pace": "custom",
+        "energy": "收束，留一个问题给观众",
+        "emphasis_words": [
+          "我要花多少钱",
+          "为了它，我放弃了什么"
+        ],
+        "pause_after_seconds": 1.0,
+        "delivery_note": "最后一句是全片落点，读完后留足留白再进入结尾卡。不做课程式预告。",
+        "provider_text": "所以下次再遇到一件“免费”的事情，别急着只问：我要花多少钱？也可以多问一句：为了它，我放弃了什么？"
+      },
+      "speaker_directions": "老朋友观察型；收束，留一个问题给观众"
+    }
+  ],
+  "metadata": {
+    "content_category": "finance",
+    "pipeline": "finance-dossier",
+    "playbook": "finance-dossier",
+    "editorial_direction": {
+      "primary_mode": "EXPLAIN",
+      "secondary_mode": null,
+      "classification_confidence": "high",
+      "audience_task": "understand_mechanism",
+      "rationale": [
+        "核心问题是一个稳定的概念性追问（没花钱为什么仍有成本），不依赖公司内部信息、时点行情或政策传导。",
+        "机制（放弃最佳替代方案）与一个清晰示例（周六4小时）足以回答核心问题，不需要研究资料密度。",
+        "观众的落地障碍是理解误区而非证据缺口，因此优先满足'用一个例子把机制讲明白'的 EXPLAIN 任务。"
+      ],
+      "evidence_priority": [
+        "authoritative_concept_sources",
+        "stable_definitions",
+        "worked_example"
+      ],
+      "visual_priority": [
+        "text_diagram",
+        "comparison_via_data_scenes",
+        "simple_chart"
+      ],
+      "canvas_preference": [
+        "paper",
+        "margin-note"
+      ],
+      "density_profile": {
+        "opening": "sparse",
+        "body": "standard",
+        "evidence": "standard",
+        "ending": "sparse"
+      },
+      "hook_grammar": "CONTRADICTION",
+      "ending_grammar": "REUSABLE_METHOD",
+      "key_editorial_risk": "不要把机会成本讲成'休息就是浪费'的价值判断；第三次反转必须明确'有机会成本不等于这个选择是错的'。",
+      "key_anti_pattern": "不要为稳定概念强行套上机构研究密度、ThesisBreaker 或 ScenarioBoard。"
+    },
+    "narration_source": "user_authored_verbatim",
+    "narration_source_note": "旁白逐字采用用户提供的内容规划第 22 节「完整推荐口播」，未做任何增删改写；已通过程序化校验确认全篇连续覆盖、无缺口、无改动。",
+    "plan_paragraph_map": [
+      {
+        "id": "s01",
+        "plan_paragraph": "01 开场",
+        "claim_class": "SCENARIO",
+        "source_ref": "research_brief.metadata.claim_classes.SCENARIO",
+        "purpose": "2秒内制造冲突：不寒暄、不介绍栏目、不给定义",
+        "reversal": null
+      },
+      {
+        "id": "s02",
+        "plan_paragraph": "02 强化直觉",
+        "claim_class": "SCENARIO",
+        "source_ref": "research_brief.audience_insights.misconceptions[0]",
+        "purpose": "让用户先站到'0成本'这一边，不急于否定",
+        "reversal": null
+      },
+      {
+        "id": "s03",
+        "plan_paragraph": "03 第一次反转",
+        "claim_class": "FACT",
+        "source_ref": "research_brief.data_points[0]",
+        "purpose": "引出'你本来还能做什么'",
+        "reversal": "1"
+      },
+      {
+        "id": "s04",
+        "plan_paragraph": "04 核心场景",
+        "claim_class": "SCENARIO",
+        "source_ref": "research_brief.metadata.claim_classes.SCENARIO",
+        "purpose": "建立互斥的选择集合（4小时只能用一次）",
+        "reversal": null
+      },
+      {
+        "id": "s05",
+        "plan_paragraph": "05 核心揭晓",
+        "claim_class": "FACT",
+        "source_ref": "research_brief.data_points[0],research_brief.data_points[1]",
+        "purpose": "给出准确概念：最佳被放弃方案的净价值",
+        "reversal": null
+      },
+      {
+        "id": "s06",
+        "plan_paragraph": "06 第二次反转",
+        "claim_class": "FACT",
+        "source_ref": "research_brief.data_points[2]",
+        "purpose": "澄清机会成本不是所有选项相加",
+        "reversal": "2"
+      },
+      {
+        "id": "s07",
+        "plan_paragraph": "07 第三次反转",
+        "claim_class": "INFERENCE",
+        "source_ref": "research_brief.data_points[6],research_brief.data_points[4]",
+        "purpose": "避免价值判断误导：有机会成本≠选错",
+        "reversal": "3"
+      },
+      {
+        "id": "s08",
+        "plan_paragraph": "08 补充认知",
+        "claim_class": "FACT",
+        "source_ref": "research_brief.data_points[3],research_brief.data_points[1]",
+        "purpose": "成本不必货币化；免费≠没有成本",
+        "reversal": null
+      },
+      {
+        "id": "s09",
+        "plan_paragraph": "09 投资连接",
+        "claim_class": "FACT",
+        "source_ref": "research_brief.data_points[5]",
+        "purpose": "轻量连接投资，并自带风险差异限定",
+        "reversal": null
+      },
+      {
+        "id": "s10",
+        "plan_paragraph": "10 总结 + 11 结尾",
+        "claim_class": "THESIS",
+        "source_ref": "research_brief.metadata.editorial_direction",
+        "purpose": "收束为可复用的判断动作，不做课程式预告",
+        "reversal": null
+      }
+    ],
+    "finance_editorial": {
+      "core_question": "周末在家躺一天、一分钱没花，这一天的成本真的是0吗？",
+      "evidence_refs": [
+        "research_brief.data_points[0]",
+        "research_brief.data_points[1]",
+        "research_brief.data_points[2]",
+        "research_brief.data_points[6]"
+      ],
+      "boundary_conditions": [
+        "机会成本只取被放弃方案中对你最有价值的那个，不是所有被放弃选项相加。",
+        "机会成本是前瞻的、主观的，取决于你个人最看重哪个替代方案。",
+        "机会成本不要求货币化；被放弃的可能是时间、精力、陪伴或学习机会。",
+        "投资比较中风险、流动性与确定性往往不同，不能只拿最终收益率机械比较。",
+        "本期 500 元兼职净价值是演示算例，不是真实收入数据，也不代表任何具体投资结论。"
+      ],
+      "reusable_judgment_method": "遇到一件看起来「免费」的事，除了问「我要花多少钱」，再问一句「为了它，我放弃了什么」。",
+      "narration_style": "old_friend_observational"
+    },
+    "compliance": {
+      "content_category": "finance",
+      "financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "exact_text": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "presentation": "footer",
+      "placement": "ending",
+      "ending_section_id": "s10",
+      "note": "以原生文字呈现在最终意义场景的页脚，不朗读、不单独成段。"
+    },
+    "inclusion_completeness": {
+      "plan_sections_covered": 11,
+      "three_reversals_present": true,
+      "forbidden_topics_excluded": [
+        "沉没成本",
+        "边际成本",
+        "时间价值复杂计算",
+        "比较优势",
+        "多个投资品种比较",
+        "大量公共政策案例",
+        "机会成本的数学模型"
+      ]
+    },
+    "timeline_basis": {
+      "source": "real doubao seed-tts-2.0 segment durations",
+      "lead_in_seconds": 0.12,
+      "tail_seconds": 3.0,
+      "pause_after_seconds": {
+        "s01": 0.35,
+        "s02": 1.2,
+        "s03": 0.5,
+        "s04": 0.6,
+        "s05": 1.2,
+        "s06": 1.2,
+        "s07": 1.2,
+        "s08": 0.8,
+        "s09": 0.9,
+        "s10": 3.0
+      },
+      "note": "时间轴以实测配音时长为权威依据，不迁就提案阶段的字数估算。"
+    },
+    "pacing_actual": {
+      "chars_per_second_measured": 5.76,
+      "total_speech_seconds": 202.13,
+      "note": "实测豆包 seed-tts-2.0 / 大壹 2.0、speech_rate=0 的合成语速。"
+    },
+    "section_audio_durations": {
+      "s01": 4.416,
+      "s02": 9.456,
+      "s03": 8.424,
+      "s04": 17.064,
+      "s05": 22.68,
+      "s06": 31.056,
+      "s07": 39.672,
+      "s08": 32.28,
+      "s09": 29.856,
+      "s10": 7.224
+    }
+  }
+}

@@ -1,0 +1,861 @@
+{
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/unidirectional",
+  "api_mode": "unidirectional",
+  "request_id": "9af34cea-5e6a-4e1b-9648-ea745447e88e",
+  "log_id": "202609210952426DDA1DF4FEA0BA1F60A6",
+  "request": {
+    "headers": {
+      "X-Api-Resource-Id": "seed-tts-2.0",
+      "X-Api-Request-Id": "9af34cea-5e6a-4e1b-9648-ea745447e88e",
+      "Content-Type": "application/json",
+      "X-Control-Require-Usage-Tokens-Return": "*",
+      "Connection": "keep-alive"
+    },
+    "body": {
+      "req_params": {
+        "text": "比如这个周六下午，你一共有4个小时。你可以在家休息。也可以拍一期视频。可以接一个兼职。或者去健身。问题是：这4个小时，你只能真正使用一次。最后你决定什么都不干，就在家休息。从银行卡来看，支出确实是0。",
+        "speaker": "zh_male_dayi_uranus_bigtts",
+        "additions": "{\"disable_markdown_filter\": false, \"disable_emoji_filter\": false, \"enable_latex_tn\": true}",
+        "audio_params": {
+          "format": "mp3",
+          "sample_rate": 24000,
+          "speech_rate": 0,
+          "enable_subtitle": true
+        }
+      }
+    }
+  },
+  "response_events": [
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3388
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 2048
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6400
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 2816
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 9984
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1280
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 7168
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "比如这个周六下午，你一共有四个小时。",
+        "words": [
+          {
+            "confidence": 0.5672208,
+            "endTime": 0.155,
+            "startTime": 0.075,
+            "word": "比"
+          },
+          {
+            "confidence": 0.824405,
+            "endTime": 0.265,
+            "startTime": 0.155,
+            "word": "如"
+          },
+          {
+            "confidence": 0.94761395,
+            "endTime": 0.385,
+            "startTime": 0.265,
+            "word": "这"
+          },
+          {
+            "confidence": 0.48979968,
+            "endTime": 0.445,
+            "startTime": 0.385,
+            "word": "个"
+          },
+          {
+            "confidence": 0.926337,
+            "endTime": 0.555,
+            "startTime": 0.445,
+            "word": "周"
+          },
+          {
+            "confidence": 0.8382396,
+            "endTime": 0.665,
+            "startTime": 0.555,
+            "word": "六"
+          },
+          {
+            "confidence": 0.94144535,
+            "endTime": 0.835,
+            "startTime": 0.665,
+            "word": "下"
+          },
+          {
+            "confidence": 0.9411741,
+            "endTime": 1.015,
+            "startTime": 0.835,
+            "word": "午，"
+          },
+          {
+            "confidence": 0.9072083,
+            "endTime": 1.525,
+            "startTime": 1.405,
+            "word": "你"
+          },
+          {
+            "confidence": 0.632066,
+            "endTime": 1.565,
+            "startTime": 1.525,
+            "word": "一"
+          },
+          {
+            "confidence": 0.7856101,
+            "endTime": 1.695,
+            "startTime": 1.565,
+            "word": "共"
+          },
+          {
+            "confidence": 0.5544855,
+            "endTime": 1.725,
+            "startTime": 1.695,
+            "word": "有"
+          },
+          {
+            "confidence": 0.7961935,
+            "endTime": 1.895,
+            "startTime": 1.725,
+            "word": "四"
+          },
+          {
+            "confidence": 0.9412491,
+            "endTime": 1.955,
+            "startTime": 1.895,
+            "word": "个"
+          },
+          {
+            "confidence": 0.9680282,
+            "endTime": 2.065,
+            "startTime": 1.955,
+            "word": "小"
+          },
+          {
+            "confidence": 0.96038806,
+            "endTime": 2.315,
+            "startTime": 2.065,
+            "word": "时。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 256
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 8448
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "你可以在家休息。",
+        "words": [
+          {
+            "confidence": 0.9756479,
+            "endTime": 2.9450417,
+            "startTime": 2.8150415,
+            "word": "你"
+          },
+          {
+            "confidence": 0.7320399,
+            "endTime": 3.0550416,
+            "startTime": 2.9450417,
+            "word": "可"
+          },
+          {
+            "confidence": 0.66748965,
+            "endTime": 3.1150415,
+            "startTime": 3.0550416,
+            "word": "以"
+          },
+          {
+            "confidence": 0.9329295,
+            "endTime": 3.2150416,
+            "startTime": 3.1150415,
+            "word": "在"
+          },
+          {
+            "confidence": 0.9600761,
+            "endTime": 3.3250415,
+            "startTime": 3.2150416,
+            "word": "家"
+          },
+          {
+            "confidence": 0.9622192,
+            "endTime": 3.5150416,
+            "startTime": 3.3250415,
+            "word": "休"
+          },
+          {
+            "confidence": 0.8081271,
+            "endTime": 3.6750417,
+            "startTime": 3.5150416,
+            "word": "息。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3328
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 5376
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 2560
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "也可以拍一期视频。",
+        "words": [
+          {
+            "confidence": 0.784432,
+            "endTime": 4.215083,
+            "startTime": 4.1150827,
+            "word": "也"
+          },
+          {
+            "confidence": 0.77924186,
+            "endTime": 4.3450828,
+            "startTime": 4.215083,
+            "word": "可"
+          },
+          {
+            "confidence": 0.67479205,
+            "endTime": 4.415083,
+            "startTime": 4.3450828,
+            "word": "以"
+          },
+          {
+            "confidence": 0.9295962,
+            "endTime": 4.575083,
+            "startTime": 4.415083,
+            "word": "拍"
+          },
+          {
+            "confidence": 0.64242375,
+            "endTime": 4.625083,
+            "startTime": 4.575083,
+            "word": "一"
+          },
+          {
+            "confidence": 0.6651812,
+            "endTime": 4.725083,
+            "startTime": 4.625083,
+            "word": "期"
+          },
+          {
+            "confidence": 0.90314823,
+            "endTime": 4.875083,
+            "startTime": 4.725083,
+            "word": "视"
+          },
+          {
+            "confidence": 0.97585,
+            "endTime": 5.125083,
+            "startTime": 4.875083,
+            "word": "频。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 5888
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 2304
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "可以接一个兼职。",
+        "words": [
+          {
+            "confidence": 0.76399636,
+            "endTime": 5.7951245,
+            "startTime": 5.6451244,
+            "word": "可"
+          },
+          {
+            "confidence": 0.6805515,
+            "endTime": 5.8951244,
+            "startTime": 5.7951245,
+            "word": "以"
+          },
+          {
+            "confidence": 0.9186146,
+            "endTime": 6.0451245,
+            "startTime": 5.8951244,
+            "word": "接"
+          },
+          {
+            "confidence": 0.84835273,
+            "endTime": 6.1451244,
+            "startTime": 6.0451245,
+            "word": "一"
+          },
+          {
+            "confidence": 0.9508433,
+            "endTime": 6.2351246,
+            "startTime": 6.1451244,
+            "word": "个"
+          },
+          {
+            "confidence": 0.8967738,
+            "endTime": 6.4351244,
+            "startTime": 6.2351246,
+            "word": "兼"
+          },
+          {
+            "confidence": 0.9363678,
+            "endTime": 6.6951246,
+            "startTime": 6.4351244,
+            "word": "职。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6400
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "或者去健身。",
+        "words": [
+          {
+            "confidence": 0.85070586,
+            "endTime": 7.1951666,
+            "startTime": 6.9801664,
+            "word": "或"
+          },
+          {
+            "confidence": 0.9640497,
+            "endTime": 7.2951665,
+            "startTime": 7.1951666,
+            "word": "者"
+          },
+          {
+            "confidence": 0.917693,
+            "endTime": 7.4151664,
+            "startTime": 7.2951665,
+            "word": "去"
+          },
+          {
+            "confidence": 0.96398467,
+            "endTime": 7.5651665,
+            "startTime": 7.4151664,
+            "word": "健"
+          },
+          {
+            "confidence": 0.930842,
+            "endTime": 7.8151665,
+            "startTime": 7.5651665,
+            "word": "身。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 2048
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6912
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1280
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 7168
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3328
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 5120
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "问题是：这四个小时，你只能真正使用一次。",
+        "words": [
+          {
+            "confidence": 0.5739772,
+            "endTime": 8.425208,
+            "startTime": 8.365208,
+            "word": "问"
+          },
+          {
+            "confidence": 0.84101933,
+            "endTime": 8.545208,
+            "startTime": 8.425208,
+            "word": "题"
+          },
+          {
+            "confidence": 0.15449256,
+            "endTime": 8.575208,
+            "startTime": 8.545208,
+            "word": "是："
+          },
+          {
+            "confidence": 0.17017414,
+            "endTime": 8.635208,
+            "startTime": 8.575208,
+            "word": "这"
+          },
+          {
+            "confidence": 0.3461016,
+            "endTime": 8.695208,
+            "startTime": 8.635208,
+            "word": "四"
+          },
+          {
+            "confidence": 0.15738814,
+            "endTime": 8.755208,
+            "startTime": 8.695208,
+            "word": "个"
+          },
+          {
+            "confidence": 0.18390098,
+            "endTime": 8.8152075,
+            "startTime": 8.755208,
+            "word": "小"
+          },
+          {
+            "confidence": 0.21026455,
+            "endTime": 8.955208,
+            "startTime": 8.895207,
+            "word": "时，"
+          },
+          {
+            "confidence": 0.16548188,
+            "endTime": 9.015207,
+            "startTime": 8.955208,
+            "word": "你"
+          },
+          {
+            "confidence": 0.164564,
+            "endTime": 9.075208,
+            "startTime": 9.015207,
+            "word": "只"
+          },
+          {
+            "confidence": 0.16100626,
+            "endTime": 9.135208,
+            "startTime": 9.075208,
+            "word": "能"
+          },
+          {
+            "confidence": 0.25162,
+            "endTime": 9.195208,
+            "startTime": 9.135208,
+            "word": "真"
+          },
+          {
+            "confidence": 0.24828856,
+            "endTime": 9.255208,
+            "startTime": 9.195208,
+            "word": "正"
+          },
+          {
+            "confidence": 0.3197976,
+            "endTime": 9.335208,
+            "startTime": 9.255208,
+            "word": "使"
+          },
+          {
+            "confidence": 0.20604138,
+            "endTime": 9.365208,
+            "startTime": 9.335208,
+            "word": "用"
+          },
+          {
+            "confidence": 0.4145112,
+            "endTime": 9.395207,
+            "startTime": 9.365208,
+            "word": "一"
+          },
+          {
+            "confidence": 0.24661508,
+            "endTime": 9.455208,
+            "startTime": 9.395207,
+            "word": "次。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3840
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "比如这个周六下午，你一共有4个小时。你可以在家休息。也可以拍一期视频。可以接一个兼职。或者去健身。问题是：这4个小时，你只能真正使用一次。最后你决定什么都不干，就在家休息。从银行卡来看，支出确实是0。",
+        "words": []
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "最后你决定什么都不干，就在家休息。",
+        "words": [
+          {
+            "confidence": 0.8393237,
+            "endTime": 12.015249,
+            "startTime": 11.905249,
+            "word": "最"
+          },
+          {
+            "confidence": 0.96351707,
+            "endTime": 12.125249,
+            "startTime": 12.015249,
+            "word": "后"
+          },
+          {
+            "confidence": 0.96202826,
+            "endTime": 12.235249,
+            "startTime": 12.125249,
+            "word": "你"
+          },
+          {
+            "confidence": 0.97800773,
+            "endTime": 12.395248,
+            "startTime": 12.235249,
+            "word": "决"
+          },
+          {
+            "confidence": 0.90287274,
+            "endTime": 12.5652485,
+            "startTime": 12.395248,
+            "word": "定"
+          },
+          {
+            "confidence": 0.98328286,
+            "endTime": 12.855249,
+            "startTime": 12.675249,
+            "word": "什"
+          },
+          {
+            "confidence": 0.95290166,
+            "endTime": 12.935249,
+            "startTime": 12.855249,
+            "word": "么"
+          },
+          {
+            "confidence": 0.9582627,
+            "endTime": 13.0252495,
+            "startTime": 12.935249,
+            "word": "都"
+          },
+          {
+            "confidence": 0.9576418,
+            "endTime": 13.115249,
+            "startTime": 13.0252495,
+            "word": "不"
+          },
+          {
+            "confidence": 0.9674531,
+            "endTime": 13.3152485,
+            "startTime": 13.115249,
+            "word": "干，"
+          },
+          {
+            "confidence": 0.9502268,
+            "endTime": 13.615249,
+            "startTime": 13.505249,
+            "word": "就"
+          },
+          {
+            "confidence": 0.9667005,
+            "endTime": 13.725249,
+            "startTime": 13.615249,
+            "word": "在"
+          },
+          {
+            "confidence": 0.9666697,
+            "endTime": 13.835249,
+            "startTime": 13.725249,
+            "word": "家"
+          },
+          {
+            "confidence": 0.9801128,
+            "endTime": 14.005249,
+            "startTime": 13.835249,
+            "word": "休"
+          },
+          {
+            "confidence": 0.7714619,
+            "endTime": 14.145248,
+            "startTime": 14.005249,
+            "word": "息。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "从银行卡来看，支出确实是零。",
+        "words": [
+          {
+            "confidence": 0.8751516,
+            "endTime": 14.83529,
+            "startTime": 14.67529,
+            "word": "从"
+          },
+          {
+            "confidence": 0.72569185,
+            "endTime": 14.91529,
+            "startTime": 14.83529,
+            "word": "银"
+          },
+          {
+            "confidence": 0.8828373,
+            "endTime": 15.035291,
+            "startTime": 14.91529,
+            "word": "行"
+          },
+          {
+            "confidence": 0.93611246,
+            "endTime": 15.20529,
+            "startTime": 15.035291,
+            "word": "卡"
+          },
+          {
+            "confidence": 0.7590821,
+            "endTime": 15.325291,
+            "startTime": 15.20529,
+            "word": "来"
+          },
+          {
+            "confidence": 0.92383474,
+            "endTime": 15.55529,
+            "startTime": 15.325291,
+            "word": "看，"
+          },
+          {
+            "confidence": 0.92962927,
+            "endTime": 15.915291,
+            "startTime": 15.71529,
+            "word": "支"
+          },
+          {
+            "confidence": 0.96774334,
+            "endTime": 16.11529,
+            "startTime": 15.915291,
+            "word": "出"
+          },
+          {
+            "confidence": 0.93360066,
+            "endTime": 16.29529,
+            "startTime": 16.11529,
+            "word": "确"
+          },
+          {
+            "confidence": 0.5772827,
+            "endTime": 16.37529,
+            "startTime": 16.29529,
+            "word": "实"
+          },
+          {
+            "confidence": 0.40636683,
+            "endTime": 16.435291,
+            "startTime": 16.37529,
+            "word": "是"
+          },
+          {
+            "confidence": 0.24640973,
+            "endTime": 16.49529,
+            "startTime": 16.435291,
+            "word": "零。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 20000000,
+      "message": "OK",
+      "usage": {
+        "text_words": 100
+      }
+    }
+  ],
+  "usage": {
+    "text_words": 100
+  }
+}

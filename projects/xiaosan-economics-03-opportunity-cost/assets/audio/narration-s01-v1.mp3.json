@@ -1,0 +1,261 @@
+{
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/unidirectional",
+  "api_mode": "unidirectional",
+  "request_id": "20440a24-202a-42aa-b3ea-6351bf3e04a2",
+  "log_id": "202609210952353573538D76C839632EBA",
+  "request": {
+    "headers": {
+      "X-Api-Resource-Id": "seed-tts-2.0",
+      "X-Api-Request-Id": "20440a24-202a-42aa-b3ea-6351bf3e04a2",
+      "Content-Type": "application/json",
+      "X-Control-Require-Usage-Tokens-Return": "*",
+      "Connection": "keep-alive"
+    },
+    "body": {
+      "req_params": {
+        "text": "周末在家躺一天，一分钱没花。这一天的成本是不是0？",
+        "speaker": "zh_male_dayi_uranus_bigtts",
+        "additions": "{\"disable_markdown_filter\": false, \"disable_emoji_filter\": false, \"enable_latex_tn\": true}",
+        "audio_params": {
+          "format": "mp3",
+          "sample_rate": 24000,
+          "speech_rate": 0,
+          "enable_subtitle": true
+        }
+      }
+    }
+  },
+  "response_events": [
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3132
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3840
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4608
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1536
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 7168
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1280
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 7424
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1280
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "周末在家躺一天，一分钱没花。这一天的成本是不是0？",
+        "words": []
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "周末在家躺一天，一分钱没花。",
+        "words": [
+          {
+            "confidence": 0.8157586,
+            "endTime": 0.305,
+            "startTime": 0.165,
+            "word": "周"
+          },
+          {
+            "confidence": 0.9196595,
+            "endTime": 0.495,
+            "startTime": 0.305,
+            "word": "末"
+          },
+          {
+            "confidence": 0.9430694,
+            "endTime": 0.595,
+            "startTime": 0.495,
+            "word": "在"
+          },
+          {
+            "confidence": 0.94636726,
+            "endTime": 0.735,
+            "startTime": 0.595,
+            "word": "家"
+          },
+          {
+            "confidence": 0.95746434,
+            "endTime": 0.925,
+            "startTime": 0.735,
+            "word": "躺"
+          },
+          {
+            "confidence": 0.88075536,
+            "endTime": 1.035,
+            "startTime": 0.925,
+            "word": "一"
+          },
+          {
+            "confidence": 0.9793086,
+            "endTime": 1.365,
+            "startTime": 1.035,
+            "word": "天，"
+          },
+          {
+            "confidence": 0.89952606,
+            "endTime": 1.705,
+            "startTime": 1.605,
+            "word": "一"
+          },
+          {
+            "confidence": 0.8624495,
+            "endTime": 1.825,
+            "startTime": 1.705,
+            "word": "分"
+          },
+          {
+            "confidence": 0.8887588,
+            "endTime": 1.985,
+            "startTime": 1.825,
+            "word": "钱"
+          },
+          {
+            "confidence": 0.94207466,
+            "endTime": 2.135,
+            "startTime": 1.985,
+            "word": "没"
+          },
+          {
+            "confidence": 0.941668,
+            "endTime": 2.405,
+            "startTime": 2.135,
+            "word": "花。"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "这一天的成本是不是零？",
+        "words": [
+          {
+            "confidence": 0.90707695,
+            "endTime": 2.9550416,
+            "startTime": 2.8250418,
+            "word": "这"
+          },
+          {
+            "confidence": 0.8609498,
+            "endTime": 3.0150416,
+            "startTime": 2.9550416,
+            "word": "一"
+          },
+          {
+            "confidence": 0.92375576,
+            "endTime": 3.1450417,
+            "startTime": 3.0150416,
+            "word": "天"
+          },
+          {
+            "confidence": 0.91110647,
+            "endTime": 3.2250416,
+            "startTime": 3.1450417,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9798256,
+            "endTime": 3.3850417,
+            "startTime": 3.2250416,
+            "word": "成"
+          },
+          {
+            "confidence": 0.9745369,
+            "endTime": 3.5150418,
+            "startTime": 3.3850417,
+            "word": "本"
+          },
+          {
+            "confidence": 0.919467,
+            "endTime": 3.6450417,
+            "startTime": 3.5150418,
+            "word": "是"
+          },
+          {
+            "confidence": 0.65587705,
+            "endTime": 3.7050416,
+            "startTime": 3.6450417,
+            "word": "不"
+          },
+          {
+            "confidence": 0.6379195,
+            "endTime": 3.7750416,
+            "startTime": 3.7050416,
+            "word": "是"
+          },
+          {
+            "confidence": 0.259081,
+            "endTime": 3.8350415,
+            "startTime": 3.7750416,
+            "word": "零？"
+          }
+        ]
+      }
+    },
+    {
+      "code": 20000000,
+      "message": "OK",
+      "usage": {
+        "text_words": 25
+      }
+    }
+  ],
+  "usage": {
+    "text_words": 25
+  }
+}

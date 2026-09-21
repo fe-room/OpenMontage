@@ -1,0 +1,7 @@
+{
+ "note": "Atelier composition reads its content from timeline.ts + series.ts. This file exists because the render tool always passes --props; it is intentionally minimal.",
+ "project": "etf-100k-four-fund-race",
+ "compositionId": "EtfFourFundRace",
+ "fps": 30,
+ "durationInFrames": 2970
+}

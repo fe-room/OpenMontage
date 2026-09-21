@@ -1,0 +1,7 @@
+{"ts": "2026-09-21T05:01:26.778333+00:00", "tool": "video_compose", "event": "start", "output_path": "/Users/jishubu/project/OpenMontage/projects/etf-100k-four-fund-race/renders/final.mp4"}
+{"ts": "2026-09-21T05:03:06.923761+00:00", "tool": "video_compose", "event": "start", "output_path": "/Users/jishubu/project/OpenMontage/projects/etf-100k-four-fund-race/renders/final.mp4"}
+{"ts": "2026-09-21T05:05:08.339348+00:00", "tool": "video_compose", "event": "finish", "output_path": "/Users/jishubu/project/OpenMontage/projects/etf-100k-four-fund-race/renders/final.mp4", "success": true, "cost_usd": 0.0, "duration_s": 121.41}
+{"ts": "2026-09-21T05:08:59.278515+00:00", "tool": "video_compose", "event": "start", "output_path": "/Users/jishubu/project/OpenMontage/projects/etf-100k-four-fund-race/renders/final.mp4"}
+{"ts": "2026-09-21T05:10:59.272131+00:00", "tool": "video_compose", "event": "finish", "output_path": "/Users/jishubu/project/OpenMontage/projects/etf-100k-four-fund-race/renders/final.mp4", "success": true, "cost_usd": 0.0, "duration_s": 119.99}
+{"ts": "2026-09-21T05:23:51.717643+00:00", "tool": "video_compose", "event": "start", "output_path": "/Users/jishubu/project/OpenMontage/projects/etf-100k-four-fund-race/renders/final.mp4"}
+{"ts": "2026-09-21T05:25:52.993938+00:00", "tool": "video_compose", "event": "finish", "output_path": "/Users/jishubu/project/OpenMontage/projects/etf-100k-four-fund-race/renders/final.mp4", "success": true, "cost_usd": 0.0, "duration_s": 121.27}

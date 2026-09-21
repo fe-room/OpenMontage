@@ -1,0 +1,122 @@
+{
+  "version": "1.0",
+  "project_id": "etf-100k-four-fund-race",
+  "pipeline_type": "finance-dossier",
+  "stage": "cover",
+  "status": "completed",
+  "timestamp": "2026-09-21T05:11:53.935634+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "cover_package": {
+      "version": "1.1",
+      "status": "ready",
+      "source_video_path": "projects/etf-100k-four-fund-race/renders/final.mp4",
+      "primary_cover": {
+        "id": "cover-primary",
+        "path": "projects/etf-100k-four-fund-race/assets/images/cover.png",
+        "format": "png",
+        "width": 1080,
+        "height": 1440,
+        "aspect_ratio": "3:4",
+        "role": "primary",
+        "source_tool": "pillow",
+        "provider": "local",
+        "cost_usd": 0.0,
+        "text_overlay": [
+          "2020.07.03 \u2192 2026.09.18 \u00b7 1510 \u4e2a\u4ea4\u6613\u65e5 \u00b7 \u540e\u590d\u6743\u53e3\u5f84",
+          "10 \u4e07\u5143\u4e70 4 \u53ea ETF",
+          "6 \u5e74\u540e\u5dee\u591a\u5c11\uff1f",
+          "\u8d77\u70b9 \u00a5100,000",
+          "\u7ea2\u5229\u4f4e\u6ce250 \u00a5193,622",
+          "\u7ea2\u5229\u4f4e\u6ce2100 \u00a5181,596",
+          "\u4e2d\u8bc1500 \u00a5142,111",
+          "\u6caa\u6df1300 \u00a5112,681",
+          "\u540c\u6837\u7684\u8d77\u70b9\uff0c\u671f\u672b\u6700\u597d\u4e0e\u6700\u5dee\u76f8\u5dee",
+          "\u00a580,941",
+          "\u6570\u636e\u56de\u987e\uff0c\u4e0d\u6784\u6210\u6295\u8d44\u5efa\u8bae \u00b7 \u5386\u53f2\u6570\u636e\u4e0d\u4ee3\u8868\u672a\u6765"
+        ]
+      },
+      "variants": [
+        {
+          "id": "cover-thumb-check",
+          "path": "projects/etf-100k-four-fund-race/assets/images/cover_thumb_check.png",
+          "format": "png",
+          "width": 270,
+          "height": 360,
+          "aspect_ratio": "3:4",
+          "role": "variant",
+          "source_tool": "pillow",
+          "provider": "local",
+          "cost_usd": 0.0,
+          "text_overlay": [
+            "2020.07.03 \u2192 2026.09.18 \u00b7 1510 \u4e2a\u4ea4\u6613\u65e5 \u00b7 \u540e\u590d\u6743\u53e3\u5f84",
+            "10 \u4e07\u5143\u4e70 4 \u53ea ETF",
+            "6 \u5e74\u540e\u5dee\u591a\u5c11\uff1f",
+            "\u8d77\u70b9 \u00a5100,000",
+            "\u7ea2\u5229\u4f4e\u6ce250 \u00a5193,622",
+            "\u7ea2\u5229\u4f4e\u6ce2100 \u00a5181,596",
+            "\u4e2d\u8bc1500 \u00a5142,111",
+            "\u6caa\u6df1300 \u00a5112,681",
+            "\u540c\u6837\u7684\u8d77\u70b9\uff0c\u671f\u672b\u6700\u597d\u4e0e\u6700\u5dee\u76f8\u5dee",
+            "\u00a580,941",
+            "\u6570\u636e\u56de\u987e\uff0c\u4e0d\u6784\u6210\u6295\u8d44\u5efa\u8bae \u00b7 \u5386\u53f2\u6570\u636e\u4e0d\u4ee3\u8868\u672a\u6765"
+          ]
+        }
+      ],
+      "creative_rationale": "\u5c01\u9762\u53ea\u7528\u8fd9\u652f\u7247\u5b50\u771f\u6b63\u62cd\u51fa\u6765\u7684\u4e1c\u897f\uff1a\u540c\u4e00\u5f20\u5f52\u4e00\u5316\u7ade\u901f\u56fe\uff08\u56db\u6761\u8d26\u6237\u8d44\u4ea7\u66f2\u7ebf\u3001\u00a5100,000 \u8d77\u8dd1\u7ebf\u3001\u7ebf\u4e0b\u6c34\u4e0b\u5e26\uff09\u3001\u56db\u4e2a\u671f\u672b\u91d1\u989d\uff0c\u4ee5\u53ca\u671f\u672b\u6781\u5dee \u00a580,941\u3002\u6ca1\u6709\u751f\u6210\u56fe\u3001\u6ca1\u6709\u7d20\u6750\u7167\u3001\u6ca1\u6709\u7247\u5b50\u6ca1\u8bb2\u7684\u7ed3\u8bba\u3002\u56db\u6761\u8eab\u4efd\u8272\u5728\u4e24\u884c chip \u91cc\u9010\u6761\u5e26\u540d\u79f0\u4e0e\u91d1\u989d\u51fa\u73b0\uff0c\u989c\u8272\u6c38\u8fdc\u4e0d\u662f\u552f\u4e00\u8bc6\u522b\u901a\u9053\u3002",
+      "decision_log_ref": "projects/etf-100k-four-fund-race/artifacts/decision_log.json",
+      "generation_policy": "non_codex_host",
+      "cover_approach": "composited",
+      "visual_source": {
+        "kind": "local_composition",
+        "source_tool": "pillow",
+        "provider": "local",
+        "path": "projects/etf-100k-four-fund-race/assets/images/cover.png",
+        "prompt": ""
+      },
+      "verification": {
+        "file_exists": true,
+        "dimensions_match": true,
+        "text_checked": true,
+        "mobile_readability_checked": true,
+        "content_match": true,
+        "issues": []
+      },
+      "metadata": {
+        "content_category": "finance",
+        "checks_detail": {
+          "dimensions": "1080x1440\uff083:4\uff09",
+          "thumbnail": "270x360 \u964d\u91c7\u6837\u540e\uff0c\u6807\u9898\u3001\u56db\u4e2a\u671f\u672b\u91d1\u989d\u4e0e \u00a580,941 \u4ecd\u53ef\u8fa8\u8ba4",
+          "numbers_read_by_human": [
+            "\u00a5193,622",
+            "\u00a5181,596",
+            "\u00a5142,111",
+            "\u00a5112,681",
+            "\u00a580,941",
+            "\u00a5100,000"
+          ],
+          "numbers_source": "artifacts/etf_data.json\uff08\u540c\u4e00\u4efd\u57fa\u51c6\u6570\u636e\uff0c\u672a\u4eba\u5de5\u8f6c\u5199\uff09",
+          "watermark": "none\uff08\u672c\u5730\u786e\u5b9a\u6027\u7ed8\u5236\uff09",
+          "claims_on_cover_are_in_film": true
+        },
+        "text_is_native": true,
+        "chinese_text_engine": "Pillow + PingFang.ttc\uff08\u786e\u5b9a\u6027\u6392\u7248\uff1b\u6587\u5b57\u4e0d\u662f\u751f\u6210\u56fe\u7684\u4e00\u90e8\u5206\uff09",
+        "brand_marks": "\u65e0\u7cfb\u5217\u540d\u3001\u65e0\u671f\u53f7\u3001\u65e0\u89d2\u6807\uff08\u7528\u6237\u9009\u62e9\u72ec\u7acb\u5355\u6761\uff09",
+        "cover_dates": "2020-07-03 \u81f3 2026-09-18",
+        "plan_change": {
+          "from": "host_imagegen_plus_native",
+          "to": "pure_deterministic_composite",
+          "logged_decision_id": "d-011",
+          "reason": "\u2460 \u5c01\u9762\u6838\u5fc3\u89c6\u89c9\u5fc5\u987b\u4e0e\u6210\u7247\u540c\u6e90\uff0c\u751f\u6210\u56fe\u65e0\u6cd5\u590d\u73b0\u66f2\u7ebf\u51e0\u4f55\u4e0e\u6570\u5b57\uff1b\u2461 \u6750\u8d28\u5e95\u677f\u4e0d\u627f\u8f7d\u4fe1\u606f\uff0c\u5374\u5e26\u6765\u56fe\u50cf\u751f\u6210\u989d\u5ea6\u6d88\u8017\u4e0e\u6c34\u5370\u98ce\u9669\uff1b\u2462 \u5b8c\u5168\u786e\u5b9a\u6027\u5408\u6210\u8ba9\u6bcf\u4e00\u4e2a\u50cf\u7d20\u90fd\u53ef\u6838\u5bf9\u3002",
+          "not_a_downgrade": true,
+          "note": "\u8fd9\u4e0d\u662f\u5bf9\u786c\u6027\u89c4\u5219\u7684\u7ed5\u8fc7\uff1acover_defaults.codex_primary_visual_required \u53ea\u9002\u7528\u4e8e Codex \u4f1a\u8bdd\uff0c\u672c\u673a\u4e3a\u975e Codex \u5bbf\u4e3b\uff0c\u56e0\u6b64\u672a\u4f7f\u7528 override \u5b57\u6bb5\u3002\u8be5\u53d8\u66f4\u964d\u4f4e\u4e86\u80fd\u529b\u4f7f\u7528\u91cf\uff0c\u5df2\u4f5c\u4e3a d-011 \u8ffd\u52a0\u8bb0\u5f55\uff0c\u5e76\u4f1a\u5728\u4ea4\u4ed8\u8bf4\u660e\u4e2d\u5411\u7528\u6237\u4e0a\u62a5\u3002"
+        }
+      }
+    }
+  },
+  "metadata": {
+    "note": "1080x1440 (3:4) \u5b8c\u5168\u786e\u5b9a\u6027\u5408\u6210\u3002\u6838\u5fc3\u89c6\u89c9\u4e0e\u6210\u7247\u540c\u6e90\uff1b\u6587\u5b57\u4e0e\u6570\u5b57\u5168\u90e8\u672c\u5730\u6392\u7248\uff0c\u65e0\u6c34\u5370\u3002\u63d0\u4f9b\u65b9\u7531 d-010 \u6539\u4e3a d-011\uff08\u7eaf\u786e\u5b9a\u6027\uff09\uff0c\u80fd\u529b\u4f7f\u7528\u91cf\u53ea\u51cf\u4e0d\u589e\u3002"
+  }
+}

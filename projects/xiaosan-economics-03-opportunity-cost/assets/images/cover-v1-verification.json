@@ -1,0 +1,14 @@
+{
+  "size": [
+    1080,
+    1440
+  ],
+  "checks": {
+    "exists": true,
+    "dimensions": true,
+    "ratio_3_4": true,
+    "has_headline_a": true,
+    "has_headline_b": true,
+    "no_generated_text": "headline glyphs drawn by local compositor"
+  }
+}

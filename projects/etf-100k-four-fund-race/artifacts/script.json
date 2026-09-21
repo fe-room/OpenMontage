@@ -1,0 +1,984 @@
+{
+ "version": "1.0",
+ "title": "10万元买4只ETF，6年后差多少？",
+ "total_duration_seconds": 99.0,
+ "sections": [
+  {
+   "id": "sc01",
+   "label": "开场提问",
+   "text": "2020.07.03　周五 ／ 6 年后，差多少？ ／ 同一天，同一笔钱 ／ 四只 ETF，各买 10 万",
+   "start_seconds": 0.0,
+   "end_seconds": 4.6,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 4.6,
+    "delivery_note": "无口播场景。场景类型 text_card，停留 4.6 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "overlay",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 0.0
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 0.0
+    }
+   ],
+   "source_ref": "腾讯证券行情接口 日线后复权；区间起点见口径说明"
+  },
+  {
+   "id": "sc02",
+   "label": "四只身份牌",
+   "text": "同为 ¥100,000 起点 ／ 四只跟踪的指数不同，选股与加权规则也不同",
+   "start_seconds": 4.6,
+   "end_seconds": 9.4,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 4.8,
+    "delivery_note": "无口播场景。场景类型 chip_row，停留 4.8 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "diagram",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 4.6
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 4.6
+    }
+   ],
+   "source_ref": "基金公司与交易所公开产品资料"
+  },
+  {
+   "id": "sc03",
+   "label": "规则公布",
+   "text": "规则只有一条：中途什么都不做 ／ START",
+   "start_seconds": 9.4,
+   "end_seconds": 13.2,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 3.8,
+    "delivery_note": "无口播场景。场景类型 rule_list，停留 3.8 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "diagram",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 9.4
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 9.4
+    }
+   ],
+   "source_ref": "用户工作簿「口径说明」工作表"
+  },
+  {
+   "id": "sc04",
+   "label": "连续赛跑（7 个注解拍）",
+   "text": "连续赛跑（7 个注解拍）",
+   "start_seconds": 13.2,
+   "end_seconds": 70.0,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 56.8,
+    "delivery_note": "无口播场景。场景类型 chart_stage，停留 56.8 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "animation",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 13.2
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 13.2
+    }
+   ],
+   "source_ref": "腾讯证券行情接口 日线后复权；七个注解拍各自的截面日期见 beats[].source_ref"
+  },
+  {
+   "id": "sc05",
+   "label": "冻结最终结果",
+   "text": "2026.09.18　冻结 ／ 期末最好与最差相差 ¥80,941 ／ 红利低波50 ／ 红利低波100 ／ 中证500 ／ 沪深300",
+   "start_seconds": 70.0,
+   "end_seconds": 76.4,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 6.4,
+    "delivery_note": "无口播场景。场景类型 result_table，停留 6.4 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "stat_card",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 70.0
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 70.0
+    }
+   ],
+   "source_ref": "账户资产口径；累计 = 最终资产 ÷ 100,000 − 1；年化按 365.2425 天/年复利折算"
+  },
+  {
+   "id": "sc06",
+   "label": "转折",
+   "text": "但是，过程一样吗？ ／ 跌幅都在四成上下：沪深300 -38.45%，中证500 -39.48% ／ 但沪深300 从峰值到低点走了 1087 天，红利低波50 只走了 58 天",
+   "start_seconds": 76.4,
+   "end_seconds": 79.6,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 3.2,
+    "delivery_note": "无口播场景。场景类型 text_card，停留 3.2 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "overlay",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 76.4
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 76.4
+    }
+   ],
+   "source_ref": "最大回撤幅度与跨度：沪深300 2021-02-10 → 2024-02-02；红利低波50 2021-09-13 → 2021-11-10"
+  },
+  {
+   "id": "sc07",
+   "label": "规则不同，路径不同",
+   "text": "差别不在基金经理，在指数的选股规则 ／ 规则不同 → 选出的股票集合不同 → 同一天的涨跌并不同步。这只是解释过去路径的差异，不构成对未来的推断。",
+   "start_seconds": 79.6,
+   "end_seconds": 85.2,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 5.6,
+    "delivery_note": "无口播场景。场景类型 rule_compare，停留 5.6 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "diagram",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 79.6
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 79.6
+    }
+   ],
+   "source_ref": "中证指数有限公司编制公告；上海证券交易所 ETF 产品页（中证红利低波动指数选样条件）"
+  },
+  {
+   "id": "sc08",
+   "label": "最大回撤（零基线横向柱）",
+   "text": "最大回撤 ／ 红利低波100  12.91% ／ 红利低波50  16.53% ／ 沪深300  38.45% ／ 中证500  39.48%",
+   "start_seconds": 85.2,
+   "end_seconds": 90.4,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 5.2,
+    "delivery_note": "无口播场景。场景类型 drawdown_bars，停留 5.2 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "diagram",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 85.2
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 85.2
+    }
+   ],
+   "source_ref": "每日账户资产相对此前历史峰值的最大跌幅"
+  },
+  {
+   "id": "sc09",
+   "label": "最长一段没回到前高",
+   "text": "最长一段没回到前高 ／ 沪深300 到区间终点都没回去（1358 个交易日） ／ 沪深300   1358 ／ 中证500   971 ／ 红利低波100   341 ／ 红利低波50   239",
+   "start_seconds": 90.4,
+   "end_seconds": 94.2,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 3.8,
+    "delivery_note": "无口播场景。场景类型 underwater_strips，停留 3.8 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "diagram",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 90.4
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 90.4
+    }
+   ],
+   "source_ref": "当日账户资产低于此前历史最高值的连续区间，按交易日计数"
+  },
+  {
+   "id": "sc10",
+   "label": "结尾与合规",
+   "text": "同样是 ¥100,000 ／ 收益不同，过程也不同。 ／ 数据不会告诉你买哪个，但会告诉你过去发生了什么。 ／ 下次看收益对比，除收益率之外再问一句：中间最深亏了多少，亏了多久。",
+   "start_seconds": 94.2,
+   "end_seconds": 99.0,
+   "delivery_cues": {
+    "pace": "custom",
+    "energy": "无语音：本段无口播，节奏完全由画面推进控制",
+    "pause_after_seconds": 4.8,
+    "delivery_note": "无口播场景。场景类型 closing，停留 4.8 秒；全部信息由原生画面排版承担，不做语音合成。"
+   },
+   "enhancement_cues": [
+    {
+     "type": "overlay",
+     "description": "屏幕上出现的每一个数字都必须来自 artifacts/etf_data.json，且与同截面其他数字一致",
+     "timestamp_seconds": 94.2
+    },
+    {
+     "type": "overlay",
+     "description": "受竖屏安全区约束：可读文字位于 y ≤ 1400、x ∈ [96, 984]",
+     "timestamp_seconds": 94.2
+    }
+   ],
+   "source_ref": "腾讯证券行情接口 日线后复权；编制规则见中证指数公司与上交所公开文件"
+  }
+ ],
+ "metadata": {
+  "content_category": "finance",
+  "audio": {
+   "narration": "none",
+   "music": "none",
+   "audio_streams": 0,
+   "reason": "用户在开工前明确选择全程无口播；持久无 BGM 默认。本片为纯视觉数据片，不产出任何音轨。"
+  },
+  "structure_note": "全片 10 个场景。其中 sc04（13.2–70.0s，56.8 秒）是一个连续镜头：赛跑期间没有任何剪辑，七个章节只以注解拍的形式叠在同一镜头之上。把它拆成七个场景会误述这支片子的拍法。",
+  "on_screen_script": {
+   "note": "本片的\"台词\"就是屏幕上的文字。全部数值型文案由 artifacts/etf_data.json 生成（见 build_script.py 的 yuan/pct/rank_rows 辅助函数），手写文案中不出现任何需要被读准的数字。",
+   "scenes": [
+    {
+     "id": "sc01",
+     "kind": "standalone",
+     "label": "开场提问",
+     "role": "hook",
+     "type": "text_card",
+     "data": {
+      "overline": "2020.07.03　周五",
+      "lines": [
+       "同一天，同一笔钱",
+       "四只 ETF，各买 10 万"
+      ],
+      "hero": "6 年后，差多少？"
+     },
+     "source_ref": "腾讯证券行情接口 日线后复权；区间起点见口径说明",
+     "start_seconds": 0.0,
+     "end_seconds": 4.6
+    },
+    {
+     "id": "sc02",
+     "kind": "standalone",
+     "label": "四只身份牌",
+     "role": "cast",
+     "type": "chip_row",
+     "data": {
+      "head": "同为 ¥100,000 起点",
+      "chips": [
+       {
+        "name": "沪深300",
+        "code": "510300",
+        "category": "大盘宽基",
+        "color": "#31527E"
+       },
+       {
+        "name": "中证500",
+        "code": "510500",
+        "category": "中小盘宽基",
+        "color": "#C4791F"
+       },
+       {
+        "name": "红利低波50",
+        "code": "512890",
+        "category": "红利低波",
+        "color": "#8E3B6B"
+       },
+       {
+        "name": "红利低波100",
+        "code": "515100",
+        "category": "分散型红利低波",
+        "color": "#1E6E5C"
+       }
+      ],
+      "foot": "四只跟踪的指数不同，选股与加权规则也不同"
+     },
+     "source_ref": "基金公司与交易所公开产品资料",
+     "start_seconds": 4.6,
+     "end_seconds": 9.4
+    },
+    {
+     "id": "sc03",
+     "kind": "standalone",
+     "label": "规则公布",
+     "role": "rules",
+     "type": "rule_list",
+     "data": {
+      "head": "规则只有一条：中途什么都不做",
+      "rows": [
+       {
+        "k": "起点",
+        "v": "2020.07.03"
+       },
+       {
+        "k": "初始资金",
+        "v": "¥100,000"
+       },
+       {
+        "k": "分红处理",
+        "v": "按再投资计算（后复权口径）"
+       },
+       {
+        "k": "之后的操作",
+        "v": "不定投 · 不择时 · 不卖出"
+       }
+      ],
+      "hero": "START"
+     },
+     "source_ref": "用户工作簿「口径说明」工作表",
+     "start_seconds": 9.4,
+     "end_seconds": 13.2
+    },
+    {
+     "id": "sc04",
+     "kind": "standalone",
+     "label": "连续赛跑（7 个注解拍）",
+     "role": "race",
+     "type": "chart_stage",
+     "start_seconds": 13.2,
+     "end_seconds": 70.0,
+     "data": {
+      "beats": [
+       {
+        "id": "ch-2020h2",
+        "label": "2020 下半年 → 2021-02 见顶",
+        "role": "race",
+        "data": {
+         "pins": [
+          {
+           "at": 19.243737574552682,
+           "date": "2021-02-10",
+           "head": "沪深300 见顶 ¥129,310",
+           "sub": "此后再也没回到这个位置"
+          }
+         ]
+        }
+       },
+       {
+        "id": "ch-2021",
+        "label": "2021 分化 → 排名变化",
+        "role": "race",
+        "data": {
+         "callouts": [
+          {
+           "at": 27.27952286282306,
+           "kicker": "2021 收官 · 排名发生变化",
+           "rows": [
+            {
+             "code": "515100",
+             "name": "红利低波100",
+             "value": 141972,
+             "display": "¥141,972",
+             "underwater": false
+            },
+            {
+             "code": "512890",
+             "name": "红利低波50",
+             "value": 130008,
+             "display": "¥130,008",
+             "underwater": false
+            },
+            {
+             "code": "510500",
+             "name": "中证500",
+             "value": 124663,
+             "display": "¥124,663",
+             "underwater": false
+            },
+            {
+             "code": "510300",
+             "name": "沪深300",
+             "value": 112848,
+             "display": "¥112,848",
+             "underwater": false
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "id": "ch-2022",
+        "label": "2022 跌破起跑线",
+        "role": "race",
+        "data": {
+         "markers": [
+          {
+           "at": 28.81192842942346,
+           "text": "2022-03-08　沪深300 首次收于起点以下 ¥99,055"
+          }
+         ],
+         "callouts": [
+          {
+           "at": 36.32445328031809,
+           "kicker": "2022 收官 · 1 只已在水下",
+           "rows": [
+            {
+             "code": "515100",
+             "name": "红利低波100",
+             "value": 143099,
+             "display": "¥143,099",
+             "underwater": false
+            },
+            {
+             "code": "512890",
+             "name": "红利低波50",
+             "value": 133769,
+             "display": "¥133,769",
+             "underwater": false
+            },
+            {
+             "code": "510500",
+             "name": "中证500",
+             "value": 101777,
+             "display": "¥101,777",
+             "underwater": false
+            },
+            {
+             "code": "510300",
+             "name": "沪深300",
+             "value": 92325,
+             "display": "¥92,325",
+             "underwater": true
+            }
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "id": "ch-2023",
+        "label": "2023 深水区",
+        "role": "race",
+        "data": {
+         "callouts": [
+          {
+           "at": 45.36938369781312,
+           "kicker": "2023 收官",
+           "rows": [
+            {
+             "code": "515100",
+             "name": "红利低波100",
+             "value": 160845,
+             "display": "¥160,845",
+             "underwater": false
+            },
+            {
+             "code": "512890",
+             "name": "红利低波50",
+             "value": 149469,
+             "display": "¥149,469",
+             "underwater": false
+            },
+            {
+             "code": "510500",
+             "name": "中证500",
+             "value": 95423,
+             "display": "¥95,423",
+             "underwater": true
+            },
+            {
+             "code": "510300",
+             "name": "沪深300",
+             "value": 84594,
+             "display": "¥84,594",
+             "underwater": true
+            }
+           ],
+           "foot": "沪深300 距 2021-02 高点 -34.58%"
+          }
+         ]
+        }
+       },
+       {
+        "id": "ch-2024",
+        "label": "2024-02 极值（全屏标注）",
+        "role": "climax",
+        "data": {
+         "head": "2024 年 2 月",
+         "rows": [
+          {
+           "date": "2024-02-02",
+           "name": "沪深300",
+           "value": "¥79,588",
+           "tag": "区间最低"
+          },
+          {
+           "date": "2024-02-05",
+           "name": "中证500",
+           "value": "¥78,406",
+           "tag": "区间最低"
+          }
+         ],
+         "contrast": {
+          "date": "2024-02-02",
+          "left": "¥79,588　沪深300",
+          "right": "¥158,310　红利低波100",
+          "hero": "同一天相差 ¥78,722"
+         },
+         "foot": "下一个交易日，中证500 也跌到区间最低 ¥78,406；同一天红利低波50 是 ¥155,356"
+        }
+       },
+       {
+        "id": "ch-2024h2",
+        "label": "2024 收官 → 2025-11 双雄见顶",
+        "role": "race",
+        "data": {
+         "callouts": [
+          {
+           "at": 54.41431411530815,
+           "kicker": "2024 收官",
+           "rows": [
+            {
+             "code": "512890",
+             "name": "红利低波50",
+             "value": 183810,
+             "display": "¥183,810",
+             "underwater": false
+            },
+            {
+             "code": "515100",
+             "name": "红利低波100",
+             "value": 181408,
+             "display": "¥181,408",
+             "underwater": false
+            },
+            {
+             "code": "510500",
+             "name": "中证500",
+             "value": 101992,
+             "display": "¥101,992",
+             "underwater": false
+            },
+            {
+             "code": "510300",
+             "name": "沪深300",
+             "value": 96774,
+             "display": "¥96,774",
+             "underwater": true
+            }
+           ]
+          }
+         ],
+         "pins": [
+          {
+           "at": 62.18846918489066,
+           "date": "2025-11-12",
+           "head": "红利低波50 ¥203,271　红利低波100 ¥193,427",
+           "sub": "两只在同一天见顶"
+          }
+         ]
+        }
+       },
+       {
+        "id": "ch-end",
+        "label": "收束到区间终点",
+        "role": "race",
+        "data": {
+         "markers": [
+          {
+           "at": 67.83220675944334,
+           "text": "2026-06-30　中证500 见顶 ¥163,113"
+          }
+         ],
+         "end_card": {
+          "at": 70.0,
+          "date": "2026.09.18",
+          "label": "区间终点"
+         }
+        }
+       }
+      ]
+     },
+     "source_ref": "腾讯证券行情接口 日线后复权；七个注解拍各自的截面日期见 beats[].source_ref"
+    },
+    {
+     "id": "sc05",
+     "kind": "standalone",
+     "label": "冻结最终结果",
+     "role": "result",
+     "type": "result_table",
+     "data": {
+      "head": "2026.09.18　冻结",
+      "columns": [
+       "最终资产",
+       "累计收益",
+       "年化收益"
+      ],
+      "rows": [
+       {
+        "code": "512890",
+        "name": "红利低波50",
+        "final_asset": "¥193,622",
+        "cumulative": "+93.62%",
+        "annualized": "+11.23%"
+       },
+       {
+        "code": "515100",
+        "name": "红利低波100",
+        "final_asset": "¥181,596",
+        "cumulative": "+81.60%",
+        "annualized": "+10.08%"
+       },
+       {
+        "code": "510500",
+        "name": "中证500",
+        "final_asset": "¥142,111",
+        "cumulative": "+42.11%",
+        "annualized": "+5.82%"
+       },
+       {
+        "code": "510300",
+        "name": "沪深300",
+        "final_asset": "¥112,681",
+        "cumulative": "+12.68%",
+        "annualized": "+1.94%"
+       }
+      ],
+      "foot": "期末最好与最差相差 ¥80,941"
+     },
+     "source_ref": "账户资产口径；累计 = 最终资产 ÷ 100,000 − 1；年化按 365.2425 天/年复利折算",
+     "start_seconds": 70.0,
+     "end_seconds": 76.4
+    },
+    {
+     "id": "sc06",
+     "kind": "standalone",
+     "label": "转折",
+     "role": "turn",
+     "type": "text_card",
+     "data": {
+      "hero": "但是，过程一样吗？",
+      "sub": "跌幅都在四成上下：沪深300 -38.45%，中证500 -39.48%",
+      "foot": "但沪深300 从峰值到低点走了 1087 天，红利低波50 只走了 58 天"
+     },
+     "source_ref": "最大回撤幅度与跨度：沪深300 2021-02-10 → 2024-02-02；红利低波50 2021-09-13 → 2021-11-10",
+     "start_seconds": 76.4,
+     "end_seconds": 79.6
+    },
+    {
+     "id": "sc07",
+     "kind": "standalone",
+     "label": "规则不同，路径不同",
+     "role": "mechanism",
+     "type": "rule_compare",
+     "data": {
+      "head": "差别不在基金经理，在指数的选股规则",
+      "left": {
+       "title": "按市值加权",
+       "codes": [
+        "510300",
+        "510500"
+       ],
+       "names": [
+        "沪深300",
+        "中证500"
+       ],
+       "rule": "规模越大，权重越高",
+       "bars": [
+        {
+         "label": "规模最大",
+         "w": 1.0
+        },
+        {
+         "label": "居中",
+         "w": 0.62
+        },
+        {
+         "label": "规模最小",
+         "w": 0.34
+        }
+       ]
+      },
+      "right": {
+       "title": "按股息率加权",
+       "codes": [
+        "512890",
+        "515100"
+       ],
+       "names": [
+        "红利低波50",
+        "红利低波100"
+       ],
+       "rule": "股息率越高，权重越高",
+       "bars": [
+        {
+         "label": "股息率最高",
+         "w": 1.0
+        },
+        {
+         "label": "居中",
+         "w": 0.62
+        },
+        {
+         "label": "股息率最低",
+         "w": 0.34
+        }
+       ]
+      },
+      "caveat": "规则不同 → 选出的股票集合不同 → 同一天的涨跌并不同步。这只是解释过去路径的差异，不构成对未来的推断。"
+     },
+     "source_ref": "中证指数有限公司编制公告；上海证券交易所 ETF 产品页（中证红利低波动指数选样条件）",
+     "start_seconds": 79.6,
+     "end_seconds": 85.2
+    },
+    {
+     "id": "sc08",
+     "kind": "standalone",
+     "label": "最大回撤（零基线横向柱）",
+     "role": "evidence",
+     "type": "drawdown_bars",
+     "data": {
+      "head": "最大回撤",
+      "rows": [
+       {
+        "code": "515100",
+        "name": "红利低波100",
+        "drawdown": "12.91%",
+        "ratio": 0.1291493096491918,
+        "span_days": 208,
+        "span_range": "2022-04-06 → 2022-10-31"
+       },
+       {
+        "code": "512890",
+        "name": "红利低波50",
+        "drawdown": "16.53%",
+        "ratio": 0.16525374040325302,
+        "span_days": 58,
+        "span_range": "2021-09-13 → 2021-11-10"
+       },
+       {
+        "code": "510300",
+        "name": "沪深300",
+        "drawdown": "38.45%",
+        "ratio": 0.38451782538086765,
+        "span_days": 1087,
+        "span_range": "2021-02-10 → 2024-02-02"
+       },
+       {
+        "code": "510500",
+        "name": "中证500",
+        "drawdown": "39.48%",
+        "ratio": 0.39484733413602546,
+        "span_days": 875,
+        "span_range": "2021-09-13 → 2024-02-05"
+       }
+      ],
+      "axis_note": "零基线，从 0 起算"
+     },
+     "source_ref": "每日账户资产相对此前历史峰值的最大跌幅",
+     "start_seconds": 85.2,
+     "end_seconds": 90.4
+    },
+    {
+     "id": "sc09",
+     "kind": "standalone",
+     "label": "最长一段没回到前高",
+     "role": "evidence",
+     "type": "underwater_strips",
+     "data": {
+      "head": "最长一段没回到前高",
+      "rows": [
+       {
+        "code": "510300",
+        "name": "沪深300",
+        "days": 1358,
+        "range": [
+         "2021-02-18",
+         "2026-09-18"
+        ],
+        "still_open": true
+       },
+       {
+        "code": "510500",
+        "name": "中证500",
+        "days": 971,
+        "range": [
+         "2021-09-14",
+         "2025-09-16"
+        ],
+        "still_open": false
+       },
+       {
+        "code": "515100",
+        "name": "红利低波100",
+        "days": 341,
+        "range": [
+         "2023-05-09",
+         "2024-09-27"
+        ],
+        "still_open": false
+       },
+       {
+        "code": "512890",
+        "name": "红利低波50",
+        "days": 239,
+        "range": [
+         "2021-09-14",
+         "2022-09-08"
+        ],
+        "still_open": false
+       }
+      ],
+      "hero": "沪深300 到区间终点都没回去（1358 个交易日）",
+      "range_note": "2020.07.03 → 2026.09.18"
+     },
+     "source_ref": "当日账户资产低于此前历史最高值的连续区间，按交易日计数",
+     "start_seconds": 90.4,
+     "end_seconds": 94.2
+    },
+    {
+     "id": "sc10",
+     "kind": "standalone",
+     "label": "结尾与合规",
+     "role": "close",
+     "type": "closing",
+     "data": {
+      "head": "同样是 ¥100,000",
+      "groups": [
+       {
+        "label": "市场核心资产",
+        "names": [
+         "沪深300"
+        ],
+        "codes": [
+         "510300"
+        ]
+       },
+       {
+        "label": "中小盘弹性",
+        "names": [
+         "中证500"
+        ],
+        "codes": [
+         "510500"
+        ]
+       },
+       {
+        "label": "红利低波策略",
+        "names": [
+         "红利低波50",
+         "红利低波100"
+        ],
+        "codes": [
+         "512890",
+         "515100"
+        ]
+       }
+      ],
+      "hero": "收益不同，过程也不同。",
+      "sub": "数据不会告诉你买哪个，但会告诉你过去发生了什么。",
+      "method": "下次看收益对比，除收益率之外再问一句：中间最深亏了多少，亏了多久。",
+      "scope_note": "后复权口径，分红按再投资处理 · 区间 2020-07-03 至 2026-09-18 · 这一段包含 A 股长期调整与红利风格相对占优的年份，换起点可能换排名 · 历史数据不代表未来",
+      "disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。"
+     },
+     "source_ref": "腾讯证券行情接口 日线后复权；编制规则见中证指数公司与上交所公开文件",
+     "start_seconds": 94.2,
+     "end_seconds": 99.0
+    }
+   ],
+   "fps": 30,
+   "race_window": {
+    "start": 13.6,
+    "end": 70.0,
+    "span_seconds": 56.4
+   },
+   "date_mapping": "线性自然日映射：t = 13.6 + 56.4 × index ÷ 1509",
+   "safe_area": {
+    "width": 1080,
+    "height": 1920,
+    "bottom_offset_px": 520,
+    "side_margin_px": 96
+   }
+  },
+  "finance_editorial": {
+   "core_question": "同一天、同一笔10万元买四只ETF，到2026-09-18结果差多少，过程又差多少？",
+   "evidence_refs": [
+    "research_brief.data_points[0]",
+    "research_brief.data_points[1]",
+    "research_brief.data_points[2]",
+    "research_brief.data_points[3]",
+    "research_brief.data_points[4]",
+    "research_brief.data_points[5]",
+    "research_brief.data_points[6]",
+    "research_brief.data_points[7]",
+    "research_brief.data_points[9]",
+    "research_brief.data_points[10]"
+   ],
+   "boundary_conditions": [
+    "口径：后复权收盘价归一化，等同把现金分红按再投资处理；实际持有场内ETF时现金分红不会自动按当日净值复投。",
+    "区间敏感：2020-07-03 至 2026-09-18 包含 A 股自 2021 年高点后的长期调整，以及红利风格相对占优的年份。换起点或终点，四者排名可能不同。",
+    "数据源：腾讯证券行情接口后复权因子；不同供应商可能因复权算法与精度产生轻微差异。",
+    "512890 在 2021-10-22 缺 1 条成交记录，按用户工作簿口径沿用前一交易日账户资产，该日期不参与任何节点表述。",
+    "本片不构成对任何一只 ETF 未来表现的推断。"
+   ],
+   "reusable_judgment_method": "比较任何两只产品的历史收益时，除收益率之外再问三件事：起点和终点是不是同一天；中间最深亏了多少；那一段持续了多久、我能不能熬过去。",
+   "narration_style": "none",
+   "narration_style_note": "用户显式选择全程无口播，不适用老朋友观察型口播规范；本片以原生排版承担叙事，措辞仍遵守克制、不推荐、不喊口号的要求。"
+  },
+  "compliance": {
+   "content_category": "finance",
+   "financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+   "exact_text": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+   "presentation": "footer",
+   "placement": "ending",
+   "ending_section_id": "sc10",
+   "note": "合规文案以原生小字固定呈现在最终意义场景 sc10 的页脚；本片无音轨，故只以文字形式存在，且必须位于竖屏安全区内。"
+  },
+  "claim_classes": {
+   "FACT": [
+    "sc02",
+    "sc04",
+    "sc05",
+    "sc08",
+    "sc09"
+   ],
+   "INFERENCE": [
+    "sc03",
+    "sc07"
+   ],
+   "THESIS": [
+    "sc06",
+    "sc10"
+   ],
+   "SCENARIO": []
+  }
+ }
+}

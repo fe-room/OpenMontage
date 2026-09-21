@@ -1,0 +1,671 @@
+{
+  "version": "1.0",
+  "project_id": "xiaosan-economics-03-opportunity-cost",
+  "pipeline_type": "finance-dossier",
+  "stage": "edit",
+  "status": "completed",
+  "timestamp": "2026-09-21T03:26:38.494897+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": false,
+  "artifacts": {
+    "edit_decisions": {
+      "version": "1.0",
+      "renderer_family": "explainer-data",
+      "render_runtime": "remotion",
+      "composition_mode": "atelier",
+      "width": 1080,
+      "height": 1920,
+      "brand": {
+        "label": "\u5c0f\u6563\u7ecf\u6d4e\u5b66",
+        "series": "\u5c0f\u6563\u7ecf\u6d4e\u5b66",
+        "issue": "03"
+      },
+      "bespoke": {
+        "entry": "projects/xiaosan-economics-03-opportunity-cost/index.tsx",
+        "composition_id": "XiaosanOpportunityCost",
+        "art_direction": "projects/xiaosan-economics-03-opportunity-cost/art-direction-tactile-paper-v2.md",
+        "public_dir": "/Users/jishubu/project/OpenMontage/projects/xiaosan-economics-03-opportunity-cost/public",
+        "scale": 1.0,
+        "crf": 18
+      },
+      "cuts": [
+        {
+          "id": "cut-01",
+          "source": "bespoke:RealLieIn",
+          "type": "broll",
+          "variant": "RealLieIn",
+          "label": "sc01 \u5f00\u573a\uff1a\u628a\u63d0\u95ee\u843d\u5230\u89c2\u4f17\u81ea\u5df1\u7684\u5468\u516d",
+          "in_seconds": 0.0,
+          "out_seconds": 2.689,
+          "reason": "\u57282\u79d2\u5185\u8ba9\u89c2\u4f17\u8ba4\u51fa\u8fd9\u662f\u81ea\u5df1\u521a\u521a\u5ea6\u8fc7\u7684\u5468\u672b\uff0c\u628a\u62bd\u8c61\u63d0\u95ee\u53d8\u6210\u5df2\u7ecf\u5386\u8fc7\u7684\u5904\u5883\u3002",
+          "transition_in": "\u51b7\u5f00\u573a\uff0c\u65e0\u8f6c\u573a\u94fa\u57ab",
+          "layer": "primary"
+        },
+        {
+          "id": "cut-02",
+          "source": "bespoke:CostZeroHero",
+          "type": "text_card",
+          "variant": "CostZeroHero",
+          "label": "sc02 \u5f00\u573a\uff1a\u628a\u51b2\u7a81\u538b\u6210\u4e00\u884c",
+          "in_seconds": 2.689,
+          "out_seconds": 4.886,
+          "reason": "35 \u79d2\u5185\u4e0d\u89e3\u91ca\u4efb\u4f55\u6982\u5ff5\uff0c\u53ea\u628a\u51b2\u7a81\u6446\u4e0a\u684c\u3002",
+          "transition_in": "\u786c\u5207",
+          "layer": "primary"
+        },
+        {
+          "id": "cut-03",
+          "source": "bespoke:ZeroLedger",
+          "type": "animation",
+          "variant": "ZeroLedger",
+          "label": "sc03 \u5f3a\u5316\u76f4\u89c9\uff1a\u8ba9\u89c2\u4f17\u5148\u7ad9\u52300\u6210\u672c\u8fd9\u4e00\u8fb9",
+          "in_seconds": 4.886,
+          "out_seconds": 15.542,
+          "reason": "\u987a\u7740\u89c2\u4f17\u7684\u76f4\u89c9\u8d70\uff0c\u4e0d\u7ed9\u4efb\u4f55\u8f6c\u6298\u63d0\u793a\uff0c\u4e3a\u7b2c\u4e00\u6b21\u53cd\u8f6c\u84c4\u52bf\u3002",
+          "transition_in": "\u6e05\u5355\u4ece\u7a7a\u5f00\u59cb\uff0c\u9010\u884c\u8865\u5168",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "evidenceIndex": "sc03"
+        },
+        {
+          "id": "cut-04",
+          "source": "bespoke:StrikeTheSpend",
+          "type": "text_card",
+          "variant": "StrikeTheSpend",
+          "label": "sc04 \u7b2c\u4e00\u6b21\u53cd\u8f6c\uff1a\u7ecf\u6d4e\u5b66\u4e3a\u4ec0\u4e48\u4e0d\u53ea\u770b\u82b1\u4e86\u591a\u5c11\u94b1",
+          "in_seconds": 15.542,
+          "out_seconds": 19.78,
+          "reason": "\u7b2c\u4e00\u6b21\u8ba4\u77e5\u53cd\u8f6c\u7684\u843d\u70b9\u3002\u7528\u5212\u6389\u8fd9\u4e2a\u52a8\u4f5c\u4ee3\u66ff\u4efb\u4f55\u89e3\u91ca\u6027\u6587\u5b57\u3002",
+          "transition_in": "\u6731\u7ea2\u6a2a\u7ebf\u4ece\u5de6\u4fa7\u8fdb\u5165",
+          "layer": "primary"
+        },
+        {
+          "id": "cut-05",
+          "source": "bespoke:QuestionFork",
+          "type": "diagram",
+          "variant": "QuestionFork",
+          "label": "sc05 \u7b2c\u4e00\u6b21\u53cd\u8f6c\uff1a\u628a\u8ffd\u95ee\u6446\u51fa\u6765",
+          "in_seconds": 19.78,
+          "out_seconds": 24.466,
+          "reason": "\u628a'\u673a\u4f1a\u6210\u672c'\u7684\u7b2c\u4e00\u5c42\u542b\u4e49\u538b\u7f29\u6210\u4e00\u4e2a\u89c2\u4f17\u5fc5\u987b\u81ea\u5df1\u56de\u7b54\u7684\u95ee\u9898\u3002",
+          "transition_in": "\u627f\u4e0a\uff0c\u56db\u6761\u7ebf\u5f15\u51fa\u4e0b\u4e00\u573a",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc05"
+        },
+        {
+          "id": "cut-06",
+          "source": "bespoke:FourHoursTitle",
+          "type": "text_card",
+          "variant": "FourHoursTitle",
+          "label": "sc06 \u6838\u5fc3\u573a\u666f\uff1a\u5efa\u7acb\u7ea6\u675f",
+          "in_seconds": 24.466,
+          "out_seconds": 29.108,
+          "reason": "\u8ba9'4 \u5c0f\u65f6'\u8fd9\u4e2a\u6709\u9650\u8d44\u6e90\u6210\u4e3a\u6574\u671f\u7684\u5ea6\u91cf\u5355\u4f4d\u3002",
+          "transition_in": "\u4ece\u4e0a\u4e00\u573a\u7684\u5f15\u5bfc\u7ebf\u6536\u62e2\u5230\u8fd9\u4e00\u884c",
+          "layer": "primary"
+        },
+        {
+          "id": "cut-07",
+          "source": "bespoke:OptionCardsIn",
+          "type": "animation",
+          "variant": "OptionCardsIn",
+          "label": "sc07 \u6838\u5fc3\u573a\u666f\uff1a\u5efa\u7acb\u9009\u62e9\u96c6\u5408",
+          "in_seconds": 29.108,
+          "out_seconds": 35.457,
+          "reason": "\u628a'\u4f60\u672c\u6765\u8fd8\u80fd\u62ff\u53bb\u5e72\u4ec0\u4e48'\u5177\u4f53\u5316\u4e3a\u56db\u4e2a\u4e92\u65a5\u9009\u9879\u3002",
+          "transition_in": "\u7b2c\u4e00\u5f20\u5361\u4ece\u4e0a\u65b9\u843d\u4e0b\uff0c\u5176\u4f59\u4f9d\u6b21\u8ddf\u968f",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "evidenceIndex": "sc07"
+        },
+        {
+          "id": "cut-08",
+          "source": "bespoke:MutualExclusion",
+          "type": "animation",
+          "variant": "MutualExclusion",
+          "label": "sc08 \u6838\u5fc3\u573a\u666f\uff1a\u4e92\u65a5\u7ea6\u675f\u4e0e\u9009\u4e2d",
+          "in_seconds": 35.457,
+          "out_seconds": 42.13,
+          "reason": "\u5148\u628a\u4e92\u65a5\u6027\u9489\u6b7b\uff08\u8fd9\u662f\u540e\u9762'\u4e0d\u80fd\u76f8\u52a0'\u7684\u4f0f\u7b14\uff09\uff0c\u518d\u5b8c\u6210\u9009\u62e9\u3002",
+          "transition_in": "\u6731\u7ea2\u7ebf\u4e00\u6b21\u6027\u5212\u8fc7\u56db\u5f20\u5361",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "evidenceIndex": "sc08"
+        },
+        {
+          "id": "cut-09",
+          "source": "bespoke:AskTheOneThing",
+          "type": "text_card",
+          "variant": "AskTheOneThing",
+          "label": "sc09 \u6838\u5fc3\u63ed\u6653\uff1a\u628a\u8ffd\u95ee\u518d\u63a8\u8fdb\u4e00\u5c42",
+          "in_seconds": 42.13,
+          "out_seconds": 48.686,
+          "reason": "\u8ba9\u89c2\u4f17\u81ea\u5df1\u4ea7\u51fa\u7b54\u6848\uff0c\u518d\u7531\u753b\u9762\u547d\u540d\u5b83\u2014\u2014\u8fd9\u6bd4\u76f4\u63a5\u7ed9\u5b9a\u4e49\u66f4\u4e0d\u5bb9\u6613\u88ab\u5212\u8d70\u3002",
+          "transition_in": "\u9ed1\u573a\u6781\u77ed\uff0c\u7136\u540e\u9010\u5b57\u6253\u51fa",
+          "layer": "primary"
+        },
+        {
+          "id": "cut-10",
+          "source": "bespoke:NameTheOpportunityCost",
+          "type": "animation",
+          "variant": "NameTheOpportunityCost",
+          "label": "sc10 \u6838\u5fc3\u63ed\u6653\uff1a\u547d\u540d\u673a\u4f1a\u6210\u672c",
+          "in_seconds": 48.686,
+          "out_seconds": 58.59,
+          "reason": "\u7cbe\u786e\u5448\u73b0\u5b9a\u4e49\uff1a\u4e0d\u662f\u6240\u6709\u9009\u9879\uff0c\u800c\u662f\u88ab\u4f60\u653e\u5f03\u7684\u90a3\u4e2a\u6700\u4f73\u66ff\u4ee3\u65b9\u6848\u3002",
+          "transition_in": "\u6697\u573a\u4e00\u6b21\uff0c\u518d\u9010\u4e2a\u70b9\u4eae\uff0c\u53ea\u7559\u4e00\u5f20",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc10"
+        },
+        {
+          "id": "cut-11",
+          "source": "bespoke:DefinitionCard",
+          "type": "text_card",
+          "variant": "DefinitionCard",
+          "label": "sc11 \u6838\u5fc3\u6982\u5ff5\uff1a\u5b9a\u4e49\u5361\u5355\u72ec\u505c\u7559\u4e00\u5c4f",
+          "in_seconds": 58.59,
+          "out_seconds": 66.01,
+          "reason": "\u5b9a\u4e49\u9700\u8981\u88ab\u8bfb\u5230\uff0c\u800c\u4e0d\u662f\u88ab\u542c\u5230\u3002\u8fd9\u662f\u5168\u7247\u552f\u4e00\u4e00\u6b21\u8ba9\u753b\u9762\u5b8c\u5168\u9759\u6b62\u3002",
+          "transition_in": "\u4ece\u4e0a\u4e00\u573a\u7684\u653e\u5927\u6001\u63a8\u5165\uff0c\u9759\u6b62",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "sparse",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc11"
+        },
+        {
+          "id": "cut-12",
+          "source": "bespoke:NotANegation",
+          "type": "text_card",
+          "variant": "NotANegation",
+          "label": "sc12 \u7b2c\u4e8c\u6b21\u53cd\u8f6c\uff1a\u5148\u7acb\u95ee\u9898\u518d\u5426\u5b9a",
+          "in_seconds": 66.01,
+          "out_seconds": 77.995,
+          "reason": "\u5148\u8ba9\u89c2\u4f17\u81ea\u5df1\u4ea7\u751f'\u6c42\u548c'\u7684\u76f4\u89c9\uff0c\u518d\u7528\u4e00\u4e2a\u6700\u77ed\u7684\u5426\u5b9a\u5207\u65ad\u5b83\u3002",
+          "transition_in": "\u4ece\u4e0a\u4e00\u5c4f\u9759\u6b62\u76f4\u63a5\u7ffb\u9875",
+          "layer": "primary"
+        },
+        {
+          "id": "cut-13",
+          "source": "bespoke:ExtinguishSum",
+          "type": "animation",
+          "variant": "ExtinguishSum",
+          "label": "sc13 \u7b2c\u4e8c\u6b21\u53cd\u8f6c\uff1a\u62c6\u89e3\u4e3a\u4ec0\u4e48\u4e0d\u80fd\u76f8\u52a0",
+          "in_seconds": 77.995,
+          "out_seconds": 98.266,
+          "reason": "\u7528'\u7184\u706d'\u548c'\u5212\u6389\u7684\u52a0\u53f7'\u4e24\u4e2a\u52a8\u4f5c\u5b8c\u6210\u4e00\u6b21\u7eaf\u89c6\u89c9\u7684\u5426\u5b9a\uff0c\u4e0d\u4f9d\u8d56\u53e3\u64ad\u3002",
+          "transition_in": "\u7b97\u5f0f\u5148\u51fa\u73b0\uff0c\u518d\u88ab\u5212\u6389",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc13"
+        },
+        {
+          "id": "cut-14",
+          "source": "bespoke:MisreadCard",
+          "type": "text_card",
+          "variant": "MisreadCard",
+          "label": "sc14 \u7b2c\u4e09\u6b21\u53cd\u8f6c\uff1a\u63d0\u51fa\u8bef\u4f1a\u518d\u5426\u5b9a",
+          "in_seconds": 98.266,
+          "out_seconds": 110.501,
+          "reason": "\u7b2c\u4e09\u6b21\u53cd\u8f6c\u5fc5\u987b\u5148\u7acb\u8d77\u8bef\u4f1a\uff0c\u5426\u5219\u7ea0\u504f\u6ca1\u6709\u5bf9\u8c61\u3002\u865a\u7ebf\u6846\u627f\u62c5'\u8fd9\u662f\u8bef\u8bfb'\u7684\u4fe1\u53f7\u3002",
+          "transition_in": "\u4ece\u4e0a\u4e00\u573a\u7684\u7184\u706d\u6001\u8d77",
+          "layer": "primary"
+        },
+        {
+          "id": "cut-15",
+          "source": "bespoke:NoVerdictBalance",
+          "type": "diagram",
+          "variant": "NoVerdictBalance",
+          "label": "sc15 \u7b2c\u4e09\u6b21\u53cd\u8f6c\uff1a\u673a\u4f1a\u6210\u672c\u4e0d\u66ff\u4f60\u5224\u65ad",
+          "in_seconds": 110.501,
+          "out_seconds": 125.124,
+          "reason": "\u628a'\u673a\u4f1a\u6210\u672c\u662f\u5206\u6790\u5de5\u5177\uff0c\u4e0d\u662f\u4ef7\u503c\u5224\u65ad'\u505a\u6210\u4e00\u4e2a\u53ef\u89c1\u7684\u7ed3\u6784\uff0c\u800c\u4e0d\u662f\u4e00\u53e5\u53e3\u53f7\u3002",
+          "transition_in": "\u9759\u6001\u57fa\u51c6\u7ebf\u5148\u51fa\u73b0\uff0c\u4e24\u7aef\u518d\u538b\u4e0a\u7eb8\u7247",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc15"
+        },
+        {
+          "id": "cut-16",
+          "source": "bespoke:CostIsNotError",
+          "type": "text_card",
+          "variant": "CostIsNotError",
+          "label": "sc16 \u7b2c\u4e09\u6b21\u53cd\u8f6c\uff1a\u7ea0\u504f\u843d\u70b9",
+          "in_seconds": 125.124,
+          "out_seconds": 139.138,
+          "reason": "\u5168\u7247\u6700\u91cd\u8981\u7684\u4e00\u6b21\u7ea0\u504f\uff0c\u9632\u6b62\u89c2\u4f17\u628a\u673a\u4f1a\u6210\u672c\u8bfb\u6210'\u4f11\u606f\u5c31\u662f\u6d6a\u8d39'\u3002",
+          "transition_in": "\u4ece\u4e0a\u4e00\u573a\u7684\u57fa\u51c6\u7ebf\u6536\u62e2",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "sparse",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc16"
+        },
+        {
+          "id": "cut-17",
+          "source": "bespoke:StrikeTheEquals",
+          "type": "animation",
+          "variant": "StrikeTheEquals",
+          "label": "sc17 \u8865\u5145\u8ba4\u77e5\uff1a\u6210\u672c\u4e0d\u5fc5\u8d27\u5e01\u5316",
+          "in_seconds": 139.138,
+          "out_seconds": 155.775,
+          "reason": "\u660e\u786e\u5426\u6389'\u6240\u6709\u4e1c\u897f\u90fd\u5fc5\u987b\u6362\u7b97\u6210\u94b1'\uff0c\u8fd9\u662f\u673a\u4f1a\u6210\u672c\u6700\u5bb9\u6613\u88ab\u8bef\u7528\u7684\u5730\u65b9\u3002",
+          "transition_in": "\u7b49\u53f7\u5148\u88ab\u5212\u6389\uff0c\u518d\u843d\u4e0b\u56db\u7c7b\u7eb8\u7247",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc17"
+        },
+        {
+          "id": "cut-18",
+          "source": "bespoke:FreeCoffeeQueue",
+          "type": "broll",
+          "variant": "FreeCoffeeQueue",
+          "label": "sc18 \u8865\u5145\u8ba4\u77e5\uff1a\u514d\u8d39\u4e0d\u7b49\u4e8e\u6ca1\u6709\u6210\u672c",
+          "in_seconds": 155.775,
+          "out_seconds": 172.218,
+          "reason": "\u7528\u4e00\u4e2a\u5177\u4f53\u3001\u6781\u77ed\u7684\u6848\u4f8b\u628a'\u514d\u8d39'\u548c'\u6ca1\u6709\u6210\u672c'\u5206\u5f00\uff0c\u907f\u514d\u62bd\u8c61\u8bf4\u6559\u3002",
+          "transition_in": "\u4ece\u7eb8\u9762\u5207\u5230\u771f\u5b9e\u753b\u9762\uff0c\u5f62\u6210\u4e00\u6b21\u6750\u8d28\u5bf9\u7167",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc18"
+        },
+        {
+          "id": "cut-19",
+          "source": "bespoke:ThreeVsFive",
+          "type": "diagram",
+          "variant": "ThreeVsFive",
+          "label": "sc19 \u6295\u8d44\u8fde\u63a5\uff1a\u786e\u5b9a\u6027\u6536\u76ca\u7387\u6bd4\u8f83",
+          "in_seconds": 172.218,
+          "out_seconds": 182.351,
+          "reason": "\u628a\u673a\u4f1a\u6210\u672c\u63a5\u5230\u6295\u8d44\u4e0a\uff0c\u4f46\u628a\u524d\u63d0\u5199\u5728\u56fe\u4e0a\u800c\u4e0d\u662f\u85cf\u5728\u53e3\u64ad\u91cc\u3002",
+          "transition_in": "\u4ece\u771f\u5b9e\u753b\u9762\u56de\u5230\u7eb8\u9762",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc19"
+        },
+        {
+          "id": "cut-20",
+          "source": "bespoke:BoundaryTerms",
+          "type": "text_card",
+          "variant": "BoundaryTerms",
+          "label": "sc20 \u6295\u8d44\u8fde\u63a5\uff1a\u8fb9\u754c\u6761\u4ef6\u4e0d\u80fd\u88ab\u8d76",
+          "in_seconds": 182.351,
+          "out_seconds": 193.726,
+          "reason": "\u9650\u5b9a\u6761\u4ef6\u5fc5\u987b\u4e0e\u7ed3\u8bba\u540c\u5c4f\uff0c\u4e0d\u80fd\u88ab\u5feb\u8282\u594f\u5e26\u8fc7\u2014\u2014\u5426\u5219\u8fd9\u53e5\u6bd4\u8f83\u5c31\u53d8\u6210\u4e86\u6295\u8d44\u5efa\u8bae\u3002",
+          "transition_in": "\u67f1\u5f62\u56fe\u6de1\u51fa\uff0c\u8f6c\u5165\u6761\u6b3e\u5f0f\u6392\u7248",
+          "layer": "primary"
+        },
+        {
+          "id": "cut-21",
+          "source": "bespoke:CompleteTheJudgment",
+          "type": "animation",
+          "variant": "CompleteTheJudgment",
+          "label": "sc21 \u6295\u8d44\u8fde\u63a5\uff1a\u628a\u5224\u65ad\u52a8\u4f5c\u8865\u5168",
+          "in_seconds": 193.726,
+          "out_seconds": 202.974,
+          "reason": "\u628a'\u5173\u6ce8\u6536\u76ca'\u8865\u5168\u4e3a'\u540c\u65f6\u5173\u6ce8\u653e\u5f03'\uff0c\u4e3a\u7ed3\u5c3e\u7684\u8ffd\u95ee\u505a\u94fa\u57ab\u3002",
+          "transition_in": "\u4ece\u8fb9\u754c\u6761\u4ef6\u6536\u8fdb\u4e00\u4e2a\u5b8c\u6574\u53e5",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "standard",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc21"
+        },
+        {
+          "id": "cut-22",
+          "source": "bespoke:ClosingQuestion",
+          "type": "text_card",
+          "variant": "ClosingQuestion",
+          "label": "sc22 \u6536\u675f\uff1a\u7559\u4e0b\u4e00\u4e2a\u73b0\u5b9e\u601d\u8003",
+          "in_seconds": 202.974,
+          "out_seconds": 216.198,
+          "reason": "\u53ea\u7559\u4e00\u4e2a\u53ef\u590d\u7528\u7684\u5224\u65ad\u52a8\u4f5c\uff0c\u4e0d\u505a\u8bfe\u7a0b\u5f0f\u9884\u544a\u3002\u5408\u89c4\u6587\u6848\u5fc5\u987b\u539f\u751f\u3001\u5b8c\u6574\u3001\u53ef\u8bfb\uff0c\u5e76\u7559\u5728\u6210\u7247\u6700\u672b\u7aef\u3002",
+          "transition_in": "\u4ece\u8865\u5168\u53e5\u76f4\u63a5\u6536\u5230\u8fd9\u4e00\u5c4f\uff0c\u4e0d\u653e\u4efb\u4f55\u8f6c\u573a\u82b1\u6d3b",
+          "layer": "primary",
+          "canvasMode": "paper",
+          "density": "sparse",
+          "headerTreatment": "compact",
+          "sourceTreatment": "inline",
+          "evidenceIndex": "sc22",
+          "text": "\u4e3a\u4e86\u5b83\uff0c\u6211\u653e\u5f03\u4e86\u4ec0\u4e48\uff1f",
+          "subtitle": "\u672c\u89c6\u9891\u4ec5\u4f5c\u77e5\u8bc6\u5206\u4eab\uff0c\u4e0d\u6784\u6210\u4efb\u4f55\u6295\u8d44\u5efa\u8bae\u3002\u5e02\u573a\u6709\u98ce\u9669\uff0c\u6295\u8d44\u9700\u8c28\u614e\u3002"
+        }
+      ],
+      "audio": {
+        "narration": {
+          "segments": [
+            {
+              "asset_id": "narration-s01",
+              "start_seconds": 0.0,
+              "end_seconds": 4.536
+            },
+            {
+              "asset_id": "narration-s02",
+              "start_seconds": 4.886,
+              "end_seconds": 14.342
+            },
+            {
+              "asset_id": "narration-s03",
+              "start_seconds": 15.542,
+              "end_seconds": 23.966
+            },
+            {
+              "asset_id": "narration-s04",
+              "start_seconds": 24.466,
+              "end_seconds": 41.53
+            },
+            {
+              "asset_id": "narration-s05",
+              "start_seconds": 42.13,
+              "end_seconds": 64.81
+            },
+            {
+              "asset_id": "narration-s06",
+              "start_seconds": 66.01,
+              "end_seconds": 97.066
+            },
+            {
+              "asset_id": "narration-s07",
+              "start_seconds": 98.266,
+              "end_seconds": 137.938
+            },
+            {
+              "asset_id": "narration-s08",
+              "start_seconds": 139.138,
+              "end_seconds": 171.418
+            },
+            {
+              "asset_id": "narration-s09",
+              "start_seconds": 172.218,
+              "end_seconds": 202.074
+            },
+            {
+              "asset_id": "narration-s10",
+              "start_seconds": 202.974,
+              "end_seconds": 210.198
+            }
+          ],
+          "volume": 1.0
+        }
+      },
+      "subtitles": {
+        "enabled": true,
+        "style": "sentence",
+        "source": "projects/xiaosan-economics-03-opportunity-cost/assets/captions.json",
+        "font": "Source Han Serif SC / Noto Serif SC",
+        "font_size": 46,
+        "color": "#22201C",
+        "highlight_color": "#22201C",
+        "outline_color": "#00000000",
+        "background": "#F4F1E800",
+        "position": "bottom-center",
+        "max_words_per_line": 14,
+        "safe_area": {
+          "policy": "social-ui-safe",
+          "bottom_offset_px": 520,
+          "side_margin_px": 96
+        }
+      },
+      "transitions": [
+        {
+          "type": "hard_cut",
+          "at_seconds": 2.689,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 4.886,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 15.542,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 19.78,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 24.466,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 29.108,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 35.457,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 42.13,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 48.686,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 58.59,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 66.01,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 77.995,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 98.266,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 110.501,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 125.124,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 139.138,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 155.775,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 172.218,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 182.351,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 193.726,
+          "duration_seconds": 0
+        },
+        {
+          "type": "hard_cut",
+          "at_seconds": 202.974,
+          "duration_seconds": 0
+        }
+      ],
+      "slideshow_risk_score": {
+        "average": 0.12,
+        "verdict": "strong"
+      },
+      "metadata": {
+        "content_category": "finance",
+        "music_omitted": true,
+        "music_omitted_reason": "proposal music_source.source_type = none\uff08\u6301\u4e45\u65e0BGM\u9ed8\u8ba4\uff09\uff1b\u672c\u6587\u4ef6\u4e0d\u542b music \u952e\uff0c\u6e32\u67d3\u4e0d\u542b\u97f3\u4e50\u5c42\u3002",
+        "no_gaps_verified": true,
+        "timeline_total_seconds": 216.198,
+        "trailing_hold_seconds": 3.0,
+        "trailing_hold_note": "\u6700\u540e\u4e00\u53e5\u65c1\u767d\u7ed3\u675f\u4e8e s10 \u672b\uff08202.974s\uff09\uff0c\u7ed3\u5c3e\u5361\u4e0e\u5408\u89c4\u9875\u811a\u4fdd\u7559\u7ea6 3 \u79d2\u4f9b\u9605\u8bfb\u3002",
+        "directional_color_rule": "\u672c\u7247\u4e0d\u4f7f\u7528\u7ea2\u7eff\u6da8\u8dcc\u8bed\u4e49\uff1b\u6240\u6709\u5f3a\u8c03\u4f7f\u7528\u6731\u7ea2\u6279\u6ce8\uff0c\u4e14\u5fc5\u4e0e\u6587\u5b57\u6807\u7b7e\u540c\u65f6\u51fa\u73b0\u3002",
+        "precision_layer_rule": "\u5168\u90e8\u6570\u5b57\u4e0e\u5b9a\u4e49\u6587\u5b57\u7531 Remotion \u786e\u5b9a\u6027\u56fe\u5c42\u6e32\u67d3\uff0c\u7d20\u6750\u955c\u5934\u4e0d\u627f\u8f7d\u9700\u88ab\u8bfb\u51c6\u7684\u4e8b\u5b9e\u3002",
+        "intentional_exceptions": [
+          "slideshow_risk\uff1a22 \u4e2a\u573a\u666f\u4e2d 3 \u4e2a\u4f7f\u7528\u771f\u5b9e\u52a8\u6001\u7d20\u6750\u30015 \u4e2a\u4f7f\u7528\u72b6\u6001\u52a8\u6548\u3001\u5176\u4f59\u4e3a\u6392\u7248\u4e0e\u56fe\u793a\uff0c\u975e\u9759\u5e27\u8f6e\u64ad\u3002"
+        ],
+        "semantic_motion_map": [
+          {
+            "scene": "sc01",
+            "why": "\u5f00\u573a\u8eba\u5367\uff1a\u8ba9\u62bd\u8c61\u63d0\u95ee\u53d8\u6210\u89c2\u4f17\u5df2\u7ecf\u5386\u8fc7\u7684\u5177\u4f53\u5904\u5883\uff0c\u76f4\u63a5\u670d\u52a12\u79d2\u7559\u5b58"
+          },
+          {
+            "scene": "sc08",
+            "why": "4\u5c0f\u65f6\u6d41\u901d\uff1a\u628a'\u53ea\u80fd\u4f7f\u7528\u4e00\u6b21'\u4ece\u4e00\u53e5\u8bdd\u53d8\u6210\u53ef\u611f\u77e5\u7684\u7d27\u8feb\u6027\uff0c\u652f\u6491\u4e92\u65a5\u524d\u63d0"
+          },
+          {
+            "scene": "sc18",
+            "why": "\u6392\u961f\u4e24\u5c0f\u65f6\uff1a\u4e3a'\u514d\u8d39\u2260\u6ca1\u6709\u6210\u672c'\u63d0\u4f9b\u5177\u8eab\u8bc1\u636e\uff0c\u6bd4\u7eaf\u5361\u7247\u66f4\u6709\u8bf4\u670d\u529b"
+          }
+        ],
+        "compliance": {
+          "content_category": "finance",
+          "financial_disclaimer": "\u672c\u89c6\u9891\u4ec5\u4f5c\u77e5\u8bc6\u5206\u4eab\uff0c\u4e0d\u6784\u6210\u4efb\u4f55\u6295\u8d44\u5efa\u8bae\u3002\u5e02\u573a\u6709\u98ce\u9669\uff0c\u6295\u8d44\u9700\u8c28\u614e\u3002",
+          "exact_text": "\u672c\u89c6\u9891\u4ec5\u4f5c\u77e5\u8bc6\u5206\u4eab\uff0c\u4e0d\u6784\u6210\u4efb\u4f55\u6295\u8d44\u5efa\u8bae\u3002\u5e02\u573a\u6709\u98ce\u9669\uff0c\u6295\u8d44\u9700\u8c28\u614e\u3002",
+          "presentation": "footer",
+          "placement": "ending",
+          "ending_cut_id": "cut-22",
+          "note": "\u5408\u89c4\u6587\u6848\u4ee5\u539f\u751f\u5c0f\u5b57\u56fa\u5b9a\u5448\u73b0\u5728\u6700\u7ec8\u610f\u4e49 cut-22 \u7684\u9875\u811a\uff0c\u4e0d\u6717\u8bfb\u3001\u4e0d\u5355\u72ec\u6210\u5361\u3002"
+        },
+        "caption_policy": {
+          "rule": "\u753b\u9762\u5927\u5b57\u6c38\u8fdc\u662f\u63d0\u70bc\u540e\u7684\u8bcd\uff0c\u5b57\u5e55\u627f\u62c5\u53e3\u8bed\u6574\u53e5\uff1b\u4e8c\u8005\u542b\u4e49\u76f8\u540c\u4f46\u6587\u5b57\u4e0d\u540c\u3002",
+          "type_carries_line_suppressions": 10,
+          "suppressed_caption_texts": [
+            "\u4e0d\u662f",
+            "\u4e5f\u4e0d\u662f",
+            "\u6240\u4ee5\u6709\u673a\u4f1a\u6210\u672c\u4e0d\u7b49\u4e8e\u4e0d\u5e94\u8be5\u505a",
+            "\u5468\u672b\u5728\u5bb6\u8eba\u4e00\u5929",
+            "\u4e00\u5206\u94b1\u6ca1\u82b1",
+            "\u8fd9\u4e00\u5929\u4f60\u672c\u6765\u8fd8\u80fd\u62ff\u53bb\u5e72\u4ec0\u4e48",
+            "\u4f60\u6700\u53ef\u80fd\u53bb\u505a\u7684\u90a3\u4ef6\u4e8b\u662f\u4ec0\u4e48",
+            "\u4e3a\u4e86\u5b83\u4f60\u653e\u5f03\u4e86\u4ec0\u4e48",
+            "\u4e3a\u4e86\u5b83\u6211\u653e\u5f03\u4e86\u4ec0\u4e48",
+            "\u6709\u65f6\u5019\u4e0d\u80fd\u53ea\u770b\u5b83\u7ed9\u4e86\u4f60\u4ec0\u4e48"
+          ],
+          "rationale": "\u8fd9\u4e9b\u62cd\u70b9\u7684\u753b\u9762\u5b57\u5f62\u672c\u8eab\u5c31\u662f\u90a3\u4e00\u62cd\uff08\u4e09\u6b21\u53cd\u8f6c\u7684\u6700\u77ed\u5426\u5b9a\u3001\u5f00\u573a\u53e0\u5b57\u3001\u7ed3\u5c3e\u843d\u70b9\u7b49\uff09\uff0c\u91cd\u590d\u51fa\u5b57\u5e55\u4f1a\u8ba9\u540c\u4e00\u53e5\u8bdd\u5728\u5c4f\u5e55\u4e0a\u51fa\u73b0\u4e24\u904d\u3002",
+          "verified": "\u6e32\u67d3\u540e\u62bd\u5e27\u786e\u8ba4\u300c\u4e0d\u662f\u3002\u300d\u300c\u4e5f\u4e0d\u662f\u3002\u300d\u4e24\u5904\u53cd\u8f6c\u753b\u9762\u65e0\u91cd\u590d\u5b57\u5e55\u3002"
+        },
+        "series_header": {
+          "present": true,
+          "text": "\u5c0f\u6563\u7ecf\u6d4e\u5b66 03 \u00b7 \u673a\u4f1a\u6210\u672c",
+          "geometry": {
+            "text_ink_y": [
+              226,
+              251
+            ],
+            "rule_y": 293,
+            "rule_height": 2,
+            "rule_x": [
+              110,
+              968
+            ],
+            "rule_color": "rgb(70,83,79)",
+            "left_margin": 110
+          },
+          "aligned_to": "projects/xiaosan-economics-02-tradeoffs \u5b9e\u6d4b\uff08review_frame_0.png\uff0c\u9010\u50cf\u7d20\u6bd4\u5bf9\uff09",
+          "tones": {
+            "ink_on_paper": true,
+            "light_on_footage": [
+              "sc01",
+              "sc18"
+            ]
+          },
+          "suppressed_scenes": [
+            "sc22"
+          ],
+          "suppression_reason": "\u89c4\u5212\u8981\u6c42\u7ed3\u5c3e\u5728\u753b\u9762\u5e95\u90e8\u4ee5\u5c0f\u5b57\u5448\u73b0\u300c\u5c0f\u6563\u7ecf\u6d4e\u5b66 03\uff5c\u673a\u4f1a\u6210\u672c\u300d\uff0c\u9876\u90e8\u518d\u51fa\u73b0\u4f1a\u91cd\u590d\u3002",
+          "clearance": {
+            "min_top_y_for_scene_content": 340,
+            "shifted_scenes": {
+              "sc03": 356,
+              "sc08": 348,
+              "sc18": 372
+            }
+          },
+          "fade_in": "12 \u5e27\uff080.4s\uff09",
+          "user_requested": "\u7528\u6237\u5bf9\u7167\u7b2c 02 \u671f\u622a\u56fe\u6307\u51fa\u7b2c 03 \u671f\u7f3a\u5c11\u9876\u90e8\u7cfb\u5217\u6807\u9898\uff0c\u8981\u6c42\u8865\u4e0a\u3002"
+        }
+      }
+    }
+  },
+  "style_playbook": "finance-dossier",
+  "review": {
+    "round": 1,
+    "decision": "pass",
+    "critical": 0,
+    "suggestions": 0,
+    "notes": [
+      "22 \u4e2a cut \u8986\u76d6 0-216.198s\uff1brender_runtime=remotion / composition_mode=atelier \u4e0e\u63d0\u6848\u4e00\u81f4\u3002",
+      "\u5e38\u9a7b\u7cfb\u5217\u9875\u7709\uff08\u5bf9\u9f50\u7b2c 02 \u671f\u51e0\u4f55\uff09\uff1bsc01/sc18 \u5b9e\u62cd\u573a\u666f\u6539\u7528\u538b\u6697\u5e95\u886c + \u7ec6\u7ebf\u6295\u5f71\uff0c\u4fee\u590d\u6d45\u8272\u7ec6\u7ebf\u88ab\u4eae\u80cc\u666f\u541e\u6389\u7684\u65ad\u7ebf\u3002",
+      "sc01 \u91cd\u505a\u4e3a\u6d77\u62a5\u5f0f\u9996\u5e27\uff1a\u9875\u7709\u4e0d\u518d\u6de1\u5165\uff0c\u4e3b\u6807\u9898\u7eb8\u9762\u677f\u5728\u7b2c 0 \u5e27\u5373\u5b8c\u6574\u53ef\u89c1\uff1b\u9996\u5e27\u4eae\u50cf\u7d20\u5360\u6bd4 0% \u2192 11.8%\u3002",
+      "\u4e3a\u9875\u7709\u8ba9\u4f4d\u4e0b\u79fb\u4e09\u573a\u9876\u90e8\u5185\u5bb9\uff1asc03\u2192356\u3001sc08\u2192348\u3001sc18\u2192372\u3002"
+    ]
+  },
+  "cost_snapshot": {
+    "spent_usd": 0.0,
+    "budget_default_usd": 2.0
+  },
+  "metadata": {
+    "content_category": "finance",
+    "render_runtime": "remotion"
+  }
+}

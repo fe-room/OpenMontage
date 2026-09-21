@@ -1,0 +1,3 @@
+{
+  "note": "本片为 atelier 手写合成：时间轴与文案由 ./timeline.ts 在构建期注入，因此 props 为空对象。"
+}

@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "project_id": "etf-100k-four-fund-race",
+  "pipeline_type": "finance-dossier",
+  "stage": "assets",
+  "status": "completed",
+  "timestamp": "2026-09-21T04:52:36.747019+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "asset_manifest": {
+      "version": "1.0",
+      "assets": [
+        {
+          "id": "etf-series",
+          "type": "diagram",
+          "path": "projects/etf-100k-four-fund-race/public/etf-100k-four-fund-race/data/etf-series.json",
+          "source_tool": "build_data.py",
+          "scene_id": "sc04",
+          "subtype": "canonical_account_value_series",
+          "format": "json",
+          "provider": "local",
+          "license": "derived_from_user_supplied_workbook",
+          "cost_usd": 0.0,
+          "generation_summary": "\u56db\u53eaETF 1510 \u4e2a\u4ea4\u6613\u65e5\u7684\u8d26\u6237\u8d44\u4ea7\u5e8f\u5217\uff08\u5f52\u4e00\u5316\u5230 \uffe5100,000 \u8d77\u70b9\uff09\uff0c\u9644\u6700\u5927\u56de\u64a4\u3001\u56de\u64a4\u8de8\u5ea6\u3001\u6700\u957f\u672a\u521b\u65b0\u9ad8\u533a\u95f4\u3001\u5e74\u672b\u622a\u9762\u4e0e\u4e03\u4e2a\u6ce8\u89e3\u8282\u70b9\u3002\u7531\u7528\u6237\u5de5\u4f5c\u7c3f\u5bfc\u51fa\u5e76\u4e0e\u5de5\u4f5c\u7c3f\u300c\u6c47\u603b\u300d\u8868\u9010\u9879\u5bf9\u8d26\u540e\u624d\u5141\u8bb8\u4e0b\u6e38\u8fd0\u884c\u3002"
+        },
+        {
+          "id": "onscreen-deck",
+          "type": "diagram",
+          "path": "projects/etf-100k-four-fund-race/artifacts/onscreen.json",
+          "source_tool": "build_script.py",
+          "scene_id": "sc01",
+          "subtype": "on_screen_copy_and_number_deck",
+          "format": "json",
+          "provider": "local",
+          "license": "project_internal",
+          "cost_usd": 0.0,
+          "generation_summary": "\u672c\u7247\u5341\u573a\u753b\u9762\u7684\u6587\u6848\u4e0e\u6570\u503c\u53f0\u672c\u3002\u6240\u6709\u6570\u503c\u7531 build_script.py \u7684\u6570\u636e\u8f85\u52a9\u51fd\u6570\u751f\u6210\uff0cverify() \u4f1a\u5728\u5199\u5165\u524d\u628a 51 \u5904\u5c4f\u5e55\u6570\u5b57\u9010\u4e00\u56de\u67e5\u5e8f\u5217\uff1b\u624b\u5199\u6587\u6848\u91cc\u4e0d\u542b\u4efb\u4f55\u9700\u88ab\u8bfb\u51c6\u7684\u6570\u5b57\u3002"
+        }
+      ],
+      "total_cost_usd": 0.0,
+      "metadata": {
+        "content_category": "finance",
+        "composition_only": true,
+        "narration_omitted": true,
+        "narration_omitted_reason": "\u7528\u6237\u663e\u5f0f\u9009\u62e9\u5168\u7a0b\u65e0\u53e3\u64ad\uff08decision d-008\uff09\u3002\u672c\u9636\u6bb5\u4e0d\u8c03\u7528 tts_selector\u3002",
+        "music_omitted": true,
+        "music_omitted_reason": "\u6301\u4e45\u65e0BGM\u9ed8\u8ba4 + \u7528\u6237\u9009\u62e9\u5b8c\u5168\u9759\u97f3\uff08decision d-009\uff09\u3002\u672c\u6587\u4ef6\u4e0d\u542b music \u8d44\u4ea7\u3002",
+        "footage_omitted": true,
+        "footage_omitted_reason": "\u8bed\u4e49\u52a8\u6548\u5ba1\u8ba1\u7ed3\u8bba\uff1a15/15 \u4e2a beat \u4e3a precision-critical\uff0c0 \u4e2a\u8bed\u4e49\u52a8\u6001\u5019\u9009\uff08decision d-007\uff09\u3002\u4e0d\u8c03\u7528 video_selector / image_selector\u3002",
+        "audio_assets": 0,
+        "required_tools_note": "finance-dossier \u6e05\u5355\u628a tts_selector \u5217\u4e3a assets \u9636\u6bb5\u7684 required_tool\u3002\u672c\u7247\u56e0\u7528\u6237\u663e\u5f0f\u9009\u62e9\u65e0\u53e3\u64ad\u800c\u4e0d\u4f7f\u7528\u5b83\u2014\u2014\u8fd9\u662f\u5df2\u6279\u51c6\u7684 deviation\uff0c\u4f9d\u636e\u662f decision d-008 \u4e0e\u7528\u6237\u5f00\u5de5\u524d\u7684\u56db\u9879\u8bbe\u5b9a\uff0c\u4e0d\u662f\u9057\u6f0f\u3002",
+        "requirement_type_map": {
+          "data": "diagram",
+          "copy_deck": "diagram",
+          "note": "scene_plan.required_assets[].type \u7528 data / copy_deck \u63cf\u8ff0\u9700\u6c42\uff1basset_manifest \u7684 type \u679a\u4e3e\u6ca1\u6709\u5bf9\u5e94\u53d6\u503c\uff0c\u6545\u4e24\u8005\u90fd\u843d\u5728 diagram\uff08\u56fe\u8868\u6570\u636e\u7c7b\uff09\u3002"
+        },
+        "scene_coverage": {
+          "scenes_requiring_etf-dataset": [
+            "sc04",
+            "sc05",
+            "sc08",
+            "sc09"
+          ],
+          "scenes_requiring_onscreen-deck": [
+            "sc01",
+            "sc02",
+            "sc03",
+            "sc06",
+            "sc07",
+            "sc10"
+          ]
+        },
+        "filmstrip_substitute": {
+          "path": "projects/etf-100k-four-fund-race/assets/qa/data_proof.png",
+          "why": "\u672c\u7247\u6ca1\u6709\u56fe\u50cf\u7d20\u6750\u53ef\u505a\u5267\u7167\u6761\u3002\u8d44\u4ea7\u590d\u6838\u5bf9\u8c61\u662f\u6570\u5b57\u672c\u8eab\uff0c\u56e0\u6b64\u7528\u6570\u636e\u6838\u5bf9\u8868\u4ee3\u66ff\u5267\u7167\u6761\uff1a\u56db\u6761\u66f2\u7ebf + \u5168\u91cf\u6307\u6807 + \u5bf9\u8d26\u8bf4\u660e\uff0c\u4f9b\u9010\u9879\u6838\u5bf9\u540e\u518d\u8fdb\u5165\u7f16\u5199\u3002"
+        },
+        "review_evidence": {
+          "workbook_reconciliation": {
+            "raw_observations_checked": 6039,
+            "raw_window": "2020-07-03..2026-09-18",
+            "source_files": 28
+          },
+          "account_formula": "\u8d26\u6237\u8d44\u4ea7_t = 100000 \u00d7 \u540e\u590d\u6743\u6536\u76d8\u4ef7_t \u00f7 \u540e\u590d\u6743\u6536\u76d8\u4ef7_\u8d77\u70b9",
+          "dividend_treatment": "\u540e\u590d\u6743\u53e3\u5f84\uff0c\u73b0\u91d1\u5206\u7ea2\u6309\u518d\u6295\u8d44\u5904\u7406",
+          "missing_record": "512890 \u5728 2021-10-22 \u7f3a 1 \u6761\u6210\u4ea4\u8bb0\u5f55\uff0c\u6309\u7528\u6237\u5de5\u4f5c\u7c3f\u53e3\u5f84\u6cbf\u7528\u524d\u4e00\u4ea4\u6613\u65e5\u8d26\u6237\u8d44\u4ea7\u3002",
+          "caveat": "\u540e\u590d\u6743\u56e0\u5b50\u7531\u884c\u60c5\u6e90\u63d0\u4f9b\uff1b\u4e0d\u540c\u4f9b\u5e94\u5546\u53ef\u80fd\u56e0\u590d\u6743\u7b97\u6cd5\u4e0e\u7cbe\u5ea6\u4ea7\u751f\u8f7b\u5fae\u5dee\u5f02\u3002"
+        },
+        "race_scene_note": "\u7ad6\u5c4f\u5b89\u5168\u533a\uff1a\u53ef\u8bfb\u6587\u5b57\u9650\u5b9a\u5728 y \u2264 1400\u3001x \u2208 [96, 984]\u3002\u672c\u573a\u4e3a\u8fde\u7eed\u955c\u5934\uff0c\u4e03\u4e2a\u6ce8\u89e3\u62cd\uff082020 \u4e0b\u534a\u5e74 \u2192 2021-02 \u89c1\u9876\u30012021 \u5206\u5316 \u2192 \u6392\u540d\u53d8\u5316\u30012022 \u8dcc\u7834\u8d77\u8dd1\u7ebf\u30012023 \u6df1\u6c34\u533a\u30012024-02 \u6781\u503c\uff08\u5168\u5c4f\u6807\u6ce8\uff09\u30012024 \u6536\u5b98 \u2192 2025-11 \u53cc\u96c4\u89c1\u9876\u3001\u6536\u675f\u5230\u533a\u95f4\u7ec8\u70b9\uff09\u53e0\u5728\u540c\u4e00\u955c\u5934\u4e4b\u4e0a\uff0c\u4e0d\u4ea7\u751f\u526a\u8f91\u70b9\u3002"
+      }
+    }
+  },
+  "metadata": {
+    "note": "\u7eaf\u5408\u6210\u7247\uff1a0 \u97f3\u8f68\u30010 \u7d20\u6750\u30010 \u751f\u6210\u56fe\u50cf\u3002\u4ea7\u51fa\u6570\u636e\u8d44\u4ea7\u4e24\u4efd + \u6570\u636e\u6838\u5bf9\u8868 assets/qa/data_proof.png \u4f5c\u4e3a\u5267\u7167\u6761\u66ff\u4ee3\u7269\u3002"
+  }
+}

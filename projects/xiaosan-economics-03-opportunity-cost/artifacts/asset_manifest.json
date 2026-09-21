@@ -1,0 +1,524 @@
+{
+  "version": "1.0",
+  "assets": [
+    {
+      "id": "narration-s01",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s01-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc01",
+      "duration_seconds": 4.416,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "周末在家躺一天，一分钱没花。这一天的成本是不是0？",
+      "voice_performance": {
+        "source_section_id": "s01",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "brisk",
+          "energy": "平静但直接，像把一个问题放到桌上",
+          "emphasis_words": [
+            "躺一天",
+            "一分钱没花",
+            "成本",
+            "0"
+          ],
+          "pause_after_seconds": 0.6
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "不寒暄、不介绍栏目、不解释概念。第一句就要进入问题。"
+      },
+      "generation_summary": "分段旁白 s01（25 字 / 实测 4.42s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s02",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s02-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc03",
+      "duration_seconds": 9.456,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "按我们平时理解“成本”的方式，好像确实是这样。没买东西。没打车。没出去吃饭。银行卡一分钱都没少。怎么看都是0成本。",
+      "voice_performance": {
+        "source_section_id": "s02",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "measured",
+          "energy": "顺着对方说，不急于否定",
+          "emphasis_words": [
+            "没买东西",
+            "没打车",
+            "没出去吃饭",
+            "银行卡一分钱都没少",
+            "0成本"
+          ],
+          "pause_after_seconds": 1.2
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "让观众先站到『0成本』这一边。最后一句『怎么看都是0成本』要平，不暗示转折。"
+      },
+      "generation_summary": "分段旁白 s02（57 字 / 实测 9.46s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s03",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s03-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc04",
+      "duration_seconds": 8.424,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "但经济学算成本，有时候根本不只看你花了多少钱。它还会问你一个问题：这一天，你本来还能拿去干什么？",
+      "voice_performance": {
+        "source_section_id": "s03",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "measured",
+          "energy": "转折，略压低",
+          "emphasis_words": [
+            "根本不只看你花了多少钱",
+            "本来还能拿去干什么"
+          ],
+          "pause_after_seconds": 0.8
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "『但』之后稍作停顿再进入。末句是全片第一个反问，尾音不要上扬成疑问播报腔。"
+      },
+      "generation_summary": "分段旁白 s03（48 字 / 实测 8.42s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s04",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s04-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc06",
+      "duration_seconds": 17.064,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "比如这个周六下午，你一共有4个小时。你可以在家休息。也可以拍一期视频。可以接一个兼职。或者去健身。问题是：这4个小时，你只能真正使用一次。最后你决定什么都不干，就在家休息。从银行卡来看，支出确实是0。",
+      "voice_performance": {
+        "source_section_id": "s04",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "measured",
+          "energy": "摊开选择集合，克制、不催促",
+          "emphasis_words": [
+            "4个小时",
+            "只能真正使用一次",
+            "在家休息"
+          ],
+          "pause_after_seconds": 0.8
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "四个选项逐项读出，每项之间留短停顿，让观众真正读完集合。『只能真正使用一次』是全段重心。"
+      },
+      "generation_summary": "分段旁白 s04（100 字 / 实测 17.06s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s05",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s05-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc09",
+      "duration_seconds": 22.68,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "但经济学会继续问：如果你没有选择休息，你最可能去做的那件事是什么？假设你认真想了一下。如果不休息，你大概率会去接一个兼职。那个兼职对你的净价值，大概是500块钱。那你选择休息的时候，虽然没有真的掏出500块钱，但你确实放弃了一个价值大概500块钱的替代方案。这就是机会成本。",
+      "voice_performance": {
+        "source_section_id": "s05",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "slow",
+          "energy": "揭晓，最稳最慢",
+          "emphasis_words": [
+            "最可能去做的那件事",
+            "净价值",
+            "500块钱",
+            "这就是机会成本"
+          ],
+          "pause_after_seconds": 1.2
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "本段是样音审核段。『这就是机会成本。』独立成句，前后各留停顿，不加任何强调腔。"
+      },
+      "generation_summary": "分段旁白 s05（137 字 / 实测 22.68s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s06",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s06-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc12",
+      "duration_seconds": 31.056,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "不过这里有一个特别容易搞错的地方。你还可以拍视频，可以健身，可以出去玩。那这些是不是全部都要加起来？不是。因为就算你不休息，你也不可能同时完整做完所有这些事情。机会成本通常关注的是：你放弃掉的最佳替代方案。也就是说，你选择A真正付出的机会成本，不是所有B、C、D全部加起来，而是那些没有被选择的方案里，对你最有价值的那个。",
+      "voice_performance": {
+        "source_section_id": "s06",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "conversational",
+          "energy": "先平铺，再用『不是』短促切断",
+          "emphasis_words": [
+            "全部都要加起来",
+            "不是",
+            "最佳替代方案",
+            "最有价值的那个"
+          ],
+          "pause_after_seconds": 1.2
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "『不是。』要短、要干，不做成反问。后半段解释『为什么不能相加』时语速略快，像顺理成章。"
+      },
+      "generation_summary": "分段旁白 s06（161 字 / 实测 31.06s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s07",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s07-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc14",
+      "duration_seconds": 39.672,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "不过说到这里，可能又会产生另一个误会。既然休息的机会成本可能是500块钱，那是不是说明我躺这4个小时就“亏了500”？也不是。机会成本告诉你的只是：你为了现在这个选择，放弃了什么。它并没有替你决定：这个选择到底对不对。如果你这一周已经非常累，你觉得休息4个小时带来的恢复，比接那单兼职对你更重要，那么休息完全可能就是更好的选择。所以：有机会成本，不等于不应该做。睡觉有机会成本。陪家人有机会成本。学习有机会成本。工作同样有机会成本。只要你在做选择，其他可能性就一定会被放弃。",
+      "voice_performance": {
+        "source_section_id": "s07",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "slow",
+          "energy": "认真纠正，回避说教",
+          "emphasis_words": [
+            "亏了500",
+            "也不是",
+            "放弃了什么",
+            "有机会成本，不等于不应该做"
+          ],
+          "pause_after_seconds": 1.2
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "这是全片最重要的纠偏段，不能赶。『有机会成本，不等于不应该做。』独立成句、放慢，但不加重音量。"
+      },
+      "generation_summary": "分段旁白 s07（237 字 / 实测 39.67s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s08",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s08-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc17",
+      "duration_seconds": 32.28,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "而且机会成本也不意味着，所有东西都必须换算成钱。有些时候，你放弃的是收入。有些时候，放弃的是时间。有些时候，是精力。还有些时候，是陪伴、休息或者一次学习机会。所以经济学里的“成本”，其实比我们平时理解的“花了多少钱”要宽得多。比如商场送一杯免费咖啡。咖啡确实不要钱。但如果你要排两个小时的队，那两个小时并不是免费的。所以：免费，不等于没有成本。",
+      "voice_performance": {
+        "source_section_id": "s08",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "measured",
+          "energy": "回到日常语气，扩展边界",
+          "emphasis_words": [
+            "换算成钱",
+            "时间",
+            "精力",
+            "免费咖啡",
+            "两个小时",
+            "免费，不等于没有成本"
+          ],
+          "pause_after_seconds": 0.9
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "排比四句（收入／时间／精力／陪伴休息学习）用同一语调读完，不逐句加重。结尾判断句独立成句。"
+      },
+      "generation_summary": "分段旁白 s08（172 字 / 实测 32.28s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s09",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s09-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc19",
+      "duration_seconds": 29.856,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "投资里也是一样。假设两个选择的风险、流动性和其他限制都差不多。A最后赚了3%。B本来可以赚5%。那从机会成本的角度，你还会多问一句：我为了选择A，放弃了什么？当然，现实里的投资选择不会这么简单。风险、流动性和确定性往往都不同。所以不能只拿最终收益率机械比较。但机会成本会提醒我们一件事：判断一个选择，有时候不能只看它给了你什么，还要看：为了它，你放弃了什么。",
+      "voice_performance": {
+        "source_section_id": "s09",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "measured",
+          "energy": "轻量连接投资，自带限定",
+          "emphasis_words": [
+            "3%",
+            "5%",
+            "放弃了什么",
+            "不能只拿最终收益率机械比较"
+          ],
+          "pause_after_seconds": 0.9
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "『3%』『5%』放慢分开读。限定句（风险、流动性和确定性往往都不同）不能被赶，它不是免责套话，是本段的边界条件。"
+      },
+      "generation_summary": "分段旁白 s09（179 字 / 实测 29.86s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-s10",
+      "type": "audio",
+      "subtype": "narration_section",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-s10-v1.mp3",
+      "source_tool": "tts_selector",
+      "provider": "doubao",
+      "model": "seed-tts-2.0",
+      "scene_id": "sc22",
+      "duration_seconds": 7.224,
+      "format": "mp3",
+      "cost_usd": 0.006,
+      "license": "generated-for-this-project",
+      "prompt": "所以下次再遇到一件“免费”的事情，别急着只问：我要花多少钱？也可以多问一句：为了它，我放弃了什么？",
+      "voice_performance": {
+        "source_section_id": "s10",
+        "synthesis_mode": "segmented",
+        "delivery_cues_applied": true,
+        "provider_text_used": true,
+        "provider_settings": {
+          "resource_id": "seed-tts-2.0",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "大壹 2.0",
+          "speech_rate": 0,
+          "api_mode": "unidirectional",
+          "pace": "custom",
+          "energy": "收束，留一个问题给观众",
+          "emphasis_words": [
+            "我要花多少钱",
+            "为了它，我放弃了什么"
+          ],
+          "pause_after_seconds": 1.0
+        },
+        "sample_approved": true,
+        "sample_path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/sample-s05-opportunity-cost-v1.mp3",
+        "review_notes": "最后一句是全片落点，读完后留足留白再进入结尾卡。不做课程式预告。"
+      },
+      "generation_summary": "分段旁白 s10（49 字 / 实测 7.22s），逐字采用规划第22节口播。"
+    },
+    {
+      "id": "narration-master",
+      "type": "audio",
+      "subtype": "narration_master",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/audio/narration-master-v1.wav",
+      "source_tool": "ffmpeg",
+      "provider": "local",
+      "model": "pcm_s16le/48k",
+      "scene_id": "sc01",
+      "duration_seconds": 213.198,
+      "format": "wav",
+      "cost_usd": 0.0,
+      "license": "derived",
+      "generation_summary": "10 段旁白按批准停顿计划拼接的无损母带；与分镜时间轴逐帧对齐（偏差 0.000s）。全片无音乐层。"
+    },
+    {
+      "id": "footage-sc01-lie-in",
+      "type": "video",
+      "subtype": "stock_footage",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/video/sc01-lie-in-v1.mp4",
+      "source_tool": "pexels_video",
+      "provider": "pexels",
+      "scene_id": "sc01",
+      "duration_seconds": 16.81,
+      "resolution": "1080x1920",
+      "format": "mp4",
+      "cost_usd": 0.0,
+      "license": "Pexels 库存素材（免费商用）",
+      "prompt": "person relaxing lying on sofa at home using phone",
+      "quality_score": 0.85,
+      "generation_summary": "让'周末在家躺一天'变成观众已经历过的具体处境，直接服务2秒留存。"
+    },
+    {
+      "id": "footage-sc08-hourglass",
+      "type": "video",
+      "subtype": "stock_footage",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/video/sc08-hourglass-v1.mp4",
+      "source_tool": "pexels_video",
+      "provider": "pexels",
+      "scene_id": "sc08",
+      "duration_seconds": 12.24,
+      "resolution": "720x1280",
+      "format": "mp4",
+      "cost_usd": 0.0,
+      "license": "Pexels 库存素材（免费商用）",
+      "prompt": "hourglass sand falling timelapse",
+      "quality_score": 0.85,
+      "generation_summary": "沙粒单向落下不可逆，为'这4个小时你只能真正使用一次'提供可感知的不可逆性；落沙同时匹配本片象牙暖色系。"
+    },
+    {
+      "id": "footage-sc18-queue",
+      "type": "video",
+      "subtype": "stock_footage",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/video/sc18-queue-v1.mp4",
+      "source_tool": "pexels_video",
+      "provider": "pexels",
+      "scene_id": "sc18",
+      "duration_seconds": 7.382,
+      "resolution": "1080x1920",
+      "format": "mp4",
+      "cost_usd": 0.0,
+      "license": "Pexels 库存素材（免费商用）",
+      "prompt": "people standing in line queue waiting at store",
+      "quality_score": 0.85,
+      "generation_summary": "真实排队画面让'两个小时'可被体感；墙上的时钟提供额外的时间暗示，为'免费≠没有成本'提供具身证据。"
+    },
+    {
+      "id": "captions",
+      "type": "subtitle",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/captions.json",
+      "source_tool": "subtitle_gen",
+      "provider": "local",
+      "scene_id": "sc01",
+      "format": "json",
+      "cost_usd": 0.0,
+      "license": "derived",
+      "generation_summary": "97 条分层短句字幕，文字与已批准旁白逐字一致；时长按实测分段音频确定性分配（未使用 ASR）。"
+    },
+    {
+      "id": "subtitles",
+      "type": "subtitle",
+      "path": "projects/xiaosan-economics-03-opportunity-cost/assets/subtitles.srt",
+      "source_tool": "subtitle_gen",
+      "provider": "local",
+      "scene_id": "sc01",
+      "format": "srt",
+      "cost_usd": 0.0,
+      "license": "derived",
+      "generation_summary": "97 条分层短句字幕，文字与已批准旁白逐字一致；时长按实测分段音频确定性分配（未使用 ASR）。"
+    }
+  ],
+  "total_cost_usd": 0.06,
+  "metadata": {
+    "content_category": "finance",
+    "pipeline": "finance-dossier",
+    "music": {
+      "source_type": "none",
+      "assets_created": 0,
+      "note": "持久无BGM默认；本清单中不存在任何音乐资产或占位音轨。"
+    },
+    "coverage_strategy": "light-hybrid",
+    "precision_critical_beats": "全部数字（4小时、500元、3%、5%、0元）与定义文字由 Remotion 确定性图层渲染，素材镜头不承载任何需被读准的事实。",
+    "rejected_assets": [
+      "金币飘落 / 钞票雨 / K线 / 握手 / 西装人物 / 摩天楼 / 蓝紫渐变 / 霓虹终端 / HUD / 全息 / 团队开会 / 火箭（decorative_only，已拒绝）",
+      "AI 生成图承载中文标题或合规文案（禁止）"
+    ],
+    "remotion_public_mirror": "remotion-composer/public/xiaosan-economics-03-opportunity-cost/",
+    "timeline": {
+      "total_duration_seconds": 216.198,
+      "trailing_hold_seconds": 3.0
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+ "version": "1.0",
+ "entries": [
+  {
+   "platform": "local_bundle",
+   "status": "exported",
+   "timestamp": "2026-09-21T05:32:55.252543+00:00",
+   "visibility": "private",
+   "export_path": "projects/etf-100k-four-fund-race/deliverables/publish",
+   "metadata_used": {
+    "title": "10万元买4只ETF，6年后差多少？",
+    "duration_seconds": 99.0,
+    "resolution": "1080x1920",
+    "has_audio": false,
+    "required_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。"
+   }
+  }
+ ],
+ "metadata": {
+  "content_category": "finance",
+  "manual_publish_required": true,
+  "note": "本地打包，未登录、未上传、未创建远程草稿。用户自行择时发布。",
+  "package_contents": [
+   "final.mp4",
+   "images/cover.png",
+   "metadata.json",
+   "sources.md",
+   "发布文案.md",
+   "屏幕文案全文.md"
+  ],
+  "evidence_preserved": {
+   "sources_document": "deliverables/publish/sources.md",
+   "onscreen_text": "deliverables/publish/屏幕文案全文.md",
+   "boundary_conditions": 5,
+   "uncertainty_language_preserved": true
+  },
+  "packaging_guard": "标题与简介保持提问式，未使用「一定」「稳赚」「必」等绝对化表述；简介明确写出区间与边界条件；封面上的每个数字都出现在成片中。",
+  "cover_included": true,
+  "subtitle_policy": "无语音，故不产出字幕文件；以《屏幕文案全文.md》替代。"
+ }
+}

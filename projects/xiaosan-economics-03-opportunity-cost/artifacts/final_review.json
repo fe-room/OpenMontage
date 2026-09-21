@@ -1,0 +1,220 @@
+{
+  "version": "1.0",
+  "output_path": "projects/xiaosan-economics-03-opportunity-cost/renders/final-v3.mp4",
+  "status": "pass",
+  "checks": {
+    "technical_probe": {
+      "valid_container": true,
+      "duration_seconds": 216.256,
+      "resolution": "1080x1920",
+      "fps": 30.0,
+      "has_audio": true,
+      "codec": "h264",
+      "file_size_bytes": 29711262,
+      "issues": []
+    },
+    "visual_spotcheck": {
+      "frames_sampled": 23,
+      "frame_paths": [
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc01.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc02.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc03.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc04.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc05.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc06.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc07.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc08.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc09.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc10.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc11.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc12.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc13.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc14.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc15.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc16.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc17.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc18.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc19.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc20.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc21.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc22.png",
+        "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/ending-frame.png"
+      ],
+      "black_frames_detected": false,
+      "broken_overlays": false,
+      "missing_assets": false,
+      "unreadable_text": false,
+      "issues": []
+    },
+    "opening_frame_check": {
+      "frame_path": "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/beat-sc01.png",
+      "extracted": true,
+      "large_blank_area_detected": false,
+      "theme_elements_visible": true,
+      "inspection_method": "human_semantic_review_of_rendered_stills",
+      "issues": []
+    },
+    "audio_spotcheck": {
+      "narration_present": true,
+      "music_present": false,
+      "unexpected_silence": false,
+      "clipping_detected": false,
+      "mix_intelligible": true,
+      "issues": [
+        "更正渲染工具自带的音频启发式：它报告 music_present=true，但成片只有 1 条音轨（人声母带），edit_decisions 中不存在 music 键。判定为工具误报，实际无音乐层。"
+      ]
+    },
+    "promise_preservation": {
+      "delivery_promise_honored": true,
+      "renderer_family_used": "explainer-data",
+      "render_runtime_used": "remotion",
+      "runtime_swap_detected": false,
+      "runtime_swap_check": "proposal_packet.production_plan.render_runtime=remotion、composition_mode=atelier，与 edit_decisions 一致",
+      "motion_ratio_actual": 0.62,
+      "silent_downgrade_detected": false,
+      "issues": []
+    },
+    "subtitle_check": {
+      "subtitles_expected": true,
+      "subtitles_present": true,
+      "coverage_ratio": 1.0,
+      "timing_drift_detected": false,
+      "safe_area_policy": "social-ui-safe",
+      "safe_area_applied": true,
+      "bottom_clearance_px": 520,
+      "minimum_bottom_clearance_px": 520,
+      "side_clearance_px": 96,
+      "issues": []
+    },
+    "compliance": {
+      "financial_disclaimer_present": true,
+      "financial_disclaimer_exact": true,
+      "financial_disclaimer_readable": true,
+      "financial_disclaimer_at_end": true,
+      "financial_disclaimer_presentation": "footer",
+      "issues": []
+    },
+    "atelier": {
+      "stock_reuse_detected": false,
+      "offending_imports": [],
+      "art_direction_declared": true,
+      "art_direction": "projects/xiaosan-economics-03-opportunity-cost/art-direction-tactile-paper-v2.md",
+      "issues": []
+    }
+  },
+  "issues_found": [],
+  "recommended_action": "present_to_user",
+  "metadata": {
+    "content_category": "finance",
+    "project_id": "xiaosan-economics-03-opportunity-cost",
+    "extra_verification": {
+      "first_frame": {
+        "path": "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/first-frame.png",
+        "mean_luma": 60.3,
+        "bright_pixel_ratio": 0.1179,
+        "bright_pixel_ratio_ok": true,
+        "has_text_panel": true,
+        "note": "首帧承载系列页眉与主标题纸面板；平台按第 0 帧做质量判定，不允许接近纯暗帧。"
+      },
+      "series_header_rule": {
+        "text": "小散经济学 03 · 机会成本",
+        "rule_contiguity": [
+          {
+            "t": 1.2,
+            "scene": "sc01-light",
+            "best_row": 293,
+            "bright_px": 859,
+            "segments_95px": [
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95
+            ],
+            "contiguous": true
+          },
+          {
+            "t": 30.0,
+            "scene": "sc03-ink",
+            "best_row": 288,
+            "bright_px": 860,
+            "segments_95px": [
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95
+            ],
+            "contiguous": true
+          },
+          {
+            "t": 170.0,
+            "scene": "sc18-light",
+            "best_row": 293,
+            "bright_px": 859,
+            "segments_95px": [
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95,
+              95
+            ],
+            "contiguous": true
+          }
+        ],
+        "all_contiguous": true,
+        "note": "实拍场景用压暗底衬 + 细线投影，保证线在亮背景上不断。"
+      },
+      "duration": {
+        "actual_seconds": 216.256,
+        "expected_seconds": 216.198,
+        "within_5pct": true
+      },
+      "no_music_layer": {
+        "audio_stream_count": 1,
+        "edit_decisions_has_music_key": false,
+        "ok": true
+      },
+      "decode": {
+        "clean": true,
+        "errors": []
+      },
+      "timeline_coverage": {
+        "scene_total_seconds": 216.198,
+        "gaps": 0,
+        "ok": true
+      },
+      "slideshow_risk": {
+        "static_hold_seconds": 39.47,
+        "share_of_total": 0.183,
+        "verdict": "strong",
+        "note": "22 场中 3 场含真实运动素材、5 场含状态动效；其余为主动动效排版，不是静帧轮播。"
+      },
+      "ending_frame": {
+        "path": "projects/xiaosan-economics-03-opportunity-cost/artifacts/qa/ending-frame.png",
+        "frame": 6480,
+        "disclaimer_visually_confirmed": true
+      }
+    },
+    "verification_notes": [
+      "完整解码无错误；6486 帧。",
+      "结尾帧已抽出并人工确认原生合规文案完整、可读、位于成片最末端。",
+      "全片仅 1 条音轨（人声母带），不存在音乐层。",
+      "竖屏字幕安全区为距底 520px、距侧 96px，满足共享 social-ui-safe 下限。",
+      "render_runtime 与提案锁定值一致（remotion + atelier），无静默替换。",
+      "atelier 检查：源码未引用 stock 场景注册表。"
+    ]
+  }
+}

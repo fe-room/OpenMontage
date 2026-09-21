@@ -1,0 +1,637 @@
+{
+  "version": "1.0",
+  "renderer_family": "explainer-data",
+  "render_runtime": "remotion",
+  "composition_mode": "atelier",
+  "width": 1080,
+  "height": 1920,
+  "brand": {
+    "label": "小散经济学",
+    "series": "小散经济学",
+    "issue": "03"
+  },
+  "bespoke": {
+    "entry": "projects/xiaosan-economics-03-opportunity-cost/index.tsx",
+    "composition_id": "XiaosanOpportunityCost",
+    "art_direction": "projects/xiaosan-economics-03-opportunity-cost/art-direction-tactile-paper-v2.md",
+    "public_dir": "/Users/jishubu/project/OpenMontage/projects/xiaosan-economics-03-opportunity-cost/public",
+    "scale": 1.0,
+    "crf": 18
+  },
+  "cuts": [
+    {
+      "id": "cut-01",
+      "source": "bespoke:RealLieIn",
+      "type": "broll",
+      "variant": "RealLieIn",
+      "label": "sc01 开场：把提问落到观众自己的周六",
+      "in_seconds": 0.0,
+      "out_seconds": 2.689,
+      "reason": "在2秒内让观众认出这是自己刚刚度过的周末，把抽象提问变成已经历过的处境。",
+      "transition_in": "冷开场，无转场铺垫",
+      "layer": "primary"
+    },
+    {
+      "id": "cut-02",
+      "source": "bespoke:CostZeroHero",
+      "type": "text_card",
+      "variant": "CostZeroHero",
+      "label": "sc02 开场：把冲突压成一行",
+      "in_seconds": 2.689,
+      "out_seconds": 4.886,
+      "reason": "35 秒内不解释任何概念，只把冲突摆上桌。",
+      "transition_in": "硬切",
+      "layer": "primary"
+    },
+    {
+      "id": "cut-03",
+      "source": "bespoke:ZeroLedger",
+      "type": "animation",
+      "variant": "ZeroLedger",
+      "label": "sc03 强化直觉：让观众先站到0成本这一边",
+      "in_seconds": 4.886,
+      "out_seconds": 15.542,
+      "reason": "顺着观众的直觉走，不给任何转折提示，为第一次反转蓄势。",
+      "transition_in": "清单从空开始，逐行补全",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "evidenceIndex": "sc03"
+    },
+    {
+      "id": "cut-04",
+      "source": "bespoke:StrikeTheSpend",
+      "type": "text_card",
+      "variant": "StrikeTheSpend",
+      "label": "sc04 第一次反转：经济学为什么不只看花了多少钱",
+      "in_seconds": 15.542,
+      "out_seconds": 19.78,
+      "reason": "第一次认知反转的落点。用划掉这个动作代替任何解释性文字。",
+      "transition_in": "朱红横线从左侧进入",
+      "layer": "primary"
+    },
+    {
+      "id": "cut-05",
+      "source": "bespoke:QuestionFork",
+      "type": "diagram",
+      "variant": "QuestionFork",
+      "label": "sc05 第一次反转：把追问摆出来",
+      "in_seconds": 19.78,
+      "out_seconds": 24.466,
+      "reason": "把'机会成本'的第一层含义压缩成一个观众必须自己回答的问题。",
+      "transition_in": "承上，四条线引出下一场",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc05"
+    },
+    {
+      "id": "cut-06",
+      "source": "bespoke:FourHoursTitle",
+      "type": "text_card",
+      "variant": "FourHoursTitle",
+      "label": "sc06 核心场景：建立约束",
+      "in_seconds": 24.466,
+      "out_seconds": 29.108,
+      "reason": "让'4 小时'这个有限资源成为整期的度量单位。",
+      "transition_in": "从上一场的引导线收拢到这一行",
+      "layer": "primary"
+    },
+    {
+      "id": "cut-07",
+      "source": "bespoke:OptionCardsIn",
+      "type": "animation",
+      "variant": "OptionCardsIn",
+      "label": "sc07 核心场景：建立选择集合",
+      "in_seconds": 29.108,
+      "out_seconds": 35.457,
+      "reason": "把'你本来还能拿去干什么'具体化为四个互斥选项。",
+      "transition_in": "第一张卡从上方落下，其余依次跟随",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "evidenceIndex": "sc07"
+    },
+    {
+      "id": "cut-08",
+      "source": "bespoke:MutualExclusion",
+      "type": "animation",
+      "variant": "MutualExclusion",
+      "label": "sc08 核心场景：互斥约束与选中",
+      "in_seconds": 35.457,
+      "out_seconds": 42.13,
+      "reason": "先把互斥性钉死（这是后面'不能相加'的伏笔），再完成选择。",
+      "transition_in": "朱红线一次性划过四张卡",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "evidenceIndex": "sc08"
+    },
+    {
+      "id": "cut-09",
+      "source": "bespoke:AskTheOneThing",
+      "type": "text_card",
+      "variant": "AskTheOneThing",
+      "label": "sc09 核心揭晓：把追问再推进一层",
+      "in_seconds": 42.13,
+      "out_seconds": 48.686,
+      "reason": "让观众自己产出答案，再由画面命名它——这比直接给定义更不容易被划走。",
+      "transition_in": "黑场极短，然后逐字打出",
+      "layer": "primary"
+    },
+    {
+      "id": "cut-10",
+      "source": "bespoke:NameTheOpportunityCost",
+      "type": "animation",
+      "variant": "NameTheOpportunityCost",
+      "label": "sc10 核心揭晓：命名机会成本",
+      "in_seconds": 48.686,
+      "out_seconds": 58.59,
+      "reason": "精确呈现定义：不是所有选项，而是被你放弃的那个最佳替代方案。",
+      "transition_in": "暗场一次，再逐个点亮，只留一张",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc10"
+    },
+    {
+      "id": "cut-11",
+      "source": "bespoke:DefinitionCard",
+      "type": "text_card",
+      "variant": "DefinitionCard",
+      "label": "sc11 核心概念：定义卡单独停留一屏",
+      "in_seconds": 58.59,
+      "out_seconds": 66.01,
+      "reason": "定义需要被读到，而不是被听到。这是全片唯一一次让画面完全静止。",
+      "transition_in": "从上一场的放大态推入，静止",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "sparse",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc11"
+    },
+    {
+      "id": "cut-12",
+      "source": "bespoke:NotANegation",
+      "type": "text_card",
+      "variant": "NotANegation",
+      "label": "sc12 第二次反转：先立问题再否定",
+      "in_seconds": 66.01,
+      "out_seconds": 77.995,
+      "reason": "先让观众自己产生'求和'的直觉，再用一个最短的否定切断它。",
+      "transition_in": "从上一屏静止直接翻页",
+      "layer": "primary"
+    },
+    {
+      "id": "cut-13",
+      "source": "bespoke:ExtinguishSum",
+      "type": "animation",
+      "variant": "ExtinguishSum",
+      "label": "sc13 第二次反转：拆解为什么不能相加",
+      "in_seconds": 77.995,
+      "out_seconds": 98.266,
+      "reason": "用'熄灭'和'划掉的加号'两个动作完成一次纯视觉的否定，不依赖口播。",
+      "transition_in": "算式先出现，再被划掉",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc13"
+    },
+    {
+      "id": "cut-14",
+      "source": "bespoke:MisreadCard",
+      "type": "text_card",
+      "variant": "MisreadCard",
+      "label": "sc14 第三次反转：提出误会再否定",
+      "in_seconds": 98.266,
+      "out_seconds": 110.501,
+      "reason": "第三次反转必须先立起误会，否则纠偏没有对象。虚线框承担'这是误读'的信号。",
+      "transition_in": "从上一场的熄灭态起",
+      "layer": "primary"
+    },
+    {
+      "id": "cut-15",
+      "source": "bespoke:NoVerdictBalance",
+      "type": "diagram",
+      "variant": "NoVerdictBalance",
+      "label": "sc15 第三次反转：机会成本不替你判断",
+      "in_seconds": 110.501,
+      "out_seconds": 125.124,
+      "reason": "把'机会成本是分析工具，不是价值判断'做成一个可见的结构，而不是一句口号。",
+      "transition_in": "静态基准线先出现，两端再压上纸片",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc15"
+    },
+    {
+      "id": "cut-16",
+      "source": "bespoke:CostIsNotError",
+      "type": "text_card",
+      "variant": "CostIsNotError",
+      "label": "sc16 第三次反转：纠偏落点",
+      "in_seconds": 125.124,
+      "out_seconds": 139.138,
+      "reason": "全片最重要的一次纠偏，防止观众把机会成本读成'休息就是浪费'。",
+      "transition_in": "从上一场的基准线收拢",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "sparse",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc16"
+    },
+    {
+      "id": "cut-17",
+      "source": "bespoke:StrikeTheEquals",
+      "type": "animation",
+      "variant": "StrikeTheEquals",
+      "label": "sc17 补充认知：成本不必货币化",
+      "in_seconds": 139.138,
+      "out_seconds": 155.775,
+      "reason": "明确否掉'所有东西都必须换算成钱'，这是机会成本最容易被误用的地方。",
+      "transition_in": "等号先被划掉，再落下四类纸片",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc17"
+    },
+    {
+      "id": "cut-18",
+      "source": "bespoke:FreeCoffeeQueue",
+      "type": "broll",
+      "variant": "FreeCoffeeQueue",
+      "label": "sc18 补充认知：免费不等于没有成本",
+      "in_seconds": 155.775,
+      "out_seconds": 172.218,
+      "reason": "用一个具体、极短的案例把'免费'和'没有成本'分开，避免抽象说教。",
+      "transition_in": "从纸面切到真实画面，形成一次材质对照",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc18"
+    },
+    {
+      "id": "cut-19",
+      "source": "bespoke:ThreeVsFive",
+      "type": "diagram",
+      "variant": "ThreeVsFive",
+      "label": "sc19 投资连接：确定性收益率比较",
+      "in_seconds": 172.218,
+      "out_seconds": 182.351,
+      "reason": "把机会成本接到投资上，但把前提写在图上而不是藏在口播里。",
+      "transition_in": "从真实画面回到纸面",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc19"
+    },
+    {
+      "id": "cut-20",
+      "source": "bespoke:BoundaryTerms",
+      "type": "text_card",
+      "variant": "BoundaryTerms",
+      "label": "sc20 投资连接：边界条件不能被赶",
+      "in_seconds": 182.351,
+      "out_seconds": 193.726,
+      "reason": "限定条件必须与结论同屏，不能被快节奏带过——否则这句比较就变成了投资建议。",
+      "transition_in": "柱形图淡出，转入条款式排版",
+      "layer": "primary"
+    },
+    {
+      "id": "cut-21",
+      "source": "bespoke:CompleteTheJudgment",
+      "type": "animation",
+      "variant": "CompleteTheJudgment",
+      "label": "sc21 投资连接：把判断动作补全",
+      "in_seconds": 193.726,
+      "out_seconds": 202.974,
+      "reason": "把'关注收益'补全为'同时关注放弃'，为结尾的追问做铺垫。",
+      "transition_in": "从边界条件收进一个完整句",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "standard",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc21"
+    },
+    {
+      "id": "cut-22",
+      "source": "bespoke:ClosingQuestion",
+      "type": "text_card",
+      "variant": "ClosingQuestion",
+      "label": "sc22 收束：留下一个现实思考",
+      "in_seconds": 202.974,
+      "out_seconds": 216.198,
+      "reason": "只留一个可复用的判断动作，不做课程式预告。合规文案必须原生、完整、可读，并留在成片最末端。",
+      "transition_in": "从补全句直接收到这一屏，不放任何转场花活",
+      "layer": "primary",
+      "canvasMode": "paper",
+      "density": "sparse",
+      "headerTreatment": "compact",
+      "sourceTreatment": "inline",
+      "evidenceIndex": "sc22",
+      "text": "为了它，我放弃了什么？",
+      "subtitle": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。"
+    }
+  ],
+  "audio": {
+    "narration": {
+      "segments": [
+        {
+          "asset_id": "narration-s01",
+          "start_seconds": 0.0,
+          "end_seconds": 4.536
+        },
+        {
+          "asset_id": "narration-s02",
+          "start_seconds": 4.886,
+          "end_seconds": 14.342
+        },
+        {
+          "asset_id": "narration-s03",
+          "start_seconds": 15.542,
+          "end_seconds": 23.966
+        },
+        {
+          "asset_id": "narration-s04",
+          "start_seconds": 24.466,
+          "end_seconds": 41.53
+        },
+        {
+          "asset_id": "narration-s05",
+          "start_seconds": 42.13,
+          "end_seconds": 64.81
+        },
+        {
+          "asset_id": "narration-s06",
+          "start_seconds": 66.01,
+          "end_seconds": 97.066
+        },
+        {
+          "asset_id": "narration-s07",
+          "start_seconds": 98.266,
+          "end_seconds": 137.938
+        },
+        {
+          "asset_id": "narration-s08",
+          "start_seconds": 139.138,
+          "end_seconds": 171.418
+        },
+        {
+          "asset_id": "narration-s09",
+          "start_seconds": 172.218,
+          "end_seconds": 202.074
+        },
+        {
+          "asset_id": "narration-s10",
+          "start_seconds": 202.974,
+          "end_seconds": 210.198
+        }
+      ],
+      "volume": 1.0
+    }
+  },
+  "subtitles": {
+    "enabled": true,
+    "style": "sentence",
+    "source": "projects/xiaosan-economics-03-opportunity-cost/assets/captions.json",
+    "font": "Source Han Serif SC / Noto Serif SC",
+    "font_size": 46,
+    "color": "#22201C",
+    "highlight_color": "#22201C",
+    "outline_color": "#00000000",
+    "background": "#F4F1E800",
+    "position": "bottom-center",
+    "max_words_per_line": 14,
+    "safe_area": {
+      "policy": "social-ui-safe",
+      "bottom_offset_px": 520,
+      "side_margin_px": 96
+    }
+  },
+  "transitions": [
+    {
+      "type": "hard_cut",
+      "at_seconds": 2.689,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 4.886,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 15.542,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 19.78,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 24.466,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 29.108,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 35.457,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 42.13,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 48.686,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 58.59,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 66.01,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 77.995,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 98.266,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 110.501,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 125.124,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 139.138,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 155.775,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 172.218,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 182.351,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 193.726,
+      "duration_seconds": 0
+    },
+    {
+      "type": "hard_cut",
+      "at_seconds": 202.974,
+      "duration_seconds": 0
+    }
+  ],
+  "slideshow_risk_score": {
+    "average": 0.12,
+    "verdict": "strong"
+  },
+  "metadata": {
+    "content_category": "finance",
+    "music_omitted": true,
+    "music_omitted_reason": "proposal music_source.source_type = none（持久无BGM默认）；本文件不含 music 键，渲染不含音乐层。",
+    "no_gaps_verified": true,
+    "timeline_total_seconds": 216.198,
+    "trailing_hold_seconds": 3.0,
+    "trailing_hold_note": "最后一句旁白结束于 s10 末（202.974s），结尾卡与合规页脚保留约 3 秒供阅读。",
+    "directional_color_rule": "本片不使用红绿涨跌语义；所有强调使用朱红批注，且必与文字标签同时出现。",
+    "precision_layer_rule": "全部数字与定义文字由 Remotion 确定性图层渲染，素材镜头不承载需被读准的事实。",
+    "intentional_exceptions": [
+      "slideshow_risk：22 个场景中 3 个使用真实动态素材、5 个使用状态动效、其余为排版与图示，非静帧轮播。"
+    ],
+    "semantic_motion_map": [
+      {
+        "scene": "sc01",
+        "why": "开场躺卧：让抽象提问变成观众已经历过的具体处境，直接服务2秒留存"
+      },
+      {
+        "scene": "sc08",
+        "why": "4小时流逝：把'只能使用一次'从一句话变成可感知的紧迫性，支撑互斥前提"
+      },
+      {
+        "scene": "sc18",
+        "why": "排队两小时：为'免费≠没有成本'提供具身证据，比纯卡片更有说服力"
+      }
+    ],
+    "compliance": {
+      "content_category": "finance",
+      "financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "exact_text": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+      "presentation": "footer",
+      "placement": "ending",
+      "ending_cut_id": "cut-22",
+      "note": "合规文案以原生小字固定呈现在最终意义 cut-22 的页脚，不朗读、不单独成卡。"
+    },
+    "caption_policy": {
+      "rule": "画面大字永远是提炼后的词，字幕承担口语整句；二者含义相同但文字不同。",
+      "type_carries_line_suppressions": 10,
+      "suppressed_caption_texts": [
+        "不是",
+        "也不是",
+        "所以有机会成本不等于不应该做",
+        "周末在家躺一天",
+        "一分钱没花",
+        "这一天你本来还能拿去干什么",
+        "你最可能去做的那件事是什么",
+        "为了它你放弃了什么",
+        "为了它我放弃了什么",
+        "有时候不能只看它给了你什么"
+      ],
+      "rationale": "这些拍点的画面字形本身就是那一拍（三次反转的最短否定、开场叠字、结尾落点等），重复出字幕会让同一句话在屏幕上出现两遍。",
+      "verified": "渲染后抽帧确认「不是。」「也不是。」两处反转画面无重复字幕。"
+    },
+    "series_header": {
+      "present": true,
+      "text": "小散经济学 03 · 机会成本",
+      "geometry": {
+        "text_ink_y": [
+          226,
+          251
+        ],
+        "rule_y": 293,
+        "rule_height": 2,
+        "rule_x": [
+          110,
+          968
+        ],
+        "rule_color": "rgb(70,83,79)",
+        "left_margin": 110
+      },
+      "aligned_to": "projects/xiaosan-economics-02-tradeoffs 实测（review_frame_0.png，逐像素比对）",
+      "tones": {
+        "ink_on_paper": true,
+        "light_on_footage": [
+          "sc01",
+          "sc18"
+        ]
+      },
+      "suppressed_scenes": [
+        "sc22"
+      ],
+      "suppression_reason": "规划要求结尾在画面底部以小字呈现「小散经济学 03｜机会成本」，顶部再出现会重复。",
+      "clearance": {
+        "min_top_y_for_scene_content": 340,
+        "shifted_scenes": {
+          "sc03": 356,
+          "sc08": 348,
+          "sc18": 372
+        }
+      },
+      "fade_in": "12 帧（0.4s）",
+      "user_requested": "用户对照第 02 期截图指出第 03 期缺少顶部系列标题，要求补上。"
+    }
+  }
+}

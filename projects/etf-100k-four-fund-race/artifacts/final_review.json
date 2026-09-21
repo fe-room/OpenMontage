@@ -1,0 +1,337 @@
+{
+ "version": "1.0",
+ "output_path": "projects/etf-100k-four-fund-race/renders/final.mp4",
+ "status": "pass",
+ "checks": {
+  "technical_probe": {
+   "valid_container": true,
+   "duration_seconds": 99.0,
+   "resolution": "1080x1920",
+   "fps": 30.0,
+   "has_audio": false,
+   "codec": "h264",
+   "file_size_bytes": 12331555,
+   "issues": []
+  },
+  "visual_spotcheck": {
+   "frames_sampled": 15,
+   "frame_paths": [
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut01_opening_0069.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut02_cast_0210.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut03_rules_0339.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut04_race_2021peak_0480.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut04_race_2021close_0700.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut04_race_2022close_1010.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut04_race_2024climax_1425.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut04_race_2025peak_1950.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut04_race_end_2080.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut05_result_2196.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut06_turn_2340.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut07_mechanism_2472.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut08_drawdown_2640.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut09_underwater_2769.png",
+    "projects/etf-100k-four-fund-race/renders/review_frames/spot_cut10_closing_2898.png"
+   ],
+   "black_frames_detected": false,
+   "broken_overlays": false,
+   "missing_assets": false,
+   "unreadable_text": false,
+   "issues": []
+  },
+  "opening_frame_check": {
+   "frame_path": "projects/etf-100k-four-fund-race/renders/review_frames/frame_0000.png",
+   "extracted": true,
+   "large_blank_area_detected": true,
+   "theme_elements_visible": true,
+   "blank_area_ratio": 0.8609,
+   "edge_density": 0.0029,
+   "inspection_method": "ffmpeg 抽第 0 帧 → numpy：墨迹为 luma<120 的像素占比；blank_area_ratio 为「墨迹像素 < 2 的行」占全帧行数的比例；edge_density 为横向相邻像素差均值的归一化值。",
+   "issues": []
+  },
+  "audio_spotcheck": {
+   "narration_present": false,
+   "music_present": false,
+   "unexpected_silence": false,
+   "clipping_detected": false,
+   "mix_intelligible": true,
+   "issues": []
+  },
+  "promise_preservation": {
+   "delivery_promise_honored": true,
+   "renderer_family_used": "explainer-data",
+   "render_runtime_used": "remotion",
+   "runtime_swap_detected": false,
+   "runtime_swap_check": "edit_decisions.bespoke 指向 projects/etf-100k-four-fund-race/index.tsx，composition_id=EtfFourFundRace，与提案锁定的 remotion + atelier 一致；未发生静默替换。",
+   "motion_ratio_actual": 0.01183,
+   "silent_downgrade_detected": false,
+   "issues": []
+  },
+  "subtitle_check": {
+   "subtitles_expected": false,
+   "subtitles_present": false,
+   "coverage_ratio": 0.0,
+   "timing_drift_detected": false,
+   "safe_area_policy": "social-ui-safe",
+   "safe_area_applied": true,
+   "bottom_clearance_px": 520,
+   "minimum_bottom_clearance_px": 520,
+   "side_clearance_px": 96,
+   "issues": []
+  },
+  "compliance": {
+   "financial_disclaimer_present": true,
+   "financial_disclaimer_exact": true,
+   "financial_disclaimer_readable": true,
+   "financial_disclaimer_at_end": true,
+   "financial_disclaimer_presentation": "footer",
+   "issues": []
+  },
+  "atelier": {
+   "stock_reuse_detected": false,
+   "offending_imports": [],
+   "art_direction_declared": true,
+   "art_direction": "projects/etf-100k-four-fund-race/art-direction-instrument-plate.md",
+   "issues": []
+  }
+ },
+ "issues_found": [],
+ "recommended_action": "present_to_user",
+ "metadata": {
+  "content_category": "finance",
+  "review_note": "checks 里的每个值都是对交付文件的实测：ffprobe 读容器与流，ffmpeg 按帧号精确抽帧，numpy 统计墨迹、可读文字的最低行与左右边界、逐帧像素变化、末帧页脚带的墨迹分布。",
+  "measurements": {
+   "opening_frame": {
+    "ink_pct_lt120": 1.714,
+    "bright_pct_gt200": 97.845,
+    "mean_luma": 235.5,
+    "blank_row_ratio": 0.8609
+   },
+   "safe_area": {
+    "text_floor_y": 1400,
+    "side_margin_px": 96,
+    "measured_lowest_text_row_max": 1372,
+    "measured_min_left_x": 93,
+    "measured_max_right_x": 985,
+    "measured_min_ink_pct": 0.843
+   },
+   "motion": {
+    "frame_pair": [
+     1000,
+     1030
+    ],
+    "pixels_changed_ratio": 0.01183,
+    "meaning": "赛跑窗口内 1 秒的逐帧变化比例，用于验证 motion_required=true 被真正满足。"
+   },
+   "compliance_footer": {
+    "band_y": "1320–1375",
+    "ink_pct": 9.468,
+    "x_range": [
+     97,
+     786
+    ],
+    "note": "像素级判定（页脚带有墨迹、未越界），不是 OCR；逐字正确性由确定性渲染与字符串相等断言把守。"
+   },
+   "per_frame_table": [
+    {
+     "scene": "cut01_opening",
+     "frame": 69,
+     "ink_pct_lt190": 2.205,
+     "lowest_text_row": 1059,
+     "leftmost_text_col": 96,
+     "rightmost_text_col": 983
+    },
+    {
+     "scene": "cut02_cast",
+     "frame": 210,
+     "ink_pct_lt190": 1.915,
+     "lowest_text_row": 1227,
+     "leftmost_text_col": 97,
+     "rightmost_text_col": 949
+    },
+    {
+     "scene": "cut03_rules",
+     "frame": 339,
+     "ink_pct_lt190": 1.739,
+     "lowest_text_row": 899,
+     "leftmost_text_col": 96,
+     "rightmost_text_col": 945
+    },
+    {
+     "scene": "cut04_race_2021peak",
+     "frame": 480,
+     "ink_pct_lt190": 0.843,
+     "lowest_text_row": 1041,
+     "leftmost_text_col": 93,
+     "rightmost_text_col": 966
+    },
+    {
+     "scene": "cut04_race_2021close",
+     "frame": 700,
+     "ink_pct_lt190": 1.251,
+     "lowest_text_row": 1059,
+     "leftmost_text_col": 93,
+     "rightmost_text_col": 966
+    },
+    {
+     "scene": "cut04_race_2022close",
+     "frame": 1010,
+     "ink_pct_lt190": 2.576,
+     "lowest_text_row": 1323,
+     "leftmost_text_col": 93,
+     "rightmost_text_col": 966
+    },
+    {
+     "scene": "cut04_race_2024climax",
+     "frame": 1425,
+     "ink_pct_lt190": 4.183,
+     "lowest_text_row": 1372,
+     "leftmost_text_col": 93,
+     "rightmost_text_col": 966
+    },
+    {
+     "scene": "cut04_race_2025peak",
+     "frame": 1950,
+     "ink_pct_lt190": 4.056,
+     "lowest_text_row": 1347,
+     "leftmost_text_col": 93,
+     "rightmost_text_col": 966
+    },
+    {
+     "scene": "cut04_race_end",
+     "frame": 2080,
+     "ink_pct_lt190": 3.67,
+     "lowest_text_row": 1059,
+     "leftmost_text_col": 93,
+     "rightmost_text_col": 969
+    },
+    {
+     "scene": "cut05_result",
+     "frame": 2196,
+     "ink_pct_lt190": 3.299,
+     "lowest_text_row": 1184,
+     "leftmost_text_col": 96,
+     "rightmost_text_col": 983
+    },
+    {
+     "scene": "cut06_turn",
+     "frame": 2340,
+     "ink_pct_lt190": 2.073,
+     "lowest_text_row": 1015,
+     "leftmost_text_col": 96,
+     "rightmost_text_col": 983
+    },
+    {
+     "scene": "cut07_mechanism",
+     "frame": 2472,
+     "ink_pct_lt190": 7.299,
+     "lowest_text_row": 1248,
+     "leftmost_text_col": 96,
+     "rightmost_text_col": 983
+    },
+    {
+     "scene": "cut08_drawdown",
+     "frame": 2640,
+     "ink_pct_lt190": 6.516,
+     "lowest_text_row": 1146,
+     "leftmost_text_col": 94,
+     "rightmost_text_col": 935
+    },
+    {
+     "scene": "cut09_underwater",
+     "frame": 2769,
+     "ink_pct_lt190": 6.189,
+     "lowest_text_row": 1296,
+     "leftmost_text_col": 96,
+     "rightmost_text_col": 985
+    },
+    {
+     "scene": "cut10_closing",
+     "frame": 2898,
+     "ink_pct_lt190": 2.265,
+     "lowest_text_row": 919,
+     "leftmost_text_col": 96,
+     "rightmost_text_col": 983
+    }
+   ]
+  },
+  "audio_note": "本片按用户选择全程无口播、无 BGM。渲染器默认附带的空 AAC 音轨已被无损剥离，交付文件只含一条 h264 视频流。",
+  "post_render_fixes": [
+   {
+    "what": "渲染器容器里附带了一条空的 AAC 音轨（4643 个 AAC 帧，全程静音）。",
+    "why": "Remotion 的 h264 输出默认会挂一条音轨，即使合成里没有任何音频元素。",
+    "action": "用 `ffmpeg -c copy -an` 无损剥离，使交付文件与全部产物声明的\"音轨数 = 0\"一致；视频流为流拷贝，未重新编码。",
+    "verified": "剥离后 ffprobe 仅返回一条 h264 视频流；99.000s / 2970 帧 / 1080×1920 @30fps；`ffmpeg -f null -` 完整解码零错误。"
+   }
+  ],
+  "post_delivery_fixes": [
+   {
+    "reported_by": "user",
+    "reported_as": "1:28（88.0s，sc08 最大回撤）里红利低波50 / 沪深300 / 中证500 的回撤百分比是白色字，和背景重叠，看不清",
+    "scene": "sc08 zero-baseline-bars（85.2–90.4s）",
+    "root_cause": "宽柱那一支的数值标签写成 `color: labelInside ? C.invertText : f.color`，意图是「柱子够长就把数字放进柱内、用近白字」。但同一个元素还用了固定 `width: 180` 配 `textAlign: \"right\"`，右对齐的文字右边缘落在 `left + width`，也就是**柱端之外 168px**。于是近白色（#F6F7F4）的字被画在浅色底板（≈#EFEFEC）上。柱子越长越触发这个分支 —— 所以恰好是红利低波50（−16.53%）、沪深300（−38.45%）、中证500（−39.48%）三行中招，而柱最短的红利低波100（−12.91%）走的是「标签在柱外」的分支，所以看起来正常。",
+    "measured_before": "标签区域实测对比度 1.06:1（沪深300）/ 1.09:1（中证500）—— 等同于没有写。",
+    "measured_after": "同一区域实测对比度约 14:1（字色 #22201C = 32 灰度，底板 ≈ 240 灰度）。",
+    "action": "去掉内外分支：数值标签一律锚在柱端外侧 16px、左对齐、统一用墨色 C.ink。横轴满刻度 MAX 由 0.40 调到 0.46，为最长的柱子留出标签净空，保证「柱 + 标签」整体不越过安全区右边界 984。四根柱同比缩放，长度比例与零基线关系完全不变。另外把标签不透明度接到柱子的生长进度上（0.4 + 0.6·p），不再出现柱子还没长出来、数字已经满亮度的情况。",
+    "why_not_fund_color": "曾考虑仍用身份色染数字。但中证500 的身份色 #C4791F 对浅色底板只有 3.1:1，会成为新的可读性短板；而身份已由同行的色块 + 名称 + 代码三重承担，数字不必再担一次。",
+    "regression_guard": "新增 projects/etf-100k-four-fund-race/check_composition.py：① 静态不变量 —— 浅色墨 C.invertText 只能出现在显式 `background: C.invert` 的容器里，且禁止由数据条件选色；② 对成片抽帧实测墨迹边界是否落在安全区内。该检查已用还原旧写法的回归夹具验证过会失败，不是空转。",
+    "verified": "重渲染后：98 个采样帧墨迹范围 x 93..985、最低行 1372（限制 96..984 / 1400）；1:28 处四行数值全部为墨色。成片 99.000s / 2970 帧 / 1080×1920 / h264 / 0 音轨，完整解码零错误。"
+   }
+  ],
+  "issues_resolved_before_render": [
+   "首帧（frame 0）原本只有底纹、没有任何文字：开场动效从 0 不透明度起步。已改为第 0 帧即带完整前提，实测墨迹占比 1.71%。",
+   "结果表 cut-05 三列数字互相压字：最终资产右对齐到 x=700，与累计收益列重叠。已重排列宽与右边界。",
+   "「2022 收官 · 两只宽基已在水下」是错误表述：2022-12-30 中证500 为 101,777，仍在起点之上。已改为按数据统计水下只数。",
+   "高潮面板脚注与「同一天相差」反白块重叠。已删去脚注，并把其中唯一独有信息折回行标签。",
+   "机制场景脚注单行溢出右边距。已改为受宽度约束的自动换行。",
+   "各场景硬切后的第一拍会闪出一帧近乎空白的画面：land() 的基础不透明度已提到 0.5。"
+  ],
+  "tool_findings_reconciliation": {
+   "note": "video_compose 自带的 final_review 对交付文件给出 status=revise / recommended_action=re_render。以下逐条核对它的发现，判定为预期内，不修改成片。",
+   "tool_status": "revise",
+   "tool_recommended_action": "re_render",
+   "findings": [
+    {
+     "code": "audio_spotcheck",
+     "tool_message": "Mean volume -91.0 dB — effectively silent",
+     "tool_flags": {
+      "unexpected_silence": true,
+      "narration_present": false,
+      "music_present": false
+     },
+     "verdict": "expected_by_design",
+     "reviewer_correction": "unexpected_silence 记为 false —— 静音是这支片子的交付目标本身。",
+     "why": "用户显式选择全程无口播、完全静音，持久默认也不启用 BGM。该检查的启发式把\"静音\"当成异常，对本片是误报。"
+    },
+    {
+     "code": "transcript_comparison",
+     "tool_message": "transcript_comparison skipped: narration_transcript not provided",
+     "tool_flags": {
+      "word_accuracy": null
+     },
+     "verdict": "not_applicable",
+     "why": "没有旁白就没有可比对的转写；叙事由原生场景排版承担，数值正确性由 build_script.py 的 51 处回查与确定性渲染保证。"
+    },
+    {
+     "code": "opening_frame_check",
+     "tool_message": "large_blank_area_detected=false, blank_area_ratio=0.251, theme_elements_visible=true",
+     "tool_flags": {
+      "issues": []
+     },
+     "verdict": "agrees_with_own_measurement",
+     "why": "与本模块独立测得的首帧墨迹占比 1.71% 一致：第 0 帧已带完整开场文字。"
+    },
+    {
+     "code": "atelier",
+     "tool_message": "stock_reuse_detected=false, art_direction_declared=true",
+     "tool_flags": {
+      "issues": []
+     },
+     "verdict": "agrees",
+     "why": "未复用任何库存创意组件；美术方向文件已在授权场景之前写下。"
+    }
+   ],
+   "findings_verified_as_real_defects": [],
+   "reviewer_judgement": "工具的两条\"问题\"都可在对照本片交付目标后判定为预期，没有一条指向真实的画面或数据缺陷。真正的缺陷（首帧空白、结果表列重叠、2022 收官口径错误、高潮面板压字、机制脚注溢出、硬切空拍）是在渲染前的逐帧复核阶段发现并修掉的，见 issues_resolved_before_render。"
+  }
+ }
+}

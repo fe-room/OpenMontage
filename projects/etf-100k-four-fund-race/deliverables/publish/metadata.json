@@ -1,0 +1,69 @@
+{
+ "title": "10万元买4只ETF，6年后差多少？",
+ "duration_seconds": 99.0,
+ "resolution": "1080x1920",
+ "aspect_ratio": "9:16",
+ "fps": 30,
+ "audio": "none（全程无口播、无音乐）",
+ "language": "zh-CN",
+ "content_category": "finance",
+ "required_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+ "disclaimer_placement": "结尾场景原生页脚",
+ "data_window": "2020-07-03 → 2026-09-18",
+ "data_provider": "腾讯证券行情接口 web.ifzq.gtimg.cn 日线后复权 hfq",
+ "dividend_treatment": "后复权口径，现金分红按再投资处理",
+ "key_figures": {
+  "沪深300": {
+   "code": "510300",
+   "final_asset": 112681,
+   "cumulative_return": 0.12681,
+   "annualized_return": 0.019413,
+   "max_drawdown": -0.384518,
+   "drawdown_span_days": 1087,
+   "longest_underwater_trading_days": 1358
+  },
+  "中证500": {
+   "code": "510500",
+   "final_asset": 142111,
+   "cumulative_return": 0.42111,
+   "annualized_return": 0.058228,
+   "max_drawdown": -0.394847,
+   "drawdown_span_days": 875,
+   "longest_underwater_trading_days": 971
+  },
+  "红利低波50": {
+   "code": "512890",
+   "final_asset": 193622,
+   "cumulative_return": 0.93622,
+   "annualized_return": 0.112274,
+   "max_drawdown": -0.165254,
+   "drawdown_span_days": 58,
+   "longest_underwater_trading_days": 239
+  },
+  "红利低波100": {
+   "code": "515100",
+   "final_asset": 181596,
+   "cumulative_return": 0.81596,
+   "annualized_return": 0.100847,
+   "max_drawdown": -0.129149,
+   "drawdown_span_days": 208,
+   "longest_underwater_trading_days": 341
+  }
+ },
+ "spread_best_minus_worst": 80941,
+ "boundary_conditions": [
+  "口径：后复权收盘价归一化，等同把现金分红按再投资处理；实际持有场内ETF时现金分红不会自动按当日净值复投。",
+  "区间敏感：2020-07-03 至 2026-09-18 包含 A 股自 2021 年高点后的长期调整，以及红利风格相对占优的年份。换起点或终点，四者排名可能不同。",
+  "数据源：腾讯证券行情接口后复权因子；不同供应商可能因复权算法与精度产生轻微差异。",
+  "512890 在 2021-10-22 缺 1 条成交记录，按用户工作簿口径沿用前一交易日账户资产，该日期不参与任何节点表述。",
+  "本片不构成对任何一只 ETF 未来表现的推断。"
+ ],
+ "reusable_judgment_method": "比较任何两只产品的历史收益时，除收益率之外再问三件事：起点和终点是不是同一天；中间最深亏了多少；那一段持续了多久、我能不能熬过去。",
+ "series_status": "独立单条，无系列标识",
+ "verification": {
+  "review_status": "pass",
+  "audio_streams": 0,
+  "opening_frame_ink_pct": 1.714,
+  "safe_area_measured_text_floor_y": 1372
+ }
+}

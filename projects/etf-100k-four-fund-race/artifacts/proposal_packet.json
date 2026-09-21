@@ -1,0 +1,549 @@
+{
+ "version": "1.0",
+ "content_category": "finance",
+ "concept_options": [
+  {
+   "id": "c1",
+   "title": "10万元买4只ETF，6年后差多少？",
+   "hook": "2020年7月3日，同一天，同一笔10万元，买了四只ETF。六年多以后，最差的那只还剩11万，最好的那只已经19万。",
+   "narrative_structure": "data_narrative",
+   "visual_approach": "全片只有一张图：一个坐标系里的四条账户资产曲线，从同一起点 2020-07-03 起跑，连续揭示到 2026-09-18。折线用 clipPath 从左向右裁切，末端挂一个双行数值签（名称+代码 / 当前金额），随揭示边界移动并做竖向防重叠；年份刻度随进度点亮；一条 ¥100,000 的虚线起跑线常驻全片，线下铺浅灰绿的水下带。曲线冻结后转入结果表、零基线回撤柱、未创新高时间条，最后按三类分组收尾。全程无口播、无音轨，承载叙事的文字全部为原生排版。",
+   "suggested_playbook": "finance-dossier + instrument-plate",
+   "target_audience": "持有或考虑买入宽基/红利ETF、想弄清\"同样是10万块钱投进去，结果和过程到底差在哪\"的普通投资者",
+   "target_platform": "tiktok",
+   "target_duration_seconds": 97.0,
+   "key_points": [
+    "同一天、同一笔10万元、同一个终点：期末最好与最差相差 ¥80,941（¥193,622 vs ¥112,681），而不是几个百分点。",
+    "最大回撤幅度相近，但要熬的时间差近20倍：沪深300 的最大回撤跨度 1087 个自然日，红利低波50 只有 58 天。",
+    "沪深300 在 2021-02-10 见顶后，直到区间终点 2026-09-18 都没有再创新高，最长一段未创新高横跨 1358 个交易日。",
+    "路径分化的结构性原因是编制规则：两只宽基按市值加权，两只红利低波按股息率（或股息率/波动率）加权。",
+    "这四条曲线里的分红是按再投资处理的后复权口径，不等于你账户里收到的现金分红会自动复投。",
+    "2020-07-03 至 2026-09-18 含A股长期调整与红利风格相对占优的年份，换起点可能换排名。"
+   ],
+   "core_message": "收益只是结果，回撤和它持续的时间才决定你能不能拿得住。",
+   "cta": "下次看到\"年化收益\"对比时，除收益率之外，再问一句：中间最深亏了多少，亏了多久。",
+   "tone": "克制、冷静、数据先行；不寒暄、不安慰、不推荐、不喊口号",
+   "grounded_in": [
+    "research_brief.data_points[0]",
+    "research_brief.data_points[1]",
+    "research_brief.data_points[2]",
+    "research_brief.data_points[3]",
+    "research_brief.data_points[4]",
+    "research_brief.data_points[5]",
+    "research_brief.data_points[6]",
+    "research_brief.data_points[7]",
+    "research_brief.data_points[9]",
+    "research_brief.data_points[10]",
+    "research_brief.audience_insights.misconceptions[0]",
+    "research_brief.audience_insights.misconceptions[1]",
+    "research_brief.audience_insights.misconceptions[2]"
+   ],
+   "why_this_works": "严格按用户提供的内容规划执行：开场直接提问、每隔一段只讲一件事、并在\"冻结结果\"之后用回撤把\"过程\"单独拎出来。它把绝大多数同类内容里那个被忽略的变量——\"没回本持续了多久\"——放到主角位置，从而给出一个可复用的判断动作，而不是一个推荐结论。"
+  },
+  {
+   "id": "c2",
+   "title": "同一笔10万元，一个账户19万，一个账户11万",
+   "hook": "同样10万元，一个账户期末是 ¥193,622，另一个是 ¥112,681。中间差的8万，就是这六年你选了什么。",
+   "narrative_structure": "comparison",
+   "visual_approach": "先并排摆出两个终局账户（¥193,622 / ¥112,681），停留两秒，再用一条横线把画面推回 2020-07-03，倒叙重跑四条曲线。终点不变，观众的注意力被预先锚定在\"差8万\"上，看曲线的过程带着答案。",
+   "suggested_playbook": "finance-dossier + instrument-plate",
+   "target_audience": "对数字冲击敏感、先要一个结论再愿意看过程的短视频观众",
+   "target_platform": "tiktok",
+   "target_duration_seconds": 97.0,
+   "key_points": [
+    "期末两个账户的绝对差是 ¥80,941。",
+    "8万元差距从 2021 年开始不可逆地拉开，2024-02-02 达到单日极差 ¥74,443。",
+    "结果只是终点，过程中的回撤时长差异才是拿不拿得住的原因。"
+   ],
+   "core_message": "结果差8万，但真正决定你能不能拿到这8万的是过程。",
+   "cta": "先看到终点，再回看过程——两次观看的感受不一样。",
+   "tone": "数字冲击开场，随即回到克制分析",
+   "grounded_in": [
+    "research_brief.data_points[1]",
+    "research_brief.data_points[5]"
+   ],
+   "why_this_works": "倒叙能让前3秒的留存更强，但它把\"过程\"降级成了论据，而本片最有价值的发现恰恰在过程里。"
+  },
+  {
+   "id": "c3",
+   "title": "跌得一样多，但要熬的时间差了20倍",
+   "hook": "沪深300 和红利低波50 都跌过。可一个跌了将近三年才见底，一个两个月就回来了。",
+   "narrative_structure": "myth_busting",
+   "visual_approach": "开场直接给两条回撤时间条（1087 天 vs 58 天），把\"回撤是幅度问题\"这个直觉先推翻；然后才切回四条曲线的完整赛跑，把收益结果当作第二个答案揭晓。",
+   "suggested_playbook": "finance-dossier + instrument-plate",
+   "target_audience": "有过浮亏体验、在意\"能不能拿住\"的持有型投资者",
+   "target_platform": "tiktok",
+   "target_duration_seconds": 97.0,
+   "key_points": [
+    "最大回撤幅度：-38.45% / -39.48% / -16.53% / -12.91%。",
+    "最大回撤跨度：1087 天 / 875 天 / 58 天 / 208 天。",
+    "沪深300 最长未创新高 1358 个交易日，一直延续到区间终点。"
+   ],
+   "core_message": "同样是跌，跌多久比跌多少更考验持有的人。",
+   "cta": "下一次看回撤，除了百分比，再看一眼它持续了多久。",
+   "tone": "反问式开场，冷静收束",
+   "grounded_in": [
+    "research_brief.data_points[2]",
+    "research_brief.data_points[3]"
+   ],
+   "why_this_works": "把最锋利的发现前置，冲击力最强；但以回撤开场必须先建立\"同样10万、同一天\"的可比前提，观众在不理解前提时会觉得两个数字不可比。"
+  },
+  {
+   "id": "c4",
+   "title": "不是基金经理选的，是指数规则选的",
+   "hook": "同样是跟踪A股的ETF，一条线越走越高，另一条走了三年下坡。差别不在基金经理，在指数规则。",
+   "narrative_structure": "problem_solution",
+   "visual_approach": "把四条曲线按编制规则拆成两组：市值加权的两只（越大越买）与股息率加权的两只（越便宜越买），用两组不同权重的示意来对照，再回到曲线看两组的路径分化。",
+   "suggested_playbook": "finance-dossier + minimal-diagram",
+   "target_audience": "想知道\"为什么会这样\"、愿意理解指数编制规则的中阶投资者",
+   "target_platform": "tiktok",
+   "target_duration_seconds": 97.0,
+   "key_points": [
+    "沪深300 与中证500 均按调整市值（派许加权）计算，规模越大权重越高。",
+    "中证红利低波动指数采用股息率加权；中证红利低波动100指数采用股息率/波动率加权、季度调样、单一二级行业20%上限。",
+    "规则的差异解释了路径的差异，但不构成对未来的推断。"
+   ],
+   "core_message": "你买的不是一只基金的业绩，是一套选股与加权的规则。",
+   "cta": "买ETF前，先看一眼它的跟踪指数是怎么选样、怎么加权的。",
+   "tone": "机制解释型，密度略高",
+   "grounded_in": [
+    "research_brief.data_points[6]",
+    "research_brief.data_points[7]"
+   ],
+   "why_this_works": "它给出最可复用的判断工具；但机制解释会挤占曲线竞速的篇幅，在 97 秒的短片里必须先保住\"过程\"这个主角。"
+  }
+ ],
+ "selected_concept": {
+  "concept_id": "c1",
+  "rationale": "用户已提供完整内容规划并要求据此执行，c1 即规划结构本身。它也是四个方向中唯一同时满足「开场直接进入问题」「一条主线只追一件事」「在结果之后单独处理过程」的选择；c2/c3/c4 都各自牺牲了某一段规划已明确要求的内容。",
+  "modifications": [
+   "按用户选择：全程无口播、无音轨。因此规划中\"几乎无口播\"的留白处改为由原生场景排版承担叙事，画面文字的层级相应加强（标题 / 数值 / 口径三档），并全部落在竖屏安全区内。",
+   "按用户选择：独立单条，画面不出现任何系列名、期号、常驻页眉或底部角标。",
+   "按用户选择：1080×1920 竖屏。规划的横轴/纵轴在竖屏下改为\"纵轴=账户资产、横轴=日期\"的高瘦坐标系，四条线的分化空间比横屏更大，跟随标签改为双行右挂。",
+   "在规划的\"最大回撤\"段之后补一个「未创新高时间条」段（约4.5秒）：数据里最锋利的发现是沪深300 有 1358 个交易日没有创新高，这个数字不属于回撤幅度，需要单独的视觉形式，否则会被浪费。",
+   "规划建议的\"如出现明显交叉，可短暂停顿并显示排名发生变化\"落实为三个具名节点：2021-02-10（沪深300 见顶）、2021-12-31（红利低波占据前二、沪深300 落到末位）、2024-02-02（单日极差最大）。不使用\"胜出\"\"最好\"等判断性表述。"
+  ]
+ },
+ "production_plan": {
+  "pipeline": "finance-dossier",
+  "playbook": "finance-dossier",
+  "renderer_family": "explainer-data",
+  "render_runtime": "remotion",
+  "composition_mode": "atelier",
+  "delivery_promise": {
+   "promise_type": "data_explainer",
+   "motion_required": true,
+   "source_required": false,
+   "tone_mode": "educational",
+   "quality_floor": "presentable",
+   "approved_fallback": null
+  },
+  "art_direction": "projects/etf-100k-four-fund-race/art-direction-instrument-plate.md（冷调近白 #F6F7F4 刻线纸基面、细网格 #E1E6DF、四条身份色 靛蓝/赭橙/绛紫/松青、强制深墨反白做强调而不用第五种彩色、¥100,000 浅灰绿起跑线与水下带作为全片唯一标志装置、数字一律等宽、不使用红绿涨跌语义、禁止做旧纹理与泛金融空镜）",
+  "taste_profile": {
+   "design_read": "工作台上摊开的一张计量图——克制、可核对、没有表演。观众应该感觉像有人在纸上把同一笔钱的四条轨迹摊开给你看，而不是在听人劝你买什么。",
+   "visual_variance": 5,
+   "motion_intensity": 6,
+   "information_density": 4,
+   "palette_discipline": "仅四色身份色 + 石墨结构色 + 深墨反白强调。不引入第五种彩色，不使用红绿涨跌语义。",
+   "layout_variation": "全片共享同一个坐标系与同一套制图规范；变化来自揭示进度、注解与统计图形的更替，而不是每个场景换一套版式。刻意拒绝\"一个信息组一张卡片\"。",
+   "reference_strategy": "不复用任何现有系列的美术语言（不使用象牙白触感纸、页眉、朱红批注）。本片美术方向为一次性，见 art-direction-instrument-plate.md。",
+   "anti_patterns": [
+    "K线 / 金币 / 握手 / 机房等泛金融空镜",
+    "涨跌红绿语义色",
+    "截断纵轴放大差异",
+    "四条曲线做成四张静态对比卡轮播",
+    "为动效而动的粒子、发光、追尾拖影",
+    "满屏滚动字幕"
+   ],
+   "quality_gates": [
+    "全部金额、比例、日期与时长与源数据逐项一致，取整规则统一",
+    "中文零错字、零裁切；等宽数字纵向可比",
+    "竖屏字幕安全区（距底 520px、距侧 96px）内不被任何元素占用",
+    "结尾合规文案原生、完整、可读、位于最末端",
+    "首帧即含开场标题，不是空网格"
+   ]
+  },
+  "voice_selection": {
+   "provider": "none",
+   "voice_name": "无口播（用户显式覆盖持久默认）",
+   "generation_mode": "segmented",
+   "inherited_from_defaults": false,
+   "rationale": "用户在开工前明确选择\"全程无口播：只有画面、字幕和数据，完全静音\"。本片不调用 tts_selector，不产出旁白音频。",
+   "estimated_cost_usd": 0.0,
+   "delivery_style": "无语音；叙事由原生画面排版承担",
+   "pacing_policy": "节奏完全由画面推进控制：开场快（约13秒铺完全部前提），中段稳（约57秒连续赛跑），结果段停顿（约7.5秒供阅读），过程段再收紧（约14.5秒），结尾留约3秒给合规页脚。",
+   "sample_approval_required": false
+  },
+  "music_source": {
+   "source_type": "none",
+   "inherited_from_defaults": true
+  },
+  "decision_log_ref": "projects/etf-100k-four-fund-race/artifacts/decision_log.json",
+  "provider_rankings": {
+   "tts": [
+    {
+     "tool_name": "none",
+     "provider": "none",
+     "weighted_score": 1.0,
+     "task_fit": 1.0,
+     "output_quality": 1.0,
+     "explanation": "用户显式选择全程无口播；1/7 TTS 提供方已配置（仅豆包），本片不使用。"
+    }
+   ],
+   "video": [
+    {
+     "tool_name": "none",
+     "provider": "none",
+     "weighted_score": 1.0,
+     "task_fit": 1.0,
+     "output_quality": 1.0,
+     "explanation": "语义动效审计结论：15/15 个 beat 为 precision-critical，0 个语义动态候选，故不调用任何视频生成或库存素材能力。"
+    }
+   ],
+   "image": [
+    {
+     "tool_name": "host_image_generation",
+     "provider": "host",
+     "weighted_score": 0.9,
+     "task_fit": 0.9,
+     "output_quality": 0.9,
+     "explanation": "仅用于封面阶段的材质底板；全部中文、数字与图表由本地确定性排版叠加。"
+    },
+    {
+     "tool_name": "pillow",
+     "provider": "local",
+     "weighted_score": 0.85,
+     "task_fit": 0.95,
+     "output_quality": 0.8,
+     "explanation": "本地确定性排版与缩略图可读性自检；零成本、零水印。"
+    }
+   ],
+   "music": [
+    {
+     "tool_name": "none",
+     "provider": "none",
+     "weighted_score": 1.0,
+     "task_fit": 1.0,
+     "output_quality": 1.0,
+     "explanation": "应用持久无BGM默认（music_generation 0/3 configured），且用户选择完全静音。"
+    }
+   ]
+  },
+  "stages": [
+   {
+    "stage": "research",
+    "tools": [],
+    "approach": "已完成任务路由（EXPLAIN）、11 条带来源与期段的数据点、5 个来源、现有内容版图取样；四只ETF的数字已与用户工作簿「汇总」表逐项对账。"
+   },
+   {
+    "stage": "proposal",
+    "tools": [],
+    "approach": "锁定概念、运行时、创作模式、动态覆盖、配音与音乐、画幅、预算；当前等待唯一一次人工批准。"
+   },
+   {
+    "stage": "script",
+    "tools": [],
+    "approach": "无口播片，脚本产物承担\"画面节拍表\"职责：按 15 个分镜写出对应的屏幕文案、数值与停留时长，并写入脚本元数据（核心问题、证据引用、边界条件、可复用判断方法、合规元数据）。"
+   },
+   {
+    "stage": "scene_plan",
+    "tools": [],
+    "approach": "15 个分镜，全部标注为 DATA / MECHANISM / DECISION 族，每个带来源锚点；连续赛跑段作为单一连续阶段处理，避免版式重复。"
+   },
+   {
+    "stage": "assets",
+    "tools": [],
+    "approach": "不生成音频、不拉取素材。产出物是数据资产：由用户工作簿导出的 1510 点 × 4 序列数据集、回撤与未创新高区间、注解节点，全部落在项目工作区并记录来源与校验结果。"
+   },
+   {
+    "stage": "edit",
+    "tools": [],
+    "approach": "写出手工时间轴：15 个 cut 覆盖 0→97 秒无空隙，锁定 render_runtime=remotion、composition_mode=atelier，声明竖屏安全区与合规页脚位置，不含 audio 与 music 键。"
+   },
+   {
+    "stage": "compose",
+    "tools": [],
+    "approach": "手写 Remotion atelier 合成（theme / Foundation / 坐标系 / 15 个场景 / Captions 层），本地渲染 1080×1920 30fps H.264，无音轨；随后跑 ffprobe、抽帧与首帧亮度自检。"
+   },
+   {
+    "stage": "cover",
+    "tools": [],
+    "approach": "宿主图像生成提供无字材质底板，再以本地确定性排版叠加标题、8.09万 / 93.62% 等真实数字与身份色，输出 1080×1440（3:4）封面并做缩略图可读性自检。"
+   },
+   {
+    "stage": "publish",
+    "tools": [],
+    "approach": "本地打包 final.mp4、cover.png、屏幕文案全文、来源说明、元数据与发布文案；不登录、不上传、不建远程草稿，保持 manual_publish_required=true。"
+   }
+  ],
+  "quality_tradeoffs": [
+   {
+    "tradeoff": "全程无口播（用户选择）vs 极简口播",
+    "recommendation": "执行用户选择：无口播。",
+    "quality_impact": "画面必须独立承担全部信息，因此文字层级与注解密度会略高于常规；代价是短视频平台在静音场景下的完播与互动通常低于带人声的同类内容。已在开工前如实告知，用户知情选择。"
+   },
+   {
+    "tradeoff": "纯合成覆盖 vs 轻混合（加一两个真实素材节点）",
+    "recommendation": "纯合成。",
+    "quality_impact": "画面完全确定、数值零风险；放弃的是真实素材带来的氛围感——本片判定其为 decorative_only，不承担信息责任。"
+   },
+   {
+    "tradeoff": "atelier 手写合成 vs templated 库存场景拼装",
+    "recommendation": "atelier。",
+    "quality_impact": "获得跨场景连续揭示的坐标系与跟随标签；代价是更多的编写与迭代轮次。templated 无法实现本片的连续性，会退化为静态图表轮播。"
+   },
+   {
+    "tradeoff": "99 秒（交付）vs 97 秒（提案目标）vs 约 90 秒（规划建议）",
+    "recommendation": "99 秒。",
+    "quality_impact": "相对提案目标多出的 2 秒全部用于机制镜头——它是已批准概念里就有、原结构却漏掉的「为什么」；相对规划建议的 90 秒多出的约 9 秒，用于机制镜头、「未创新高时间条」段与结尾约 3 秒的合规页脚停留。若压回 90 秒，需要牺牲机制解释或结尾停留，两者都会削弱这支片子的完整性。"
+   }
+  ],
+  "alternative_paths": [
+   {
+    "description": "templated 快速版：用库存 line_chart / bar_chart / stat_card 拼装，不手写坐标系",
+    "total_cost_usd": 0.0,
+    "quality_level": "budget",
+    "what_changes": "制作时间大幅缩短；但失去连续揭示与跟随标签，四条线变成若干张静态图表卡，本片的核心价值（过程）不成立。"
+   },
+   {
+    "description": "轻混合版：在\"过程\"段加入 1-2 个真实延时/环境镜头",
+    "total_cost_usd": 0.0,
+    "quality_level": "standard",
+    "what_changes": "多一层氛围；但素材不承载事实，会稀释刻线纸的\"测量感\"，并与规划中\"建议删除\"的泛财经空镜相冲突。"
+   },
+   {
+    "description": "本片方案：纯合成 atelier + 无口播 + 无音乐",
+    "total_cost_usd": 0.0,
+    "quality_level": "premium",
+    "what_changes": "无 API 成本；全部预算投入在合成编写与数据校验上。"
+   }
+  ]
+ },
+ "cost_estimate": {
+  "total_estimated_usd": 0.0,
+  "line_items": [
+   {
+    "tool": "none",
+    "operation": "旁白合成",
+    "quantity": 0,
+    "estimated_usd": 0.0,
+    "notes": "用户选择全程无口播，本片不调用任何 TTS 提供方。"
+   },
+   {
+    "tool": "none",
+    "operation": "视频生成 / 库存素材",
+    "quantity": 0,
+    "estimated_usd": 0.0,
+    "notes": "语义动效审计结论为纯合成覆盖，不调用任何视频或素材能力。"
+   },
+   {
+    "tool": "video_compose / audio_mixer",
+    "operation": "本地 Remotion atelier 渲染 1080×1920 30fps（无音轨）",
+    "quantity": 1,
+    "estimated_usd": 0.0,
+    "notes": "本地计算，不计 API 费用。无音频层，audio_mixer 不参与。"
+   },
+   {
+    "tool": "host_image_generation",
+    "operation": "封面材质底板 1 张（大尺寸可直接复用为原图）",
+    "quantity": 1,
+    "estimated_usd": 0.0,
+    "notes": "宿主能力，无额外计费；中文与数字由本地确定性排版叠加。"
+   }
+  ],
+  "budget_cap_usd": 2,
+  "budget_verdict": "within_budget",
+  "savings_options": [
+   "本片 API 成本已为 0：无 TTS、无素材、无视频生成、无音乐。若后续希望加回极简口播，需新增一次性 TTS 成本（约 60-80 字，低于 $0.02）。",
+   "封面若不需要材质底板，可改为完全本地确定性合成，成本与效果差异都极小。"
+  ]
+ },
+ "approval": {
+  "status": "pending",
+  "user_notes": "开工前已确认四项设定：独立单条（不做系列标识）、全程无口播、1080×1920 竖屏、一次性预授权后续所有门。本提案为唯一一次人工确认点。"
+ },
+ "metadata": {
+  "editorial_direction": {
+   "primary_mode": "EXPLAIN",
+   "secondary_mode": null,
+   "classification_confidence": "high",
+   "audience_task": "compare_and_judge",
+   "rationale": [
+    "核心问题是一个稳定的数据与规则问题：同一笔钱、同一段区间，为什么结果和过程差这么多。它不依赖公司内部信息、当日事件的触发点，也不需要宏观变量的传导链条。",
+    "回答问题所需的是\"一个清晰的对照示例\"（同一坐标系里的四条线）加上\"规则层面的机制\"（市值加权 vs 股息率加权），这正是 EXPLAIN 的任务形态，不需要机构研究密度。",
+    "内容对时效不敏感：区间终点是抓取日可获得的最新完整交易日，观众晚几天看到结论不受影响，因此不能归为 MARKET；强行归 MARKET 会虚构时间敏感性。"
+   ],
+   "evidence_priority": [
+    "statutory_index_methodology",
+    "exchange_product_disclosure",
+    "time_series_market_data"
+   ],
+   "visual_priority": [
+    "normalised_multi_line_race",
+    "zero_baseline_bar",
+    "source_anchored_stat",
+    "timeline_strip"
+   ],
+   "canvas_preference": [
+    "data",
+    "margin-note"
+   ],
+   "density_profile": {
+    "opening": "sparse",
+    "body": "standard",
+    "evidence": "dense",
+    "ending": "sparse"
+   },
+   "hook_grammar": "STRANGE_NUMBER",
+   "ending_grammar": "REUSABLE_METHOD",
+   "key_editorial_risk": "不能把一段特定区间（2021 年后 A 股长期调整、红利风格相对占优）的结果讲成\"红利低波更好\"的规律；也不能让观众以为曲线里的分红就是自己账户里收到的分红。",
+   "key_anti_pattern": "不要为解释型内容强塞机构研究密度、ThesisBreaker 或 ScenarioBoard；也不要把四条线做成四张静态对比卡轮播。"
+  },
+  "capability_status": {
+   "composition": {
+    "ffmpeg": true,
+    "remotion": true,
+    "hyperframes": true
+   },
+   "tts": "1/7 configured: Doubao（本片不使用）",
+   "video_generation": "2/22 configured: Pexels, Pixabay（本片不使用）",
+   "image_generation_registry": "2/12 configured（仅库存）；宿主图像生成额外可用，仅用于封面底板",
+   "music_generation": "0/3 configured；应用持久无BGM默认，且用户选择完全静音",
+   "video_post": "9/9 configured",
+   "subtitle": "2/2 configured（本片无语音，不产生字幕轨）",
+   "runtime_warnings": [
+    "comfyui_video: resource_profile 是 ComfyUI 提供方的下限，不代表每个工作流都能装进 8GB 显存；本片不使用该能力。"
+   ],
+   "preflight_verdict": "passed"
+  },
+  "semantic_motion_audit": [
+   {
+    "beat": "sc01 开场提问（2020年7月3日 / 同一天同一笔钱 / 四只ETF各买10万 / 6年后差多少）",
+    "responsibility": "precision_critical",
+    "treatment": "原生排版：日期、金额与四个产品名必须逐字准确。",
+    "information_contributed": "建立比较的可比前提（同一天、同一笔钱、同一终点）。"
+   },
+   {
+    "beat": "sc02 四只ETF身份牌与 ¥100,000 起投额",
+    "responsibility": "precision_critical",
+    "treatment": "四张原生身份牌，各带名称、代码与 ¥100,000；四色身份色在此建立。",
+    "information_contributed": "让观众在曲线出现前就认识四条线的身份，后续跟随标签才有指代对象。"
+   },
+   {
+    "beat": "sc03 规则公布（起点 / 初始资金 / 分红按再投资 / 不定投不择时）",
+    "responsibility": "precision_critical",
+    "treatment": "原生规则清单 + START 落定；口径声明必须完整可读。",
+    "information_contributed": "口径前置：先说明这是后复权总回报，避免观众误读为\"分红自动复投到账\"。"
+   },
+   {
+    "beat": "13.2–70.0s 连续赛跑（网格、刻度、¥100,000 起跑线、四条曲线揭示、跟随数值签、年份点亮）",
+    "responsibility": "precision_critical",
+    "treatment": "Remotion 手写坐标系；clipPath 揭示；末端数值签与几何同步；标注三个具名节点。",
+    "information_contributed": "全片的信息主干：把\"同一起点、同一时间、不同路径\"变成可看见的连续过程。"
+   },
+   {
+    "beat": "三个具名节点（2021-02-10 见顶 ¥129,310 / 2021-12-31 排名变化 / 2024-02-02 单日极差 ¥74,443）",
+    "responsibility": "precision_critical",
+    "treatment": "原生图钉注解 + 精确数值；不使用判断性措辞。",
+    "information_contributed": "把连续的曲线切成观众能记住的三个时刻，并保留每次点名对应的当日金额。"
+   },
+   {
+    "beat": "sc11 冻结最终结果表（最终资产 / 累计收益 / 年化收益）",
+    "responsibility": "precision_critical",
+    "treatment": "原生四行结果表，等宽数字，停留约 7.5 秒供阅读。",
+    "information_contributed": "给出规划要求的最终数据，让观众可以先记住结果。"
+   },
+   {
+    "beat": "sc12 转折（但是，过程一样吗？）",
+    "responsibility": "precision_critical",
+    "treatment": "原生大字，短暂停留，无装饰。",
+    "information_contributed": "把观众的注意力从结果切换到过程，为下一段做准备。"
+   },
+   {
+    "beat": "sc13 最大回撤零基线横向柱（-38.45% / -39.48% / -16.53% / -12.91%）",
+    "responsibility": "precision_critical",
+    "treatment": "原生零基线柱状图，逐行标名称与数值，不靠颜色区分。",
+    "information_contributed": "给出回撤幅度的可比视图；零基线保证不放大差异。"
+   },
+   {
+    "beat": "sc14 未创新高时间条（1358 / 971 / 239 / 341 个交易日）",
+    "responsibility": "precision_critical",
+    "treatment": "原生四条横向时间条，按真实日期段绘制，标出未创新高区间与合计交易日数。",
+    "information_contributed": "本片最锋利的发现：回撤不只是幅度问题，是能不能熬过去的问题。"
+   },
+   {
+    "beat": "sc15 结尾分类与可复用判断方法 + 合规页脚",
+    "responsibility": "precision_critical",
+    "treatment": "原生三组分类 + 两行结语；合规文案以原生小字放在页脚，停留约3秒。",
+    "information_contributed": "给出可复用的判断动作与三条边界条件，并完成强制合规呈现。"
+   },
+   {
+    "beat": "K线、金币、握手、机房、券商 Logo 堆叠、财经新闻截图",
+    "responsibility": "decorative_only",
+    "treatment": "全部拒绝使用，且用户规划已在\"建议删除\"中列明。"
+   }
+  ],
+  "motion_commitment_summary": "选定 composition-only：15 个 beat 全部为 precision-critical，0 个语义动态候选，0 个装饰性素材被采用。本片不存在\"素材能比确定性图形更准确传达信息\"的段落，故素材阶段不调用任何视频生成或库存素材能力——这是显式审计结论，不是省略。",
+  "compliance": {
+   "content_category": "finance",
+   "financial_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+   "exact_text": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+   "presentation": "footer",
+   "placement": "ending",
+   "ending_scene_id": "sc15",
+   "ending_cut_id": "cut-15",
+   "note": "合规文案以原生小字固定呈现在最终意义场景 sc15 的页脚，不朗读、不单独成卡。本片无音轨，因此该文案只以文字形式存在，且必须位于竖屏安全区内。"
+  },
+  "canvas": {
+   "width": 1080,
+   "height": 1920,
+   "fps": 30,
+   "aspect": "9:16",
+   "platforms": [
+    "douyin",
+    "xiaohongshu",
+    "wechat_channels"
+   ],
+   "safe_area": {
+    "policy": "social-ui-safe",
+    "bottom_offset_px": 520,
+    "side_margin_px": 96
+   }
+  },
+  "audio_policy": {
+   "audio_streams": 0,
+   "narration": "none",
+   "music": "none",
+   "note": "用户显式选择全程无口播。成片不含任何音轨；下游 edit_decisions 不含 audio 与 music 键，compose 不调用 audio_mixer。"
+  },
+  "duration_estimate": {
+   "target_seconds": 97.0,
+   "delivered_seconds": 99.0,
+   "scenes": 10,
+   "race_window_seconds": 56.8,
+   "trailing_hold_seconds": 3.0,
+   "revision_note": "提案锁定的目标是 97.0 秒、15 个场景。执行中做了两处结构调整并把最终成片定为 99.0 秒 / 10 个场景：① 赛跑段本就是一个连续镜头（56.8 秒内没有任何剪辑），把它拆成七个场景会误述这支片子的拍法，因此七个章节改为同一场景内的注解拍，场景数由 15 降为 10；② 补入一个 5.6 秒的机制镜头（指数加权规则的对照），用来回答「为什么路径会分化」——这一点写在已批准的 c1 概念与 research_brief 的机制证据里，原结构里却没有承载它的镜头。净增 2.0 秒。",
+   "note": "比规划建议的约90秒多约9秒，用于机制镜头、未创新高时间条段、以及结尾合规页脚的3秒停留；取舍见 quality_tradeoffs。"
+  },
+  "series_status": {
+   "is_series_entry": false,
+   "on_screen_series_mark": null,
+   "note": "用户选择独立单条、不做系列标识：画面中不出现系列名、期号、常驻页眉或底部角标。"
+  },
+  "approval_policy": {
+   "mode": "pre_authorized_all_subsequent_gates",
+   "recorded_at": "2026-09-21",
+   "recorded_by": "user_explicit_choice",
+   "gates_covered": [
+    "script",
+    "scene_plan",
+    "assets",
+    "cover",
+    "publish"
+   ],
+   "statement": "用户在提案阶段明确选择「一次性预授权后续所有门」：提案确认后，script / scene_plan / assets / cover / publish 五道门自动推进，不再逐门人工确认；遇阻塞或需要变更已批准的重大选择时仍必须停下上报。",
+   "proposal_gate_itself": "仍然需要一次人工确认（proposal 门未包含在预授权范围内）。",
+   "schema_conflict_note": "AGENT_GUIDE.md 要求把该预授权记为 decision_log 中 category='approval_policy' 的一条决策，但 schemas/artifacts/decision_log.schema.json 的顶层是 additionalProperties:false 且 category 枚举不含该取值，写进去会让 decision_log 无法通过自身 schema 校验。因此该记录改放在proposal_packet.metadata.approval_policy 与 proposal_packet.approval.user_notes。"
+  }
+ }
+}

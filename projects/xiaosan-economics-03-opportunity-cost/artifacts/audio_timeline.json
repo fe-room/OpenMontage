@@ -1,0 +1,52 @@
+[
+  {
+    "id": "s01",
+    "chars": 25,
+    "duration": 4.416
+  },
+  {
+    "id": "s02",
+    "chars": 57,
+    "duration": 9.456
+  },
+  {
+    "id": "s03",
+    "chars": 48,
+    "duration": 8.424
+  },
+  {
+    "id": "s04",
+    "chars": 100,
+    "duration": 17.064
+  },
+  {
+    "id": "s05",
+    "chars": 137,
+    "duration": 22.68
+  },
+  {
+    "id": "s06",
+    "chars": 161,
+    "duration": 31.056
+  },
+  {
+    "id": "s07",
+    "chars": 237,
+    "duration": 39.672
+  },
+  {
+    "id": "s08",
+    "chars": 172,
+    "duration": 32.28
+  },
+  {
+    "id": "s09",
+    "chars": 179,
+    "duration": 29.856
+  },
+  {
+    "id": "s10",
+    "chars": 49,
+    "duration": 7.224
+  }
+]

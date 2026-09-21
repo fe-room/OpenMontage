@@ -1,0 +1,367 @@
+{
+  "version": "1.0",
+  "project_id": "xiaosan-economics-03-opportunity-cost",
+  "decisions": [
+    {
+      "decision_id": "d-001",
+      "stage": "proposal",
+      "category": "pipeline_selection",
+      "subject": "Production pipeline",
+      "options_considered": [
+        {
+          "option_id": "finance-dossier",
+          "label": "finance-dossier",
+          "score": 0.94,
+          "reason": "本期属财经科普且含投资比较段，需要强制合规呈现（结尾原生footer）；同为系列第02期使用的流水线，产品与质检口径一致。"
+        },
+        {
+          "option_id": "animated-explainer",
+          "label": "animated-explainer",
+          "score": 0.78,
+          "reason": "同样适合概念解说，但缺少 finance-dossier 的原生合规元数据契约与财经编辑层。",
+          "rejected_because": "本期内容类别为 finance，需要结尾不可改写的合规文案与财经编辑规范。"
+        }
+      ],
+      "selected": "finance-dossier",
+      "reason": "内容类别为 finance，且需延续系列已建立的合规与质检口径。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.94
+    },
+    {
+      "decision_id": "d-002",
+      "stage": "proposal",
+      "category": "concept_selection",
+      "subject": "Narrative concept",
+      "options_considered": [
+        {
+          "option_id": "c1",
+          "label": "躺一天，成本真的是0吗（问题→直觉→三次反转→概念→防误解→收束）",
+          "score": 0.97,
+          "reason": "用户已提供完整内容规划，c1 即规划本身的表达结构；唯一同时满足第一秒进入问题、一期只追一个问题、三次认知修正完整。"
+        },
+        {
+          "option_id": "c2",
+          "label": "你先花掉了500块（数字冲击开场）",
+          "score": 0.72,
+          "reason": "2秒抓人更强，但把机会成本暗示成一笔真实账目，会强化'货币化'误解。",
+          "rejected_because": "与规划第14节'机会成本不要求把一切换算成钱'正面冲突。"
+        },
+        {
+          "option_id": "c3",
+          "label": "免费咖啡可能是今年最贵的一杯",
+          "score": 0.74,
+          "reason": "案例小、记忆点强，但需要额外转场才能回到'躺一天'主线。",
+          "rejected_because": "规划明确要求一期只围绕'周六下午4小时'这一个核心场景。"
+        },
+        {
+          "option_id": "c4",
+          "label": "如果今天你不得不做点什么（提问式开场）",
+          "score": 0.7,
+          "reason": "参与感最强，但抽象开场对2秒留存不利。",
+          "rejected_because": "与规划第6节'沙发/0元/成本=0？'三画面快闪的开头设计不兼容。"
+        }
+      ],
+      "selected": "c1",
+      "reason": "用户要求严格按规划执行，c1 即规划的表达结构，且是唯一完整保留三次认知修正链条的方案。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.97
+    },
+    {
+      "decision_id": "d-003",
+      "stage": "proposal",
+      "category": "playbook_selection",
+      "subject": "Visual style and playbook",
+      "options_considered": [
+        {
+          "option_id": "finance-dossier-tactile-paper",
+          "label": "finance-dossier + 小散触感研究纸",
+          "score": 0.95,
+          "reason": "延续第02期已批准的纸张质感（#F4F1E8 基纸、石墨文字、朱红批注、深青结构线），系列辨识度连续。"
+        },
+        {
+          "option_id": "flat-motion-graphics",
+          "label": "flat-motion-graphics",
+          "score": 0.66,
+          "reason": "更活泼，适合社交短视频，但会切断与系列前两期的视觉连续性。",
+          "rejected_because": "系列一致性优先，且本期内容基调克制。"
+        },
+        {
+          "option_id": "premium-minimalist",
+          "label": "premium-minimalist",
+          "score": 0.7,
+          "reason": "干净专业，但缺少纸张触感与批注式的知识层级。",
+          "rejected_because": "本期需要朱红批注承担三次反转的视觉强调。"
+        }
+      ],
+      "selected": "finance-dossier-tactile-paper",
+      "reason": "延续系列视觉语言；但本期重新设计标志装置（四张选项纸卡），不复用上一期的四小时纸尺，避免模板化。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.95
+    },
+    {
+      "decision_id": "d-004",
+      "stage": "proposal",
+      "category": "renderer_family_selection",
+      "subject": "Creative renderer family",
+      "options_considered": [
+        {
+          "option_id": "explainer-data",
+          "label": "explainer-data",
+          "score": 0.93,
+          "reason": "本期是概念解说 + 精确卡片关系与数字比较，属于数据化解说渲染族。"
+        },
+        {
+          "option_id": "cinematic",
+          "label": "cinematic",
+          "score": 0.42,
+          "reason": "情绪化影调，与克制分析型表达不符。",
+          "rejected_because": "本期无叙事性影调需求。"
+        }
+      ],
+      "selected": "explainer-data",
+      "reason": "与 EXPLAIN 编辑模式和确定性信息呈现需求一致，且与第02期渲染族保持连续。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.93
+    },
+    {
+      "decision_id": "d-005",
+      "stage": "proposal",
+      "category": "render_runtime_selection",
+      "subject": "Composition runtime",
+      "options_considered": [
+        {
+          "option_id": "remotion",
+          "label": "Remotion（React 合成）",
+          "score": 0.95,
+          "reason": "对本期最合适的点：纸张材质层、中文竖屏排版、四张纸卡的挤压/熄灭/高亮状态机、以及逐帧确定的数字与卡片关系，React 组件状态与时间轴表达最直接，字幕安全区由框架自动收敛。"
+        },
+        {
+          "option_id": "hyperframes",
+          "label": "HyperFrames（HTML/CSS/GSAP 合成）",
+          "score": 0.8,
+          "reason": "诚实权衡：它在排版的动势与文字编排上更强，适合做纯粹的字体驱动型短片；但本期真正的难点是精确的卡片状态与确定性的关系图，且竖屏字幕安全区需要显式实现，返工风险更高。",
+          "rejected_because": "本期信息结构以确定性卡片关系为主，非字体驱动型；安全性上 Remotion 更可控。"
+        },
+        {
+          "option_id": "ffmpeg",
+          "label": "FFmpeg 纯剪辑",
+          "score": 0.25,
+          "reason": "诚实权衡：成本最低、最稳定，适合简单剪辑拼接；但无法实现纸卡让位、高亮与熄灭等状态动效，会退化为静帧拼接。",
+          "rejected_because": "本期 delivery_promise.motion_required=true，静帧拼接低于质量下限。"
+        }
+      ],
+      "selected": "remotion",
+      "reason": "内容适配优先推荐 Remotion；已在 preflight 中验证三种运行时全部可用（ffmpeg/remotion/hyperframes 均为 true），因此不存在可用性阻塞，选择完全基于内容适配。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.95
+    },
+    {
+      "decision_id": "d-006",
+      "stage": "proposal",
+      "category": "composition_mode",
+      "subject": "Composition authoring mode",
+      "options_considered": [
+        {
+          "option_id": "atelier",
+          "label": "Atelier 手工编排",
+          "score": 0.96,
+          "reason": "能为本期手写一次性视觉语言：四张选项纸卡的让位关系、朱红批注的纠偏卡、以及本期的节奏（快→慢→停→快→慢→收）。"
+        },
+        {
+          "option_id": "templated",
+          "label": "Templated 模板化",
+          "score": 0.64,
+          "reason": "制作更快更稳，可复用现成 cut.type（text_card / stat_card / comparison 等）。",
+          "rejected_because": "本期是系列中需要提升表达锐度的单期成片，模板化正是上一期'画面太平均'的成因。"
+        }
+      ],
+      "selected": "atelier",
+      "reason": "复用引擎知识但不复用现成组件，避免系列一致性变成模板化；本期为核心成片而非批量产出。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.96
+    },
+    {
+      "decision_id": "d-007",
+      "stage": "proposal",
+      "category": "motion_commitment",
+      "subject": "Visual coverage strategy",
+      "options_considered": [
+        {
+          "option_id": "light-hybrid",
+          "label": "轻混合（确定性合成 + 3 个真实动态节点）",
+          "score": 0.92,
+          "reason": "规划第1节明确要求'配音 + 图表卡片 + 生活素材 + 简单动态字幕'；开场'躺一天'与'排队两小时'的体感只能由真实素材建立，其余信息由确定性合成承担。"
+        },
+        {
+          "option_id": "composition-only",
+          "label": "纯合成（无实拍素材）",
+          "score": 0.68,
+          "reason": "更可控、更快，全部信息可确定性呈现。",
+          "rejected_because": "开场2秒留存是本期首要成功标准，纯排版的'躺一天'无法让观众立刻认出自己的周六；且规划已显式要求生活素材。"
+        },
+        {
+          "option_id": "footage-led",
+          "label": "素材主导",
+          "score": 0.35,
+          "reason": "真实感最强。",
+          "rejected_because": "本期核心是精确定义与卡片关系推理，让素材承担主线会让'最佳被放弃方案'等关键信息失去确定性。"
+        }
+      ],
+      "selected": "light-hybrid",
+      "reason": "按信息责任分类：3 个 beat 为语义动态候选（开场躺卧、4小时流逝、咖啡排队），全部精确信息与数字由合成承担，拒绝任何装饰性金融空镜。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.92
+    },
+    {
+      "decision_id": "d-008",
+      "stage": "proposal",
+      "category": "voice_selection",
+      "subject": "Narration TTS provider",
+      "options_considered": [
+        {
+          "option_id": "doubao-dayi-2",
+          "label": "豆包 大壹 2.0",
+          "score": 0.95,
+          "reason": "User persistent default；普通话自然、支持时间戳，适合克制的老朋友观察型讲述。"
+        },
+        {
+          "option_id": "other-tts",
+          "label": "其他 TTS 提供方",
+          "score": 0.4,
+          "reason": "当前 TTS 能力为 1/7 configured，仅豆包可用。",
+          "rejected_because": "用户持久默认已指定豆包大壹 2.0，且其他提供方未配置。"
+        }
+      ],
+      "selected": "doubao-dayi-2",
+      "reason": "继承用户持久配音默认：豆包大壹 2.0、segmented 分段生成、先审样音。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.96
+    },
+    {
+      "decision_id": "d-009",
+      "stage": "proposal",
+      "category": "music_source",
+      "subject": "Background music source",
+      "options_considered": [
+        {
+          "option_id": "none",
+          "label": "无背景音乐",
+          "score": 0.9,
+          "reason": "继承持久默认 media_defaults.background_music_enabled=false。"
+        },
+        {
+          "option_id": "generated",
+          "label": "API 生成音乐",
+          "score": 0.3,
+          "reason": "当前 music_generation 为 0/3 configured，无可用提供方。",
+          "rejected_because": "持久无BGM默认，且本期为克制分析型讲述，音乐非必要。"
+        },
+        {
+          "option_id": "library",
+          "label": "使用本地曲库",
+          "score": 0.3,
+          "reason": "music_library/ 未配置（0/1）。",
+          "rejected_because": "无曲库可用，且用户默认不启用BGM。"
+        }
+      ],
+      "selected": "none",
+      "reason": "应用持久无BGM默认；下游素材、编辑与合成阶段必须完全省略音乐层。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.9
+    },
+    {
+      "decision_id": "d-010",
+      "stage": "proposal",
+      "category": "budget_tradeoff",
+      "subject": "Target duration and content completeness",
+      "options_considered": [
+        {
+          "option_id": "complete-215",
+          "label": "完整口播约 215 秒",
+          "score": 0.94,
+          "reason": "规划第1节要求'不强行限制时长，以表达完整、节奏清晰为优先'；996 个汉字按系列实测语速 4.79 字/秒约 208 秒，加停顿约 215 秒。"
+        },
+        {
+          "option_id": "cut-180",
+          "label": "压缩至约 180 秒",
+          "score": 0.55,
+          "reason": "更符合短视频完播率习惯。",
+          "rejected_because": "压缩必然要删掉三次反转中的某一步，与规划'不以压缩为首要目标'冲突。"
+        }
+      ],
+      "selected": "complete-215",
+      "reason": "保留规划第22节完整口播与三次认知修正的完整链条，时长服从内容完整度。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.94
+    },
+    {
+      "decision_id": "d-011",
+      "stage": "proposal",
+      "category": "provider_selection",
+      "subject": "Primary cover core visual",
+      "options_considered": [
+        {
+          "option_id": "host-imagegen",
+          "label": "宿主图像生成 + 本地确定性文字排版",
+          "score": 0.9,
+          "reason": "封面核心视觉一次生成，中文大字、角标与合规文字由本地原生排版叠加，确保标题与数字零差错。"
+        },
+        {
+          "option_id": "registry-image",
+          "label": "registry image_selector（仅库存图）",
+          "score": 0.45,
+          "reason": "当前 image_generation 为 2/12 configured，仅 Pexels/Pixabay 库存图可用。",
+          "rejected_because": "库存图难以承载本期封面所需的'躺一天 + 0元 + 成本却可能很高'的冲突构图。"
+        },
+        {
+          "option_id": "frame-grab",
+          "label": "直接截取成片画面作封面",
+          "score": 0.4,
+          "reason": "最省成本。",
+          "rejected_because": "封面需要独立设计的标题层级与角标，截帧无法满足移动端缩略图可读性。"
+        }
+      ],
+      "selected": "host-imagegen",
+      "reason": "封面阶段独立审批；核心视觉由生成承担，中文与数字由确定性排版添加。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.9
+    },
+    {
+      "decision_id": "d-012",
+      "stage": "script",
+      "category": "approval_policy",
+      "subject": "Run approval policy",
+      "options_considered": [
+        {
+          "option_id": "full-run-preauthorization",
+          "label": "一次性预授权全程（脚本/分镜/素材/封面/发布）",
+          "score": 0.9,
+          "reason": "旁白逐字为用户规划原文、创作方案已确认，五轮往返对用户无增量价值；仍保留遇阻塞即停的义务。"
+        },
+        {
+          "option_id": "per-gate",
+          "label": "逐门审批",
+          "score": 0.6,
+          "reason": "控制力最强，但需要用户回五次，且本片关键创作决策已在提案门锁定。",
+          "rejected_because": "用户明确选择预授权全程。"
+        }
+      ],
+      "selected": "full-run-preauthorization",
+      "reason": "用户于 2026-09-21 明确选择一次性预授权脚本、分镜、素材、封面、发布五个环节。",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.95
+    }
+  ]
+}

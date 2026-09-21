@@ -1,0 +1,369 @@
+{
+ "version": "1.0",
+ "project_id": "etf-100k-four-fund-race",
+ "decisions": [
+  {
+   "decision_id": "d-001",
+   "stage": "proposal",
+   "category": "pipeline_selection",
+   "subject": "Production pipeline",
+   "options_considered": [
+    {
+     "option_id": "finance-dossier",
+     "label": "finance-dossier",
+     "score": 0.95,
+     "reason": "内容类别为 finance，需要结尾不可改写的原生合规文案与财经编辑层；本片是证据先行的数据对比短片，落在该流水线的能力正中。"
+    },
+    {
+     "option_id": "animation",
+     "label": "animation（动画优先）",
+     "score": 0.72,
+     "reason": "本片确实以动效承载全部内容，形式上接近动画优先。",
+     "rejected_because": "该流水线没有 finance 的合规元数据契约，结尾免责声明只能退化为独立成卡，且缺少财经编辑规范与数据场景分类。"
+    },
+    {
+     "option_id": "animated-explainer",
+     "label": "animated-explainer",
+     "score": 0.66,
+     "reason": "通用解说，产能成熟。",
+     "rejected_because": "同样缺失 finance 合规契约；且本片不需要解说型叙事结构。"
+    }
+   ],
+   "selected": "finance-dossier",
+   "reason": "「涉及基金与收益比较即 finance 类别」的硬性要求下，只有该流水线原生承载合规文案契约；同时它的数据场景族（explainer-data）与零基线图表规范正对本片形态。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-002",
+   "stage": "proposal",
+   "category": "concept_selection",
+   "subject": "Narrative concept",
+   "options_considered": [
+    {
+     "option_id": "c1",
+     "label": "同一天起跑的四条线 → 冻结结果 → 但是过程一样吗 → 回撤与时间",
+     "score": 0.97,
+     "reason": "严格按用户提供的《视频内容规划》结构执行：开场提问、公布规则、核心动态折线、冻结结果、最大回撤、结尾分组。"
+    },
+    {
+     "option_id": "c2",
+     "label": "先亮出 8 万元的差距，再回到 2020 年重跑一遍",
+     "score": 0.78,
+     "reason": "倒叙的数字冲击更强，前3秒留存最好。",
+     "rejected_because": "会把观众的注意力引向\"结果\"而不是\"过程\"，削弱本片最有价值的发现（回撤的持续时间差异）。"
+    },
+    {
+     "option_id": "c3",
+     "label": "从 -38.5% 与 -12.9% 的回撤体验开场",
+     "score": 0.74,
+     "reason": "情绪冲击最直接。",
+     "rejected_because": "以回撤开场需要先建立\"同样10万、同一天\"的前提，否则观众无法判断这两个数字是不是可比；顺序被规划明确固定。"
+    },
+    {
+     "option_id": "c4",
+     "label": "悬念式逐条加入曲线（一次只追一条线）",
+     "score": 0.62,
+     "reason": "单线追踪更长，适合更长的时长。",
+     "rejected_because": "\"同一天、同一笔钱、四条线同时跑\"的并列张力会被拆散，且远超 90-100 秒的时长约束。"
+    }
+   ],
+   "selected": "c1",
+   "reason": "用户已提供完整内容规划并要求据此执行；c1 即规划结构本身，也是唯一在 97 秒内同时容纳\"四条线并列竞速 + 结果冻结 + 过程对比\"的方案。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.97
+  },
+  {
+   "decision_id": "d-003",
+   "stage": "proposal",
+   "category": "playbook_selection",
+   "subject": "Visual style and playbook",
+   "options_considered": [
+    {
+     "option_id": "finance-dossier-instrument-plate",
+     "label": "finance-dossier + 仪器刻线纸（本片专属美术方向）",
+     "score": 0.94,
+     "reason": "内容本质是一张计量图；刻线纸语言（细网格、等宽数字、零基线、起跑线装置）直接把\"这是一次测量\"的信任感建立起来，并支持四条线的长时可读。"
+    },
+    {
+     "option_id": "premium-minimalist",
+     "label": "premium-minimalist",
+     "score": 0.71,
+     "reason": "干净专业，适合专家解说。",
+     "rejected_because": "它擅长的是文字层级与留白，缺少承载 1510 个点的图表制图规范与起跑线装置。"
+    },
+    {
+     "option_id": "minimalist-diagram",
+     "label": "minimalist-diagram",
+     "score": 0.7,
+     "reason": "适合技术图解。",
+     "rejected_because": "面向静态结构图，长时间连续的收益曲线竞速不是它的强项。"
+    },
+    {
+     "option_id": "flat-motion-graphics",
+     "label": "flat-motion-graphics",
+     "score": 0.62,
+     "reason": "活泼、适合社交短视频。",
+     "rejected_because": "本片基调是克制的数据分析，扁平动效的活泼感会与内容气质冲突，且削弱精确感。"
+    }
+   ],
+   "selected": "finance-dossier-instrument-plate",
+   "reason": "美术方向见 projects/etf-100k-four-fund-race/art-direction-instrument-plate.md：冷调近白刻线纸、四条身份色、深墨反白强调、¥100,000 起跑线装置。刻意避开任何现有系列的纸张质感与页眉，因为本片按用户要求是独立单条、不做系列标识。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.94
+  },
+  {
+   "decision_id": "d-004",
+   "stage": "proposal",
+   "category": "renderer_family_selection",
+   "subject": "Creative renderer family",
+   "options_considered": [
+    {
+     "option_id": "explainer-data",
+     "label": "explainer-data",
+     "score": 0.95,
+     "reason": "本片是纯数据化解说：一个坐标系、四条序列、若干注解与两张统计图。"
+    },
+    {
+     "option_id": "animation-first",
+     "label": "animation-first",
+     "score": 0.7,
+     "reason": "全片确实由动效承载。",
+     "rejected_because": "animation-first 偏向风格化运动表达，而本片的动效必须严格服从数据几何（揭示边界与数值同步），不是表现性动画。"
+    },
+    {
+     "option_id": "cinematic-trailer",
+     "label": "cinematic-trailer",
+     "score": 0.28,
+     "reason": "影调强、情绪强。",
+     "rejected_because": "与克制分析型表达正面冲突，且会牺牲刻度与数字的可读性。"
+    }
+   ],
+   "selected": "explainer-data",
+   "reason": "与 finance-dossier 清单声明的 default_renderer_family 一致，也符合本片\"数据回答一个问题\"的形态。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-005",
+   "stage": "proposal",
+   "category": "render_runtime_selection",
+   "subject": "Composition runtime",
+   "options_considered": [
+    {
+     "option_id": "remotion",
+     "label": "Remotion（React 合成）",
+     "score": 0.95,
+     "reason": "本片最难的三件事——1510 个点 × 4 条序列的 clipPath 揭示与末端数值签同步、四条跟随标签的竖向防重叠、竖屏安全区自动收敛——在 React 组件里表达最直接；确定性数字与图表几何由组件状态管理，不会漂移。"
+    },
+    {
+     "option_id": "hyperframes",
+     "label": "HyperFrames（HTML/CSS/GSAP 合成）",
+     "score": 0.79,
+     "reason": "诚实权衡：它在字体驱动的动势与编排上更强，做纯文字型短片更漂亮；但本片的难点是精确的图表几何与长序列揭示，且竖屏安全区需要手写实现，返工风险更高。",
+     "rejected_because": "本片是数据几何驱动而非字体驱动；Remotion 在确定性与安全区上更可控。"
+    },
+    {
+     "option_id": "ffmpeg",
+     "label": "FFmpeg 纯剪辑",
+     "score": 0.2,
+     "reason": "诚实权衡：成本最低、最稳定，适合简单拼接。",
+     "rejected_because": "无法实现曲线揭示、跟随标签与状态动效，会退化成静帧拼接，低于本片质量下限。"
+    }
+   ],
+   "selected": "remotion",
+   "reason": "内容适配优先：本片交付承诺依赖连续运动的确定性图表，Remotion 的组件化时间轴是摩擦最小的路径。preflight 已确认 ffmpeg / remotion / hyperframes 三者均可用，本选择不是可用性驱动的。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.95
+  },
+  {
+   "decision_id": "d-006",
+   "stage": "proposal",
+   "category": "composition_mode",
+   "subject": "Composition authoring mode",
+   "options_considered": [
+    {
+     "option_id": "atelier",
+     "label": "Atelier（手写专属合成）",
+     "score": 0.93,
+     "reason": "本片的核心机制无法由任何库存场景类型拼出来：需要一个跨越 57 秒连续揭示的坐标系、跟随曲线移动的双行数值签、随揭示点亮的年份刻度、以及常驻的 ¥100,000 起跑线装置。这些必须手写；库存组件最多只能作为机制参考。"
+    },
+    {
+     "option_id": "templated",
+     "label": "Templated（拼装库存场景类型）",
+     "score": 0.55,
+     "reason": "快、稳、便宜，`line_chart` / `bar_chart` / `stat_card` 可以直接拼出一版。",
+     "rejected_because": "库存 `line_chart` 不支持跟随曲线的动态标签与跨场景连续揭示，成品会变成若干张静态图表卡片的轮播——而本片的全部价值恰恰在\"过程是连续的\"。"
+    }
+   ],
+   "selected": "atelier",
+   "reason": "本片是独立成片，视觉语言必须是一次性的；且必须新写图中装置。代价是比 templated 多花迭代成本，已在提案中如实告知。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.93
+  },
+  {
+   "decision_id": "d-007",
+   "stage": "proposal",
+   "category": "motion_commitment",
+   "subject": "Visual coverage strategy",
+   "options_considered": [
+    {
+     "option_id": "composition-only",
+     "label": "纯合成（确定性合成承担全部画面）",
+     "score": 0.93,
+     "reason": "按信息责任逐段分类，本片 15 个 beat 中 15 个都是 precision-critical：金额、比例、日期、回撤幅度、持续时长、年份刻度、排名位置——每一个都必须被读准。不存在任何一个 beat，真实素材能比确定性图形更准确地传达它要传达的信息。库存素材只能提供\"财经感\"的氛围，属于本片明令拒绝的 decorative_only。"
+    },
+    {
+     "option_id": "light-hybrid",
+     "label": "轻混合（确定性图形 + 少量真实动态素材）",
+     "score": 0.6,
+     "reason": "诚实权衡：可以给 75-85 秒的\"过程体验\"段加一到两个真实环境镜头（例如长时段延时），让\"熬了三年\"有一点身体感。",
+     "rejected_because": "两个理由：一是该段的全部说服力来自 1087 天 vs 58 天这组精确数字，素材只能做背景无法承载事实，属于 decorative_only；二是用户提供的规划在\"建议删除\"里明确列入了泛财经空镜与复杂转场，\"建议保留\"里只有时间、金额、曲线、最终收益、最大回撤与少量年份节点。"
+    },
+    {
+     "option_id": "footage-led",
+     "label": "素材主导",
+     "score": 0.25,
+     "reason": "真实感最强。",
+     "rejected_because": "与本片\"纯数据动态折线、极简背景、少文字\"的规划要求正面冲突。"
+    }
+   ],
+   "selected": "composition-only",
+   "reason": "结论是显式的：本片不存在语义动态候选。全部 15 个 beat 为 precision-critical，0 个语义动态候选，0 个装饰性素材被采用。因此素材阶段不调用任何视频生成或库存素材能力——这是审计结论，不是省略。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.93
+  },
+  {
+   "decision_id": "d-008",
+   "stage": "proposal",
+   "category": "voice_selection",
+   "subject": "Narration voice",
+   "options_considered": [
+    {
+     "option_id": "none",
+     "label": "无口播（用户选择）",
+     "score": 1.0,
+     "reason": "用户在开工前明确选择\"全程无口播：只有画面、字幕和数据，完全静音\"。"
+    },
+    {
+     "option_id": "doubao-dayi-2",
+     "label": "豆包 大壹 2.0（持久默认）",
+     "score": 0.6,
+     "reason": "持久默认人声，普通话自然、支持时间戳；若采用，会按 segmented 模式按段合成。",
+     "rejected_because": "用户显式覆盖了默认值，选择完全无口播。已如实告知该选择对短视频平台完播与互动的不利影响，用户知情选择。"
+    },
+    {
+     "option_id": "other-tts",
+     "label": "其他 TTS 提供方",
+     "score": 0.2,
+     "reason": "当前 TTS 能力为 1/7 configured，仅豆包可用。",
+     "rejected_because": "无提供方可用，且用户已选择无口播。"
+    }
+   ],
+   "selected": "none",
+   "reason": "用户显式覆盖持久默认值。本片不使用 tts_selector，不产出任何旁白音频；承载叙事的文字全部是原生场景排版，并在竖屏安全区内实现。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-009",
+   "stage": "proposal",
+   "category": "music_source",
+   "subject": "Background music source",
+   "options_considered": [
+    {
+     "option_id": "none",
+     "label": "无背景音乐",
+     "score": 1.0,
+     "reason": "继承持久默认 media_defaults.background_music_enabled=false；且用户选择完全静音。"
+    },
+    {
+     "option_id": "ai_generated",
+     "label": "API 生成音乐",
+     "score": 0.2,
+     "reason": "当前 music_generation 为 0/3 configured，无可用提供方。",
+     "rejected_because": "无提供方可用，且持久默认与用户选择都不启用音乐。"
+    },
+    {
+     "option_id": "user_library",
+     "label": "使用本地曲库",
+     "score": 0.2,
+     "reason": "music_library/ 未配置（0/1）。",
+     "rejected_because": "无曲库可用，且用户选择完全静音。"
+    }
+   ],
+   "selected": "none",
+   "reason": "应用持久无BGM默认；下游素材、编辑与合成阶段必须完全省略音乐层。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 1.0
+  },
+  {
+   "decision_id": "d-010",
+   "stage": "proposal",
+   "category": "provider_selection",
+   "subject": "Cover visual provider",
+   "options_considered": [
+    {
+     "option_id": "host_imagegen_plus_native",
+     "label": "宿主图像生成提供材质底板 + 本地确定性排版叠加全部文字与图表",
+     "score": 0.9,
+     "reason": "非 Codex 宿主的等效能力：宿主图像生成负责无字的材质底板，中文、数字、图表几何、合规角标全部由本地确定性排版叠加，保证零错字与数值准确。"
+    },
+    {
+     "option_id": "pure_deterministic",
+     "label": "完全本地确定性合成（Pillow 直接绘制整张封面）",
+     "score": 0.82,
+     "reason": "最可控、零成本、零水印风险。",
+     "rejected_because": "缺少材质层的封面在信息流里偏平；且宿主已有等效图像生成能力，按规程优先使用它提供核心视觉底板。"
+    },
+    {
+     "option_id": "stock_only",
+     "label": "仅使用库存图（Pexels / Pixabay）",
+     "score": 0.5,
+     "reason": "免费、真实。",
+     "rejected_because": "库存财经图会引入本片明令拒绝的泛金融空镜语言，且与刻线纸美术方向不符。"
+    }
+   ],
+   "selected": "host_imagegen_plus_native",
+   "reason": "封面只广告真正拍出来的那支片：底板由宿主生成，全部中文与数字（含 8.09 万、93.62%、-38.45%）由本地确定性排版叠加，缩略图尺寸下复核可读。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.9
+  },
+  {
+   "decision_id": "d-011",
+   "stage": "cover",
+   "category": "provider_selection",
+   "subject": "Cover visual provider",
+   "options_considered": [
+    {
+     "option_id": "pure_deterministic",
+     "label": "完全本地确定性合成（Pillow 一次画完整张封面）",
+     "score": 0.93,
+     "reason": "封面核心视觉必须与成片同源：同一张归一化竞速图、同一条 ¥100,000 起跑线、同一组期末金额。确定性绘制让曲线几何与每一个数字都可核对，且零成本、零水印。"
+    },
+    {
+     "option_id": "host_imagegen_plus_native",
+     "label": "宿主图像生成提供材质底板 + 本地确定性排版叠加文字与图表（原方案 d-010）",
+     "score": 0.6,
+     "reason": "非 Codex 宿主的等效能力；底板可以给封面加一层材质。",
+     "rejected_because": "执行时判断：① 底板不承载任何信息，却要消耗图像生成额度（单张约 5-10 credits）；② 生成图存在水印风险，需要额外裁切处理；③ 本片封面的说服力全部来自那张与成片同源的曲线图，底板加了也无法参与表达。改为完全确定性合成，能力使用量只减不增。"
+    }
+   ],
+   "selected": "pure_deterministic",
+   "reason": "本条取代 d-010 的选择（沿用同一 (category, subject) 组合追加记录，不改写历史条目）。执行期的判断修订，这不是能力降级：它减少了一次付费能力的调用，同时把封面的每一个像素都变成可核对的输出。cover_defaults.codex_primary_visual_required 仅适用于 Codex 会话，本机为非 Codex 宿主，因此不涉及 override。",
+   "user_visible": true,
+   "user_approved": true,
+   "confidence": 0.93
+  }
+ ]
+}

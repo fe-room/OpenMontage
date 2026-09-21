@@ -1,0 +1,917 @@
+{
+  "version": "1.0",
+  "project_id": "xiaosan-economics-03-opportunity-cost",
+  "pipeline_type": "finance-dossier",
+  "stage": "proposal",
+  "status": "completed",
+  "timestamp": "2026-09-21T01:48:55.130797+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "proposal_packet": {
+      "version": "1.0",
+      "content_category": "finance",
+      "concept_options": [
+        {
+          "id": "c1",
+          "title": "\u5468\u672b\u8eba\u4e00\u5929\uff0c\u4e00\u5206\u94b1\u6ca1\u82b1\uff0c\u6210\u672c\u771f\u7684\u662f0\u5417\uff1f",
+          "hook": "\u5468\u672b\u5728\u5bb6\u8eba\u4e00\u5929\uff0c\u4e00\u5206\u94b1\u6ca1\u82b1\u2014\u2014\u8fd9\u4e00\u5929\u7684\u6210\u672c\uff0c\u662f\u4e0d\u662f0\uff1f",
+          "narrative_structure": "myth_busting",
+          "visual_approach": "\u6cbf\u7528\u7cfb\u5217\u5df2\u6279\u51c6\u7684\u7eb8\u5f20\u8d28\u611f\uff1b\u5f00\u573a\u7528\u771f\u5b9e\u751f\u6d3b\u7d20\u6750\u628a'\u8eba\u4e00\u5929'\u843d\u5230\u89c2\u4f17\u81ea\u5df1\u7684\u5468\u516d\uff0c\u968f\u540e\u5168\u7a0b\u56f4\u7ed5'\u5468\u516d\u4e0b\u53484\u5c0f\u65f6'\u8fd9\u4e00\u4e2a\u9009\u62e9\u96c6\u5408\u5c55\u5f00\uff1a\u56db\u5f20\u9009\u9879\u7eb8\u5361 \u2192 \u4f11\u606f\u88ab\u9009\u4e2d\u3001\u5176\u4f59\u53d8\u6697 \u2192 \u6700\u4f73\u88ab\u653e\u5f03\u65b9\u6848\u91cd\u65b0\u9ad8\u4eae \u2192 \u673a\u4f1a\u6210\u672c\u77e5\u8bc6\u5361\u505c\u7559 \u2192 \u591a\u9009\u9879\u9010\u4e2a\u7184\u706d\u6f84\u6e05'\u4e0d\u662f\u76f8\u52a0' \u2192 '\u6210\u672c\u2260\u9519\u8bef'\u7ea0\u504f\u5361 \u2192 \u514d\u8d39\u5496\u5561\u6392\u961f\u4e24\u5c0f\u65f6\uff08\u771f\u5b9e\u52a8\u6001\uff09\u2192 3% vs 5% \u6295\u8d44\u6bd4\u8f83 \u2192 \u6838\u5fc3\u516c\u5f0f\u5361 \u2192 \u7ed3\u5c3e\u8ffd\u95ee\u5361\u5e76\u4ee5\u539f\u751ffooter\u627f\u8f7d\u5408\u89c4\u6587\u6848\u3002 \uff5c \u53d9\u4e8b\u7ed3\u6784\uff1a\u95ee\u9898 \u2192 \u76f4\u89c9\u7b54\u6848 \u2192 \u7b2c\u4e00\u6b21\u53cd\u8f6c \u2192 \u7ee7\u7eed\u8ffd\u95ee \u2192 \u7b2c\u4e8c\u6b21\u53cd\u8f6c \u2192 \u6838\u5fc3\u6982\u5ff5 \u2192 \u9632\u8bef\u89e3 \u2192 \u6536\u675f\u3002",
+          "suggested_playbook": "finance-dossier + xiaosan-tactile-research-paper",
+          "target_audience": "\u5173\u6ce8\u6295\u8d44\u3001\u4f46\u5e0c\u671b\u5efa\u7acb\u57fa\u7840\u7ecf\u6d4e\u5b66\u5224\u65ad\u6846\u67b6\u7684\u666e\u901a\u89c2\u4f17\uff1b\u542c\u8fc7'\u673a\u4f1a\u6210\u672c'\u8fd9\u4e2a\u8bcd\uff0c\u5374\u4e0d\u4f1a\u7528\u5728\u81ea\u5df1\u8eab\u4e0a",
+          "target_platform": "generic",
+          "target_duration_seconds": 215,
+          "key_points": [
+            "\u6ca1\u82b1\u94b1\u4e0d\u7b49\u4e8e\u6ca1\u6210\u672c\uff1a\u6210\u672c\u4e0d\u53ea\u770b\u73b0\u91d1\u652f\u51fa\u3002",
+            "\u673a\u4f1a\u6210\u672c\u770b\u7684\u662f\u88ab\u653e\u5f03\u7684\u6700\u4f73\u66ff\u4ee3\u65b9\u6848\uff0c\u4e0d\u662f\u6240\u6709\u6ca1\u505a\u7684\u4e8b\u60c5\u76f8\u52a0\u3002",
+            "\u673a\u4f1a\u6210\u672c\u4e0d\u8981\u6c42\u628a\u6240\u6709\u4e1c\u897f\u6362\u7b97\u6210\u94b1\uff0c\u88ab\u653e\u5f03\u7684\u53ef\u80fd\u662f\u65f6\u95f4\u3001\u7cbe\u529b\u3001\u966a\u4f34\u6216\u4e00\u6b21\u5b66\u4e60\u673a\u4f1a\u3002",
+            "\u6709\u673a\u4f1a\u6210\u672c\uff0c\u4e0d\u7b49\u4e8e\u8fd9\u4e2a\u9009\u62e9\u662f\u9519\u7684\u2014\u2014\u5b83\u53ea\u56de\u7b54'\u4f60\u653e\u5f03\u4e86\u4ec0\u4e48'\uff0c\u4e0d\u66ff\u4f60\u5224\u65ad\u503c\u4e0d\u503c\u5f97\u3002",
+            "\u514d\u8d39\u4e0d\u7b49\u4e8e\u6ca1\u6709\u6210\u672c\uff1a\u4e00\u676f\u4e0d\u8981\u94b1\u7684\u5496\u5561\uff0c\u53ef\u80fd\u8981\u7528\u4e24\u4e2a\u5c0f\u65f6\u6765\u6362\u3002"
+          ],
+          "core_message": "\u5224\u65ad\u4e00\u4e2a\u9009\u62e9\uff0c\u4e0d\u80fd\u53ea\u770b\u5b83\u7ed9\u4e86\u4f60\u4ec0\u4e48\uff0c\u8fd8\u8981\u770b\u4e3a\u4e86\u5b83\u4f60\u653e\u5f03\u4e86\u4ec0\u4e48\u3002",
+          "cta": "\u4e0b\u6b21\u9047\u5230\u4e00\u4ef6'\u514d\u8d39'\u7684\u4e8b\uff0c\u9664\u4e86\u95ee'\u6211\u8981\u82b1\u591a\u5c11\u94b1'\uff0c\u518d\u591a\u95ee\u4e00\u53e5'\u4e3a\u4e86\u5b83\uff0c\u6211\u653e\u5f03\u4e86\u4ec0\u4e48'\u3002",
+          "tone": "\u8001\u670b\u53cb\u89c2\u5bdf\u578b\uff1b\u514b\u5236\u3001\u53e3\u8bed\u3001\u77ed\u53e5\uff1b\u4e0d\u5bd2\u6684\u3001\u4e0d\u4ecb\u7ecd\u680f\u76ee\u3001\u4e0d\u5148\u7ed9\u5b9a\u4e49",
+          "grounded_in": [
+            "research_brief.data_points[0]",
+            "research_brief.data_points[1]",
+            "research_brief.data_points[2]",
+            "research_brief.data_points[4]",
+            "research_brief.audience_insights.misconceptions[0]",
+            "research_brief.audience_insights.misconceptions[1]",
+            "research_brief.audience_insights.misconceptions[2]"
+          ],
+          "why_this_works": "\u5b8c\u5168\u6309\u7528\u6237\u63d0\u4f9b\u7684\u5185\u5bb9\u89c4\u5212\u6267\u884c\uff1a\u7b2c\u4e00\u79d2\u76f4\u63a5\u8fdb\u5165\u95ee\u9898\u3001\u4e00\u671f\u53ea\u8ffd\u4e00\u4e2a\u95ee\u9898\u3001\u5e76\u5728\u540c\u4e00\u6761\u4e3b\u7ebf\u4e0a\u5b8c\u6210\u4e09\u6b21\u8ba4\u77e5\u4fee\u6b63\u3002\u5b83\u540c\u65f6\u89e3\u51b3\u4e0a\u4e00\u671f\u66b4\u9732\u7684\u4e24\u4e2a\u95ee\u9898\u2014\u2014\u5f00\u5934\u4e0d\u591f\u5c16\u9510\uff0c\u4ee5\u53ca\u4e2d\u540e\u6bb5\u6a2a\u5411\u6848\u4f8b\u8fc7\u591a\u5bfc\u81f4\u7684\u8282\u594f\u62d6\u6c93\u3002"
+        },
+        {
+          "id": "c2",
+          "title": "\u4f60\u5148\u82b1\u6389\u4e86500\u5757\uff0c\u7136\u540e\u624d\u53d1\u73b0\u81ea\u5df1\u4ec0\u4e48\u90fd\u6ca1\u4e70",
+          "hook": "\u5982\u679c\u6211\u8bf4\uff0c\u4f60\u8fd9\u4e2a\u5468\u672b\u5176\u5b9e\u82b1\u6389\u4e86500\u5757\u94b1\uff0c\u4f60\u4fe1\u5417\uff1f",
+          "narrative_structure": "data_narrative",
+          "visual_approach": "\u5f00\u573a\u5148\u76f4\u63a5\u629b\u51fa'500\u5143'\u8fd9\u4e2a\u6570\u5b57\u5236\u9020\u8fdd\u548c\u611f\uff0c\u518d\u7528\u4e00\u5f20'\u9690\u5f62\u652f\u51fa\u8d26\u5355'\u628a\u5b83\u62c6\u5f00\u2014\u2014\u8d26\u5355\u4e0a\u6ca1\u6709\u4e00\u6761\u662f\u771f\u5b9e\u4ed8\u6b3e\uff0c\u5168\u90e8\u662f\u88ab\u653e\u5f03\u7684\u65b9\u6848\u3002 \uff5c \u53d9\u4e8b\u7ed3\u6784\uff1a\u6570\u5b57\u51b2\u51fb \u2192 \u53cd\u76f4\u89c9\u89e3\u91ca \u2192 \u673a\u5236\u8865\u8bfe \u2192 \u8fb9\u754c\u6f84\u6e05\u3002",
+          "suggested_playbook": "finance-dossier + xiaosan-tactile-research-paper",
+          "target_audience": "\u5bf9'\u94b1'\u66f4\u654f\u611f\u7684\u89c2\u4f17\uff0c\u6295\u8d44\u5185\u5bb9\u719f\u6089\u5ea6\u8f83\u9ad8",
+          "target_platform": "generic",
+          "target_duration_seconds": 200,
+          "key_points": [
+            "\u88ab\u653e\u5f03\u7684\u65b9\u6848\u4f1a\u4ee5'\u9690\u6027\u6210\u672c'\u7684\u5f62\u5f0f\u51fa\u73b0\u5728\u4f60\u7684\u51b3\u7b56\u91cc\u3002",
+            "\u4f46\u9690\u6027\u6210\u672c\u4e0d\u662f\u4e00\u7b14\u53ef\u4ee5\u4ece\u8d26\u6237\u91cc\u67e5\u5230\u7684\u94b1\u3002",
+            "\u628a\u6240\u6709\u653e\u5f03\u9879\u76f8\u52a0\u4f1a\u5f97\u5230\u4e00\u4e2a\u865a\u9ad8\u7684\u6570\u5b57\uff0c\u8fd9\u4e0d\u662f\u673a\u4f1a\u6210\u672c\u3002"
+          ],
+          "core_message": "\u6700\u8d35\u7684\u652f\u51fa\uff0c\u5f80\u5f80\u4e0d\u4f1a\u51fa\u73b0\u5728\u4f60\u7684\u8d26\u5355\u4e0a\u3002",
+          "cta": "\u770b\u770b\u4f60\u6700\u8fd1\u4e00\u6b21'\u6ca1\u82b1\u94b1'\u7684\u51b3\u5b9a\uff0c\u8d26\u5355\u4e4b\u5916\u8fd8\u6709\u4ec0\u4e48\u3002",
+          "tone": "\u66f4\u5feb\u7684\u8282\u594f\uff0c\u66f4\u5f3a\u7684\u94a9\u5b50\uff0c\u4f46\u540c\u6837\u514b\u5236",
+          "grounded_in": [
+            "research_brief.data_points[1]",
+            "research_brief.data_points[2]",
+            "research_brief.audience_insights.misconceptions[0]"
+          ],
+          "why_this_works": "\u6570\u5b57\u51b2\u51fb\u57282\u79d2\u5185\u66f4\u6293\u4eba\uff0c\u4f46\u98ce\u9669\u662f\u628a\u673a\u4f1a\u6210\u672c\u6697\u793a\u6210\u4e00\u7b14\u771f\u5b9e\u5b58\u5728\u7684\u8d26\u76ee\uff0c\u5bb9\u6613\u5f3a\u5316'\u8d27\u5e01\u5316'\u8bef\u89e3\uff0c\u9700\u8981\u5728\u7247\u4e2d\u989d\u5916\u82b1\u65f6\u95f4\u7ea0\u6b63\u3002"
+        },
+        {
+          "id": "c3",
+          "title": "\u5546\u573a\u9001\u4f60\u7684\u90a3\u676f\u514d\u8d39\u5496\u5561\uff0c\u53ef\u80fd\u662f\u4f60\u4eca\u5e74\u559d\u8fc7\u6700\u8d35\u7684\u4e00\u676f",
+          "hook": "\u5496\u5561\u4e0d\u8981\u94b1\uff0c\u4f46\u8981\u6392\u961f\u4e24\u4e2a\u5c0f\u65f6\u2014\u2014\u90a3\u4e24\u4e2a\u5c0f\u65f6\uff0c\u662f\u514d\u8d39\u7684\u5417\uff1f",
+          "narrative_structure": "story",
+          "visual_approach": "\u4ece\u4e00\u6761\u771f\u5b9e\u6392\u961f\u961f\u4f0d\u5207\u5165\uff0c\u7528\u65f6\u95f4\u6d41\u901d\u628a'\u4e24\u5c0f\u65f6'\u53d8\u6210\u4f53\u611f\uff0c\u518d\u56de\u63a8\u5230'\u4f11\u606f4\u5c0f\u65f6'\u8fd9\u4e2a\u66f4\u5927\u7684\u573a\u666f\u3002 \uff5c \u53d9\u4e8b\u7ed3\u6784\uff1a\u5177\u4f53\u6848\u4f8b\u60ac\u5ff5 \u2192 \u65f6\u95f4\u6210\u672c\u63ed\u6653 \u2192 \u6cdb\u5316\u5230\u4f11\u606f\u4e0e\u9009\u62e9 \u2192 \u673a\u5236\u4e0e\u8fb9\u754c\u3002",
+          "suggested_playbook": "finance-dossier + xiaosan-tactile-research-paper",
+          "target_audience": "\u5bf9\u751f\u6d3b\u6d88\u8d39\u573a\u666f\u654f\u611f\u7684\u89c2\u4f17",
+          "target_platform": "generic",
+          "target_duration_seconds": 200,
+          "key_points": [
+            "\u514d\u8d39\u7684\u662f\u4ef7\u683c\uff0c\u4e0d\u662f\u6210\u672c\u3002",
+            "\u65f6\u95f4\u88ab\u653e\u5f03\u65f6\uff0c\u5b83\u7684\u4ef7\u503c\u6ca1\u6709\u6d88\u5931\uff0c\u53ea\u662f\u6ca1\u6709\u88ab\u8bb0\u8d26\u3002",
+            "\u673a\u4f1a\u6210\u672c\u53ef\u4ee5\u5b8c\u5168\u4e0d\u6d89\u53ca\u91d1\u94b1\u3002"
+          ],
+          "core_message": "\u514d\u8d39\u548c\u6ca1\u6709\u6210\u672c\uff0c\u662f\u4e24\u56de\u4e8b\u3002",
+          "cta": "\u4e0b\u6b21\u770b\u5230'\u514d\u8d39'\uff0c\u5148\u95ee\u4e00\u53e5\u5b83\u8981\u4f60\u4ed8\u51fa\u4ec0\u4e48\u3002",
+          "tone": "\u573a\u666f\u5148\u884c\uff0c\u6545\u4e8b\u611f\u7565\u5f3a",
+          "grounded_in": [
+            "research_brief.data_points[1]",
+            "research_brief.data_points[3]",
+            "research_brief.data_points[4]"
+          ],
+          "why_this_works": "\u6848\u4f8b\u5c0f\u3001\u8bb0\u5fc6\u70b9\u5f3a\uff1b\u4f46'\u514d\u8d39\u5496\u5561'\u4e0e\u672c\u671f\u4e3b\u7ebf'\u8eba\u4e00\u5929\u6ca1\u82b1\u94b1'\u4e4b\u95f4\u9700\u8981\u4e00\u6b21\u989d\u5916\u8f6c\u573a\uff0c\u5f00\u5934\u4e0e\u6838\u5fc3\u573a\u666f\u7684\u8d34\u5408\u5ea6\u4e0d\u5982 c1\u3002"
+        },
+        {
+          "id": "c4",
+          "title": "\u5982\u679c\u4eca\u5929\u4f60\u4e0d\u5f97\u4e0d\u505a\u70b9\u4ec0\u4e48\uff0c\u4f60\u6700\u53ef\u80fd\u53bb\u505a\u4ec0\u4e48\uff1f",
+          "hook": "\u5148\u522b\u6025\u7740\u7b97\u6210\u672c\u3002\u5982\u679c\u4eca\u5929\u4f60\u4e0d\u80fd\u8eba\u7740\uff0c\u4f60\u6700\u53ef\u80fd\u53bb\u505a\u4ec0\u4e48\uff1f",
+          "narrative_structure": "journey",
+          "visual_approach": "\u5f00\u573a\u76f4\u63a5\u5411\u89c2\u4f17\u629b\u51fa\u4e00\u4e2a\u9700\u8981\u81ea\u5df1\u56de\u7b54\u7684\u95ee\u9898\uff0c\u8ba9\u7b54\u6848\u7531\u89c2\u4f17\u4ea7\u751f\uff0c\u518d\u628a\u8fd9\u4e2a\u7b54\u6848\u547d\u540d\u4e3a\u673a\u4f1a\u6210\u672c\u3002 \uff5c \u53d9\u4e8b\u7ed3\u6784\uff1a\u63d0\u95ee\u5f00\u573a \u2192 \u89c2\u4f17\u81ea\u7b54 \u2192 \u7528\u81ea\u7b54\u5b9a\u4e49\u673a\u4f1a\u6210\u672c \u2192 \u53cd\u8f6c\u4e0e\u6f84\u6e05\u3002",
+          "suggested_playbook": "finance-dossier + xiaosan-tactile-research-paper",
+          "target_audience": "\u613f\u610f\u53c2\u4e0e\u601d\u8003\u3001\u4e92\u52a8\u610f\u613f\u66f4\u5f3a\u7684\u89c2\u4f17",
+          "target_platform": "generic",
+          "target_duration_seconds": 195,
+          "key_points": [
+            "\u673a\u4f1a\u6210\u672c\u7684\u5b9a\u4e49\u53ef\u4ee5\u7531\u89c2\u4f17\u81ea\u5df1\u7684\u7b54\u6848\u63a8\u5bfc\u51fa\u6765\u3002",
+            "\u6bcf\u4e2a\u4eba\u7684\u6700\u4f73\u66ff\u4ee3\u65b9\u6848\u4e0d\u540c\uff0c\u6240\u4ee5\u673a\u4f1a\u6210\u672c\u662f\u4e3b\u89c2\u7684\u3002"
+          ],
+          "core_message": "\u673a\u4f1a\u6210\u672c\u4e0d\u662f\u4e00\u4e2a\u5916\u90e8\u7ed9\u4f60\u7684\u6570\u5b57\uff0c\u800c\u662f\u4f60\u81ea\u5df1\u7ed9\u51fa\u7684\u7b54\u6848\u3002",
+          "cta": "\u628a\u4f60\u521a\u624d\u60f3\u5230\u7684\u90a3\u4ef6\u4e8b\uff0c\u548c\u4f60\u7684\u9009\u62e9\u653e\u5728\u4e00\u8d77\u6bd4\u8f83\u3002",
+          "tone": "\u4e92\u52a8\u611f\u5f3a\uff0c\u4f46\u7f3a\u5c11\u5177\u4f53\u753b\u9762\u951a\u70b9",
+          "grounded_in": [
+            "research_brief.data_points[0]",
+            "research_brief.data_points[6]",
+            "research_brief.audience_insights.common_questions[2]"
+          ],
+          "why_this_works": "\u53c2\u4e0e\u611f\u6700\u5f3a\uff0c\u4f46\u62bd\u8c61\u5f00\u573a\uff0c2\u79d2\u7559\u5b58\u98ce\u9669\u9ad8\u4e8e c1\uff0c\u4e14\u4e0e\u89c4\u5212\u4e2d'\u6c99\u53d1/0\u5143/\u6210\u672c=0\uff1f'\u7684\u4e09\u753b\u9762\u5feb\u95ea\u8bbe\u8ba1\u4e0d\u517c\u5bb9\u3002"
+        }
+      ],
+      "selected_concept": {
+        "concept_id": "c1",
+        "rationale": "\u7528\u6237\u5df2\u63d0\u4f9b\u5b8c\u6574\u5185\u5bb9\u89c4\u5212\uff0cc1 \u5373\u89c4\u5212\u672c\u8eab\u7684\u8868\u8fbe\u7ed3\u6784\uff0c\u5e76\u88ab\u8981\u6c42\u4e25\u683c\u636e\u6b64\u6267\u884c\u3002c1 \u4e5f\u662f\u56db\u4e2a\u65b9\u5411\u4e2d\u552f\u4e00\u540c\u65f6\u6ee1\u8db3'\u7b2c\u4e00\u79d2\u8fdb\u5165\u95ee\u9898''\u4e00\u671f\u53ea\u8ffd\u4e00\u4e2a\u95ee\u9898''\u4e09\u6b21\u8ba4\u77e5\u4fee\u6b63\u5b8c\u6574'\u7684\u9009\u62e9\uff0c\u4e14\u5f00\u5934\u4e0e\u6838\u5fc3\u573a\u666f\uff08\u5468\u516d\u4e0b\u53484\u5c0f\u65f6\uff09\u5b8c\u5168\u540c\u6e90\u3002",
+        "modifications": [
+          "\u4e25\u683c\u91c7\u7528\u89c4\u5212\u7b2c22\u8282\u7684\u5b8c\u6574\u63a8\u8350\u53e3\u64ad\u4f5c\u4e3a\u6700\u7ec8\u65c1\u767d\uff0c\u4e0d\u505a\u5220\u6539\uff1b\u4ec5\u6309\u8bed\u4e49\u8fb9\u754c\u5207\u5206\u4e3a\u811a\u672c section\u3002",
+          "\u89c6\u89c9\u6cbf\u7528\u7cfb\u5217\u5df2\u6279\u51c6\u7684\u7eb8\u5f20\u8d28\u611f\u53c2\u6570\uff08\u57fa\u7eb8 #F4F1E8\u3001\u77f3\u58a8\u6587\u5b57\u3001\u6731\u7ea2\u6279\u6ce8\u3001\u6df1\u9752\u7ed3\u6784\u7ebf\uff09\uff0c\u4f46\u4e0d\u590d\u7528\u4e0a\u4e00\u671f\u7684\u56db\u5c0f\u65f6\u7eb8\u5c3a\u88c5\u7f6e\u2014\u2014\u672c\u671f\u6539\u7528'\u56db\u5f20\u9009\u9879\u7eb8\u5361 + \u7184\u706d/\u9ad8\u4eae'\u7684\u65b0\u88c5\u7f6e\uff0c\u907f\u514d\u7cfb\u5217\u4e00\u81f4\u6027\u9000\u5316\u4e3a\u6a21\u677f\u611f\u3002",
+          "\u6309\u89c4\u5212\u8981\u6c42\u4e0d\u94fa\u8bbe\u6574\u6bb5\u53e3\u64ad\u5b57\u5e55\uff0c\u53ea\u4fdd\u7559\u5206\u5c42\u77ed\u53e5\u5927\u5b57 + \u5173\u952e\u8bcd\u5f3a\u8c03\u3002"
+        ]
+      },
+      "production_plan": {
+        "pipeline": "finance-dossier",
+        "playbook": "finance-dossier",
+        "renderer_family": "explainer-data",
+        "render_runtime": "remotion",
+        "composition_mode": "atelier",
+        "delivery_promise": {
+          "promise_type": "data_explainer",
+          "motion_required": true,
+          "source_required": false,
+          "tone_mode": "educational",
+          "quality_floor": "presentable",
+          "approved_fallback": null
+        },
+        "art_direction": "projects/xiaosan-economics-03-opportunity-cost/art-direction-tactile-paper-v2.md\uff08\u4e2d\u6027\u8c61\u7259\u767d #F4F1E8 \u57fa\u7eb8\u3001\u77f3\u58a8\u6587\u5b57\u3001\u6731\u7ea2\u6279\u6ce8\u3001\u6df1\u9752\u7ed3\u6784\u7ebf\uff1b\u6807\u5fd7\u88c5\u7f6e\u4e3a\u56db\u5f20\u9009\u9879\u7eb8\u5361\u7684\u9009\u4e2d/\u53d8\u6697/\u91cd\u65b0\u9ad8\u4eae\u4e0e\u9010\u4e2a\u7184\u706d\uff1b\u7eb9\u7406\u56fa\u5b9a seed \u4e0d\u9010\u5e27\u968f\u673a\uff1b\u7981\u6b62\u5927\u9762\u79ef\u7eaf\u9ec4\u3001\u5496\u5561\u6e0d\u505a\u65e7\u3001\u5168\u5c40\u5f3a\u566a\u70b9\u3001\u6bcf\u6bb5\u90fd\u5957\u5361\u7247\u3001\u8fc7\u91cd\u9634\u5f71\uff09",
+        "taste_profile": {
+          "design_read": "\u89e6\u611f\u7814\u7a76\u7eb8\u4e0a\u7684\u7ecf\u6d4e\u5b66\u62c6\u89e3\u2014\u2014\u514b\u5236\u3001\u53ef\u89e6\u6478\u3001\u65e0\u8bfe\u5802\u611f\uff1b\u89c2\u4f17\u5e94\u611f\u89c9\u50cf\u6709\u4eba\u628a\u4e00\u5f20\u7eb8\u63a8\u5230\u81ea\u5df1\u9762\u524d\uff0c\u628a\u90a3\u4e2a\u5468\u516d\u4e0b\u5348\u4e00\u5c42\u5c42\u644a\u5f00\u3002",
+          "visual_variance": 6,
+          "motion_intensity": 5,
+          "information_density": 4,
+          "palette_discipline": "\u4ec5\u56db\u8272\uff1a\u8c61\u7259\u767d\u57fa\u7eb8 #F4F1E8\u3001\u77f3\u58a8\u6587\u5b57\u3001\u6731\u7ea2\u6279\u6ce8\uff08\u53cd\u8f6c\u4e0e\u7ea0\u504f\uff09\u3001\u6df1\u9752\u7ed3\u6784\u7ebf\uff08\u5173\u7cfb\u4e0e\u7bad\u5934\uff09\u3002\u4e0d\u5f15\u5165\u7b2c\u4e94\u79cd\u5f3a\u8c03\u8272\u3002",
+          "layout_variation": "\u6bcf\u4e2a\u573a\u666f\u91cd\u65b0\u6784\u56fe\uff0c\u4f46\u5171\u4eab\u540c\u4e00\u5957\u7eb8\u7247\u5c42\u7ea7\u4e0e\u6697\u8fb9\u89c4\u5219\uff1b\u7981\u6b62\u8fde\u7eed\u4e09\u4e2a\u573a\u666f\u4f7f\u7528\u540c\u4e00\u7248\u5f0f\u3002",
+          "reference_strategy": "\u7ee7\u627f\u7b2c02\u671f\u7eb8\u5f20\u6750\u8d28\u53c2\u6570\uff0c\u4f46\u4e0d\u590d\u7528\u5176\u56db\u5c0f\u65f6\u7eb8\u5c3a\u88c5\u7f6e\uff1b\u672c\u671f\u4f7f\u7528\u5168\u65b0\u7684\u56db\u5f20\u9009\u9879\u7eb8\u5361\u88c5\u7f6e\u3002",
+          "anti_patterns": [
+            "\u9ec4\u5e95PPT\u5361\u7247\u62fc\u63a5",
+            "\u6ee1\u5c4f\u53e3\u64ad\u5b57\u5e55",
+            "\u8bfe\u5802\u5f0f\"\u9996\u5148\u5176\u6b21\u6700\u540e\"",
+            "\u6570\u5b57\u5806\u780c",
+            "\u91d1\u5e01/\u949e\u7968/K\u7ebf\u7b49\u6cdb\u91d1\u878d\u7a7a\u955c"
+          ],
+          "quality_gates": [
+            "\u4e2d\u6587\u6392\u7248\u96f6\u9519\u5b57\u3001\u96f6\u88c1\u5207",
+            "\u6570\u5b57\u4e0e\u5b9a\u4e49\u6587\u5b57\u9010\u5e27\u53ef\u8bfb",
+            "\u7ad6\u5c4f\u5b57\u5e55\u5b89\u5168\u533a\uff08\u8ddd\u5e95520px\u3001\u8ddd\u4fa796px\uff09\u4e0d\u88ab\u906e\u6321",
+            "\u7ed3\u5c3e\u5408\u89c4\u6587\u6848\u539f\u751f\u3001\u5b8c\u6574\u3001\u53ef\u8bfb"
+          ]
+        },
+        "voice_selection": {
+          "provider": "doubao",
+          "voice_id": "zh_male_dayi_uranus_bigtts",
+          "voice_name": "\u5927\u58f9 2.0",
+          "resource_id": "seed-tts-2.0",
+          "speech_rate": 0,
+          "generation_mode": "segmented",
+          "inherited_from_defaults": true,
+          "rationale": "\u7ee7\u627f\u7528\u6237\u6301\u4e45\u914d\u97f3\u9ed8\u8ba4\uff08config.yaml narration_defaults\uff09\u3002",
+          "delivery_style": "\u5e73\u9759\u3001\u514b\u5236\u7684\u8001\u670b\u53cb\u89c2\u5bdf\u578b\uff1b\u4e0d\u5bd2\u6684\u3001\u4e0d\u4ecb\u7ecd\u680f\u76ee\u3001\u4e0d\u5148\u7ed9\u5b9a\u4e49\u3002",
+          "pacing_policy": "\u77ed\u53e5\u4e3a\u4e3b\uff0c\u53e5\u95f4\u7559\u81ea\u7136\u505c\u987f\uff1b\u4e09\u6b21\u53cd\u8f6c\u524d\u5404\u7559\u4e00\u5904\u660e\u663e\u505c\u987f\uff1b\u7ea0\u504f\u53e5\"\u6709\u673a\u4f1a\u6210\u672c\uff0c\u4e0d\u7b49\u4e8e\u4e0d\u5e94\u8be5\u505a\"\u52a0\u91cd\u4f46\u4e0d\u63d0\u9ad8\u97f3\u91cf\u3002",
+          "sample_approval_required": true,
+          "estimated_cost_usd": 0.06
+        },
+        "music_source": {
+          "source_type": "none",
+          "inherited_from_defaults": true
+        },
+        "decision_log_ref": "/Users/jishubu/project/OpenMontage/projects/xiaosan-economics-03-opportunity-cost/decision_log.json",
+        "provider_rankings": {
+          "tts": [
+            {
+              "tool_name": "tts_selector",
+              "provider": "doubao",
+              "weighted_score": 0.95,
+              "task_fit": 0.96,
+              "output_quality": 0.93,
+              "explanation": "\u6301\u4e45\u9ed8\u8ba4\uff0c\u666e\u901a\u8bdd\u81ea\u7136\u5e76\u652f\u6301\u65f6\u95f4\u6233\u5bf9\u9f50\uff1b1/7 configured\u3002"
+            }
+          ],
+          "video": [
+            {
+              "tool_name": "pexels",
+              "provider": "pexels",
+              "weighted_score": 0.88,
+              "task_fit": 0.9,
+              "output_quality": 0.86,
+              "explanation": "\u771f\u5b9e\u751f\u6d3b\u573a\u666f\u7d20\u6750\uff0c\u96f6\u6210\u672c\uff1b\u9002\u5408\u5f00\u573a\u8eba\u5367\u4e0e\u6392\u961f\u4e24\u4e2a\u4f53\u611f\u8282\u70b9\u3002"
+            },
+            {
+              "tool_name": "pixabay",
+              "provider": "pixabay",
+              "weighted_score": 0.85,
+              "task_fit": 0.88,
+              "output_quality": 0.84,
+              "explanation": "\u4f5c\u4e3a pexels \u7684\u5907\u7528\u7d20\u6750\u6e90\uff1b2/22 configured\u3002"
+            }
+          ],
+          "image": [
+            {
+              "tool_name": "host_image_generation",
+              "provider": "host",
+              "weighted_score": 0.9,
+              "task_fit": 0.92,
+              "output_quality": 0.9,
+              "explanation": "\u4ec5\u7528\u4e8e\u5c01\u9762\u9636\u6bb5\uff1b\u4e2d\u6587\u4e0e\u6570\u5b57\u7531\u672c\u5730\u786e\u5b9a\u6027\u6392\u7248\u53e0\u52a0\u3002"
+            }
+          ],
+          "music": [
+            {
+              "tool_name": "none",
+              "provider": "none",
+              "weighted_score": 0.9,
+              "task_fit": 1.0,
+              "output_quality": 1.0,
+              "explanation": "\u5e94\u7528\u6301\u4e45\u65e0BGM\u9ed8\u8ba4\uff08music_generation 0/3 configured\uff09\u3002"
+            }
+          ]
+        },
+        "stages": [
+          {
+            "stage": "research",
+            "tools": [],
+            "approach": "\u5df2\u7528\u6743\u5a01\u6982\u5ff5\u8d44\u6599\uff08\u7f8e\u8054\u50a8\u5723\u8def\u6613\u65af\u5206\u884c\u3001\u66fc\u6606\u300a\u7ecf\u6d4e\u5b66\u539f\u7406\u300b\uff09\u4e0e\u6559\u5b66\u7b97\u4f8b\u6838\u5b9e\u5b9a\u4e49\u8fb9\u754c\uff1b\u5df2\u5b8c\u6210\u3002"
+          },
+          {
+            "stage": "proposal",
+            "tools": [],
+            "approach": "\u9501\u5b9a\u53d9\u4e8b\u3001\u8fd0\u884c\u65f6\u3001\u521b\u4f5c\u6a21\u5f0f\u3001\u52a8\u6001\u8986\u76d6\u3001\u914d\u97f3\u3001\u97f3\u4e50\u4e0e\u9884\u7b97\uff1b\u5f53\u524d\u7b49\u5f85\u5ba1\u6279\u3002"
+          },
+          {
+            "stage": "script",
+            "tools": [],
+            "approach": "\u4e25\u683c\u91c7\u7528\u89c4\u5212\u7b2c22\u8282\u5b8c\u6574\u53e3\u64ad\uff0c\u6309\u8bed\u4e49\u5207\u5206\u4e3a\u7ea6 215 \u79d2\u7684\u5206\u6bb5\u65c1\u767d\uff0c\u5e76\u5199\u5165\u914d\u97f3\u8868\u6f14\u63d0\u793a\u3002"
+          },
+          {
+            "stage": "scene_plan",
+            "tools": [],
+            "approach": "\u6309\u89c4\u5212\u7b2c5\u828211\u4e2a\u6bb5\u843d\u4e0e\u7b2c18\u8282\u8282\u594f\uff08\u5feb\u2192\u6162\u2192\u505c\u2192\u5feb\u2192\u6162\u2192\u6536\uff09\u5207\u573a\uff1b\u7cbe\u786e\u4fe1\u606f\u3001\u8bed\u4e49\u52a8\u6001\u4e0e\u88c5\u9970\u7d20\u6750\u5206\u522b\u6807\u8bb0\u3002"
+          },
+          {
+            "stage": "assets",
+            "tools": [
+              {
+                "tool_name": "tts_selector",
+                "role": "\u5206\u6bb5\u751f\u6210\u666e\u901a\u8bdd\u65c1\u767d\u4e0e\u65f6\u95f4\u6233",
+                "provider": "doubao",
+                "available": true,
+                "estimated_cost_usd": 0.06,
+                "why_this_provider": "\u7ee7\u627f\u7528\u6237\u9ed8\u8ba4\u7684\u5927\u58f9 2.0\uff0c\u4e2d\u6587\u81ea\u7136\u4e14\u652f\u6301\u5b57\u5e55\u5bf9\u9f50\u3002"
+              },
+              {
+                "tool_name": "pexels/pixabay",
+                "role": "\u4e3a\u5f00\u573a'\u8eba\u4e00\u5929'\u4e0e'\u514d\u8d39\u5496\u5561\u6392\u961f\u4e24\u5c0f\u65f6'\u4e24\u4e2a\u8282\u70b9\u63d0\u4f9b\u771f\u5b9e\u751f\u6d3b\u52a8\u6001\u7d20\u6750",
+                "provider": "stock",
+                "available": true,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "\u771f\u5b9e\u8fd0\u52a8\u6bd4\u751f\u6210\u7d20\u6750\u66f4\u53ef\u4fe1\uff0c\u4e14\u96f6\u6210\u672c\u3002"
+              }
+            ],
+            "approach": "\u5148\u5ba1\u8c46\u5305\u6837\u97f3\uff1b\u7d20\u6750\u4ec5\u7528\u4e8e\u4e24\u4e2a\u80fd\u8d21\u732e\u771f\u5b9e\u4f53\u611f\u4e0e\u7a7a\u95f4\u5c3a\u5ea6\u7684\u8282\u70b9\u3002",
+            "fallback_if_unavailable": "\u4e0d\u81ea\u52a8\u6362\u914d\u97f3\u3001\u4e0d\u5220\u9664\u52a8\u6001\u8282\u70b9\uff1b\u56de\u5230\u5ba1\u6279\u5e76\u5448\u73b0\u66ff\u4ee3\u65b9\u6848\u3002"
+          },
+          {
+            "stage": "edit",
+            "tools": [],
+            "approach": "\u9501\u5b9a\u753b\u9762\u3001\u65c1\u767d\u3001\u7ad6\u5c4f\u793e\u4ea4\u5b57\u5e55\u5b89\u5168\u533a\uff08\u8ddd\u5e95520px\u3001\u8ddd\u4fa796px\uff09\u4e0e\u7ed3\u5c3e\u539f\u751f\u5408\u89c4footer\u3002"
+          },
+          {
+            "stage": "compose",
+            "tools": [
+              {
+                "tool_name": "video_compose",
+                "role": "\u6e32\u67d3\u9879\u76ee\u672c\u5730\u624b\u5199 Remotion Atelier \u5408\u6210",
+                "provider": "local",
+                "available": true,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "\u80fd\u7a33\u5b9a\u5b9e\u73b0\u7eb8\u5f20\u6750\u8d28\u3001\u7eb8\u5361\u8ba9\u4f4d\u52a8\u6548\u3001\u4e2d\u6587\u6392\u7248\u4e0e\u786e\u5b9a\u6027\u65f6\u95f4\u8f74\u3002"
+              },
+              {
+                "tool_name": "audio_mixer",
+                "role": "\u6df7\u5408\u65c1\u767d\u5e76\u4fdd\u6301\u65e0\u80cc\u666f\u97f3\u4e50",
+                "provider": "ffmpeg",
+                "available": true,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "\u672c\u5730\u786e\u5b9a\u6027\u5904\u7406\uff0c\u907f\u514d\u751f\u6210\u65e0\u610f\u4e49\u97f3\u8f68\u3002"
+              }
+            ],
+            "approach": "1080\u00d71920\u300130fps\uff1b\u5148\u9010\u573a\u666f\u5feb\u7167\u5ba1\u6279\uff0c\u518d\u6e32\u67d3\u5b8c\u6574\u6210\u7247\u5e76\u505a\u62bd\u5e27\u4e0e\u5408\u89c4\u6821\u9a8c\u3002",
+            "fallback_if_unavailable": "\u7981\u6b62\u9759\u9ed8\u5207\u6362 HyperFrames \u6216 FFmpeg\uff1b\u5148\u8bf7\u6c42\u7528\u6237\u6279\u51c6\u3002"
+          },
+          {
+            "stage": "cover",
+            "tools": [
+              {
+                "tool_name": "host_image_generation",
+                "role": "\u751f\u6210\u5c01\u9762\u6838\u5fc3\u89c6\u89c9\uff0c\u4e2d\u6587\u5b57\u4e0e\u89d2\u6807\u7531\u672c\u5730\u786e\u5b9a\u6027\u6392\u7248\u6dfb\u52a0",
+                "provider": "host",
+                "available": true,
+                "estimated_cost_usd": 0.03,
+                "why_this_provider": "\u7b26\u5408\u5c01\u9762\u7b56\u7565\uff0c\u5e76\u907f\u514d AI \u751f\u6210\u4e2d\u6587\u51fa\u9519\u3002"
+              }
+            ],
+            "approach": "\u6210\u7247\u5b8c\u6210\u540e\u518d\u751f\u6210\u771f\u5b9e\u5c01\u9762\uff0c\u5e76\u6309\u89c4\u5212\u5c01\u9762\u539f\u5219\u5355\u72ec\u5ba1\u6279\uff1a\u53ea\u5356\u95ee\u9898\u4e0d\u5356\u672f\u8bed\u3002"
+          },
+          {
+            "stage": "publish",
+            "tools": [
+              {
+                "tool_name": "export_bundle",
+                "role": "\u6253\u5305\u672c\u5730\u6210\u7247\u3001\u5c01\u9762\u3001\u6765\u6e90\u4e0e\u53d1\u5e03\u6587\u6848",
+                "provider": "local",
+                "available": true,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "\u4fdd\u6301\u672c\u5730\u4ea4\u4ed8\uff0c\u4e0d\u6267\u884c\u8fdc\u7a0b\u53d1\u5e03\u3002"
+              }
+            ],
+            "approach": "\u751f\u6210\u672c\u5730\u53d1\u5e03\u5305\u5e76\u7b49\u5f85\u6700\u7ec8\u786e\u8ba4\u3002"
+          }
+        ],
+        "quality_tradeoffs": [
+          {
+            "tradeoff": "Remotion \u4e0e HyperFrames",
+            "recommendation": "Remotion",
+            "quality_impact": "Remotion \u5bf9\u7eb8\u5f20\u6750\u8d28\u3001\u4e2d\u6587\u6392\u7248\u548c\u786e\u5b9a\u6027\u65f6\u95f4\u8f74\u66f4\u7a33\uff1bHyperFrames \u7684\u6392\u7248\u52a8\u52bf\u66f4\u5f3a\uff0c\u4f46\u672c\u671f\u5927\u91cf\u753b\u9762\u662f\u7cbe\u786e\u7684\u5361\u7247\u5173\u7cfb\u4e0e\u6570\u5b57\uff0c\u786e\u5b9a\u6027\u4f18\u5148\u3002"
+          },
+          {
+            "tradeoff": "Atelier \u4e0e\u6a21\u677f\u5316",
+            "recommendation": "Atelier",
+            "quality_impact": "Atelier \u9700\u8981\u66f4\u591a\u7f16\u6392\u4e0e\u5ba1\u7247\u65f6\u95f4\uff0c\u4f46\u80fd\u907f\u514d\u56de\u5230\u9ec4\u5e95\u5361\u7247\u6a21\u677f\uff0c\u4e5f\u907f\u514d\u7cfb\u5217\u4e00\u81f4\u6027\u53d8\u6210\u6a21\u677f\u611f\u3002"
+          },
+          {
+            "tradeoff": "\u8f7b\u6df7\u5408\u4e0e\u7eaf\u5408\u6210",
+            "recommendation": "\u8f7b\u6df7\u5408",
+            "quality_impact": "\u4e24\u4e2a\u73b0\u5b9e\u52a8\u6001\u8282\u70b9\u8ba9'\u8eba\u4e00\u5929'\u548c'\u6392\u961f\u4e24\u5c0f\u65f6'\u53d8\u6210\u4f53\u611f\uff1b\u6240\u6709\u7cbe\u786e\u4fe1\u606f\u4e0e\u6570\u5b57\u4ecd\u7531\u539f\u751f\u52a8\u753b\u627f\u62c5\u3002"
+          },
+          {
+            "tradeoff": "\u5b8c\u6574\u53e3\u64ad\u4e0e\u538b\u7f29\u65f6\u957f",
+            "recommendation": "\u5b8c\u6574\u53e3\u64ad",
+            "quality_impact": "\u89c4\u5212\u8981\u6c42\u4ee5\u8868\u8fbe\u5b8c\u6574\u4e3a\u4f18\u5148\u800c\u975e\u5f3a\u884c\u9650\u65f6\uff1b\u5b8c\u6574\u53e3\u64ad\u7ea6 996 \u4e2a\u6c49\u5b57\uff0c\u5bf9\u5e94\u7ea6 215 \u79d2\uff0c\u6bd4\u538b\u7f29\u7248\u957f\u7ea6 30-40 \u79d2\uff0c\u4f46\u4fdd\u7559\u4e09\u6b21\u8ba4\u77e5\u4fee\u6b63\u7684\u5b8c\u6574\u94fe\u6761\u3002"
+          }
+        ],
+        "alternative_paths": [
+          {
+            "description": "Remotion \u6a21\u677f\u5316\u7eaf\u5408\u6210\uff08\u65e0\u5e93\u5b58\u52a8\u6001\u7d20\u6750\uff09",
+            "total_cost_usd": 0.06,
+            "quality_level": "standard",
+            "what_changes": "\u66f4\u5feb\u3001\u66f4\u7a33\u5b9a\uff0c\u4f46\u5f00\u573a'\u8eba\u4e00\u5929'\u4e0e'\u6392\u961f\u4e24\u5c0f\u65f6'\u5931\u53bb\u771f\u5b9e\u4f53\u611f\uff0c2\u79d2\u7559\u5b58\u7684\u8bbe\u8ba1\u610f\u56fe\u4f1a\u88ab\u524a\u5f31\u3002"
+          },
+          {
+            "description": "HyperFrames \u6392\u7248\u4f18\u5148\u65b9\u6848",
+            "total_cost_usd": 0.06,
+            "quality_level": "standard",
+            "what_changes": "\u6392\u7248\u52a8\u52bf\u66f4\u5f3a\uff0c\u4f46\u7cbe\u786e\u5361\u7247\u5173\u7cfb\u4e0e\u6570\u5b57\u56fe\u5c42\u9700\u8981\u989d\u5916\u9a8c\u8bc1\uff0c\u4e14\u4e2d\u6587\u7ad6\u5c4f\u5b57\u5e55\u5b89\u5168\u533a\u9700\u663e\u5f0f\u5b9e\u73b0\u3002"
+          },
+          {
+            "description": "FFmpeg \u7eaf\u526a\u8f91\u62fc\u63a5",
+            "total_cost_usd": 0.06,
+            "quality_level": "budget",
+            "what_changes": "\u65e0\u6cd5\u5b9e\u73b0\u7eb8\u5361\u8ba9\u4f4d\u4e0e\u9ad8\u4eae\u52a8\u6548\uff0c\u4f1a\u9000\u5316\u4e3a\u9759\u5e27\u62fc\u63a5\uff0c\u4e0d\u6ee1\u8db3\u672c\u671f motion_required=true \u7684\u4ea4\u4ed8\u627f\u8bfa\u3002"
+          }
+        ]
+      },
+      "cost_estimate": {
+        "total_estimated_usd": 0.09,
+        "line_items": [
+          {
+            "tool": "doubao_tts",
+            "operation": "\u7ea6 215 \u79d2\u4e2d\u6587\u5206\u6bb5\u65c1\u767d\u4e0e\u65f6\u95f4\u6233",
+            "quantity": 1,
+            "estimated_usd": 0.06,
+            "notes": "\u5148\u751f\u6210\u77ed\u6837\u97f3\uff0c\u7528\u6237\u786e\u8ba4\u540e\u518d\u6279\u91cf\uff1b\u6700\u7ec8\u4ee5\u4f9b\u5e94\u5546 usage \u4e3a\u51c6\u3002"
+          },
+          {
+            "tool": "pexels/pixabay",
+            "operation": "\u6700\u591a 3 \u4e2a\u8bed\u4e49\u52a8\u6001\u955c\u5934",
+            "quantity": 3,
+            "estimated_usd": 0,
+            "notes": "\u514d\u8d39\u5e93\u5b58\u7d20\u6750\uff0c\u53ea\u5728\u771f\u5b9e\u4f53\u611f\u6216\u7a7a\u95f4\u5c3a\u5ea6\u6709\u4fe1\u606f\u4ef7\u503c\u65f6\u4f7f\u7528\u3002"
+          },
+          {
+            "tool": "video_compose/audio_mixer",
+            "operation": "\u672c\u5730 Remotion Atelier \u6e32\u67d3\u4e0e\u97f3\u9891\u6df7\u5408",
+            "quantity": 1,
+            "estimated_usd": 0,
+            "notes": "\u672c\u5730\u8ba1\u7b97\uff0c\u4e0d\u8ba1 API \u8d39\u7528\u3002"
+          },
+          {
+            "tool": "host_image_generation",
+            "operation": "\u6210\u7247\u540e\u751f\u6210 1 \u5f20\u5c01\u9762\u6838\u5fc3\u89c6\u89c9",
+            "quantity": 1,
+            "estimated_usd": 0.03,
+            "notes": "\u9884\u4f30\u5360\u4f4d\uff1b\u4e2d\u6587\u5b57\u3001\u89d2\u6807\u4e0e\u5408\u89c4\u6587\u5b57\u7531\u672c\u5730\u539f\u751f\u6392\u7248\u6dfb\u52a0\u3002"
+          }
+        ],
+        "budget_cap_usd": 2,
+        "budget_verdict": "within_budget",
+        "savings_options": [
+          "\u82e5\u4e0d\u4f7f\u7528\u5e93\u5b58\u52a8\u6001\u7d20\u6750\uff0cAPI \u6210\u672c\u4e0d\u53d8\uff08\u7d20\u6750\u672c\u8eab\u514d\u8d39\uff09\uff0c\u4f46\u4f1a\u964d\u4f4e\u5f00\u5934\u7684\u771f\u5b9e\u4f53\u611f\u3002",
+          "\u5c01\u9762\u9636\u6bb5\u82e5\u8be5\u5e73\u53f0\u4e0d\u9700\u8981\u5c01\u9762\uff0c\u53ef\u5728\u5c4a\u65f6\u5ba1\u6279\u70b9\u53d6\u6d88\u3002"
+        ]
+      },
+      "approval": {
+        "status": "approved",
+        "user_notes": "\u7528\u6237\u4e8e 2026-09-21 \u660e\u786e\u786e\u8ba4\uff1a\u6982\u5ff5 c1\u3001Remotion\u3001Atelier\u3001\u8f7b\u6df7\u5408\u3001\u8c46\u5305\u5927\u58f9 2.0\u3001\u65e0 BGM\u3001\u7ea6 215 \u79d2\u5b8c\u6574\u53e3\u64ad\u3002",
+        "approved_budget_usd": 2
+      },
+      "metadata": {
+        "editorial_direction": {
+          "primary_mode": "EXPLAIN",
+          "secondary_mode": null,
+          "classification_confidence": "high",
+          "audience_task": "understand_mechanism",
+          "rationale": [
+            "\u6838\u5fc3\u95ee\u9898\u662f\u4e00\u4e2a\u7a33\u5b9a\u7684\u6982\u5ff5\u6027\u8ffd\u95ee\uff08\u6ca1\u82b1\u94b1\u4e3a\u4ec0\u4e48\u4ecd\u6709\u6210\u672c\uff09\uff0c\u4e0d\u4f9d\u8d56\u516c\u53f8\u5185\u90e8\u4fe1\u606f\u3001\u65f6\u70b9\u884c\u60c5\u6216\u653f\u7b56\u4f20\u5bfc\u3002",
+            "\u673a\u5236\uff08\u653e\u5f03\u6700\u4f73\u66ff\u4ee3\u65b9\u6848\uff09\u4e0e\u4e00\u4e2a\u6e05\u6670\u793a\u4f8b\uff08\u5468\u516d4\u5c0f\u65f6\uff09\u8db3\u4ee5\u56de\u7b54\u6838\u5fc3\u95ee\u9898\uff0c\u4e0d\u9700\u8981\u7814\u7a76\u8d44\u6599\u5bc6\u5ea6\u3002",
+            "\u89c2\u4f17\u7684\u843d\u5730\u969c\u788d\u662f\u7406\u89e3\u8bef\u533a\u800c\u975e\u8bc1\u636e\u7f3a\u53e3\uff0c\u56e0\u6b64\u4f18\u5148\u6ee1\u8db3'\u7528\u4e00\u4e2a\u4f8b\u5b50\u628a\u673a\u5236\u8bb2\u660e\u767d'\u7684 EXPLAIN \u4efb\u52a1\u3002"
+          ],
+          "evidence_priority": [
+            "authoritative_concept_sources",
+            "stable_definitions",
+            "worked_example"
+          ],
+          "visual_priority": [
+            "text_diagram",
+            "comparison_via_data_scenes",
+            "simple_chart"
+          ],
+          "canvas_preference": [
+            "paper",
+            "margin_note"
+          ],
+          "density_profile": {
+            "opening": "sparse",
+            "body": "standard",
+            "evidence": "standard",
+            "ending": "sparse"
+          },
+          "hook_grammar": "CONTRADICTION",
+          "ending_grammar": "REUSABLE_METHOD",
+          "key_editorial_risk": "\u4e0d\u8981\u628a\u673a\u4f1a\u6210\u672c\u8bb2\u6210'\u4f11\u606f\u5c31\u662f\u6d6a\u8d39'\u7684\u4ef7\u503c\u5224\u65ad\uff1b\u7b2c\u4e09\u6b21\u53cd\u8f6c\u5fc5\u987b\u660e\u786e'\u6709\u673a\u4f1a\u6210\u672c\u4e0d\u7b49\u4e8e\u8fd9\u4e2a\u9009\u62e9\u662f\u9519\u7684'\u3002",
+          "key_anti_pattern": "\u4e0d\u8981\u4e3a\u7a33\u5b9a\u6982\u5ff5\u5f3a\u884c\u5957\u4e0a\u673a\u6784\u7814\u7a76\u5bc6\u5ea6\u3001ThesisBreaker \u6216 ScenarioBoard\u3002"
+        },
+        "capability_status": {
+          "composition": {
+            "ffmpeg": true,
+            "remotion": true,
+            "hyperframes": true
+          },
+          "tts": "1/7 configured: Doubao",
+          "video_generation": "2/22 configured: Pexels, Pixabay",
+          "image_generation_registry": "2/12 configured (stock only); host image generation additionally available",
+          "music_generation": "0/3 configured; persistent no-BGM default applied",
+          "video_post": "9/9 configured",
+          "runtime_warnings": [
+            "comfyui_video: resource_profile \u662f ComfyUI \u63d0\u4f9b\u65b9\u7684\u4e0b\u9650\uff0c\u4e0d\u4ee3\u8868\u6bcf\u4e2a\u5de5\u4f5c\u6d41\u90fd\u80fd\u88c5\u8fdb 8GB \u663e\u5b58\uff1b\u672c\u671f\u4e0d\u4f7f\u7528\u8be5\u80fd\u529b\u3002"
+          ],
+          "preflight_verdict": "passed"
+        },
+        "semantic_motion_audit": [
+          {
+            "beat": "\u5f00\u573a\uff1a\u5468\u672b\u5728\u5bb6\u8eba\u4e00\u5929\uff08\u6c99\u53d1/\u5e8a/\u624b\u673a\uff09",
+            "responsibility": "semantic_motion_candidate",
+            "treatment": "\u771f\u5b9e\u751f\u6d3b\u7d20\u6750\u627f\u62c5'\u8eba\u4e00\u5929'\u7684\u8eab\u4f53\u7ecf\u9a8c\uff0c\u8ba9\u89c2\u4f17\u57282\u79d2\u5185\u8ba4\u51fa\u8fd9\u662f\u81ea\u5df1\u7684\u5468\u516d\uff1b'0\u5143''\u6210\u672c=0\uff1f'\u4e24\u5c4f\u5927\u5b57\u7531\u539f\u751f\u56fe\u5c42\u627f\u62c5\u3002",
+            "information_contributed": "\u628a\u62bd\u8c61\u63d0\u95ee\u53d8\u6210\u89c2\u4f17\u5df2\u7ecf\u5386\u8fc7\u7684\u5177\u4f53\u5904\u5883\uff0c\u76f4\u63a5\u670d\u52a12\u79d2\u7559\u5b58\u76ee\u6807\u3002"
+          },
+          {
+            "beat": "\u5468\u516d\u4e0b\u53484\u5c0f\u65f6\u53ea\u80fd\u4f7f\u7528\u4e00\u6b21",
+            "responsibility": "semantic_motion_candidate",
+            "treatment": "\u77ed\u4fc3\u7684\u771f\u5b9e\u65f6\u95f4\u6d41\u901d\u7d20\u6750\u63d0\u4f9b'4\u5c0f\u65f6\u6b63\u5728\u8fc7\u53bb'\u7684\u4f53\u611f\uff1b\u56db\u5f20\u9009\u9879\u5361\u3001'\u53ea\u80fd\u4f7f\u7528\u4e00\u6b21'\u7684\u7ea6\u675f\u4e0e\u5168\u90e8\u6570\u5b57\u7531\u539f\u751f\u52a8\u753b\u627f\u62c5\u3002",
+            "information_contributed": "\u8ba9'\u53ea\u80fd\u4f7f\u7528\u4e00\u6b21'\u4ece\u4e00\u53e5\u8bdd\u53d8\u6210\u53ef\u611f\u77e5\u7684\u7d27\u8feb\u6027\uff0c\u652f\u6491\u540e\u7eed'\u4e92\u65a5\u9009\u9879'\u7684\u63a8\u7406\u524d\u63d0\u3002"
+          },
+          {
+            "beat": "\u514d\u8d39\u5496\u5561\u6392\u961f\u4e24\u5c0f\u65f6",
+            "responsibility": "semantic_motion_candidate",
+            "treatment": "\u771f\u5b9e\u6392\u961f\u7d20\u6750\u8ba9'\u4e24\u5c0f\u65f6'\u53ef\u88ab\u4f53\u611f\uff1b\u5496\u55610\u5143\u4e0e\u65f6\u95f4\u6210\u672c\u7684\u5bf9\u6bd4\u6570\u5b57\u7531\u539f\u751f\u56fe\u5c42\u627f\u62c5\u3002",
+            "information_contributed": "\u63d0\u4f9b'\u514d\u8d39\u2260\u6ca1\u6709\u6210\u672c'\u7684\u5177\u8eab\u8bc1\u636e\uff0c\u6bd4\u7eaf\u5361\u7247\u66f4\u6709\u8bf4\u670d\u529b\u3002"
+          },
+          {
+            "beat": "\u94f6\u884c\u53610\u652f\u51fa\u6d41\u6c34",
+            "responsibility": "precision_critical",
+            "treatment": "\u539f\u751f\u6392\u7248\u76840\u652f\u51fa\u8d26\u5355\uff0c\u786e\u5b9a\u6027\u5448\u73b0'\u6ca1\u4e70\u4e1c\u897f/\u6ca1\u6253\u8f66/\u6ca1\u51fa\u53bb\u5403\u996d/\u94f6\u884c\u5361\u4e00\u5206\u94b1\u90fd\u6ca1\u5c11'\u3002"
+          },
+          {
+            "beat": "A/B/C/D \u56db\u5f20\u9009\u9879\u5361\u4e0e\u6700\u4f73\u88ab\u653e\u5f03\u65b9\u6848\u9ad8\u4eae",
+            "responsibility": "precision_critical",
+            "treatment": "Remotion \u624b\u5199\u7eb8\u5361\u8ba9\u4f4d\u4e0e\u9ad8\u4eae\u52a8\u753b\uff1b\u9009\u4e2d\u6001\u3001\u53d8\u6697\u6001\u3001\u91cd\u65b0\u9ad8\u4eae\u6001\u5fc5\u987b\u7cbe\u786e\u5bf9\u5e94\u65c1\u767d\u3002"
+          },
+          {
+            "beat": "\u673a\u4f1a\u6210\u672c\u77e5\u8bc6\u5361\uff08\u2260\u82b1\u51fa\u53bb\u7684\u94b1 / = \u6700\u4f73\u66ff\u4ee3\u65b9\u6848\u7684\u4ef7\u503c\uff09",
+            "responsibility": "precision_critical",
+            "treatment": "\u539f\u751f\u5927\u5b57\u77e5\u8bc6\u5361\uff0c\u5355\u72ec\u505c\u7559\u4e00\u5c4f\uff0c\u786e\u4fdd\u5b9a\u4e49\u6587\u5b57\u96f6\u6b67\u4e49\u3002"
+          },
+          {
+            "beat": "\u591a\u9009\u9879\u9010\u4e2a\u7184\u706d\uff08\u4e0d\u662f\u76f8\u52a0\uff09",
+            "responsibility": "precision_critical",
+            "treatment": "\u786e\u5b9a\u6027\u7184\u706d\u52a8\u753b\uff0c\u914d\u5408\u7b97\u672f\u5f0f\u88ab\u5212\u6389\u7684\u89c6\u89c9\u5426\u5b9a\u3002"
+          },
+          {
+            "beat": "\u6210\u672c\u2260\u9519\u8bef\u9009\u62e9 \u7ea0\u504f\u5361",
+            "responsibility": "precision_critical",
+            "treatment": "\u6731\u7ea2\u6279\u6ce8\u5f0f\u7ea0\u504f\u5361\uff0c\u4e0e'\u6709\u673a\u4f1a\u6210\u672c\uff0c\u4e0d\u7b49\u4e8e\u4e0d\u5e94\u8be5\u505a'\u540c\u6b65\u3002"
+          },
+          {
+            "beat": "3% vs 5% \u6295\u8d44\u6bd4\u8f83",
+            "responsibility": "precision_critical",
+            "treatment": "\u539f\u751f\u786e\u5b9a\u6027\u6bd4\u8f83\u56fe\uff0c\u5e26'\u98ce\u9669/\u6d41\u52a8\u6027/\u9650\u5236\u76f8\u5f53'\u7684\u524d\u63d0\u6807\u6ce8\u4e0e'\u4e0d\u80fd\u53ea\u62ff\u6536\u76ca\u7387\u673a\u68b0\u6bd4\u8f83'\u7684\u9650\u5b9a\u3002"
+          },
+          {
+            "beat": "\u6838\u5fc3\u516c\u5f0f\u5361\u4e0e\u7ed3\u5c3e\u8ffd\u95ee\u5361",
+            "responsibility": "precision_critical",
+            "treatment": "\u539f\u751f\u6392\u7248\uff1b\u7ed3\u5c3e\u5361\u540c\u65f6\u4ee5\u539f\u751f footer \u627f\u8f7d\u5408\u89c4\u6587\u6848\u3002"
+          },
+          {
+            "beat": "\u91d1\u5e01\u98d8\u843d\u3001K\u7ebf\u3001\u63e1\u624b\u3001\u670d\u52a1\u5668\u673a\u623f\u7b49\u6cdb\u91d1\u878d\u7a7a\u955c",
+            "responsibility": "decorative_only",
+            "treatment": "\u62d2\u7edd\u4f7f\u7528"
+          }
+        ],
+        "motion_commitment_summary": "\u9009\u5b9a light-hybrid\uff1a3 \u4e2a\u8bed\u4e49\u52a8\u6001\u8282\u70b9\u7531\u771f\u5b9e\u7d20\u6750\u627f\u62c5\uff0c\u5176\u4f59 10 \u4e2a beat \u5168\u90e8\u7531\u786e\u5b9a\u6027\u5408\u6210\u627f\u62c5\u3002\u4e0d\u5b58\u5728'\u672c\u671f\u5b8c\u5168\u4e0d\u9700\u8981\u52a8\u6001\u7d20\u6750'\u7684\u7ed3\u8bba\uff0c\u56e0\u4e3a\u5f00\u573a\u4e0e'\u6392\u961f\u4e24\u5c0f\u65f6'\u4e24\u5904\u7684\u4f53\u611f\u65e0\u6cd5\u7531\u6392\u7248\u5355\u72ec\u5efa\u7acb\u3002",
+        "compliance": {
+          "content_category": "finance",
+          "exact_text": "\u672c\u89c6\u9891\u4ec5\u4f5c\u77e5\u8bc6\u5206\u4eab\uff0c\u4e0d\u6784\u6210\u4efb\u4f55\u6295\u8d44\u5efa\u8bae\u3002\u5e02\u573a\u6709\u98ce\u9669\uff0c\u6295\u8d44\u9700\u8c28\u614e\u3002",
+          "presentation": "native_footer_on_final_meaningful_scene",
+          "carried_through": [
+            "script.metadata.compliance",
+            "scene_plan.metadata.compliance",
+            "edit_decisions.metadata.compliance"
+          ]
+        },
+        "duration_estimate": {
+          "nagration_han_chars": 996,
+          "chars_per_second_basis": 4.79,
+          "basis_note": "\u4f9d\u636e\u7b2c02\u671f\u6210\u7247\u5b9e\u6d4b\u8bed\u901f\uff081541 \u6c49\u5b57 / 321.768 \u79d2\uff09\u63a8\u7b97\u3002",
+          "estimated_seconds": 215
+        }
+      }
+    },
+    "decision_log": {
+      "version": "1.0",
+      "project_id": "xiaosan-economics-03-opportunity-cost",
+      "decisions": [
+        {
+          "decision_id": "d-001",
+          "stage": "proposal",
+          "category": "pipeline_selection",
+          "subject": "Production pipeline",
+          "options_considered": [
+            {
+              "option_id": "finance-dossier",
+              "label": "finance-dossier",
+              "score": 0.94,
+              "reason": "\u672c\u671f\u5c5e\u8d22\u7ecf\u79d1\u666e\u4e14\u542b\u6295\u8d44\u6bd4\u8f83\u6bb5\uff0c\u9700\u8981\u5f3a\u5236\u5408\u89c4\u5448\u73b0\uff08\u7ed3\u5c3e\u539f\u751ffooter\uff09\uff1b\u540c\u4e3a\u7cfb\u5217\u7b2c02\u671f\u4f7f\u7528\u7684\u6d41\u6c34\u7ebf\uff0c\u4ea7\u54c1\u4e0e\u8d28\u68c0\u53e3\u5f84\u4e00\u81f4\u3002"
+            },
+            {
+              "option_id": "animated-explainer",
+              "label": "animated-explainer",
+              "score": 0.78,
+              "reason": "\u540c\u6837\u9002\u5408\u6982\u5ff5\u89e3\u8bf4\uff0c\u4f46\u7f3a\u5c11 finance-dossier \u7684\u539f\u751f\u5408\u89c4\u5143\u6570\u636e\u5951\u7ea6\u4e0e\u8d22\u7ecf\u7f16\u8f91\u5c42\u3002",
+              "rejected_because": "\u672c\u671f\u5185\u5bb9\u7c7b\u522b\u4e3a finance\uff0c\u9700\u8981\u7ed3\u5c3e\u4e0d\u53ef\u6539\u5199\u7684\u5408\u89c4\u6587\u6848\u4e0e\u8d22\u7ecf\u7f16\u8f91\u89c4\u8303\u3002"
+            }
+          ],
+          "selected": "finance-dossier",
+          "reason": "\u5185\u5bb9\u7c7b\u522b\u4e3a finance\uff0c\u4e14\u9700\u5ef6\u7eed\u7cfb\u5217\u5df2\u5efa\u7acb\u7684\u5408\u89c4\u4e0e\u8d28\u68c0\u53e3\u5f84\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.94
+        },
+        {
+          "decision_id": "d-002",
+          "stage": "proposal",
+          "category": "concept_selection",
+          "subject": "Narrative concept",
+          "options_considered": [
+            {
+              "option_id": "c1",
+              "label": "\u8eba\u4e00\u5929\uff0c\u6210\u672c\u771f\u7684\u662f0\u5417\uff08\u95ee\u9898\u2192\u76f4\u89c9\u2192\u4e09\u6b21\u53cd\u8f6c\u2192\u6982\u5ff5\u2192\u9632\u8bef\u89e3\u2192\u6536\u675f\uff09",
+              "score": 0.97,
+              "reason": "\u7528\u6237\u5df2\u63d0\u4f9b\u5b8c\u6574\u5185\u5bb9\u89c4\u5212\uff0cc1 \u5373\u89c4\u5212\u672c\u8eab\u7684\u8868\u8fbe\u7ed3\u6784\uff1b\u552f\u4e00\u540c\u65f6\u6ee1\u8db3\u7b2c\u4e00\u79d2\u8fdb\u5165\u95ee\u9898\u3001\u4e00\u671f\u53ea\u8ffd\u4e00\u4e2a\u95ee\u9898\u3001\u4e09\u6b21\u8ba4\u77e5\u4fee\u6b63\u5b8c\u6574\u3002"
+            },
+            {
+              "option_id": "c2",
+              "label": "\u4f60\u5148\u82b1\u6389\u4e86500\u5757\uff08\u6570\u5b57\u51b2\u51fb\u5f00\u573a\uff09",
+              "score": 0.72,
+              "reason": "2\u79d2\u6293\u4eba\u66f4\u5f3a\uff0c\u4f46\u628a\u673a\u4f1a\u6210\u672c\u6697\u793a\u6210\u4e00\u7b14\u771f\u5b9e\u8d26\u76ee\uff0c\u4f1a\u5f3a\u5316'\u8d27\u5e01\u5316'\u8bef\u89e3\u3002",
+              "rejected_because": "\u4e0e\u89c4\u5212\u7b2c14\u8282'\u673a\u4f1a\u6210\u672c\u4e0d\u8981\u6c42\u628a\u4e00\u5207\u6362\u7b97\u6210\u94b1'\u6b63\u9762\u51b2\u7a81\u3002"
+            },
+            {
+              "option_id": "c3",
+              "label": "\u514d\u8d39\u5496\u5561\u53ef\u80fd\u662f\u4eca\u5e74\u6700\u8d35\u7684\u4e00\u676f",
+              "score": 0.74,
+              "reason": "\u6848\u4f8b\u5c0f\u3001\u8bb0\u5fc6\u70b9\u5f3a\uff0c\u4f46\u9700\u8981\u989d\u5916\u8f6c\u573a\u624d\u80fd\u56de\u5230'\u8eba\u4e00\u5929'\u4e3b\u7ebf\u3002",
+              "rejected_because": "\u89c4\u5212\u660e\u786e\u8981\u6c42\u4e00\u671f\u53ea\u56f4\u7ed5'\u5468\u516d\u4e0b\u53484\u5c0f\u65f6'\u8fd9\u4e00\u4e2a\u6838\u5fc3\u573a\u666f\u3002"
+            },
+            {
+              "option_id": "c4",
+              "label": "\u5982\u679c\u4eca\u5929\u4f60\u4e0d\u5f97\u4e0d\u505a\u70b9\u4ec0\u4e48\uff08\u63d0\u95ee\u5f0f\u5f00\u573a\uff09",
+              "score": 0.7,
+              "reason": "\u53c2\u4e0e\u611f\u6700\u5f3a\uff0c\u4f46\u62bd\u8c61\u5f00\u573a\u5bf92\u79d2\u7559\u5b58\u4e0d\u5229\u3002",
+              "rejected_because": "\u4e0e\u89c4\u5212\u7b2c6\u8282'\u6c99\u53d1/0\u5143/\u6210\u672c=0\uff1f'\u4e09\u753b\u9762\u5feb\u95ea\u7684\u5f00\u5934\u8bbe\u8ba1\u4e0d\u517c\u5bb9\u3002"
+            }
+          ],
+          "selected": "c1",
+          "reason": "\u7528\u6237\u8981\u6c42\u4e25\u683c\u6309\u89c4\u5212\u6267\u884c\uff0cc1 \u5373\u89c4\u5212\u7684\u8868\u8fbe\u7ed3\u6784\uff0c\u4e14\u662f\u552f\u4e00\u5b8c\u6574\u4fdd\u7559\u4e09\u6b21\u8ba4\u77e5\u4fee\u6b63\u94fe\u6761\u7684\u65b9\u6848\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.97
+        },
+        {
+          "decision_id": "d-003",
+          "stage": "proposal",
+          "category": "playbook_selection",
+          "subject": "Visual style and playbook",
+          "options_considered": [
+            {
+              "option_id": "finance-dossier-tactile-paper",
+              "label": "finance-dossier + \u5c0f\u6563\u89e6\u611f\u7814\u7a76\u7eb8",
+              "score": 0.95,
+              "reason": "\u5ef6\u7eed\u7b2c02\u671f\u5df2\u6279\u51c6\u7684\u7eb8\u5f20\u8d28\u611f\uff08#F4F1E8 \u57fa\u7eb8\u3001\u77f3\u58a8\u6587\u5b57\u3001\u6731\u7ea2\u6279\u6ce8\u3001\u6df1\u9752\u7ed3\u6784\u7ebf\uff09\uff0c\u7cfb\u5217\u8fa8\u8bc6\u5ea6\u8fde\u7eed\u3002"
+            },
+            {
+              "option_id": "flat-motion-graphics",
+              "label": "flat-motion-graphics",
+              "score": 0.66,
+              "reason": "\u66f4\u6d3b\u6cfc\uff0c\u9002\u5408\u793e\u4ea4\u77ed\u89c6\u9891\uff0c\u4f46\u4f1a\u5207\u65ad\u4e0e\u7cfb\u5217\u524d\u4e24\u671f\u7684\u89c6\u89c9\u8fde\u7eed\u6027\u3002",
+              "rejected_because": "\u7cfb\u5217\u4e00\u81f4\u6027\u4f18\u5148\uff0c\u4e14\u672c\u671f\u5185\u5bb9\u57fa\u8c03\u514b\u5236\u3002"
+            },
+            {
+              "option_id": "premium-minimalist",
+              "label": "premium-minimalist",
+              "score": 0.7,
+              "reason": "\u5e72\u51c0\u4e13\u4e1a\uff0c\u4f46\u7f3a\u5c11\u7eb8\u5f20\u89e6\u611f\u4e0e\u6279\u6ce8\u5f0f\u7684\u77e5\u8bc6\u5c42\u7ea7\u3002",
+              "rejected_because": "\u672c\u671f\u9700\u8981\u6731\u7ea2\u6279\u6ce8\u627f\u62c5\u4e09\u6b21\u53cd\u8f6c\u7684\u89c6\u89c9\u5f3a\u8c03\u3002"
+            }
+          ],
+          "selected": "finance-dossier-tactile-paper",
+          "reason": "\u5ef6\u7eed\u7cfb\u5217\u89c6\u89c9\u8bed\u8a00\uff1b\u4f46\u672c\u671f\u91cd\u65b0\u8bbe\u8ba1\u6807\u5fd7\u88c5\u7f6e\uff08\u56db\u5f20\u9009\u9879\u7eb8\u5361\uff09\uff0c\u4e0d\u590d\u7528\u4e0a\u4e00\u671f\u7684\u56db\u5c0f\u65f6\u7eb8\u5c3a\uff0c\u907f\u514d\u6a21\u677f\u5316\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.95
+        },
+        {
+          "decision_id": "d-004",
+          "stage": "proposal",
+          "category": "renderer_family_selection",
+          "subject": "Creative renderer family",
+          "options_considered": [
+            {
+              "option_id": "explainer-data",
+              "label": "explainer-data",
+              "score": 0.93,
+              "reason": "\u672c\u671f\u662f\u6982\u5ff5\u89e3\u8bf4 + \u7cbe\u786e\u5361\u7247\u5173\u7cfb\u4e0e\u6570\u5b57\u6bd4\u8f83\uff0c\u5c5e\u4e8e\u6570\u636e\u5316\u89e3\u8bf4\u6e32\u67d3\u65cf\u3002"
+            },
+            {
+              "option_id": "cinematic",
+              "label": "cinematic",
+              "score": 0.42,
+              "reason": "\u60c5\u7eea\u5316\u5f71\u8c03\uff0c\u4e0e\u514b\u5236\u5206\u6790\u578b\u8868\u8fbe\u4e0d\u7b26\u3002",
+              "rejected_because": "\u672c\u671f\u65e0\u53d9\u4e8b\u6027\u5f71\u8c03\u9700\u6c42\u3002"
+            }
+          ],
+          "selected": "explainer-data",
+          "reason": "\u4e0e EXPLAIN \u7f16\u8f91\u6a21\u5f0f\u548c\u786e\u5b9a\u6027\u4fe1\u606f\u5448\u73b0\u9700\u6c42\u4e00\u81f4\uff0c\u4e14\u4e0e\u7b2c02\u671f\u6e32\u67d3\u65cf\u4fdd\u6301\u8fde\u7eed\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.93
+        },
+        {
+          "decision_id": "d-005",
+          "stage": "proposal",
+          "category": "render_runtime_selection",
+          "subject": "Composition runtime",
+          "options_considered": [
+            {
+              "option_id": "remotion",
+              "label": "Remotion\uff08React \u5408\u6210\uff09",
+              "score": 0.95,
+              "reason": "\u5bf9\u672c\u671f\u6700\u5408\u9002\u7684\u70b9\uff1a\u7eb8\u5f20\u6750\u8d28\u5c42\u3001\u4e2d\u6587\u7ad6\u5c4f\u6392\u7248\u3001\u56db\u5f20\u7eb8\u5361\u7684\u6324\u538b/\u7184\u706d/\u9ad8\u4eae\u72b6\u6001\u673a\u3001\u4ee5\u53ca\u9010\u5e27\u786e\u5b9a\u7684\u6570\u5b57\u4e0e\u5361\u7247\u5173\u7cfb\uff0cReact \u7ec4\u4ef6\u72b6\u6001\u4e0e\u65f6\u95f4\u8f74\u8868\u8fbe\u6700\u76f4\u63a5\uff0c\u5b57\u5e55\u5b89\u5168\u533a\u7531\u6846\u67b6\u81ea\u52a8\u6536\u655b\u3002"
+            },
+            {
+              "option_id": "hyperframes",
+              "label": "HyperFrames\uff08HTML/CSS/GSAP \u5408\u6210\uff09",
+              "score": 0.8,
+              "reason": "\u8bda\u5b9e\u6743\u8861\uff1a\u5b83\u5728\u6392\u7248\u7684\u52a8\u52bf\u4e0e\u6587\u5b57\u7f16\u6392\u4e0a\u66f4\u5f3a\uff0c\u9002\u5408\u505a\u7eaf\u7cb9\u7684\u5b57\u4f53\u9a71\u52a8\u578b\u77ed\u7247\uff1b\u4f46\u672c\u671f\u771f\u6b63\u7684\u96be\u70b9\u662f\u7cbe\u786e\u7684\u5361\u7247\u72b6\u6001\u4e0e\u786e\u5b9a\u6027\u7684\u5173\u7cfb\u56fe\uff0c\u4e14\u7ad6\u5c4f\u5b57\u5e55\u5b89\u5168\u533a\u9700\u8981\u663e\u5f0f\u5b9e\u73b0\uff0c\u8fd4\u5de5\u98ce\u9669\u66f4\u9ad8\u3002",
+              "rejected_because": "\u672c\u671f\u4fe1\u606f\u7ed3\u6784\u4ee5\u786e\u5b9a\u6027\u5361\u7247\u5173\u7cfb\u4e3a\u4e3b\uff0c\u975e\u5b57\u4f53\u9a71\u52a8\u578b\uff1b\u5b89\u5168\u6027\u4e0a Remotion \u66f4\u53ef\u63a7\u3002"
+            },
+            {
+              "option_id": "ffmpeg",
+              "label": "FFmpeg \u7eaf\u526a\u8f91",
+              "score": 0.25,
+              "reason": "\u8bda\u5b9e\u6743\u8861\uff1a\u6210\u672c\u6700\u4f4e\u3001\u6700\u7a33\u5b9a\uff0c\u9002\u5408\u7b80\u5355\u526a\u8f91\u62fc\u63a5\uff1b\u4f46\u65e0\u6cd5\u5b9e\u73b0\u7eb8\u5361\u8ba9\u4f4d\u3001\u9ad8\u4eae\u4e0e\u7184\u706d\u7b49\u72b6\u6001\u52a8\u6548\uff0c\u4f1a\u9000\u5316\u4e3a\u9759\u5e27\u62fc\u63a5\u3002",
+              "rejected_because": "\u672c\u671f delivery_promise.motion_required=true\uff0c\u9759\u5e27\u62fc\u63a5\u4f4e\u4e8e\u8d28\u91cf\u4e0b\u9650\u3002"
+            }
+          ],
+          "selected": "remotion",
+          "reason": "\u5185\u5bb9\u9002\u914d\u4f18\u5148\u63a8\u8350 Remotion\uff1b\u5df2\u5728 preflight \u4e2d\u9a8c\u8bc1\u4e09\u79cd\u8fd0\u884c\u65f6\u5168\u90e8\u53ef\u7528\uff08ffmpeg/remotion/hyperframes \u5747\u4e3a true\uff09\uff0c\u56e0\u6b64\u4e0d\u5b58\u5728\u53ef\u7528\u6027\u963b\u585e\uff0c\u9009\u62e9\u5b8c\u5168\u57fa\u4e8e\u5185\u5bb9\u9002\u914d\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.95
+        },
+        {
+          "decision_id": "d-006",
+          "stage": "proposal",
+          "category": "composition_mode",
+          "subject": "Composition authoring mode",
+          "options_considered": [
+            {
+              "option_id": "atelier",
+              "label": "Atelier \u624b\u5de5\u7f16\u6392",
+              "score": 0.96,
+              "reason": "\u80fd\u4e3a\u672c\u671f\u624b\u5199\u4e00\u6b21\u6027\u89c6\u89c9\u8bed\u8a00\uff1a\u56db\u5f20\u9009\u9879\u7eb8\u5361\u7684\u8ba9\u4f4d\u5173\u7cfb\u3001\u6731\u7ea2\u6279\u6ce8\u7684\u7ea0\u504f\u5361\u3001\u4ee5\u53ca\u672c\u671f\u7684\u8282\u594f\uff08\u5feb\u2192\u6162\u2192\u505c\u2192\u5feb\u2192\u6162\u2192\u6536\uff09\u3002"
+            },
+            {
+              "option_id": "templated",
+              "label": "Templated \u6a21\u677f\u5316",
+              "score": 0.64,
+              "reason": "\u5236\u4f5c\u66f4\u5feb\u66f4\u7a33\uff0c\u53ef\u590d\u7528\u73b0\u6210 cut.type\uff08text_card / stat_card / comparison \u7b49\uff09\u3002",
+              "rejected_because": "\u672c\u671f\u662f\u7cfb\u5217\u4e2d\u9700\u8981\u63d0\u5347\u8868\u8fbe\u9510\u5ea6\u7684\u5355\u671f\u6210\u7247\uff0c\u6a21\u677f\u5316\u6b63\u662f\u4e0a\u4e00\u671f'\u753b\u9762\u592a\u5e73\u5747'\u7684\u6210\u56e0\u3002"
+            }
+          ],
+          "selected": "atelier",
+          "reason": "\u590d\u7528\u5f15\u64ce\u77e5\u8bc6\u4f46\u4e0d\u590d\u7528\u73b0\u6210\u7ec4\u4ef6\uff0c\u907f\u514d\u7cfb\u5217\u4e00\u81f4\u6027\u53d8\u6210\u6a21\u677f\u5316\uff1b\u672c\u671f\u4e3a\u6838\u5fc3\u6210\u7247\u800c\u975e\u6279\u91cf\u4ea7\u51fa\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.96
+        },
+        {
+          "decision_id": "d-007",
+          "stage": "proposal",
+          "category": "motion_commitment",
+          "subject": "Visual coverage strategy",
+          "options_considered": [
+            {
+              "option_id": "light-hybrid",
+              "label": "\u8f7b\u6df7\u5408\uff08\u786e\u5b9a\u6027\u5408\u6210 + 3 \u4e2a\u771f\u5b9e\u52a8\u6001\u8282\u70b9\uff09",
+              "score": 0.92,
+              "reason": "\u89c4\u5212\u7b2c1\u8282\u660e\u786e\u8981\u6c42'\u914d\u97f3 + \u56fe\u8868\u5361\u7247 + \u751f\u6d3b\u7d20\u6750 + \u7b80\u5355\u52a8\u6001\u5b57\u5e55'\uff1b\u5f00\u573a'\u8eba\u4e00\u5929'\u4e0e'\u6392\u961f\u4e24\u5c0f\u65f6'\u7684\u4f53\u611f\u53ea\u80fd\u7531\u771f\u5b9e\u7d20\u6750\u5efa\u7acb\uff0c\u5176\u4f59\u4fe1\u606f\u7531\u786e\u5b9a\u6027\u5408\u6210\u627f\u62c5\u3002"
+            },
+            {
+              "option_id": "composition-only",
+              "label": "\u7eaf\u5408\u6210\uff08\u65e0\u5b9e\u62cd\u7d20\u6750\uff09",
+              "score": 0.68,
+              "reason": "\u66f4\u53ef\u63a7\u3001\u66f4\u5feb\uff0c\u5168\u90e8\u4fe1\u606f\u53ef\u786e\u5b9a\u6027\u5448\u73b0\u3002",
+              "rejected_because": "\u5f00\u573a2\u79d2\u7559\u5b58\u662f\u672c\u671f\u9996\u8981\u6210\u529f\u6807\u51c6\uff0c\u7eaf\u6392\u7248\u7684'\u8eba\u4e00\u5929'\u65e0\u6cd5\u8ba9\u89c2\u4f17\u7acb\u523b\u8ba4\u51fa\u81ea\u5df1\u7684\u5468\u516d\uff1b\u4e14\u89c4\u5212\u5df2\u663e\u5f0f\u8981\u6c42\u751f\u6d3b\u7d20\u6750\u3002"
+            },
+            {
+              "option_id": "footage-led",
+              "label": "\u7d20\u6750\u4e3b\u5bfc",
+              "score": 0.35,
+              "reason": "\u771f\u5b9e\u611f\u6700\u5f3a\u3002",
+              "rejected_because": "\u672c\u671f\u6838\u5fc3\u662f\u7cbe\u786e\u5b9a\u4e49\u4e0e\u5361\u7247\u5173\u7cfb\u63a8\u7406\uff0c\u8ba9\u7d20\u6750\u627f\u62c5\u4e3b\u7ebf\u4f1a\u8ba9'\u6700\u4f73\u88ab\u653e\u5f03\u65b9\u6848'\u7b49\u5173\u952e\u4fe1\u606f\u5931\u53bb\u786e\u5b9a\u6027\u3002"
+            }
+          ],
+          "selected": "light-hybrid",
+          "reason": "\u6309\u4fe1\u606f\u8d23\u4efb\u5206\u7c7b\uff1a3 \u4e2a beat \u4e3a\u8bed\u4e49\u52a8\u6001\u5019\u9009\uff08\u5f00\u573a\u8eba\u5367\u30014\u5c0f\u65f6\u6d41\u901d\u3001\u5496\u5561\u6392\u961f\uff09\uff0c\u5168\u90e8\u7cbe\u786e\u4fe1\u606f\u4e0e\u6570\u5b57\u7531\u5408\u6210\u627f\u62c5\uff0c\u62d2\u7edd\u4efb\u4f55\u88c5\u9970\u6027\u91d1\u878d\u7a7a\u955c\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.92
+        },
+        {
+          "decision_id": "d-008",
+          "stage": "proposal",
+          "category": "voice_selection",
+          "subject": "Narration TTS provider",
+          "options_considered": [
+            {
+              "option_id": "doubao-dayi-2",
+              "label": "\u8c46\u5305 \u5927\u58f9 2.0",
+              "score": 0.95,
+              "reason": "User persistent default\uff1b\u666e\u901a\u8bdd\u81ea\u7136\u3001\u652f\u6301\u65f6\u95f4\u6233\uff0c\u9002\u5408\u514b\u5236\u7684\u8001\u670b\u53cb\u89c2\u5bdf\u578b\u8bb2\u8ff0\u3002"
+            },
+            {
+              "option_id": "other-tts",
+              "label": "\u5176\u4ed6 TTS \u63d0\u4f9b\u65b9",
+              "score": 0.4,
+              "reason": "\u5f53\u524d TTS \u80fd\u529b\u4e3a 1/7 configured\uff0c\u4ec5\u8c46\u5305\u53ef\u7528\u3002",
+              "rejected_because": "\u7528\u6237\u6301\u4e45\u9ed8\u8ba4\u5df2\u6307\u5b9a\u8c46\u5305\u5927\u58f9 2.0\uff0c\u4e14\u5176\u4ed6\u63d0\u4f9b\u65b9\u672a\u914d\u7f6e\u3002"
+            }
+          ],
+          "selected": "doubao-dayi-2",
+          "reason": "\u7ee7\u627f\u7528\u6237\u6301\u4e45\u914d\u97f3\u9ed8\u8ba4\uff1a\u8c46\u5305\u5927\u58f9 2.0\u3001segmented \u5206\u6bb5\u751f\u6210\u3001\u5148\u5ba1\u6837\u97f3\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.96
+        },
+        {
+          "decision_id": "d-009",
+          "stage": "proposal",
+          "category": "music_source",
+          "subject": "Background music source",
+          "options_considered": [
+            {
+              "option_id": "none",
+              "label": "\u65e0\u80cc\u666f\u97f3\u4e50",
+              "score": 0.9,
+              "reason": "\u7ee7\u627f\u6301\u4e45\u9ed8\u8ba4 media_defaults.background_music_enabled=false\u3002"
+            },
+            {
+              "option_id": "generated",
+              "label": "API \u751f\u6210\u97f3\u4e50",
+              "score": 0.3,
+              "reason": "\u5f53\u524d music_generation \u4e3a 0/3 configured\uff0c\u65e0\u53ef\u7528\u63d0\u4f9b\u65b9\u3002",
+              "rejected_because": "\u6301\u4e45\u65e0BGM\u9ed8\u8ba4\uff0c\u4e14\u672c\u671f\u4e3a\u514b\u5236\u5206\u6790\u578b\u8bb2\u8ff0\uff0c\u97f3\u4e50\u975e\u5fc5\u8981\u3002"
+            },
+            {
+              "option_id": "library",
+              "label": "\u4f7f\u7528\u672c\u5730\u66f2\u5e93",
+              "score": 0.3,
+              "reason": "music_library/ \u672a\u914d\u7f6e\uff080/1\uff09\u3002",
+              "rejected_because": "\u65e0\u66f2\u5e93\u53ef\u7528\uff0c\u4e14\u7528\u6237\u9ed8\u8ba4\u4e0d\u542f\u7528BGM\u3002"
+            }
+          ],
+          "selected": "none",
+          "reason": "\u5e94\u7528\u6301\u4e45\u65e0BGM\u9ed8\u8ba4\uff1b\u4e0b\u6e38\u7d20\u6750\u3001\u7f16\u8f91\u4e0e\u5408\u6210\u9636\u6bb5\u5fc5\u987b\u5b8c\u5168\u7701\u7565\u97f3\u4e50\u5c42\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.9
+        },
+        {
+          "decision_id": "d-010",
+          "stage": "proposal",
+          "category": "budget_tradeoff",
+          "subject": "Target duration and content completeness",
+          "options_considered": [
+            {
+              "option_id": "complete-215",
+              "label": "\u5b8c\u6574\u53e3\u64ad\u7ea6 215 \u79d2",
+              "score": 0.94,
+              "reason": "\u89c4\u5212\u7b2c1\u8282\u8981\u6c42'\u4e0d\u5f3a\u884c\u9650\u5236\u65f6\u957f\uff0c\u4ee5\u8868\u8fbe\u5b8c\u6574\u3001\u8282\u594f\u6e05\u6670\u4e3a\u4f18\u5148'\uff1b996 \u4e2a\u6c49\u5b57\u6309\u7cfb\u5217\u5b9e\u6d4b\u8bed\u901f 4.79 \u5b57/\u79d2\u7ea6 208 \u79d2\uff0c\u52a0\u505c\u987f\u7ea6 215 \u79d2\u3002"
+            },
+            {
+              "option_id": "cut-180",
+              "label": "\u538b\u7f29\u81f3\u7ea6 180 \u79d2",
+              "score": 0.55,
+              "reason": "\u66f4\u7b26\u5408\u77ed\u89c6\u9891\u5b8c\u64ad\u7387\u4e60\u60ef\u3002",
+              "rejected_because": "\u538b\u7f29\u5fc5\u7136\u8981\u5220\u6389\u4e09\u6b21\u53cd\u8f6c\u4e2d\u7684\u67d0\u4e00\u6b65\uff0c\u4e0e\u89c4\u5212'\u4e0d\u4ee5\u538b\u7f29\u4e3a\u9996\u8981\u76ee\u6807'\u51b2\u7a81\u3002"
+            }
+          ],
+          "selected": "complete-215",
+          "reason": "\u4fdd\u7559\u89c4\u5212\u7b2c22\u8282\u5b8c\u6574\u53e3\u64ad\u4e0e\u4e09\u6b21\u8ba4\u77e5\u4fee\u6b63\u7684\u5b8c\u6574\u94fe\u6761\uff0c\u65f6\u957f\u670d\u4ece\u5185\u5bb9\u5b8c\u6574\u5ea6\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.94
+        },
+        {
+          "decision_id": "d-011",
+          "stage": "proposal",
+          "category": "provider_selection",
+          "subject": "Primary cover core visual",
+          "options_considered": [
+            {
+              "option_id": "host-imagegen",
+              "label": "\u5bbf\u4e3b\u56fe\u50cf\u751f\u6210 + \u672c\u5730\u786e\u5b9a\u6027\u6587\u5b57\u6392\u7248",
+              "score": 0.9,
+              "reason": "\u5c01\u9762\u6838\u5fc3\u89c6\u89c9\u4e00\u6b21\u751f\u6210\uff0c\u4e2d\u6587\u5927\u5b57\u3001\u89d2\u6807\u4e0e\u5408\u89c4\u6587\u5b57\u7531\u672c\u5730\u539f\u751f\u6392\u7248\u53e0\u52a0\uff0c\u786e\u4fdd\u6807\u9898\u4e0e\u6570\u5b57\u96f6\u5dee\u9519\u3002"
+            },
+            {
+              "option_id": "registry-image",
+              "label": "registry image_selector\uff08\u4ec5\u5e93\u5b58\u56fe\uff09",
+              "score": 0.45,
+              "reason": "\u5f53\u524d image_generation \u4e3a 2/12 configured\uff0c\u4ec5 Pexels/Pixabay \u5e93\u5b58\u56fe\u53ef\u7528\u3002",
+              "rejected_because": "\u5e93\u5b58\u56fe\u96be\u4ee5\u627f\u8f7d\u672c\u671f\u5c01\u9762\u6240\u9700\u7684'\u8eba\u4e00\u5929 + 0\u5143 + \u6210\u672c\u5374\u53ef\u80fd\u5f88\u9ad8'\u7684\u51b2\u7a81\u6784\u56fe\u3002"
+            },
+            {
+              "option_id": "frame-grab",
+              "label": "\u76f4\u63a5\u622a\u53d6\u6210\u7247\u753b\u9762\u4f5c\u5c01\u9762",
+              "score": 0.4,
+              "reason": "\u6700\u7701\u6210\u672c\u3002",
+              "rejected_because": "\u5c01\u9762\u9700\u8981\u72ec\u7acb\u8bbe\u8ba1\u7684\u6807\u9898\u5c42\u7ea7\u4e0e\u89d2\u6807\uff0c\u622a\u5e27\u65e0\u6cd5\u6ee1\u8db3\u79fb\u52a8\u7aef\u7f29\u7565\u56fe\u53ef\u8bfb\u6027\u3002"
+            }
+          ],
+          "selected": "host-imagegen",
+          "reason": "\u5c01\u9762\u9636\u6bb5\u72ec\u7acb\u5ba1\u6279\uff1b\u6838\u5fc3\u89c6\u89c9\u7531\u751f\u6210\u627f\u62c5\uff0c\u4e2d\u6587\u4e0e\u6570\u5b57\u7531\u786e\u5b9a\u6027\u6392\u7248\u6dfb\u52a0\u3002",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.9
+        }
+      ]
+    }
+  },
+  "style_playbook": "finance-dossier",
+  "review": {
+    "round": 1,
+    "decision": "pass",
+    "critical": 0,
+    "suggestions": 0,
+    "notes": [
+      "\u7528\u6237\u4e8e 2026-09-21 \u6279\u51c6\u63a8\u8350\u65b9\u6848\uff1ac1 / Remotion / Atelier / light-hybrid / \u8c46\u5305\u5927\u58f92.0 / \u65e0BGM / \u7ea6215\u79d2\u3002"
+    ]
+  },
+  "cost_snapshot": {
+    "spent_usd": 0.0,
+    "budget_default_usd": 2.0
+  },
+  "metadata": {
+    "content_category": "finance",
+    "render_runtime": "remotion",
+    "decision": "approved"
+  }
+}

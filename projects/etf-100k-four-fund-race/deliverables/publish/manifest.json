@@ -1,0 +1,31 @@
+{
+ "project": "etf-100k-four-fund-race",
+ "created_at": "2026-09-21",
+ "files": [
+  {
+   "path": "final.mp4",
+   "bytes": 12331555
+  },
+  {
+   "path": "images/cover.png",
+   "bytes": 119088
+  },
+  {
+   "path": "metadata.json",
+   "bytes": 2800
+  },
+  {
+   "path": "sources.md",
+   "bytes": 4275
+  },
+  {
+   "path": "发布文案.md",
+   "bytes": 1479
+  },
+  {
+   "path": "屏幕文案全文.md",
+   "bytes": 3961
+  }
+ ],
+ "total_bytes": 12463158
+}

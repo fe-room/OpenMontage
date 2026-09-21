@@ -1,0 +1,493 @@
+{
+ "version": "1.0",
+ "topic": "2020年7月3日同一天、同一笔10万元，分别买入四只ETF，到2026年9月18日结果差多少，过程又差多少？",
+ "research_date": "2026-09-21",
+ "landscape": {
+  "existing_content": [
+   {
+    "title": "A股8大宽基实测｜收益回撤一目了然",
+    "url": "https://www.toutiao.com/article/7625532353385742884/",
+    "source": "self_media_data_roundup",
+    "angle": "把8个宽基指数的长周期全收益年化、年化波动率、历史最大回撤排在一张表里横向比较",
+    "what_it_covers": "各指数自基日以来的长期年化（含分红再投）与历史最大回撤幅度，例如中证红利低波动年化9.70%、沪深300年化9.80%",
+    "what_it_misses": "用的是指数自基日以来各自不同的统计周期，不是同一笔钱、同一天起跑的对比；也没有回答\"如果是我这六年拿在手里，中途要忍多久\"",
+    "engagement_signal": "宽基对比类内容的常见形态，标题即结论"
+   },
+   {
+    "title": "别被沪深300的名气骗了，定投十年它连通胀都跑不赢",
+    "url": "https://m.toutiao.com/article/7652571184751559183/",
+    "source": "self_media_narrative",
+    "angle": "从朋友定投三年年化不到5%的真实对话切入，对比宽基与红利低波的持有体验",
+    "what_it_covers": "宽基定投的实际体感、红利低波\"跌得少、分红按时到账\"的持有体验，以及\"拿不住\"才是真实成本这一观点",
+    "what_it_misses": "结论先行，指数区间各不相同，缺少同一区间的绝对金额对照；也没有把\"没回本持续了多久\"量化出来",
+    "engagement_signal": "叙事型财经内容，典型的高完读结构"
+   },
+   {
+    "title": "关于重仓红利低波指数基金（雪球）",
+    "url": "https://xueqiu.com/2340719306/406064579",
+    "source": "investor_community",
+    "angle": "以\"持有体验与最终回报之间存在温差\"为主线，对比宽基与红利策略的长周期表现",
+    "what_it_covers": "沪深300、中证500、中证A500、恒生指数与红利低波策略的十年年化区间对比，以及红利低波\"11个自然年里10年正收益\"的统计",
+    "what_it_misses": "长周期指数统计不等于产品实盘；且结尾落到具体产品的推荐倾向，缺少\"数据能回答什么、不能回答什么\"的边界声明",
+    "engagement_signal": "投资社区里被广泛引用的长文"
+   },
+   {
+    "title": "长期理财最优解：为什么宽基指数基金是普通人的终身底仓",
+    "url": "https://www.toutiao.com/article/7630223069432267315/",
+    "source": "self_media_explainer",
+    "angle": "按风险偏好把宽基分成保守／平衡／成长三档，给出配置比例建议",
+    "what_it_covers": "主流宽基的定位、行业分布、长期年化区间与最大回撤量级，以及\"拿得住至少5-10年\"的经验结论",
+    "what_it_misses": "以配置建议为落点，指数区间仍然不统一；四条曲线在同一坐标系里竞速的过程感完全缺失",
+    "engagement_signal": "理财科普长文的标准结构"
+   },
+   {
+    "title": "中证红利低波动ETF上市公告 — 上海证券交易所",
+    "url": "https://etf.sse.com.cn/fundtrends/c/5733322.shtml",
+    "source": "exchange_official",
+    "angle": "交易所层面的产品文件，披露标的指数的选样口径",
+    "what_it_covers": "中证红利低波动指数的选样条件（50只、流动性好、连续分红、红利支付率适中、每股股息正增长、股息率高且波动率低，股息率加权）",
+    "what_it_misses": "只讲规则，不提供任何跨策略的实盘路径对比",
+    "engagement_signal": "监管口径的权威文本，观众通常不会直接读到"
+   }
+  ],
+  "saturated_angles": [
+   "用各指数自基日以来的\"十年年化\"做横向表格对比——统计区间不统一，读者无法换算成自己的钱",
+   "以\"红利低波连续多年正收益\"作为标题结论，把一段特定风格占优的区间讲成长期规律",
+   "纯概念科普：什么是宽基、什么是红利低波、ETF 怎么买——不讲任何路径过程",
+   "结尾给出配置比例建议（六成这个、四成那个），把历史区间结果包装成配置指令",
+   "K线、金币、财经新闻截图等泛金融空镜堆砌，把数据片拍成情绪片"
+  ],
+  "underserved_gaps": [
+   "几乎没有人把\"同一天、同一笔钱、同一终点\"的**绝对金额差**摆出来：这六年，10万元投四只ETF，最好和最差差了8.09万元，而不是几个百分点的差距",
+   "极少有人把**回撤的持续时间**当作主角。沪深300在2021年2月见顶后，到2026年9月18日都没有再创新高——这不是\"跌了多少\"，而是\"等了多久\"",
+   "缺少把\"分红再投资\"这条口径明确说出来的内容：后复权是把分红按再投资处理的理论总回报，实际持有ETF收到的现金分红并不会自动复投",
+   "缺少对起点和区间敏感性的诚实声明：2021-2024年是A股整体下行、红利风格相对占优的特殊区间，换一个起点，排名可能换人",
+   "缺少\"数据不告诉你买哪个\"的克制表达——绝大多数内容最后都落到推荐"
+  ]
+ },
+ "trending": {
+  "recent_developments": [
+   {
+    "headline": "红利类ETF阵营在过去六年快速扩容，跟踪中证红利低波动与中证红利低波动100的产品数量明显增加",
+    "date": "2026-08",
+    "relevance": "说明\"红利低波\"已经不是小众策略，观众在信息流里更可能刷到过相关产品，比较的对照价值更高"
+   },
+   {
+    "headline": "沪深300ETF 依然是A股规模最大的宽基产品线之一，被普遍当作\"市场核心资产\"的代称",
+    "date": "2026-09",
+    "relevance": "为结尾的\"市场核心资产 / 中小盘弹性 / 红利低波策略\"三分类提供现实中观众熟悉的分组语言"
+   }
+  ],
+  "active_discussions": [
+   {
+    "platform": "雪球",
+    "topic_or_url": "https://xueqiu.com/2340719306/406064579",
+    "sentiment": "split"
+   },
+   {
+    "platform": "今日头条",
+    "topic_or_url": "https://www.toutiao.com/article/7625532353385742884/",
+    "sentiment": "positive"
+   }
+  ]
+ },
+ "data_points": [
+  {
+   "claim": "同一笔 ¥100,000，2020-07-03 同日买入并持有至 2026-09-18（共 1510 个交易日，约 6.21 年），四只ETF的期末账户资产分别为：沪深300 ¥112,681、中证500 ¥142,111、红利低波50 ¥193,622、红利低波100 ¥181,596。",
+   "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "source_name": "腾讯证券行情接口 日线后复权（hfq）截面，经用户工作簿归一化到 10 万元起始",
+   "credibility": "secondary_source",
+   "surprise_factor": "notable",
+   "usable_as": "全片的数字主干；结尾对比表的唯一数据来源"
+  },
+  {
+   "claim": "期末最好与最差之间相差 ¥80,941：红利低波50 的 ¥193,622 比沪深300 的 ¥112,681 多 8.09 万元。同期两者的累计收益率是 +93.62% 与 +12.68%，年化 +11.23% 与 +1.94%。",
+   "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "source_name": "由 data_points[0] 的同一截面导出",
+   "credibility": "secondary_source",
+   "surprise_factor": "counterintuitive",
+   "usable_as": "开场提问与结尾落点的量化依据；把\"差多少\"从百分数翻译成\"差 8 万块钱\""
+  },
+  {
+   "claim": "四只ETF的最大回撤分别为：沪深300 -38.45%、中证500 -39.48%、红利低波50 -16.53%、红利低波100 -12.91%。",
+   "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "source_name": "每日账户资产相对此前历史峰值的最大跌幅",
+   "credibility": "secondary_source",
+   "surprise_factor": "counterintuitive",
+   "usable_as": "\"过程一样吗\"段落的横向柱状图数据"
+  },
+  {
+   "claim": "回撤的**持续时间**差距远大于幅度差距：沪深300 从 2021-02-10 峰值到 2024-02-02 低点跨 1087 个自然日（约 2 年 11 个月）；中证500 跨 875 个自然日；红利低波50 只跨 58 个自然日；红利低波100 跨 208 个自然日。",
+   "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "source_name": "由同一截面导出的回撤峰值日与低点日之差",
+   "credibility": "secondary_source",
+   "surprise_factor": "counterintuitive",
+   "usable_as": "本片的核心洞察：同样幅度的跌，有人跌了三年，有人跌了两个月"
+  },
+  {
+   "claim": "沪深300 的名义账户资产在 2021-02-10 达到区间最高 ¥129,310 后，直到 2026-09-18（区间终点）都没有再创新高：最长一段\"未创新高\"持续 1358 个交易日（2021-02-18 至 2026-09-18）。",
+   "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "source_name": "每日账户资产相对历史滚动峰值的连续低于状态统计",
+   "credibility": "secondary_source",
+   "surprise_factor": "counterintuitive",
+   "usable_as": "\"等了多久\"段落的主证据，把回撤从幅度问题变成时间问题"
+  },
+  {
+   "claim": "两只宽基的区间最低点不在同一天：沪深300 于 2024-02-02 跌到区间最低 ¥79,588（同一天红利低波100 是 ¥158,310，两者相差 ¥78,722）；中证500 于 2024-02-05 跌到区间最低 ¥78,406（同一天红利低波50 是 ¥155,356，两者相差 ¥76,950）。",
+   "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "source_name": "同一交易日截面的极差，四个数值取自同一截面",
+   "credibility": "secondary_source",
+   "surprise_factor": "counterintuitive",
+   "usable_as": "中段最戏剧化的一帧：把\"过程不一样\"具象化为同一天里近一倍的账户差"
+  },
+  {
+   "claim": "沪深300指数由沪深市场中规模大、流动性好的最具代表性的300只证券组成，按调整市值（派许加权）计算，样本每半年调整一次；中证500指数剔除沪深300样本及日均总市值前300名后，按日均总市值由高到低选取前500只，同样采用市值加权。",
+   "source_url": "http://www.csindex.com.cn/#/about/newsDetail?id=5421",
+   "source_name": "中证指数有限公司 — 关于发布中证200和中证500等指数的公告",
+   "credibility": "primary_source",
+   "surprise_factor": "notable",
+   "usable_as": "机制段的对照物：市值加权不考察估值与分红，规模越大权重越高"
+  },
+  {
+   "claim": "中证红利低波动指数选取50只流动性好、连续分红、红利支付率适中、每股股息正增长以及股息率高且波动率低的证券，采用**股息率加权**；中证红利低波动100指数选取100只流动性好、连续分红、股息率高且波动率低的证券，采用**股息率/波动率加权**，每季度调样一次，并设单一二级行业20%权重上限。",
+   "source_url": "https://etf.sse.com.cn/fundtrends/c/5733322.shtml",
+   "source_name": "上海证券交易所 ETF 产品页 — 中证红利低波动ETF 标的指数说明；中证红利低波动100指数口径见景顺长城基金公开产品资料（经新浪财经、东方财富转载）",
+   "credibility": "primary_source",
+   "surprise_factor": "counterintuitive",
+   "usable_as": "本片机制解释的唯一支点：加权方式不同，决定了\"越跌越买\"还是\"越大越买\""
+  },
+  {
+   "claim": "四只产品的基本信息：510300 华泰柏瑞沪深300ETF；510500 南方中证500ETF；512890 华泰柏瑞中证红利低波动ETF（跟踪中证红利低波动指数 H30269，成立于2018年12月）；515100 景顺长城中证红利低波动100ETF（跟踪中证红利低波动100指数 930955，成立于2020年5月，成立时间早于本片区间起点 2020-07-03）。",
+   "source_url": "https://www.cifm.com/fund/513630/",
+   "source_name": "上海证券交易所 ETF 产品页与基金公司公开产品资料（规格类信息，经多方公开资料交叉核对）",
+   "credibility": "primary_source",
+   "surprise_factor": "expected",
+   "usable_as": "确认四只产品在 2020-07-03 起点日均已成立且有完整交易数据，比较成立"
+  },
+  {
+   "claim": "本片的收益口径是\"后复权收盘价归一化\"，等同于把现金分红按再投资处理的总回报；实际持有场内ETF时，现金分红会到账或按当期安排处理，并不会自动按当日净值复投。",
+   "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "source_name": "后复权口径定义（腾讯证券行情接口 日线 hfq）",
+   "credibility": "secondary_source",
+   "surprise_factor": "notable",
+   "usable_as": "必须写进画面的口径声明；这是最容易让观众误读的一条"
+  },
+  {
+   "claim": "2020-07-03 至 2026-09-18 这一段并不是中性区间：它包含A股自2021年初高点后的长期调整，以及红利风格相对占优的年份。换一个起点或终点，四者的排名完全可能不同。",
+   "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "source_name": "由四只ETF同期路径与年内低点的分布观察得到",
+   "credibility": "secondary_source",
+   "surprise_factor": "notable",
+   "usable_as": "边界条件段落的依据，用来阻止观众把一段区间结果当成长期规律"
+  }
+ ],
+ "audience_insights": {
+  "common_questions": [
+   "同样10万块钱，同样六年多，买沪深300和买红利低波，最后能差多少？",
+   "如果我一直拿着不动，中间最难熬的是哪一段？要熬多久？",
+   "红利低波这几年看起来一直涨，是不是因为它更安全、更适合长期拿？",
+   "ETF 的分红到底算不算收益？我账户里收到的现金分红会自动再买回去吗？",
+   "我看到很多\"十年年化\"的对比表，为什么它们的结论和这张图不完全一样？"
+  ],
+  "misconceptions": [
+   {
+    "myth": "只要时间够长，买哪只宽基最后都差不多",
+    "reality": "同一笔10万元、同一段6年多，期末最好与最差相差 8.09 万元。时间长度一样，路径可以完全不同。",
+    "source": "本片 data_points[0] / data_points[1]，区间 2020-07-03 至 2026-09-18"
+   },
+   {
+    "myth": "回撤就是\"最多跌了多少\"，看一眼百分比就够了",
+    "reality": "回撤还有持续时间。沪深300 的最大回撤跨度是 1087 个自然日，红利低波50 是 58 天——幅度相近的跌幅，需要忍受的时间可以差近20倍。",
+    "source": "本片 data_points[3]，2021-02-10 至 2024-02-05 口径"
+   },
+   {
+    "myth": "红利低波收益率高，是因为它选的公司更优质、更安全",
+    "reality": "两者的差别首先是编制规则：宽基按市值加权，规模越大权重越高；红利低波按股息率（或股息率/波动率）加权，越便宜、分红越稳的权重越高。规则不同，选出的股票集合就不同。",
+    "source": "中证指数公司编制公告、上交所ETF产品页（data_points[6] / [7]）"
+   },
+   {
+    "myth": "基金分红是我的额外收益",
+    "reality": "本片的曲线用的是后复权口径，等于把分红按再投资处理。这是理论上的总回报路径；实际持有ETF收到的现金分红不会自动复投。",
+    "source": "本片 data_points[9]"
+   },
+   {
+    "myth": "这段区间的排名可以代表长期规律",
+    "reality": "2020-07-03 到 2026-09-18 包含A股自2021年高点后的长期调整，也是红利风格相对占优的一段。换起点可能换排名，历史数据只能回答\"过去发生了什么\"。",
+    "source": "本片 data_points[10]"
+   }
+  ],
+  "knowledge_level": "intermediate"
+ },
+ "expert_voices": [
+  {
+   "name": "中证指数有限公司",
+   "title_or_affiliation": "中证规模指数与红利低波动指数的编制机构",
+   "position": "其发布的中证规模指数与红利低波动指数编制方案，是解释四只ETF路径差异的规则来源。",
+   "source_url": "http://www.csindex.com.cn/#/about/newsDetail?id=5421",
+   "contrarian": false
+  },
+  {
+   "name": "上海证券交易所 ETF 产品信息页",
+   "title_or_affiliation": "交易所层面的产品与标的指数披露渠道",
+   "position": "提供中证红利低波动指数选样条件的权威表述，是机制段不可替代的一手依据。",
+   "source_url": "https://etf.sse.com.cn/fundtrends/c/5733322.shtml",
+   "contrarian": false
+  }
+ ],
+ "angles_discovered": [
+  {
+   "name": "同一天起跑的四条线：差的不只是收益，是过程",
+   "hook": "2020年7月3日，同一天，同样一笔10万元，买了四只ETF。六年多以后，最差的那只还剩11万，最好的那只已经19万。",
+   "type": "data_driven",
+   "why_now": "完全按用户提供的内容规划执行：四条曲线在同一起跑线上同步跑完整个区间，把\"差多少\"变成可看见的过程，而不是一张静态表格。",
+   "grounded_in": [
+    "data_points[0]",
+    "data_points[1]",
+    "data_points[2]"
+   ]
+  },
+  {
+   "name": "跌一样多，但要熬三年：回撤的持续时间才是主角",
+   "hook": "沪深300 和红利低波50 都跌过。可一个跌了三年才见底，一个两个月就回来了。",
+   "type": "contrarian",
+   "why_now": "把观众最熟悉的\"最大回撤幅度\"换成\"回撤持续多久\"，直接命中\"我拿不拿得住\"这个真实焦虑，且是本区间数据里最锋利的发现。",
+   "grounded_in": [
+    "data_points[2]",
+    "data_points[3]",
+    "data_points[4]"
+   ]
+  },
+  {
+   "name": "从最好到最差，差8万：一笔钱的两个世界",
+   "hook": "同样10万元，一个账户期末是 ¥193,622，另一个是 ¥112,681。中间差的那8万，就是这六年你选了什么。",
+   "type": "data_driven",
+   "why_now": "先用绝对金额制造认知落差，再回到2020年重跑一遍，把\"我知道有差别\"升级成\"我知道差别有多大\"。",
+   "grounded_in": [
+    "data_points[1]",
+    "data_points[5]"
+   ]
+  },
+  {
+   "name": "规则先不同，路径才不同：谁在决定这条线怎么走",
+   "hook": "为什么同样是跟踪A股的ETF，一条线越走越高，另一条走了三年下坡？差别不在基金经理，在指数规则。",
+   "type": "evergreen",
+   "why_now": "把可见的曲线差异归因到可查的编制规则（市值加权 vs 股息率加权），让观众拿到一个可复用的判断工具，而不是一个推荐结论。",
+   "grounded_in": [
+    "data_points[6]",
+    "data_points[7]",
+    "data_points[8]"
+   ]
+  },
+  {
+   "name": "口径拆解：这四条线里的分红，其实不是你账户里的分红",
+   "hook": "如果我说这四条线把分红都当成\"自动买回去了\"，你对这个结果的感觉会不会变一点？",
+   "type": "contrarian",
+   "why_now": "后复权口径是本片最容易被误读的一环。主动把口径摊开讲，是财经内容最难建立、也最有价值的信任动作。",
+   "grounded_in": [
+    "data_points[9]"
+   ]
+  }
+ ],
+ "visual_references": [
+  {
+   "description": "多资产长周期收益竞速图（line race / 归一化净值的动态折线）：同一坐标系下四条线从同一点同步生长，曲线末端跟随数值标签，只在关键节点打年份与注解，不做逐点标注。",
+   "what_works": "起点归一化到同一点，天然表达\"同一起点、同一时间、不同路径\"，不需要任何解释性画面；观众在任意一帧都能同时读到四个账户的相对位置与绝对金额。"
+  },
+  {
+   "description": "工程绘图纸／仪器记录纸的制图规范：克制的细网格、等宽数字对齐、清晰的金额刻度、零基线柱状图，并在色彩之外用线型与常驻标签区分身份。",
+   "what_works": "内容本质是一张计量图；用制图规范建立\"这是一次测量\"的信任感，而不是装饰感。等宽数字让金额可比，零基线柱让回撤幅度不被视觉放大。刻意避开做旧纹理、印章与手写体——那属于已经存在的另一条系列语言。"
+  }
+ ],
+ "sources": [
+  {
+   "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+   "title": "腾讯证券行情接口 — 日线后复权（hfq）行情，抓取日期 2026-09-21",
+   "used_for": "四只ETF全部1510个交易日的后复权收盘价；本片所有账户资产、累计收益、年化收益、最大回撤与未创新高统计的唯一数据来源",
+   "reliability": "secondary"
+  },
+  {
+   "url": "http://www.csindex.com.cn/#/about/newsDetail?id=5421",
+   "title": "中证指数有限公司 — 关于发布中证200和中证500等指数的公告",
+   "used_for": "沪深300 与中证500 的样本数量、选样方法与市值加权计算口径；机制解释的规则依据",
+   "reliability": "primary"
+  },
+  {
+   "url": "https://etf.sse.com.cn/fundtrends/c/5733322.shtml",
+   "title": "上海证券交易所 — 中证红利低波动ETF 标的指数说明",
+   "used_for": "中证红利低波动指数（H30269）的选样条件与股息率加权方式",
+   "reliability": "primary"
+  },
+  {
+   "url": "https://finance.sina.com.cn/jjxw/2026-08-04/doc-inimctri5680451.shtml",
+   "title": "新浪财经 — 红利低波100ETF景顺(515100)聚焦红利资产估值修复窗口",
+   "used_for": "中证红利低波动100指数（930955）的选样口径：100只成分股、股息率/波动率加权、季度调样、单一二级行业20%权重上限",
+   "reliability": "secondary"
+  },
+  {
+   "url": "https://www.toutiao.com/article/7625532353385742884/",
+   "title": "A股8大宽基实测｜收益回撤一目了然",
+   "used_for": "现有内容版图取样：长周期指数全收益对比的常见形态与其区间不统一的局限",
+   "reliability": "anecdotal"
+  },
+  {
+   "url": "https://m.toutiao.com/article/7652571184751559183/",
+   "title": "别被沪深300的名气骗了，定投十年它连通胀都跑不赢",
+   "used_for": "现有内容版图取样：以持有体验为主线的叙事型财经内容，以及其结论先行的局限",
+   "reliability": "anecdotal"
+  },
+  {
+   "url": "https://xueqiu.com/2340719306/406064579",
+   "title": "关于重仓红利低波指数基金（雪球）",
+   "used_for": "现有内容版图取样：投资社区里被广泛引用的红利低波长周期对比及其推荐倾向",
+   "reliability": "anecdotal"
+  }
+ ],
+ "research_summary": "同样的10万元、同一天起跑、同一个终点，四只ETF在2026年9月18日的结果是 ¥112,681、¥142,111、¥193,622、¥181,596，期末最好与最差相差 ¥80,941。比收益差距更值得讲的是过程差距：沪深300 的最大回撤跨度是 1087 个自然日，而红利低波50 只有 58 天；沪深300 自 2021-02-10 见顶后，到区间终点都没有再创新高，最长一段\"未创新高\"横跨 1358 个交易日。造成路径分化的不是基金经理，而是指数的编制规则——两只宽基按市值加权，两只红利低波按股息率（或股息率/波动率）加权。片尾必须同时交代三条边界：本片用后复权口径（分红按再投资处理）、2020-07-03 至 2026-09-18 是含A股长期调整与红利风格相对占优的特殊区间、历史数据只能回答过去发生了什么。",
+ "metadata": {
+  "content_category": "finance",
+  "content_category_rationale": "全片讨论具体 ETF 产品在真实区间的收益与回撤路径，观众可能把结论当作投资参考，按 AGENT_GUIDE 的强制要求归入 finance 类别。",
+  "editorial_direction": {
+   "primary_mode": "EXPLAIN",
+   "secondary_mode": null,
+   "classification_confidence": "high",
+   "audience_task": "compare_and_judge",
+   "rationale": [
+    "核心问题是一个稳定的数据与规则问题：同一笔钱、同一段区间，为什么结果和过程差这么多。它不依赖公司内部信息、当日事件的触发点，也不需要宏观变量的传导链条。",
+    "回答问题所需的是\"一个清晰的对照示例\"（同一坐标系里的四条线）加上\"规则层面的机制\"（市值加权 vs 股息率加权），这正是 EXPLAIN 的任务形态，不需要机构研究密度。",
+    "内容对时效不敏感：区间终点是抓取日可获得的最新完整交易日，观众晚几天看到结论不受影响，因此不能归为 MARKET；强行归 MARKET 会虚构时间敏感性。"
+   ],
+   "evidence_priority": [
+    "statutory_index_methodology",
+    "exchange_product_disclosure",
+    "time_series_market_data"
+   ],
+   "visual_priority": [
+    "normalised_multi_line_race",
+    "zero_baseline_bar",
+    "source_anchored_stat",
+    "timeline_strip"
+   ],
+   "canvas_preference": [
+    "data",
+    "margin-note"
+   ],
+   "density_profile": {
+    "opening": "sparse",
+    "body": "standard",
+    "evidence": "dense",
+    "ending": "sparse"
+   },
+   "hook_grammar": "STRANGE_NUMBER",
+   "ending_grammar": "REUSABLE_METHOD",
+   "key_editorial_risk": "不能把一段特定区间（2021 年后 A 股长期调整、红利风格相对占优）的结果讲成\"红利低波更好\"的规律；也不能让观众以为曲线里的分红就是自己账户里收到的分红。",
+   "key_anti_pattern": "不要为解释型内容强塞机构研究密度、ThesisBreaker 或 ScenarioBoard；也不要把四条线做成四张静态对比卡轮播。"
+  },
+  "claim_classes": {
+   "FACT": [
+    "data_points[0]",
+    "data_points[1]",
+    "data_points[2]",
+    "data_points[3]",
+    "data_points[4]",
+    "data_points[5]",
+    "data_points[6]",
+    "data_points[7]",
+    "data_points[8]"
+   ],
+   "INFERENCE": [
+    "data_points[9]"
+   ],
+   "THESIS": [
+    "data_points[10]"
+   ],
+   "SCENARIO": []
+  },
+  "data_quality_check": {
+   "trading_days": 1510,
+   "window": "2020-07-03 至 2026-09-18",
+   "workbook_reconciliation": "四只基金的最终资产、累计收益率、年化收益率、最大回撤与回撤区间，全部与用户工作簿「汇总」工作表逐项一致（容差 1e-5）",
+   "missing_record": "512890 在 2021-10-22 缺少 1 条成交记录，按用户工作簿口径沿用前一交易日账户资产；当日不参与任何事件的表述",
+   "caveat": "后复权因子由行情源提供；发布前可用基金公司披露的单位净值做交叉核验"
+  },
+  "mandatory_disclaimer": "本视频仅作知识分享，不构成任何投资建议。市场有风险，投资需谨慎。",
+  "data_point_context": [
+   {
+    "index": 0,
+    "claim_class": "FACT",
+    "period": "2020-07-03 至 2026-09-18",
+    "comparison_basis": "四只ETF统一以 2020-07-03 后复权收盘价为基准日，账户资产 = 100000 × 后复权收盘价_t ÷ 后复权收盘价_起点",
+    "limitations": "后复权因子由行情源提供，不同供应商可能因复权算法与精度产生轻微差异"
+   },
+   {
+    "index": 1,
+    "claim_class": "FACT",
+    "period": "2020-07-03 至 2026-09-18",
+    "comparison_basis": "同一本金、同一完整区间、同一分红再投资口径下的绝对金额差",
+    "limitations": "绝对金额差随起点选择变化，不是一个可外推的规律"
+   },
+   {
+    "index": 2,
+    "claim_class": "FACT",
+    "period": "2020-07-03 至 2026-09-18",
+    "comparison_basis": "全部为区间内自峰值到其后低点的最大跌幅，口径一致",
+    "limitations": "最大回撤是单一极值，不能代表整段路径的波动分布"
+   },
+   {
+    "index": 3,
+    "claim_class": "FACT",
+    "period": "2021-02-10 至 2024-02-05",
+    "comparison_basis": "同为\"最大回撤\"这一口径下的区间跨度，四只基金同一算法",
+    "limitations": "跨度长度不等于亏损体验的强度，需与回撤幅度并列阅读"
+   },
+   {
+    "index": 4,
+    "claim_class": "FACT",
+    "period": "2021-02-10 至 2026-09-18",
+    "comparison_basis": "\"未创新高\"定义为当日账户资产低于此前历史最高值，四只基金同一算法",
+    "limitations": "\"未创新高\"是净值口径，不含投资者实际赎回、补仓等行为影响"
+   },
+   {
+    "index": 5,
+    "claim_class": "FACT",
+    "period": "2024-02-02 与 2024-02-05",
+    "comparison_basis": "同一交易日横截面极差，非区间极差",
+    "limitations": "两个单日截面，不代表整体离散度的常态；2024-02-02 是沪深300 的最大回撤低点，2024-02-05 是中证500 的区间最低点，相隔一个交易日，叙事时必须分别标注日期"
+   },
+   {
+    "index": 6,
+    "claim_class": "FACT",
+    "period": "现行编制方案（中证500 于 2007-01-15 发布）",
+    "comparison_basis": "两只宽基的选样与加权规则原文",
+    "limitations": "编制方案偶有修订，本片引用的是抓取时的现行版本"
+   },
+   {
+    "index": 7,
+    "claim_class": "FACT",
+    "period": "现行编制方案（截至 2026-08 公开资料）",
+    "comparison_basis": "两只红利低波指数与两只宽基指数在\"选样条件\"和\"加权方式\"上的差异",
+    "limitations": "指数编制方案可能调整；本片只陈述规则差异，不推断未来收益"
+   },
+   {
+    "index": 8,
+    "claim_class": "FACT",
+    "period": "截至 2026-09",
+    "comparison_basis": "四只产品的跟踪标的与成立时点",
+    "limitations": "成立日期与跟踪指数以基金公司最新披露为准"
+   },
+   {
+    "index": 9,
+    "claim_class": "INFERENCE",
+    "period": "2020-07-03 至 2026-09-18",
+    "comparison_basis": "后复权总回报口径 vs 实际持有现金流口径",
+    "limitations": "不同数据商的后复权算法存在差异"
+   },
+   {
+    "index": 10,
+    "claim_class": "THESIS",
+    "period": "2020-07-03 至 2026-09-18",
+    "comparison_basis": "沪深300 与中证500 的年内低点集中在 2022-2024，而两只红利低波同期保持上行",
+    "limitations": "这是区间特征判断，不是对未来的预测"
+   }
+  ]
+ }
+}

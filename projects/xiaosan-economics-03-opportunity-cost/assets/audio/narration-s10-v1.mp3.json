@@ -1,0 +1,410 @@
+{
+  "endpoint": "https://openspeech.bytedance.com/api/v3/tts/unidirectional",
+  "api_mode": "unidirectional",
+  "request_id": "f12c9392-a766-4219-bed2-89e373631075",
+  "log_id": "20260921095312EE04B48A0BA723221222",
+  "request": {
+    "headers": {
+      "X-Api-Resource-Id": "seed-tts-2.0",
+      "X-Api-Request-Id": "f12c9392-a766-4219-bed2-89e373631075",
+      "Content-Type": "application/json",
+      "X-Control-Require-Usage-Tokens-Return": "*",
+      "Connection": "keep-alive"
+    },
+    "body": {
+      "req_params": {
+        "text": "所以下次再遇到一件“免费”的事情，别急着只问：我要花多少钱？也可以多问一句：为了它，我放弃了什么？",
+        "speaker": "zh_male_dayi_uranus_bigtts",
+        "additions": "{\"disable_markdown_filter\": false, \"disable_emoji_filter\": false, \"enable_latex_tn\": true}",
+        "audio_params": {
+          "format": "mp3",
+          "sample_rate": 24000,
+          "speech_rate": 0,
+          "enable_subtitle": true
+        }
+      }
+    }
+  },
+  "response_events": [
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3132
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3840
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4864
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1792
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 6912
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 3840
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "所以下次再遇到一件“免费”的事情，别急着只问：我要花多少钱？",
+        "words": [
+          {
+            "confidence": 0.60096025,
+            "endTime": 0.205,
+            "startTime": 0.105,
+            "word": "所"
+          },
+          {
+            "confidence": 0.47102773,
+            "endTime": 0.255,
+            "startTime": 0.205,
+            "word": "以"
+          },
+          {
+            "confidence": 0.8939007,
+            "endTime": 0.435,
+            "startTime": 0.255,
+            "word": "下"
+          },
+          {
+            "confidence": 0.9434958,
+            "endTime": 0.565,
+            "startTime": 0.435,
+            "word": "次"
+          },
+          {
+            "confidence": 0.8966017,
+            "endTime": 0.715,
+            "startTime": 0.565,
+            "word": "再"
+          },
+          {
+            "confidence": 0.9274484,
+            "endTime": 0.805,
+            "startTime": 0.715,
+            "word": "遇"
+          },
+          {
+            "confidence": 0.95645577,
+            "endTime": 0.945,
+            "startTime": 0.805,
+            "word": "到"
+          },
+          {
+            "confidence": 0.6120798,
+            "endTime": 1.065,
+            "startTime": 0.945,
+            "word": "一"
+          },
+          {
+            "confidence": 0.3984822,
+            "endTime": 1.095,
+            "startTime": 1.065,
+            "word": "件“"
+          },
+          {
+            "confidence": 0.7438767,
+            "endTime": 1.275,
+            "startTime": 1.095,
+            "word": "免"
+          },
+          {
+            "confidence": 0.20909694,
+            "endTime": 1.445,
+            "startTime": 1.415,
+            "word": "费”"
+          },
+          {
+            "confidence": 0.7540045,
+            "endTime": 1.525,
+            "startTime": 1.445,
+            "word": "的"
+          },
+          {
+            "confidence": 0.9434146,
+            "endTime": 1.695,
+            "startTime": 1.525,
+            "word": "事"
+          },
+          {
+            "confidence": 0.690868,
+            "endTime": 1.925,
+            "startTime": 1.695,
+            "word": "情，"
+          },
+          {
+            "confidence": 0.9655192,
+            "endTime": 2.165,
+            "startTime": 2.005,
+            "word": "别"
+          },
+          {
+            "confidence": 0.9219131,
+            "endTime": 2.375,
+            "startTime": 2.165,
+            "word": "急"
+          },
+          {
+            "confidence": 0.93716156,
+            "endTime": 2.485,
+            "startTime": 2.375,
+            "word": "着"
+          },
+          {
+            "confidence": 0.76777524,
+            "endTime": 2.795,
+            "startTime": 2.485,
+            "word": "只"
+          },
+          {
+            "confidence": 0.2596573,
+            "endTime": 2.825,
+            "startTime": 2.795,
+            "word": "问："
+          },
+          {
+            "confidence": 0.9706978,
+            "endTime": 3.125,
+            "startTime": 3.005,
+            "word": "我"
+          },
+          {
+            "confidence": 0.9460283,
+            "endTime": 3.225,
+            "startTime": 3.125,
+            "word": "要"
+          },
+          {
+            "confidence": 0.9242098,
+            "endTime": 3.385,
+            "startTime": 3.225,
+            "word": "花"
+          },
+          {
+            "confidence": 0.8821883,
+            "endTime": 3.455,
+            "startTime": 3.385,
+            "word": "多"
+          },
+          {
+            "confidence": 0.9511329,
+            "endTime": 3.575,
+            "startTime": 3.455,
+            "word": "少"
+          },
+          {
+            "confidence": 0.95869136,
+            "endTime": 3.925,
+            "startTime": 3.575,
+            "word": "钱？"
+          }
+        ]
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4352
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 1792
+    },
+    {
+      "code": 0,
+      "message": "",
+      "audio_base64_chars": 4096
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "所以下次再遇到一件“免费”的事情，别急着只问：我要花多少钱？也可以多问一句：为了它，我放弃了什么？",
+        "words": []
+      }
+    },
+    {
+      "code": 0,
+      "message": "",
+      "sentence": {
+        "phonemes": [],
+        "text": "也可以多问一句：为了它，我放弃了什么？",
+        "words": [
+          {
+            "confidence": 0.8065669,
+            "endTime": 4.1850414,
+            "startTime": 4.1150413,
+            "word": "也"
+          },
+          {
+            "confidence": 0.8094014,
+            "endTime": 4.3150415,
+            "startTime": 4.1850414,
+            "word": "可"
+          },
+          {
+            "confidence": 0.7863571,
+            "endTime": 4.3750415,
+            "startTime": 4.3150415,
+            "word": "以"
+          },
+          {
+            "confidence": 0.9438639,
+            "endTime": 4.5450416,
+            "startTime": 4.3750415,
+            "word": "多"
+          },
+          {
+            "confidence": 0.86677843,
+            "endTime": 4.6250415,
+            "startTime": 4.5450416,
+            "word": "问"
+          },
+          {
+            "confidence": 0.75658625,
+            "endTime": 4.6950417,
+            "startTime": 4.6250415,
+            "word": "一"
+          },
+          {
+            "confidence": 0.30308583,
+            "endTime": 4.7250414,
+            "startTime": 4.6950417,
+            "word": "句："
+          },
+          {
+            "confidence": 0.20963317,
+            "endTime": 4.7550416,
+            "startTime": 4.7250414,
+            "word": "为"
+          },
+          {
+            "confidence": 0.14108136,
+            "endTime": 4.8150415,
+            "startTime": 4.7550416,
+            "word": "了"
+          },
+          {
+            "confidence": 0.10606918,
+            "endTime": 4.8750415,
+            "startTime": 4.8150415,
+            "word": "它，"
+          },
+          {
+            "confidence": 0.16456799,
+            "endTime": 4.9050417,
+            "startTime": 4.8750415,
+            "word": "我"
+          },
+          {
+            "confidence": 0.262089,
+            "endTime": 5.4850416,
+            "startTime": 5.425041,
+            "word": "放"
+          },
+          {
+            "confidence": 0.1958068,
+            "endTime": 5.5450416,
+            "startTime": 5.4850416,
+            "word": "弃"
+          },
+          {
+            "confidence": 0.7357604,
+            "endTime": 5.635041,
+            "startTime": 5.5450416,
+            "word": "了"
+          },
+          {
+            "confidence": 0.16509983,
+            "endTime": 5.6950417,
+            "startTime": 5.635041,
+            "word": "什"
+          },
+          {
+            "confidence": 0.18687211,
+            "endTime": 6.5950413,
+            "startTime": 6.535042,
+            "word": "么？"
+          }
+        ]
+      }
+    },
+    {
+      "code": 20000000,
+      "message": "OK",
+      "usage": {
+        "text_words": 49
+      }
+    }
+  ],
+  "usage": {
+    "text_words": 49
+  }
+}
